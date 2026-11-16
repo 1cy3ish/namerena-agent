@@ -1,0 +1,115 @@
+{
+  "schema_version": "0.1",
+  "terms": [
+    {
+      "id": "namerena",
+      "term": "名竞",
+      "aliases": ["名字竞技场", "Namerena"],
+      "definition": "社区对名字竞技场的简称。",
+      "category": "concept",
+      "status": "source_supported",
+      "scope": "社区教程中的用法；不包含对特定游戏版本的指定。",
+      "source_ids": ["official-guide", "community-tutorial"],
+      "checked_at": "2026-11-16"
+    },
+    {
+      "id": "name-character",
+      "term": "号",
+      "aliases": ["名字", "战号"],
+      "definition": "在对战或测号语境中，通常指一个完整名字输入及其对应角色，而非登录账号。完整输入可能包含战队名等部分。",
+      "category": "concept",
+      "status": "source_supported",
+      "scope": "官方测号说明及社区教程语境；需结合原句判断其他含义。",
+      "source_ids": ["official-testing", "official-naming", "community-tutorial"],
+      "checked_at": "2026-11-16"
+    },
+    {
+      "id": "name-testing",
+      "term": "测号",
+      "aliases": ["测名字"],
+      "definition": "搜索或评估名字对应的属性、技能和对战实力，通常用于寻找适合使用的名字。",
+      "category": "gameplay",
+      "status": "source_supported",
+      "scope": "官方测号文档；搜索与实力评估使用不同输入布局，工具实现可能不同。",
+      "source_ids": ["official-testing"],
+      "checked_at": "2026-11-16"
+    },
+    {
+      "id": "team-name",
+      "term": "战队",
+      "aliases": ["战队名"],
+      "definition": "输入形式中的 @战队名 会参与角色属性生成并决定徽章；它与通过空行划分的对战分组是不同概念。战队一词也可能指玩家组织。",
+      "category": "input",
+      "status": "source_supported",
+      "scope": "本词条主要描述官方命名规则；玩家组织的含义需要上下文。",
+      "source_ids": ["official-naming", "official-guide", "community-tutorial"],
+      "checked_at": "2026-11-16"
+    },
+    {
+      "id": "normal-team-rating",
+      "term": "普评",
+      "aliases": ["pp", "普通综合评分"],
+      "definition": "普通综合评分的简称，属于社区讨论名字实力时使用的评分指标。",
+      "category": "rating",
+      "status": "source_supported",
+      "scope": "社区教程的评分语境；样本、算法、版本和分数阈值尚未独立核实。",
+      "source_ids": ["community-tutorial"],
+      "checked_at": "2026-11-16"
+    },
+    {
+      "id": "enhanced-team-rating",
+      "term": "强评",
+      "aliases": ["qp", "强化综合评分"],
+      "definition": "强化综合评分的简称，社区教程将其作为与较强基准角色组队对战相关的评分指标。",
+      "category": "rating",
+      "status": "source_supported",
+      "scope": "社区教程的评分语境；不同工具或版本的数值不能直接混比。",
+      "source_ids": ["community-tutorial"],
+      "checked_at": "2026-11-16"
+    },
+    {
+      "id": "normal-duel-rating",
+      "term": "普单",
+      "aliases": ["pd", "普通单挑评分"],
+      "definition": "普通单挑评分的简称，用于描述名字在普通基准下的单挑评估结果。",
+      "category": "rating",
+      "status": "source_supported",
+      "scope": "社区教程的评分语境；基准和计算细节需要结合实际工具确认。",
+      "source_ids": ["community-tutorial"],
+      "checked_at": "2026-11-16"
+    },
+    {
+      "id": "enhanced-duel-rating",
+      "term": "强单",
+      "aliases": ["qd", "强化单挑评分"],
+      "definition": "强化单挑评分的简称，社区教程将其解释为对较强基准角色进行单挑得到的评分。",
+      "category": "rating",
+      "status": "source_supported",
+      "scope": "社区教程的评分语境；不等同于角色等级，也不能推出对任意名字必胜。",
+      "source_ids": ["community-tutorial"],
+      "checked_at": "2026-11-16"
+    },
+    {
+      "id": "rough-evaluation",
+      "term": "粗评",
+      "aliases": [],
+      "definition": "较早测试阶段得到的粗略评分；社区教程以 10% 阶段称呼粗评。",
+      "category": "rating",
+      "status": "source_supported",
+      "scope": "官方文档将 0% 至 10% 描述为粗略评分；具体工具中的进度显示和精度需另行核对。",
+      "source_ids": ["official-testing", "community-tutorial"],
+      "checked_at": "2026-11-16"
+    },
+    {
+      "id": "refined-evaluation",
+      "term": "精评",
+      "aliases": [],
+      "definition": "经过更多测试得到的较精确评分；社区教程将 100% 阶段称为精评。",
+      "category": "rating",
+      "status": "source_supported",
+      "scope": "官方文档允许继续增加评估精度；100% 并不表示对所有对手获胜或已经穷尽一切情况。",
+      "source_ids": ["official-testing", "community-tutorial"],
+      "checked_at": "2026-11-16"
+    }
+  ]
+}

@@ -1,0 +1,27 @@
+# Local credentials and machine-specific settings
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+node_modules/
+
+# Generated output and downloaded source material
+dist/
+build/
+coverage/
+.cache/
+data/raw/
+data/processed/
+*.log
+
+# Editor and OS files
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db
+Desktop.ini

@@ -1,0 +1,59 @@
+{
+  "schema_version": "0.1",
+  "sources": [
+    {
+      "id": "official-guide",
+      "title": "名字竞技场 — Deep Mess",
+      "url": "https://deepmess.com/zh/namerena/",
+      "type": "official",
+      "accessed_at": "2026-11-16",
+      "read_status": "retrieved",
+      "notes": "基础玩法、属性技能、组队和开发文档入口；页面未明确标注规则版本。"
+    },
+    {
+      "id": "official-naming",
+      "title": "名字构成",
+      "url": "https://deepmess.com/zh/namerena/naming.html",
+      "type": "official",
+      "accessed_at": "2026-11-16",
+      "read_status": "retrieved",
+      "notes": "名字、战队名、装备、空格和输入限制；具体限制实施前需在目标版本复核。"
+    },
+    {
+      "id": "official-testing",
+      "title": "测号技巧",
+      "url": "https://deepmess.com/zh/namerena/testing.html",
+      "type": "official",
+      "accessed_at": "2026-11-16",
+      "read_status": "retrieved",
+      "notes": "名字搜索和实力评估入口；分数阈值可能反映文档编写时环境，不直接作为当前强度标准。"
+    },
+    {
+      "id": "official-embedding",
+      "title": "在网页里嵌入名字竞技场",
+      "url": "https://deepmess.com/zh/namerena/api.html",
+      "type": "official",
+      "accessed_at": "2026-11-16",
+      "read_status": "retrieved",
+      "notes": "iframe、URL 编码和 postMessage 回调说明；示例使用旧 GitHub Pages 地址，未进行运行验证。"
+    },
+    {
+      "id": "legacy-game",
+      "title": "名字竞技场 — GitHub Pages 旧站",
+      "url": "https://namerena.github.io/",
+      "type": "legacy",
+      "accessed_at": "2026-11-16",
+      "read_status": "retrieved",
+      "notes": "已读取页面及描述元信息；社区教程标为旧入口，不能假定与 Deep Mess 版本相同。"
+    },
+    {
+      "id": "community-tutorial",
+      "title": "名字竞技场教程 — 名字竞技场 Wiki",
+      "url": "https://namerena.fandom.com/zh/wiki/名字竞技场教程",
+      "type": "community",
+      "accessed_at": "2026-11-16",
+      "read_status": "retrieved",
+      "notes": "社区术语与历史线索。页首明确提示教程部分停用，技能与名字类型评价不可直接采用；历史称号阈值亦有作废说明。"
+    }
+  ]
+}

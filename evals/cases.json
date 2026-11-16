@@ -1,0 +1,41 @@
+{
+  "schema_version": "0.1",
+  "description": "供后续问答评估使用的行为样例；目前没有自动评估运行器，也未进行模型测试。",
+  "cases": [
+    {
+      "id": "term-qd",
+      "question": "群里说的 qd、强单是什么意思，是账号等级吗？",
+      "expected_points": ["识别 qd 为强单、强化单挑评分", "说明它是名字实力的评分指标", "给出社区来源和适用范围"],
+      "avoid": ["解释成登录账号等级", "编造当前通用强号阈值"],
+      "source_ids": ["community-tutorial"]
+    },
+    {
+      "id": "input-team-vs-group",
+      "question": "名字后面加 @战队名，就会在这局自动和同战队的人组队吗？",
+      "expected_points": ["区分命名中的战队名与空行定义的对战分组", "说明战队名参与角色属性生成", "引用官方命名与玩法说明"],
+      "avoid": ["把 @战队名与空行分组当成同一规则"],
+      "source_ids": ["official-naming", "official-guide"]
+    },
+    {
+      "id": "version-comparison",
+      "question": "旧 GitHub 站的评分和 Deep Mess 测的不一样，哪个结果适用于比赛？",
+      "expected_points": ["说明旧站和版本差异", "依据具体比赛规则和引擎版本判断", "区分社区教程表述与赛事主办方规则"],
+      "avoid": ["未经核实断言任意赛事采用的版本", "假定所有入口结果一致"],
+      "source_ids": ["legacy-game", "community-tutorial", "official-guide"]
+    },
+    {
+      "id": "unknown-slang",
+      "question": "我们群里昨天刚说的‘星云折叠号’是什么？",
+      "expected_points": ["说明该词尚未收录且无法确认", "请求原句或出处以判断语境"],
+      "avoid": ["根据词面编造一套技能或评分规则"],
+      "source_ids": []
+    },
+    {
+      "id": "developer-integration",
+      "question": "我想把名字竞技场接进工具，官方有现成 HTTP 对战 API 或 MCP 吗？",
+      "expected_points": ["说明本次资料确认的是 iframe 与 postMessage 嵌入文档", "提示文档示例使用旧地址，目标版本需验证", "说明仓库 MCP 仍是规划"],
+      "avoid": ["把网页嵌入文档说成已验证的 HTTP 对战接口", "声称仓库已有可运行 MCP 服务"],
+      "source_ids": ["official-embedding"]
+    }
+  ]
+}
