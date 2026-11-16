@@ -1,0 +1,375 @@
+{
+  "schema_version": "0.1",
+  "checked_at": "2026-11-16",
+  "record_kind": "curated_public_observations",
+  "scope": "公开页面和指定首帖的定向阅读，不是站点全量归档或论坛回复全集。",
+  "retrieval": "两站首页以 Firecrawl 读取，其他页面及帖子经公开 HTML/JSON GET；未登录、发言或提交表单。",
+  "retention": "只保留术语、栏目、来源、楼号及观察摘要；不保存动态榜单、个人账号资料、令牌、隐藏分区内容或完整帖子镜像。",
+  "pages": [
+    {
+      "id": "community-ladder-home",
+      "title": "民间天梯首页（沙冰鱼分部）",
+      "url": "https://shenjack.top:10007/",
+      "checked_at": "2026-11-16",
+      "observations": [
+        "站点自称玩家运营的非官方名字竞技场天梯；首页展示成员分数排名，只显示活跃成员。",
+        "成员排名分为 1A、1B、2A、2B、3A 栏；导航包含战队、周赛、锦标赛、论坛、即时对战、名竞尖塔及工具。",
+        "首页提示负榜战队可联系运营者解除 QP 限制；没有据此核查解除条件和办理流程。",
+        "论坛外链指向 10008；tswn 网页是本站 /tswn/ 子路径，不等于天梯首页。"
+      ]
+    },
+    {
+      "id": "community-ladder-register",
+      "title": "天梯注册页",
+      "url": "https://shenjack.top:10007/register",
+      "checked_at": "2026-11-16",
+      "observations": [
+        "读取时页面要求新战队提供 qp6000+ 的名字进行 QP 验证，填写战队名并设置账户密码；邮箱为选填。",
+        "这是站点注册门槛，不是天梯分数算法、周赛晋级线或所有工具通用的强号标准。"
+      ]
+    },
+    {
+      "id": "community-ladder-profile",
+      "title": "公开战队页的成员与激活字段",
+      "url": "https://shenjack.top:10007/profile/Shabby_fish",
+      "checked_at": "2026-11-16",
+      "observations": [
+        "所读公开样例的 1A/1B 各显示一个完整名字，2A/2B 各显示两个名字组成的组合，3A 显示三个。",
+        "成员字段为编号、姓名、分数、排名、状态；另有 1a/2a 周赛激活及到期提示。",
+        "仅收录字段和槽位布局，未保存成员名字、个人分数、排名或账号资料。"
+      ]
+    },
+    {
+      "id": "community-ladder-weekly",
+      "title": "Newlive 新版周赛入口",
+      "url": "https://shenjack.top:10007/newlive/",
+      "checked_at": "2026-11-16",
+      "observations": [
+        "当前入口将 1A 和 2A 分开，显示每周六 17:30、每周日 17:30，以及赛季/周次/待开奖等状态。",
+        "提供对阵表、查看名单、锦标赛赛程和历史记录；时间与状态只代表本次页面观察，不保证将来不变。"
+      ]
+    },
+    {
+      "id": "community-ladder-bracket",
+      "title": "周赛对阵表",
+      "url": "https://shenjack.top:10007/newlive/list",
+      "checked_at": "2026-11-16",
+      "observations": [
+        "可选 1A/2A，展示人数、轮数和同步状态；读取时是等待赛程生成的页面，未取得实际完整对阵。"
+      ]
+    },
+    {
+      "id": "community-ladder-history",
+      "title": "周赛历史",
+      "url": "https://shenjack.top:10007/newlive/history",
+      "checked_at": "2026-11-16",
+      "observations": [
+        "按 1A/2A 提供周赛历史入口；历史记录数量是动态状态，本次未逐项读取历史赛事。"
+      ]
+    },
+    {
+      "id": "community-ladder-tournament",
+      "title": "锦标赛赛程",
+      "url": "https://shenjack.top:10007/tournament",
+      "checked_at": "2026-11-16",
+      "observations": [
+        "页面包含赛季、单人组/双人组、淘汰赛轮次、半决赛、决赛和败者组等赛程字段。",
+        "仅记录赛事结构，不保存参赛者名单、名次或战绩，也不据此重建双败具体规则。"
+      ]
+    },
+    {
+      "id": "community-htmltools",
+      "title": "Namerena HtmlTools",
+      "url": "https://shenjack.top:10007/static/HtmlTools/",
+      "checked_at": "2026-11-16",
+      "observations": [
+        "去皮用于去除测号输出的评分部分，可选择单/双评分在头尾或自定义头尾。",
+        "成队用于生成 A + B 组队形式；转换栏目为 ID 属性转换器，可选单行/双行及幻影/使魔/丧尸。",
+        "评分栏目列出 XP、SP常规、SP人海、SPnew-1、SPnew-2；只确认标签，未读算法或验证其与 Openbox 的关系。",
+        "加成栏目为组队加成转换器，列出旧DIY/新DIY；没有以界面文字代替格式或公式审计。"
+      ]
+    },
+    {
+      "id": "community-forum-home",
+      "title": "名字竞技场论坛首页",
+      "url": "https://shenjack.top:10008/",
+      "checked_at": "2026-11-16",
+      "observations": [
+        "公开首页展示置顶须知、民间天梯、周赛、帮测、创作和战队基地等讨论。",
+        "这是玩家社区，首帖或运营者发言需要保留作者、时间和活动语境，不能当作游戏官方机制。"
+      ]
+    },
+    {
+      "id": "community-forum-tags",
+      "title": "论坛公开分区标签",
+      "url": "https://shenjack.top:10008/api/tags",
+      "checked_at": "2026-11-16",
+      "observations": [
+        "公开可见标签：站务版、讨论区、精华消息、比赛专区、糟粕消息、基地专区。",
+        "通过公开 /api/tags 核对名称和 slug，仅收录 isHidden=false 的分区；标签不是实力等级或技能。"
+      ],
+      "retrieval_api_url": "https://shenjack.top:10008/api/tags",
+      "visible_tags": [
+        {
+          "id": "1",
+          "name": "站务版",
+          "slug": "announcements"
+        },
+        {
+          "id": "2",
+          "name": "讨论区",
+          "slug": "general"
+        },
+        {
+          "id": "5",
+          "name": "精华消息",
+          "slug": "featured"
+        },
+        {
+          "id": "9",
+          "name": "比赛专区",
+          "slug": "race"
+        },
+        {
+          "id": "10",
+          "name": "糟粕消息",
+          "slug": "wtf"
+        },
+        {
+          "id": "12",
+          "name": "基地专区",
+          "slug": "quilt"
+        }
+      ]
+    },
+    {
+      "id": "community-forum-notice",
+      "title": "[入站必读/置顶] 用户须知",
+      "url": "https://shenjack.top:10008/d/19-ru-zhan-bi-du-zhi-ding-yong-hu-xu-zhi",
+      "checked_at": "2026-11-16",
+      "observations": [
+        "论坛明确为玩家搭建、对新人友好的交流社区，不是游戏官方；讨论发帖需选标签，另设水楼和教程入口。",
+        "此帖中的“官方水楼”是社区帖子称呼，不能因此判断论坛由游戏官方运营。"
+      ],
+      "retrieval_api_url": "https://shenjack.top:10008/api/discussions/19",
+      "posts_read": [
+        {
+          "id": "84",
+          "number": 1,
+          "created_at": "2024-07-24T06:06:28+00:00"
+        }
+      ],
+      "discussion_created_at": "2024-07-24T06:06:28+00:00",
+      "relationship_post_count_at_read": 6,
+      "edit_time": "未记录；首发日期不代表现存正文的最后编辑日期。"
+    },
+    {
+      "id": "community-forum-ladder",
+      "title": "民间天梯试运行",
+      "url": "https://shenjack.top:10008/d/215-min-jian-tian-ti-shi-yun-xing",
+      "checked_at": "2026-11-16",
+      "observations": [
+        "首帖将停止维护的“老天梯”链接到 http://47.109.79.252，将试运行的“新天梯”链接到 10007。此处的新旧均指民间站点。",
+        "首帖提示带 / 的战队名暂不支持，并提到几T、20T+、大豹等词；这是帖子所记兼容限制，未在当前注册流程实测。",
+        "第124楼记录 2026年11月4日至6日的即时对战公测、观战/历史、房间、模式和调平衡更新；不据此声称已验证全部功能。"
+      ],
+      "retrieval_api_url": "https://shenjack.top:10008/api/discussions/215",
+      "posts_read": [
+        {
+          "id": "10108",
+          "number": 124,
+          "created_at": "2026-11-06T18:36:04+00:00"
+        },
+        {
+          "id": "5944",
+          "number": 1,
+          "created_at": "2025-10-11T11:04:50+00:00"
+        }
+      ],
+      "discussion_created_at": "2025-10-11T11:04:50+00:00",
+      "relationship_post_count_at_read": 122,
+      "edit_time": "未记录；首发日期不代表现存正文的最后编辑日期。"
+    },
+    {
+      "id": "community-forum-weekly",
+      "title": "周赛",
+      "url": "https://shenjack.top:10008/d/227-zhou-sai",
+      "checked_at": "2026-11-16",
+      "observations": [
+        "首帖描述单双人组每周比赛，从天梯 1a/2a 取号，需要激活；换号或上号会自动激活，记载激活最长30天。",
+        "首帖描述冻结期间不能换号或取消激活；周赛 bo5 单败、按天梯排名排种子，使用福彩3D材料构造赛事 seed。",
+        "首帖描述周赛前4取得单号锦标赛资格，重复资格顺延；8周收集32名额，第9周锦标赛，锦标赛 bo7 双败。",
+        "时间冲突：首帖冻结结束时间为周六/周日17:30，后文却写周五/周六18:00开赛；当前 Newlive 又显示周六/周日17:30。回答具体赛程应核对当届安排。",
+        "第45楼报告第五届单人组锦标赛完成及帮测奖励；只作为奖励以测号量表达的例子，不固化名次和奖励数值。"
+      ],
+      "retrieval_api_url": "https://shenjack.top:10008/api/discussions/227",
+      "posts_read": [
+        {
+          "id": "9912",
+          "number": 45,
+          "created_at": "2026-10-29T08:56:53+00:00"
+        },
+        {
+          "id": "6536",
+          "number": 1,
+          "created_at": "2025-12-07T08:24:48+00:00"
+        }
+      ],
+      "discussion_created_at": "2025-12-07T08:24:48+00:00",
+      "relationship_post_count_at_read": 42,
+      "edit_time": "未记录；首发日期不代表现存正文的最后编辑日期。"
+    },
+    {
+      "id": "community-forum-event-support",
+      "title": "【长期】比赛承办激励计划",
+      "url": "https://shenjack.top:10008/d/150-chang-qi-bi-sai-cheng-ban-ji-li-ji-hua",
+      "checked_at": "2026-11-16",
+      "observations": [
+        "帖子称承办合格比赛可获得帮测；分别提到武术大赛、娱乐赛、奖励报销及队内测号量补偿。",
+        "补偿以 T 计量，额度、认可条件和是否补发属于该发帖者的计划；“长期”是帖子标题，不保证读取时仍可领取。"
+      ],
+      "retrieval_api_url": "https://shenjack.top:10008/api/discussions/150",
+      "posts_read": [
+        {
+          "id": "3709",
+          "number": 1,
+          "created_at": "2025-05-30T08:55:53+00:00"
+        }
+      ],
+      "discussion_created_at": "2025-05-30T08:55:53+00:00",
+      "relationship_post_count_at_read": 18,
+      "edit_time": "未记录；首发日期不代表现存正文的最后编辑日期。"
+    },
+    {
+      "id": "community-forum-team-support",
+      "title": "弱队补强计划",
+      "url": "https://shenjack.top:10008/d/207-ruo-dui-bu-qiang-ji-hua",
+      "checked_at": "2026-11-16",
+      "observations": [
+        "首帖按已有测号量设置帮测扶持范围和公式，并提到不熟悉的申请者需要展示 qp6000+ 名字的证明条件。",
+        "本轮不把帖子条件和公式提升为天梯注册规则或全社区固定福利；申请前应核对当前活动状态。"
+      ],
+      "retrieval_api_url": "https://shenjack.top:10008/api/discussions/207",
+      "posts_read": [
+        {
+          "id": "5552",
+          "number": 1,
+          "created_at": "2025-09-10T13:11:17+00:00"
+        }
+      ],
+      "discussion_created_at": "2025-09-10T13:11:17+00:00",
+      "relationship_post_count_at_read": 35,
+      "edit_time": "未记录；首发日期不代表现存正文的最后编辑日期。"
+    },
+    {
+      "id": "community-forum-help-testing",
+      "title": "一个帮测贴",
+      "url": "https://shenjack.top:10008/d/416-yi-ge-bang-ce-tie",
+      "checked_at": "2026-11-16",
+      "observations": [
+        "首帖以预测达成时间分配帮测，目标包括 cqp51.5 有刺/无刺、cqp51.0 人海和 cqd50；奖励以 T 表达。",
+        "帖子明确提到双人组合取两号较晚测出时间、工具配出组合和靶子换代；这些阈值属于本次悬赏，不是通用称号门槛。",
+        "仅核对这些词在活动中的使用；没有据此认定有刺/无刺的具体配队约束、奖励仍可领取或 T 的精确换算。"
+      ],
+      "retrieval_api_url": "https://shenjack.top:10008/api/discussions/416",
+      "posts_read": [
+        {
+          "id": "10288",
+          "number": 1,
+          "created_at": "2026-11-14T02:29:46+00:00"
+        }
+      ],
+      "discussion_created_at": "2026-11-14T02:29:46+00:00",
+      "relationship_post_count_at_read": 8,
+      "edit_time": "未记录；首发日期不代表现存正文的最后编辑日期。"
+    },
+    {
+      "id": "community-forum-base",
+      "title": "[1910W]的论坛基地",
+      "url": "https://shenjack.top:10008/d/82-1910wde-lun-tan-ji-di",
+      "checked_at": "2026-11-16",
+      "observations": [
+        "主题标题以战队名加“论坛基地”命名；结合首页多个基地帖及基地专区，仅确认为战队集中交流主题的用法。",
+        "首帖仅写缓更，未通读其后回复；不能把论坛基地与 Openbox base 文件当作同一种对象。"
+      ],
+      "retrieval_api_url": "https://shenjack.top:10008/api/discussions/82",
+      "posts_read": [
+        {
+          "id": "1307",
+          "number": 1,
+          "created_at": "2024-11-01T10:50:48+00:00"
+        }
+      ],
+      "discussion_created_at": "2024-11-01T10:50:48+00:00",
+      "relationship_post_count_at_read": 40,
+      "edit_time": "未记录；首发日期不代表现存正文的最后编辑日期。"
+    },
+    {
+      "id": "community-forum-spire",
+      "title": "名竞尖塔",
+      "url": "https://shenjack.top:10008/d/410-ming-jing-jian-ta",
+      "checked_at": "2026-11-16",
+      "observations": [
+        "首帖明确称其为新天梯小游戏并链接 /cards/，提及卡牌、属性、加成和爬塔。",
+        "帖子包含宣传性玩笑，未逐项核验其中技能、角色、平衡和关卡描述。"
+      ],
+      "retrieval_api_url": "https://shenjack.top:10008/api/discussions/410",
+      "posts_read": [
+        {
+          "id": "9882",
+          "number": 1,
+          "created_at": "2026-10-27T17:16:06+00:00"
+        }
+      ],
+      "discussion_created_at": "2026-10-27T17:16:06+00:00",
+      "relationship_post_count_at_read": 27,
+      "edit_time": "未记录；首发日期不代表现存正文的最后编辑日期。"
+    },
+    {
+      "id": "community-forum-guest",
+      "title": "游客提问区（试行）",
+      "url": "https://shenjack.top:10008/d/401-you-ke-ti-wen-qu-shi-xing",
+      "checked_at": "2026-11-16",
+      "observations": [
+        "首帖称此处可由游客直接发言，并有字数、频率和会话有效期限制；只适用于这个试行入口，不能推广为全站免注册。",
+        "本轮只读取帖子，没有创建游客会话或测试发言。"
+      ],
+      "retrieval_api_url": "https://shenjack.top:10008/api/discussions/401",
+      "posts_read": [
+        {
+          "id": "9685",
+          "number": 1,
+          "created_at": "2026-10-23T05:09:27+00:00"
+        }
+      ],
+      "discussion_created_at": "2026-10-23T05:09:27+00:00",
+      "relationship_post_count_at_read": 9,
+      "edit_time": "未记录；首发日期不代表现存正文的最后编辑日期。"
+    },
+    {
+      "id": "community-forum-creative",
+      "title": "名竞创作区",
+      "url": "https://shenjack.top:10008/d/404-ming-jing-chuang-zuo-qu",
+      "checked_at": "2026-11-16",
+      "observations": [
+        "首帖邀请投稿并称优质内容可进入名竞QQ群语录；只说明该创作主题的用途。"
+      ],
+      "retrieval_api_url": "https://shenjack.top:10008/api/discussions/404",
+      "posts_read": [
+        {
+          "id": "9787",
+          "number": 1,
+          "created_at": "2026-10-25T02:19:12+00:00"
+        }
+      ],
+      "discussion_created_at": "2026-10-25T02:19:12+00:00",
+      "relationship_post_count_at_read": 114,
+      "edit_time": "未记录；首发日期不代表现存正文的最后编辑日期。"
+    }
+  ],
+  "gaps": [
+    "未展开所有战队资料、周赛历史与帖子回复。",
+    "未核查天梯计分算法、T换算、称号阈值或当前所有活动的可领取性。",
+    "未运行小游戏或 HtmlTools，模型/格式标签不等于公式或兼容性已验证。"
+  ]
+}

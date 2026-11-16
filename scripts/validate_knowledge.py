@@ -29,6 +29,14 @@ def main():
             assert re.fullmatch(r"[0-9a-f]{64}", source["sha256"]), source["id"]
             assert source["commit"] in source["url"], source["id"]
             assert 1 <= source["line_start"] <= source["line_end"], source["id"]
+        if source.get("snapshot_kind") == "curated_observations":
+            observations = read(source["snapshot_path"])
+            matches = [page for page in observations["pages"] if page["id"] == source["id"]]
+            assert len(matches) == 1, f"Missing/duplicate observation: {source['id']}"
+            page = matches[0]
+            assert page["url"] == source["url"] and page["checked_at"] == source["accessed_at"], source["id"]
+            for key in ("posts_read", "retrieval_api_url", "discussion_created_at"):
+                assert page.get(key) == source.get(key), f"Inconsistent observation {key}: {source['id']}"
 
     glossary = read("knowledge/glossary.json")
     term_ids = {term["id"] for term in glossary["terms"]}
@@ -97,7 +105,7 @@ def main():
                 continue
             assert (file.parent / target.split("#", 1)[0]).exists(), f"Broken link in {file}: {target}"
     print(f"Validated {len(files)} JSON files, {len(sources)} sources, {len(read('knowledge/glossary.json')['terms'])} terms, {len(downloaded)} archived URL records and local links.")
-    print(f"Known upstream gaps retained: {len(known)} unavailable URL; ladder live results not collected.")
+    print(f"Known official archive gaps retained: {len(known)} unavailable URL; official ladder live results not collected.")
 
 
 if __name__ == "__main__":

@@ -952,6 +952,336 @@
       "sha256": "08be060773c044e0a42fb04e1c79beb2d27b7c8f4f2580f436b7ad9f03f81d19",
       "scope": "区分工作目录配置、内嵌默认和身份归一化规则。",
       "hash_kind": "git_blob_sha256"
+    },
+    {
+      "id": "community-ladder-home",
+      "title": "民间天梯首页（沙冰鱼分部）",
+      "url": "https://shenjack.top:10007/",
+      "type": "community",
+      "accessed_at": "2026-11-16",
+      "read_status": "retrieved",
+      "snapshot_path": "knowledge/community/ladder-forum/observations.json",
+      "snapshot_kind": "curated_observations",
+      "notes": "观察摘要按同名 id 查阅；不代表全量镜像、官方机制或活动规则永久有效。"
+    },
+    {
+      "id": "community-ladder-register",
+      "title": "天梯注册页",
+      "url": "https://shenjack.top:10007/register",
+      "type": "community",
+      "accessed_at": "2026-11-16",
+      "read_status": "retrieved",
+      "snapshot_path": "knowledge/community/ladder-forum/observations.json",
+      "snapshot_kind": "curated_observations",
+      "notes": "观察摘要按同名 id 查阅；不代表全量镜像、官方机制或活动规则永久有效。"
+    },
+    {
+      "id": "community-ladder-profile",
+      "title": "公开战队页的成员与激活字段",
+      "url": "https://shenjack.top:10007/profile/Shabby_fish",
+      "type": "community",
+      "accessed_at": "2026-11-16",
+      "read_status": "retrieved",
+      "snapshot_path": "knowledge/community/ladder-forum/observations.json",
+      "snapshot_kind": "curated_observations",
+      "notes": "观察摘要按同名 id 查阅；不代表全量镜像、官方机制或活动规则永久有效。"
+    },
+    {
+      "id": "community-ladder-weekly",
+      "title": "Newlive 新版周赛入口",
+      "url": "https://shenjack.top:10007/newlive/",
+      "type": "community",
+      "accessed_at": "2026-11-16",
+      "read_status": "retrieved",
+      "snapshot_path": "knowledge/community/ladder-forum/observations.json",
+      "snapshot_kind": "curated_observations",
+      "notes": "观察摘要按同名 id 查阅；不代表全量镜像、官方机制或活动规则永久有效。"
+    },
+    {
+      "id": "community-ladder-bracket",
+      "title": "周赛对阵表",
+      "url": "https://shenjack.top:10007/newlive/list",
+      "type": "community",
+      "accessed_at": "2026-11-16",
+      "read_status": "retrieved",
+      "snapshot_path": "knowledge/community/ladder-forum/observations.json",
+      "snapshot_kind": "curated_observations",
+      "notes": "观察摘要按同名 id 查阅；不代表全量镜像、官方机制或活动规则永久有效。"
+    },
+    {
+      "id": "community-ladder-history",
+      "title": "周赛历史",
+      "url": "https://shenjack.top:10007/newlive/history",
+      "type": "community",
+      "accessed_at": "2026-11-16",
+      "read_status": "retrieved",
+      "snapshot_path": "knowledge/community/ladder-forum/observations.json",
+      "snapshot_kind": "curated_observations",
+      "notes": "观察摘要按同名 id 查阅；不代表全量镜像、官方机制或活动规则永久有效。"
+    },
+    {
+      "id": "community-ladder-tournament",
+      "title": "锦标赛赛程",
+      "url": "https://shenjack.top:10007/tournament",
+      "type": "community",
+      "accessed_at": "2026-11-16",
+      "read_status": "retrieved",
+      "snapshot_path": "knowledge/community/ladder-forum/observations.json",
+      "snapshot_kind": "curated_observations",
+      "notes": "观察摘要按同名 id 查阅；不代表全量镜像、官方机制或活动规则永久有效。"
+    },
+    {
+      "id": "community-htmltools",
+      "title": "Namerena HtmlTools",
+      "url": "https://shenjack.top:10007/static/HtmlTools/",
+      "type": "community",
+      "accessed_at": "2026-11-16",
+      "read_status": "retrieved",
+      "snapshot_path": "knowledge/community/ladder-forum/observations.json",
+      "snapshot_kind": "curated_observations",
+      "notes": "观察摘要按同名 id 查阅；不代表全量镜像、官方机制或活动规则永久有效。"
+    },
+    {
+      "id": "community-forum-home",
+      "title": "名字竞技场论坛首页",
+      "url": "https://shenjack.top:10008/",
+      "type": "community",
+      "accessed_at": "2026-11-16",
+      "read_status": "retrieved",
+      "snapshot_path": "knowledge/community/ladder-forum/observations.json",
+      "snapshot_kind": "curated_observations",
+      "notes": "观察摘要按同名 id 查阅；不代表全量镜像、官方机制或活动规则永久有效。"
+    },
+    {
+      "id": "community-forum-tags",
+      "title": "论坛公开分区标签",
+      "url": "https://shenjack.top:10008/api/tags",
+      "type": "community",
+      "accessed_at": "2026-11-16",
+      "read_status": "retrieved",
+      "snapshot_path": "knowledge/community/ladder-forum/observations.json",
+      "snapshot_kind": "curated_observations",
+      "notes": "观察摘要按同名 id 查阅；不代表全量镜像、官方机制或活动规则永久有效。",
+      "retrieval_api_url": "https://shenjack.top:10008/api/tags"
+    },
+    {
+      "id": "community-forum-notice",
+      "title": "[入站必读/置顶] 用户须知",
+      "url": "https://shenjack.top:10008/d/19-ru-zhan-bi-du-zhi-ding-yong-hu-xu-zhi",
+      "type": "community",
+      "accessed_at": "2026-11-16",
+      "read_status": "retrieved",
+      "snapshot_path": "knowledge/community/ladder-forum/observations.json",
+      "snapshot_kind": "curated_observations",
+      "notes": "观察摘要按同名 id 查阅；不代表全量镜像、官方机制或活动规则永久有效。",
+      "retrieval_api_url": "https://shenjack.top:10008/api/discussions/19",
+      "posts_read": [
+        {
+          "id": "84",
+          "number": 1,
+          "created_at": "2024-07-24T06:06:28+00:00"
+        }
+      ],
+      "discussion_created_at": "2024-07-24T06:06:28+00:00"
+    },
+    {
+      "id": "community-forum-ladder",
+      "title": "民间天梯试运行",
+      "url": "https://shenjack.top:10008/d/215-min-jian-tian-ti-shi-yun-xing",
+      "type": "community",
+      "accessed_at": "2026-11-16",
+      "read_status": "retrieved",
+      "snapshot_path": "knowledge/community/ladder-forum/observations.json",
+      "snapshot_kind": "curated_observations",
+      "notes": "观察摘要按同名 id 查阅；不代表全量镜像、官方机制或活动规则永久有效。",
+      "retrieval_api_url": "https://shenjack.top:10008/api/discussions/215",
+      "posts_read": [
+        {
+          "id": "10108",
+          "number": 124,
+          "created_at": "2026-11-06T18:36:04+00:00"
+        },
+        {
+          "id": "5944",
+          "number": 1,
+          "created_at": "2025-10-11T11:04:50+00:00"
+        }
+      ],
+      "discussion_created_at": "2025-10-11T11:04:50+00:00"
+    },
+    {
+      "id": "community-forum-weekly",
+      "title": "周赛",
+      "url": "https://shenjack.top:10008/d/227-zhou-sai",
+      "type": "community",
+      "accessed_at": "2026-11-16",
+      "read_status": "retrieved",
+      "snapshot_path": "knowledge/community/ladder-forum/observations.json",
+      "snapshot_kind": "curated_observations",
+      "notes": "观察摘要按同名 id 查阅；不代表全量镜像、官方机制或活动规则永久有效。",
+      "retrieval_api_url": "https://shenjack.top:10008/api/discussions/227",
+      "posts_read": [
+        {
+          "id": "9912",
+          "number": 45,
+          "created_at": "2026-10-29T08:56:53+00:00"
+        },
+        {
+          "id": "6536",
+          "number": 1,
+          "created_at": "2025-12-07T08:24:48+00:00"
+        }
+      ],
+      "discussion_created_at": "2025-12-07T08:24:48+00:00"
+    },
+    {
+      "id": "community-forum-event-support",
+      "title": "【长期】比赛承办激励计划",
+      "url": "https://shenjack.top:10008/d/150-chang-qi-bi-sai-cheng-ban-ji-li-ji-hua",
+      "type": "community",
+      "accessed_at": "2026-11-16",
+      "read_status": "retrieved",
+      "snapshot_path": "knowledge/community/ladder-forum/observations.json",
+      "snapshot_kind": "curated_observations",
+      "notes": "观察摘要按同名 id 查阅；不代表全量镜像、官方机制或活动规则永久有效。",
+      "retrieval_api_url": "https://shenjack.top:10008/api/discussions/150",
+      "posts_read": [
+        {
+          "id": "3709",
+          "number": 1,
+          "created_at": "2025-05-30T08:55:53+00:00"
+        }
+      ],
+      "discussion_created_at": "2025-05-30T08:55:53+00:00"
+    },
+    {
+      "id": "community-forum-team-support",
+      "title": "弱队补强计划",
+      "url": "https://shenjack.top:10008/d/207-ruo-dui-bu-qiang-ji-hua",
+      "type": "community",
+      "accessed_at": "2026-11-16",
+      "read_status": "retrieved",
+      "snapshot_path": "knowledge/community/ladder-forum/observations.json",
+      "snapshot_kind": "curated_observations",
+      "notes": "观察摘要按同名 id 查阅；不代表全量镜像、官方机制或活动规则永久有效。",
+      "retrieval_api_url": "https://shenjack.top:10008/api/discussions/207",
+      "posts_read": [
+        {
+          "id": "5552",
+          "number": 1,
+          "created_at": "2025-09-10T13:11:17+00:00"
+        }
+      ],
+      "discussion_created_at": "2025-09-10T13:11:17+00:00"
+    },
+    {
+      "id": "community-forum-help-testing",
+      "title": "一个帮测贴",
+      "url": "https://shenjack.top:10008/d/416-yi-ge-bang-ce-tie",
+      "type": "community",
+      "accessed_at": "2026-11-16",
+      "read_status": "retrieved",
+      "snapshot_path": "knowledge/community/ladder-forum/observations.json",
+      "snapshot_kind": "curated_observations",
+      "notes": "观察摘要按同名 id 查阅；不代表全量镜像、官方机制或活动规则永久有效。",
+      "retrieval_api_url": "https://shenjack.top:10008/api/discussions/416",
+      "posts_read": [
+        {
+          "id": "10288",
+          "number": 1,
+          "created_at": "2026-11-14T02:29:46+00:00"
+        }
+      ],
+      "discussion_created_at": "2026-11-14T02:29:46+00:00"
+    },
+    {
+      "id": "community-forum-base",
+      "title": "[1910W]的论坛基地",
+      "url": "https://shenjack.top:10008/d/82-1910wde-lun-tan-ji-di",
+      "type": "community",
+      "accessed_at": "2026-11-16",
+      "read_status": "retrieved",
+      "snapshot_path": "knowledge/community/ladder-forum/observations.json",
+      "snapshot_kind": "curated_observations",
+      "notes": "观察摘要按同名 id 查阅；不代表全量镜像、官方机制或活动规则永久有效。",
+      "retrieval_api_url": "https://shenjack.top:10008/api/discussions/82",
+      "posts_read": [
+        {
+          "id": "1307",
+          "number": 1,
+          "created_at": "2024-11-01T10:50:48+00:00"
+        }
+      ],
+      "discussion_created_at": "2024-11-01T10:50:48+00:00"
+    },
+    {
+      "id": "community-forum-spire",
+      "title": "名竞尖塔",
+      "url": "https://shenjack.top:10008/d/410-ming-jing-jian-ta",
+      "type": "community",
+      "accessed_at": "2026-11-16",
+      "read_status": "retrieved",
+      "snapshot_path": "knowledge/community/ladder-forum/observations.json",
+      "snapshot_kind": "curated_observations",
+      "notes": "观察摘要按同名 id 查阅；不代表全量镜像、官方机制或活动规则永久有效。",
+      "retrieval_api_url": "https://shenjack.top:10008/api/discussions/410",
+      "posts_read": [
+        {
+          "id": "9882",
+          "number": 1,
+          "created_at": "2026-10-27T17:16:06+00:00"
+        }
+      ],
+      "discussion_created_at": "2026-10-27T17:16:06+00:00"
+    },
+    {
+      "id": "community-forum-guest",
+      "title": "游客提问区（试行）",
+      "url": "https://shenjack.top:10008/d/401-you-ke-ti-wen-qu-shi-xing",
+      "type": "community",
+      "accessed_at": "2026-11-16",
+      "read_status": "retrieved",
+      "snapshot_path": "knowledge/community/ladder-forum/observations.json",
+      "snapshot_kind": "curated_observations",
+      "notes": "观察摘要按同名 id 查阅；不代表全量镜像、官方机制或活动规则永久有效。",
+      "retrieval_api_url": "https://shenjack.top:10008/api/discussions/401",
+      "posts_read": [
+        {
+          "id": "9685",
+          "number": 1,
+          "created_at": "2026-10-23T05:09:27+00:00"
+        }
+      ],
+      "discussion_created_at": "2026-10-23T05:09:27+00:00"
+    },
+    {
+      "id": "community-forum-creative",
+      "title": "名竞创作区",
+      "url": "https://shenjack.top:10008/d/404-ming-jing-chuang-zuo-qu",
+      "type": "community",
+      "accessed_at": "2026-11-16",
+      "read_status": "retrieved",
+      "snapshot_path": "knowledge/community/ladder-forum/observations.json",
+      "snapshot_kind": "curated_observations",
+      "notes": "观察摘要按同名 id 查阅；不代表全量镜像、官方机制或活动规则永久有效。",
+      "retrieval_api_url": "https://shenjack.top:10008/api/discussions/404",
+      "posts_read": [
+        {
+          "id": "9787",
+          "number": 1,
+          "created_at": "2026-10-25T02:19:12+00:00"
+        }
+      ],
+      "discussion_created_at": "2026-10-25T02:19:12+00:00"
+    },
+    {
+      "id": "maintainer-community-naming",
+      "title": "维护者确认：天梯与论坛的称呼",
+      "type": "maintainer_statement",
+      "local_path": "knowledge/project-context.json",
+      "recorded_at": "2026-11-16",
+      "read_status": "provided",
+      "notes": "无修饰的天梯指10007民间天梯；官方天梯通常加限定词；10008是配套论坛。历史“老天梯”按原链接判断。"
     }
   ]
 }

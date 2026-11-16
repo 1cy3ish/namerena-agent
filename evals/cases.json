@@ -318,6 +318,175 @@
         "official-naming",
         "tswn-core-input"
       ]
+    },
+    {
+      "id": "community-default-ladder",
+      "question": "天梯和论坛的网址是什么？顺便给我游戏网页。",
+      "expected_points": [
+        "默认天梯为https://shenjack.top:10007/民间站",
+        "论坛为https://shenjack.top:10008/",
+        "区分游戏网页子入口/tswn/"
+      ],
+      "avoid": [
+        "默认只给官方天梯",
+        "把10008说成游戏本体或把10007根目录说成仅是tswn网页"
+      ],
+      "source_ids": [
+        "maintainer-community-naming",
+        "community-ladder-home"
+      ]
+    },
+    {
+      "id": "community-old-ladder-context",
+      "question": "215号帖子里的“老天梯”是游戏官方天梯吗？",
+      "expected_points": [
+        "该帖链接指向http://47.109.79.252旧民间站",
+        "保留2025年首帖语境，与当前默认称呼区分"
+      ],
+      "avoid": [
+        "无条件把老天梯等同官方天梯",
+        "因维护者习惯而改写历史帖子含义"
+      ],
+      "source_ids": [
+        "maintainer-community-naming",
+        "community-forum-ladder"
+      ]
+    },
+    {
+      "id": "community-qp-vs-rank-score",
+      "question": "新战队要qp6000+，是说天梯上有6000分就能注册吗？",
+      "expected_points": [
+        "页面要求提供游戏名字做QP验证",
+        "天梯榜单分数是另一个字段",
+        "将qp6000+标为读取时的注册提示"
+      ],
+      "avoid": [
+        "等同榜单分数",
+        "据此编造天梯计分算法或永久门槛"
+      ],
+      "source_ids": [
+        "community-ladder-register",
+        "community-ladder-home"
+      ]
+    },
+    {
+      "id": "community-active-vs-activation",
+      "question": "天梯上显示活跃，是不是肯定已经激活周赛了？",
+      "expected_points": [
+        "区分成员活跃与周赛激活",
+        "周赛帖子记载取1A/2A、激活及有效期",
+        "不从公开成员状态推定某账号当前资格"
+      ],
+      "avoid": [
+        "保证一定参赛",
+        "声称已经检查用户的账户或激活状态"
+      ],
+      "source_ids": [
+        "community-ladder-home",
+        "community-ladder-profile",
+        "community-forum-weekly"
+      ]
+    },
+    {
+      "id": "community-help-volume",
+      "question": "帮测10T是不是直接送我一个qp10000的号？1T到底怎么计？",
+      "expected_points": [
+        "帮测是代为测号或提供搜索工作量",
+        "工作量不保证具体强号或分数",
+        "本轮仅确认T作为计量写法，精确换算和工具口径尚未核实"
+      ],
+      "avoid": [
+        "承诺产出强度",
+        "编造已核实的计数公式或把T当作QP分"
+      ],
+      "source_ids": [
+        "community-forum-event-support",
+        "community-forum-help-testing"
+      ]
+    },
+    {
+      "id": "community-base-vs-base-file",
+      "question": "论坛的战队基地就是开箱器的base文件吗？",
+      "expected_points": [
+        "基地帖是论坛中围绕战队的交流主题",
+        "与Openbox存放导出记录的base文件分开"
+      ],
+      "avoid": [
+        "当作同一种文件格式",
+        "根据一个基地标题推断其成员实力"
+      ],
+      "source_ids": [
+        "community-forum-base",
+        "community-forum-home",
+        "tswn-base"
+      ]
+    },
+    {
+      "id": "community-schedule-conflict",
+      "question": "旧周赛帖说周五周六18点开赛，现在还能照这个时间去看吗？",
+      "expected_points": [
+        "指出同一首帖冻结结束日与开赛日表述不一致",
+        "当前读取的Newlive为周六/周日17:30",
+        "具体观看时间核对当届赛程，保留核查日期"
+      ],
+      "avoid": [
+        "把矛盾文字拼成确定的现行时间",
+        "保证未来每周固定开赛或奖励不变"
+      ],
+      "source_ids": [
+        "community-forum-weekly",
+        "community-ladder-weekly"
+      ]
+    },
+    {
+      "id": "community-forum-authority",
+      "question": "精华消息、官方水楼和糟粕消息都是游戏官方给号的等级吗？",
+      "expected_points": [
+        "精华消息/糟粕消息是论坛标签，官方水楼是帖子称呼",
+        "论坛由玩家搭建，和游戏官方机制区分"
+      ],
+      "avoid": [
+        "编造强号等级或处罚规则",
+        "因主题含官方就称论坛为游戏官方运营"
+      ],
+      "source_ids": [
+        "community-forum-tags",
+        "community-forum-notice"
+      ]
+    },
+    {
+      "id": "community-tools-labels",
+      "question": "HtmlTools成队就是Openbox的pair优化吗？XP和SPnew-2怎么算？",
+      "expected_points": [
+        "页面仅说明成队生成A+B形式，不证明会优化胜率",
+        "评分模型标签已见，公式和与其他工具的等价性未核实"
+      ],
+      "avoid": [
+        "从名称补造公式",
+        "声称已执行转换或模型验证"
+      ],
+      "source_ids": [
+        "community-htmltools",
+        "tswn-pair"
+      ]
+    },
+    {
+      "id": "community-bounty-not-threshold",
+      "question": "论坛的cqp51.5和大豹是不是当前统一强号标准？",
+      "expected_points": [
+        "cqp51.5是所读帮测悬赏目标，需保留靶子及有刺/无刺任务条件",
+        "大豹具体门槛尚未核实",
+        "不要混同QP注册要求、天梯分或全社区称号"
+      ],
+      "avoid": [
+        "给大豹编造阈值",
+        "把单次悬赏目标推广为永久强号线"
+      ],
+      "source_ids": [
+        "community-forum-help-testing",
+        "community-forum-ladder",
+        "community-ladder-register"
+      ]
     }
   ]
 }

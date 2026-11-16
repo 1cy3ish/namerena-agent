@@ -100,6 +100,7 @@ def main():
 
     glossary_file = ROOT / "knowledge/glossary.json"
     glossary = json.loads(glossary_file.read_text(encoding="utf-8"))
+    previous_order = [term["id"] for term in glossary["terms"]]
     glossary["terms"] = [term for term in glossary["terms"] if term.get("origin") != "official-index"]
     for record, category, details in [(r, "attribute", "attributes.json") for r in attributes] + [(r, "skill", "skills.json") for r in skills] + [(r, "boss", "special-names.json") for r in bosses]:
         description = record["description"]
@@ -121,6 +122,9 @@ def main():
                                   "category": "language-only", "status": "source_supported", "scope": "显示词汇证据，不能据此推断触发条件、获取方式或数值。",
                                   "source_ids": ["official-language-zh"], "checked_at": DATE, "origin": "official-index"})
     glossary = merge_contexts(glossary)
+    # Regeneration replaces official definitions without moving them past new contexts.
+    by_id = {term["id"]: term for term in glossary["terms"]}
+    glossary["terms"] = [by_id.pop(term_id) for term_id in previous_order if term_id in by_id] + list(by_id.values())
     with glossary_file.open("w", encoding="utf-8", newline="\n") as handle:
         handle.write(json.dumps(glossary, ensure_ascii=False, indent=2) + "\n")
     print(json.dumps({"attributes": len(attributes), "skills": len(skills), "bosses": len(bosses), "languages": len(languages), "language_terms": len(vocabulary), "glossary_terms": len(glossary["terms"])}, ensure_ascii=False))

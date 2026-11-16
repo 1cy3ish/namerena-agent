@@ -1,4 +1,4 @@
-"""Merge repository-derived terms and contextual explanations into the glossary."""
+"""Merge tool and community terminology and contextual explanations."""
 
 import copy
 import json
@@ -9,11 +9,16 @@ ROOT = Path(__file__).resolve().parents[1]
 
 def merge_contexts(glossary):
     terms = {term["id"]: term for term in glossary["terms"]}
-    for file in sorted((ROOT / "knowledge/tools").rglob("terminology.json")):
+    files = [file for folder in ("tools", "community")
+             for file in sorted((ROOT / "knowledge" / folder).rglob("terminology.json"))]
+    # Load definitions before explanations, so contexts can refer to any dataset.
+    for file in files:
         data = json.loads(file.read_text(encoding="utf-8"))
-        context_path = file.relative_to(ROOT / "knowledge").as_posix()
         for term in data.get("terms", []):
             terms[term["id"]] = copy.deepcopy(term)
+    for file in files:
+        data = json.loads(file.read_text(encoding="utf-8"))
+        context_path = file.relative_to(ROOT / "knowledge").as_posix()
         for enrichment in data.get("enrichments", []):
             target = terms[enrichment["term_id"]]
             if enrichment.get("definition"):

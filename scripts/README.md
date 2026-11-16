@@ -15,7 +15,7 @@ python scripts/validate_knowledge.py
 
 构建脚本从原始官方 HTML 和语言 JSON 提取属性、技能、Boss 与词形，更新 `origin: official-index` 的词条，保留人工词条。日期取自抓取清单。手工维护输入规则、来源与页面快照时，应同步检查对应原文。
 
-工具知识以 `knowledge/tools/*/terminology.json` 维护新增词条及已有词条的语境解释。`merge_term_contexts.py` 可单独合并；官方构建脚本也会在末尾执行同一合并，避免重新生成时丢失重写项目的解释或重复叠加别名/注释。
+工具、社区知识分别以 `knowledge/tools/**/terminology.json` 和 `knowledge/community/**/terminology.json` 维护新增词条及已有词条的语境解释。`merge_term_contexts.py` 先加载新词再应用补充，可单独执行；官方构建脚本也会在末尾执行同一合并，避免重新生成时丢失实现或社区语境、重复叠加别名/注释。
 
 校验器验证 JSON、稳定 ID、来源引用、本地路径、归档哈希、抓取队列闭合和已审阅的上游缺口。运行时观察记录来自一次独立的全新浏览器加载及本地对战页面触发，保留资源请求证据，不作为评分或引擎兼容性测试。
 

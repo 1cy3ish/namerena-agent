@@ -23,5 +23,27 @@
       "commit": "d12b462aa532f95be793c00dfed37b8fea0672bb",
       "provided_at": "2026-11-16"
     }
-  ]
+  ],
+  "community_naming_policy": {
+    "source_ids": [
+      "maintainer-community-naming"
+    ],
+    "recorded_at": "2026-11-16",
+    "default_ladder": {
+      "name": "天梯",
+      "kind": "民间天梯",
+      "url": "https://shenjack.top:10007/"
+    },
+    "qualified_official_names": [
+      "官方天梯",
+      "旧天梯"
+    ],
+    "forum": {
+      "name": "名竞论坛",
+      "url": "https://shenjack.top:10008/"
+    },
+    "game_subpath": "https://shenjack.top:10007/tswn/",
+    "historical_caution": "限定称呼不是跨年代的强制映射；215号帖的老天梯明确指旧民间站 http://47.109.79.252。",
+    "collection_scope": "定向吸收公开天梯和论坛关键词，不代表要求全站爬取或账号操作。"
+  }
 }

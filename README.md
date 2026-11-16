@@ -4,9 +4,11 @@
 
 ## 当前状态
 
-已归档 Deep Mess 官方基础资料，并收录 tswn-core 重写项目的引擎、Openbox 评分、WASM 网页及 docs 知识。现有 184 个词条，其中 100 个来自本轮仓库整理，50 个已有词条补充了 tswn 语境。机器人、检索服务和 MCP server 尚未实现，Python 脚本仅用于资料维护。
+已归档 Deep Mess 官方基础资料，收录 tswn-core 的引擎、Openbox 评分、WASM 网页及 docs 知识，并吸收民间天梯与论坛关键词。现有 230 个词条，其中 tswn 新增100个、社区新增46个，分别给50个和7个已有词条补充了语境。机器人、检索服务和 MCP server 尚未实现，Python 脚本仅用于资料维护。
 
 名字竞技场是 MD5 大作战的续作，玩家输入名字后自动推演战斗。基础资料来自 [Deep Mess 官方说明](https://deepmess.com/zh/namerena/)，实现与工具补充见 [tswn-core](knowledge/tools/tswn-core/README.md)。维护者确认 GitHub Pages 旧站过时，其他已讨论入口按最新版本处理；不同实现与历史资料保留各自语境。其他工具和独立史料等待后续提供。整理日期：2026-11-16。
+
+当前社区中“天梯”默认指 [10007民间天梯](https://shenjack.top:10007/)，[10008](https://shenjack.top:10008/) 是配套论坛。称呼、赛事、帮测、基地帖和网页工具等关键词见 [社区知识入口](knowledge/community/ladder-forum/README.md)。
 
 ## 目录
 
@@ -21,6 +23,7 @@
 │   ├── official/                  # 官方正文快照、结构化索引和覆盖报告
 │   ├── project-context.json       # 维护者确认的版本与收录约定
 │   ├── tools/tswn-core/           # 重写引擎、评分、网页、术语与阅读覆盖
+│   ├── community/ladder-forum/    # 民间天梯、论坛关键词与定向阅读依据
 │   └── history/                   # 等待维护者提供史料与口述
 ├── data/raw/official-namerena/     # 纳入 Git 的官方原始资源归档
 ├── scripts/                       # 抓取、索引生成与资料校验
@@ -40,7 +43,7 @@
 
 ## 从哪里开始
 
-1. 阅读 [知识概览](knowledge/overview.md)、[官方资料](knowledge/official/README.md) 和 [tswn 知识入口](knowledge/tools/tswn-core/README.md)。
+1. 阅读 [知识概览](knowledge/overview.md)，再按需进入 [官方资料](knowledge/official/README.md)、[tswn 知识](knowledge/tools/tswn-core/README.md) 或 [天梯与论坛](knowledge/community/ladder-forum/README.md)。
 2. 在 [术语表](knowledge/glossary.json) 中补充社区黑话，并在 [来源目录](knowledge/sources.json) 中记录依据。
 3. 在当前仓库中让 AI 读取 [领域 skill](skills/namerena-knowledge/SKILL.md) 或 [问答提示词](agents/qa-assistant.md)，手动试用 [评估样例](evals/cases.json)。
 
