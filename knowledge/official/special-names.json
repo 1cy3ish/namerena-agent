@@ -1,0 +1,128 @@
+{
+  "schema_version": "0.1",
+  "notes": "官方页面列出的 Boss；seed:...@! 另属于不参战的随机数种子。",
+  "special_team": "!",
+  "bosses": [
+    {
+      "id": "boss-aokiji",
+      "name": "青雉",
+      "source_ids": [
+        "official-special"
+      ],
+      "checked_at": "2026-11-16",
+      "input": "aokiji@!",
+      "origin": "海贼王",
+      "description": "无视物理攻击，强力冰冻技能"
+    },
+    {
+      "id": "boss-conan",
+      "name": "柯南",
+      "source_ids": [
+        "official-special"
+      ],
+      "checked_at": "2026-11-16",
+      "input": "conan@!",
+      "origin": "名侦探柯南",
+      "description": "不小心遇到他就会有生命危险。。。"
+    },
+    {
+      "id": "boss-ikaruga",
+      "name": "斑鸠",
+      "source_ids": [
+        "official-special"
+      ],
+      "checked_at": "2026-11-16",
+      "input": "ikaruga@!",
+      "origin": "斑鸠",
+      "description": "吸收所有奇数伤害，只有偶数攻击有效"
+    },
+    {
+      "id": "boss-mario",
+      "name": "马里奥",
+      "source_ids": [
+        "official-special"
+      ],
+      "checked_at": "2026-11-16",
+      "input": "mario@!",
+      "origin": "超级马里奥",
+      "description": "吃了蘑菇会变厉害"
+    },
+    {
+      "id": "boss-slime",
+      "name": "史莱姆",
+      "source_ids": [
+        "official-special"
+      ],
+      "checked_at": "2026-11-16",
+      "input": "slime@!",
+      "origin": "",
+      "description": "死后会分身成小史莱姆"
+    },
+    {
+      "id": "boss-sonic",
+      "name": "索尼克",
+      "source_ids": [
+        "official-special"
+      ],
+      "checked_at": "2026-11-16",
+      "input": "sonic@!",
+      "origin": "索尼克",
+      "description": "超高速度"
+    },
+    {
+      "id": "boss-yuri",
+      "name": "尤里",
+      "source_ids": [
+        "official-special"
+      ],
+      "checked_at": "2026-11-16",
+      "input": "yuri@!",
+      "origin": "红色警戒",
+      "description": "心灵控制"
+    },
+    {
+      "id": "boss-mosquito",
+      "name": "蚊",
+      "source_ids": [
+        "official-special"
+      ],
+      "checked_at": "2026-11-16",
+      "input": "mosquito@!",
+      "origin": "原创",
+      "description": "打不到它。。。"
+    },
+    {
+      "id": "boss-lazy",
+      "name": "懒癌",
+      "source_ids": [
+        "official-special"
+      ],
+      "checked_at": "2026-11-16",
+      "input": "lazy@!",
+      "origin": "",
+      "description": "犯了懒癌就什么都不想做。。"
+    },
+    {
+      "id": "boss-saitama",
+      "name": "一拳超人",
+      "source_ids": [
+        "official-special"
+      ],
+      "checked_at": "2026-11-16",
+      "input": "saitama@!",
+      "origin": "一拳超人",
+      "description": "强到几乎无敌，但总要到最后才出手"
+    },
+    {
+      "id": "boss-covid",
+      "name": "新冠病毒",
+      "source_ids": [
+        "official-special"
+      ],
+      "checked_at": "2026-11-16",
+      "input": "covid@!",
+      "origin": "",
+      "description": "人多就会交差传染，最好装备上口罩"
+    }
+  ]
+}

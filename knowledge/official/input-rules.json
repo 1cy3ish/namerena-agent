@@ -1,0 +1,63 @@
+{
+  "schema_version": "0.1",
+  "source_ids": [
+    "official-guide",
+    "official-naming",
+    "official-testing",
+    "official-special",
+    "official-embedding",
+    "official-api_test"
+  ],
+  "name_forms": [
+    "名字",
+    "名字@战队名",
+    "名字+装备",
+    "名字@战队名+装备"
+  ],
+  "group_separator": "空行",
+  "display_simplification": "不显示名字中空格后的部分与战队名，完整输入仍参与属性生成。",
+  "documented_limits": {
+    "single_name": "最多21汉字或63英数字符",
+    "battle_names": 1000,
+    "search_candidates": "不使用问号时最少10个、最多8000个",
+    "forbidden_characters": [
+      "U00 至 U1F（包括换行和制表符）",
+      "?",
+      "U2000 至 U202F",
+      "开头空格"
+    ]
+  },
+  "context_notes": [
+    "禁用字符说明针对单个角色名字；换行同时用于分隔名字和队伍。",
+    "? 在普通命名中列为禁用字符，??? 是官方搜索模式示例，不应无条件混用。",
+    "字符限制按原文保存，不据此推导未说明的 Unicode 计数算法。"
+  ],
+  "examples": [
+    {
+      "mode": "名字搜索",
+      "input": "!test!\n\n任意名字???"
+    },
+    {
+      "mode": "实力评估",
+      "input": "!test!\n名字"
+    },
+    {
+      "mode": "组队战",
+      "input": "甲\n乙\n\n丙\n丁"
+    },
+    {
+      "mode": "随机数种子",
+      "input": "seed:123@!"
+    }
+  ],
+  "embedding": {
+    "url_fragment": "#n=",
+    "encoding": "UTF-8 输入的 Base64，将 + 替换为 -、/ 替换为 _，按原文保留填充行为。",
+    "result_fields": {
+      "winners": "获胜队伍所有成员名字数组",
+      "all": "按队伍分组的二维名字数组"
+    },
+    "documentation_example_host": "http://namerena.github.io/",
+    "actual_demo_source": "/namerena/index.html#n="
+  }
+}

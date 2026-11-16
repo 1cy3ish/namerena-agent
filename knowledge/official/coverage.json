@@ -1,0 +1,34 @@
+{
+  "schema_version": "0.1",
+  "captured_at": "2026-11-16T16:35:12+08:00",
+  "documentation_pages": 11,
+  "documentation_index_alias": "/zh/namerena/index.html 与文档首页均已归档",
+  "summary": {
+    "downloaded": 68,
+    "failed": 1,
+    "bytes": 3762729,
+    "pending_due_to_limit": 0,
+    "unique_files": 66,
+    "unique_bytes": 3745769
+  },
+  "known_unavailable": [
+    {
+      "url": "https://deepmess.com/namerena/navigation.html",
+      "status": 404,
+      "reason": "官方语言包 navigationLink 声明的地址，本次返回 404；保留失败证据，不编造正文。"
+    }
+  ],
+  "dynamic_limits": [
+    {
+      "url": "https://deepmess.com/zh/namerena/ladder.html",
+      "coverage": "page_and_frontend_assets_only",
+      "note": "没有实时排名数据；浏览器观察中出现 http/https 间重复导航，未进行登录。"
+    }
+  ],
+  "boundaries": [
+    "覆盖已发现的官方页面和同源资源，不声称枚举了无公开链接的服务器文件。",
+    "第三方站点和广告仅记录外链，不复制外部服务。",
+    "JavaScript 构建时路径和字符串候选仅记清单，不视为已确认运行时资源。",
+    "保留原始字节，未改写为离线游戏；不是完整开发源码。"
+  ]
+}

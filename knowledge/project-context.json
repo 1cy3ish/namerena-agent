@@ -1,0 +1,18 @@
+{
+  "schema_version": "0.1",
+  "recorded_at": "2026-11-16",
+  "source_type": "maintainer_statement",
+  "version_policy": {
+    "outdated": [
+      "https://namerena.github.io/"
+    ],
+    "other_previously_discussed_entries": "current"
+  },
+  "collection_policy": {
+    "official": "Deep Mess 官方说明和游戏本体是最基础的资料，但不保证词条完整。",
+    "historical": "过时资料同样需要收录，保留时间、版本和来源语境。",
+    "tools": "等待维护者提供测号、评分、模拟和其他工具仓库，目前留空。",
+    "history": "等待维护者提供史料或口述，目前留空。"
+  },
+  "note": "维护者确认优先于初始化时对入口版本的推测；具体页面中的编辑提示、旧链接和表述仍按原文保存。"
+}

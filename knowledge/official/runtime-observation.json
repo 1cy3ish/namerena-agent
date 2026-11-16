@@ -1,0 +1,315 @@
+{
+  "schema_version": "0.1",
+  "captured_at": "2026-11-16T08:38:14.448Z",
+  "method": "Fresh headless browser; initial game and ladder page loads, plus one local game using 张三 and 李四 to discover lazy resources. No login performed; battle results are not a compatibility test.",
+  "pages": [
+    {
+      "url": "https://deepmess.com/namerena/",
+      "visible_text": "名字竞技场\n选择Boss\n挑战Boss\n开 始"
+    },
+    {
+      "url": "https://deepmess.com/zh/namerena/ladder.html",
+      "visible_text": "名字竞技场\n天梯排名\n我的微博\nGitHub\n首页\n\n\n名字竞技场\n\n\n命名规则\n属性说明\n技能列表\n特殊名字\n测号技巧\n语言包\n关于"
+    },
+    {
+      "url": "https://deepmess.com/namerena/",
+      "visible_text": ""
+    },
+    {
+      "url": "https://deepmess.com/namerena/",
+      "visible_text": "名字竞技场\n选择Boss\n挑战Boss\n开 始"
+    }
+  ],
+  "requests": [
+    {
+      "page": "https://deepmess.com/namerena/",
+      "url": "https://deepmess.com/namerena/",
+      "method": "GET",
+      "type": "Document",
+      "status": 200,
+      "mime_type": "text/html",
+      "observed_count": 1
+    },
+    {
+      "page": "https://deepmess.com/namerena/",
+      "url": "https://deepmess.com/namerena/assets/sigils-DpvRMRgd.js",
+      "method": "GET",
+      "type": "Script",
+      "status": 200,
+      "mime_type": "application/javascript",
+      "observed_count": 1
+    },
+    {
+      "page": "https://deepmess.com/namerena/",
+      "url": "https://deepmess.com/namerena/assets/ts-CAvjZ-P7.js",
+      "method": "GET",
+      "type": "Script",
+      "status": 200,
+      "mime_type": "application/javascript",
+      "observed_count": 1
+    },
+    {
+      "page": "https://deepmess.com/namerena/",
+      "url": "https://deepmess.com/namerena/assets/ts-1ctl7pY6.css",
+      "method": "GET",
+      "type": "Stylesheet",
+      "status": 200,
+      "mime_type": "text/css",
+      "observed_count": 1
+    },
+    {
+      "page": "https://deepmess.com/namerena/",
+      "url": "https://deepmess.com/namerena/assets/thumb-DVEoyU_5.jpg",
+      "method": "GET",
+      "type": "Image",
+      "status": 200,
+      "mime_type": "image/jpeg",
+      "observed_count": 1
+    },
+    {
+      "page": "https://deepmess.com/namerena/",
+      "url": "https://deepmess.com/namerena/lang/zh.json",
+      "method": "GET",
+      "type": "Fetch",
+      "status": 200,
+      "mime_type": "application/json",
+      "observed_count": 1
+    },
+    {
+      "page": "https://deepmess.com/namerena/",
+      "url": "https://deepmess.com/namerena/gAd.md",
+      "method": "GET",
+      "type": "Fetch",
+      "status": 200,
+      "mime_type": "text/markdown",
+      "observed_count": 1
+    },
+    {
+      "page": "https://deepmess.com/namerena/",
+      "url": "https://deepmess.com/favicon.ico",
+      "method": "GET",
+      "type": "Other",
+      "status": 200,
+      "mime_type": "image/vnd.microsoft.icon",
+      "observed_count": 1
+    },
+    {
+      "page": "https://deepmess.com/namerena/",
+      "url": "https://deepmess.com/namerena/flags/us.svg",
+      "method": "GET",
+      "type": "Image",
+      "status": 200,
+      "mime_type": "image/svg+xml",
+      "observed_count": 1
+    },
+    {
+      "page": "https://deepmess.com/namerena/",
+      "url": "https://deepmess.com/namerena/flags/jp.svg",
+      "method": "GET",
+      "type": "Image",
+      "status": 200,
+      "mime_type": "image/svg+xml",
+      "observed_count": 1
+    },
+    {
+      "page": "https://deepmess.com/namerena/",
+      "url": "https://deepmess.com/namerena/flags/de.svg",
+      "method": "GET",
+      "type": "Image",
+      "status": 200,
+      "mime_type": "image/svg+xml",
+      "observed_count": 1
+    },
+    {
+      "page": "https://deepmess.com/namerena/",
+      "url": "https://deepmess.com/namerena/flags/cn.svg",
+      "method": "GET",
+      "type": "Image",
+      "status": 200,
+      "mime_type": "image/svg+xml",
+      "observed_count": 1
+    },
+    {
+      "page": "https://deepmess.com/namerena/",
+      "url": "https://deepmess.com/namerena/flags/kr.svg",
+      "method": "GET",
+      "type": "Image",
+      "status": 200,
+      "mime_type": "image/svg+xml",
+      "observed_count": 1
+    },
+    {
+      "page": "https://deepmess.com/namerena/",
+      "url": "https://deepmess.com/namerena/flags/fr.svg",
+      "method": "GET",
+      "type": "Image",
+      "status": 200,
+      "mime_type": "image/svg+xml",
+      "observed_count": 1
+    },
+    {
+      "page": "https://deepmess.com/namerena/",
+      "url": "https://deepmess.com/namerena/flags/es.svg",
+      "method": "GET",
+      "type": "Image",
+      "status": 200,
+      "mime_type": "image/svg+xml",
+      "observed_count": 1
+    },
+    {
+      "page": "https://deepmess.com/namerena/",
+      "url": "https://deepmess.com/namerena/flags/br.svg",
+      "method": "GET",
+      "type": "Image",
+      "status": 200,
+      "mime_type": "image/svg+xml",
+      "observed_count": 1
+    },
+    {
+      "page": "https://deepmess.com/namerena/",
+      "url": "https://deepmess.com/namerena/flags/sa.svg",
+      "method": "GET",
+      "type": "Image",
+      "status": 200,
+      "mime_type": "image/svg+xml",
+      "observed_count": 1
+    },
+    {
+      "page": "https://deepmess.com/namerena/",
+      "url": "https://deepmess.com/namerena/flags/ru.svg",
+      "method": "GET",
+      "type": "Image",
+      "status": 200,
+      "mime_type": "image/svg+xml",
+      "observed_count": 1
+    },
+    {
+      "page": "https://deepmess.com/zh/namerena/ladder.html",
+      "url": "https://deepmess.com/zh/namerena/ladder.html",
+      "method": "GET",
+      "type": "Document",
+      "status": 200,
+      "mime_type": "text/html",
+      "observed_count": 7
+    },
+    {
+      "page": "https://deepmess.com/zh/namerena/ladder.html",
+      "url": "https://deepmess.com/stylesheets/stylesheet.css",
+      "method": "GET",
+      "type": "Stylesheet",
+      "status": 200,
+      "mime_type": "text/css",
+      "observed_count": 7
+    },
+    {
+      "page": "https://deepmess.com/zh/namerena/ladder.html",
+      "url": "https://deepmess.com/stylesheets/pygment_trac.css",
+      "method": "GET",
+      "type": "Stylesheet",
+      "status": 200,
+      "mime_type": "text/css",
+      "observed_count": 7
+    },
+    {
+      "page": "https://deepmess.com/zh/namerena/ladder.html",
+      "url": "https://deepmess.com/zh/namerena/antd.f10485e3.css",
+      "method": "GET",
+      "type": "Stylesheet",
+      "status": 200,
+      "mime_type": "text/css",
+      "observed_count": 7
+    },
+    {
+      "page": "https://deepmess.com/zh/namerena/ladder.html",
+      "url": "https://deepmess.com/zh/namerena/ladder.2a7f0d8a.css",
+      "method": "GET",
+      "type": "Stylesheet",
+      "status": 200,
+      "mime_type": "text/css",
+      "observed_count": 7
+    },
+    {
+      "page": "https://deepmess.com/zh/namerena/ladder.html",
+      "url": "https://deepmess.com/zh/namerena/ladder.fb28ab43.js",
+      "method": "GET",
+      "type": "Script",
+      "status": 200,
+      "mime_type": "application/javascript",
+      "observed_count": 7
+    },
+    {
+      "page": "https://deepmess.com/zh/namerena/ladder.html",
+      "url": "https://deepmess.com/js/image-popup.js",
+      "method": "GET",
+      "type": "Script",
+      "status": 200,
+      "mime_type": "application/javascript",
+      "observed_count": 7
+    },
+    {
+      "page": "https://deepmess.com/zh/namerena/ladder.html",
+      "url": "https://deepmess.com/stylesheets/print.css",
+      "method": "GET",
+      "type": "Stylesheet",
+      "status": 200,
+      "mime_type": "text/css",
+      "observed_count": 7
+    },
+    {
+      "page": "https://deepmess.com/zh/namerena/ladder.html",
+      "url": "https://deepmess.com/images/body-bg.jpg",
+      "method": "GET",
+      "type": "Image",
+      "status": 200,
+      "mime_type": "image/jpeg",
+      "observed_count": 7
+    },
+    {
+      "page": "https://deepmess.com/zh/namerena/ladder.html",
+      "url": "https://deepmess.com/images/header-bg.jpg",
+      "method": "GET",
+      "type": "Image",
+      "status": 200,
+      "mime_type": "image/jpeg",
+      "observed_count": 7
+    },
+    {
+      "page": "https://deepmess.com/zh/namerena/ladder.html",
+      "url": "http://deepmess.com/zh/namerena/ladder.html",
+      "method": "GET",
+      "type": "Document",
+      "observed_count": 1
+    },
+    {
+      "page": "https://deepmess.com/namerena/",
+      "url": "https://deepmess.com/namerena/fight.html",
+      "method": "GET",
+      "type": "Document",
+      "status": 200,
+      "mime_type": "text/html"
+    },
+    {
+      "page": "https://deepmess.com/namerena/",
+      "url": "https://deepmess.com/namerena/assets/fight-jCYO3eM7.js",
+      "method": "GET",
+      "type": "Script",
+      "status": 200,
+      "mime_type": "application/javascript"
+    },
+    {
+      "page": "https://deepmess.com/namerena/",
+      "url": "https://deepmess.com/namerena/assets/fight-YMCPwJGB.css",
+      "method": "GET",
+      "type": "Stylesheet",
+      "status": 200,
+      "mime_type": "text/css"
+    }
+  ],
+  "failures": [],
+  "external_hosts": [
+    "pagead2.googlesyndication.com",
+    "www.weibo.com",
+    "github.com",
+    "googleads.g.doubleclick.net"
+  ]
+}

@@ -2,7 +2,9 @@
 
 ## 共享知识
 
-`knowledge/` 是领域事实、术语和来源的共同入口。初期用 Markdown 与 JSON，便于人工核查和 Git 审阅；后续检索索引由这些资料生成，避免把模型生成的猜测直接当作事实回填。
+`knowledge/` 是领域事实、术语和来源的共同入口。用 Markdown 与 JSON 便于人工核查和 Git 审阅；`knowledge/official/` 保留正文快照与结构化索引，`data/raw/official-namerena/` 保留纳入 Git 的原始官方字节，二者通过来源与哈希关联。
+
+`scripts/` 使用 Python 标准库抓取、提取和校验资料，不决定未来应用运行语言。官方提取出的词条可重新生成，人工词条和维护者提供的信息单独维护。
 
 ## 接入层
 

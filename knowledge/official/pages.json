@@ -1,0 +1,96 @@
+{
+  "schema_version": "0.1",
+  "captured_at": "2026-11-16",
+  "crawl_id": "01a1e36e-fd73-77d7-af4e-fa9745f724e1",
+  "pages": [
+    {
+      "url": "https://deepmess.com/zh/namerena/",
+      "title": "名字竞技场",
+      "snapshot_path": "knowledge/official/pages/index.md",
+      "scrape_id": "01a1e36f-002d-715c-b7f7-169557f21423",
+      "status_code": 200,
+      "source_id": "official-guide"
+    },
+    {
+      "url": "https://deepmess.com/zh/namerena/naming.html",
+      "title": "名字构成",
+      "snapshot_path": "knowledge/official/pages/naming.md",
+      "scrape_id": "01a1e36f-003f-72af-bb5a-7b9954a30209",
+      "status_code": 200,
+      "source_id": "official-naming"
+    },
+    {
+      "url": "https://deepmess.com/zh/namerena/api.html",
+      "title": "在网页里嵌入名字竞技场",
+      "snapshot_path": "knowledge/official/pages/api.md",
+      "scrape_id": "01a1e36f-003f-72af-bb5a-7ea069c301f3",
+      "status_code": 200,
+      "source_id": "official-embedding"
+    },
+    {
+      "url": "https://deepmess.com/zh/namerena/testing.html",
+      "title": "测号技巧",
+      "snapshot_path": "knowledge/official/pages/testing.md",
+      "scrape_id": "01a1e36f-003f-72af-bb5a-8773d0fac6f2",
+      "status_code": 200,
+      "source_id": "official-testing"
+    },
+    {
+      "url": "https://deepmess.com/zh/namerena/attribute.html",
+      "title": "属性",
+      "snapshot_path": "knowledge/official/pages/attribute.md",
+      "scrape_id": "01a1e36f-0866-77ee-8b3e-84e1d3bd6f6f",
+      "status_code": 200,
+      "source_id": "official-attribute"
+    },
+    {
+      "url": "https://deepmess.com/zh/namerena/skill.html",
+      "title": "技能",
+      "snapshot_path": "knowledge/official/pages/skill.md",
+      "scrape_id": "01a1e36f-0875-7141-b21e-f511bb0695fe",
+      "status_code": 200,
+      "source_id": "official-skill"
+    },
+    {
+      "url": "https://deepmess.com/zh/namerena/special.html",
+      "title": "特殊名字",
+      "snapshot_path": "knowledge/official/pages/special.md",
+      "scrape_id": "01a1e36f-0885-77cb-89b7-91d392b39f2b",
+      "status_code": 200,
+      "source_id": "official-special"
+    },
+    {
+      "url": "https://deepmess.com/zh/namerena/custom_lan.html",
+      "title": "自定义语言",
+      "snapshot_path": "knowledge/official/pages/custom_lan.md",
+      "scrape_id": "01a1e36f-0895-7525-a5dc-399df99e9b14",
+      "status_code": 200,
+      "source_id": "official-custom_lan"
+    },
+    {
+      "url": "https://deepmess.com/zh/namerena/api_test.html",
+      "title": "名字竞技场 接口测试",
+      "snapshot_path": "knowledge/official/pages/api_test.md",
+      "scrape_id": "01a1e36f-1242-76e2-8e9e-8ad6e079fea8",
+      "status_code": 200,
+      "source_id": "official-api_test"
+    },
+    {
+      "url": "https://deepmess.com/zh/namerena/about.html",
+      "title": "关于",
+      "snapshot_path": "knowledge/official/pages/about.md",
+      "scrape_id": "01a1e36f-08a3-708e-99f5-f7e16e9136b7",
+      "status_code": 200,
+      "source_id": "official-about"
+    },
+    {
+      "url": "https://deepmess.com/zh/namerena/ladder.html",
+      "title": "天梯排名",
+      "snapshot_path": "knowledge/official/pages/ladder.md",
+      "scrape_id": "01a1e371-43cf-76fa-ab3e-a986468ee055",
+      "status_code": 200,
+      "coverage": "page_shell_only",
+      "source_id": "official-ladder"
+    }
+  ]
+}

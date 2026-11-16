@@ -3,3 +3,5 @@
 *.jpg binary
 *.webp binary
 *.pdf binary
+# Preserve archived upstream bytes so recorded SHA-256 hashes survive checkout.
+data/raw/official-namerena/** binary

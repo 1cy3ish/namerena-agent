@@ -8,7 +8,10 @@
       "type": "official",
       "accessed_at": "2026-11-16",
       "read_status": "retrieved",
-      "notes": "基础玩法、属性技能、组队和开发文档入口；页面未明确标注规则版本。"
+      "notes": "最新版本的官方基础玩法及文档入口，词条不保证完整。",
+      "version_status": "current",
+      "version_basis": "maintainer-context",
+      "snapshot_path": "knowledge/official/pages/index.md"
     },
     {
       "id": "official-naming",
@@ -17,7 +20,10 @@
       "type": "official",
       "accessed_at": "2026-11-16",
       "read_status": "retrieved",
-      "notes": "名字、战队名、装备、空格和输入限制；具体限制实施前需在目标版本复核。"
+      "notes": "官方命名规则，限制和原文完整保存。",
+      "version_status": "current",
+      "version_basis": "maintainer-context",
+      "snapshot_path": "knowledge/official/pages/naming.md"
     },
     {
       "id": "official-testing",
@@ -26,7 +32,10 @@
       "type": "official",
       "accessed_at": "2026-11-16",
       "read_status": "retrieved",
-      "notes": "名字搜索和实力评估入口；分数阈值可能反映文档编写时环境，不直接作为当前强度标准。"
+      "notes": "官方搜索与实力评估说明，数值和输入布局按原文收录，不混同社区不同评分体系。",
+      "version_status": "current",
+      "version_basis": "maintainer-context",
+      "snapshot_path": "knowledge/official/pages/testing.md"
     },
     {
       "id": "official-embedding",
@@ -35,7 +44,10 @@
       "type": "official",
       "accessed_at": "2026-11-16",
       "read_status": "retrieved",
-      "notes": "iframe、URL 编码和 postMessage 回调说明；示例使用旧 GitHub Pages 地址，未进行运行验证。"
+      "notes": "官方 iframe 和 postMessage 说明。正文含旧站示例地址，实际 api_test.html 源码指向本站游戏。",
+      "version_status": "current",
+      "version_basis": "maintainer-context",
+      "snapshot_path": "knowledge/official/pages/api.md"
     },
     {
       "id": "legacy-game",
@@ -44,7 +56,9 @@
       "type": "legacy",
       "accessed_at": "2026-11-16",
       "read_status": "retrieved",
-      "notes": "已读取页面及描述元信息；社区教程标为旧入口，不能假定与 Deep Mess 版本相同。"
+      "notes": "维护者明确确认为过时的旧版本；保留来源条目，历史内容待后续整理。",
+      "version_status": "outdated",
+      "version_basis": "maintainer-context"
     },
     {
       "id": "community-tutorial",
@@ -53,7 +67,168 @@
       "type": "community",
       "accessed_at": "2026-11-16",
       "read_status": "retrieved",
-      "notes": "社区术语与历史线索。页首明确提示教程部分停用，技能与名字类型评价不可直接采用；历史称号阈值亦有作废说明。"
+      "notes": "按维护者约定归入当前入口；页面关于部分评价的编辑提示、历史阈值等信息按原文保留，不将整页归为旧版本。",
+      "version_status": "current",
+      "version_basis": "maintainer-context"
+    },
+    {
+      "id": "official-attribute",
+      "title": "属性",
+      "url": "https://deepmess.com/zh/namerena/attribute.html",
+      "type": "official",
+      "accessed_at": "2026-11-16",
+      "read_status": "retrieved",
+      "version_status": "current",
+      "version_basis": "maintainer-context",
+      "snapshot_path": "knowledge/official/pages/attribute.md",
+      "notes": "官方页面正文和原始 HTML 已归档。"
+    },
+    {
+      "id": "official-skill",
+      "title": "技能",
+      "url": "https://deepmess.com/zh/namerena/skill.html",
+      "type": "official",
+      "accessed_at": "2026-11-16",
+      "read_status": "retrieved",
+      "version_status": "current",
+      "version_basis": "maintainer-context",
+      "snapshot_path": "knowledge/official/pages/skill.md",
+      "notes": "官方页面正文和原始 HTML 已归档。"
+    },
+    {
+      "id": "official-special",
+      "title": "特殊名字",
+      "url": "https://deepmess.com/zh/namerena/special.html",
+      "type": "official",
+      "accessed_at": "2026-11-16",
+      "read_status": "retrieved",
+      "version_status": "current",
+      "version_basis": "maintainer-context",
+      "snapshot_path": "knowledge/official/pages/special.md",
+      "notes": "官方页面正文和原始 HTML 已归档。"
+    },
+    {
+      "id": "official-custom_lan",
+      "title": "自定义语言",
+      "url": "https://deepmess.com/zh/namerena/custom_lan.html",
+      "type": "official",
+      "accessed_at": "2026-11-16",
+      "read_status": "retrieved",
+      "version_status": "current",
+      "version_basis": "maintainer-context",
+      "snapshot_path": "knowledge/official/pages/custom_lan.md",
+      "notes": "官方页面正文和原始 HTML 已归档。"
+    },
+    {
+      "id": "official-api_test",
+      "title": "名字竞技场 接口测试",
+      "url": "https://deepmess.com/zh/namerena/api_test.html",
+      "type": "official",
+      "accessed_at": "2026-11-16",
+      "read_status": "retrieved",
+      "version_status": "current",
+      "version_basis": "maintainer-context",
+      "snapshot_path": "knowledge/official/pages/api_test.md",
+      "notes": "官方页面正文和原始 HTML 已归档。"
+    },
+    {
+      "id": "official-about",
+      "title": "关于",
+      "url": "https://deepmess.com/zh/namerena/about.html",
+      "type": "official",
+      "accessed_at": "2026-11-16",
+      "read_status": "retrieved",
+      "version_status": "current",
+      "version_basis": "maintainer-context",
+      "snapshot_path": "knowledge/official/pages/about.md",
+      "notes": "官方页面正文和原始 HTML 已归档。"
+    },
+    {
+      "id": "official-ladder",
+      "title": "天梯排名",
+      "url": "https://deepmess.com/zh/namerena/ladder.html",
+      "type": "official",
+      "accessed_at": "2026-11-16",
+      "read_status": "retrieved",
+      "version_status": "current",
+      "version_basis": "maintainer-context",
+      "snapshot_path": "knowledge/official/pages/ladder.md",
+      "notes": "官方页面正文和原始 HTML 已归档。本次未取得实时排名。"
+    },
+    {
+      "id": "official-game",
+      "title": "名字竞技场游戏本体",
+      "url": "https://deepmess.com/namerena/",
+      "type": "official",
+      "accessed_at": "2026-11-16",
+      "read_status": "retrieved",
+      "version_status": "current",
+      "version_basis": "maintainer-context",
+      "notes": "原始资源与 SHA-256 见 knowledge/official/crawl-manifest.json。"
+    },
+    {
+      "id": "official-game-fight",
+      "title": "对战页面及计算资源",
+      "url": "https://deepmess.com/namerena/fight.html",
+      "type": "official",
+      "accessed_at": "2026-11-16",
+      "read_status": "retrieved",
+      "version_status": "current",
+      "version_basis": "maintainer-context",
+      "notes": "原始资源与 SHA-256 见 knowledge/official/crawl-manifest.json。"
+    },
+    {
+      "id": "official-language-zh",
+      "title": "官方语言包 zh",
+      "url": "https://deepmess.com/namerena/lang/zh.json",
+      "type": "official",
+      "accessed_at": "2026-11-16",
+      "read_status": "retrieved",
+      "version_status": "current",
+      "version_basis": "maintainer-context",
+      "notes": "原始资源与 SHA-256 见 knowledge/official/crawl-manifest.json。"
+    },
+    {
+      "id": "official-language-en",
+      "title": "官方语言包 en",
+      "url": "https://deepmess.com/namerena/lang/en.json",
+      "type": "official",
+      "accessed_at": "2026-11-16",
+      "read_status": "retrieved",
+      "version_status": "current",
+      "version_basis": "maintainer-context",
+      "notes": "原始资源与 SHA-256 见 knowledge/official/crawl-manifest.json。"
+    },
+    {
+      "id": "official-language-zh-TW",
+      "title": "官方语言包 zh-TW",
+      "url": "https://deepmess.com/namerena/lang/zh-TW.json",
+      "type": "official",
+      "accessed_at": "2026-11-16",
+      "read_status": "retrieved",
+      "version_status": "current",
+      "version_basis": "maintainer-context",
+      "notes": "原始资源与 SHA-256 见 knowledge/official/crawl-manifest.json。"
+    },
+    {
+      "id": "official-language-zh-money",
+      "title": "官方语言包 zh-money",
+      "url": "https://deepmess.com/namerena/lang/zh-money.json",
+      "type": "official",
+      "accessed_at": "2026-11-16",
+      "read_status": "retrieved",
+      "version_status": "current",
+      "version_basis": "maintainer-context",
+      "notes": "原始资源与 SHA-256 见 knowledge/official/crawl-manifest.json。"
+    },
+    {
+      "id": "maintainer-context",
+      "title": "维护者的版本与收录约定",
+      "type": "maintainer",
+      "recorded_at": "2026-11-16",
+      "read_status": "provided",
+      "local_path": "knowledge/project-context.json",
+      "notes": "本次对话中明确提供；工具仓库、史料与口述内容尚待提供。"
     }
   ]
 }

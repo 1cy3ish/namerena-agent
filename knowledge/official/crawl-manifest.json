@@ -1,0 +1,3234 @@
+{
+  "schema_version": "0.1",
+  "captured_at": "2026-11-16T16:35:12+08:00",
+  "seeds": [
+    "https://deepmess.com/favicon.ico",
+    "https://deepmess.com/images/body-bg.jpg",
+    "https://deepmess.com/images/header-bg.jpg",
+    "https://deepmess.com/js/image-popup.js",
+    "https://deepmess.com/namerena/",
+    "https://deepmess.com/namerena/assets/fight-YMCPwJGB.css",
+    "https://deepmess.com/namerena/assets/fight-jCYO3eM7.js",
+    "https://deepmess.com/namerena/assets/sigils-DpvRMRgd.js",
+    "https://deepmess.com/namerena/assets/thumb-DVEoyU_5.jpg",
+    "https://deepmess.com/namerena/assets/ts-1ctl7pY6.css",
+    "https://deepmess.com/namerena/assets/ts-CAvjZ-P7.js",
+    "https://deepmess.com/namerena/fight.html",
+    "https://deepmess.com/namerena/flags/br.svg",
+    "https://deepmess.com/namerena/flags/cn.svg",
+    "https://deepmess.com/namerena/flags/de.svg",
+    "https://deepmess.com/namerena/flags/es.svg",
+    "https://deepmess.com/namerena/flags/fr.svg",
+    "https://deepmess.com/namerena/flags/jp.svg",
+    "https://deepmess.com/namerena/flags/kr.svg",
+    "https://deepmess.com/namerena/flags/ru.svg",
+    "https://deepmess.com/namerena/flags/sa.svg",
+    "https://deepmess.com/namerena/flags/us.svg",
+    "https://deepmess.com/namerena/gAd.md",
+    "https://deepmess.com/namerena/lang/zh.json",
+    "https://deepmess.com/stylesheets/print.css",
+    "https://deepmess.com/stylesheets/pygment_trac.css",
+    "https://deepmess.com/stylesheets/stylesheet.css",
+    "https://deepmess.com/zh/namerena/",
+    "https://deepmess.com/zh/namerena/about.html",
+    "https://deepmess.com/zh/namerena/antd.f10485e3.css",
+    "https://deepmess.com/zh/namerena/api.html",
+    "https://deepmess.com/zh/namerena/api_test.html",
+    "https://deepmess.com/zh/namerena/attribute.html",
+    "https://deepmess.com/zh/namerena/custom_lan.html",
+    "https://deepmess.com/zh/namerena/index.html",
+    "https://deepmess.com/zh/namerena/ladder.2a7f0d8a.css",
+    "https://deepmess.com/zh/namerena/ladder.fb28ab43.js",
+    "https://deepmess.com/zh/namerena/ladder.html",
+    "https://deepmess.com/zh/namerena/naming.html",
+    "https://deepmess.com/zh/namerena/skill.html",
+    "https://deepmess.com/zh/namerena/special.html",
+    "https://deepmess.com/zh/namerena/testing.html"
+  ],
+  "scope": {
+    "page_prefixes": [
+      "/zh/namerena/",
+      "/namerena/"
+    ],
+    "same_origin_referenced_assets": true,
+    "external_sites": "record_links_only",
+    "query_variants": "deduplicated; l parameter resources extracted",
+    "discovery": "HTML references, CSS URLs, module imports and optional observed runtime GET requests; other JavaScript file literals are inventoried as unconfirmed candidates",
+    "limits": "Does not enumerate unlinked server files or execute computed dynamic requests. Raw bytes are not rewritten for offline play."
+  },
+  "summary": {
+    "downloaded": 68,
+    "failed": 1,
+    "bytes": 3762729,
+    "pending_due_to_limit": 0,
+    "unique_files": 66,
+    "unique_bytes": 3745769
+  },
+  "files": [
+    {
+      "url": "https://deepmess.com/favicon.ico",
+      "final_url": "https://deepmess.com/favicon.ico",
+      "status": 200,
+      "content_type": "image/vnd.microsoft.icon",
+      "etag": "\"6afab53e-47e\"",
+      "last_modified": "Mon, 16 Nov 2026 07:48:14 GMT",
+      "sha256": "303979e01d591a4c2ea48a8bc4d4c42914c7056e99d90dc7bca662c0464c7056",
+      "bytes": 1150,
+      "local_path": "data/raw/official-namerena/deepmess.com/favicon.ico"
+    },
+    {
+      "url": "https://deepmess.com/images/body-bg.jpg",
+      "final_url": "https://deepmess.com/images/body-bg.jpg",
+      "status": 200,
+      "content_type": "image/jpeg",
+      "etag": "\"6afab53e-c74\"",
+      "last_modified": "Mon, 16 Nov 2026 07:48:14 GMT",
+      "sha256": "755fc03721c1f89d566a0428bc328d84aac722a5137cc3421d11112371960e10",
+      "bytes": 3188,
+      "local_path": "data/raw/official-namerena/deepmess.com/images/body-bg.jpg"
+    },
+    {
+      "url": "https://deepmess.com/images/download-button.png",
+      "final_url": "https://deepmess.com/images/download-button.png",
+      "status": 200,
+      "content_type": "image/png",
+      "etag": "\"6afab53e-7bf3\"",
+      "last_modified": "Mon, 16 Nov 2026 07:48:14 GMT",
+      "sha256": "dd6aad2173fc4909f6f2af331212a669b73391f1afa075eee00108fd501eef8a",
+      "bytes": 31731,
+      "local_path": "data/raw/official-namerena/deepmess.com/images/download-button.png"
+    },
+    {
+      "url": "https://deepmess.com/images/github-button.png",
+      "final_url": "https://deepmess.com/images/github-button.png",
+      "status": 200,
+      "content_type": "image/png",
+      "etag": "\"6afab53e-c93\"",
+      "last_modified": "Mon, 16 Nov 2026 07:48:14 GMT",
+      "sha256": "397ec6f5f699f64a0b14d21c2b9c204155ada5698029438e8b27bba47b2e26a3",
+      "bytes": 3219,
+      "local_path": "data/raw/official-namerena/deepmess.com/images/github-button.png"
+    },
+    {
+      "url": "https://deepmess.com/images/header-bg.jpg",
+      "final_url": "https://deepmess.com/images/header-bg.jpg",
+      "status": 200,
+      "content_type": "image/jpeg",
+      "etag": "\"6afab53e-674\"",
+      "last_modified": "Mon, 16 Nov 2026 07:48:14 GMT",
+      "sha256": "617c0de4841558cb86af4ccbcd934de442cc9efd0a5e838b7a594edb2bf1e1b3",
+      "bytes": 1652,
+      "local_path": "data/raw/official-namerena/deepmess.com/images/header-bg.jpg"
+    },
+    {
+      "url": "https://deepmess.com/images/sidebar-bg.jpg",
+      "final_url": "https://deepmess.com/images/sidebar-bg.jpg",
+      "status": 200,
+      "content_type": "image/jpeg",
+      "etag": "\"6afab53e-c80\"",
+      "last_modified": "Mon, 16 Nov 2026 07:48:14 GMT",
+      "sha256": "c0dcb74fda644a1b25fee8d33ce25dee2f20b0fbad612221897061769f83a6bb",
+      "bytes": 3200,
+      "local_path": "data/raw/official-namerena/deepmess.com/images/sidebar-bg.jpg"
+    },
+    {
+      "url": "https://deepmess.com/js/image-popup.js",
+      "final_url": "https://deepmess.com/js/image-popup.js",
+      "status": 200,
+      "content_type": "application/javascript; charset=utf-8",
+      "etag": "\"6afab53e-39a\"",
+      "last_modified": "Mon, 16 Nov 2026 07:48:14 GMT",
+      "sha256": "6ba68b7a7ace9f5d2c8453c9d4c26dda4cb7af08cbe414ab7ad26355be6fb948",
+      "bytes": 922,
+      "local_path": "data/raw/official-namerena/deepmess.com/js/image-popup.js"
+    },
+    {
+      "url": "https://deepmess.com/namerena/",
+      "final_url": "https://deepmess.com/namerena/",
+      "status": 200,
+      "content_type": "text/html; charset=utf-8",
+      "etag": "\"6afab53e-3082\"",
+      "last_modified": "Mon, 16 Nov 2026 07:48:14 GMT",
+      "sha256": "b8105dc195e6e67c7391ef0f7a3c8036976ddbd401c3b626cce63e90688c3443",
+      "bytes": 12418,
+      "local_path": "data/raw/official-namerena/deepmess.com/namerena/index.html"
+    },
+    {
+      "url": "https://deepmess.com/namerena/assets/fight-YMCPwJGB.css",
+      "final_url": "https://deepmess.com/namerena/assets/fight-YMCPwJGB.css",
+      "status": 200,
+      "content_type": "text/css; charset=utf-8",
+      "etag": "\"6afab53e-c0a0\"",
+      "last_modified": "Mon, 16 Nov 2026 07:48:14 GMT",
+      "sha256": "a1ac5ac0c0308e0ba7664d7650268ed5d3d3483fc49ab5109f71fc77f5198faf",
+      "bytes": 49312,
+      "local_path": "data/raw/official-namerena/deepmess.com/namerena/assets/fight-YMCPwJGB.css"
+    },
+    {
+      "url": "https://deepmess.com/namerena/assets/fight-jCYO3eM7.js",
+      "final_url": "https://deepmess.com/namerena/assets/fight-jCYO3eM7.js",
+      "status": 200,
+      "content_type": "application/javascript; charset=utf-8",
+      "etag": "\"6afab53e-5ce91\"",
+      "last_modified": "Mon, 16 Nov 2026 07:48:14 GMT",
+      "sha256": "231cf8203c437f06a6b98ff0fe5138b151d3d6728cf04424c4f3d3720ba20e93",
+      "bytes": 380561,
+      "local_path": "data/raw/official-namerena/deepmess.com/namerena/assets/fight-jCYO3eM7.js"
+    },
+    {
+      "url": "https://deepmess.com/namerena/assets/sigils-DpvRMRgd.js",
+      "final_url": "https://deepmess.com/namerena/assets/sigils-DpvRMRgd.js",
+      "status": 200,
+      "content_type": "application/javascript; charset=utf-8",
+      "etag": "\"6afab53e-e07b\"",
+      "last_modified": "Mon, 16 Nov 2026 07:48:14 GMT",
+      "sha256": "2de093a61e7db1fa8087455bf11d155090467e21e2d019bfafba552a1be5d772",
+      "bytes": 57467,
+      "local_path": "data/raw/official-namerena/deepmess.com/namerena/assets/sigils-DpvRMRgd.js"
+    },
+    {
+      "url": "https://deepmess.com/namerena/assets/thumb-DVEoyU_5.jpg",
+      "final_url": "https://deepmess.com/namerena/assets/thumb-DVEoyU_5.jpg",
+      "status": 200,
+      "content_type": "image/jpeg",
+      "etag": "\"6afab53e-33bd\"",
+      "last_modified": "Mon, 16 Nov 2026 07:48:14 GMT",
+      "sha256": "68df1c2264ff1477d1f0a7442e889a09c03d465da068ad38534e6efaec1f1ba6",
+      "bytes": 13245,
+      "local_path": "data/raw/official-namerena/deepmess.com/namerena/assets/thumb-DVEoyU_5.jpg"
+    },
+    {
+      "url": "https://deepmess.com/namerena/assets/ts-1ctl7pY6.css",
+      "final_url": "https://deepmess.com/namerena/assets/ts-1ctl7pY6.css",
+      "status": 200,
+      "content_type": "text/css; charset=utf-8",
+      "etag": "\"6afab53e-531\"",
+      "last_modified": "Mon, 16 Nov 2026 07:48:14 GMT",
+      "sha256": "539f234b2d88f4b890051db9975dc3a1933fe2a4bfde587c9b82c06a4a6d8f94",
+      "bytes": 1329,
+      "local_path": "data/raw/official-namerena/deepmess.com/namerena/assets/ts-1ctl7pY6.css"
+    },
+    {
+      "url": "https://deepmess.com/namerena/assets/ts-CAvjZ-P7.js",
+      "final_url": "https://deepmess.com/namerena/assets/ts-CAvjZ-P7.js",
+      "status": 200,
+      "content_type": "application/javascript; charset=utf-8",
+      "etag": "\"6afab53e-26cce\"",
+      "last_modified": "Mon, 16 Nov 2026 07:48:14 GMT",
+      "sha256": "7545622bee579d2f743e5c1a1b85a0f2bf1806589f61206920c061f937251673",
+      "bytes": 158926,
+      "local_path": "data/raw/official-namerena/deepmess.com/namerena/assets/ts-CAvjZ-P7.js"
+    },
+    {
+      "url": "https://deepmess.com/namerena/fight.html",
+      "final_url": "https://deepmess.com/namerena/fight.html",
+      "status": 200,
+      "content_type": "text/html; charset=utf-8",
+      "etag": "\"6afab53e-1b5\"",
+      "last_modified": "Mon, 16 Nov 2026 07:48:14 GMT",
+      "sha256": "c56871f00f386758bceb0331b8410a0f67a0f42cb379cd68457ef1a7ba7ea90a",
+      "bytes": 437,
+      "local_path": "data/raw/official-namerena/deepmess.com/namerena/fight.html"
+    },
+    {
+      "url": "https://deepmess.com/namerena/flags/br.svg",
+      "final_url": "https://deepmess.com/namerena/flags/br.svg",
+      "status": 200,
+      "content_type": "image/svg+xml",
+      "etag": "\"6afab53e-2ae\"",
+      "last_modified": "Mon, 16 Nov 2026 07:48:14 GMT",
+      "sha256": "2333b293cbc44e8b736565ac84d4bd03cb136f017e5194d321dcc8ca46aa0464",
+      "bytes": 686,
+      "local_path": "data/raw/official-namerena/deepmess.com/namerena/flags/br.svg"
+    },
+    {
+      "url": "https://deepmess.com/namerena/flags/cn.svg",
+      "final_url": "https://deepmess.com/namerena/flags/cn.svg",
+      "status": 200,
+      "content_type": "image/svg+xml",
+      "etag": "\"6afab53e-2c1\"",
+      "last_modified": "Mon, 16 Nov 2026 07:48:14 GMT",
+      "sha256": "73d72f59389845361b0d59623fc60b0e47ebd6c9623df706e8d8b079baa3af64",
+      "bytes": 705,
+      "local_path": "data/raw/official-namerena/deepmess.com/namerena/flags/cn.svg"
+    },
+    {
+      "url": "https://deepmess.com/namerena/flags/de.svg",
+      "final_url": "https://deepmess.com/namerena/flags/de.svg",
+      "status": 200,
+      "content_type": "image/svg+xml",
+      "etag": "\"6afab53e-14e\"",
+      "last_modified": "Mon, 16 Nov 2026 07:48:14 GMT",
+      "sha256": "3f6dc3fa445f3225e6ed2a1b4bcdb6b74684b5804e6bb2cb6b50aa0325b8d81a",
+      "bytes": 334,
+      "local_path": "data/raw/official-namerena/deepmess.com/namerena/flags/de.svg"
+    },
+    {
+      "url": "https://deepmess.com/namerena/flags/es.svg",
+      "final_url": "https://deepmess.com/namerena/flags/es.svg",
+      "status": 200,
+      "content_type": "image/svg+xml",
+      "etag": "\"6afab53e-7d0\"",
+      "last_modified": "Mon, 16 Nov 2026 07:48:14 GMT",
+      "sha256": "a1bb2d6b70b35386101376e01a18a56172cfdaa8bcf58691c1dd633e27161593",
+      "bytes": 2000,
+      "local_path": "data/raw/official-namerena/deepmess.com/namerena/flags/es.svg"
+    },
+    {
+      "url": "https://deepmess.com/namerena/flags/fr.svg",
+      "final_url": "https://deepmess.com/namerena/flags/fr.svg",
+      "status": 200,
+      "content_type": "image/svg+xml",
+      "etag": "\"6afab53e-154\"",
+      "last_modified": "Mon, 16 Nov 2026 07:48:14 GMT",
+      "sha256": "1d0c12a2157fc4a25fb7eb4e989b7555289c118fcb20c5eacebbfe0dafcbe30c",
+      "bytes": 340,
+      "local_path": "data/raw/official-namerena/deepmess.com/namerena/flags/fr.svg"
+    },
+    {
+      "url": "https://deepmess.com/namerena/flags/jp.svg",
+      "final_url": "https://deepmess.com/namerena/flags/jp.svg",
+      "status": 200,
+      "content_type": "image/svg+xml",
+      "etag": "\"6afab53e-111\"",
+      "last_modified": "Mon, 16 Nov 2026 07:48:14 GMT",
+      "sha256": "17cea0bab5029d578ee10727a9d9b93ab89720e394241ff6d59b5744d44f3d9c",
+      "bytes": 273,
+      "local_path": "data/raw/official-namerena/deepmess.com/namerena/flags/jp.svg"
+    },
+    {
+      "url": "https://deepmess.com/namerena/flags/kr.svg",
+      "final_url": "https://deepmess.com/namerena/flags/kr.svg",
+      "status": 200,
+      "content_type": "image/svg+xml",
+      "etag": "\"6afab53e-3a5\"",
+      "last_modified": "Mon, 16 Nov 2026 07:48:14 GMT",
+      "sha256": "a0176d1f7b6aefb13f9233976b017ba8a8da82634b03e8150ccf5f78f4db9494",
+      "bytes": 933,
+      "local_path": "data/raw/official-namerena/deepmess.com/namerena/flags/kr.svg"
+    },
+    {
+      "url": "https://deepmess.com/namerena/flags/ru.svg",
+      "final_url": "https://deepmess.com/namerena/flags/ru.svg",
+      "status": 200,
+      "content_type": "image/svg+xml",
+      "etag": "\"6afab53e-14c\"",
+      "last_modified": "Mon, 16 Nov 2026 07:48:14 GMT",
+      "sha256": "cd36b52bccfccafb97f3b40692e9c1f02560ec63b19ae4ce2128831b9687472f",
+      "bytes": 332,
+      "local_path": "data/raw/official-namerena/deepmess.com/namerena/flags/ru.svg"
+    },
+    {
+      "url": "https://deepmess.com/namerena/flags/sa.svg",
+      "final_url": "https://deepmess.com/namerena/flags/sa.svg",
+      "status": 200,
+      "content_type": "image/svg+xml",
+      "etag": "\"6afab53e-a7c\"",
+      "last_modified": "Mon, 16 Nov 2026 07:48:14 GMT",
+      "sha256": "c69496f3eeef80224321f875cf2bbc3cecd39f8975bd65369912a5348f9c9506",
+      "bytes": 2684,
+      "local_path": "data/raw/official-namerena/deepmess.com/namerena/flags/sa.svg"
+    },
+    {
+      "url": "https://deepmess.com/namerena/flags/us.svg",
+      "final_url": "https://deepmess.com/namerena/flags/us.svg",
+      "status": 200,
+      "content_type": "image/svg+xml",
+      "etag": "\"6afab53e-2d3\"",
+      "last_modified": "Mon, 16 Nov 2026 07:48:14 GMT",
+      "sha256": "7f3012f520e4aefcff6acbb8cc7198fee604f3f806fd228f59c94077437bda82",
+      "bytes": 723,
+      "local_path": "data/raw/official-namerena/deepmess.com/namerena/flags/us.svg"
+    },
+    {
+      "url": "https://deepmess.com/namerena/gAd.md",
+      "final_url": "https://deepmess.com/namerena/gAd.md",
+      "status": 200,
+      "content_type": "text/markdown; charset=utf-8",
+      "etag": "\"6afab53e-dac\"",
+      "last_modified": "Mon, 16 Nov 2026 07:48:14 GMT",
+      "sha256": "e8116074b9bfc6e337eaf53042f5837e14c23875f2c40acb45d5d8e17122c669",
+      "bytes": 3500,
+      "local_path": "data/raw/official-namerena/deepmess.com/namerena/gAd.md"
+    },
+    {
+      "url": "https://deepmess.com/namerena/index.html",
+      "final_url": "https://deepmess.com/namerena/index.html",
+      "status": 200,
+      "content_type": "text/html; charset=utf-8",
+      "etag": "\"6afab53e-3082\"",
+      "last_modified": "Mon, 16 Nov 2026 07:48:14 GMT",
+      "sha256": "b8105dc195e6e67c7391ef0f7a3c8036976ddbd401c3b626cce63e90688c3443",
+      "bytes": 12418,
+      "local_path": "data/raw/official-namerena/deepmess.com/namerena/index.html"
+    },
+    {
+      "url": "https://deepmess.com/namerena/lang/en.json",
+      "final_url": "https://deepmess.com/namerena/lang/en.json",
+      "status": 200,
+      "content_type": "application/json; charset=utf-8",
+      "etag": "\"6afab53e-1c10\"",
+      "last_modified": "Mon, 16 Nov 2026 07:48:14 GMT",
+      "sha256": "358b5fdcd786e41edd65e9715cc3bd121388dbd0c53f4b9af85e0951e515761d",
+      "bytes": 7184,
+      "local_path": "data/raw/official-namerena/deepmess.com/namerena/lang/en.json"
+    },
+    {
+      "url": "https://deepmess.com/namerena/lang/zh-TW.json",
+      "final_url": "https://deepmess.com/namerena/lang/zh-TW.json",
+      "status": 200,
+      "content_type": "application/json; charset=utf-8",
+      "etag": "\"6afab53e-1a77\"",
+      "last_modified": "Mon, 16 Nov 2026 07:48:14 GMT",
+      "sha256": "b003e58878d5ab70d4677426f26d8abe075b4cef11ebf2c8fae6849902db191f",
+      "bytes": 6775,
+      "local_path": "data/raw/official-namerena/deepmess.com/namerena/lang/zh-TW.json"
+    },
+    {
+      "url": "https://deepmess.com/namerena/lang/zh-money.json",
+      "final_url": "https://deepmess.com/namerena/lang/zh-money.json",
+      "status": 200,
+      "content_type": "application/json; charset=utf-8",
+      "etag": "\"6afab53e-1d1f\"",
+      "last_modified": "Mon, 16 Nov 2026 07:48:14 GMT",
+      "sha256": "6b4997bc755acf1bab685a0b0e2cb704955dd85077fbd510b456fb033e55e894",
+      "bytes": 7455,
+      "local_path": "data/raw/official-namerena/deepmess.com/namerena/lang/zh-money.json"
+    },
+    {
+      "url": "https://deepmess.com/namerena/lang/zh.json",
+      "final_url": "https://deepmess.com/namerena/lang/zh.json",
+      "status": 200,
+      "content_type": "application/json; charset=utf-8",
+      "etag": "\"6afab53e-1a77\"",
+      "last_modified": "Mon, 16 Nov 2026 07:48:14 GMT",
+      "sha256": "fbc158e91486c12cfa038bf57b75d312b63320f3ef946ccc4656b87bdd7e64a7",
+      "bytes": 6775,
+      "local_path": "data/raw/official-namerena/deepmess.com/namerena/lang/zh.json"
+    },
+    {
+      "url": "https://deepmess.com/namerena/navigation.html",
+      "status": 404,
+      "error": "HTTP Error 404: Not Found",
+      "elapsed_seconds": 1.36
+    },
+    {
+      "url": "https://deepmess.com/stylesheets/print.css",
+      "final_url": "https://deepmess.com/stylesheets/print.css",
+      "status": 200,
+      "content_type": "text/css; charset=utf-8",
+      "etag": "\"6afab53e-ccc\"",
+      "last_modified": "Mon, 16 Nov 2026 07:48:14 GMT",
+      "sha256": "866c2ede0c17e6fc2702037b680680b6630510a1bf795029ac91aa1c4a2dc25e",
+      "bytes": 3276,
+      "local_path": "data/raw/official-namerena/deepmess.com/stylesheets/print.css"
+    },
+    {
+      "url": "https://deepmess.com/stylesheets/pygment_trac.css",
+      "final_url": "https://deepmess.com/stylesheets/pygment_trac.css",
+      "status": 200,
+      "content_type": "text/css; charset=utf-8",
+      "etag": "\"6afab53e-1048\"",
+      "last_modified": "Mon, 16 Nov 2026 07:48:14 GMT",
+      "sha256": "d3a91f6a42ec45642d962f077ba1a5e0cb4473a7bfd7ca32917fdc62a273da26",
+      "bytes": 4168,
+      "local_path": "data/raw/official-namerena/deepmess.com/stylesheets/pygment_trac.css"
+    },
+    {
+      "url": "https://deepmess.com/stylesheets/stylesheet.css",
+      "final_url": "https://deepmess.com/stylesheets/stylesheet.css",
+      "status": 200,
+      "content_type": "text/css; charset=utf-8",
+      "etag": "\"6afab53e-4340\"",
+      "last_modified": "Mon, 16 Nov 2026 07:48:14 GMT",
+      "sha256": "24ae99e070d94e49067e851b5ac4859fb95770407f7f5d678f80b666aa3b6024",
+      "bytes": 17216,
+      "local_path": "data/raw/official-namerena/deepmess.com/stylesheets/stylesheet.css"
+    },
+    {
+      "url": "https://deepmess.com/zh/namerena/",
+      "final_url": "https://deepmess.com/zh/namerena/",
+      "status": 200,
+      "content_type": "text/html; charset=utf-8",
+      "etag": "\"6afab53e-11be\"",
+      "last_modified": "Mon, 16 Nov 2026 07:48:14 GMT",
+      "sha256": "befcc3ab34855d508a929c6a9b92c2b143d64fe903d1d3405524bfbc78ca9ce0",
+      "bytes": 4542,
+      "local_path": "data/raw/official-namerena/deepmess.com/zh/namerena/index.html"
+    },
+    {
+      "url": "https://deepmess.com/zh/namerena/about.html",
+      "final_url": "https://deepmess.com/zh/namerena/about.html",
+      "status": 200,
+      "content_type": "text/html; charset=utf-8",
+      "etag": "\"6afab53e-10aa\"",
+      "last_modified": "Mon, 16 Nov 2026 07:48:14 GMT",
+      "sha256": "b48fb5a282fba14c8237b95087512c924eff1b9f2223aaf3259830eec6506fe3",
+      "bytes": 4266,
+      "local_path": "data/raw/official-namerena/deepmess.com/zh/namerena/about.html"
+    },
+    {
+      "url": "https://deepmess.com/zh/namerena/antd.f10485e3.css",
+      "final_url": "https://deepmess.com/zh/namerena/antd.f10485e3.css",
+      "status": 200,
+      "content_type": "text/css; charset=utf-8",
+      "etag": "\"6afab53e-7df65\"",
+      "last_modified": "Mon, 16 Nov 2026 07:48:14 GMT",
+      "sha256": "aff8811de8137edcd6ee4d47f46e6b7e4e62b7792b0fa48a4d2f7d86fc7eef92",
+      "bytes": 515941,
+      "local_path": "data/raw/official-namerena/deepmess.com/zh/namerena/antd.f10485e3.css"
+    },
+    {
+      "url": "https://deepmess.com/zh/namerena/api.html",
+      "final_url": "https://deepmess.com/zh/namerena/api.html",
+      "status": 200,
+      "content_type": "text/html; charset=utf-8",
+      "etag": "\"6afab53e-e83\"",
+      "last_modified": "Mon, 16 Nov 2026 07:48:14 GMT",
+      "sha256": "828fa93a01d4424a8d58d577792e2a2db270039953c6c5adbaeffbde3020ded0",
+      "bytes": 3715,
+      "local_path": "data/raw/official-namerena/deepmess.com/zh/namerena/api.html"
+    },
+    {
+      "url": "https://deepmess.com/zh/namerena/api_test.html",
+      "final_url": "https://deepmess.com/zh/namerena/api_test.html",
+      "status": 200,
+      "content_type": "text/html; charset=utf-8",
+      "etag": "\"6afab53e-58a\"",
+      "last_modified": "Mon, 16 Nov 2026 07:48:14 GMT",
+      "sha256": "47f8f34423ae65d74896cc28bfbd3e90b03d718a8f922b02c7bee3cb8d807088",
+      "bytes": 1418,
+      "local_path": "data/raw/official-namerena/deepmess.com/zh/namerena/api_test.html"
+    },
+    {
+      "url": "https://deepmess.com/zh/namerena/attribute.html",
+      "final_url": "https://deepmess.com/zh/namerena/attribute.html",
+      "status": 200,
+      "content_type": "text/html; charset=utf-8",
+      "etag": "\"6afab53e-f03\"",
+      "last_modified": "Mon, 16 Nov 2026 07:48:14 GMT",
+      "sha256": "906dfc3d7ed67e09b44b5e896e72ad3ede08101cb622bc029f18ece04f481489",
+      "bytes": 3843,
+      "local_path": "data/raw/official-namerena/deepmess.com/zh/namerena/attribute.html"
+    },
+    {
+      "url": "https://deepmess.com/zh/namerena/custom_lan.html",
+      "final_url": "https://deepmess.com/zh/namerena/custom_lan.html",
+      "status": 200,
+      "content_type": "text/html; charset=utf-8",
+      "etag": "\"6afab53e-117a\"",
+      "last_modified": "Mon, 16 Nov 2026 07:48:14 GMT",
+      "sha256": "cb1c968c785e15465ed2f5ed9698f8a79dd30258cff3b2e3c4666fe6410dc1d6",
+      "bytes": 4474,
+      "local_path": "data/raw/official-namerena/deepmess.com/zh/namerena/custom_lan.html"
+    },
+    {
+      "url": "https://deepmess.com/zh/namerena/images/alphago.png",
+      "final_url": "https://deepmess.com/zh/namerena/images/alphago.png",
+      "status": 200,
+      "content_type": "image/png",
+      "etag": "\"6afab53e-8326\"",
+      "last_modified": "Mon, 16 Nov 2026 07:48:14 GMT",
+      "sha256": "d5f597087293b07be9bceb33152c5c770e0fd2b92821ed7d38d6c7db48a0cbad",
+      "bytes": 33574,
+      "local_path": "data/raw/official-namerena/deepmess.com/zh/namerena/images/alphago.png"
+    },
+    {
+      "url": "https://deepmess.com/zh/namerena/images/aokiji.gif",
+      "final_url": "https://deepmess.com/zh/namerena/images/aokiji.gif",
+      "status": 200,
+      "content_type": "image/gif",
+      "etag": "\"6afab53e-83\"",
+      "last_modified": "Mon, 16 Nov 2026 07:48:14 GMT",
+      "sha256": "17df165492da5324c4bf5a938e92130f599000c0b62416021615a2e3b3e6a822",
+      "bytes": 131,
+      "local_path": "data/raw/official-namerena/deepmess.com/zh/namerena/images/aokiji.gif"
+    },
+    {
+      "url": "https://deepmess.com/zh/namerena/images/conan.gif",
+      "final_url": "https://deepmess.com/zh/namerena/images/conan.gif",
+      "status": 200,
+      "content_type": "image/gif",
+      "etag": "\"6afab53e-83\"",
+      "last_modified": "Mon, 16 Nov 2026 07:48:14 GMT",
+      "sha256": "00f67821ef2a540541f6624e0e776ebade9911025b1da99b7f0d9c2d8792c94c",
+      "bytes": 131,
+      "local_path": "data/raw/official-namerena/deepmess.com/zh/namerena/images/conan.gif"
+    },
+    {
+      "url": "https://deepmess.com/zh/namerena/images/covid.gif",
+      "final_url": "https://deepmess.com/zh/namerena/images/covid.gif",
+      "status": 200,
+      "content_type": "image/gif",
+      "etag": "\"6afab53e-85\"",
+      "last_modified": "Mon, 16 Nov 2026 07:48:14 GMT",
+      "sha256": "06f2a7e2fda7219ee62bdf4c251ab8f3e1d1a80d360fde89e036197e78190197",
+      "bytes": 133,
+      "local_path": "data/raw/official-namerena/deepmess.com/zh/namerena/images/covid.gif"
+    },
+    {
+      "url": "https://deepmess.com/zh/namerena/images/ikaruga.gif",
+      "final_url": "https://deepmess.com/zh/namerena/images/ikaruga.gif",
+      "status": 200,
+      "content_type": "image/gif",
+      "etag": "\"6afab53e-85\"",
+      "last_modified": "Mon, 16 Nov 2026 07:48:14 GMT",
+      "sha256": "721a2a6379fc4c051e63044614fdf9ac9d3f18e19493c275ab084f777a639a8d",
+      "bytes": 133,
+      "local_path": "data/raw/official-namerena/deepmess.com/zh/namerena/images/ikaruga.gif"
+    },
+    {
+      "url": "https://deepmess.com/zh/namerena/images/lan_demo_money.png",
+      "final_url": "https://deepmess.com/zh/namerena/images/lan_demo_money.png",
+      "status": 200,
+      "content_type": "image/png",
+      "etag": "\"6afab53e-1c360\"",
+      "last_modified": "Mon, 16 Nov 2026 07:48:14 GMT",
+      "sha256": "546af336ffe29b5f08d9bb58b7e4b3f4d23e8e51a26562b0a392ada7b40907e8",
+      "bytes": 115552,
+      "local_path": "data/raw/official-namerena/deepmess.com/zh/namerena/images/lan_demo_money.png"
+    },
+    {
+      "url": "https://deepmess.com/zh/namerena/images/lan_demo_zh.png",
+      "final_url": "https://deepmess.com/zh/namerena/images/lan_demo_zh.png",
+      "status": 200,
+      "content_type": "image/png",
+      "etag": "\"6afab53e-1b2ae\"",
+      "last_modified": "Mon, 16 Nov 2026 07:48:14 GMT",
+      "sha256": "8cd6f1089d06a45f1132475b32ffda33a32ec7e69116f7c8b7652e90bd236c6f",
+      "bytes": 111278,
+      "local_path": "data/raw/official-namerena/deepmess.com/zh/namerena/images/lan_demo_zh.png"
+    },
+    {
+      "url": "https://deepmess.com/zh/namerena/images/lazy.gif",
+      "final_url": "https://deepmess.com/zh/namerena/images/lazy.gif",
+      "status": 200,
+      "content_type": "image/gif",
+      "etag": "\"6afab53e-8a\"",
+      "last_modified": "Mon, 16 Nov 2026 07:48:14 GMT",
+      "sha256": "9fc2f73e35756b470fcefa6ea1412e67d5bc716340b0145456f4556b41dc3f57",
+      "bytes": 138,
+      "local_path": "data/raw/official-namerena/deepmess.com/zh/namerena/images/lazy.gif"
+    },
+    {
+      "url": "https://deepmess.com/zh/namerena/images/logo64.png",
+      "final_url": "https://deepmess.com/zh/namerena/images/logo64.png",
+      "status": 200,
+      "content_type": "image/png",
+      "etag": "\"6afab53e-1340\"",
+      "last_modified": "Mon, 16 Nov 2026 07:48:14 GMT",
+      "sha256": "5624794b5e76e6ee815e9cd98d0a3942361092066f0e278dbe68e31e09e63e43",
+      "bytes": 4928,
+      "local_path": "data/raw/official-namerena/deepmess.com/zh/namerena/images/logo64.png"
+    },
+    {
+      "url": "https://deepmess.com/zh/namerena/images/mario.gif",
+      "final_url": "https://deepmess.com/zh/namerena/images/mario.gif",
+      "status": 200,
+      "content_type": "image/gif",
+      "etag": "\"6afab53e-70\"",
+      "last_modified": "Mon, 16 Nov 2026 07:48:14 GMT",
+      "sha256": "eddfd6b6b686b095040df7f7230d771f93aab8c816045c135c802baf77e7b5ec",
+      "bytes": 112,
+      "local_path": "data/raw/official-namerena/deepmess.com/zh/namerena/images/mario.gif"
+    },
+    {
+      "url": "https://deepmess.com/zh/namerena/images/mosquito.gif",
+      "final_url": "https://deepmess.com/zh/namerena/images/mosquito.gif",
+      "status": 200,
+      "content_type": "image/gif",
+      "etag": "\"6afab53e-70\"",
+      "last_modified": "Mon, 16 Nov 2026 07:48:14 GMT",
+      "sha256": "fbfcf2516198f7f7fb0fe8144a1958d160d2791deabd36a30c8a51db76902dba",
+      "bytes": 112,
+      "local_path": "data/raw/official-namerena/deepmess.com/zh/namerena/images/mosquito.gif"
+    },
+    {
+      "url": "https://deepmess.com/zh/namerena/images/saitama.gif",
+      "final_url": "https://deepmess.com/zh/namerena/images/saitama.gif",
+      "status": 200,
+      "content_type": "image/gif",
+      "etag": "\"6afab53e-85\"",
+      "last_modified": "Mon, 16 Nov 2026 07:48:14 GMT",
+      "sha256": "71fa5aac1e801a49e8008462c36dbca10de7c87627f3851d10565ee4601c70e1",
+      "bytes": 133,
+      "local_path": "data/raw/official-namerena/deepmess.com/zh/namerena/images/saitama.gif"
+    },
+    {
+      "url": "https://deepmess.com/zh/namerena/images/search.png",
+      "final_url": "https://deepmess.com/zh/namerena/images/search.png",
+      "status": 200,
+      "content_type": "image/png",
+      "etag": "\"6afab53e-13296\"",
+      "last_modified": "Mon, 16 Nov 2026 07:48:14 GMT",
+      "sha256": "950acb9c3d74a2796a2898b063cdffd775872e00ef81dd4bb9e161ee0f8340b5",
+      "bytes": 78486,
+      "local_path": "data/raw/official-namerena/deepmess.com/zh/namerena/images/search.png"
+    },
+    {
+      "url": "https://deepmess.com/zh/namerena/images/sgl1.png",
+      "final_url": "https://deepmess.com/zh/namerena/images/sgl1.png",
+      "status": 200,
+      "content_type": "image/png",
+      "etag": "\"6afab53e-a8\"",
+      "last_modified": "Mon, 16 Nov 2026 07:48:14 GMT",
+      "sha256": "7293f2552c4ff2b8eb84cd2be3bdbab51d15980d663b82f09f9229ce8df94ccf",
+      "bytes": 168,
+      "local_path": "data/raw/official-namerena/deepmess.com/zh/namerena/images/sgl1.png"
+    },
+    {
+      "url": "https://deepmess.com/zh/namerena/images/sgl2.png",
+      "final_url": "https://deepmess.com/zh/namerena/images/sgl2.png",
+      "status": 200,
+      "content_type": "image/png",
+      "etag": "\"6afab53e-a9\"",
+      "last_modified": "Mon, 16 Nov 2026 07:48:14 GMT",
+      "sha256": "010050d716e49362a59509d56d0179a762e5d5d7307b3c83fe9e5d740bba3d39",
+      "bytes": 169,
+      "local_path": "data/raw/official-namerena/deepmess.com/zh/namerena/images/sgl2.png"
+    },
+    {
+      "url": "https://deepmess.com/zh/namerena/images/sgl_cn.png",
+      "final_url": "https://deepmess.com/zh/namerena/images/sgl_cn.png",
+      "status": 200,
+      "content_type": "image/png",
+      "etag": "\"6afab53e-9e\"",
+      "last_modified": "Mon, 16 Nov 2026 07:48:14 GMT",
+      "sha256": "2c58d98cda83d3b398daa48a1007ff4eda2083133978377dee8e192f7d6d58db",
+      "bytes": 158,
+      "local_path": "data/raw/official-namerena/deepmess.com/zh/namerena/images/sgl_cn.png"
+    },
+    {
+      "url": "https://deepmess.com/zh/namerena/images/slime.gif",
+      "final_url": "https://deepmess.com/zh/namerena/images/slime.gif",
+      "status": 200,
+      "content_type": "image/gif",
+      "etag": "\"6afab53e-7d\"",
+      "last_modified": "Mon, 16 Nov 2026 07:48:14 GMT",
+      "sha256": "b775111dccf844b4c6459bc5e446a432625a18afdf37631528b17253851ff1e8",
+      "bytes": 125,
+      "local_path": "data/raw/official-namerena/deepmess.com/zh/namerena/images/slime.gif"
+    },
+    {
+      "url": "https://deepmess.com/zh/namerena/images/sonic.gif",
+      "final_url": "https://deepmess.com/zh/namerena/images/sonic.gif",
+      "status": 200,
+      "content_type": "image/gif",
+      "etag": "\"6afab53e-7c\"",
+      "last_modified": "Mon, 16 Nov 2026 07:48:14 GMT",
+      "sha256": "fba092051fa9a50060d32d08f1b20b7743b96e36d88ffeddc0ffbfaa4593b57d",
+      "bytes": 124,
+      "local_path": "data/raw/official-namerena/deepmess.com/zh/namerena/images/sonic.gif"
+    },
+    {
+      "url": "https://deepmess.com/zh/namerena/images/yuri.gif",
+      "final_url": "https://deepmess.com/zh/namerena/images/yuri.gif",
+      "status": 200,
+      "content_type": "image/gif",
+      "etag": "\"6afab53e-6d\"",
+      "last_modified": "Mon, 16 Nov 2026 07:48:14 GMT",
+      "sha256": "91701a3eb790b9e7c6712941ab07a6617041c0bbc5684be26f2dd313b0b9e689",
+      "bytes": 109,
+      "local_path": "data/raw/official-namerena/deepmess.com/zh/namerena/images/yuri.gif"
+    },
+    {
+      "url": "https://deepmess.com/zh/namerena/index.html",
+      "final_url": "https://deepmess.com/zh/namerena/index.html",
+      "status": 200,
+      "content_type": "text/html; charset=utf-8",
+      "etag": "\"6afab53e-11be\"",
+      "last_modified": "Mon, 16 Nov 2026 07:48:14 GMT",
+      "sha256": "befcc3ab34855d508a929c6a9b92c2b143d64fe903d1d3405524bfbc78ca9ce0",
+      "bytes": 4542,
+      "local_path": "data/raw/official-namerena/deepmess.com/zh/namerena/index.html"
+    },
+    {
+      "url": "https://deepmess.com/zh/namerena/ladder.2a7f0d8a.css",
+      "final_url": "https://deepmess.com/zh/namerena/ladder.2a7f0d8a.css",
+      "status": 200,
+      "content_type": "text/css; charset=utf-8",
+      "etag": "\"6afab53e-3a7\"",
+      "last_modified": "Mon, 16 Nov 2026 07:48:14 GMT",
+      "sha256": "53f03552d7de807a1f25e9b8293e9915f3bb3ffca613e8e2b023a50e91fdc25e",
+      "bytes": 935,
+      "local_path": "data/raw/official-namerena/deepmess.com/zh/namerena/ladder.2a7f0d8a.css"
+    },
+    {
+      "url": "https://deepmess.com/zh/namerena/ladder.fb28ab43.js",
+      "final_url": "https://deepmess.com/zh/namerena/ladder.fb28ab43.js",
+      "status": 200,
+      "content_type": "application/javascript; charset=utf-8",
+      "etag": "\"6afab53e-1f4ba7\"",
+      "last_modified": "Mon, 16 Nov 2026 07:48:14 GMT",
+      "sha256": "5bfbafbc68dc6c328906f27ba0b7a7307ba2696cf0b9a3891008dd0f40723811",
+      "bytes": 2050983,
+      "local_path": "data/raw/official-namerena/deepmess.com/zh/namerena/ladder.fb28ab43.js"
+    },
+    {
+      "url": "https://deepmess.com/zh/namerena/ladder.html",
+      "final_url": "https://deepmess.com/zh/namerena/ladder.html",
+      "status": 200,
+      "content_type": "text/html; charset=utf-8",
+      "etag": "\"6afab53e-b35\"",
+      "last_modified": "Mon, 16 Nov 2026 07:48:14 GMT",
+      "sha256": "5b11272b23043e8d917eaaf8c23e428d5b79090ee1fac65c20e018136243dac9",
+      "bytes": 2869,
+      "local_path": "data/raw/official-namerena/deepmess.com/zh/namerena/ladder.html"
+    },
+    {
+      "url": "https://deepmess.com/zh/namerena/naming.html",
+      "final_url": "https://deepmess.com/zh/namerena/naming.html",
+      "status": 200,
+      "content_type": "text/html; charset=utf-8",
+      "etag": "\"6afab53e-eae\"",
+      "last_modified": "Mon, 16 Nov 2026 07:48:14 GMT",
+      "sha256": "efa1cab3b16843c9014b59865a1a93c51e9ed021a2b34aee50e0ef911f45e349",
+      "bytes": 3758,
+      "local_path": "data/raw/official-namerena/deepmess.com/zh/namerena/naming.html"
+    },
+    {
+      "url": "https://deepmess.com/zh/namerena/skill.html",
+      "final_url": "https://deepmess.com/zh/namerena/skill.html",
+      "status": 200,
+      "content_type": "text/html; charset=utf-8",
+      "etag": "\"6afab53e-1e08\"",
+      "last_modified": "Mon, 16 Nov 2026 07:48:14 GMT",
+      "sha256": "e44afee724de8e0c2fe79661523c0a8f9b6d5887ca16543fb2e799c7f6194209",
+      "bytes": 7688,
+      "local_path": "data/raw/official-namerena/deepmess.com/zh/namerena/skill.html"
+    },
+    {
+      "url": "https://deepmess.com/zh/namerena/special.html",
+      "final_url": "https://deepmess.com/zh/namerena/special.html",
+      "status": 200,
+      "content_type": "text/html; charset=utf-8",
+      "etag": "\"6afab53e-15e8\"",
+      "last_modified": "Mon, 16 Nov 2026 07:48:14 GMT",
+      "sha256": "1d7649a1bc87dec698e98057970c52572938aa7320e6548a8be089747676458c",
+      "bytes": 5608,
+      "local_path": "data/raw/official-namerena/deepmess.com/zh/namerena/special.html"
+    },
+    {
+      "url": "https://deepmess.com/zh/namerena/testing.html",
+      "final_url": "https://deepmess.com/zh/namerena/testing.html",
+      "status": 200,
+      "content_type": "text/html; charset=utf-8",
+      "etag": "\"6afab53e-171f\"",
+      "last_modified": "Mon, 16 Nov 2026 07:48:14 GMT",
+      "sha256": "813f011dbfe24fb158c1d8f99a4aa76d7f15eb05c3d1b04e617b9173bf0a1d9d",
+      "bytes": 5919,
+      "local_path": "data/raw/official-namerena/deepmess.com/zh/namerena/testing.html"
+    }
+  ],
+  "links": [
+    {
+      "from_url": "https://deepmess.com/namerena/",
+      "reference": "./assets/sigils-DpvRMRgd.js",
+      "url": "https://deepmess.com/namerena/assets/sigils-DpvRMRgd.js",
+      "kind": "resource",
+      "in_scope": true
+    },
+    {
+      "from_url": "https://deepmess.com/namerena/",
+      "reference": "./assets/thumb-DVEoyU_5.jpg",
+      "url": "https://deepmess.com/namerena/assets/thumb-DVEoyU_5.jpg",
+      "kind": "resource",
+      "in_scope": true
+    },
+    {
+      "from_url": "https://deepmess.com/namerena/",
+      "reference": "./assets/ts-1ctl7pY6.css",
+      "url": "https://deepmess.com/namerena/assets/ts-1ctl7pY6.css",
+      "kind": "resource",
+      "in_scope": true
+    },
+    {
+      "from_url": "https://deepmess.com/namerena/",
+      "reference": "./assets/ts-CAvjZ-P7.js",
+      "url": "https://deepmess.com/namerena/assets/ts-CAvjZ-P7.js",
+      "kind": "resource",
+      "in_scope": true
+    },
+    {
+      "from_url": "https://deepmess.com/namerena/assets/fight-jCYO3eM7.js",
+      "reference": "./sigils-DpvRMRgd.js",
+      "url": "https://deepmess.com/namerena/assets/sigils-DpvRMRgd.js",
+      "kind": "literal-candidate",
+      "in_scope": false
+    },
+    {
+      "from_url": "https://deepmess.com/namerena/assets/fight-jCYO3eM7.js",
+      "reference": "./sigils-DpvRMRgd.js",
+      "url": "https://deepmess.com/namerena/assets/sigils-DpvRMRgd.js",
+      "kind": "module-resource",
+      "in_scope": true
+    },
+    {
+      "from_url": "https://deepmess.com/namerena/assets/sigils-DpvRMRgd.js",
+      "reference": "../../bossicon/aokiji.gif",
+      "url": "https://deepmess.com/bossicon/aokiji.gif",
+      "kind": "literal-candidate",
+      "in_scope": false
+    },
+    {
+      "from_url": "https://deepmess.com/namerena/assets/sigils-DpvRMRgd.js",
+      "reference": "../../bossicon/conan.gif",
+      "url": "https://deepmess.com/bossicon/conan.gif",
+      "kind": "literal-candidate",
+      "in_scope": false
+    },
+    {
+      "from_url": "https://deepmess.com/namerena/assets/sigils-DpvRMRgd.js",
+      "reference": "../../bossicon/covid.gif",
+      "url": "https://deepmess.com/bossicon/covid.gif",
+      "kind": "literal-candidate",
+      "in_scope": false
+    },
+    {
+      "from_url": "https://deepmess.com/namerena/assets/sigils-DpvRMRgd.js",
+      "reference": "../../bossicon/ikaruga.gif",
+      "url": "https://deepmess.com/bossicon/ikaruga.gif",
+      "kind": "literal-candidate",
+      "in_scope": false
+    },
+    {
+      "from_url": "https://deepmess.com/namerena/assets/sigils-DpvRMRgd.js",
+      "reference": "../../bossicon/lazy.gif",
+      "url": "https://deepmess.com/bossicon/lazy.gif",
+      "kind": "literal-candidate",
+      "in_scope": false
+    },
+    {
+      "from_url": "https://deepmess.com/namerena/assets/sigils-DpvRMRgd.js",
+      "reference": "../../bossicon/mario.gif",
+      "url": "https://deepmess.com/bossicon/mario.gif",
+      "kind": "literal-candidate",
+      "in_scope": false
+    },
+    {
+      "from_url": "https://deepmess.com/namerena/assets/sigils-DpvRMRgd.js",
+      "reference": "../../bossicon/mosquito.gif",
+      "url": "https://deepmess.com/bossicon/mosquito.gif",
+      "kind": "literal-candidate",
+      "in_scope": false
+    },
+    {
+      "from_url": "https://deepmess.com/namerena/assets/sigils-DpvRMRgd.js",
+      "reference": "../../bossicon/saitama.gif",
+      "url": "https://deepmess.com/bossicon/saitama.gif",
+      "kind": "literal-candidate",
+      "in_scope": false
+    },
+    {
+      "from_url": "https://deepmess.com/namerena/assets/sigils-DpvRMRgd.js",
+      "reference": "../../bossicon/seed.gif",
+      "url": "https://deepmess.com/bossicon/seed.gif",
+      "kind": "literal-candidate",
+      "in_scope": false
+    },
+    {
+      "from_url": "https://deepmess.com/namerena/assets/sigils-DpvRMRgd.js",
+      "reference": "../../bossicon/slime.gif",
+      "url": "https://deepmess.com/bossicon/slime.gif",
+      "kind": "literal-candidate",
+      "in_scope": false
+    },
+    {
+      "from_url": "https://deepmess.com/namerena/assets/sigils-DpvRMRgd.js",
+      "reference": "../../bossicon/sonic.gif",
+      "url": "https://deepmess.com/bossicon/sonic.gif",
+      "kind": "literal-candidate",
+      "in_scope": false
+    },
+    {
+      "from_url": "https://deepmess.com/namerena/assets/sigils-DpvRMRgd.js",
+      "reference": "../../bossicon/yuri.gif",
+      "url": "https://deepmess.com/bossicon/yuri.gif",
+      "kind": "literal-candidate",
+      "in_scope": false
+    },
+    {
+      "from_url": "https://deepmess.com/namerena/assets/ts-CAvjZ-P7.js",
+      "reference": "./sigils-DpvRMRgd.js",
+      "url": "https://deepmess.com/namerena/assets/sigils-DpvRMRgd.js",
+      "kind": "literal-candidate",
+      "in_scope": false
+    },
+    {
+      "from_url": "https://deepmess.com/namerena/assets/ts-CAvjZ-P7.js",
+      "reference": "./sigils-DpvRMRgd.js",
+      "url": "https://deepmess.com/namerena/assets/sigils-DpvRMRgd.js",
+      "kind": "module-resource",
+      "in_scope": true
+    },
+    {
+      "from_url": "https://deepmess.com/namerena/fight.html",
+      "reference": "./assets/fight-YMCPwJGB.css",
+      "url": "https://deepmess.com/namerena/assets/fight-YMCPwJGB.css",
+      "kind": "resource",
+      "in_scope": true
+    },
+    {
+      "from_url": "https://deepmess.com/namerena/fight.html",
+      "reference": "./assets/fight-jCYO3eM7.js",
+      "url": "https://deepmess.com/namerena/assets/fight-jCYO3eM7.js",
+      "kind": "resource",
+      "in_scope": true
+    },
+    {
+      "from_url": "https://deepmess.com/namerena/fight.html",
+      "reference": "./assets/sigils-DpvRMRgd.js",
+      "url": "https://deepmess.com/namerena/assets/sigils-DpvRMRgd.js",
+      "kind": "resource",
+      "in_scope": true
+    },
+    {
+      "from_url": "https://deepmess.com/namerena/index.html",
+      "reference": "./assets/sigils-DpvRMRgd.js",
+      "url": "https://deepmess.com/namerena/assets/sigils-DpvRMRgd.js",
+      "kind": "resource",
+      "in_scope": true
+    },
+    {
+      "from_url": "https://deepmess.com/namerena/index.html",
+      "reference": "./assets/thumb-DVEoyU_5.jpg",
+      "url": "https://deepmess.com/namerena/assets/thumb-DVEoyU_5.jpg",
+      "kind": "resource",
+      "in_scope": true
+    },
+    {
+      "from_url": "https://deepmess.com/namerena/index.html",
+      "reference": "./assets/ts-1ctl7pY6.css",
+      "url": "https://deepmess.com/namerena/assets/ts-1ctl7pY6.css",
+      "kind": "resource",
+      "in_scope": true
+    },
+    {
+      "from_url": "https://deepmess.com/namerena/index.html",
+      "reference": "./assets/ts-CAvjZ-P7.js",
+      "url": "https://deepmess.com/namerena/assets/ts-CAvjZ-P7.js",
+      "kind": "resource",
+      "in_scope": true
+    },
+    {
+      "from_url": "https://deepmess.com/namerena/lang/en.json",
+      "reference": "navigation.html",
+      "url": "https://deepmess.com/namerena/navigation.html",
+      "kind": "navigation",
+      "in_scope": true
+    },
+    {
+      "from_url": "https://deepmess.com/namerena/lang/zh-TW.json",
+      "reference": "navigation.html",
+      "url": "https://deepmess.com/namerena/navigation.html",
+      "kind": "navigation",
+      "in_scope": true
+    },
+    {
+      "from_url": "https://deepmess.com/namerena/lang/zh-money.json",
+      "reference": "navigation.html",
+      "url": "https://deepmess.com/namerena/navigation.html",
+      "kind": "navigation",
+      "in_scope": true
+    },
+    {
+      "from_url": "https://deepmess.com/namerena/lang/zh.json",
+      "reference": "navigation.html",
+      "url": "https://deepmess.com/namerena/navigation.html",
+      "kind": "navigation",
+      "in_scope": true
+    },
+    {
+      "from_url": "https://deepmess.com/stylesheets/stylesheet.css",
+      "reference": "../images/body-bg.jpg",
+      "url": "https://deepmess.com/images/body-bg.jpg",
+      "kind": "resource",
+      "in_scope": true
+    },
+    {
+      "from_url": "https://deepmess.com/stylesheets/stylesheet.css",
+      "reference": "../images/download-button.png",
+      "url": "https://deepmess.com/images/download-button.png",
+      "kind": "resource",
+      "in_scope": true
+    },
+    {
+      "from_url": "https://deepmess.com/stylesheets/stylesheet.css",
+      "reference": "../images/github-button.png",
+      "url": "https://deepmess.com/images/github-button.png",
+      "kind": "resource",
+      "in_scope": true
+    },
+    {
+      "from_url": "https://deepmess.com/stylesheets/stylesheet.css",
+      "reference": "../images/header-bg.jpg",
+      "url": "https://deepmess.com/images/header-bg.jpg",
+      "kind": "resource",
+      "in_scope": true
+    },
+    {
+      "from_url": "https://deepmess.com/stylesheets/stylesheet.css",
+      "reference": "../images/sidebar-bg.jpg",
+      "url": "https://deepmess.com/images/sidebar-bg.jpg",
+      "kind": "resource",
+      "in_scope": true
+    },
+    {
+      "from_url": "https://deepmess.com/zh/namerena/",
+      "reference": "./api.html",
+      "url": "https://deepmess.com/zh/namerena/api.html",
+      "kind": "navigation",
+      "in_scope": true
+    },
+    {
+      "from_url": "https://deepmess.com/zh/namerena/",
+      "reference": "./attribute.html",
+      "url": "https://deepmess.com/zh/namerena/attribute.html",
+      "kind": "navigation",
+      "in_scope": true
+    },
+    {
+      "from_url": "https://deepmess.com/zh/namerena/",
+      "reference": "./custom_lan.html",
+      "url": "https://deepmess.com/zh/namerena/custom_lan.html",
+      "kind": "navigation",
+      "in_scope": true
+    },
+    {
+      "from_url": "https://deepmess.com/zh/namerena/",
+      "reference": "./naming.html",
+      "url": "https://deepmess.com/zh/namerena/naming.html",
+      "kind": "navigation",
+      "in_scope": true
+    },
+    {
+      "from_url": "https://deepmess.com/zh/namerena/",
+      "reference": "./skill.html",
+      "url": "https://deepmess.com/zh/namerena/skill.html",
+      "kind": "navigation",
+      "in_scope": true
+    },
+    {
+      "from_url": "https://deepmess.com/zh/namerena/",
+      "reference": "./special.html",
+      "url": "https://deepmess.com/zh/namerena/special.html",
+      "kind": "navigation",
+      "in_scope": true
+    },
+    {
+      "from_url": "https://deepmess.com/zh/namerena/",
+      "reference": "./testing.html",
+      "url": "https://deepmess.com/zh/namerena/testing.html",
+      "kind": "navigation",
+      "in_scope": true
+    },
+    {
+      "from_url": "https://deepmess.com/zh/namerena/",
+      "reference": "//deepmess.com/",
+      "url": "https://deepmess.com/",
+      "kind": "navigation",
+      "in_scope": false
+    },
+    {
+      "from_url": "https://deepmess.com/zh/namerena/",
+      "reference": "//deepmess.com/namerena",
+      "url": "https://deepmess.com/namerena/",
+      "kind": "navigation",
+      "in_scope": true
+    },
+    {
+      "from_url": "https://deepmess.com/zh/namerena/",
+      "reference": "//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js",
+      "url": "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js",
+      "kind": "resource",
+      "in_scope": false
+    },
+    {
+      "from_url": "https://deepmess.com/zh/namerena/",
+      "reference": "/js/image-popup.js",
+      "url": "https://deepmess.com/js/image-popup.js",
+      "kind": "resource",
+      "in_scope": true
+    },
+    {
+      "from_url": "https://deepmess.com/zh/namerena/",
+      "reference": "/stylesheets/print.css",
+      "url": "https://deepmess.com/stylesheets/print.css",
+      "kind": "resource",
+      "in_scope": true
+    },
+    {
+      "from_url": "https://deepmess.com/zh/namerena/",
+      "reference": "/stylesheets/pygment_trac.css",
+      "url": "https://deepmess.com/stylesheets/pygment_trac.css",
+      "kind": "resource",
+      "in_scope": true
+    },
+    {
+      "from_url": "https://deepmess.com/zh/namerena/",
+      "reference": "/stylesheets/stylesheet.css",
+      "url": "https://deepmess.com/stylesheets/stylesheet.css",
+      "kind": "resource",
+      "in_scope": true
+    },
+    {
+      "from_url": "https://deepmess.com/zh/namerena/",
+      "reference": "/zh/md5.html",
+      "url": "https://deepmess.com/zh/md5.html",
+      "kind": "navigation",
+      "in_scope": false
+    },
+    {
+      "from_url": "https://deepmess.com/zh/namerena/",
+      "reference": "about.html",
+      "url": "https://deepmess.com/zh/namerena/about.html",
+      "kind": "navigation",
+      "in_scope": true
+    },
+    {
+      "from_url": "https://deepmess.com/zh/namerena/",
+      "reference": "attribute.html",
+      "url": "https://deepmess.com/zh/namerena/attribute.html",
+      "kind": "navigation",
+      "in_scope": true
+    },
+    {
+      "from_url": "https://deepmess.com/zh/namerena/",
+      "reference": "custom_lan.html",
+      "url": "https://deepmess.com/zh/namerena/custom_lan.html",
+      "kind": "navigation",
+      "in_scope": true
+    },
+    {
+      "from_url": "https://deepmess.com/zh/namerena/",
+      "reference": "http://tieba.baidu.com/%E5%90%8D%E5%AD%97%E7%AB%9E%E6%8A%80%E5%9C%BA",
+      "url": "http://tieba.baidu.com/%E5%90%8D%E5%AD%97%E7%AB%9E%E6%8A%80%E5%9C%BA",
+      "kind": "navigation",
+      "in_scope": false
+    },
+    {
+      "from_url": "https://deepmess.com/zh/namerena/",
+      "reference": "https://deepmess.com/namerena/",
+      "url": "https://deepmess.com/namerena/",
+      "kind": "navigation",
+      "in_scope": true
+    },
+    {
+      "from_url": "https://deepmess.com/zh/namerena/",
+      "reference": "https://github.com/favicon.ico",
+      "url": "https://github.com/favicon.ico",
+      "kind": "resource",
+      "in_scope": false
+    },
+    {
+      "from_url": "https://deepmess.com/zh/namerena/",
+      "reference": "https://github.com/rinick",
+      "url": "https://github.com/rinick",
+      "kind": "navigation",
+      "in_scope": false
+    },
+    {
+      "from_url": "https://deepmess.com/zh/namerena/",
+      "reference": "https://shenjack.top:10008/",
+      "url": "https://shenjack.top:10008/",
+      "kind": "navigation",
+      "in_scope": false
+    },
+    {
+      "from_url": "https://deepmess.com/zh/namerena/",
+      "reference": "https://www.weibo.com/favicon.ico",
+      "url": "https://www.weibo.com/favicon.ico",
+      "kind": "resource",
+      "in_scope": false
+    },
+    {
+      "from_url": "https://deepmess.com/zh/namerena/",
+      "reference": "https://www.weibo.com/rinick",
+      "url": "https://www.weibo.com/rinick",
+      "kind": "navigation",
+      "in_scope": false
+    },
+    {
+      "from_url": "https://deepmess.com/zh/namerena/",
+      "reference": "images/alphago.png",
+      "url": "https://deepmess.com/zh/namerena/images/alphago.png",
+      "kind": "resource",
+      "in_scope": true
+    },
+    {
+      "from_url": "https://deepmess.com/zh/namerena/",
+      "reference": "images/logo64.png",
+      "url": "https://deepmess.com/zh/namerena/images/logo64.png",
+      "kind": "resource",
+      "in_scope": true
+    },
+    {
+      "from_url": "https://deepmess.com/zh/namerena/",
+      "reference": "index.html",
+      "url": "https://deepmess.com/zh/namerena/index.html",
+      "kind": "navigation",
+      "in_scope": true
+    },
+    {
+      "from_url": "https://deepmess.com/zh/namerena/",
+      "reference": "naming.html",
+      "url": "https://deepmess.com/zh/namerena/naming.html",
+      "kind": "navigation",
+      "in_scope": true
+    },
+    {
+      "from_url": "https://deepmess.com/zh/namerena/",
+      "reference": "skill.html",
+      "url": "https://deepmess.com/zh/namerena/skill.html",
+      "kind": "navigation",
+      "in_scope": true
+    },
+    {
+      "from_url": "https://deepmess.com/zh/namerena/",
+      "reference": "special.html",
+      "url": "https://deepmess.com/zh/namerena/special.html",
+      "kind": "navigation",
+      "in_scope": true
+    },
+    {
+      "from_url": "https://deepmess.com/zh/namerena/",
+      "reference": "testing.html",
+      "url": "https://deepmess.com/zh/namerena/testing.html",
+      "kind": "navigation",
+      "in_scope": true
+    },
+    {
+      "from_url": "https://deepmess.com/zh/namerena/about.html",
+      "reference": "./api.html",
+      "url": "https://deepmess.com/zh/namerena/api.html",
+      "kind": "navigation",
+      "in_scope": true
+    },
+    {
+      "from_url": "https://deepmess.com/zh/namerena/about.html",
+      "reference": "./custom_lan.html",
+      "url": "https://deepmess.com/zh/namerena/custom_lan.html",
+      "kind": "navigation",
+      "in_scope": true
+    },
+    {
+      "from_url": "https://deepmess.com/zh/namerena/about.html",
+      "reference": "//deepmess.com/",
+      "url": "https://deepmess.com/",
+      "kind": "navigation",
+      "in_scope": false
+    },
+    {
+      "from_url": "https://deepmess.com/zh/namerena/about.html",
+      "reference": "//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js",
+      "url": "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js",
+      "kind": "resource",
+      "in_scope": false
+    },
+    {
+      "from_url": "https://deepmess.com/zh/namerena/about.html",
+      "reference": "/js/image-popup.js",
+      "url": "https://deepmess.com/js/image-popup.js",
+      "kind": "resource",
+      "in_scope": true
+    },
+    {
+      "from_url": "https://deepmess.com/zh/namerena/about.html",
+      "reference": "/stylesheets/print.css",
+      "url": "https://deepmess.com/stylesheets/print.css",
+      "kind": "resource",
+      "in_scope": true
+    },
+    {
+      "from_url": "https://deepmess.com/zh/namerena/about.html",
+      "reference": "/stylesheets/pygment_trac.css",
+      "url": "https://deepmess.com/stylesheets/pygment_trac.css",
+      "kind": "resource",
+      "in_scope": true
+    },
+    {
+      "from_url": "https://deepmess.com/zh/namerena/about.html",
+      "reference": "/stylesheets/stylesheet.css",
+      "url": "https://deepmess.com/stylesheets/stylesheet.css",
+      "kind": "resource",
+      "in_scope": true
+    },
+    {
+      "from_url": "https://deepmess.com/zh/namerena/about.html",
+      "reference": "about.html",
+      "url": "https://deepmess.com/zh/namerena/about.html",
+      "kind": "navigation",
+      "in_scope": true
+    },
+    {
+      "from_url": "https://deepmess.com/zh/namerena/about.html",
+      "reference": "attribute.html",
+      "url": "https://deepmess.com/zh/namerena/attribute.html",
+      "kind": "navigation",
+      "in_scope": true
+    },
+    {
+      "from_url": "https://deepmess.com/zh/namerena/about.html",
+      "reference": "custom_lan.html",
+      "url": "https://deepmess.com/zh/namerena/custom_lan.html",
+      "kind": "navigation",
+      "in_scope": true
+    },
+    {
+      "from_url": "https://deepmess.com/zh/namerena/about.html",
+      "reference": "http://www.goozo.net/index.php?title=MD5%E5%A4%A7%E4%BD%9C%E6%88%98",
+      "url": "http://www.goozo.net/index.php",
+      "kind": "navigation",
+      "in_scope": false
+    },
+    {
+      "from_url": "https://deepmess.com/zh/namerena/about.html",
+      "reference": "https://deepmess.com/namerena/",
+      "url": "https://deepmess.com/namerena/",
+      "kind": "navigation",
+      "in_scope": true
+    },
+    {
+      "from_url": "https://deepmess.com/zh/namerena/about.html",
+      "reference": "https://github.com/favicon.ico",
+      "url": "https://github.com/favicon.ico",
+      "kind": "resource",
+      "in_scope": false
+    },
+    {
+      "from_url": "https://deepmess.com/zh/namerena/about.html",
+      "reference": "https://github.com/jasonlong/architect-theme",
+      "url": "https://github.com/jasonlong/architect-theme",
+      "kind": "navigation",
+      "in_scope": false
+    },
+    {
+      "from_url": "https://deepmess.com/zh/namerena/about.html",
+      "reference": "https://github.com/rinick",
+      "url": "https://github.com/rinick",
+      "kind": "navigation",
+      "in_scope": false
+    },
+    {
+      "from_url": "https://deepmess.com/zh/namerena/about.html",
+      "reference": "https://pages.github.com",
+      "url": "https://pages.github.com/",
+      "kind": "navigation",
+      "in_scope": false
+    },
+    {
+      "from_url": "https://deepmess.com/zh/namerena/about.html",
+      "reference": "https://www.dartlang.org",
+      "url": "https://www.dartlang.org/",
+      "kind": "navigation",
+      "in_scope": false
+    },
+    {
+      "from_url": "https://deepmess.com/zh/namerena/about.html",
+      "reference": "https://www.weibo.com/favicon.ico",
+      "url": "https://www.weibo.com/favicon.ico",
+      "kind": "resource",
+      "in_scope": false
+    },
+    {
+      "from_url": "https://deepmess.com/zh/namerena/about.html",
+      "reference": "https://www.weibo.com/rinick",
+      "url": "https://www.weibo.com/rinick",
+      "kind": "navigation",
+      "in_scope": false
+    },
+    {
+      "from_url": "https://deepmess.com/zh/namerena/about.html",
+      "reference": "https://www.weibo.com/u/1714554521",
+      "url": "https://www.weibo.com/u/1714554521",
+      "kind": "navigation",
+      "in_scope": false
+    },
+    {
+      "from_url": "https://deepmess.com/zh/namerena/about.html",
+      "reference": "index.html",
+      "url": "https://deepmess.com/zh/namerena/index.html",
+      "kind": "navigation",
+      "in_scope": true
+    },
+    {
+      "from_url": "https://deepmess.com/zh/namerena/about.html",
+      "reference": "naming.html",
+      "url": "https://deepmess.com/zh/namerena/naming.html",
+      "kind": "navigation",
+      "in_scope": true
+    },
+    {
+      "from_url": "https://deepmess.com/zh/namerena/about.html",
+      "reference": "skill.html",
+      "url": "https://deepmess.com/zh/namerena/skill.html",
+      "kind": "navigation",
+      "in_scope": true
+    },
+    {
+      "from_url": "https://deepmess.com/zh/namerena/about.html",
+      "reference": "special.html",
+      "url": "https://deepmess.com/zh/namerena/special.html",
+      "kind": "navigation",
+      "in_scope": true
+    },
+    {
+      "from_url": "https://deepmess.com/zh/namerena/about.html",
+      "reference": "testing.html",
+      "url": "https://deepmess.com/zh/namerena/testing.html",
+      "kind": "navigation",
+      "in_scope": true
+    },
+    {
+      "from_url": "https://deepmess.com/zh/namerena/antd.f10485e3.css",
+      "reference": "#linearGradient-1",
+      "url": "https://deepmess.com/zh/namerena/antd.f10485e3.css",
+      "kind": "resource",
+      "in_scope": true
+    },
+    {
+      "from_url": "https://deepmess.com/zh/namerena/api.html",
+      "reference": "//deepmess.com/",
+      "url": "https://deepmess.com/",
+      "kind": "navigation",
+      "in_scope": false
+    },
+    {
+      "from_url": "https://deepmess.com/zh/namerena/api.html",
+      "reference": "//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js",
+      "url": "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js",
+      "kind": "resource",
+      "in_scope": false
+    },
+    {
+      "from_url": "https://deepmess.com/zh/namerena/api.html",
+      "reference": "/js/image-popup.js",
+      "url": "https://deepmess.com/js/image-popup.js",
+      "kind": "resource",
+      "in_scope": true
+    },
+    {
+      "from_url": "https://deepmess.com/zh/namerena/api.html",
+      "reference": "/stylesheets/print.css",
+      "url": "https://deepmess.com/stylesheets/print.css",
+      "kind": "resource",
+      "in_scope": true
+    },
+    {
+      "from_url": "https://deepmess.com/zh/namerena/api.html",
+      "reference": "/stylesheets/pygment_trac.css",
+      "url": "https://deepmess.com/stylesheets/pygment_trac.css",
+      "kind": "resource",
+      "in_scope": true
+    },
+    {
+      "from_url": "https://deepmess.com/zh/namerena/api.html",
+      "reference": "/stylesheets/stylesheet.css",
+      "url": "https://deepmess.com/stylesheets/stylesheet.css",
+      "kind": "resource",
+      "in_scope": true
+    },
+    {
+      "from_url": "https://deepmess.com/zh/namerena/api.html",
+      "reference": "about.html",
+      "url": "https://deepmess.com/zh/namerena/about.html",
+      "kind": "navigation",
+      "in_scope": true
+    },
+    {
+      "from_url": "https://deepmess.com/zh/namerena/api.html",
+      "reference": "api_test.html",
+      "url": "https://deepmess.com/zh/namerena/api_test.html",
+      "kind": "navigation",
+      "in_scope": true
+    },
+    {
+      "from_url": "https://deepmess.com/zh/namerena/api.html",
+      "reference": "attribute.html",
+      "url": "https://deepmess.com/zh/namerena/attribute.html",
+      "kind": "navigation",
+      "in_scope": true
+    },
+    {
+      "from_url": "https://deepmess.com/zh/namerena/api.html",
+      "reference": "custom_lan.html",
+      "url": "https://deepmess.com/zh/namerena/custom_lan.html",
+      "kind": "navigation",
+      "in_scope": true
+    },
+    {
+      "from_url": "https://deepmess.com/zh/namerena/api.html",
+      "reference": "https://deepmess.com/namerena/",
+      "url": "https://deepmess.com/namerena/",
+      "kind": "navigation",
+      "in_scope": true
+    },
+    {
+      "from_url": "https://deepmess.com/zh/namerena/api.html",
+      "reference": "https://github.com/favicon.ico",
+      "url": "https://github.com/favicon.ico",
+      "kind": "resource",
+      "in_scope": false
+    },
+    {
+      "from_url": "https://deepmess.com/zh/namerena/api.html",
+      "reference": "https://github.com/rinick",
+      "url": "https://github.com/rinick",
+      "kind": "navigation",
+      "in_scope": false
+    },
+    {
+      "from_url": "https://deepmess.com/zh/namerena/api.html",
+      "reference": "https://www.weibo.com/favicon.ico",
+      "url": "https://www.weibo.com/favicon.ico",
+      "kind": "resource",
+      "in_scope": false
+    },
+    {
+      "from_url": "https://deepmess.com/zh/namerena/api.html",
+      "reference": "https://www.weibo.com/rinick",
+      "url": "https://www.weibo.com/rinick",
+      "kind": "navigation",
+      "in_scope": false
+    },
+    {
+      "from_url": "https://deepmess.com/zh/namerena/api.html",
+      "reference": "index.html",
+      "url": "https://deepmess.com/zh/namerena/index.html",
+      "kind": "navigation",
+      "in_scope": true
+    },
+    {
+      "from_url": "https://deepmess.com/zh/namerena/api.html",
+      "reference": "naming.html",
+      "url": "https://deepmess.com/zh/namerena/naming.html",
+      "kind": "navigation",
+      "in_scope": true
+    },
+    {
+      "from_url": "https://deepmess.com/zh/namerena/api.html",
+      "reference": "skill.html",
+      "url": "https://deepmess.com/zh/namerena/skill.html",
+      "kind": "navigation",
+      "in_scope": true
+    },
+    {
+      "from_url": "https://deepmess.com/zh/namerena/api.html",
+      "reference": "special.html",
+      "url": "https://deepmess.com/zh/namerena/special.html",
+      "kind": "navigation",
+      "in_scope": true
+    },
+    {
+      "from_url": "https://deepmess.com/zh/namerena/api.html",
+      "reference": "testing.html",
+      "url": "https://deepmess.com/zh/namerena/testing.html",
+      "kind": "navigation",
+      "in_scope": true
+    },
+    {
+      "from_url": "https://deepmess.com/zh/namerena/api_test.html",
+      "reference": "/namerena/index.html#n=",
+      "url": "https://deepmess.com/namerena/index.html",
+      "kind": "resource",
+      "in_scope": true
+    },
+    {
+      "from_url": "https://deepmess.com/zh/namerena/attribute.html",
+      "reference": "//deepmess.com/",
+      "url": "https://deepmess.com/",
+      "kind": "navigation",
+      "in_scope": false
+    },
+    {
+      "from_url": "https://deepmess.com/zh/namerena/attribute.html",
+      "reference": "//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js",
+      "url": "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js",
+      "kind": "resource",
+      "in_scope": false
+    },
+    {
+      "from_url": "https://deepmess.com/zh/namerena/attribute.html",
+      "reference": "/js/image-popup.js",
+      "url": "https://deepmess.com/js/image-popup.js",
+      "kind": "resource",
+      "in_scope": true
+    },
+    {
+      "from_url": "https://deepmess.com/zh/namerena/attribute.html",
+      "reference": "/stylesheets/print.css",
+      "url": "https://deepmess.com/stylesheets/print.css",
+      "kind": "resource",
+      "in_scope": true
+    },
+    {
+      "from_url": "https://deepmess.com/zh/namerena/attribute.html",
+      "reference": "/stylesheets/pygment_trac.css",
+      "url": "https://deepmess.com/stylesheets/pygment_trac.css",
+      "kind": "resource",
+      "in_scope": true
+    },
+    {
+      "from_url": "https://deepmess.com/zh/namerena/attribute.html",
+      "reference": "/stylesheets/stylesheet.css",
+      "url": "https://deepmess.com/stylesheets/stylesheet.css",
+      "kind": "resource",
+      "in_scope": true
+    },
+    {
+      "from_url": "https://deepmess.com/zh/namerena/attribute.html",
+      "reference": "about.html",
+      "url": "https://deepmess.com/zh/namerena/about.html",
+      "kind": "navigation",
+      "in_scope": true
+    },
+    {
+      "from_url": "https://deepmess.com/zh/namerena/attribute.html",
+      "reference": "attribute.html",
+      "url": "https://deepmess.com/zh/namerena/attribute.html",
+      "kind": "navigation",
+      "in_scope": true
+    },
+    {
+      "from_url": "https://deepmess.com/zh/namerena/attribute.html",
+      "reference": "custom_lan.html",
+      "url": "https://deepmess.com/zh/namerena/custom_lan.html",
+      "kind": "navigation",
+      "in_scope": true
+    },
+    {
+      "from_url": "https://deepmess.com/zh/namerena/attribute.html",
+      "reference": "https://deepmess.com/namerena/",
+      "url": "https://deepmess.com/namerena/",
+      "kind": "navigation",
+      "in_scope": true
+    },
+    {
+      "from_url": "https://deepmess.com/zh/namerena/attribute.html",
+      "reference": "https://github.com/favicon.ico",
+      "url": "https://github.com/favicon.ico",
+      "kind": "resource",
+      "in_scope": false
+    },
+    {
+      "from_url": "https://deepmess.com/zh/namerena/attribute.html",
+      "reference": "https://github.com/rinick",
+      "url": "https://github.com/rinick",
+      "kind": "navigation",
+      "in_scope": false
+    },
+    {
+      "from_url": "https://deepmess.com/zh/namerena/attribute.html",
+      "reference": "https://www.weibo.com/favicon.ico",
+      "url": "https://www.weibo.com/favicon.ico",
+      "kind": "resource",
+      "in_scope": false
+    },
+    {
+      "from_url": "https://deepmess.com/zh/namerena/attribute.html",
+      "reference": "https://www.weibo.com/rinick",
+      "url": "https://www.weibo.com/rinick",
+      "kind": "navigation",
+      "in_scope": false
+    },
+    {
+      "from_url": "https://deepmess.com/zh/namerena/attribute.html",
+      "reference": "index.html",
+      "url": "https://deepmess.com/zh/namerena/index.html",
+      "kind": "navigation",
+      "in_scope": true
+    },
+    {
+      "from_url": "https://deepmess.com/zh/namerena/attribute.html",
+      "reference": "naming.html",
+      "url": "https://deepmess.com/zh/namerena/naming.html",
+      "kind": "navigation",
+      "in_scope": true
+    },
+    {
+      "from_url": "https://deepmess.com/zh/namerena/attribute.html",
+      "reference": "skill.html",
+      "url": "https://deepmess.com/zh/namerena/skill.html",
+      "kind": "navigation",
+      "in_scope": true
+    },
+    {
+      "from_url": "https://deepmess.com/zh/namerena/attribute.html",
+      "reference": "special.html",
+      "url": "https://deepmess.com/zh/namerena/special.html",
+      "kind": "navigation",
+      "in_scope": true
+    },
+    {
+      "from_url": "https://deepmess.com/zh/namerena/attribute.html",
+      "reference": "testing.html",
+      "url": "https://deepmess.com/zh/namerena/testing.html",
+      "kind": "navigation",
+      "in_scope": true
+    },
+    {
+      "from_url": "https://deepmess.com/zh/namerena/custom_lan.html",
+      "reference": "//deepmess.com/",
+      "url": "https://deepmess.com/",
+      "kind": "navigation",
+      "in_scope": false
+    },
+    {
+      "from_url": "https://deepmess.com/zh/namerena/custom_lan.html",
+      "reference": "//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js",
+      "url": "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js",
+      "kind": "resource",
+      "in_scope": false
+    },
+    {
+      "from_url": "https://deepmess.com/zh/namerena/custom_lan.html",
+      "reference": "/js/image-popup.js",
+      "url": "https://deepmess.com/js/image-popup.js",
+      "kind": "resource",
+      "in_scope": true
+    },
+    {
+      "from_url": "https://deepmess.com/zh/namerena/custom_lan.html",
+      "reference": "/stylesheets/print.css",
+      "url": "https://deepmess.com/stylesheets/print.css",
+      "kind": "resource",
+      "in_scope": true
+    },
+    {
+      "from_url": "https://deepmess.com/zh/namerena/custom_lan.html",
+      "reference": "/stylesheets/pygment_trac.css",
+      "url": "https://deepmess.com/stylesheets/pygment_trac.css",
+      "kind": "resource",
+      "in_scope": true
+    },
+    {
+      "from_url": "https://deepmess.com/zh/namerena/custom_lan.html",
+      "reference": "/stylesheets/stylesheet.css",
+      "url": "https://deepmess.com/stylesheets/stylesheet.css",
+      "kind": "resource",
+      "in_scope": true
+    },
+    {
+      "from_url": "https://deepmess.com/zh/namerena/custom_lan.html",
+      "reference": "about.html",
+      "url": "https://deepmess.com/zh/namerena/about.html",
+      "kind": "navigation",
+      "in_scope": true
+    },
+    {
+      "from_url": "https://deepmess.com/zh/namerena/custom_lan.html",
+      "reference": "attribute.html",
+      "url": "https://deepmess.com/zh/namerena/attribute.html",
+      "kind": "navigation",
+      "in_scope": true
+    },
+    {
+      "from_url": "https://deepmess.com/zh/namerena/custom_lan.html",
+      "reference": "custom_lan.html",
+      "url": "https://deepmess.com/zh/namerena/custom_lan.html",
+      "kind": "navigation",
+      "in_scope": true
+    },
+    {
+      "from_url": "https://deepmess.com/zh/namerena/custom_lan.html",
+      "reference": "https://deepmess.com/namerena/",
+      "url": "https://deepmess.com/namerena/",
+      "kind": "navigation",
+      "in_scope": true
+    },
+    {
+      "from_url": "https://deepmess.com/zh/namerena/custom_lan.html",
+      "reference": "https://deepmess.com/namerena/?l=lang%2Fen.json",
+      "url": "https://deepmess.com/namerena/",
+      "kind": "navigation",
+      "in_scope": true
+    },
+    {
+      "from_url": "https://deepmess.com/zh/namerena/custom_lan.html",
+      "reference": "https://deepmess.com/namerena/?l=lang%2Fzh-TW.json",
+      "url": "https://deepmess.com/namerena/",
+      "kind": "navigation",
+      "in_scope": true
+    },
+    {
+      "from_url": "https://deepmess.com/zh/namerena/custom_lan.html",
+      "reference": "https://deepmess.com/namerena/?l=lang%2Fzh-money.json",
+      "url": "https://deepmess.com/namerena/",
+      "kind": "navigation",
+      "in_scope": true
+    },
+    {
+      "from_url": "https://deepmess.com/zh/namerena/custom_lan.html",
+      "reference": "https://deepmess.com/namerena/lang/zh.json",
+      "url": "https://deepmess.com/namerena/lang/zh.json",
+      "kind": "navigation",
+      "in_scope": true
+    },
+    {
+      "from_url": "https://deepmess.com/zh/namerena/custom_lan.html",
+      "reference": "https://en.wikipedia.org/wiki/Cross-origin_resource_sharing",
+      "url": "https://en.wikipedia.org/wiki/Cross-origin_resource_sharing",
+      "kind": "navigation",
+      "in_scope": false
+    },
+    {
+      "from_url": "https://deepmess.com/zh/namerena/custom_lan.html",
+      "reference": "https://github.com/favicon.ico",
+      "url": "https://github.com/favicon.ico",
+      "kind": "resource",
+      "in_scope": false
+    },
+    {
+      "from_url": "https://deepmess.com/zh/namerena/custom_lan.html",
+      "reference": "https://github.com/rinick",
+      "url": "https://github.com/rinick",
+      "kind": "navigation",
+      "in_scope": false
+    },
+    {
+      "from_url": "https://deepmess.com/zh/namerena/custom_lan.html",
+      "reference": "https://pages.github.com/",
+      "url": "https://pages.github.com/",
+      "kind": "navigation",
+      "in_scope": false
+    },
+    {
+      "from_url": "https://deepmess.com/zh/namerena/custom_lan.html",
+      "reference": "https://www.weibo.com/favicon.ico",
+      "url": "https://www.weibo.com/favicon.ico",
+      "kind": "resource",
+      "in_scope": false
+    },
+    {
+      "from_url": "https://deepmess.com/zh/namerena/custom_lan.html",
+      "reference": "https://www.weibo.com/rinick",
+      "url": "https://www.weibo.com/rinick",
+      "kind": "navigation",
+      "in_scope": false
+    },
+    {
+      "from_url": "https://deepmess.com/zh/namerena/custom_lan.html",
+      "reference": "images/lan_demo_money.png",
+      "url": "https://deepmess.com/zh/namerena/images/lan_demo_money.png",
+      "kind": "resource",
+      "in_scope": true
+    },
+    {
+      "from_url": "https://deepmess.com/zh/namerena/custom_lan.html",
+      "reference": "images/lan_demo_zh.png",
+      "url": "https://deepmess.com/zh/namerena/images/lan_demo_zh.png",
+      "kind": "resource",
+      "in_scope": true
+    },
+    {
+      "from_url": "https://deepmess.com/zh/namerena/custom_lan.html",
+      "reference": "index.html",
+      "url": "https://deepmess.com/zh/namerena/index.html",
+      "kind": "navigation",
+      "in_scope": true
+    },
+    {
+      "from_url": "https://deepmess.com/zh/namerena/custom_lan.html",
+      "reference": "lang/en.json",
+      "url": "https://deepmess.com/namerena/lang/en.json",
+      "kind": "language-resource",
+      "in_scope": true
+    },
+    {
+      "from_url": "https://deepmess.com/zh/namerena/custom_lan.html",
+      "reference": "lang/zh-TW.json",
+      "url": "https://deepmess.com/namerena/lang/zh-TW.json",
+      "kind": "language-resource",
+      "in_scope": true
+    },
+    {
+      "from_url": "https://deepmess.com/zh/namerena/custom_lan.html",
+      "reference": "lang/zh-money.json",
+      "url": "https://deepmess.com/namerena/lang/zh-money.json",
+      "kind": "language-resource",
+      "in_scope": true
+    },
+    {
+      "from_url": "https://deepmess.com/zh/namerena/custom_lan.html",
+      "reference": "naming.html",
+      "url": "https://deepmess.com/zh/namerena/naming.html",
+      "kind": "navigation",
+      "in_scope": true
+    },
+    {
+      "from_url": "https://deepmess.com/zh/namerena/custom_lan.html",
+      "reference": "skill.html",
+      "url": "https://deepmess.com/zh/namerena/skill.html",
+      "kind": "navigation",
+      "in_scope": true
+    },
+    {
+      "from_url": "https://deepmess.com/zh/namerena/custom_lan.html",
+      "reference": "special.html",
+      "url": "https://deepmess.com/zh/namerena/special.html",
+      "kind": "navigation",
+      "in_scope": true
+    },
+    {
+      "from_url": "https://deepmess.com/zh/namerena/custom_lan.html",
+      "reference": "testing.html",
+      "url": "https://deepmess.com/zh/namerena/testing.html",
+      "kind": "navigation",
+      "in_scope": true
+    },
+    {
+      "from_url": "https://deepmess.com/zh/namerena/index.html",
+      "reference": "./api.html",
+      "url": "https://deepmess.com/zh/namerena/api.html",
+      "kind": "navigation",
+      "in_scope": true
+    },
+    {
+      "from_url": "https://deepmess.com/zh/namerena/index.html",
+      "reference": "./attribute.html",
+      "url": "https://deepmess.com/zh/namerena/attribute.html",
+      "kind": "navigation",
+      "in_scope": true
+    },
+    {
+      "from_url": "https://deepmess.com/zh/namerena/index.html",
+      "reference": "./custom_lan.html",
+      "url": "https://deepmess.com/zh/namerena/custom_lan.html",
+      "kind": "navigation",
+      "in_scope": true
+    },
+    {
+      "from_url": "https://deepmess.com/zh/namerena/index.html",
+      "reference": "./naming.html",
+      "url": "https://deepmess.com/zh/namerena/naming.html",
+      "kind": "navigation",
+      "in_scope": true
+    },
+    {
+      "from_url": "https://deepmess.com/zh/namerena/index.html",
+      "reference": "./skill.html",
+      "url": "https://deepmess.com/zh/namerena/skill.html",
+      "kind": "navigation",
+      "in_scope": true
+    },
+    {
+      "from_url": "https://deepmess.com/zh/namerena/index.html",
+      "reference": "./special.html",
+      "url": "https://deepmess.com/zh/namerena/special.html",
+      "kind": "navigation",
+      "in_scope": true
+    },
+    {
+      "from_url": "https://deepmess.com/zh/namerena/index.html",
+      "reference": "./testing.html",
+      "url": "https://deepmess.com/zh/namerena/testing.html",
+      "kind": "navigation",
+      "in_scope": true
+    },
+    {
+      "from_url": "https://deepmess.com/zh/namerena/index.html",
+      "reference": "//deepmess.com/",
+      "url": "https://deepmess.com/",
+      "kind": "navigation",
+      "in_scope": false
+    },
+    {
+      "from_url": "https://deepmess.com/zh/namerena/index.html",
+      "reference": "//deepmess.com/namerena",
+      "url": "https://deepmess.com/namerena/",
+      "kind": "navigation",
+      "in_scope": true
+    },
+    {
+      "from_url": "https://deepmess.com/zh/namerena/index.html",
+      "reference": "//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js",
+      "url": "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js",
+      "kind": "resource",
+      "in_scope": false
+    },
+    {
+      "from_url": "https://deepmess.com/zh/namerena/index.html",
+      "reference": "/js/image-popup.js",
+      "url": "https://deepmess.com/js/image-popup.js",
+      "kind": "resource",
+      "in_scope": true
+    },
+    {
+      "from_url": "https://deepmess.com/zh/namerena/index.html",
+      "reference": "/stylesheets/print.css",
+      "url": "https://deepmess.com/stylesheets/print.css",
+      "kind": "resource",
+      "in_scope": true
+    },
+    {
+      "from_url": "https://deepmess.com/zh/namerena/index.html",
+      "reference": "/stylesheets/pygment_trac.css",
+      "url": "https://deepmess.com/stylesheets/pygment_trac.css",
+      "kind": "resource",
+      "in_scope": true
+    },
+    {
+      "from_url": "https://deepmess.com/zh/namerena/index.html",
+      "reference": "/stylesheets/stylesheet.css",
+      "url": "https://deepmess.com/stylesheets/stylesheet.css",
+      "kind": "resource",
+      "in_scope": true
+    },
+    {
+      "from_url": "https://deepmess.com/zh/namerena/index.html",
+      "reference": "/zh/md5.html",
+      "url": "https://deepmess.com/zh/md5.html",
+      "kind": "navigation",
+      "in_scope": false
+    },
+    {
+      "from_url": "https://deepmess.com/zh/namerena/index.html",
+      "reference": "about.html",
+      "url": "https://deepmess.com/zh/namerena/about.html",
+      "kind": "navigation",
+      "in_scope": true
+    },
+    {
+      "from_url": "https://deepmess.com/zh/namerena/index.html",
+      "reference": "attribute.html",
+      "url": "https://deepmess.com/zh/namerena/attribute.html",
+      "kind": "navigation",
+      "in_scope": true
+    },
+    {
+      "from_url": "https://deepmess.com/zh/namerena/index.html",
+      "reference": "custom_lan.html",
+      "url": "https://deepmess.com/zh/namerena/custom_lan.html",
+      "kind": "navigation",
+      "in_scope": true
+    },
+    {
+      "from_url": "https://deepmess.com/zh/namerena/index.html",
+      "reference": "http://tieba.baidu.com/%E5%90%8D%E5%AD%97%E7%AB%9E%E6%8A%80%E5%9C%BA",
+      "url": "http://tieba.baidu.com/%E5%90%8D%E5%AD%97%E7%AB%9E%E6%8A%80%E5%9C%BA",
+      "kind": "navigation",
+      "in_scope": false
+    },
+    {
+      "from_url": "https://deepmess.com/zh/namerena/index.html",
+      "reference": "https://deepmess.com/namerena/",
+      "url": "https://deepmess.com/namerena/",
+      "kind": "navigation",
+      "in_scope": true
+    },
+    {
+      "from_url": "https://deepmess.com/zh/namerena/index.html",
+      "reference": "https://github.com/favicon.ico",
+      "url": "https://github.com/favicon.ico",
+      "kind": "resource",
+      "in_scope": false
+    },
+    {
+      "from_url": "https://deepmess.com/zh/namerena/index.html",
+      "reference": "https://github.com/rinick",
+      "url": "https://github.com/rinick",
+      "kind": "navigation",
+      "in_scope": false
+    },
+    {
+      "from_url": "https://deepmess.com/zh/namerena/index.html",
+      "reference": "https://shenjack.top:10008/",
+      "url": "https://shenjack.top:10008/",
+      "kind": "navigation",
+      "in_scope": false
+    },
+    {
+      "from_url": "https://deepmess.com/zh/namerena/index.html",
+      "reference": "https://www.weibo.com/favicon.ico",
+      "url": "https://www.weibo.com/favicon.ico",
+      "kind": "resource",
+      "in_scope": false
+    },
+    {
+      "from_url": "https://deepmess.com/zh/namerena/index.html",
+      "reference": "https://www.weibo.com/rinick",
+      "url": "https://www.weibo.com/rinick",
+      "kind": "navigation",
+      "in_scope": false
+    },
+    {
+      "from_url": "https://deepmess.com/zh/namerena/index.html",
+      "reference": "images/alphago.png",
+      "url": "https://deepmess.com/zh/namerena/images/alphago.png",
+      "kind": "resource",
+      "in_scope": true
+    },
+    {
+      "from_url": "https://deepmess.com/zh/namerena/index.html",
+      "reference": "images/logo64.png",
+      "url": "https://deepmess.com/zh/namerena/images/logo64.png",
+      "kind": "resource",
+      "in_scope": true
+    },
+    {
+      "from_url": "https://deepmess.com/zh/namerena/index.html",
+      "reference": "index.html",
+      "url": "https://deepmess.com/zh/namerena/index.html",
+      "kind": "navigation",
+      "in_scope": true
+    },
+    {
+      "from_url": "https://deepmess.com/zh/namerena/index.html",
+      "reference": "naming.html",
+      "url": "https://deepmess.com/zh/namerena/naming.html",
+      "kind": "navigation",
+      "in_scope": true
+    },
+    {
+      "from_url": "https://deepmess.com/zh/namerena/index.html",
+      "reference": "skill.html",
+      "url": "https://deepmess.com/zh/namerena/skill.html",
+      "kind": "navigation",
+      "in_scope": true
+    },
+    {
+      "from_url": "https://deepmess.com/zh/namerena/index.html",
+      "reference": "special.html",
+      "url": "https://deepmess.com/zh/namerena/special.html",
+      "kind": "navigation",
+      "in_scope": true
+    },
+    {
+      "from_url": "https://deepmess.com/zh/namerena/index.html",
+      "reference": "testing.html",
+      "url": "https://deepmess.com/zh/namerena/testing.html",
+      "kind": "navigation",
+      "in_scope": true
+    },
+    {
+      "from_url": "https://deepmess.com/zh/namerena/ladder.fb28ab43.js",
+      "reference": "#",
+      "url": "https://deepmess.com/zh/namerena/ladder.fb28ab43.js",
+      "kind": "resource",
+      "in_scope": true
+    },
+    {
+      "from_url": "https://deepmess.com/zh/namerena/ladder.fb28ab43.js",
+      "reference": "#b",
+      "url": "https://deepmess.com/zh/namerena/ladder.fb28ab43.js",
+      "kind": "resource",
+      "in_scope": true
+    },
+    {
+      "from_url": "https://deepmess.com/zh/namerena/ladder.fb28ab43.js",
+      "reference": "#d",
+      "url": "https://deepmess.com/zh/namerena/ladder.fb28ab43.js",
+      "kind": "resource",
+      "in_scope": true
+    },
+    {
+      "from_url": "https://deepmess.com/zh/namerena/ladder.fb28ab43.js",
+      "reference": "../../package.json",
+      "url": "https://deepmess.com/package.json",
+      "kind": "literal-candidate",
+      "in_scope": false
+    },
+    {
+      "from_url": "https://deepmess.com/zh/namerena/ladder.fb28ab43.js",
+      "reference": "./cjs/react-dom.production.min.js",
+      "url": "https://deepmess.com/zh/namerena/cjs/react-dom.production.min.js",
+      "kind": "literal-candidate",
+      "in_scope": false
+    },
+    {
+      "from_url": "https://deepmess.com/zh/namerena/ladder.fb28ab43.js",
+      "reference": "./cjs/react-is.production.min.js",
+      "url": "https://deepmess.com/zh/namerena/cjs/react-is.production.min.js",
+      "kind": "literal-candidate",
+      "in_scope": false
+    },
+    {
+      "from_url": "https://deepmess.com/zh/namerena/ladder.fb28ab43.js",
+      "reference": "./cjs/react.production.min.js",
+      "url": "https://deepmess.com/zh/namerena/cjs/react.production.min.js",
+      "kind": "literal-candidate",
+      "in_scope": false
+    },
+    {
+      "from_url": "https://deepmess.com/zh/namerena/ladder.fb28ab43.js",
+      "reference": "./cjs/scheduler.production.min.js",
+      "url": "https://deepmess.com/zh/namerena/cjs/scheduler.production.min.js",
+      "kind": "literal-candidate",
+      "in_scope": false
+    },
+    {
+      "from_url": "https://deepmess.com/zh/namerena/ladder.fb28ab43.js",
+      "reference": "./dist/antd.compact.min.css",
+      "url": "https://deepmess.com/zh/namerena/dist/antd.compact.min.css",
+      "kind": "literal-candidate",
+      "in_scope": false
+    },
+    {
+      "from_url": "https://deepmess.com/zh/namerena/ladder.fb28ab43.js",
+      "reference": "./dist/antd.dark.min.css",
+      "url": "https://deepmess.com/zh/namerena/dist/antd.dark.min.css",
+      "kind": "literal-candidate",
+      "in_scope": false
+    },
+    {
+      "from_url": "https://deepmess.com/zh/namerena/ladder.fb28ab43.js",
+      "reference": "./dist/antd.min.css",
+      "url": "https://deepmess.com/zh/namerena/dist/antd.min.css",
+      "kind": "literal-candidate",
+      "in_scope": false
+    },
+    {
+      "from_url": "https://deepmess.com/zh/namerena/ladder.fb28ab43.js",
+      "reference": "./dist/antd.min.js",
+      "url": "https://deepmess.com/zh/namerena/dist/antd.min.js",
+      "kind": "literal-candidate",
+      "in_scope": false
+    },
+    {
+      "from_url": "https://deepmess.com/zh/namerena/ladder.fb28ab43.js",
+      "reference": "@types/gtag.js",
+      "url": "https://deepmess.com/zh/namerena/@types/gtag.js",
+      "kind": "literal-candidate",
+      "in_scope": false
+    },
+    {
+      "from_url": "https://deepmess.com/zh/namerena/ladder.fb28ab43.js",
+      "reference": "dist/antd.min.js",
+      "url": "https://deepmess.com/zh/namerena/dist/antd.min.js",
+      "kind": "literal-candidate",
+      "in_scope": false
+    },
+    {
+      "from_url": "https://deepmess.com/zh/namerena/ladder.fb28ab43.js",
+      "reference": "docsearch.js",
+      "url": "https://deepmess.com/zh/namerena/docsearch.js",
+      "kind": "literal-candidate",
+      "in_scope": false
+    },
+    {
+      "from_url": "https://deepmess.com/zh/namerena/ladder.fb28ab43.js",
+      "reference": "es/index.js",
+      "url": "https://deepmess.com/zh/namerena/es/index.js",
+      "kind": "literal-candidate",
+      "in_scope": false
+    },
+    {
+      "from_url": "https://deepmess.com/zh/namerena/ladder.fb28ab43.js",
+      "reference": "http://deepmess.com/zh/namerena/ladder.html",
+      "url": "https://deepmess.com/zh/namerena/ladder.html",
+      "kind": "literal-candidate",
+      "in_scope": false
+    },
+    {
+      "from_url": "https://deepmess.com/zh/namerena/ladder.fb28ab43.js",
+      "reference": "https://deepmess.com/namerena/namerena.png",
+      "url": "https://deepmess.com/namerena/namerena.png",
+      "kind": "literal-candidate",
+      "in_scope": false
+    },
+    {
+      "from_url": "https://deepmess.com/zh/namerena/ladder.fb28ab43.js",
+      "reference": "https://reactjs.org/docs/error-decoder.html?invariant=",
+      "url": "https://reactjs.org/docs/error-decoder.html",
+      "kind": "literal-candidate",
+      "in_scope": false
+    },
+    {
+      "from_url": "https://deepmess.com/zh/namerena/ladder.fb28ab43.js",
+      "reference": "jsonml.js",
+      "url": "https://deepmess.com/zh/namerena/jsonml.js",
+      "kind": "literal-candidate",
+      "in_scope": false
+    },
+    {
+      "from_url": "https://deepmess.com/zh/namerena/ladder.fb28ab43.js",
+      "reference": "lib/index.js",
+      "url": "https://deepmess.com/zh/namerena/lib/index.js",
+      "kind": "literal-candidate",
+      "in_scope": false
+    },
+    {
+      "from_url": "https://deepmess.com/zh/namerena/ladder.fb28ab43.js",
+      "reference": "omit.js",
+      "url": "https://deepmess.com/zh/namerena/omit.js",
+      "kind": "literal-candidate",
+      "in_scope": false
+    },
+    {
+      "from_url": "https://deepmess.com/zh/namerena/ladder.html",
+      "reference": "//deepmess.com/",
+      "url": "https://deepmess.com/",
+      "kind": "navigation",
+      "in_scope": false
+    },
+    {
+      "from_url": "https://deepmess.com/zh/namerena/ladder.html",
+      "reference": "//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js",
+      "url": "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js",
+      "kind": "resource",
+      "in_scope": false
+    },
+    {
+      "from_url": "https://deepmess.com/zh/namerena/ladder.html",
+      "reference": "/js/image-popup.js",
+      "url": "https://deepmess.com/js/image-popup.js",
+      "kind": "resource",
+      "in_scope": true
+    },
+    {
+      "from_url": "https://deepmess.com/zh/namerena/ladder.html",
+      "reference": "/stylesheets/print.css",
+      "url": "https://deepmess.com/stylesheets/print.css",
+      "kind": "resource",
+      "in_scope": true
+    },
+    {
+      "from_url": "https://deepmess.com/zh/namerena/ladder.html",
+      "reference": "/stylesheets/pygment_trac.css",
+      "url": "https://deepmess.com/stylesheets/pygment_trac.css",
+      "kind": "resource",
+      "in_scope": true
+    },
+    {
+      "from_url": "https://deepmess.com/zh/namerena/ladder.html",
+      "reference": "/stylesheets/stylesheet.css",
+      "url": "https://deepmess.com/stylesheets/stylesheet.css",
+      "kind": "resource",
+      "in_scope": true
+    },
+    {
+      "from_url": "https://deepmess.com/zh/namerena/ladder.html",
+      "reference": "about.html",
+      "url": "https://deepmess.com/zh/namerena/about.html",
+      "kind": "navigation",
+      "in_scope": true
+    },
+    {
+      "from_url": "https://deepmess.com/zh/namerena/ladder.html",
+      "reference": "antd.f10485e3.css",
+      "url": "https://deepmess.com/zh/namerena/antd.f10485e3.css",
+      "kind": "resource",
+      "in_scope": true
+    },
+    {
+      "from_url": "https://deepmess.com/zh/namerena/ladder.html",
+      "reference": "attribute.html",
+      "url": "https://deepmess.com/zh/namerena/attribute.html",
+      "kind": "navigation",
+      "in_scope": true
+    },
+    {
+      "from_url": "https://deepmess.com/zh/namerena/ladder.html",
+      "reference": "custom_lan.html",
+      "url": "https://deepmess.com/zh/namerena/custom_lan.html",
+      "kind": "navigation",
+      "in_scope": true
+    },
+    {
+      "from_url": "https://deepmess.com/zh/namerena/ladder.html",
+      "reference": "https://deepmess.com/namerena/",
+      "url": "https://deepmess.com/namerena/",
+      "kind": "navigation",
+      "in_scope": true
+    },
+    {
+      "from_url": "https://deepmess.com/zh/namerena/ladder.html",
+      "reference": "https://github.com/favicon.ico",
+      "url": "https://github.com/favicon.ico",
+      "kind": "resource",
+      "in_scope": false
+    },
+    {
+      "from_url": "https://deepmess.com/zh/namerena/ladder.html",
+      "reference": "https://github.com/rinick",
+      "url": "https://github.com/rinick",
+      "kind": "navigation",
+      "in_scope": false
+    },
+    {
+      "from_url": "https://deepmess.com/zh/namerena/ladder.html",
+      "reference": "https://www.weibo.com/favicon.ico",
+      "url": "https://www.weibo.com/favicon.ico",
+      "kind": "resource",
+      "in_scope": false
+    },
+    {
+      "from_url": "https://deepmess.com/zh/namerena/ladder.html",
+      "reference": "https://www.weibo.com/rinick",
+      "url": "https://www.weibo.com/rinick",
+      "kind": "navigation",
+      "in_scope": false
+    },
+    {
+      "from_url": "https://deepmess.com/zh/namerena/ladder.html",
+      "reference": "index.html",
+      "url": "https://deepmess.com/zh/namerena/index.html",
+      "kind": "navigation",
+      "in_scope": true
+    },
+    {
+      "from_url": "https://deepmess.com/zh/namerena/ladder.html",
+      "reference": "ladder.2a7f0d8a.css",
+      "url": "https://deepmess.com/zh/namerena/ladder.2a7f0d8a.css",
+      "kind": "resource",
+      "in_scope": true
+    },
+    {
+      "from_url": "https://deepmess.com/zh/namerena/ladder.html",
+      "reference": "ladder.fb28ab43.js",
+      "url": "https://deepmess.com/zh/namerena/ladder.fb28ab43.js",
+      "kind": "resource",
+      "in_scope": true
+    },
+    {
+      "from_url": "https://deepmess.com/zh/namerena/ladder.html",
+      "reference": "naming.html",
+      "url": "https://deepmess.com/zh/namerena/naming.html",
+      "kind": "navigation",
+      "in_scope": true
+    },
+    {
+      "from_url": "https://deepmess.com/zh/namerena/ladder.html",
+      "reference": "skill.html",
+      "url": "https://deepmess.com/zh/namerena/skill.html",
+      "kind": "navigation",
+      "in_scope": true
+    },
+    {
+      "from_url": "https://deepmess.com/zh/namerena/ladder.html",
+      "reference": "special.html",
+      "url": "https://deepmess.com/zh/namerena/special.html",
+      "kind": "navigation",
+      "in_scope": true
+    },
+    {
+      "from_url": "https://deepmess.com/zh/namerena/ladder.html",
+      "reference": "testing.html",
+      "url": "https://deepmess.com/zh/namerena/testing.html",
+      "kind": "navigation",
+      "in_scope": true
+    },
+    {
+      "from_url": "https://deepmess.com/zh/namerena/naming.html",
+      "reference": "//deepmess.com/",
+      "url": "https://deepmess.com/",
+      "kind": "navigation",
+      "in_scope": false
+    },
+    {
+      "from_url": "https://deepmess.com/zh/namerena/naming.html",
+      "reference": "//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js",
+      "url": "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js",
+      "kind": "resource",
+      "in_scope": false
+    },
+    {
+      "from_url": "https://deepmess.com/zh/namerena/naming.html",
+      "reference": "/js/image-popup.js",
+      "url": "https://deepmess.com/js/image-popup.js",
+      "kind": "resource",
+      "in_scope": true
+    },
+    {
+      "from_url": "https://deepmess.com/zh/namerena/naming.html",
+      "reference": "/stylesheets/print.css",
+      "url": "https://deepmess.com/stylesheets/print.css",
+      "kind": "resource",
+      "in_scope": true
+    },
+    {
+      "from_url": "https://deepmess.com/zh/namerena/naming.html",
+      "reference": "/stylesheets/pygment_trac.css",
+      "url": "https://deepmess.com/stylesheets/pygment_trac.css",
+      "kind": "resource",
+      "in_scope": true
+    },
+    {
+      "from_url": "https://deepmess.com/zh/namerena/naming.html",
+      "reference": "/stylesheets/stylesheet.css",
+      "url": "https://deepmess.com/stylesheets/stylesheet.css",
+      "kind": "resource",
+      "in_scope": true
+    },
+    {
+      "from_url": "https://deepmess.com/zh/namerena/naming.html",
+      "reference": "about.html",
+      "url": "https://deepmess.com/zh/namerena/about.html",
+      "kind": "navigation",
+      "in_scope": true
+    },
+    {
+      "from_url": "https://deepmess.com/zh/namerena/naming.html",
+      "reference": "attribute.html",
+      "url": "https://deepmess.com/zh/namerena/attribute.html",
+      "kind": "navigation",
+      "in_scope": true
+    },
+    {
+      "from_url": "https://deepmess.com/zh/namerena/naming.html",
+      "reference": "custom_lan.html",
+      "url": "https://deepmess.com/zh/namerena/custom_lan.html",
+      "kind": "navigation",
+      "in_scope": true
+    },
+    {
+      "from_url": "https://deepmess.com/zh/namerena/naming.html",
+      "reference": "https://deepmess.com/namerena/",
+      "url": "https://deepmess.com/namerena/",
+      "kind": "navigation",
+      "in_scope": true
+    },
+    {
+      "from_url": "https://deepmess.com/zh/namerena/naming.html",
+      "reference": "https://github.com/favicon.ico",
+      "url": "https://github.com/favicon.ico",
+      "kind": "resource",
+      "in_scope": false
+    },
+    {
+      "from_url": "https://deepmess.com/zh/namerena/naming.html",
+      "reference": "https://github.com/rinick",
+      "url": "https://github.com/rinick",
+      "kind": "navigation",
+      "in_scope": false
+    },
+    {
+      "from_url": "https://deepmess.com/zh/namerena/naming.html",
+      "reference": "https://www.weibo.com/favicon.ico",
+      "url": "https://www.weibo.com/favicon.ico",
+      "kind": "resource",
+      "in_scope": false
+    },
+    {
+      "from_url": "https://deepmess.com/zh/namerena/naming.html",
+      "reference": "https://www.weibo.com/rinick",
+      "url": "https://www.weibo.com/rinick",
+      "kind": "navigation",
+      "in_scope": false
+    },
+    {
+      "from_url": "https://deepmess.com/zh/namerena/naming.html",
+      "reference": "index.html",
+      "url": "https://deepmess.com/zh/namerena/index.html",
+      "kind": "navigation",
+      "in_scope": true
+    },
+    {
+      "from_url": "https://deepmess.com/zh/namerena/naming.html",
+      "reference": "naming.html",
+      "url": "https://deepmess.com/zh/namerena/naming.html",
+      "kind": "navigation",
+      "in_scope": true
+    },
+    {
+      "from_url": "https://deepmess.com/zh/namerena/naming.html",
+      "reference": "skill.html",
+      "url": "https://deepmess.com/zh/namerena/skill.html",
+      "kind": "navigation",
+      "in_scope": true
+    },
+    {
+      "from_url": "https://deepmess.com/zh/namerena/naming.html",
+      "reference": "special.html",
+      "url": "https://deepmess.com/zh/namerena/special.html",
+      "kind": "navigation",
+      "in_scope": true
+    },
+    {
+      "from_url": "https://deepmess.com/zh/namerena/naming.html",
+      "reference": "testing.html",
+      "url": "https://deepmess.com/zh/namerena/testing.html",
+      "kind": "navigation",
+      "in_scope": true
+    },
+    {
+      "from_url": "https://deepmess.com/zh/namerena/skill.html",
+      "reference": "//deepmess.com/",
+      "url": "https://deepmess.com/",
+      "kind": "navigation",
+      "in_scope": false
+    },
+    {
+      "from_url": "https://deepmess.com/zh/namerena/skill.html",
+      "reference": "//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js",
+      "url": "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js",
+      "kind": "resource",
+      "in_scope": false
+    },
+    {
+      "from_url": "https://deepmess.com/zh/namerena/skill.html",
+      "reference": "/js/image-popup.js",
+      "url": "https://deepmess.com/js/image-popup.js",
+      "kind": "resource",
+      "in_scope": true
+    },
+    {
+      "from_url": "https://deepmess.com/zh/namerena/skill.html",
+      "reference": "/stylesheets/print.css",
+      "url": "https://deepmess.com/stylesheets/print.css",
+      "kind": "resource",
+      "in_scope": true
+    },
+    {
+      "from_url": "https://deepmess.com/zh/namerena/skill.html",
+      "reference": "/stylesheets/pygment_trac.css",
+      "url": "https://deepmess.com/stylesheets/pygment_trac.css",
+      "kind": "resource",
+      "in_scope": true
+    },
+    {
+      "from_url": "https://deepmess.com/zh/namerena/skill.html",
+      "reference": "/stylesheets/stylesheet.css",
+      "url": "https://deepmess.com/stylesheets/stylesheet.css",
+      "kind": "resource",
+      "in_scope": true
+    },
+    {
+      "from_url": "https://deepmess.com/zh/namerena/skill.html",
+      "reference": "about.html",
+      "url": "https://deepmess.com/zh/namerena/about.html",
+      "kind": "navigation",
+      "in_scope": true
+    },
+    {
+      "from_url": "https://deepmess.com/zh/namerena/skill.html",
+      "reference": "attribute.html",
+      "url": "https://deepmess.com/zh/namerena/attribute.html",
+      "kind": "navigation",
+      "in_scope": true
+    },
+    {
+      "from_url": "https://deepmess.com/zh/namerena/skill.html",
+      "reference": "custom_lan.html",
+      "url": "https://deepmess.com/zh/namerena/custom_lan.html",
+      "kind": "navigation",
+      "in_scope": true
+    },
+    {
+      "from_url": "https://deepmess.com/zh/namerena/skill.html",
+      "reference": "https://deepmess.com/namerena/",
+      "url": "https://deepmess.com/namerena/",
+      "kind": "navigation",
+      "in_scope": true
+    },
+    {
+      "from_url": "https://deepmess.com/zh/namerena/skill.html",
+      "reference": "https://github.com/favicon.ico",
+      "url": "https://github.com/favicon.ico",
+      "kind": "resource",
+      "in_scope": false
+    },
+    {
+      "from_url": "https://deepmess.com/zh/namerena/skill.html",
+      "reference": "https://github.com/rinick",
+      "url": "https://github.com/rinick",
+      "kind": "navigation",
+      "in_scope": false
+    },
+    {
+      "from_url": "https://deepmess.com/zh/namerena/skill.html",
+      "reference": "https://www.weibo.com/favicon.ico",
+      "url": "https://www.weibo.com/favicon.ico",
+      "kind": "resource",
+      "in_scope": false
+    },
+    {
+      "from_url": "https://deepmess.com/zh/namerena/skill.html",
+      "reference": "https://www.weibo.com/rinick",
+      "url": "https://www.weibo.com/rinick",
+      "kind": "navigation",
+      "in_scope": false
+    },
+    {
+      "from_url": "https://deepmess.com/zh/namerena/skill.html",
+      "reference": "index.html",
+      "url": "https://deepmess.com/zh/namerena/index.html",
+      "kind": "navigation",
+      "in_scope": true
+    },
+    {
+      "from_url": "https://deepmess.com/zh/namerena/skill.html",
+      "reference": "naming.html",
+      "url": "https://deepmess.com/zh/namerena/naming.html",
+      "kind": "navigation",
+      "in_scope": true
+    },
+    {
+      "from_url": "https://deepmess.com/zh/namerena/skill.html",
+      "reference": "skill.html",
+      "url": "https://deepmess.com/zh/namerena/skill.html",
+      "kind": "navigation",
+      "in_scope": true
+    },
+    {
+      "from_url": "https://deepmess.com/zh/namerena/skill.html",
+      "reference": "special.html",
+      "url": "https://deepmess.com/zh/namerena/special.html",
+      "kind": "navigation",
+      "in_scope": true
+    },
+    {
+      "from_url": "https://deepmess.com/zh/namerena/skill.html",
+      "reference": "testing.html",
+      "url": "https://deepmess.com/zh/namerena/testing.html",
+      "kind": "navigation",
+      "in_scope": true
+    },
+    {
+      "from_url": "https://deepmess.com/zh/namerena/special.html",
+      "reference": "//deepmess.com/",
+      "url": "https://deepmess.com/",
+      "kind": "navigation",
+      "in_scope": false
+    },
+    {
+      "from_url": "https://deepmess.com/zh/namerena/special.html",
+      "reference": "//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js",
+      "url": "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js",
+      "kind": "resource",
+      "in_scope": false
+    },
+    {
+      "from_url": "https://deepmess.com/zh/namerena/special.html",
+      "reference": "/js/image-popup.js",
+      "url": "https://deepmess.com/js/image-popup.js",
+      "kind": "resource",
+      "in_scope": true
+    },
+    {
+      "from_url": "https://deepmess.com/zh/namerena/special.html",
+      "reference": "/stylesheets/print.css",
+      "url": "https://deepmess.com/stylesheets/print.css",
+      "kind": "resource",
+      "in_scope": true
+    },
+    {
+      "from_url": "https://deepmess.com/zh/namerena/special.html",
+      "reference": "/stylesheets/pygment_trac.css",
+      "url": "https://deepmess.com/stylesheets/pygment_trac.css",
+      "kind": "resource",
+      "in_scope": true
+    },
+    {
+      "from_url": "https://deepmess.com/zh/namerena/special.html",
+      "reference": "/stylesheets/stylesheet.css",
+      "url": "https://deepmess.com/stylesheets/stylesheet.css",
+      "kind": "resource",
+      "in_scope": true
+    },
+    {
+      "from_url": "https://deepmess.com/zh/namerena/special.html",
+      "reference": "about.html",
+      "url": "https://deepmess.com/zh/namerena/about.html",
+      "kind": "navigation",
+      "in_scope": true
+    },
+    {
+      "from_url": "https://deepmess.com/zh/namerena/special.html",
+      "reference": "attribute.html",
+      "url": "https://deepmess.com/zh/namerena/attribute.html",
+      "kind": "navigation",
+      "in_scope": true
+    },
+    {
+      "from_url": "https://deepmess.com/zh/namerena/special.html",
+      "reference": "custom_lan.html",
+      "url": "https://deepmess.com/zh/namerena/custom_lan.html",
+      "kind": "navigation",
+      "in_scope": true
+    },
+    {
+      "from_url": "https://deepmess.com/zh/namerena/special.html",
+      "reference": "http://namerena.github.io/#b=aokiji@!",
+      "url": "http://namerena.github.io/",
+      "kind": "navigation",
+      "in_scope": false
+    },
+    {
+      "from_url": "https://deepmess.com/zh/namerena/special.html",
+      "reference": "http://namerena.github.io/#b=conan@!",
+      "url": "http://namerena.github.io/",
+      "kind": "navigation",
+      "in_scope": false
+    },
+    {
+      "from_url": "https://deepmess.com/zh/namerena/special.html",
+      "reference": "http://namerena.github.io/#b=covid@!",
+      "url": "http://namerena.github.io/",
+      "kind": "navigation",
+      "in_scope": false
+    },
+    {
+      "from_url": "https://deepmess.com/zh/namerena/special.html",
+      "reference": "http://namerena.github.io/#b=ikaruga@!",
+      "url": "http://namerena.github.io/",
+      "kind": "navigation",
+      "in_scope": false
+    },
+    {
+      "from_url": "https://deepmess.com/zh/namerena/special.html",
+      "reference": "http://namerena.github.io/#b=lazy@!",
+      "url": "http://namerena.github.io/",
+      "kind": "navigation",
+      "in_scope": false
+    },
+    {
+      "from_url": "https://deepmess.com/zh/namerena/special.html",
+      "reference": "http://namerena.github.io/#b=mario@!",
+      "url": "http://namerena.github.io/",
+      "kind": "navigation",
+      "in_scope": false
+    },
+    {
+      "from_url": "https://deepmess.com/zh/namerena/special.html",
+      "reference": "http://namerena.github.io/#b=mosquito@!",
+      "url": "http://namerena.github.io/",
+      "kind": "navigation",
+      "in_scope": false
+    },
+    {
+      "from_url": "https://deepmess.com/zh/namerena/special.html",
+      "reference": "http://namerena.github.io/#b=saitama@!",
+      "url": "http://namerena.github.io/",
+      "kind": "navigation",
+      "in_scope": false
+    },
+    {
+      "from_url": "https://deepmess.com/zh/namerena/special.html",
+      "reference": "http://namerena.github.io/#b=slime@!",
+      "url": "http://namerena.github.io/",
+      "kind": "navigation",
+      "in_scope": false
+    },
+    {
+      "from_url": "https://deepmess.com/zh/namerena/special.html",
+      "reference": "http://namerena.github.io/#b=sonic@!",
+      "url": "http://namerena.github.io/",
+      "kind": "navigation",
+      "in_scope": false
+    },
+    {
+      "from_url": "https://deepmess.com/zh/namerena/special.html",
+      "reference": "http://namerena.github.io/#b=yuri@!",
+      "url": "http://namerena.github.io/",
+      "kind": "navigation",
+      "in_scope": false
+    },
+    {
+      "from_url": "https://deepmess.com/zh/namerena/special.html",
+      "reference": "https://deepmess.com/namerena/",
+      "url": "https://deepmess.com/namerena/",
+      "kind": "navigation",
+      "in_scope": true
+    },
+    {
+      "from_url": "https://deepmess.com/zh/namerena/special.html",
+      "reference": "https://github.com/favicon.ico",
+      "url": "https://github.com/favicon.ico",
+      "kind": "resource",
+      "in_scope": false
+    },
+    {
+      "from_url": "https://deepmess.com/zh/namerena/special.html",
+      "reference": "https://github.com/rinick",
+      "url": "https://github.com/rinick",
+      "kind": "navigation",
+      "in_scope": false
+    },
+    {
+      "from_url": "https://deepmess.com/zh/namerena/special.html",
+      "reference": "https://www.weibo.com/favicon.ico",
+      "url": "https://www.weibo.com/favicon.ico",
+      "kind": "resource",
+      "in_scope": false
+    },
+    {
+      "from_url": "https://deepmess.com/zh/namerena/special.html",
+      "reference": "https://www.weibo.com/rinick",
+      "url": "https://www.weibo.com/rinick",
+      "kind": "navigation",
+      "in_scope": false
+    },
+    {
+      "from_url": "https://deepmess.com/zh/namerena/special.html",
+      "reference": "https://zh.wikipedia.org/wiki/%E6%96%91%E9%B3%A9_%28%E9%81%8A%E6%88%B2%29",
+      "url": "https://zh.wikipedia.org/wiki/%E6%96%91%E9%B3%A9_%28%E9%81%8A%E6%88%B2%29",
+      "kind": "navigation",
+      "in_scope": false
+    },
+    {
+      "from_url": "https://deepmess.com/zh/namerena/special.html",
+      "reference": "images/aokiji.gif",
+      "url": "https://deepmess.com/zh/namerena/images/aokiji.gif",
+      "kind": "resource",
+      "in_scope": true
+    },
+    {
+      "from_url": "https://deepmess.com/zh/namerena/special.html",
+      "reference": "images/conan.gif",
+      "url": "https://deepmess.com/zh/namerena/images/conan.gif",
+      "kind": "resource",
+      "in_scope": true
+    },
+    {
+      "from_url": "https://deepmess.com/zh/namerena/special.html",
+      "reference": "images/covid.gif",
+      "url": "https://deepmess.com/zh/namerena/images/covid.gif",
+      "kind": "resource",
+      "in_scope": true
+    },
+    {
+      "from_url": "https://deepmess.com/zh/namerena/special.html",
+      "reference": "images/ikaruga.gif",
+      "url": "https://deepmess.com/zh/namerena/images/ikaruga.gif",
+      "kind": "resource",
+      "in_scope": true
+    },
+    {
+      "from_url": "https://deepmess.com/zh/namerena/special.html",
+      "reference": "images/lazy.gif",
+      "url": "https://deepmess.com/zh/namerena/images/lazy.gif",
+      "kind": "resource",
+      "in_scope": true
+    },
+    {
+      "from_url": "https://deepmess.com/zh/namerena/special.html",
+      "reference": "images/mario.gif",
+      "url": "https://deepmess.com/zh/namerena/images/mario.gif",
+      "kind": "resource",
+      "in_scope": true
+    },
+    {
+      "from_url": "https://deepmess.com/zh/namerena/special.html",
+      "reference": "images/mosquito.gif",
+      "url": "https://deepmess.com/zh/namerena/images/mosquito.gif",
+      "kind": "resource",
+      "in_scope": true
+    },
+    {
+      "from_url": "https://deepmess.com/zh/namerena/special.html",
+      "reference": "images/saitama.gif",
+      "url": "https://deepmess.com/zh/namerena/images/saitama.gif",
+      "kind": "resource",
+      "in_scope": true
+    },
+    {
+      "from_url": "https://deepmess.com/zh/namerena/special.html",
+      "reference": "images/slime.gif",
+      "url": "https://deepmess.com/zh/namerena/images/slime.gif",
+      "kind": "resource",
+      "in_scope": true
+    },
+    {
+      "from_url": "https://deepmess.com/zh/namerena/special.html",
+      "reference": "images/sonic.gif",
+      "url": "https://deepmess.com/zh/namerena/images/sonic.gif",
+      "kind": "resource",
+      "in_scope": true
+    },
+    {
+      "from_url": "https://deepmess.com/zh/namerena/special.html",
+      "reference": "images/yuri.gif",
+      "url": "https://deepmess.com/zh/namerena/images/yuri.gif",
+      "kind": "resource",
+      "in_scope": true
+    },
+    {
+      "from_url": "https://deepmess.com/zh/namerena/special.html",
+      "reference": "index.html",
+      "url": "https://deepmess.com/zh/namerena/index.html",
+      "kind": "navigation",
+      "in_scope": true
+    },
+    {
+      "from_url": "https://deepmess.com/zh/namerena/special.html",
+      "reference": "naming.html",
+      "url": "https://deepmess.com/zh/namerena/naming.html",
+      "kind": "navigation",
+      "in_scope": true
+    },
+    {
+      "from_url": "https://deepmess.com/zh/namerena/special.html",
+      "reference": "skill.html",
+      "url": "https://deepmess.com/zh/namerena/skill.html",
+      "kind": "navigation",
+      "in_scope": true
+    },
+    {
+      "from_url": "https://deepmess.com/zh/namerena/special.html",
+      "reference": "special.html",
+      "url": "https://deepmess.com/zh/namerena/special.html",
+      "kind": "navigation",
+      "in_scope": true
+    },
+    {
+      "from_url": "https://deepmess.com/zh/namerena/special.html",
+      "reference": "testing.html",
+      "url": "https://deepmess.com/zh/namerena/testing.html",
+      "kind": "navigation",
+      "in_scope": true
+    },
+    {
+      "from_url": "https://deepmess.com/zh/namerena/testing.html",
+      "reference": "//deepmess.com/",
+      "url": "https://deepmess.com/",
+      "kind": "navigation",
+      "in_scope": false
+    },
+    {
+      "from_url": "https://deepmess.com/zh/namerena/testing.html",
+      "reference": "//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js",
+      "url": "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js",
+      "kind": "resource",
+      "in_scope": false
+    },
+    {
+      "from_url": "https://deepmess.com/zh/namerena/testing.html",
+      "reference": "/js/image-popup.js",
+      "url": "https://deepmess.com/js/image-popup.js",
+      "kind": "resource",
+      "in_scope": true
+    },
+    {
+      "from_url": "https://deepmess.com/zh/namerena/testing.html",
+      "reference": "/stylesheets/print.css",
+      "url": "https://deepmess.com/stylesheets/print.css",
+      "kind": "resource",
+      "in_scope": true
+    },
+    {
+      "from_url": "https://deepmess.com/zh/namerena/testing.html",
+      "reference": "/stylesheets/pygment_trac.css",
+      "url": "https://deepmess.com/stylesheets/pygment_trac.css",
+      "kind": "resource",
+      "in_scope": true
+    },
+    {
+      "from_url": "https://deepmess.com/zh/namerena/testing.html",
+      "reference": "/stylesheets/stylesheet.css",
+      "url": "https://deepmess.com/stylesheets/stylesheet.css",
+      "kind": "resource",
+      "in_scope": true
+    },
+    {
+      "from_url": "https://deepmess.com/zh/namerena/testing.html",
+      "reference": "about.html",
+      "url": "https://deepmess.com/zh/namerena/about.html",
+      "kind": "navigation",
+      "in_scope": true
+    },
+    {
+      "from_url": "https://deepmess.com/zh/namerena/testing.html",
+      "reference": "attribute.html",
+      "url": "https://deepmess.com/zh/namerena/attribute.html",
+      "kind": "navigation",
+      "in_scope": true
+    },
+    {
+      "from_url": "https://deepmess.com/zh/namerena/testing.html",
+      "reference": "custom_lan.html",
+      "url": "https://deepmess.com/zh/namerena/custom_lan.html",
+      "kind": "navigation",
+      "in_scope": true
+    },
+    {
+      "from_url": "https://deepmess.com/zh/namerena/testing.html",
+      "reference": "https://deepmess.com/namerena/",
+      "url": "https://deepmess.com/namerena/",
+      "kind": "navigation",
+      "in_scope": true
+    },
+    {
+      "from_url": "https://deepmess.com/zh/namerena/testing.html",
+      "reference": "https://github.com/favicon.ico",
+      "url": "https://github.com/favicon.ico",
+      "kind": "resource",
+      "in_scope": false
+    },
+    {
+      "from_url": "https://deepmess.com/zh/namerena/testing.html",
+      "reference": "https://github.com/rinick",
+      "url": "https://github.com/rinick",
+      "kind": "navigation",
+      "in_scope": false
+    },
+    {
+      "from_url": "https://deepmess.com/zh/namerena/testing.html",
+      "reference": "https://www.weibo.com/favicon.ico",
+      "url": "https://www.weibo.com/favicon.ico",
+      "kind": "resource",
+      "in_scope": false
+    },
+    {
+      "from_url": "https://deepmess.com/zh/namerena/testing.html",
+      "reference": "https://www.weibo.com/rinick",
+      "url": "https://www.weibo.com/rinick",
+      "kind": "navigation",
+      "in_scope": false
+    },
+    {
+      "from_url": "https://deepmess.com/zh/namerena/testing.html",
+      "reference": "images/search.png",
+      "url": "https://deepmess.com/zh/namerena/images/search.png",
+      "kind": "resource",
+      "in_scope": true
+    },
+    {
+      "from_url": "https://deepmess.com/zh/namerena/testing.html",
+      "reference": "images/sgl1.png",
+      "url": "https://deepmess.com/zh/namerena/images/sgl1.png",
+      "kind": "resource",
+      "in_scope": true
+    },
+    {
+      "from_url": "https://deepmess.com/zh/namerena/testing.html",
+      "reference": "images/sgl2.png",
+      "url": "https://deepmess.com/zh/namerena/images/sgl2.png",
+      "kind": "resource",
+      "in_scope": true
+    },
+    {
+      "from_url": "https://deepmess.com/zh/namerena/testing.html",
+      "reference": "images/sgl_cn.png",
+      "url": "https://deepmess.com/zh/namerena/images/sgl_cn.png",
+      "kind": "resource",
+      "in_scope": true
+    },
+    {
+      "from_url": "https://deepmess.com/zh/namerena/testing.html",
+      "reference": "index.html",
+      "url": "https://deepmess.com/zh/namerena/index.html",
+      "kind": "navigation",
+      "in_scope": true
+    },
+    {
+      "from_url": "https://deepmess.com/zh/namerena/testing.html",
+      "reference": "naming.html",
+      "url": "https://deepmess.com/zh/namerena/naming.html",
+      "kind": "navigation",
+      "in_scope": true
+    },
+    {
+      "from_url": "https://deepmess.com/zh/namerena/testing.html",
+      "reference": "skill.html",
+      "url": "https://deepmess.com/zh/namerena/skill.html",
+      "kind": "navigation",
+      "in_scope": true
+    },
+    {
+      "from_url": "https://deepmess.com/zh/namerena/testing.html",
+      "reference": "special.html",
+      "url": "https://deepmess.com/zh/namerena/special.html",
+      "kind": "navigation",
+      "in_scope": true
+    },
+    {
+      "from_url": "https://deepmess.com/zh/namerena/testing.html",
+      "reference": "testing.html",
+      "url": "https://deepmess.com/zh/namerena/testing.html",
+      "kind": "navigation",
+      "in_scope": true
+    }
+  ],
+  "pending": []
+}

@@ -4,89 +4,132 @@
     {
       "id": "namerena",
       "term": "名竞",
-      "aliases": ["名字竞技场", "Namerena"],
+      "aliases": [
+        "名字竞技场",
+        "Namerena"
+      ],
       "definition": "社区对名字竞技场的简称。",
       "category": "concept",
       "status": "source_supported",
       "scope": "社区教程中的用法；不包含对特定游戏版本的指定。",
-      "source_ids": ["official-guide", "community-tutorial"],
+      "source_ids": [
+        "official-guide",
+        "community-tutorial"
+      ],
       "checked_at": "2026-11-16"
     },
     {
       "id": "name-character",
       "term": "号",
-      "aliases": ["名字", "战号"],
+      "aliases": [
+        "名字",
+        "战号"
+      ],
       "definition": "在对战或测号语境中，通常指一个完整名字输入及其对应角色，而非登录账号。完整输入可能包含战队名等部分。",
       "category": "concept",
       "status": "source_supported",
       "scope": "官方测号说明及社区教程语境；需结合原句判断其他含义。",
-      "source_ids": ["official-testing", "official-naming", "community-tutorial"],
+      "source_ids": [
+        "official-testing",
+        "official-naming",
+        "community-tutorial"
+      ],
       "checked_at": "2026-11-16"
     },
     {
       "id": "name-testing",
       "term": "测号",
-      "aliases": ["测名字"],
+      "aliases": [
+        "测名字"
+      ],
       "definition": "搜索或评估名字对应的属性、技能和对战实力，通常用于寻找适合使用的名字。",
       "category": "gameplay",
       "status": "source_supported",
       "scope": "官方测号文档；搜索与实力评估使用不同输入布局，工具实现可能不同。",
-      "source_ids": ["official-testing"],
+      "source_ids": [
+        "official-testing"
+      ],
       "checked_at": "2026-11-16"
     },
     {
       "id": "team-name",
       "term": "战队",
-      "aliases": ["战队名"],
+      "aliases": [
+        "战队名"
+      ],
       "definition": "输入形式中的 @战队名 会参与角色属性生成并决定徽章；它与通过空行划分的对战分组是不同概念。战队一词也可能指玩家组织。",
       "category": "input",
       "status": "source_supported",
       "scope": "本词条主要描述官方命名规则；玩家组织的含义需要上下文。",
-      "source_ids": ["official-naming", "official-guide", "community-tutorial"],
+      "source_ids": [
+        "official-naming",
+        "official-guide",
+        "community-tutorial"
+      ],
       "checked_at": "2026-11-16"
     },
     {
       "id": "normal-team-rating",
       "term": "普评",
-      "aliases": ["pp", "普通综合评分"],
+      "aliases": [
+        "pp",
+        "普通综合评分"
+      ],
       "definition": "普通综合评分的简称，属于社区讨论名字实力时使用的评分指标。",
       "category": "rating",
       "status": "source_supported",
-      "scope": "社区教程的评分语境；样本、算法、版本和分数阈值尚未独立核实。",
-      "source_ids": ["community-tutorial"],
+      "scope": "社区教程的评分语境；样本、算法、版本和分数阈值等待维护者提供相关工具材料。",
+      "source_ids": [
+        "community-tutorial"
+      ],
       "checked_at": "2026-11-16"
     },
     {
       "id": "enhanced-team-rating",
       "term": "强评",
-      "aliases": ["qp", "强化综合评分"],
+      "aliases": [
+        "qp",
+        "强化综合评分"
+      ],
       "definition": "强化综合评分的简称，社区教程将其作为与较强基准角色组队对战相关的评分指标。",
       "category": "rating",
       "status": "source_supported",
       "scope": "社区教程的评分语境；不同工具或版本的数值不能直接混比。",
-      "source_ids": ["community-tutorial"],
+      "source_ids": [
+        "community-tutorial"
+      ],
       "checked_at": "2026-11-16"
     },
     {
       "id": "normal-duel-rating",
       "term": "普单",
-      "aliases": ["pd", "普通单挑评分"],
+      "aliases": [
+        "pd",
+        "普通单挑评分"
+      ],
       "definition": "普通单挑评分的简称，用于描述名字在普通基准下的单挑评估结果。",
       "category": "rating",
       "status": "source_supported",
       "scope": "社区教程的评分语境；基准和计算细节需要结合实际工具确认。",
-      "source_ids": ["community-tutorial"],
+      "source_ids": [
+        "community-tutorial"
+      ],
       "checked_at": "2026-11-16"
     },
     {
       "id": "enhanced-duel-rating",
       "term": "强单",
-      "aliases": ["qd", "强化单挑评分"],
+      "aliases": [
+        "qd",
+        "强化单挑评分"
+      ],
       "definition": "强化单挑评分的简称，社区教程将其解释为对较强基准角色进行单挑得到的评分。",
       "category": "rating",
       "status": "source_supported",
       "scope": "社区教程的评分语境；不等同于角色等级，也不能推出对任意名字必胜。",
-      "source_ids": ["community-tutorial"],
+      "source_ids": [
+        "community-tutorial"
+      ],
       "checked_at": "2026-11-16"
     },
     {
@@ -97,7 +140,10 @@
       "category": "rating",
       "status": "source_supported",
       "scope": "官方文档将 0% 至 10% 描述为粗略评分；具体工具中的进度显示和精度需另行核对。",
-      "source_ids": ["official-testing", "community-tutorial"],
+      "source_ids": [
+        "official-testing",
+        "community-tutorial"
+      ],
       "checked_at": "2026-11-16"
     },
     {
@@ -108,8 +154,1171 @@
       "category": "rating",
       "status": "source_supported",
       "scope": "官方文档允许继续增加评估精度；100% 并不表示对所有对手获胜或已经穷尽一切情况。",
-      "source_ids": ["official-testing", "community-tutorial"],
+      "source_ids": [
+        "official-testing",
+        "community-tutorial"
+      ],
       "checked_at": "2026-11-16"
+    },
+    {
+      "id": "test-command",
+      "term": "!test!",
+      "aliases": [],
+      "definition": "官方名字搜索和实力评估的特殊入口，置于输入第一行；后续空行和名字布局决定模式。",
+      "category": "command",
+      "status": "source_supported",
+      "scope": "官方基础说明中的用法；具体示例和限制见对应页面快照。",
+      "source_ids": [
+        "official-testing"
+      ],
+      "checked_at": "2026-11-16"
+    },
+    {
+      "id": "search-placeholder",
+      "term": "???",
+      "aliases": [],
+      "definition": "官方名字搜索示例中的数字占位形式，示例以三位数字 000 至 999 替换问号。",
+      "category": "input",
+      "status": "source_supported",
+      "scope": "官方基础说明中的用法；具体示例和限制见对应页面快照。",
+      "source_ids": [
+        "official-testing"
+      ],
+      "checked_at": "2026-11-16"
+    },
+    {
+      "id": "random-seed",
+      "term": "随机数种子",
+      "aliases": [
+        "seed",
+        "seed:...@!"
+      ],
+      "definition": "以 seed: 开头并位于 ! 战队的特殊输入，不加入战斗，只改变战斗过程。",
+      "category": "input",
+      "status": "source_supported",
+      "scope": "官方基础说明中的用法；具体示例和限制见对应页面快照。",
+      "source_ids": [
+        "official-special"
+      ],
+      "checked_at": "2026-11-16"
+    },
+    {
+      "id": "special-team",
+      "term": "! 战队",
+      "aliases": [
+        "@!"
+      ],
+      "definition": "特殊名字采用的战队名为 !；Boss 与随机数种子均有相应输入形式。",
+      "category": "input",
+      "status": "source_supported",
+      "scope": "官方基础说明中的用法；具体示例和限制见对应页面快照。",
+      "source_ids": [
+        "official-special"
+      ],
+      "checked_at": "2026-11-16"
+    },
+    {
+      "id": "boss",
+      "term": "Boss",
+      "aliases": [],
+      "definition": "官方预设的特殊名字角色，属性计算与普通名字不同，可有特殊技能或功能。",
+      "category": "concept",
+      "status": "source_supported",
+      "scope": "官方基础说明中的用法；具体示例和限制见对应页面快照。",
+      "source_ids": [
+        "official-special"
+      ],
+      "checked_at": "2026-11-16"
+    },
+    {
+      "id": "sigil",
+      "term": "徽章",
+      "aliases": [],
+      "definition": "名字对应的图案；未加战队名时由名字决定，加战队名后由战队名决定。",
+      "category": "input",
+      "status": "source_supported",
+      "scope": "官方基础说明中的用法；具体示例和限制见对应页面快照。",
+      "source_ids": [
+        "official-naming"
+      ],
+      "checked_at": "2026-11-16"
+    },
+    {
+      "id": "equipment",
+      "term": "装备",
+      "aliases": [],
+      "definition": "官方命名形式中通过 +装备 添加的输入部分；本页未列出完整装备清单及机制。",
+      "category": "input",
+      "status": "source_supported",
+      "scope": "官方基础说明中的用法；具体示例和限制见对应页面快照。",
+      "source_ids": [
+        "official-naming"
+      ],
+      "checked_at": "2026-11-16"
+    },
+    {
+      "id": "display-name",
+      "term": "显示名",
+      "aliases": [],
+      "definition": "战斗中显示的简化名字，不显示战队名和名字空格后的部分，不等于完整角色计算输入。",
+      "category": "input",
+      "status": "source_supported",
+      "scope": "官方基础说明中的用法；具体示例和限制见对应页面快照。",
+      "source_ids": [
+        "official-testing"
+      ],
+      "checked_at": "2026-11-16"
+    },
+    {
+      "id": "battle-group",
+      "term": "组队战",
+      "aliases": [],
+      "definition": "通过名字之间的空行进行分组的对战形式。",
+      "category": "gameplay",
+      "status": "source_supported",
+      "scope": "官方基础说明中的用法；具体示例和限制见对应页面快照。",
+      "source_ids": [
+        "official-guide"
+      ],
+      "checked_at": "2026-11-16"
+    },
+    {
+      "id": "free-for-all",
+      "term": "混战",
+      "aliases": [],
+      "definition": "通常每行输入一个名字、不以空行分队时的对战形式。",
+      "category": "gameplay",
+      "status": "source_supported",
+      "scope": "官方基础说明中的用法；具体示例和限制见对应页面快照。",
+      "source_ids": [
+        "official-guide"
+      ],
+      "checked_at": "2026-11-16"
+    },
+    {
+      "id": "skill-proficiency",
+      "term": "技能熟练度",
+      "aliases": [],
+      "definition": "名字对应的技能熟练程度，官方说明其高低影响技能发动概率。",
+      "category": "concept",
+      "status": "source_supported",
+      "scope": "官方基础说明中的用法；具体示例和限制见对应页面快照。",
+      "source_ids": [
+        "official-skill"
+      ],
+      "checked_at": "2026-11-16"
+    },
+    {
+      "id": "active-skill",
+      "term": "主动技能",
+      "aliases": [
+        "攻击技能"
+      ],
+      "definition": "轮到自己的回合使用并伤害对手，部分附带额外效果的技能类别。",
+      "category": "concept",
+      "status": "source_supported",
+      "scope": "官方基础说明中的用法；具体示例和限制见对应页面快照。",
+      "source_ids": [
+        "official-skill"
+      ],
+      "checked_at": "2026-11-16"
+    },
+    {
+      "id": "support-skill",
+      "term": "辅助技能",
+      "aliases": [],
+      "definition": "轮到自己的回合使用，产生特殊效果但不直接造成伤害的技能类别。",
+      "category": "concept",
+      "status": "source_supported",
+      "scope": "官方基础说明中的用法；具体示例和限制见对应页面快照。",
+      "source_ids": [
+        "official-skill"
+      ],
+      "checked_at": "2026-11-16"
+    },
+    {
+      "id": "passive-skill",
+      "term": "被动技能",
+      "aliases": [],
+      "definition": "满足条件时发动且不占用自己回合的技能类别。",
+      "category": "concept",
+      "status": "source_supported",
+      "scope": "官方基础说明中的用法；具体示例和限制见对应页面快照。",
+      "source_ids": [
+        "official-skill"
+      ],
+      "checked_at": "2026-11-16"
+    },
+    {
+      "id": "language-pack",
+      "term": "语言包",
+      "aliases": [
+        "自定义语言"
+      ],
+      "definition": "用于替换游戏显示文字的 UTF-8 JSON；官方允许改变语言或显示内容，外部托管需支持 CORS。",
+      "category": "concept",
+      "status": "source_supported",
+      "scope": "官方基础说明中的用法；具体示例和限制见对应页面快照。",
+      "source_ids": [
+        "official-custom_lan"
+      ],
+      "checked_at": "2026-11-16"
+    },
+    {
+      "id": "strength-evaluation",
+      "term": "实力评估",
+      "aliases": [],
+      "definition": "通过 !test! 和指定名字启动的评分模式；官方说明列出评分范围及不同进度阶段的精度。",
+      "category": "gameplay",
+      "status": "source_supported",
+      "scope": "官方基础说明中的用法；具体示例和限制见对应页面快照。",
+      "source_ids": [
+        "official-testing"
+      ],
+      "checked_at": "2026-11-16"
+    },
+    {
+      "id": "name-search",
+      "term": "名字搜索",
+      "aliases": [],
+      "definition": "!test! 后留空行并输入候选名字的搜索模式，与实力评估布局不同。",
+      "category": "gameplay",
+      "status": "source_supported",
+      "scope": "官方基础说明中的用法；具体示例和限制见对应页面快照。",
+      "source_ids": [
+        "official-testing"
+      ],
+      "checked_at": "2026-11-16"
+    },
+    {
+      "id": "attribute-attack",
+      "term": "攻",
+      "aliases": [],
+      "definition": "决定物理攻击的攻击力，包括普通攻击和物理攻击技能。 少量影响物理攻击的命中率。",
+      "category": "attribute",
+      "status": "source_supported",
+      "scope": "当前官方说明的基础记载；原文数值和完整字段见详情，不表示已独立实测或涵盖全部机制。",
+      "source_ids": [
+        "official-attribute"
+      ],
+      "checked_at": "2026-11-16",
+      "origin": "official-index",
+      "details_path": "official/attributes.json",
+      "details_id": "attribute-attack"
+    },
+    {
+      "id": "attribute-defense",
+      "term": "防",
+      "aliases": [],
+      "definition": "决定物理攻击的防御力，包括普通攻击和物理攻击技能。 少量影响物理攻击的回避率。",
+      "category": "attribute",
+      "status": "source_supported",
+      "scope": "当前官方说明的基础记载；原文数值和完整字段见详情，不表示已独立实测或涵盖全部机制。",
+      "source_ids": [
+        "official-attribute"
+      ],
+      "checked_at": "2026-11-16",
+      "origin": "official-index",
+      "details_path": "official/attributes.json",
+      "details_id": "attribute-defense"
+    },
+    {
+      "id": "attribute-speed",
+      "term": "速",
+      "aliases": [],
+      "definition": "速度决定了每轮行动的间隔时间",
+      "category": "attribute",
+      "status": "source_supported",
+      "scope": "当前官方说明的基础记载；原文数值和完整字段见详情，不表示已独立实测或涵盖全部机制。",
+      "source_ids": [
+        "official-attribute"
+      ],
+      "checked_at": "2026-11-16",
+      "origin": "official-index",
+      "details_path": "official/attributes.json",
+      "details_id": "attribute-speed"
+    },
+    {
+      "id": "attribute-agility",
+      "term": "敏",
+      "aliases": [],
+      "definition": "决定了所有攻击的命中率和受到攻击的回避率",
+      "category": "attribute",
+      "status": "source_supported",
+      "scope": "当前官方说明的基础记载；原文数值和完整字段见详情，不表示已独立实测或涵盖全部机制。",
+      "source_ids": [
+        "official-attribute"
+      ],
+      "checked_at": "2026-11-16",
+      "origin": "official-index",
+      "details_path": "official/attributes.json",
+      "details_id": "attribute-agility"
+    },
+    {
+      "id": "attribute-magic",
+      "term": "魔",
+      "aliases": [],
+      "definition": "决定魔法攻击的攻击力，包括普通攻击和物理攻击。 少量影响魔法攻击的命中率。",
+      "category": "attribute",
+      "status": "source_supported",
+      "scope": "当前官方说明的基础记载；原文数值和完整字段见详情，不表示已独立实测或涵盖全部机制。",
+      "source_ids": [
+        "official-attribute"
+      ],
+      "checked_at": "2026-11-16",
+      "origin": "official-index",
+      "details_path": "official/attributes.json",
+      "details_id": "attribute-magic"
+    },
+    {
+      "id": "attribute-resistance",
+      "term": "抗",
+      "aliases": [],
+      "definition": "决定魔法攻击的防御力，包括普通攻击和物理攻击技能。 少量影响魔法攻击的回避率。",
+      "category": "attribute",
+      "status": "source_supported",
+      "scope": "当前官方说明的基础记载；原文数值和完整字段见详情，不表示已独立实测或涵盖全部机制。",
+      "source_ids": [
+        "official-attribute"
+      ],
+      "checked_at": "2026-11-16",
+      "origin": "official-index",
+      "details_path": "official/attributes.json",
+      "details_id": "attribute-resistance"
+    },
+    {
+      "id": "attribute-intelligence",
+      "term": "智",
+      "aliases": [],
+      "definition": "整体上决定技能的使用频率。 当魔法攻击力高于物理攻击时，决定普通攻击出现魔攻的概率。 ** 物理攻击力更高，普通攻击永远使用物理攻击计算，智力不起作用。 决定了战斗中对手的选择算法，高智力会偏好攻击体力较低的对手。",
+      "category": "attribute",
+      "status": "source_supported",
+      "scope": "当前官方说明的基础记载；原文数值和完整字段见详情，不表示已独立实测或涵盖全部机制。",
+      "source_ids": [
+        "official-attribute"
+      ],
+      "checked_at": "2026-11-16",
+      "origin": "official-index",
+      "details_path": "official/attributes.json",
+      "details_id": "attribute-intelligence"
+    },
+    {
+      "id": "skill-combo",
+      "term": "连击",
+      "aliases": [],
+      "definition": "连续多次攻击，若击中同一目标，后续伤害下降15%",
+      "category": "skill",
+      "status": "source_supported",
+      "scope": "当前官方说明的基础记载；原文数值和完整字段见详情，不表示已独立实测或涵盖全部机制。",
+      "source_ids": [
+        "official-skill"
+      ],
+      "checked_at": "2026-11-16",
+      "origin": "official-index",
+      "details_path": "official/skills.json",
+      "details_id": "skill-combo"
+    },
+    {
+      "id": "skill-critical",
+      "term": "会心一击",
+      "aliases": [],
+      "definition": "稳定输出伤害，随机性低",
+      "category": "skill",
+      "status": "source_supported",
+      "scope": "当前官方说明的基础记载；原文数值和完整字段见详情，不表示已独立实测或涵盖全部机制。",
+      "source_ids": [
+        "official-skill"
+      ],
+      "checked_at": "2026-11-16",
+      "origin": "official-index",
+      "details_path": "official/skills.json",
+      "details_id": "skill-critical"
+    },
+    {
+      "id": "skill-fire",
+      "term": "火球术",
+      "aliases": [],
+      "definition": "若多次受到火系伤害，每次伤害增加25%",
+      "category": "skill",
+      "status": "source_supported",
+      "scope": "当前官方说明的基础记载；原文数值和完整字段见详情，不表示已独立实测或涵盖全部机制。",
+      "source_ids": [
+        "official-skill"
+      ],
+      "checked_at": "2026-11-16",
+      "origin": "official-index",
+      "details_path": "official/skills.json",
+      "details_id": "skill-fire"
+    },
+    {
+      "id": "skill-ice",
+      "term": "冰冻术",
+      "aliases": [],
+      "definition": "命中后冰冻对手半回合",
+      "category": "skill",
+      "status": "source_supported",
+      "scope": "当前官方说明的基础记载；原文数值和完整字段见详情，不表示已独立实测或涵盖全部机制。",
+      "source_ids": [
+        "official-skill"
+      ],
+      "checked_at": "2026-11-16",
+      "origin": "official-index",
+      "details_path": "official/skills.json",
+      "details_id": "skill-ice"
+    },
+    {
+      "id": "skill-thunder",
+      "term": "雷击术",
+      "aliases": [],
+      "definition": "对单一目标多次伤害",
+      "category": "skill",
+      "status": "source_supported",
+      "scope": "当前官方说明的基础记载；原文数值和完整字段见详情，不表示已独立实测或涵盖全部机制。",
+      "source_ids": [
+        "official-skill"
+      ],
+      "checked_at": "2026-11-16",
+      "origin": "official-index",
+      "details_path": "official/skills.json",
+      "details_id": "skill-thunder"
+    },
+    {
+      "id": "skill-quake",
+      "term": "地裂术",
+      "aliases": [],
+      "definition": "将伤害平分给 1~5个目标，人数越多则单体伤害越小，但总伤害越大",
+      "category": "skill",
+      "status": "source_supported",
+      "scope": "当前官方说明的基础记载；原文数值和完整字段见详情，不表示已独立实测或涵盖全部机制。",
+      "source_ids": [
+        "official-skill"
+      ],
+      "checked_at": "2026-11-16",
+      "origin": "official-index",
+      "details_path": "official/skills.json",
+      "details_id": "skill-quake"
+    },
+    {
+      "id": "skill-absorb",
+      "term": "吸血攻击",
+      "aliases": [],
+      "definition": "命中后吸收一半体力",
+      "category": "skill",
+      "status": "source_supported",
+      "scope": "当前官方说明的基础记载；原文数值和完整字段见详情，不表示已独立实测或涵盖全部机制。",
+      "source_ids": [
+        "official-skill"
+      ],
+      "checked_at": "2026-11-16",
+      "origin": "official-index",
+      "details_path": "official/skills.json",
+      "details_id": "skill-absorb"
+    },
+    {
+      "id": "skill-berserk",
+      "term": "狂暴术",
+      "aliases": [],
+      "definition": "命中后施加狂暴状态，下回合只能进行敌我不分的狂暴攻击",
+      "category": "skill",
+      "status": "source_supported",
+      "scope": "当前官方说明的基础记载；原文数值和完整字段见详情，不表示已独立实测或涵盖全部机制。",
+      "source_ids": [
+        "official-skill"
+      ],
+      "checked_at": "2026-11-16",
+      "origin": "official-index",
+      "details_path": "official/skills.json",
+      "details_id": "skill-berserk"
+    },
+    {
+      "id": "skill-curse",
+      "term": "诅咒",
+      "aliases": [],
+      "definition": "命中后施加诅咒状态，之后受到其他攻击随机出现伤害加倍效果",
+      "category": "skill",
+      "status": "source_supported",
+      "scope": "当前官方说明的基础记载；原文数值和完整字段见详情，不表示已独立实测或涵盖全部机制。",
+      "source_ids": [
+        "official-skill"
+      ],
+      "checked_at": "2026-11-16",
+      "origin": "official-index",
+      "details_path": "official/skills.json",
+      "details_id": "skill-curse"
+    },
+    {
+      "id": "skill-purify",
+      "term": "净化",
+      "aliases": [],
+      "definition": "命中后去除目标身上所有有益效果，对召唤兽伤害加倍",
+      "category": "skill",
+      "status": "source_supported",
+      "scope": "当前官方说明的基础记载；原文数值和完整字段见详情，不表示已独立实测或涵盖全部机制。",
+      "source_ids": [
+        "official-skill"
+      ],
+      "checked_at": "2026-11-16",
+      "origin": "official-index",
+      "details_path": "official/skills.json",
+      "details_id": "skill-purify"
+    },
+    {
+      "id": "skill-poison",
+      "term": "投毒",
+      "aliases": [],
+      "definition": "命中后施加中毒状态，每回合损失体力",
+      "category": "skill",
+      "status": "source_supported",
+      "scope": "当前官方说明的基础记载；原文数值和完整字段见详情，不表示已独立实测或涵盖全部机制。",
+      "source_ids": [
+        "official-skill"
+      ],
+      "checked_at": "2026-11-16",
+      "origin": "official-index",
+      "details_path": "official/skills.json",
+      "details_id": "skill-poison"
+    },
+    {
+      "id": "skill-stealth",
+      "term": "潜行",
+      "aliases": [],
+      "definition": "耗费两回合，第一回合潜行，第二回合背刺，中途受到伤害则潜行被打断",
+      "category": "skill",
+      "status": "source_supported",
+      "scope": "当前官方说明的基础记载；原文数值和完整字段见详情，不表示已独立实测或涵盖全部机制。",
+      "source_ids": [
+        "official-skill"
+      ],
+      "checked_at": "2026-11-16",
+      "origin": "official-index",
+      "details_path": "official/skills.json",
+      "details_id": "skill-stealth"
+    },
+    {
+      "id": "skill-plague",
+      "term": "瘟疫",
+      "aliases": [],
+      "definition": "目标按比例损失体力50% ~ 99%。",
+      "category": "skill",
+      "status": "source_supported",
+      "scope": "当前官方说明的基础记载；原文数值和完整字段见详情，不表示已独立实测或涵盖全部机制。",
+      "source_ids": [
+        "official-skill"
+      ],
+      "checked_at": "2026-11-16",
+      "origin": "official-index",
+      "details_path": "official/skills.json",
+      "details_id": "skill-plague"
+    },
+    {
+      "id": "skill-exchange",
+      "term": "生命之轮",
+      "aliases": [],
+      "definition": "和目标体力值互换",
+      "category": "skill",
+      "status": "source_supported",
+      "scope": "当前官方说明的基础记载；原文数值和完整字段见详情，不表示已独立实测或涵盖全部机制。",
+      "source_ids": [
+        "official-skill"
+      ],
+      "checked_at": "2026-11-16",
+      "origin": "official-index",
+      "details_path": "official/skills.json",
+      "details_id": "skill-exchange"
+    },
+    {
+      "id": "skill-accumulate",
+      "term": "聚气",
+      "aliases": [],
+      "definition": "攻击力提高60%",
+      "category": "skill",
+      "status": "source_supported",
+      "scope": "当前官方说明的基础记载；原文数值和完整字段见详情，不表示已独立实测或涵盖全部机制。",
+      "source_ids": [
+        "official-skill"
+      ],
+      "checked_at": "2026-11-16",
+      "origin": "official-index",
+      "details_path": "official/skills.json",
+      "details_id": "skill-accumulate"
+    },
+    {
+      "id": "skill-charge",
+      "term": "蓄力",
+      "aliases": [],
+      "definition": "下回合结束前伤害提升到300%，各种主动技能的特殊效果都有加成",
+      "category": "skill",
+      "status": "source_supported",
+      "scope": "当前官方说明的基础记载；原文数值和完整字段见详情，不表示已独立实测或涵盖全部机制。",
+      "source_ids": [
+        "official-skill"
+      ],
+      "checked_at": "2026-11-16",
+      "origin": "official-index",
+      "details_path": "official/skills.json",
+      "details_id": "skill-charge"
+    },
+    {
+      "id": "skill-charm",
+      "term": "魅惑",
+      "aliases": [],
+      "definition": "命中后 目标下回合行动会将施法者视作队友",
+      "category": "skill",
+      "status": "source_supported",
+      "scope": "当前官方说明的基础记载；原文数值和完整字段见详情，不表示已独立实测或涵盖全部机制。",
+      "source_ids": [
+        "official-skill"
+      ],
+      "checked_at": "2026-11-16",
+      "origin": "official-index",
+      "details_path": "official/skills.json",
+      "details_id": "skill-charm"
+    },
+    {
+      "id": "skill-haste",
+      "term": "加速术",
+      "aliases": [],
+      "definition": "自己或队友速度加倍，持续3回合",
+      "category": "skill",
+      "status": "source_supported",
+      "scope": "当前官方说明的基础记载；原文数值和完整字段见详情，不表示已独立实测或涵盖全部机制。",
+      "source_ids": [
+        "official-skill"
+      ],
+      "checked_at": "2026-11-16",
+      "origin": "official-index",
+      "details_path": "official/skills.json",
+      "details_id": "skill-haste"
+    },
+    {
+      "id": "skill-slow",
+      "term": "减速术",
+      "aliases": [],
+      "definition": "目标速度减半，持续2回合",
+      "category": "skill",
+      "status": "source_supported",
+      "scope": "当前官方说明的基础记载；原文数值和完整字段见详情，不表示已独立实测或涵盖全部机制。",
+      "source_ids": [
+        "official-skill"
+      ],
+      "checked_at": "2026-11-16",
+      "origin": "official-index",
+      "details_path": "official/skills.json",
+      "details_id": "skill-slow"
+    },
+    {
+      "id": "skill-iron",
+      "term": "铁壁",
+      "aliases": [],
+      "definition": "两回合内防御大幅上升",
+      "category": "skill",
+      "status": "source_supported",
+      "scope": "当前官方说明的基础记载；原文数值和完整字段见详情，不表示已独立实测或涵盖全部机制。",
+      "source_ids": [
+        "official-skill"
+      ],
+      "checked_at": "2026-11-16",
+      "origin": "official-index",
+      "details_path": "official/skills.json",
+      "details_id": "skill-iron"
+    },
+    {
+      "id": "skill-heal",
+      "term": "治愈术",
+      "aliases": [
+        "治愈魔法"
+      ],
+      "definition": "回复自己或队友的体力，并去除异常状态",
+      "category": "skill",
+      "status": "source_supported",
+      "scope": "当前官方说明的基础记载；原文数值和完整字段见详情，不表示已独立实测或涵盖全部机制。",
+      "source_ids": [
+        "official-skill",
+        "official-language-zh"
+      ],
+      "checked_at": "2026-11-16",
+      "origin": "official-index",
+      "details_path": "official/skills.json",
+      "details_id": "skill-heal"
+    },
+    {
+      "id": "skill-revive",
+      "term": "苏生术",
+      "aliases": [],
+      "definition": "复活一名被击倒的队友",
+      "category": "skill",
+      "status": "source_supported",
+      "scope": "当前官方说明的基础记载；原文数值和完整字段见详情，不表示已独立实测或涵盖全部机制。",
+      "source_ids": [
+        "official-skill"
+      ],
+      "checked_at": "2026-11-16",
+      "origin": "official-index",
+      "details_path": "official/skills.json",
+      "details_id": "skill-revive"
+    },
+    {
+      "id": "skill-summon",
+      "term": "血祭",
+      "aliases": [],
+      "definition": "召唤使魔，使魔受到伤害时施法者连带受到50%伤害",
+      "category": "skill",
+      "status": "source_supported",
+      "scope": "当前官方说明的基础记载；原文数值和完整字段见详情，不表示已独立实测或涵盖全部机制。",
+      "source_ids": [
+        "official-skill"
+      ],
+      "checked_at": "2026-11-16",
+      "origin": "official-index",
+      "details_path": "official/skills.json",
+      "details_id": "skill-summon"
+    },
+    {
+      "id": "skill-shadow",
+      "term": "幻影",
+      "aliases": [
+        "幻术"
+      ],
+      "definition": "召唤幻影，幻影体力低，两回合后开始行动",
+      "category": "skill",
+      "status": "source_supported",
+      "scope": "当前官方说明的基础记载；原文数值和完整字段见详情，不表示已独立实测或涵盖全部机制。",
+      "source_ids": [
+        "official-skill",
+        "official-language-zh"
+      ],
+      "checked_at": "2026-11-16",
+      "origin": "official-index",
+      "details_path": "official/skills.json",
+      "details_id": "skill-shadow"
+    },
+    {
+      "id": "skill-clone",
+      "term": "分身",
+      "aliases": [],
+      "definition": "分成两人，分身后属性下降，技能不变",
+      "category": "skill",
+      "status": "source_supported",
+      "scope": "当前官方说明的基础记载；原文数值和完整字段见详情，不表示已独立实测或涵盖全部机制。",
+      "source_ids": [
+        "official-skill"
+      ],
+      "checked_at": "2026-11-16",
+      "origin": "official-index",
+      "details_path": "official/skills.json",
+      "details_id": "skill-clone"
+    },
+    {
+      "id": "skill-counter",
+      "term": "反击",
+      "aliases": [],
+      "definition": "回合结束后向对手进行物理攻击",
+      "category": "skill",
+      "status": "source_supported",
+      "scope": "当前官方说明的基础记载；原文数值和完整字段见详情，不表示已独立实测或涵盖全部机制。",
+      "source_ids": [
+        "official-skill"
+      ],
+      "checked_at": "2026-11-16",
+      "origin": "official-index",
+      "details_path": "official/skills.json",
+      "details_id": "skill-counter"
+    },
+    {
+      "id": "skill-defend",
+      "term": "防御",
+      "aliases": [],
+      "definition": "进行防御，伤害减半",
+      "category": "skill",
+      "status": "source_supported",
+      "scope": "当前官方说明的基础记载；原文数值和完整字段见详情，不表示已独立实测或涵盖全部机制。",
+      "source_ids": [
+        "official-skill"
+      ],
+      "checked_at": "2026-11-16",
+      "origin": "official-index",
+      "details_path": "official/skills.json",
+      "details_id": "skill-defend"
+    },
+    {
+      "id": "skill-reflect",
+      "term": "伤害反弹",
+      "aliases": [],
+      "definition": "将伤害反弹到施法者",
+      "category": "skill",
+      "status": "source_supported",
+      "scope": "当前官方说明的基础记载；原文数值和完整字段见详情，不表示已独立实测或涵盖全部机制。",
+      "source_ids": [
+        "official-skill"
+      ],
+      "checked_at": "2026-11-16",
+      "origin": "official-index",
+      "details_path": "official/skills.json",
+      "details_id": "skill-reflect"
+    },
+    {
+      "id": "skill-protect",
+      "term": "守护",
+      "aliases": [],
+      "definition": "进行守护代替伤害，伤害减半",
+      "category": "skill",
+      "status": "source_supported",
+      "scope": "当前官方说明的基础记载；原文数值和完整字段见详情，不表示已独立实测或涵盖全部机制。",
+      "source_ids": [
+        "official-skill"
+      ],
+      "checked_at": "2026-11-16",
+      "origin": "official-index",
+      "details_path": "official/skills.json",
+      "details_id": "skill-protect"
+    },
+    {
+      "id": "skill-reraise",
+      "term": "护身符",
+      "aliases": [],
+      "definition": "复活自己并恢复少量体力",
+      "category": "skill",
+      "status": "source_supported",
+      "scope": "当前官方说明的基础记载；原文数值和完整字段见详情，不表示已独立实测或涵盖全部机制。",
+      "source_ids": [
+        "official-skill"
+      ],
+      "checked_at": "2026-11-16",
+      "origin": "official-index",
+      "details_path": "official/skills.json",
+      "details_id": "skill-reraise"
+    },
+    {
+      "id": "skill-upgrade",
+      "term": "垂死抗争",
+      "aliases": [],
+      "definition": "当所剩体力极少，所有属性上升",
+      "category": "skill",
+      "status": "source_supported",
+      "scope": "当前官方说明的基础记载；原文数值和完整字段见详情，不表示已独立实测或涵盖全部机制。",
+      "source_ids": [
+        "official-skill"
+      ],
+      "checked_at": "2026-11-16",
+      "origin": "official-index",
+      "details_path": "official/skills.json",
+      "details_id": "skill-upgrade"
+    },
+    {
+      "id": "skill-shield",
+      "term": "护盾",
+      "aliases": [],
+      "definition": "恢复少量的护盾，受到伤害时护盾抵消一部分伤害",
+      "category": "skill",
+      "status": "source_supported",
+      "scope": "当前官方说明的基础记载；原文数值和完整字段见详情，不表示已独立实测或涵盖全部机制。",
+      "source_ids": [
+        "official-skill"
+      ],
+      "checked_at": "2026-11-16",
+      "origin": "official-index",
+      "details_path": "official/skills.json",
+      "details_id": "skill-shield"
+    },
+    {
+      "id": "skill-zombie",
+      "term": "召唤亡灵",
+      "aliases": [],
+      "definition": "将对手的尸体变成丧尸为自己战斗",
+      "category": "skill",
+      "status": "source_supported",
+      "scope": "当前官方说明的基础记载；原文数值和完整字段见详情，不表示已独立实测或涵盖全部机制。",
+      "source_ids": [
+        "official-skill"
+      ],
+      "checked_at": "2026-11-16",
+      "origin": "official-index",
+      "details_path": "official/skills.json",
+      "details_id": "skill-zombie"
+    },
+    {
+      "id": "skill-merge",
+      "term": "吞噬",
+      "aliases": [],
+      "definition": "吞噬对手提高自己的属性，并获得对手的技能",
+      "category": "skill",
+      "status": "source_supported",
+      "scope": "当前官方说明的基础记载；原文数值和完整字段见详情，不表示已独立实测或涵盖全部机制。",
+      "source_ids": [
+        "official-skill"
+      ],
+      "checked_at": "2026-11-16",
+      "origin": "official-index",
+      "details_path": "official/skills.json",
+      "details_id": "skill-merge"
+    },
+    {
+      "id": "boss-aokiji",
+      "term": "青雉",
+      "aliases": [
+        "aokiji@!"
+      ],
+      "definition": "无视物理攻击，强力冰冻技能",
+      "category": "boss",
+      "status": "source_supported",
+      "scope": "当前官方说明的基础记载；原文数值和完整字段见详情，不表示已独立实测或涵盖全部机制。",
+      "source_ids": [
+        "official-special"
+      ],
+      "checked_at": "2026-11-16",
+      "origin": "official-index",
+      "details_path": "official/special-names.json",
+      "details_id": "boss-aokiji"
+    },
+    {
+      "id": "boss-conan",
+      "term": "柯南",
+      "aliases": [
+        "conan@!"
+      ],
+      "definition": "不小心遇到他就会有生命危险。。。",
+      "category": "boss",
+      "status": "source_supported",
+      "scope": "当前官方说明的基础记载；原文数值和完整字段见详情，不表示已独立实测或涵盖全部机制。",
+      "source_ids": [
+        "official-special"
+      ],
+      "checked_at": "2026-11-16",
+      "origin": "official-index",
+      "details_path": "official/special-names.json",
+      "details_id": "boss-conan"
+    },
+    {
+      "id": "boss-ikaruga",
+      "term": "斑鸠",
+      "aliases": [
+        "ikaruga@!"
+      ],
+      "definition": "吸收所有奇数伤害，只有偶数攻击有效",
+      "category": "boss",
+      "status": "source_supported",
+      "scope": "当前官方说明的基础记载；原文数值和完整字段见详情，不表示已独立实测或涵盖全部机制。",
+      "source_ids": [
+        "official-special"
+      ],
+      "checked_at": "2026-11-16",
+      "origin": "official-index",
+      "details_path": "official/special-names.json",
+      "details_id": "boss-ikaruga"
+    },
+    {
+      "id": "boss-mario",
+      "term": "马里奥",
+      "aliases": [
+        "mario@!"
+      ],
+      "definition": "吃了蘑菇会变厉害",
+      "category": "boss",
+      "status": "source_supported",
+      "scope": "当前官方说明的基础记载；原文数值和完整字段见详情，不表示已独立实测或涵盖全部机制。",
+      "source_ids": [
+        "official-special"
+      ],
+      "checked_at": "2026-11-16",
+      "origin": "official-index",
+      "details_path": "official/special-names.json",
+      "details_id": "boss-mario"
+    },
+    {
+      "id": "boss-slime",
+      "term": "史莱姆",
+      "aliases": [
+        "slime@!"
+      ],
+      "definition": "死后会分身成小史莱姆",
+      "category": "boss",
+      "status": "source_supported",
+      "scope": "当前官方说明的基础记载；原文数值和完整字段见详情，不表示已独立实测或涵盖全部机制。",
+      "source_ids": [
+        "official-special"
+      ],
+      "checked_at": "2026-11-16",
+      "origin": "official-index",
+      "details_path": "official/special-names.json",
+      "details_id": "boss-slime"
+    },
+    {
+      "id": "boss-sonic",
+      "term": "索尼克",
+      "aliases": [
+        "sonic@!"
+      ],
+      "definition": "超高速度",
+      "category": "boss",
+      "status": "source_supported",
+      "scope": "当前官方说明的基础记载；原文数值和完整字段见详情，不表示已独立实测或涵盖全部机制。",
+      "source_ids": [
+        "official-special"
+      ],
+      "checked_at": "2026-11-16",
+      "origin": "official-index",
+      "details_path": "official/special-names.json",
+      "details_id": "boss-sonic"
+    },
+    {
+      "id": "boss-yuri",
+      "term": "尤里",
+      "aliases": [
+        "yuri@!"
+      ],
+      "definition": "心灵控制",
+      "category": "boss",
+      "status": "source_supported",
+      "scope": "当前官方说明的基础记载；原文数值和完整字段见详情，不表示已独立实测或涵盖全部机制。",
+      "source_ids": [
+        "official-special"
+      ],
+      "checked_at": "2026-11-16",
+      "origin": "official-index",
+      "details_path": "official/special-names.json",
+      "details_id": "boss-yuri"
+    },
+    {
+      "id": "boss-mosquito",
+      "term": "蚊",
+      "aliases": [
+        "mosquito@!"
+      ],
+      "definition": "打不到它。。。",
+      "category": "boss",
+      "status": "source_supported",
+      "scope": "当前官方说明的基础记载；原文数值和完整字段见详情，不表示已独立实测或涵盖全部机制。",
+      "source_ids": [
+        "official-special"
+      ],
+      "checked_at": "2026-11-16",
+      "origin": "official-index",
+      "details_path": "official/special-names.json",
+      "details_id": "boss-mosquito"
+    },
+    {
+      "id": "boss-lazy",
+      "term": "懒癌",
+      "aliases": [
+        "lazy@!"
+      ],
+      "definition": "犯了懒癌就什么都不想做。。",
+      "category": "boss",
+      "status": "source_supported",
+      "scope": "当前官方说明的基础记载；原文数值和完整字段见详情，不表示已独立实测或涵盖全部机制。",
+      "source_ids": [
+        "official-special"
+      ],
+      "checked_at": "2026-11-16",
+      "origin": "official-index",
+      "details_path": "official/special-names.json",
+      "details_id": "boss-lazy"
+    },
+    {
+      "id": "boss-saitama",
+      "term": "一拳超人",
+      "aliases": [
+        "saitama@!"
+      ],
+      "definition": "强到几乎无敌，但总要到最后才出手",
+      "category": "boss",
+      "status": "source_supported",
+      "scope": "当前官方说明的基础记载；原文数值和完整字段见详情，不表示已独立实测或涵盖全部机制。",
+      "source_ids": [
+        "official-special"
+      ],
+      "checked_at": "2026-11-16",
+      "origin": "official-index",
+      "details_path": "official/special-names.json",
+      "details_id": "boss-saitama"
+    },
+    {
+      "id": "boss-covid",
+      "term": "新冠病毒",
+      "aliases": [
+        "covid@!"
+      ],
+      "definition": "人多就会交差传染，最好装备上口罩",
+      "category": "boss",
+      "status": "source_supported",
+      "scope": "当前官方说明的基础记载；原文数值和完整字段见详情，不表示已独立实测或涵盖全部机制。",
+      "source_ids": [
+        "official-special"
+      ],
+      "checked_at": "2026-11-16",
+      "origin": "official-index",
+      "details_path": "official/special-names.json",
+      "details_id": "boss-covid"
+    },
+    {
+      "id": "language-possess",
+      "term": "附体",
+      "aliases": [],
+      "definition": "官方中文语言包中出现的名称；当前只确认名称和对应消息键，未从官方说明中取得完整机制。",
+      "category": "language-only",
+      "status": "source_supported",
+      "scope": "显示词汇证据，不能据此推断触发条件、获取方式或数值。",
+      "source_ids": [
+        "official-language-zh"
+      ],
+      "checked_at": "2026-11-16",
+      "origin": "official-index"
+    },
+    {
+      "id": "language-explode",
+      "term": "自爆",
+      "aliases": [],
+      "definition": "官方中文语言包中出现的名称；当前只确认名称和对应消息键，未从官方说明中取得完整机制。",
+      "category": "language-only",
+      "status": "source_supported",
+      "scope": "显示词汇证据，不能据此推断触发条件、获取方式或数值。",
+      "source_ids": [
+        "official-language-zh"
+      ],
+      "checked_at": "2026-11-16",
+      "origin": "official-index"
+    },
+    {
+      "id": "language-hide",
+      "term": "隐匿",
+      "aliases": [],
+      "definition": "官方中文语言包中出现的名称；当前只确认名称和对应消息键，未从官方说明中取得完整机制。",
+      "category": "language-only",
+      "status": "source_supported",
+      "scope": "显示词汇证据，不能据此推断触发条件、获取方式或数值。",
+      "source_ids": [
+        "official-language-zh"
+      ],
+      "checked_at": "2026-11-16",
+      "origin": "official-index"
+    },
+    {
+      "id": "language-death-note",
+      "term": "死亡笔记",
+      "aliases": [],
+      "definition": "官方中文语言包中出现的名称；当前只确认名称和对应消息键，未从官方说明中取得完整机制。",
+      "category": "language-only",
+      "status": "source_supported",
+      "scope": "显示词汇证据，不能据此推断触发条件、获取方式或数值。",
+      "source_ids": [
+        "official-language-zh"
+      ],
+      "checked_at": "2026-11-16",
+      "origin": "official-index"
+    },
+    {
+      "id": "language-attribute-modifier",
+      "term": "属性修改器",
+      "aliases": [],
+      "definition": "官方中文语言包中出现的名称；当前只确认名称和对应消息键，未从官方说明中取得完整机制。",
+      "category": "language-only",
+      "status": "source_supported",
+      "scope": "显示词汇证据，不能据此推断触发条件、获取方式或数值。",
+      "source_ids": [
+        "official-language-zh"
+      ],
+      "checked_at": "2026-11-16",
+      "origin": "official-index"
     }
   ]
 }

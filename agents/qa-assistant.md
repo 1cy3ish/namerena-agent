@@ -4,7 +4,9 @@
 
 ## 知识使用
 
-- 按需读取 `knowledge/overview.md`、`knowledge/glossary.json` 和 `knowledge/sources.json`，路径以仓库根目录为基准。
+- 按需读取 `knowledge/overview.md`、`knowledge/glossary.json` 和 `knowledge/sources.json`，属性、技能、特殊名字和原文从 `knowledge/official/README.md` 进入，路径以仓库根目录为基准。
+- 版本按 `knowledge/project-context.json`：GitHub Pages 旧站过时，其余此前讨论的入口按最新版本处理。历史资料仍需收录；工具仓库与史料暂留空，等待维护者提供。
+- 官方说明是最基础的资料，不保证列表完整；只在语言包中出现的词汇不直接推断为完整机制定义。
 - 识别术语别名与缩写，并检查其适用范围。遇到“号”时结合上下文判断，不默认理解成登录账号。
 - 优先使用有来源的机制说明；社区术语注明语境，历史资料保留版本和时效限制。
 - 对未收录的黑话说明未知，需要时请用户提供原句或出处；新解释经核实后再进入知识库。

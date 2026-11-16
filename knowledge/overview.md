@@ -1,43 +1,43 @@
 # 名字竞技场基础概览
 
-检索日期：2026-11-16。这是初始化时的快速资料梳理，尚未进行游戏实测或社区访谈。来源 ID 对应 [sources.json](sources.json)。
+整理日期：2026-11-16。完整官方收录见 [official/README.md](official/README.md)，来源 ID 对应 [sources.json](sources.json)。
 
-## 游戏与玩法
+## 版本与收录范围
 
-名字竞技场（Namerena）是一款文字对战游戏，也是 MD5 大作战的续作。玩家输入多个名字后，程序自动演算战斗。同一个名字关联相同的属性和技能；官方说明将相同输入下的战斗描述为可重复的结果。讨论复现时仍需保持游戏版本、完整输入和分组等条件一致。[官方说明 / official-guide](https://deepmess.com/zh/namerena/)
+维护者确认：GitHub Pages 旧站是过时版本，其余此前讨论的入口按最新版本处理。旧资料仍需收录；工具仓库和史料等维护者后续提供，目前留空。[维护者约定](project-context.json)
 
-通常每行输入一个名字进行混战，名字之间加入空行可以分组进行队战。输入中的空行是有意义的，不能当作普通排版随意删除。[官方说明 / official-guide](https://deepmess.com/zh/namerena/)
+Deep Mess 的 [官方说明](https://deepmess.com/zh/namerena/) 与其链接的 [游戏本体](https://deepmess.com/namerena/) 是本轮收录对象。官方词条构成最基础的知识，不假定说明页覆盖全部机制。页面保留的旧链接作为原文证据，不据此把整个页面归为旧版本。
 
-官方命名文档列出 `名字`、`名字@战队名`、`名字+装备`、`名字@战队名+装备` 四种形式。名字或战队名发生变化会改变属性；战斗中的简化显示名不一定等于完整计算输入。`@战队名` 也不等于空行定义的对战分组。[名字构成 / official-naming](https://deepmess.com/zh/namerena/naming.html)
+## 游戏与输入
 
-“测号”指搜索或评估名字。官方说明提供 `!test!` 入口，并区分名字搜索和实力评估两种输入布局。具体限制和评分结论需要结合目标版本核对，不直接把文档中的强号分数阈值视为当前社区标准。[测号技巧 / official-testing](https://deepmess.com/zh/namerena/testing.html)
+名字竞技场（Namerena）是 MD5 大作战的文字对战续作。输入名字后由程序自动演算战斗；名字关联固定属性和技能，相同条件下结果可重复。每行一个名字，空行划分本局队伍。[官方说明](https://deepmess.com/zh/namerena/)
 
-## 入口与版本
+命名包括 `名字`、`名字@战队名`、`名字+装备`、`名字@战队名+装备`。战队名参与属性生成并影响徽章，与空行定义的对战队伍不是同一概念。空格后的名字部分在战斗中不显示，但仍是完整输入的一部分。[命名规则](https://deepmess.com/zh/namerena/naming.html)
 
-| 入口 | 本次看到的情况 | 使用方式 |
-| --- | --- | --- |
-| [Deep Mess 文档](https://deepmess.com/zh/namerena/) | 官方玩法、规则与开发者文档入口 | 基础知识的优先来源 |
-| [Deep Mess 游戏入口](https://deepmess.com/namerena) | 官方说明页指向此地址 | 本次未对游戏运行结果进行验证 |
-| [GitHub Pages 旧站](https://namerena.github.io/) | 页面仍能读取 | 不据此假定与 Deep Mess 版本一致 |
-| [社区 Wiki 教程](https://namerena.fandom.com/zh/wiki/名字竞技场教程) | 包含术语、历史与工具线索，也明确提示教程部分停用 | 作为社区语料线索，带上历史范围与待确认说明 |
+## 属性、技能与特殊名字
 
-Wiki 教程将 GitHub Pages 地址列为旧入口，并说明其评分及对战结果不再具有该教程所称的正式效力。这是社区页面的表述，不能替代具体赛事规则或对每个镜像版本的核验。[社区教程 / community-tutorial](https://namerena.fandom.com/zh/wiki/名字竞技场教程)
+- 官方属性页解释攻、防、速、敏、魔、抗、智七项属性。完整字段见 [属性索引](official/attributes.json)，原文个别措辞按来源保留。
+- 技能页列出 14 个攻击技能、11 个辅助技能、9 个被动技能，以及技能熟练度概念。效果、伤害和触发条件见 [技能索引](official/skills.json)。34 项是页面列出的范围，不是游戏全部技能数量的断言。
+- 特殊名字页列出 11 个 Boss，特殊战队名为 `!`。`seed:` 开头并处于 `!` 战队的输入是随机数种子，不参战，只改变战斗过程。完整输入和特点见 [特殊名字索引](official/special-names.json)。
 
-## 初始术语范围
+以上分别来自 [属性说明](https://deepmess.com/zh/namerena/attribute.html)、[技能说明](https://deepmess.com/zh/namerena/skill.html) 和 [特殊名字](https://deepmess.com/zh/namerena/special.html)。
 
-[术语表](glossary.json) 先收录“名竞、号、测号、战队、普评、强评、普单、强单、粗评、精评”。其中评分简称按社区教程的语境记录，仅解释名称与基本用途；算法、样本、工具版本及具体分数的可比性仍待补充。[官方测号文档](https://deepmess.com/zh/namerena/testing.html)、[社区教程](https://namerena.fandom.com/zh/wiki/名字竞技场教程)
+## 测号与评分
 
-Wiki 中的历史称号、当前最强名字、榜单和强度评价暂不录为当前事实，尤其不直接采用已经被页面标为作废的旧称号阈值。
+官方 `!test!` 同时支持名字搜索和实力评估，使用不同输入布局。搜索说明包括 `???` 替换为数字的形式；评估说明包括测试进度和评分。原始布局及数值保存在 [测号页面快照](official/pages/testing.md)，引用时明确是官方记载。[测号技巧](https://deepmess.com/zh/namerena/testing.html)
 
-## 给工具开发者的线索
+普评、强评、普单、强单及 pp、qp、pd、qd 来自社区教程。官方入门页未完整展开这套社区体系；工具实现和历史变迁等待维护者提供材料。[术语表](glossary.json)、[社区教程](https://namerena.fandom.com/zh/wiki/名字竞技场教程)
 
-官方嵌入文档描述了网页集成方式：将名字输入编码到 iframe URL 的 `#n=` 参数，利用 `postMessage` 接收结果；文档列出 `winners` 和 `all` 两个回调字段。该页示例仍使用 GitHub Pages 旧地址，尚未验证其在目标版本上的兼容性。这些是浏览器嵌入说明，当前没有由本次检索确认的独立 HTTP 对战服务或 MCP 接口。[网页嵌入文档 / official-embedding](https://deepmess.com/zh/namerena/api.html)
+## 语言包与开发入口
 
-后续实现工具时，应先核对目标站点和版本、完整输入的编码方式、消息来源校验与返回字段，再封装能力。
+官方语言页提供默认中文、英文、繁体中文和大富翁语言包。原始 JSON 已归档，[语言索引](official/language-index.json) 保留消息键及词形。语言包还能看到说明页未展开的“附体、自爆、隐匿”等名称，目前只收录名称证据，不推断机制。[自定义语言](https://deepmess.com/zh/namerena/custom_lan.html)
 
-## 待核实
+官方嵌入方式使用 iframe、URL 的 `#n=` 参数和 `postMessage`，文档列出 `winners` 与 `all` 字段。说明页示例仍含旧站地址，但 [实际 API 示例页源码](https://deepmess.com/zh/namerena/api_test.html) 使用本站 `/namerena/index.html#n=`。原文与示例分别保留，不相互覆盖。[嵌入说明](https://deepmess.com/zh/namerena/api.html)
 
-- 目标社区采用的游戏版本、赛事规则和评分工具版本。
-- 社区黑话在当前使用中的释义、别名、歧义和例句。
-- 现有测号、评分、模拟和工具项目的仓库、许可证与接入方式。
-- 旧文档与现行游戏的差异，以及可重复的最小实测样例。
+[关于页面](https://deepmess.com/zh/namerena/about.html) 中的作者信息、内容版权和第三方 API 使用条件已随原文归档。当前项目未实现 HTTP 对战服务或 MCP server。
+
+## 抓取覆盖
+
+正文快照覆盖官方目录发现的页面，另保存游戏本体、运行时发现的对战页面、脚本、CSS、图片和语言包。状态、SHA-256 与链接关系见 [抓取清单](official/crawl-manifest.json)。
+
+天梯页面已收录，本次取得页面和前端资源，没有实时排名数据。站外广告与外链只记录地址；未公开链接的服务器文件无法据此枚举。资源归档没有改写成离线游戏，也不代表取得完整开发源码。

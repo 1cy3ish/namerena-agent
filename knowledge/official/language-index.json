@@ -1,0 +1,456 @@
+{
+  "schema_version": "0.1",
+  "source_ids": [
+    "official-language-zh",
+    "official-custom_lan"
+  ],
+  "notes": "完整语言字符串保存在原始 JSON；词形只证明在显示文本中出现，不构成机制定义。zh-TW 与 zh 的字节是否相同可通过哈希比较。",
+  "languages": [
+    {
+      "id": "zh",
+      "url": "https://deepmess.com/namerena/lang/zh.json",
+      "local_path": "data/raw/official-namerena/deepmess.com/namerena/lang/zh.json",
+      "key_count": 174,
+      "sha256": "fbc158e91486c12cfa038bf57b75d312b63320f3ef946ccc4656b87bdd7e64a7"
+    },
+    {
+      "id": "en",
+      "url": "https://deepmess.com/namerena/lang/en.json",
+      "local_path": "data/raw/official-namerena/deepmess.com/namerena/lang/en.json",
+      "key_count": 176,
+      "sha256": "358b5fdcd786e41edd65e9715cc3bd121388dbd0c53f4b9af85e0951e515761d"
+    },
+    {
+      "id": "zh-TW",
+      "url": "https://deepmess.com/namerena/lang/zh-TW.json",
+      "local_path": "data/raw/official-namerena/deepmess.com/namerena/lang/zh-TW.json",
+      "key_count": 174,
+      "sha256": "b003e58878d5ab70d4677426f26d8abe075b4cef11ebf2c8fae6849902db191f"
+    },
+    {
+      "id": "zh-money",
+      "url": "https://deepmess.com/namerena/lang/zh-money.json",
+      "local_path": "data/raw/official-namerena/deepmess.com/namerena/lang/zh-money.json",
+      "key_count": 184,
+      "sha256": "6b4997bc755acf1bab685a0b0e2cb704955dd85077fbd510b456fb033e55e894"
+    }
+  ],
+  "bracketed_terms": [
+    {
+      "term": "吸血攻击",
+      "keys": [
+        "sklAbsorb"
+      ]
+    },
+    {
+      "term": "聚气",
+      "keys": [
+        "sklAccumulate",
+        "sklAccumulateCancel"
+      ]
+    },
+    {
+      "term": "潜行",
+      "keys": [
+        "sklAssassinate1",
+        "sklAssassinateFailed"
+      ]
+    },
+    {
+      "term": "背刺",
+      "keys": [
+        "sklAssassinate2"
+      ]
+    },
+    {
+      "term": "回避",
+      "keys": [
+        "dodge",
+        "sklThunderEnd"
+      ]
+    },
+    {
+      "term": "狂暴",
+      "keys": [
+        "sklBerserkEnd",
+        "sklBerserkHit"
+      ]
+    },
+    {
+      "term": "狂暴攻击",
+      "keys": [
+        "sklBerserkAttack"
+      ]
+    },
+    {
+      "term": "狂暴术",
+      "keys": [
+        "sklBerserk"
+      ]
+    },
+    {
+      "term": "蓄力",
+      "keys": [
+        "sklCharge",
+        "sklChargeCancel"
+      ]
+    },
+    {
+      "term": "魅惑",
+      "keys": [
+        "sklCharmEnd",
+        "sklCharm",
+        "sklCharmHit"
+      ]
+    },
+    {
+      "term": "分身",
+      "keys": [
+        "sklClone"
+      ]
+    },
+    {
+      "term": "会心一击",
+      "keys": [
+        "sklCritical"
+      ]
+    },
+    {
+      "term": "诅咒",
+      "keys": [
+        "sklCurseDamage",
+        "sklCurseEnd",
+        "sklCurseHit",
+        "sklCurse"
+      ]
+    },
+    {
+      "term": "净化",
+      "keys": [
+        "sklDisperse"
+      ]
+    },
+    {
+      "term": "生命之轮",
+      "keys": [
+        "sklExchange"
+      ]
+    },
+    {
+      "term": "火球术",
+      "keys": [
+        "sklFire",
+        "bossMarioGrow21"
+      ]
+    },
+    {
+      "term": "瘟疫",
+      "keys": [
+        "sklHalf"
+      ]
+    },
+    {
+      "term": "疾走",
+      "keys": [
+        "sklHasteEnd",
+        "sklHasteHit"
+      ]
+    },
+    {
+      "term": "加速术",
+      "keys": [
+        "sklHaste"
+      ]
+    },
+    {
+      "term": "治愈魔法",
+      "keys": [
+        "sklHeal"
+      ]
+    },
+    {
+      "term": "冰冻",
+      "keys": [
+        "sklIceEnd",
+        "sklIceHit"
+      ]
+    },
+    {
+      "term": "冰冻术",
+      "keys": [
+        "sklIce"
+      ]
+    },
+    {
+      "term": "铁壁",
+      "keys": [
+        "sklIron",
+        "sklIronCancel",
+        "sklIronEnd"
+      ]
+    },
+    {
+      "term": "毒性发作",
+      "keys": [
+        "sklPoisonDamage"
+      ]
+    },
+    {
+      "term": "中毒",
+      "keys": [
+        "sklPoisonEnd",
+        "sklPoisonHit"
+      ]
+    },
+    {
+      "term": "投毒",
+      "keys": [
+        "sklPoison"
+      ]
+    },
+    {
+      "term": "地裂术",
+      "keys": [
+        "sklQuake"
+      ]
+    },
+    {
+      "term": "连击",
+      "keys": [
+        "SklRapidNext"
+      ]
+    },
+    {
+      "term": "苏生术",
+      "keys": [
+        "sklRevive"
+      ]
+    },
+    {
+      "term": "复活",
+      "keys": [
+        "sklRevived"
+      ]
+    },
+    {
+      "term": "附体",
+      "keys": [
+        "sklPossess"
+      ]
+    },
+    {
+      "term": "幻术",
+      "keys": [
+        "sklShadow"
+      ]
+    },
+    {
+      "term": "迟缓",
+      "keys": [
+        "sklSlowEnd",
+        "sklSlowHit"
+      ]
+    },
+    {
+      "term": "减速术",
+      "keys": [
+        "sklSlow"
+      ]
+    },
+    {
+      "term": "自爆",
+      "keys": [
+        "sklExplode"
+      ]
+    },
+    {
+      "term": "血祭",
+      "keys": [
+        "sklSummon"
+      ]
+    },
+    {
+      "term": "雷击术",
+      "keys": [
+        "sklThunder"
+      ]
+    },
+    {
+      "term": "吸收",
+      "keys": [
+        "sklAokijiDefend",
+        "sklIkarugaDefend"
+      ]
+    },
+    {
+      "term": "冰河时代",
+      "keys": [
+        "sklAokijiIceAge"
+      ]
+    },
+    {
+      "term": "肺炎",
+      "keys": [
+        "sklCovidDamage"
+      ]
+    },
+    {
+      "term": "新冠病毒",
+      "keys": [
+        "sklCovidHit"
+      ]
+    },
+    {
+      "term": "能量释放",
+      "keys": [
+        "sklIkarugaAttack"
+      ]
+    },
+    {
+      "term": "懒癌",
+      "keys": [
+        "sklLazyDamage",
+        "sklLazyHit"
+      ]
+    },
+    {
+      "term": "Steam",
+      "keys": [
+        "sklLazySkipTurn1"
+      ]
+    },
+    {
+      "term": "守望先锋",
+      "keys": [
+        "sklLazySkipTurn2"
+      ]
+    },
+    {
+      "term": "文明6",
+      "keys": [
+        "sklLazySkipTurn3"
+      ]
+    },
+    {
+      "term": "英雄联盟",
+      "keys": [
+        "sklLazySkipTurn4"
+      ]
+    },
+    {
+      "term": "微博",
+      "keys": [
+        "sklLazySkipTurn5"
+      ]
+    },
+    {
+      "term": "朋友圈",
+      "keys": [
+        "sklLazySkipTurn6"
+      ]
+    },
+    {
+      "term": "蘑菇",
+      "keys": [
+        "bossMarioGrow10"
+      ]
+    },
+    {
+      "term": "火焰花",
+      "keys": [
+        "bossMarioGrow20"
+      ]
+    },
+    {
+      "term": "奖命蘑菇",
+      "keys": [
+        "bossMarioGrow30"
+      ]
+    },
+    {
+      "term": "分裂",
+      "keys": [
+        "sklSlimeSpawn"
+      ]
+    },
+    {
+      "term": "心灵控制",
+      "keys": [
+        "sklYuriControl"
+      ]
+    },
+    {
+      "term": "反击",
+      "keys": [
+        "sklCounter"
+      ]
+    },
+    {
+      "term": "防御",
+      "keys": [
+        "defend"
+      ]
+    },
+    {
+      "term": "隐匿",
+      "keys": [
+        "sklHide"
+      ]
+    },
+    {
+      "term": "吞噬",
+      "keys": [
+        "sklMerge"
+      ]
+    },
+    {
+      "term": "守护",
+      "keys": [
+        "sklProtect"
+      ]
+    },
+    {
+      "term": "伤害反弹",
+      "keys": [
+        "sklReflect"
+      ]
+    },
+    {
+      "term": "护身符",
+      "keys": [
+        "sklReraise"
+      ]
+    },
+    {
+      "term": "垂死",
+      "keys": [
+        "sklUpgrade",
+        "sklUpgradeCancel"
+      ]
+    },
+    {
+      "term": "召唤亡灵",
+      "keys": [
+        "sklZombie"
+      ]
+    },
+    {
+      "term": "死亡笔记",
+      "keys": [
+        "weaponDeathNoteAtk"
+      ]
+    },
+    {
+      "term": "属性修改器",
+      "keys": [
+        "weaponRModifierUse"
+      ]
+    },
+    {
+      "term": "购买",
+      "keys": [
+        "weaponS11_0"
+      ]
+    }
+  ]
+}

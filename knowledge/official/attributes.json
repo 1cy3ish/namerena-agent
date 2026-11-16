@@ -1,0 +1,89 @@
+{
+  "schema_version": "0.1",
+  "notes": "按官方属性页提取；魔、抗段落中关于普通/物理攻击的原文措辞保留，未静默纠错。",
+  "attributes": [
+    {
+      "id": "attribute-attack",
+      "name": "攻",
+      "source_ids": [
+        "official-attribute"
+      ],
+      "checked_at": "2026-11-16",
+      "description": [
+        "决定物理攻击的攻击力，包括普通攻击和物理攻击技能。",
+        "少量影响物理攻击的命中率。"
+      ]
+    },
+    {
+      "id": "attribute-defense",
+      "name": "防",
+      "source_ids": [
+        "official-attribute"
+      ],
+      "checked_at": "2026-11-16",
+      "description": [
+        "决定物理攻击的防御力，包括普通攻击和物理攻击技能。",
+        "少量影响物理攻击的回避率。"
+      ]
+    },
+    {
+      "id": "attribute-speed",
+      "name": "速",
+      "source_ids": [
+        "official-attribute"
+      ],
+      "checked_at": "2026-11-16",
+      "description": [
+        "速度决定了每轮行动的间隔时间"
+      ]
+    },
+    {
+      "id": "attribute-agility",
+      "name": "敏",
+      "source_ids": [
+        "official-attribute"
+      ],
+      "checked_at": "2026-11-16",
+      "description": [
+        "决定了所有攻击的命中率和受到攻击的回避率"
+      ]
+    },
+    {
+      "id": "attribute-magic",
+      "name": "魔",
+      "source_ids": [
+        "official-attribute"
+      ],
+      "checked_at": "2026-11-16",
+      "description": [
+        "决定魔法攻击的攻击力，包括普通攻击和物理攻击。",
+        "少量影响魔法攻击的命中率。"
+      ]
+    },
+    {
+      "id": "attribute-resistance",
+      "name": "抗",
+      "source_ids": [
+        "official-attribute"
+      ],
+      "checked_at": "2026-11-16",
+      "description": [
+        "决定魔法攻击的防御力，包括普通攻击和物理攻击技能。",
+        "少量影响魔法攻击的回避率。"
+      ]
+    },
+    {
+      "id": "attribute-intelligence",
+      "name": "智",
+      "source_ids": [
+        "official-attribute"
+      ],
+      "checked_at": "2026-11-16",
+      "description": [
+        "整体上决定技能的使用频率。",
+        "当魔法攻击力高于物理攻击时，决定普通攻击出现魔攻的概率。 ** 物理攻击力更高，普通攻击永远使用物理攻击计算，智力不起作用。",
+        "决定了战斗中对手的选择算法，高智力会偏好攻击体力较低的对手。"
+      ]
+    }
+  ]
+}

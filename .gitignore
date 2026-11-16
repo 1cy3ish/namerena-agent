@@ -15,7 +15,8 @@ dist/
 build/
 coverage/
 .cache/
-data/raw/
+data/raw/*
+!data/raw/official-namerena/
 data/processed/
 *.log
 

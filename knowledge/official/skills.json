@@ -1,0 +1,383 @@
+{
+  "schema_version": "0.1",
+  "notes": "保留官方表格分类、属性、数值和效果原文；不假定技能列表已覆盖游戏中的全部技能。",
+  "skills": [
+    {
+      "id": "skill-combo",
+      "name": "连击",
+      "source_ids": [
+        "official-skill"
+      ],
+      "checked_at": "2026-11-16",
+      "category": "攻击技能",
+      "attribute": "物理",
+      "damage": "75% x (2 ~ 3)",
+      "description": "连续多次攻击，若击中同一目标，后续伤害下降15%"
+    },
+    {
+      "id": "skill-critical",
+      "name": "会心一击",
+      "source_ids": [
+        "official-skill"
+      ],
+      "checked_at": "2026-11-16",
+      "category": "攻击技能",
+      "attribute": "物理",
+      "damage": "145%",
+      "description": "稳定输出伤害，随机性低"
+    },
+    {
+      "id": "skill-fire",
+      "name": "火球术",
+      "source_ids": [
+        "official-skill"
+      ],
+      "checked_at": "2026-11-16",
+      "category": "攻击技能",
+      "attribute": "魔法",
+      "damage": "137%",
+      "description": "若多次受到火系伤害，每次伤害增加25%"
+    },
+    {
+      "id": "skill-ice",
+      "name": "冰冻术",
+      "source_ids": [
+        "official-skill"
+      ],
+      "checked_at": "2026-11-16",
+      "category": "攻击技能",
+      "attribute": "魔法",
+      "damage": "70%",
+      "description": "命中后冰冻对手半回合"
+    },
+    {
+      "id": "skill-thunder",
+      "name": "雷击术",
+      "source_ids": [
+        "official-skill"
+      ],
+      "checked_at": "2026-11-16",
+      "category": "攻击技能",
+      "attribute": "魔法",
+      "damage": "35% x (3 ~ 6)",
+      "description": "对单一目标多次伤害"
+    },
+    {
+      "id": "skill-quake",
+      "name": "地裂术",
+      "source_ids": [
+        "official-skill"
+      ],
+      "checked_at": "2026-11-16",
+      "category": "攻击技能",
+      "attribute": "魔法",
+      "damage": "140% ~ 200%",
+      "description": "将伤害平分给 1~5个目标，人数越多则单体伤害越小，但总伤害越大"
+    },
+    {
+      "id": "skill-absorb",
+      "name": "吸血攻击",
+      "source_ids": [
+        "official-skill"
+      ],
+      "checked_at": "2026-11-16",
+      "category": "攻击技能",
+      "attribute": "魔法",
+      "damage": "115%",
+      "description": "命中后吸收一半体力"
+    },
+    {
+      "id": "skill-berserk",
+      "name": "狂暴术",
+      "source_ids": [
+        "official-skill"
+      ],
+      "checked_at": "2026-11-16",
+      "category": "攻击技能",
+      "attribute": "魔法",
+      "damage": "80%",
+      "description": "命中后施加狂暴状态，下回合只能进行敌我不分的狂暴攻击"
+    },
+    {
+      "id": "skill-curse",
+      "name": "诅咒",
+      "source_ids": [
+        "official-skill"
+      ],
+      "checked_at": "2026-11-16",
+      "category": "攻击技能",
+      "attribute": "魔法",
+      "damage": "100%",
+      "description": "命中后施加诅咒状态，之后受到其他攻击随机出现伤害加倍效果"
+    },
+    {
+      "id": "skill-purify",
+      "name": "净化",
+      "source_ids": [
+        "official-skill"
+      ],
+      "checked_at": "2026-11-16",
+      "category": "攻击技能",
+      "attribute": "魔法",
+      "damage": "100%",
+      "description": "命中后去除目标身上所有有益效果，对召唤兽伤害加倍"
+    },
+    {
+      "id": "skill-poison",
+      "name": "投毒",
+      "source_ids": [
+        "official-skill"
+      ],
+      "checked_at": "2026-11-16",
+      "category": "攻击技能",
+      "attribute": "魔法",
+      "damage": "90%",
+      "description": "命中后施加中毒状态，每回合损失体力"
+    },
+    {
+      "id": "skill-stealth",
+      "name": "潜行",
+      "source_ids": [
+        "official-skill"
+      ],
+      "checked_at": "2026-11-16",
+      "category": "攻击技能",
+      "attribute": "魔法",
+      "damage": "500%",
+      "description": "耗费两回合，第一回合潜行，第二回合背刺，中途受到伤害则潜行被打断"
+    },
+    {
+      "id": "skill-plague",
+      "name": "瘟疫",
+      "source_ids": [
+        "official-skill"
+      ],
+      "checked_at": "2026-11-16",
+      "category": "攻击技能",
+      "attribute": "魔法",
+      "damage": "-",
+      "description": "目标按比例损失体力50% ~ 99%。"
+    },
+    {
+      "id": "skill-exchange",
+      "name": "生命之轮",
+      "source_ids": [
+        "official-skill"
+      ],
+      "checked_at": "2026-11-16",
+      "category": "攻击技能",
+      "attribute": "魔法",
+      "damage": "-",
+      "description": "和目标体力值互换"
+    },
+    {
+      "id": "skill-accumulate",
+      "name": "聚气",
+      "source_ids": [
+        "official-skill"
+      ],
+      "checked_at": "2026-11-16",
+      "category": "辅助技能",
+      "description": "攻击力提高60%"
+    },
+    {
+      "id": "skill-charge",
+      "name": "蓄力",
+      "source_ids": [
+        "official-skill"
+      ],
+      "checked_at": "2026-11-16",
+      "category": "辅助技能",
+      "description": "下回合结束前伤害提升到300%，各种主动技能的特殊效果都有加成"
+    },
+    {
+      "id": "skill-charm",
+      "name": "魅惑",
+      "source_ids": [
+        "official-skill"
+      ],
+      "checked_at": "2026-11-16",
+      "category": "辅助技能",
+      "description": "命中后 目标下回合行动会将施法者视作队友"
+    },
+    {
+      "id": "skill-haste",
+      "name": "加速术",
+      "source_ids": [
+        "official-skill"
+      ],
+      "checked_at": "2026-11-16",
+      "category": "辅助技能",
+      "description": "自己或队友速度加倍，持续3回合"
+    },
+    {
+      "id": "skill-slow",
+      "name": "减速术",
+      "source_ids": [
+        "official-skill"
+      ],
+      "checked_at": "2026-11-16",
+      "category": "辅助技能",
+      "description": "目标速度减半，持续2回合"
+    },
+    {
+      "id": "skill-iron",
+      "name": "铁壁",
+      "source_ids": [
+        "official-skill"
+      ],
+      "checked_at": "2026-11-16",
+      "category": "辅助技能",
+      "description": "两回合内防御大幅上升"
+    },
+    {
+      "id": "skill-heal",
+      "name": "治愈术",
+      "source_ids": [
+        "official-skill"
+      ],
+      "checked_at": "2026-11-16",
+      "category": "辅助技能",
+      "description": "回复自己或队友的体力，并去除异常状态"
+    },
+    {
+      "id": "skill-revive",
+      "name": "苏生术",
+      "source_ids": [
+        "official-skill"
+      ],
+      "checked_at": "2026-11-16",
+      "category": "辅助技能",
+      "description": "复活一名被击倒的队友"
+    },
+    {
+      "id": "skill-summon",
+      "name": "血祭",
+      "source_ids": [
+        "official-skill"
+      ],
+      "checked_at": "2026-11-16",
+      "category": "辅助技能",
+      "description": "召唤使魔，使魔受到伤害时施法者连带受到50%伤害"
+    },
+    {
+      "id": "skill-shadow",
+      "name": "幻影",
+      "source_ids": [
+        "official-skill"
+      ],
+      "checked_at": "2026-11-16",
+      "category": "辅助技能",
+      "description": "召唤幻影，幻影体力低，两回合后开始行动"
+    },
+    {
+      "id": "skill-clone",
+      "name": "分身",
+      "source_ids": [
+        "official-skill"
+      ],
+      "checked_at": "2026-11-16",
+      "category": "辅助技能",
+      "description": "分成两人，分身后属性下降，技能不变"
+    },
+    {
+      "id": "skill-counter",
+      "name": "反击",
+      "source_ids": [
+        "official-skill"
+      ],
+      "checked_at": "2026-11-16",
+      "category": "被动技能",
+      "trigger": "受到伤害",
+      "description": "回合结束后向对手进行物理攻击"
+    },
+    {
+      "id": "skill-defend",
+      "name": "防御",
+      "source_ids": [
+        "official-skill"
+      ],
+      "checked_at": "2026-11-16",
+      "category": "被动技能",
+      "trigger": "受到伤害",
+      "description": "进行防御，伤害减半"
+    },
+    {
+      "id": "skill-reflect",
+      "name": "伤害反弹",
+      "source_ids": [
+        "official-skill"
+      ],
+      "checked_at": "2026-11-16",
+      "category": "被动技能",
+      "trigger": "受到攻击",
+      "description": "将伤害反弹到施法者"
+    },
+    {
+      "id": "skill-protect",
+      "name": "守护",
+      "source_ids": [
+        "official-skill"
+      ],
+      "checked_at": "2026-11-16",
+      "category": "被动技能",
+      "trigger": "队友受到攻击",
+      "description": "进行守护代替伤害，伤害减半"
+    },
+    {
+      "id": "skill-reraise",
+      "name": "护身符",
+      "source_ids": [
+        "official-skill"
+      ],
+      "checked_at": "2026-11-16",
+      "category": "被动技能",
+      "trigger": "被击倒",
+      "description": "复活自己并恢复少量体力"
+    },
+    {
+      "id": "skill-upgrade",
+      "name": "垂死抗争",
+      "source_ids": [
+        "official-skill"
+      ],
+      "checked_at": "2026-11-16",
+      "category": "被动技能",
+      "trigger": "受到伤害",
+      "description": "当所剩体力极少，所有属性上升"
+    },
+    {
+      "id": "skill-shield",
+      "name": "护盾",
+      "source_ids": [
+        "official-skill"
+      ],
+      "checked_at": "2026-11-16",
+      "category": "被动技能",
+      "trigger": "每回合",
+      "description": "恢复少量的护盾，受到伤害时护盾抵消一部分伤害"
+    },
+    {
+      "id": "skill-zombie",
+      "name": "召唤亡灵",
+      "source_ids": [
+        "official-skill"
+      ],
+      "checked_at": "2026-11-16",
+      "category": "被动技能",
+      "trigger": "击倒对手",
+      "description": "将对手的尸体变成丧尸为自己战斗"
+    },
+    {
+      "id": "skill-merge",
+      "name": "吞噬",
+      "source_ids": [
+        "official-skill"
+      ],
+      "checked_at": "2026-11-16",
+      "category": "被动技能",
+      "trigger": "击倒对手",
+      "description": "吞噬对手提高自己的属性，并获得对手的技能"
+    }
+  ]
+}
