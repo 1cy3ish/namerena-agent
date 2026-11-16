@@ -68,16 +68,18 @@
       "id": "developer-integration",
       "question": "我想把名字竞技场接进工具，官方有现成 HTTP 对战 API 或 MCP 吗？",
       "expected_points": [
-        "说明本次资料确认的是 iframe 与 postMessage 嵌入文档",
-        "提示文档示例使用旧地址，目标版本需验证",
-        "说明仓库 MCP 仍是规划"
+        "原站文档确认iframe和postMessage",
+        "tswn已提供Rust/CLI/WASM等实际接口",
+        "这不等于已确认远程HTTP对战服务或已实现本仓库MCP"
       ],
       "avoid": [
         "把网页嵌入文档说成已验证的 HTTP 对战接口",
         "声称仓库已有可运行 MCP 服务"
       ],
       "source_ids": [
-        "official-embedding"
+        "official-embedding",
+        "tswn-api",
+        "tswn-wasm"
       ]
     },
     {
@@ -85,8 +87,8 @@
       "question": "官方技能表没有附体，所以游戏肯定没有附体，对吗？",
       "expected_points": [
         "区分说明页列表与游戏全部内容",
-        "指出官方中文语言包包含附体文本",
-        "仅确认名称，不编造机制"
+        "指出官方语言包有附体名称，tswn另有实现解释",
+        "附体机制限定tswn语境并引用源码"
       ],
       "avoid": [
         "以说明未列出断言不存在",
@@ -94,7 +96,9 @@
       ],
       "source_ids": [
         "official-skill",
-        "official-language-zh"
+        "official-language-zh",
+        "tswn-possess",
+        "tswn-overlay"
       ]
     },
     {
@@ -102,8 +106,8 @@
       "question": "一个工具是旧版，是不是就不应该收进知识库？",
       "expected_points": [
         "过时资料仍应收录",
-        "标注版本、年代与出处",
-        "等待维护者提供相关仓库和史料"
+        "标注版本、年代和出处",
+        "tswn已提供，其余仓库或独立史料等待维护者提供"
       ],
       "avoid": [
         "因过时拒绝收录",
@@ -141,6 +145,178 @@
       ],
       "source_ids": [
         "official-attribute"
+      ]
+    },
+    {
+      "id": "tswn-score-units",
+      "question": "qp=6500 和 cqp=65 是一回事吗？",
+      "expected_points": [
+        "分别识别profile万分制评分和具体靶子集胜率",
+        "说明基准不同，不能只按100倍互换"
+      ],
+      "avoid": [
+        "认为只是单位换算且基准完全相同"
+      ],
+      "source_ids": [
+        "tswn-score-dispatch",
+        "tswn-openbox"
+      ]
+    },
+    {
+      "id": "tswn-rq-seed",
+      "question": "不改名字只换 seed 就能把评分的 rq=6 改回4吗？",
+      "expected_points": [
+        "rq属于构造参数，seed用于本场初始化",
+        "重新准备阵容或使用对应keep-rq入口"
+      ],
+      "avoid": [
+        "通过换seed宣称改变了构造rq"
+      ],
+      "source_ids": [
+        "tswn-rq"
+      ]
+    },
+    {
+      "id": "tswn-pair-head",
+      "question": "pair 的最终分数一定不超过100吗？",
+      "expected_points": [
+        "识别队友加权后取Top head求和",
+        "解释可超过100，不能当作单项百分比"
+      ],
+      "avoid": [
+        "将pair总分强制夹在0到100"
+      ],
+      "source_ids": [
+        "tswn-pair",
+        "tswn-pair-matrix"
+      ]
+    },
+    {
+      "id": "tswn-blank-threshold",
+      "question": "白板号就是一点技能都没有吗？29和30算不算？",
+      "expected_points": [
+        "按当前Openbox规则所有技能小于30",
+        "29可满足，30不满足",
+        "注明是工具当前分类"
+      ],
+      "avoid": [
+        "解释为技能全部为0",
+        "把严格小于误写为小于等于"
+      ],
+      "source_ids": [
+        "tswn-skill-board"
+      ]
+    },
+    {
+      "id": "tswn-possess-vs-charm",
+      "question": "附体和魅惑是不是同一招？",
+      "expected_points": [
+        "附体在当前实现成功时使目标进入狂暴并结算施法者死亡",
+        "与魅惑的友敌关系效果分开",
+        "保留免疫回避条件"
+      ],
+      "avoid": [
+        "把附体解释为无条件把目标变成队友"
+      ],
+      "source_ids": [
+        "tswn-possess",
+        "tswn-overlay"
+      ]
+    },
+    {
+      "id": "tswn-clone-mp",
+      "question": "分身衰减的 hp+magic 比较里，magic是不是MP？",
+      "expected_points": [
+        "magic是魔法属性",
+        "magic_point才是MP",
+        "指出分身等级和其他技能重建有不同规则"
+      ],
+      "avoid": [
+        "混淆魔法属性与MP",
+        "声称全部技能完全复制初始值"
+      ],
+      "source_ids": [
+        "tswn-clone"
+      ]
+    },
+    {
+      "id": "tswn-share-format",
+      "question": "把原站的 #n= 参数直接放到tswn网页就行吗？",
+      "expected_points": [
+        "区分原站hash参数和tswn的input查询参数",
+        "说明UTF-8 URL-safe Base64与replay/data别名",
+        "不凭空承诺未验证的兼容入口"
+      ],
+      "avoid": [
+        "把两种入口无条件当成相同"
+      ],
+      "source_ids": [
+        "official-embedding",
+        "tswn-routing"
+      ]
+    },
+    {
+      "id": "tswn-skill-count",
+      "question": "为什么官方只有34个技能，tswn却说0..34？",
+      "expected_points": [
+        "0..34包含35个编号且包括隐匿",
+        "35为空技能占位，36..39保留",
+        "附体自爆等专用槽另算"
+      ],
+      "avoid": [
+        "把40个槽位说成40个普通技能"
+      ],
+      "source_ids": [
+        "official-skill",
+        "tswn-overlay",
+        "tswn-core-skill"
+      ]
+    },
+    {
+      "id": "tswn-preset-labels",
+      "question": "刺评和辅评具体是什么算法？",
+      "expected_points": [
+        "先确认本仓库中是命名队友预设并由pair计算",
+        "head和权重来自配置",
+        "超出配置证据的社区含义保持待补充"
+      ],
+      "avoid": [
+        "根据预设名称编造完整职业分类或历史"
+      ],
+      "source_ids": [
+        "tswn-settings",
+        "tswn-openbox"
+      ]
+    },
+    {
+      "id": "tswn-proposal-status",
+      "question": "Runtime重构评估里推荐的新版内核现在就是已交付的吗？",
+      "expected_points": [
+        "识别文档状态为设计提案尚未实现",
+        "不能把建议写成当前源码能力"
+      ],
+      "avoid": [
+        "把提案中的架构当作已落地事实"
+      ],
+      "source_ids": [
+        "tswn-proposal"
+      ]
+    },
+    {
+      "id": "tswn-input-limit",
+      "question": "tswn的名字也必须不超过官方页的63个英文字符吗？",
+      "expected_points": [
+        "区分官方文档限制与当前重写解析器",
+        "指出tswn名字和有效阵营各256个UTF-8字节",
+        "保留各来源语境"
+      ],
+      "avoid": [
+        "把字节当汉字个数",
+        "因差异把整个官方资料归为旧版"
+      ],
+      "source_ids": [
+        "official-naming",
+        "tswn-core-input"
       ]
     }
   ]

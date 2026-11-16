@@ -5,7 +5,7 @@
 ## 知识使用
 
 - 按需读取 `knowledge/overview.md`、`knowledge/glossary.json` 和 `knowledge/sources.json`，属性、技能、特殊名字和原文从 `knowledge/official/README.md` 进入，路径以仓库根目录为基准。
-- 版本按 `knowledge/project-context.json`：GitHub Pages 旧站过时，其余此前讨论的入口按最新版本处理。历史资料仍需收录；工具仓库与史料暂留空，等待维护者提供。
+- 版本按 `knowledge/project-context.json`：GitHub Pages 旧站过时，其余此前讨论的入口按最新版本处理。tswn 实现证据见 `knowledge/tools/tswn-core/`，按 commit 和语境解释；其他工具与独立史料等待维护者提供。
 - 官方说明是最基础的资料，不保证列表完整；只在语言包中出现的词汇不直接推断为完整机制定义。
 - 识别术语别名与缩写，并检查其适用范围。遇到“号”时结合上下文判断，不默认理解成登录账号。
 - 优先使用有来源的机制说明；社区术语注明语境，历史资料保留版本和时效限制。
@@ -21,4 +21,4 @@
 
 ## 工具开发问题
 
-用已核实的官方文档解释接入方式。当前资料只确认官方网页嵌入文档描述了 iframe 和 postMessage；实现服务端模拟、HTTP API 或 MCP 前仍需验证目标版本与接口行为。
+原站集成按官方 iframe/postMessage 文档解释；tswn 已有 Rust 引擎、CLI、WASM BattleSession 等实际接口，按工具知识中的固定提交、契约和网页说明解释。区分原站 `#n=` 与 tswn `?input=`，不要将已有语言绑定说成这个知识仓库已经实现的 MCP server 或远程 HTTP 服务。

@@ -1,0 +1,256 @@
+{
+  "schema_version": "0.1",
+  "source_ids": [
+    "tswn-core-skill",
+    "tswn-base",
+    "tswn-overlay"
+  ],
+  "notes": "35 个普通实际技能 ID；35 为 NoneSkill，36..39 保留。附体、自爆等专用技能独立于这张普通 ID 表。",
+  "skills": [
+    {
+      "id": "ordinary-0",
+      "ordinary_id": 0,
+      "term_id": "skill-fire",
+      "export_key": "sklfire",
+      "openbox_short_name": "火球"
+    },
+    {
+      "id": "ordinary-1",
+      "ordinary_id": 1,
+      "term_id": "skill-ice",
+      "export_key": "sklice",
+      "openbox_short_name": "冰冻"
+    },
+    {
+      "id": "ordinary-2",
+      "ordinary_id": 2,
+      "term_id": "skill-thunder",
+      "export_key": "sklthunder",
+      "openbox_short_name": "雷击"
+    },
+    {
+      "id": "ordinary-3",
+      "ordinary_id": 3,
+      "term_id": "skill-quake",
+      "export_key": "sklquake",
+      "openbox_short_name": "地裂"
+    },
+    {
+      "id": "ordinary-4",
+      "ordinary_id": 4,
+      "term_id": "skill-absorb",
+      "export_key": "sklabsorb",
+      "openbox_short_name": "吸血"
+    },
+    {
+      "id": "ordinary-5",
+      "ordinary_id": 5,
+      "term_id": "skill-poison",
+      "export_key": "sklpoison",
+      "openbox_short_name": "投毒"
+    },
+    {
+      "id": "ordinary-6",
+      "ordinary_id": 6,
+      "term_id": "skill-combo",
+      "export_key": "sklrapid",
+      "openbox_short_name": "连击"
+    },
+    {
+      "id": "ordinary-7",
+      "ordinary_id": 7,
+      "term_id": "skill-critical",
+      "export_key": "sklcritical",
+      "openbox_short_name": "会心"
+    },
+    {
+      "id": "ordinary-8",
+      "ordinary_id": 8,
+      "term_id": "skill-plague",
+      "export_key": "sklhalf",
+      "openbox_short_name": "瘟疫"
+    },
+    {
+      "id": "ordinary-9",
+      "ordinary_id": 9,
+      "term_id": "skill-exchange",
+      "export_key": "sklexchange",
+      "openbox_short_name": "命轮"
+    },
+    {
+      "id": "ordinary-10",
+      "ordinary_id": 10,
+      "term_id": "skill-berserk",
+      "export_key": "sklberserk",
+      "openbox_short_name": "狂暴"
+    },
+    {
+      "id": "ordinary-11",
+      "ordinary_id": 11,
+      "term_id": "skill-charm",
+      "export_key": "sklcharm",
+      "openbox_short_name": "魅惑"
+    },
+    {
+      "id": "ordinary-12",
+      "ordinary_id": 12,
+      "term_id": "skill-haste",
+      "export_key": "sklhaste",
+      "openbox_short_name": "加速"
+    },
+    {
+      "id": "ordinary-13",
+      "ordinary_id": 13,
+      "term_id": "skill-slow",
+      "export_key": "sklslow",
+      "openbox_short_name": "减速"
+    },
+    {
+      "id": "ordinary-14",
+      "ordinary_id": 14,
+      "term_id": "skill-curse",
+      "export_key": "sklcurse",
+      "openbox_short_name": "诅咒"
+    },
+    {
+      "id": "ordinary-15",
+      "ordinary_id": 15,
+      "term_id": "skill-heal",
+      "export_key": "sklheal",
+      "openbox_short_name": "治愈"
+    },
+    {
+      "id": "ordinary-16",
+      "ordinary_id": 16,
+      "term_id": "skill-revive",
+      "export_key": "sklrevive",
+      "openbox_short_name": "苏生"
+    },
+    {
+      "id": "ordinary-17",
+      "ordinary_id": 17,
+      "term_id": "skill-purify",
+      "export_key": "skldisperse",
+      "openbox_short_name": "净化"
+    },
+    {
+      "id": "ordinary-18",
+      "ordinary_id": 18,
+      "term_id": "skill-iron",
+      "export_key": "skliron",
+      "openbox_short_name": "铁壁"
+    },
+    {
+      "id": "ordinary-19",
+      "ordinary_id": 19,
+      "term_id": "skill-charge",
+      "export_key": "sklcharge",
+      "openbox_short_name": "蓄力"
+    },
+    {
+      "id": "ordinary-20",
+      "ordinary_id": 20,
+      "term_id": "skill-accumulate",
+      "export_key": "sklaccumulate",
+      "openbox_short_name": "聚气"
+    },
+    {
+      "id": "ordinary-21",
+      "ordinary_id": 21,
+      "term_id": "skill-stealth",
+      "export_key": "sklassassinate",
+      "openbox_short_name": "潜行"
+    },
+    {
+      "id": "ordinary-22",
+      "ordinary_id": 22,
+      "term_id": "skill-summon",
+      "export_key": "sklsummon",
+      "openbox_short_name": "血祭"
+    },
+    {
+      "id": "ordinary-23",
+      "ordinary_id": 23,
+      "term_id": "skill-clone",
+      "export_key": "sklclone",
+      "openbox_short_name": "分身"
+    },
+    {
+      "id": "ordinary-24",
+      "ordinary_id": 24,
+      "term_id": "skill-shadow",
+      "export_key": "sklshadow",
+      "openbox_short_name": "幻术"
+    },
+    {
+      "id": "ordinary-25",
+      "ordinary_id": 25,
+      "term_id": "skill-defend",
+      "export_key": "skldefend",
+      "openbox_short_name": "防御"
+    },
+    {
+      "id": "ordinary-26",
+      "ordinary_id": 26,
+      "term_id": "skill-protect",
+      "export_key": "sklprotect",
+      "openbox_short_name": "守护"
+    },
+    {
+      "id": "ordinary-27",
+      "ordinary_id": 27,
+      "term_id": "skill-reflect",
+      "export_key": "sklreflect",
+      "openbox_short_name": "反弹"
+    },
+    {
+      "id": "ordinary-28",
+      "ordinary_id": 28,
+      "term_id": "skill-reraise",
+      "export_key": "sklreraise",
+      "openbox_short_name": "护符"
+    },
+    {
+      "id": "ordinary-29",
+      "ordinary_id": 29,
+      "term_id": "skill-shield",
+      "export_key": "sklshield",
+      "openbox_short_name": "护盾"
+    },
+    {
+      "id": "ordinary-30",
+      "ordinary_id": 30,
+      "term_id": "skill-counter",
+      "export_key": "sklcounter",
+      "openbox_short_name": "反击"
+    },
+    {
+      "id": "ordinary-31",
+      "ordinary_id": 31,
+      "term_id": "skill-merge",
+      "export_key": "sklmerge",
+      "openbox_short_name": "吞噬"
+    },
+    {
+      "id": "ordinary-32",
+      "ordinary_id": 32,
+      "term_id": "skill-zombie",
+      "export_key": "sklzombie",
+      "openbox_short_name": "亡灵"
+    },
+    {
+      "id": "ordinary-33",
+      "ordinary_id": 33,
+      "term_id": "skill-upgrade",
+      "export_key": "sklupgrade",
+      "openbox_short_name": "垂死"
+    },
+    {
+      "id": "ordinary-34",
+      "ordinary_id": 34,
+      "term_id": "language-hide",
+      "export_key": "sklhide",
+      "openbox_short_name": "隐匿"
+    }
+  ]
+}

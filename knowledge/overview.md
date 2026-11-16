@@ -4,7 +4,7 @@
 
 ## 版本与收录范围
 
-维护者确认：GitHub Pages 旧站是过时版本，其余此前讨论的入口按最新版本处理。旧资料仍需收录；工具仓库和史料等维护者后续提供，目前留空。[维护者约定](project-context.json)
+维护者确认：GitHub Pages 旧站是过时版本，其余此前讨论的入口按最新版本处理。旧资料仍需收录；现已提供 tswn-core 重写仓库，其他工具与独立史料等维护者后续提供。[维护者约定](project-context.json)
 
 Deep Mess 的 [官方说明](https://deepmess.com/zh/namerena/) 与其链接的 [游戏本体](https://deepmess.com/namerena/) 是本轮收录对象。官方词条构成最基础的知识，不假定说明页覆盖全部机制。页面保留的旧链接作为原文证据，不据此把整个页面归为旧版本。
 
@@ -26,15 +26,17 @@ Deep Mess 的 [官方说明](https://deepmess.com/zh/namerena/) 与其链接的 
 
 官方 `!test!` 同时支持名字搜索和实力评估，使用不同输入布局。搜索说明包括 `???` 替换为数字的形式；评估说明包括测试进度和评分。原始布局及数值保存在 [测号页面快照](official/pages/testing.md)，引用时明确是官方记载。[测号技巧](https://deepmess.com/zh/namerena/testing.html)
 
-普评、强评、普单、强单及 pp、qp、pd、qd 来自社区教程。官方入门页未完整展开这套社区体系；工具实现和历史变迁等待维护者提供材料。[术语表](glossary.json)、[社区教程](https://namerena.fandom.com/zh/wiki/名字竞技场教程)
+普评、强评、普单、强单及 pp、qp、pd、qd 的社区用语保留来源，现又补充了 tswn 的实际分派和 profile 布局。它们与 cqd/cqp 具体靶子集胜率、pair 头部评分分开，详见 [tswn 评分](tools/tswn-core/ratings.json)。历史变迁仍等维护者补充。[术语表](glossary.json)
 
 ## 语言包与开发入口
 
-官方语言页提供默认中文、英文、繁体中文和大富翁语言包。原始 JSON 已归档，[语言索引](official/language-index.json) 保留消息键及词形。语言包还能看到说明页未展开的“附体、自爆、隐匿”等名称，目前只收录名称证据，不推断机制。[自定义语言](https://deepmess.com/zh/namerena/custom_lan.html)
+官方语言包原始 JSON 和 [词形索引](official/language-index.json) 继续保留。官方说明未展开的附体、自爆、隐匿等名称，现通过 [tswn 机制](tools/tswn-core/mechanics.md) 补充了有源码依据的解释，适用范围明确限定为该实现。[自定义语言](https://deepmess.com/zh/namerena/custom_lan.html)
 
 官方嵌入方式使用 iframe、URL 的 `#n=` 参数和 `postMessage`，文档列出 `winners` 与 `all` 字段。说明页示例仍含旧站地址，但 [实际 API 示例页源码](https://deepmess.com/zh/namerena/api_test.html) 使用本站 `/namerena/index.html#n=`。原文与示例分别保留，不相互覆盖。[嵌入说明](https://deepmess.com/zh/namerena/api.html)
 
 [关于页面](https://deepmess.com/zh/namerena/about.html) 中的作者信息、内容版权和第三方 API 使用条件已随原文归档。当前项目未实现 HTTP 对战服务或 MCP server。
+
+tswn 已提供实际的 Rust 引擎、CLI 和 WASM 规范 BattleSession。其网页分享使用 `?input=`，与原站 `#n=` 分开；接入和已检查的部署入口见 [网页说明](tools/tswn-core/web.md)。本知识仓库尚未将这些能力封装为 MCP 工具。
 
 ## 抓取覆盖
 

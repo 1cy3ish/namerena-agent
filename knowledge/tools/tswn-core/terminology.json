@@ -1,0 +1,2425 @@
+{
+  "schema_version": "0.1",
+  "repository_commit": "d12b462aa532f95be793c00dfed37b8fea0672bb",
+  "terms": [
+    {
+      "id": "tswn-project",
+      "term": "TSWN",
+      "aliases": [
+        "tswn",
+        "tswn-core"
+      ],
+      "definition": "名字竞技场的 Rust 重写及配套工具仓库；起源文档写作 tsw namerena，核心 crate 名为 tswn_core。",
+      "category": "tool",
+      "status": "source_supported",
+      "scope": "tswn-core 提交 d12b462 的实现或文档语境，不能不加区分地套用到原站、其他重写或所有社区时期。",
+      "source_ids": [
+        "tswn-project",
+        "tswn-origins"
+      ],
+      "checked_at": "2026-11-16",
+      "origin": "tswn-curation"
+    },
+    {
+      "id": "tswn-openbox",
+      "term": "开箱器",
+      "aliases": [
+        "Openbox",
+        "tswn_openbox"
+      ],
+      "definition": "将 DIY 导出、基础评分、靶子对抗、配队和 base 等流程集中在 GUI/CLI 中的工具；具体模式由共用后端执行。",
+      "category": "tool",
+      "status": "source_supported",
+      "scope": "tswn-core 提交 d12b462 的实现或文档语境，不能不加区分地套用到原站、其他重写或所有社区时期。",
+      "source_ids": [
+        "tswn-project",
+        "tswn-openbox"
+      ],
+      "checked_at": "2026-11-16",
+      "origin": "tswn-curation"
+    },
+    {
+      "id": "tswn-openboxing",
+      "term": "开箱",
+      "aliases": [],
+      "definition": "搜索、评估和筛选名字以发现强号的活动；项目起源文档把提升开箱效率作为重写动机，Openbox 提供相关评估流程。",
+      "category": "gameplay",
+      "status": "source_supported",
+      "scope": "tswn-core 提交 d12b462 的实现或文档语境，不能不加区分地套用到原站、其他重写或所有社区时期。",
+      "source_ids": [
+        "tswn-origins",
+        "tswn-openbox"
+      ],
+      "checked_at": "2026-11-16",
+      "origin": "tswn-curation"
+    },
+    {
+      "id": "tswn-seven-stats",
+      "term": "七围",
+      "aliases": [],
+      "definition": "攻、防、速、敏、魔、抗、智七项属性的集合；说七围之和时应注明使用构造值、DIY 编码值还是当前战斗有效值。",
+      "category": "attribute",
+      "status": "source_supported",
+      "scope": "tswn-core 提交 d12b462 的实现或文档语境，不能不加区分地套用到原站、其他重写或所有社区时期。",
+      "source_ids": [
+        "tswn-name-build",
+        "tswn-openbox"
+      ],
+      "checked_at": "2026-11-16",
+      "origin": "tswn-curation"
+    },
+    {
+      "id": "tswn-eight-stats",
+      "term": "八围",
+      "aliases": [],
+      "definition": "可指七项属性加 HP 构成的八项数据，也常指汇总值。Openbox 详情的八围分数是七围之和加 HP/3，显示到一位小数，不是把 HP 全额相加。",
+      "category": "attribute",
+      "status": "source_supported",
+      "scope": "tswn-core 提交 d12b462 的实现或文档语境，不能不加区分地套用到原站、其他重写或所有社区时期。",
+      "source_ids": [
+        "tswn-openbox",
+        "tswn-overlay"
+      ],
+      "checked_at": "2026-11-16",
+      "origin": "tswn-curation"
+    },
+    {
+      "id": "tswn-hp",
+      "term": "体力",
+      "aliases": [
+        "HP",
+        "hp",
+        "max_hp"
+      ],
+      "definition": "HP 是当前体力，max_hp 是最大体力。两者可随伤害、回复、分身或吞噬等变化；与 MP 和魔法属性分开记录。",
+      "category": "attribute",
+      "status": "source_supported",
+      "scope": "tswn-core 提交 d12b462 的实现或文档语境，不能不加区分地套用到原站、其他重写或所有社区时期。",
+      "source_ids": [
+        "tswn-replay",
+        "tswn-runtime-model"
+      ],
+      "checked_at": "2026-11-16",
+      "origin": "tswn-curation"
+    },
+    {
+      "id": "tswn-mp",
+      "term": "魔法值",
+      "aliases": [
+        "MP",
+        "magic_point"
+      ],
+      "definition": "运行时独立的 magic_point 字段，与魔法攻击属性 magic 不同；涉及分身条件或属性公式时不能把 magic 误读成 MP。",
+      "category": "attribute",
+      "status": "source_supported",
+      "scope": "tswn-core 提交 d12b462 的实现或文档语境，不能不加区分地套用到原站、其他重写或所有社区时期。",
+      "source_ids": [
+        "tswn-clone",
+        "tswn-runtime-model"
+      ],
+      "checked_at": "2026-11-16",
+      "origin": "tswn-curation"
+    },
+    {
+      "id": "tswn-attract-display",
+      "term": "嘲讽",
+      "aliases": [],
+      "definition": "Openbox 详情中的属性组合指标。该文档按 |防×2+抗×2−攻×2−魔×2−速×2−敏−智| 显示；不要把这个展示值直接等同于百分比命中率或固定锁敌规则。",
+      "category": "attribute",
+      "status": "source_supported",
+      "scope": "tswn-core 提交 d12b462 的实现或文档语境，不能不加区分地套用到原站、其他重写或所有社区时期。",
+      "source_ids": [
+        "tswn-openbox"
+      ],
+      "checked_at": "2026-11-16",
+      "origin": "tswn-curation"
+    },
+    {
+      "id": "tswn-move-points",
+      "term": "行动点",
+      "aliases": [
+        "speed_points",
+        "move_point",
+        "行动条"
+      ],
+      "definition": "普通兼容调度逐 tick 累积的行动资源。行动点严格大于 2048 时扣除 2048 并获得行动机会；有效速度、随机步长和冰冻都会影响积累。",
+      "category": "mechanics",
+      "status": "source_supported",
+      "scope": "tswn-core 提交 d12b462 的实现或文档语境，不能不加区分地套用到原站、其他重写或所有社区时期。",
+      "source_ids": [
+        "tswn-battle-flow"
+      ],
+      "checked_at": "2026-11-16",
+      "origin": "tswn-curation"
+    },
+    {
+      "id": "tswn-raw",
+      "term": "原始输入",
+      "aliases": [
+        "raw"
+      ],
+      "definition": "保留完整名字、战队、武器、DIY/OL、分组空行和 seed 行的输入文本，不能用显示名替代来复现对局。",
+      "category": "input",
+      "status": "source_supported",
+      "scope": "tswn-core 提交 d12b462 的实现或文档语境，不能不加区分地套用到原站、其他重写或所有社区时期。",
+      "source_ids": [
+        "tswn-name-build",
+        "tswn-randomness"
+      ],
+      "checked_at": "2026-11-16",
+      "origin": "tswn-curation"
+    },
+    {
+      "id": "tswn-clan",
+      "term": "阵营名",
+      "aliases": [
+        "clan_name",
+        "公会名"
+      ],
+      "definition": "名字中 @ 后用于身份和属性构建的队名信息。它与输入空行分组、运行时 team、展示 Team N 各有不同职责。",
+      "category": "input",
+      "status": "source_supported",
+      "scope": "tswn-core 提交 d12b462 的实现或文档语境，不能不加区分地套用到原站、其他重写或所有社区时期。",
+      "source_ids": [
+        "tswn-name-build",
+        "tswn-core-input"
+      ],
+      "checked_at": "2026-11-16",
+      "origin": "tswn-curation"
+    },
+    {
+      "id": "tswn-team-upgrade",
+      "term": "组队加成",
+      "aliases": [
+        "团队强化"
+      ],
+      "definition": "按完整阵容构建时可能发生的属性或技能修正。Openbox 详情用同队构建与单独构建的差值显示 (+N)/(-N)；pair 会先冻结每个成员以排除这类加成。",
+      "category": "mechanics",
+      "status": "source_supported",
+      "scope": "tswn-core 提交 d12b462 的实现或文档语境，不能不加区分地套用到原站、其他重写或所有社区时期。",
+      "source_ids": [
+        "tswn-openbox",
+        "tswn-api"
+      ],
+      "checked_at": "2026-11-16",
+      "origin": "tswn-curation"
+    },
+    {
+      "id": "tswn-testex",
+      "term": "天卫",
+      "aliases": [
+        "TestEx"
+      ],
+      "definition": "社区强化评分基准角色的称呼。tswn 将非预设 Boss、非 Boost、非 seed 的名字@! 解析为 TestEx；不能把所有 @! 输入都称为天卫。",
+      "category": "rating",
+      "status": "source_supported",
+      "scope": "tswn-core 提交 d12b462 的实现或文档语境，不能不加区分地套用到原站、其他重写或所有社区时期。",
+      "source_ids": [
+        "community-tutorial",
+        "tswn-core-input"
+      ],
+      "checked_at": "2026-11-16",
+      "origin": "tswn-curation"
+    },
+    {
+      "id": "tswn-testsubject",
+      "term": "实验体 #C8",
+      "aliases": [
+        "testsubject@!"
+      ],
+      "definition": "tswn 内置 Boss 表中的特殊角色 testsubject，显示名为实验体 #C8；这是对官方基础页面所列 11 个 Boss 的源码补充，不据此改写官方列表。",
+      "category": "boss",
+      "status": "source_supported",
+      "scope": "tswn-core 提交 d12b462 的实现或文档语境，不能不加区分地套用到原站、其他重写或所有社区时期。",
+      "source_ids": [
+        "tswn-core-rules"
+      ],
+      "checked_at": "2026-11-16",
+      "origin": "tswn-curation"
+    },
+    {
+      "id": "tswn-boost",
+      "term": "Boost 特殊角色",
+      "aliases": [
+        "PlayerClass::Boost"
+      ],
+      "definition": "tswn 将云剑狄卡敢、云剑穸跄祇、田一人在 ! 战队下分类为 Boost，并设置各自 boost_value；不把它们混作普通随机 TestEx。",
+      "category": "concept",
+      "status": "source_supported",
+      "scope": "tswn-core 提交 d12b462 的实现或文档语境，不能不加区分地套用到原站、其他重写或所有社区时期。",
+      "source_ids": [
+        "tswn-core-input",
+        "tswn-core-rules"
+      ],
+      "checked_at": "2026-11-16",
+      "origin": "tswn-curation"
+    },
+    {
+      "id": "tswn-namer-pf",
+      "term": "namer-pf",
+      "aliases": [
+        "命配",
+        "namer_pf"
+      ],
+      "definition": "一次输出 pp、pd、qp、qd、sum 的 profile 评分工具，可逐指标设置输出与阈值，并接入技能榜。单号模式和多成员组合的对战布局需要分别理解。",
+      "category": "rating",
+      "status": "source_supported",
+      "scope": "tswn-core 提交 d12b462 的实现或文档语境，不能不加区分地套用到原站、其他重写或所有社区时期。",
+      "source_ids": [
+        "tswn-openbox",
+        "tswn-score-dispatch"
+      ],
+      "checked_at": "2026-11-16",
+      "origin": "tswn-curation"
+    },
+    {
+      "id": "tswn-sum",
+      "term": "四项总分",
+      "aliases": [
+        "sum"
+      ],
+      "definition": "pp+pd+qp+qd 的和。sum 高不自动意味着满足技能榜的全能资格；它也不是一项独立胜率。",
+      "category": "rating",
+      "status": "source_supported",
+      "scope": "tswn-core 提交 d12b462 的实现或文档语境，不能不加区分地套用到原站、其他重写或所有社区时期。",
+      "source_ids": [
+        "tswn-score-dispatch",
+        "tswn-skill-board"
+      ],
+      "checked_at": "2026-11-16",
+      "origin": "tswn-curation"
+    },
+    {
+      "id": "tswn-all-rounder",
+      "term": "全能",
+      "aliases": [],
+      "definition": "在当前 Openbox 技能榜中，既满足所选技能 all 总分阈值，又满足 pp≥8000、pd≥9000、qp≥6000、qd≥7000 才输出“技能名全能”；这是该工具规则，不能当作所有时代的统一称号。",
+      "category": "rating",
+      "status": "source_supported",
+      "scope": "tswn-core 提交 d12b462 的实现或文档语境，不能不加区分地套用到原站、其他重写或所有社区时期。",
+      "source_ids": [
+        "tswn-skill-board"
+      ],
+      "checked_at": "2026-11-16",
+      "origin": "tswn-curation"
+    },
+    {
+      "id": "tswn-skill-board",
+      "term": "技能榜",
+      "aliases": [
+        "skill-board"
+      ],
+      "definition": "按名字或组合中熟练度最高的技能及对应阈值输出评分结果；并列最高会保留去重后的技能。阈值来自 score_now.toml，不是引擎内置的永久榜单。",
+      "category": "rating",
+      "status": "source_supported",
+      "scope": "tswn-core 提交 d12b462 的实现或文档语境，不能不加区分地套用到原站、其他重写或所有社区时期。",
+      "source_ids": [
+        "tswn-skill-board",
+        "tswn-openbox"
+      ],
+      "checked_at": "2026-11-16",
+      "origin": "tswn-curation"
+    },
+    {
+      "id": "tswn-blank",
+      "term": "白板号",
+      "aliases": [
+        "白板",
+        "lessskl"
+      ],
+      "definition": "当前 Openbox 技能榜把组内所有已提取技能熟练度都小于 30 的输入额外归入 lessskl 筛选；不表示完全没有技能，恰为 30 也不满足这项条件。",
+      "category": "rating",
+      "status": "source_supported",
+      "scope": "tswn-core 提交 d12b462 的实现或文档语境，不能不加区分地套用到原站、其他重写或所有社区时期。",
+      "source_ids": [
+        "tswn-skill-board"
+      ],
+      "checked_at": "2026-11-16",
+      "origin": "tswn-curation"
+    },
+    {
+      "id": "tswn-target",
+      "term": "靶子",
+      "aliases": [
+        "target"
+      ],
+      "definition": "用于测定某个名字或队伍表现的对手组；可能来自数字 profile 生成器，也可能来自用户配置的具体名字，不能默认是同一套基准。",
+      "category": "rating",
+      "status": "source_supported",
+      "scope": "tswn-core 提交 d12b462 的实现或文档语境，不能不加区分地套用到原站、其他重写或所有社区时期。",
+      "source_ids": [
+        "tswn-batch-engine",
+        "tswn-openbox"
+      ],
+      "checked_at": "2026-11-16",
+      "origin": "tswn-curation"
+    },
+    {
+      "id": "tswn-target-set",
+      "term": "靶子集",
+      "aliases": [
+        "targets"
+      ],
+      "definition": "批量对抗所用的多组具体对手。普通文本按每行一组解析；带权 TOML 用每个 [[targets]] 的 players 数组定义一组，factor 定义组间权重。",
+      "category": "rating",
+      "status": "source_supported",
+      "scope": "tswn-core 提交 d12b462 的实现或文档语境，不能不加区分地套用到原站、其他重写或所有社区时期。",
+      "source_ids": [
+        "tswn-openbox"
+      ],
+      "checked_at": "2026-11-16",
+      "origin": "tswn-curation"
+    },
+    {
+      "id": "tswn-cqd",
+      "term": "超强单",
+      "aliases": [
+        "cqd",
+        "CQD"
+      ],
+      "definition": "Openbox cqd/cqp 批量靶子对抗中的单人评估语境，分数是对选定靶子集的平均胜率百分比。程序共用批量入口，实际单挑或组队仍由输入组和靶子人数决定，cqd 命令名不自动保证 1v1。",
+      "category": "rating",
+      "status": "source_supported",
+      "scope": "tswn-core 提交 d12b462 的实现或文档语境，不能不加区分地套用到原站、其他重写或所有社区时期。",
+      "source_ids": [
+        "tswn-openbox"
+      ],
+      "checked_at": "2026-11-16",
+      "origin": "tswn-curation"
+    },
+    {
+      "id": "tswn-cqp",
+      "term": "超强评",
+      "aliases": [
+        "cqp",
+        "CQP"
+      ],
+      "definition": "对具体靶子集的组队评估语境，Openbox cqd/cqp 模式计算各靶子胜率的有效平均，可带权；与使用生成 profile 的万分制强评 qp 不同。",
+      "category": "rating",
+      "status": "source_supported",
+      "scope": "tswn-core 提交 d12b462 的实现或文档语境，不能不加区分地套用到原站、其他重写或所有社区时期。",
+      "source_ids": [
+        "tswn-openbox",
+        "tswn-batch-ui"
+      ],
+      "checked_at": "2026-11-16",
+      "origin": "tswn-curation"
+    },
+    {
+      "id": "tswn-pair",
+      "term": "配队评分",
+      "aliases": [
+        "pair",
+        "pair_rate"
+      ],
+      "definition": "把选手组分别与多个队友组拼接，对各靶子求平均胜率；再按队友权重调整、降序取前 head 个求和。选手和队友的每个普通成员先单独冻结为 OL，以排除重新组队加成。",
+      "category": "rating",
+      "status": "source_supported",
+      "scope": "tswn-core 提交 d12b462 的实现或文档语境，不能不加区分地套用到原站、其他重写或所有社区时期。",
+      "source_ids": [
+        "tswn-openbox",
+        "tswn-pair",
+        "tswn-pair-matrix"
+      ],
+      "checked_at": "2026-11-16",
+      "origin": "tswn-curation"
+    },
+    {
+      "id": "tswn-head",
+      "term": "头部数量",
+      "aliases": [
+        "head",
+        "Top head"
+      ],
+      "definition": "pair 最终保留的最高分队友组合数；保留项不足时按实际数量求和，并非取前 head 个输入队友，也不是除以 head 求平均。",
+      "category": "rating",
+      "status": "source_supported",
+      "scope": "tswn-core 提交 d12b462 的实现或文档语境，不能不加区分地套用到原站、其他重写或所有社区时期。",
+      "source_ids": [
+        "tswn-pair"
+      ],
+      "checked_at": "2026-11-16",
+      "origin": "tswn-curation"
+    },
+    {
+      "id": "tswn-effective-cqp",
+      "term": "有效 cqp",
+      "aliases": [],
+      "definition": "pair 明细模式：显示排在最高 head 个位置的队友组合评分。运行中的当前 Top 只是预览，全部队友完成后才形成最终排名和总分。",
+      "category": "rating",
+      "status": "source_supported",
+      "scope": "tswn-core 提交 d12b462 的实现或文档语境，不能不加区分地套用到原站、其他重写或所有社区时期。",
+      "source_ids": [
+        "tswn-openbox",
+        "tswn-openbox-options"
+      ],
+      "checked_at": "2026-11-16",
+      "origin": "tswn-curation"
+    },
+    {
+      "id": "tswn-teammate-preset",
+      "term": "队友预设",
+      "aliases": [
+        "teammate"
+      ],
+      "definition": "settings.toml 中命名的队友集合，可指定文件、head 和 factor_enabled。预设名称是工具配置中的名字，不能从名称自行推导全部社区含义。",
+      "category": "rating",
+      "status": "source_supported",
+      "scope": "tswn-core 提交 d12b462 的实现或文档语境，不能不加区分地套用到原站、其他重写或所有社区时期。",
+      "source_ids": [
+        "tswn-settings",
+        "tswn-openbox"
+      ],
+      "checked_at": "2026-11-16",
+      "origin": "tswn-curation"
+    },
+    {
+      "id": "tswn-target-factor",
+      "term": "靶子权重",
+      "aliases": [
+        "target_factors",
+        "factor_enabled"
+      ],
+      "definition": "带权靶子平均使用 Σ(胜率×factor)/Σfactor，权重必须为有限正数；这是靶子组之间的权重，不是角色属性倍率。",
+      "category": "rating",
+      "status": "source_supported",
+      "scope": "tswn-core 提交 d12b462 的实现或文档语境，不能不加区分地套用到原站、其他重写或所有社区时期。",
+      "source_ids": [
+        "tswn-openbox",
+        "tswn-batch-ui"
+      ],
+      "checked_at": "2026-11-16",
+      "origin": "tswn-curation"
+    },
+    {
+      "id": "tswn-teammate-factor",
+      "term": "队友权重",
+      "aliases": [
+        "teammate_factors"
+      ],
+      "definition": "先计算某队友组合对各靶子的平均胜率，再乘该队友 factor；用乘权后的分数排名和取 Top head，因此会改变最终分数。",
+      "category": "rating",
+      "status": "source_supported",
+      "scope": "tswn-core 提交 d12b462 的实现或文档语境，不能不加区分地套用到原站、其他重写或所有社区时期。",
+      "source_ids": [
+        "tswn-openbox",
+        "tswn-pair-matrix"
+      ],
+      "checked_at": "2026-11-16",
+      "origin": "tswn-curation"
+    },
+    {
+      "id": "tswn-mirror",
+      "term": "镜像 50%",
+      "aliases": [
+        "mirror"
+      ],
+      "definition": "在带权靶子模式中，双方归一化后的玩家组一致时直接记 50% 并参与加权；这是一项评分约定，不是实际运行镜像战斗得出的胜率。",
+      "category": "rating",
+      "status": "source_supported",
+      "scope": "tswn-core 提交 d12b462 的实现或文档语境，不能不加区分地套用到原站、其他重写或所有社区时期。",
+      "source_ids": [
+        "tswn-openbox",
+        "tswn-batch-ui",
+        "tswn-input-identities"
+      ],
+      "checked_at": "2026-11-16",
+      "origin": "tswn-curation"
+    },
+    {
+      "id": "tswn-duplicate-skip",
+      "term": "重名跳过",
+      "aliases": [],
+      "definition": "未启用靶子带权模式时，遇到选手与靶子存在重复身份的 matchup 会跳过；带权模式只把完整镜像记作 50%，部分同名仍实际计算。",
+      "category": "rating",
+      "status": "source_supported",
+      "scope": "tswn-core 提交 d12b462 的实现或文档语境，不能不加区分地套用到原站、其他重写或所有社区时期。",
+      "source_ids": [
+        "tswn-openbox",
+        "tswn-input-identities"
+      ],
+      "checked_at": "2026-11-16",
+      "origin": "tswn-curation"
+    },
+    {
+      "id": "tswn-count",
+      "term": "场数",
+      "aliases": [
+        "n",
+        "count",
+        "total_rounds"
+      ],
+      "definition": "一次 matchup 或评分所请求的模拟局数；与单场 max_rounds 推进上限、屏幕保留小数位数是不同参数。",
+      "category": "rating",
+      "status": "source_supported",
+      "scope": "tswn-core 提交 d12b462 的实现或文档语境，不能不加区分地套用到原站、其他重写或所有社区时期。",
+      "source_ids": [
+        "tswn-openbox-options",
+        "tswn-batch-summary",
+        "tswn-api"
+      ],
+      "checked_at": "2026-11-16",
+      "origin": "tswn-curation"
+    },
+    {
+      "id": "tswn-accuracy",
+      "term": "精确度",
+      "aliases": [],
+      "definition": "Openbox 的 1%、10%、100% 精确度选项分别对应 100、1000、10000 场，是采样规模约定，不是胜率、置信度或保证正确率。",
+      "category": "rating",
+      "status": "source_supported",
+      "scope": "tswn-core 提交 d12b462 的实现或文档语境，不能不加区分地套用到原站、其他重写或所有社区时期。",
+      "source_ids": [
+        "tswn-openbox-options"
+      ],
+      "checked_at": "2026-11-16",
+      "origin": "tswn-curation"
+    },
+    {
+      "id": "tswn-precision",
+      "term": "显示精度",
+      "aliases": [
+        "precision",
+        "wr_precision",
+        "小数位"
+      ],
+      "definition": "结果格式化保留的小数位数，与模拟场数分开；更多小数位不会增加对战样本。内部得分可保留真实小数，不只是整数后补零。",
+      "category": "rating",
+      "status": "source_supported",
+      "scope": "tswn-core 提交 d12b462 的实现或文档语境，不能不加区分地套用到原站、其他重写或所有社区时期。",
+      "source_ids": [
+        "tswn-openbox"
+      ],
+      "checked_at": "2026-11-16",
+      "origin": "tswn-curation"
+    },
+    {
+      "id": "tswn-rq",
+      "term": "名字评估参数",
+      "aliases": [
+        "rq",
+        "eval_rq"
+      ],
+      "definition": "角色构造时影响 name_factor 的参数；普通 fight 默认 4，胜率和评分默认 6。它不是运行时伤害倍率，也不决定 profile seed 的编号。",
+      "category": "mechanics",
+      "status": "source_supported",
+      "scope": "tswn-core 提交 d12b462 的实现或文档语境，不能不加区分地套用到原站、其他重写或所有社区时期。",
+      "source_ids": [
+        "tswn-rq"
+      ],
+      "checked_at": "2026-11-16",
+      "origin": "tswn-curation"
+    },
+    {
+      "id": "tswn-name-factor",
+      "term": "名字系数",
+      "aliases": [
+        "name_factor"
+      ],
+      "definition": "从名字与阵营字符评估得到的属性缩放因子；普通构建取 max(名字评估值, 阵营评估值−6)。影响七围派生，不缩放 HP，DIY/OL 可关闭。",
+      "category": "mechanics",
+      "status": "source_supported",
+      "scope": "tswn-core 提交 d12b462 的实现或文档语境，不能不加区分地套用到原站、其他重写或所有社区时期。",
+      "source_ids": [
+        "tswn-rq"
+      ],
+      "checked_at": "2026-11-16",
+      "origin": "tswn-curation"
+    },
+    {
+      "id": "tswn-short-name",
+      "term": "短号",
+      "aliases": [],
+      "definition": "名字常见度评估会产生与长度、字符类别及阵营有关的系数的短名字语境；rq=4 与 rq=6 可能给出不同构造属性，不能只按字符数推断最终强弱。",
+      "category": "concept",
+      "status": "source_supported",
+      "scope": "tswn-core 提交 d12b462 的实现或文档语境，不能不加区分地套用到原站、其他重写或所有社区时期。",
+      "source_ids": [
+        "tswn-rq"
+      ],
+      "checked_at": "2026-11-16",
+      "origin": "tswn-curation"
+    },
+    {
+      "id": "tswn-keep-rq",
+      "term": "不低估短号",
+      "aliases": [
+        "keep-rq",
+        "keep_rq"
+      ],
+      "definition": "Openbox/CLI 的选项名称：让相应评分或胜率流程保留普通对打的 rq=4，而非默认 rq=6；这不意味着自动增加评分或改用另一套靶子。",
+      "category": "rating",
+      "status": "source_supported",
+      "scope": "tswn-core 提交 d12b462 的实现或文档语境，不能不加区分地套用到原站、其他重写或所有社区时期。",
+      "source_ids": [
+        "tswn-openbox",
+        "tswn-rq"
+      ],
+      "checked_at": "2026-11-16",
+      "origin": "tswn-curation"
+    },
+    {
+      "id": "tswn-base",
+      "term": "base",
+      "aliases": [
+        "raw_name_base"
+      ],
+      "definition": "查看单个普通原始名字的 128 字节 roll、HP 区间、七围原始三元组及 16 个技能槽的工具入口；不接受武器、DIY/OL 或多行名字。",
+      "category": "tool",
+      "status": "source_supported",
+      "scope": "tswn-core 提交 d12b462 的实现或文档语境，不能不加区分地套用到原站、其他重写或所有社区时期。",
+      "source_ids": [
+        "tswn-base",
+        "tswn-openbox"
+      ],
+      "checked_at": "2026-11-16",
+      "origin": "tswn-curation"
+    },
+    {
+      "id": "tswn-roll",
+      "term": "原始 roll",
+      "aliases": [
+        "name_base",
+        "128 字节 roll"
+      ],
+      "definition": "名字和阵营经兼容随机构建产生的 128 字节基础材料，可用于查看属性和技能槽来源；不等于当前战斗属性，也不是 128 个不同名字。",
+      "category": "mechanics",
+      "status": "source_supported",
+      "scope": "tswn-core 提交 d12b462 的实现或文档语境，不能不加区分地套用到原站、其他重写或所有社区时期。",
+      "source_ids": [
+        "tswn-base",
+        "tswn-name-build"
+      ],
+      "checked_at": "2026-11-16",
+      "origin": "tswn-curation"
+    },
+    {
+      "id": "tswn-assassin-preset",
+      "term": "刺评",
+      "aliases": [],
+      "definition": "当前 Openbox settings.toml 中的带权队友预设，head=4，文件为 teammates/teammate_fz.toml，通过 pair 使用。这里只确认配置名称与计算入口，不推断其所有社区含义。",
+      "category": "rating",
+      "status": "source_supported",
+      "scope": "tswn-core 提交 d12b462 的实现或文档语境，不能不加区分地套用到原站、其他重写或所有社区时期。",
+      "source_ids": [
+        "tswn-settings",
+        "tswn-openbox"
+      ],
+      "checked_at": "2026-11-16",
+      "origin": "tswn-curation"
+    },
+    {
+      "id": "tswn-support-preset",
+      "term": "辅评",
+      "aliases": [],
+      "definition": "当前 Openbox settings.toml 中的带权队友预设，head=4，文件为 teammates/teammate_bc.toml，通过 pair 使用。这里只确认配置名称与计算入口，不推断其所有社区含义。",
+      "category": "rating",
+      "status": "source_supported",
+      "scope": "tswn-core 提交 d12b462 的实现或文档语境，不能不加区分地套用到原站、其他重写或所有社区时期。",
+      "source_ids": [
+        "tswn-settings",
+        "tswn-openbox"
+      ],
+      "checked_at": "2026-11-16",
+      "origin": "tswn-curation"
+    },
+    {
+      "id": "tswn-no-assassin-preset",
+      "term": "无刺评",
+      "aliases": [],
+      "definition": "当前 Openbox settings.toml 中的带权队友预设，head=4，文件为 teammates/teammate_wc.toml，通过 pair 使用。这里只确认配置名称与计算入口，不推断其所有社区含义。",
+      "category": "rating",
+      "status": "source_supported",
+      "scope": "tswn-core 提交 d12b462 的实现或文档语境，不能不加区分地套用到原站、其他重写或所有社区时期。",
+      "source_ids": [
+        "tswn-settings",
+        "tswn-openbox"
+      ],
+      "checked_at": "2026-11-16",
+      "origin": "tswn-curation"
+    },
+    {
+      "id": "tswn-clone-preset",
+      "term": "分身评",
+      "aliases": [],
+      "definition": "当前 Openbox settings.toml 中的带权队友预设，head=4，文件为 teammates/teammate_pj.toml，通过 pair 使用。这里只确认配置名称与计算入口，不推断其所有社区含义。",
+      "category": "rating",
+      "status": "source_supported",
+      "scope": "tswn-core 提交 d12b462 的实现或文档语境，不能不加区分地套用到原站、其他重写或所有社区时期。",
+      "source_ids": [
+        "tswn-settings",
+        "tswn-openbox"
+      ],
+      "checked_at": "2026-11-16",
+      "origin": "tswn-curation"
+    },
+    {
+      "id": "tswn-accessory-preset",
+      "term": "配件评",
+      "aliases": [],
+      "definition": "当前 Openbox settings.toml 中的带权队友预设，head=4，文件为 teammates/teammate_fs.toml，通过 pair 使用。这里只确认配置名称与计算入口，不推断其所有社区含义。",
+      "category": "rating",
+      "status": "source_supported",
+      "scope": "tswn-core 提交 d12b462 的实现或文档语境，不能不加区分地套用到原站、其他重写或所有社区时期。",
+      "source_ids": [
+        "tswn-settings",
+        "tswn-openbox"
+      ],
+      "checked_at": "2026-11-16",
+      "origin": "tswn-curation"
+    },
+    {
+      "id": "tswn-raw-stats",
+      "term": "构造属性",
+      "aliases": [
+        "attrs",
+        "原始八围"
+      ],
+      "definition": "名字构建或 overlay 提供的八项基础数据，顺序为攻、防、速、敏、魔、抗、智、maxhp；再经名字系数、武器等规则派生战斗值。DIY 文本前七项使用 +36 编码。",
+      "category": "attribute",
+      "status": "source_supported",
+      "scope": "tswn-core 提交 d12b462 的实现或文档语境，不能不加区分地套用到原站、其他重写或所有社区时期。",
+      "source_ids": [
+        "tswn-name-build",
+        "tswn-overlay"
+      ],
+      "checked_at": "2026-11-16",
+      "origin": "tswn-curation"
+    },
+    {
+      "id": "tswn-effective-stats",
+      "term": "有效属性",
+      "aliases": [],
+      "definition": "当前 Runtime 真正用于结算的属性，由构造模板、状态和临时机制共同形成；分身不能直接对界面最终值统一乘 0.78 来精确复现。",
+      "category": "attribute",
+      "status": "source_supported",
+      "scope": "tswn-core 提交 d12b462 的实现或文档语境，不能不加区分地套用到原站、其他重写或所有社区时期。",
+      "source_ids": [
+        "tswn-runtime-model",
+        "tswn-clone"
+      ],
+      "checked_at": "2026-11-16",
+      "origin": "tswn-curation"
+    },
+    {
+      "id": "tswn-decay",
+      "term": "技能衰减",
+      "aliases": [],
+      "definition": "使用部分技能后当前熟练度下降。此提交的分析涵盖命轮、治愈、苏生、分身、幻术，各自门槛和公式不同；不是所有技能统一减半。",
+      "category": "mechanics",
+      "status": "source_supported",
+      "scope": "tswn-core 提交 d12b462 的实现或文档语境，不能不加区分地套用到原站、其他重写或所有社区时期。",
+      "source_ids": [
+        "tswn-decay"
+      ],
+      "checked_at": "2026-11-16",
+      "origin": "tswn-curation"
+    },
+    {
+      "id": "tswn-last-boost",
+      "term": "末尾主动加成",
+      "aliases": [
+        "LastBoost"
+      ],
+      "definition": "保存主动技能末尾强化的构成；可用 \"2*base\" 导出。分身重建时先用当前等级截断构造基底，再重放翻倍，不能只保存最终熟练度。",
+      "category": "mechanics",
+      "status": "source_supported",
+      "scope": "tswn-core 提交 d12b462 的实现或文档语境，不能不加区分地套用到原站、其他重写或所有社区时期。",
+      "source_ids": [
+        "tswn-clone",
+        "tswn-overlay"
+      ],
+      "checked_at": "2026-11-16",
+      "origin": "tswn-curation"
+    },
+    {
+      "id": "tswn-slot-boost",
+      "term": "末端座位加成",
+      "aliases": [
+        "SlotBoost"
+      ],
+      "definition": "保存技能基底与座位加成量，可写 \"base+boost\"。分身重建用 base=min(构造基底,当前等级)，再加 min(原加成,base)，不是无条件加回原加成。",
+      "category": "mechanics",
+      "status": "source_supported",
+      "scope": "tswn-core 提交 d12b462 的实现或文档语境，不能不加区分地套用到原站、其他重写或所有社区时期。",
+      "source_ids": [
+        "tswn-clone",
+        "tswn-overlay"
+      ],
+      "checked_at": "2026-11-16",
+      "origin": "tswn-curation"
+    },
+    {
+      "id": "tswn-fixed-lane",
+      "term": "固定技能槽",
+      "aliases": [
+        "fixed_lane",
+        "fixed lane"
+      ],
+      "definition": "技能数据在布局中的固定读取位置；与主动技能的尝试顺序 active_order 分开，重排技能不等于改变固定编号。",
+      "category": "implementation",
+      "status": "source_supported",
+      "scope": "tswn-core 提交 d12b462 的实现或文档语境，不能不加区分地套用到原站、其他重写或所有社区时期。",
+      "source_ids": [
+        "tswn-hooks"
+      ],
+      "checked_at": "2026-11-16",
+      "origin": "tswn-curation"
+    },
+    {
+      "id": "tswn-active-order",
+      "term": "技能尝试顺序",
+      "aliases": [
+        "active_order"
+      ],
+      "definition": "主动技能选择时的尝试次序；OL 的 skills 对象保留字段顺序，不能随意按技能 ID 排序后认为战斗行为不变。",
+      "category": "mechanics",
+      "status": "source_supported",
+      "scope": "tswn-core 提交 d12b462 的实现或文档语境，不能不加区分地套用到原站、其他重写或所有社区时期。",
+      "source_ids": [
+        "tswn-overlay",
+        "tswn-hooks"
+      ],
+      "checked_at": "2026-11-16",
+      "origin": "tswn-curation"
+    },
+    {
+      "id": "tswn-none-skill",
+      "term": "空技能",
+      "aliases": [
+        "NoneSkill",
+        "sklnone"
+      ],
+      "definition": "普通技能编号 35 的占位；普通实际技能为 0..34，36..39 为保留槽。40 个存储槽不表示有 40 个可发动普通技能。",
+      "category": "implementation",
+      "status": "source_supported",
+      "scope": "tswn-core 提交 d12b462 的实现或文档语境，不能不加区分地套用到原站、其他重写或所有社区时期。",
+      "source_ids": [
+        "tswn-overlay",
+        "tswn-core-skill"
+      ],
+      "checked_at": "2026-11-16",
+      "origin": "tswn-curation"
+    },
+    {
+      "id": "tswn-classified-skills",
+      "term": "分类技能通道",
+      "aliases": [],
+      "definition": "DIY/OL 将普通技能、使魔两种火球及自爆、幻影附体分开编号，避免吞噬或覆盖时串槽；normal:、summon:、phantom: 是相应前缀。",
+      "category": "implementation",
+      "status": "source_supported",
+      "scope": "tswn-core 提交 d12b462 的实现或文档语境，不能不加区分地套用到原站、其他重写或所有社区时期。",
+      "source_ids": [
+        "tswn-overlay"
+      ],
+      "checked_at": "2026-11-16",
+      "origin": "tswn-curation"
+    },
+    {
+      "id": "tswn-shadow-entity",
+      "term": "幻影实体",
+      "aliases": [
+        "ShadowMinion"
+      ],
+      "definition": "幻术生成的召唤实体，默认具有附体；是实体类别，不要与官方技能表以“幻影”命名的技能项或分身混为一类。",
+      "category": "minion",
+      "status": "source_supported",
+      "scope": "tswn-core 提交 d12b462 的实现或文档语境，不能不加区分地套用到原站、其他重写或所有社区时期。",
+      "source_ids": [
+        "tswn-overlay",
+        "tswn-states"
+      ],
+      "checked_at": "2026-11-16",
+      "origin": "tswn-curation"
+    },
+    {
+      "id": "tswn-summon-entity",
+      "term": "使魔",
+      "aliases": [
+        "SummonMinion",
+        "familiar"
+      ],
+      "definition": "血祭生成的召唤实体，普通模板具有两个独立火球槽和自爆槽，并可带向 owner 传导伤害的机制。",
+      "category": "minion",
+      "status": "source_supported",
+      "scope": "tswn-core 提交 d12b462 的实现或文档语境，不能不加区分地套用到原站、其他重写或所有社区时期。",
+      "source_ids": [
+        "tswn-overlay"
+      ],
+      "checked_at": "2026-11-16",
+      "origin": "tswn-curation"
+    },
+    {
+      "id": "tswn-zombie-entity",
+      "term": "丧尸",
+      "aliases": [
+        "ZombieMinion",
+        "僵尸"
+      ],
+      "definition": "召唤亡灵相关的生成实体，有独立 zombie 蓝图与归属；不是简单把尸体状态改名，DIY/OL 可配置其属性与技能。",
+      "category": "minion",
+      "status": "source_supported",
+      "scope": "tswn-core 提交 d12b462 的实现或文档语境，不能不加区分地套用到原站、其他重写或所有社区时期。",
+      "source_ids": [
+        "tswn-states",
+        "tswn-overlay"
+      ],
+      "checked_at": "2026-11-16",
+      "origin": "tswn-curation"
+    },
+    {
+      "id": "tswn-clone-entity",
+      "term": "克隆体",
+      "aliases": [
+        "分身实体"
+      ],
+      "definition": "分身技能创建的新实体，按 CloneBuildData 重新派生属性与技能。它有自己的实体 ID、行动点和分身技能等级，不是完全复制当前面板。",
+      "category": "minion",
+      "status": "source_supported",
+      "scope": "tswn-core 提交 d12b462 的实现或文档语境，不能不加区分地套用到原站、其他重写或所有社区时期。",
+      "source_ids": [
+        "tswn-clone"
+      ],
+      "checked_at": "2026-11-16",
+      "origin": "tswn-curation"
+    },
+    {
+      "id": "tswn-owner",
+      "term": "直接主人",
+      "aliases": [
+        "owner",
+        "owner_id"
+      ],
+      "definition": "召唤实体直接来源的实体；嵌套使魔的直接主人可能是另一只使魔，不一定是最初的主角色。",
+      "category": "mechanics",
+      "status": "source_supported",
+      "scope": "tswn-core 提交 d12b462 的实现或文档语境，不能不加区分地套用到原站、其他重写或所有社区时期。",
+      "source_ids": [
+        "tswn-states",
+        "tswn-api"
+      ],
+      "checked_at": "2026-11-16",
+      "origin": "tswn-curation"
+    },
+    {
+      "id": "tswn-root-owner",
+      "term": "根来源",
+      "aliases": [
+        "root_owner",
+        "source_id"
+      ],
+      "definition": "沿 owner 关系追溯的根来源，用于召唤归属、清理和来源队伍映射；规范 DTO 用 source_id 表达根来源。",
+      "category": "mechanics",
+      "status": "source_supported",
+      "scope": "tswn-core 提交 d12b462 的实现或文档语境，不能不加区分地套用到原站、其他重写或所有社区时期。",
+      "source_ids": [
+        "tswn-states",
+        "tswn-api"
+      ],
+      "checked_at": "2026-11-16",
+      "origin": "tswn-curation"
+    },
+    {
+      "id": "tswn-recast",
+      "term": "重施",
+      "aliases": [
+        "reuse_skills_on_recast"
+      ],
+      "definition": "再次施放召唤技能时复用或重建召唤物的过程；使魔模板可选择复用已死亡实例的技能，手写模板默认 false，minions 导出会为兼容行为写 true。",
+      "category": "mechanics",
+      "status": "source_supported",
+      "scope": "tswn-core 提交 d12b462 的实现或文档语境，不能不加区分地套用到原站、其他重写或所有社区时期。",
+      "source_ids": [
+        "tswn-overlay"
+      ],
+      "checked_at": "2026-11-16",
+      "origin": "tswn-curation"
+    },
+    {
+      "id": "tswn-shared-damage",
+      "term": "伤害传导",
+      "aliases": [
+        "伤害分摊"
+      ],
+      "definition": "普通使魔受伤后可将整数伤害的一半传给直接 owner，嵌套链继续传导；使魔克隆的对应分摊直接到主名字，不按父使魔再折半。",
+      "category": "mechanics",
+      "status": "source_supported",
+      "scope": "tswn-core 提交 d12b462 的实现或文档语境，不能不加区分地套用到原站、其他重写或所有社区时期。",
+      "source_ids": [
+        "tswn-overlay"
+      ],
+      "checked_at": "2026-11-16",
+      "origin": "tswn-curation"
+    },
+    {
+      "id": "tswn-blueprint",
+      "term": "召唤物蓝图",
+      "aliases": [
+        "blueprint"
+      ],
+      "definition": "召唤时才使用的属性、技能和策略构造资料，与已经进入实体表的召唤物实例分开；可延迟构建，也可由嵌套 OL 模板覆盖。",
+      "category": "implementation",
+      "status": "source_supported",
+      "scope": "tswn-core 提交 d12b462 的实现或文档语境，不能不加区分地套用到原站、其他重写或所有社区时期。",
+      "source_ids": [
+        "tswn-name-build",
+        "tswn-states"
+      ],
+      "checked_at": "2026-11-16",
+      "origin": "tswn-curation"
+    },
+    {
+      "id": "tswn-corpse",
+      "term": "尸体",
+      "aliases": [],
+      "definition": "死亡角色仍可能保留在实体表或 roster 中以支持复活、召唤亡灵及来源关系；不代表仍在存活列表或仍能参与胜负。",
+      "category": "mechanics",
+      "status": "source_supported",
+      "scope": "tswn-core 提交 d12b462 的实现或文档语境，不能不加区分地套用到原站、其他重写或所有社区时期。",
+      "source_ids": [
+        "tswn-states"
+      ],
+      "checked_at": "2026-11-16",
+      "origin": "tswn-curation"
+    },
+    {
+      "id": "tswn-state-payload",
+      "term": "状态载荷",
+      "aliases": [
+        "StatePayload"
+      ],
+      "definition": "持续状态的实际参数，如中毒来源和次数、冰冻步数、魅惑的有效队伍等；人类可读状态标签不包含全部载荷。",
+      "category": "implementation",
+      "status": "source_supported",
+      "scope": "tswn-core 提交 d12b462 的实现或文档语境，不能不加区分地套用到原站、其他重写或所有社区时期。",
+      "source_ids": [
+        "tswn-states"
+      ],
+      "checked_at": "2026-11-16",
+      "origin": "tswn-curation"
+    },
+    {
+      "id": "tswn-status-labels",
+      "term": "状态标签",
+      "aliases": [
+        "status_labels"
+      ],
+      "definition": "从当前 Runtime 投影给网页的可读标签，如疾走、迟缓、潜行、隐匿；它们用于显示，不是可用于完整重建机制的状态存档。",
+      "category": "implementation",
+      "status": "source_supported",
+      "scope": "tswn-core 提交 d12b462 的实现或文档语境，不能不加区分地套用到原站、其他重写或所有社区时期。",
+      "source_ids": [
+        "tswn-states",
+        "tswn-wasm"
+      ],
+      "checked_at": "2026-11-16",
+      "origin": "tswn-curation"
+    },
+    {
+      "id": "tswn-diy",
+      "term": "DIY",
+      "aliases": [
+        "+diy",
+        "diy[...]"
+      ],
+      "definition": "紧凑的属性/技能覆盖格式，八项属性前七项按 +36 编码、HP 原样。它是显式覆盖输入，不是一次测号的自然产物保证。",
+      "category": "input",
+      "status": "source_supported",
+      "scope": "tswn-core 提交 d12b462 的实现或文档语境，不能不加区分地套用到原站、其他重写或所有社区时期。",
+      "source_ids": [
+        "tswn-overlay"
+      ],
+      "checked_at": "2026-11-16",
+      "origin": "tswn-curation"
+    },
+    {
+      "id": "tswn-ol",
+      "term": "OL",
+      "aliases": [
+        "+ol",
+        "ol:{...}",
+        "overlay"
+      ],
+      "definition": "JSON overlay 格式，可覆盖本体属性技能、名字系数选项及召唤蓝图；提供玩家级 attrs 或 skills 时会禁用普通武器效果，只有召唤模板覆盖则不单独禁用武器。",
+      "category": "input",
+      "status": "source_supported",
+      "scope": "tswn-core 提交 d12b462 的实现或文档语境，不能不加区分地套用到原站、其他重写或所有社区时期。",
+      "source_ids": [
+        "tswn-overlay"
+      ],
+      "checked_at": "2026-11-16",
+      "origin": "tswn-curation"
+    },
+    {
+      "id": "tswn-to-diy",
+      "term": "导出 DIY",
+      "aliases": [
+        "to-diy",
+        "to_diy"
+      ],
+      "definition": "把构建结果导出为可回读覆盖输入的工具；默认 OL，old 选项输出旧 DIY，minions 输出召唤模板且与 old 互斥。",
+      "category": "tool",
+      "status": "source_supported",
+      "scope": "tswn-core 提交 d12b462 的实现或文档语境，不能不加区分地套用到原站、其他重写或所有社区时期。",
+      "source_ids": [
+        "tswn-overlay",
+        "tswn-openbox"
+      ],
+      "checked_at": "2026-11-16",
+      "origin": "tswn-curation"
+    },
+    {
+      "id": "tswn-s11",
+      "term": "剁手刀",
+      "aliases": [
+        "S11"
+      ],
+      "definition": "特殊武器，可触发促销购买、属性增长、耐久损耗及耗尽后的自伤等机制；不是单纯一项攻击属性加成。",
+      "category": "equipment",
+      "status": "source_supported",
+      "scope": "tswn-core 提交 d12b462 的实现或文档语境，不能不加区分地套用到原站、其他重写或所有社区时期。",
+      "source_ids": [
+        "tswn-core-weapon",
+        "tswn-weapon-runtime"
+      ],
+      "checked_at": "2026-11-16",
+      "origin": "tswn-curation"
+    },
+    {
+      "id": "tswn-gui-yue",
+      "term": "桂月奖杯",
+      "aliases": [],
+      "definition": "有阵营白名单条件的特殊武器分支；未满足条件按 NoWeapon 处理，不能假定任意名字加上奖杯都有加成。",
+      "category": "equipment",
+      "status": "source_supported",
+      "scope": "tswn-core 提交 d12b462 的实现或文档语境，不能不加区分地套用到原站、其他重写或所有社区时期。",
+      "source_ids": [
+        "tswn-core-weapon"
+      ],
+      "checked_at": "2026-11-16",
+      "origin": "tswn-curation"
+    },
+    {
+      "id": "tswn-xuan-yue",
+      "term": "玄月奖杯",
+      "aliases": [],
+      "definition": "有独立阵营白名单条件的特殊武器分支，与桂月奖杯名单和效果并不相同。",
+      "category": "equipment",
+      "status": "source_supported",
+      "scope": "tswn-core 提交 d12b462 的实现或文档语境，不能不加区分地套用到原站、其他重写或所有社区时期。",
+      "source_ids": [
+        "tswn-core-weapon"
+      ],
+      "checked_at": "2026-11-16",
+      "origin": "tswn-curation"
+    },
+    {
+      "id": "tswn-runtime",
+      "term": "战斗运行时",
+      "aliases": [
+        "Runtime",
+        "CombatRuntime"
+      ],
+      "definition": "持有一场战斗的实体、世界视图、调度器、随机流和效果队列，负责实际机制执行。",
+      "category": "implementation",
+      "status": "source_supported",
+      "scope": "tswn-core 提交 d12b462 的实现或文档语境，不能不加区分地套用到原站、其他重写或所有社区时期。",
+      "source_ids": [
+        "tswn-runtime-model"
+      ],
+      "checked_at": "2026-11-16",
+      "origin": "tswn-curation"
+    },
+    {
+      "id": "tswn-runner",
+      "term": "对局执行器",
+      "aliases": [
+        "Runner",
+        "RuntimeRunner"
+      ],
+      "definition": "围绕 CombatRuntime 提供构造、推进、判胜和输入队伍映射的入口；新应用逐帧展示通常从 BattleSession 接入。",
+      "category": "implementation",
+      "status": "source_supported",
+      "scope": "tswn-core 提交 d12b462 的实现或文档语境，不能不加区分地套用到原站、其他重写或所有社区时期。",
+      "source_ids": [
+        "tswn-runtime-model",
+        "tswn-api"
+      ],
+      "checked_at": "2026-11-16",
+      "origin": "tswn-curation"
+    },
+    {
+      "id": "tswn-prepared-roster",
+      "term": "已构建阵容",
+      "aliases": [
+        "PreparedRoster"
+      ],
+      "definition": "名字解析、属性技能推导和团队强化后的阵容资料，构建以完整队伍为单位；不是只保存单个名字的显示信息。",
+      "category": "implementation",
+      "status": "source_supported",
+      "scope": "tswn-core 提交 d12b462 的实现或文档语境，不能不加区分地套用到原站、其他重写或所有社区时期。",
+      "source_ids": [
+        "tswn-name-build"
+      ],
+      "checked_at": "2026-11-16",
+      "origin": "tswn-curation"
+    },
+    {
+      "id": "tswn-prepared-runner",
+      "term": "准备好的对局",
+      "aliases": [
+        "PreparedRunner",
+        "PreparedRuntimeRunner"
+      ],
+      "definition": "保存构建口径和准备基线，便于每个 worker 用不同 seed 复位并复用 Runtime；改变 rq 时应重新准备，而不是只换 seed。",
+      "category": "implementation",
+      "status": "source_supported",
+      "scope": "tswn-core 提交 d12b462 的实现或文档语境，不能不加区分地套用到原站、其他重写或所有社区时期。",
+      "source_ids": [
+        "tswn-runtime-model",
+        "tswn-rq"
+      ],
+      "checked_at": "2026-11-16",
+      "origin": "tswn-curation"
+    },
+    {
+      "id": "tswn-rc4",
+      "term": "游戏随机流",
+      "aliases": [
+        "RC4"
+      ],
+      "definition": "兼容名字构建和战斗过程的确定性字节流；构建用流和本场战斗流各有状态，额外消费一个字节可能使后续整条行为链分叉。",
+      "category": "implementation",
+      "status": "source_supported",
+      "scope": "tswn-core 提交 d12b462 的实现或文档语境，不能不加区分地套用到原站、其他重写或所有社区时期。",
+      "source_ids": [
+        "tswn-randomness"
+      ],
+      "checked_at": "2026-11-16",
+      "origin": "tswn-curation"
+    },
+    {
+      "id": "tswn-hook",
+      "term": "阶段钩子",
+      "aliases": [
+        "hook",
+        "ProcMask"
+      ],
+      "definition": "技能或状态参与机制的阶段，包括行动前后、攻击前后、受击前后、死亡和击杀等八类；阶段名本身不能替代实际 owner 与调用链判断。",
+      "category": "implementation",
+      "status": "source_supported",
+      "scope": "tswn-core 提交 d12b462 的实现或文档语境，不能不加区分地套用到原站、其他重写或所有社区时期。",
+      "source_ids": [
+        "tswn-hooks"
+      ],
+      "checked_at": "2026-11-16",
+      "origin": "tswn-curation"
+    },
+    {
+      "id": "tswn-effect-queue",
+      "term": "效果队列",
+      "aliases": [
+        "EffectQueue",
+        "QueuedEffect"
+      ],
+      "definition": "排队提交攻击、恢复、生成等效果的机制：push 入队尾，push_nested 入队首，Runtime 从队首处理并维护实体与世界。",
+      "category": "implementation",
+      "status": "source_supported",
+      "scope": "tswn-core 提交 d12b462 的实现或文档语境，不能不加区分地套用到原站、其他重写或所有社区时期。",
+      "source_ids": [
+        "tswn-battle-flow"
+      ],
+      "checked_at": "2026-11-16",
+      "origin": "tswn-curation"
+    },
+    {
+      "id": "tswn-attack-power",
+      "term": "攻击威力",
+      "aliases": [
+        "Atp",
+        "atp"
+      ],
+      "definition": "PRE_DEFEND 阶段处理的浮点威力，随后经命中、防御或抗性换算为整数伤害；不能与扣除的 HP 数值混同。",
+      "category": "mechanics",
+      "status": "source_supported",
+      "scope": "tswn-core 提交 d12b462 的实现或文档语境，不能不加区分地套用到原站、其他重写或所有社区时期。",
+      "source_ids": [
+        "tswn-battle-flow",
+        "tswn-hooks"
+      ],
+      "checked_at": "2026-11-16",
+      "origin": "tswn-curation"
+    },
+    {
+      "id": "tswn-damage",
+      "term": "伤害值",
+      "aliases": [
+        "Damage",
+        "damage"
+      ],
+      "definition": "POST_DEFEND 阶段处理的整数伤害，之后仍可能经过护盾、减伤和生命周期规则，不能把攻击威力直接当作最终掉血。",
+      "category": "mechanics",
+      "status": "source_supported",
+      "scope": "tswn-core 提交 d12b462 的实现或文档语境，不能不加区分地套用到原站、其他重写或所有社区时期。",
+      "source_ids": [
+        "tswn-battle-flow"
+      ],
+      "checked_at": "2026-11-16",
+      "origin": "tswn-curation"
+    },
+    {
+      "id": "tswn-alive-views",
+      "term": "存活视图",
+      "aliases": [
+        "team_alive",
+        "flat_alive"
+      ],
+      "definition": "维护当前按队伍和全场排列的存活实体索引；死亡、复活和召唤时更新，用来选择目标和同步胜者。",
+      "category": "implementation",
+      "status": "source_supported",
+      "scope": "tswn-core 提交 d12b462 的实现或文档语境，不能不加区分地套用到原站、其他重写或所有社区时期。",
+      "source_ids": [
+        "tswn-runtime-model",
+        "tswn-winner"
+      ],
+      "checked_at": "2026-11-16",
+      "origin": "tswn-curation"
+    },
+    {
+      "id": "tswn-alive-group-count",
+      "term": "legacy 队伍计数",
+      "aliases": [
+        "alive_group_count"
+      ],
+      "definition": "兼容原行为的粘性计数：队伍清空会减，已有队伍复活不会补回，不能把它当作当前存活队伍数判胜。",
+      "category": "implementation",
+      "status": "source_supported",
+      "scope": "tswn-core 提交 d12b462 的实现或文档语境，不能不加区分地套用到原站、其他重写或所有社区时期。",
+      "source_ids": [
+        "tswn-winner"
+      ],
+      "checked_at": "2026-11-16",
+      "origin": "tswn-curation"
+    },
+    {
+      "id": "tswn-winner",
+      "term": "判胜",
+      "aliases": [],
+      "definition": "恰好一个运行时队伍仍有存活实体时产生胜者；全部阵亡也是无胜者。对外再映射为输入队伍，不用 alive_group_count 判胜。",
+      "category": "mechanics",
+      "status": "source_supported",
+      "scope": "tswn-core 提交 d12b462 的实现或文档语境，不能不加区分地套用到原站、其他重写或所有社区时期。",
+      "source_ids": [
+        "tswn-winner"
+      ],
+      "checked_at": "2026-11-16",
+      "origin": "tswn-curation"
+    },
+    {
+      "id": "tswn-battle-session",
+      "term": "规范对局会话",
+      "aliases": [
+        "BattleSession"
+      ],
+      "definition": "正式的增量对局 API，管理输入、推进预算、快照、可见帧和终局；Rust、Python、WASM、C 共享其语义。",
+      "category": "api",
+      "status": "source_supported",
+      "scope": "tswn-core 提交 d12b462 的实现或文档语境，不能不加区分地套用到原站、其他重写或所有社区时期。",
+      "source_ids": [
+        "tswn-api",
+        "tswn-replay"
+      ],
+      "checked_at": "2026-11-16",
+      "origin": "tswn-curation"
+    },
+    {
+      "id": "tswn-battle-replay",
+      "term": "完整回放",
+      "aliases": [
+        "BattleReplay",
+        "battle_replay"
+      ],
+      "definition": "收集同一个 BattleSession 的初始状态、全部可见帧及最终结果，仍由相同机制推进，不是独立的第二套引擎。",
+      "category": "api",
+      "status": "source_supported",
+      "scope": "tswn-core 提交 d12b462 的实现或文档语境，不能不加区分地套用到原站、其他重写或所有社区时期。",
+      "source_ids": [
+        "tswn-api",
+        "tswn-replay"
+      ],
+      "checked_at": "2026-11-16",
+      "origin": "tswn-curation"
+    },
+    {
+      "id": "tswn-snapshot",
+      "term": "玩家快照",
+      "aliases": [
+        "BattlePlayerState",
+        "canonical snapshot"
+      ],
+      "definition": "面向展示的身份、归属、当前属性、HP/MP、护盾和标签投影；修改返回对象或显示昵称不会改变 Runtime。",
+      "category": "api",
+      "status": "source_supported",
+      "scope": "tswn-core 提交 d12b462 的实现或文档语境，不能不加区分地套用到原站、其他重写或所有社区时期。",
+      "source_ids": [
+        "tswn-api",
+        "tswn-replay"
+      ],
+      "checked_at": "2026-11-16",
+      "origin": "tswn-curation"
+    },
+    {
+      "id": "tswn-frame",
+      "term": "可见帧",
+      "aliases": [
+        "frame",
+        "frame_index"
+      ],
+      "definition": "对外输出的一批可见事件与帧末状态。next_frame 会吸收空回合，因此帧序号不等同于 Runtime 回合序号。",
+      "category": "api",
+      "status": "source_supported",
+      "scope": "tswn-core 提交 d12b462 的实现或文档语境，不能不加区分地套用到原站、其他重写或所有社区时期。",
+      "source_ids": [
+        "tswn-replay",
+        "tswn-battle-flow"
+      ],
+      "checked_at": "2026-11-16",
+      "origin": "tswn-curation"
+    },
+    {
+      "id": "tswn-round",
+      "term": "运行时回合",
+      "aliases": [
+        "round",
+        "round_index"
+      ],
+      "definition": "Runner 的一次推进边界，可能含一次行动、只有状态消息或空推进；空回合也消耗会话 max_rounds 预算。",
+      "category": "implementation",
+      "status": "source_supported",
+      "scope": "tswn-core 提交 d12b462 的实现或文档语境，不能不加区分地套用到原站、其他重写或所有社区时期。",
+      "source_ids": [
+        "tswn-battle-flow",
+        "tswn-api"
+      ],
+      "checked_at": "2026-11-16",
+      "origin": "tswn-curation"
+    },
+    {
+      "id": "tswn-tick",
+      "term": "调度步",
+      "aliases": [
+        "tick",
+        "scheduler tick"
+      ],
+      "definition": "轮询候选行动者并推进其行动条的调度粒度；不能与一次可见帧或一个技能等同。",
+      "category": "implementation",
+      "status": "source_supported",
+      "scope": "tswn-core 提交 d12b462 的实现或文档语境，不能不加区分地套用到原站、其他重写或所有社区时期。",
+      "source_ids": [
+        "tswn-battle-flow"
+      ],
+      "checked_at": "2026-11-16",
+      "origin": "tswn-curation"
+    },
+    {
+      "id": "tswn-truncated",
+      "term": "截断",
+      "aliases": [
+        "truncated",
+        "max_rounds",
+        "no_progress"
+      ],
+      "definition": "规范会话达到回合预算或持续无可见进展时正常终止为截断，不冒充已产生赢家；Runtime 失败走独立错误通道。",
+      "category": "api",
+      "status": "source_supported",
+      "scope": "tswn-core 提交 d12b462 的实现或文档语境，不能不加区分地套用到原站、其他重写或所有社区时期。",
+      "source_ids": [
+        "tswn-api"
+      ],
+      "checked_at": "2026-11-16",
+      "origin": "tswn-curation"
+    },
+    {
+      "id": "tswn-sticky-failure",
+      "term": "粘性失败",
+      "aliases": [
+        "sticky failure",
+        "poisoned"
+      ],
+      "definition": "会话保存首个 Runtime 错误，is_failed=true 而 is_done=false，result 为空；后续推进返回同一错误。它不是普通截断。",
+      "category": "api",
+      "status": "source_supported",
+      "scope": "tswn-core 提交 d12b462 的实现或文档语境，不能不加区分地套用到原站、其他重写或所有社区时期。",
+      "source_ids": [
+        "tswn-api"
+      ],
+      "checked_at": "2026-11-16",
+      "origin": "tswn-curation"
+    },
+    {
+      "id": "tswn-model-state",
+      "term": "机制状态",
+      "aliases": [
+        "BattleModelState"
+      ],
+      "definition": "用于回合边界机制采样的实验性导出，较展示快照包含更多技能、载荷、顺序与归属信息；不把展示快照当作它的替代。",
+      "category": "implementation",
+      "status": "source_supported",
+      "scope": "tswn-core 提交 d12b462 的实现或文档语境，不能不加区分地套用到原站、其他重写或所有社区时期。",
+      "source_ids": [
+        "tswn-runtime-model",
+        "tswn-api"
+      ],
+      "checked_at": "2026-11-16",
+      "origin": "tswn-curation"
+    },
+    {
+      "id": "tswn-wasm",
+      "term": "网页本体",
+      "aliases": [
+        "tswn_wasm",
+        "WASM 本体"
+      ],
+      "definition": "Rust core 的浏览器 WASM 包装和配套静态对战页，提供 BattleSession 等调用；显示、昵称、播放计划由前端处理。",
+      "category": "tool",
+      "status": "source_supported",
+      "scope": "tswn-core 提交 d12b462 的实现或文档语境，不能不加区分地套用到原站、其他重写或所有社区时期。",
+      "source_ids": [
+        "tswn-wasm",
+        "tswn-web"
+      ],
+      "checked_at": "2026-11-16",
+      "origin": "tswn-curation"
+    },
+    {
+      "id": "tswn-streaming",
+      "term": "流式回放",
+      "aliases": [
+        "BattleStreamController",
+        "BattleStreamSource"
+      ],
+      "definition": "先显示初始状态，再按需从同一个 BattleSession 拉帧，最多预取两帧；回看使用历史，追上尾部才继续计算。",
+      "category": "api",
+      "status": "source_supported",
+      "scope": "tswn-core 提交 d12b462 的实现或文档语境，不能不加区分地套用到原站、其他重写或所有社区时期。",
+      "source_ids": [
+        "tswn-session-design",
+        "tswn-web"
+      ],
+      "checked_at": "2026-11-16",
+      "origin": "tswn-curation"
+    },
+    {
+      "id": "tswn-playback-cursor",
+      "term": "播放游标",
+      "aliases": [],
+      "definition": "网页分别保存源端推进位置、已收到的历史尾部、当前播放位置；动画回退不表示引擎倒退或重新随机。",
+      "category": "api",
+      "status": "source_supported",
+      "scope": "tswn-core 提交 d12b462 的实现或文档语境，不能不加区分地套用到原站、其他重写或所有社区时期。",
+      "source_ids": [
+        "tswn-session-design"
+      ],
+      "checked_at": "2026-11-16",
+      "origin": "tswn-curation"
+    },
+    {
+      "id": "tswn-nickname",
+      "term": "显示昵称",
+      "aliases": [],
+      "definition": "网页派生显示层的自定义名字，不修改规范快照中的身份、不重新生成属性，也不替换复现所需的原始输入。",
+      "category": "input",
+      "status": "source_supported",
+      "scope": "tswn-core 提交 d12b462 的实现或文档语境，不能不加区分地套用到原站、其他重写或所有社区时期。",
+      "source_ids": [
+        "tswn-api",
+        "tswn-session-design"
+      ],
+      "checked_at": "2026-11-16",
+      "origin": "tswn-curation"
+    },
+    {
+      "id": "tswn-share",
+      "term": "分享链接",
+      "aliases": [
+        "?input="
+      ],
+      "definition": "tswn 展示页用 UTF-8 的 URL-safe Base64 放入 input 查询参数，replay/data 是兼容别名；与原站文档的 #n= 入口分开。",
+      "category": "input",
+      "status": "source_supported",
+      "scope": "tswn-core 提交 d12b462 的实现或文档语境，不能不加区分地套用到原站、其他重写或所有社区时期。",
+      "source_ids": [
+        "tswn-routing",
+        "tswn-web"
+      ],
+      "checked_at": "2026-11-16",
+      "origin": "tswn-curation"
+    },
+    {
+      "id": "tswn-win-rate-session",
+      "term": "增量胜率会话",
+      "aliases": [
+        "WinRateSession"
+      ],
+      "definition": "WASM 的进阶兼容入口，每次 step 同步执行一批对局；批次间需由宿主让出事件循环，当前 WASM 只接受自动或单线程，不代表已有后台 Worker。",
+      "category": "api",
+      "status": "source_supported",
+      "scope": "tswn-core 提交 d12b462 的实现或文档语境，不能不加区分地套用到原站、其他重写或所有社区时期。",
+      "source_ids": [
+        "tswn-wasm"
+      ],
+      "checked_at": "2026-11-16",
+      "origin": "tswn-curation"
+    }
+  ],
+  "enrichments": [
+    {
+      "term_id": "normal-team-rating",
+      "context_id": "tswn-normal-team-rating",
+      "scope": "tswn-core d12b462；core 0.7.0、Openbox 0.5.2、WASM wrapper 0.5.12。",
+      "explanation": "tswn namer-pf 单号 pp：被测号加一名生成 profile 队友，对抗另外两名同类 profile；使用普通基准，按 wins/total×10000 计分。多成员组合需按 score 实际布局解释，不把它与 cqd/cqp 靶子百分比混用。",
+      "source_ids": [
+        "tswn-score-dispatch",
+        "tswn-score-scale",
+        "tswn-batch-engine"
+      ],
+      "aliases_add": [],
+      "checked_at": "2026-11-16",
+      "definition": "普通综合评分的简称。tswn namer-pf 中是对生成普通 profile 基准的万分制评分，具体单号布局见 tswn 语境说明。"
+    },
+    {
+      "term_id": "normal-duel-rating",
+      "context_id": "tswn-normal-duel-rating",
+      "scope": "tswn-core d12b462；core 0.7.0、Openbox 0.5.2、WASM wrapper 0.5.12。",
+      "explanation": "tswn namer-pf 单号 pd：通过重复单号标记触发单号对单个生成 profile 的一对一布局；使用普通基准，按 wins/total×10000 计分。多成员组合需按 score 实际布局解释，不把它与 cqd/cqp 靶子百分比混用。",
+      "source_ids": [
+        "tswn-score-dispatch",
+        "tswn-score-scale",
+        "tswn-batch-engine"
+      ],
+      "aliases_add": [],
+      "checked_at": "2026-11-16",
+      "definition": "普通单挑评分的简称。tswn namer-pf 中是对生成普通 profile 基准的万分制评分，具体单号布局见 tswn 语境说明。"
+    },
+    {
+      "term_id": "enhanced-team-rating",
+      "context_id": "tswn-enhanced-team-rating",
+      "scope": "tswn-core d12b462；core 0.7.0、Openbox 0.5.2、WASM wrapper 0.5.12。",
+      "explanation": "tswn namer-pf 单号 qp：被测号加一名生成 profile 队友，对抗另外两名同类 profile；使用强化基准，按 wins/total×10000 计分。多成员组合需按 score 实际布局解释，不把它与 cqd/cqp 靶子百分比混用。",
+      "source_ids": [
+        "tswn-score-dispatch",
+        "tswn-score-scale",
+        "tswn-batch-engine"
+      ],
+      "aliases_add": [],
+      "checked_at": "2026-11-16",
+      "definition": "强化综合评分的简称。tswn namer-pf 中是对生成强化 profile 基准的万分制评分，具体单号布局见 tswn 语境说明。"
+    },
+    {
+      "term_id": "enhanced-duel-rating",
+      "context_id": "tswn-enhanced-duel-rating",
+      "scope": "tswn-core d12b462；core 0.7.0、Openbox 0.5.2、WASM wrapper 0.5.12。",
+      "explanation": "tswn namer-pf 单号 qd：通过重复单号标记触发单号对单个生成 profile 的一对一布局；使用强化基准，按 wins/total×10000 计分。多成员组合需按 score 实际布局解释，不把它与 cqd/cqp 靶子百分比混用。",
+      "source_ids": [
+        "tswn-score-dispatch",
+        "tswn-score-scale",
+        "tswn-batch-engine"
+      ],
+      "aliases_add": [],
+      "checked_at": "2026-11-16",
+      "definition": "强化单挑评分的简称。tswn namer-pf 中是对生成强化 profile 基准的万分制评分，具体单号布局见 tswn 语境说明。"
+    },
+    {
+      "term_id": "name-testing",
+      "context_id": "tswn-name-testing",
+      "scope": "tswn-core d12b462；core 0.7.0、Openbox 0.5.2、WASM wrapper 0.5.12。",
+      "explanation": "tswn 已有实际引擎、评分及批量工具；开箱不只是官方 !test! 页面入口，工具与评分模式须一起注明。",
+      "source_ids": [
+        "tswn-project",
+        "tswn-openbox"
+      ],
+      "aliases_add": [],
+      "checked_at": "2026-11-16"
+    },
+    {
+      "term_id": "random-seed",
+      "context_id": "tswn-random-seed",
+      "scope": "tswn-core d12b462；core 0.7.0、Openbox 0.5.2、WASM wrapper 0.5.12。",
+      "explanation": "tswn 的 NamerenaInput 入口提取所有区分大小写的 seed: 前缀行，不要求每行必须以 @! 结尾；官方标准示例仍为 seed:...@!。seed 行不计为参战者。",
+      "source_ids": [
+        "tswn-core-input"
+      ],
+      "aliases_add": [],
+      "checked_at": "2026-11-16"
+    },
+    {
+      "term_id": "team-name",
+      "context_id": "tswn-team-name",
+      "scope": "tswn-core d12b462；core 0.7.0、Openbox 0.5.2、WASM wrapper 0.5.12。",
+      "explanation": "tswn 的输入分组由空行控制，阵营 clan 与运行时 team 另有含义；网页 README 个别概括不能覆盖解析器的具体行为。",
+      "source_ids": [
+        "tswn-core-input",
+        "tswn-name-build"
+      ],
+      "aliases_add": [],
+      "checked_at": "2026-11-16"
+    },
+    {
+      "term_id": "display-name",
+      "context_id": "tswn-display-name",
+      "scope": "tswn-core d12b462；core 0.7.0、Openbox 0.5.2、WASM wrapper 0.5.12。",
+      "explanation": "tswn 另外区分 raw、id_key_name、实体 ID 与 display_name；显示昵称或短名不能作为角色身份主键。",
+      "source_ids": [
+        "tswn-name-build",
+        "tswn-api"
+      ],
+      "aliases_add": [],
+      "checked_at": "2026-11-16"
+    },
+    {
+      "term_id": "equipment",
+      "context_id": "tswn-equipment",
+      "scope": "tswn-core d12b462；core 0.7.0、Openbox 0.5.2、WASM wrapper 0.5.12。",
+      "explanation": "tswn 有普通武器与剁手刀、死亡笔记、属性修改器、桂月/玄月奖杯等特殊分支；部分有阵营限制。玩家级 attrs/skills overlay 会禁用武器效果。",
+      "source_ids": [
+        "tswn-core-weapon",
+        "tswn-overlay"
+      ],
+      "aliases_add": [],
+      "checked_at": "2026-11-16"
+    },
+    {
+      "term_id": "boss",
+      "context_id": "tswn-boss",
+      "scope": "tswn-core d12b462；core 0.7.0、Openbox 0.5.2、WASM wrapper 0.5.12。",
+      "explanation": "tswn 的 Boss 表还包含 testsubject（实验体 #C8），共 12 个代码条目；官方说明页原先列 11 个，分别保留各自范围。",
+      "source_ids": [
+        "tswn-core-rules"
+      ],
+      "aliases_add": [],
+      "checked_at": "2026-11-16"
+    },
+    {
+      "term_id": "language-possess",
+      "context_id": "tswn-language-possess",
+      "scope": "tswn-core d12b462；core 0.7.0、Openbox 0.5.2、WASM wrapper 0.5.12。",
+      "explanation": "幻影默认的独立附体技能。通过免疫和闪避判断后给目标增加狂暴状态步数，并令施法实体 HP 归零进入死亡链；回避时不走该成功分支。",
+      "source_ids": [
+        "tswn-possess",
+        "tswn-overlay"
+      ],
+      "aliases_add": [
+        "sklpossess",
+        "phantom:sklpossess"
+      ],
+      "checked_at": "2026-11-16",
+      "definition": "附体是幻影默认技能；tswn 中成功施加目标狂暴并使施法实体进入死亡链，存在免疫与回避判断。",
+      "category": "skill"
+    },
+    {
+      "term_id": "language-explode",
+      "context_id": "tswn-language-explode",
+      "scope": "tswn-core d12b462；core 0.7.0、Openbox 0.5.2、WASM wrapper 0.5.12。",
+      "explanation": "使魔专用自爆技能，进入火系魔法伤害分支并执行施法者自身死亡处理；与普通火球槽分开，不能直接列作普通玩家技能 ID。",
+      "source_ids": [
+        "tswn-explode",
+        "tswn-overlay"
+      ],
+      "aliases_add": [
+        "sklexplode",
+        "summon:sklexplode"
+      ],
+      "checked_at": "2026-11-16",
+      "definition": "使魔的专用自爆技能；tswn 以火系魔法伤害效果处理，同时结算施法实体自身死亡。",
+      "category": "skill"
+    },
+    {
+      "term_id": "language-hide",
+      "context_id": "tswn-language-hide",
+      "scope": "tswn-core d12b462；core 0.7.0、Openbox 0.5.2、WASM wrapper 0.5.12。",
+      "explanation": "普通技能 ID 34。受伤后仍活动、未隐匿且有效队伍存活成员多于一人时尝试触发；隐匿降低 attract，等级超过 63 另增敏防抗；与潜行是不同技能。",
+      "source_ids": [
+        "tswn-hide",
+        "tswn-effective-stats",
+        "tswn-overlay",
+        "tswn-core-skill",
+        "tswn-base"
+      ],
+      "aliases_add": [
+        "sklhide",
+        "Hide",
+        "隐匿"
+      ],
+      "checked_at": "2026-11-16",
+      "definition": "受伤后有条件触发的被动隐匿技能；tswn 将其与主动潜行/背刺分开，隐匿会降低受关注程度并可附带高等级属性增益。",
+      "category": "skill"
+    },
+    {
+      "term_id": "language-death-note",
+      "context_id": "tswn-language-death-note",
+      "scope": "tswn-core d12b462；core 0.7.0、Openbox 0.5.2、WASM wrapper 0.5.12。",
+      "explanation": "精确武器名“死亡笔记”进入独立分支；运行期对已标记目标结算处决，随后降低自身模板速度、清空正 MP 并清除标记，不能理解成无条件全场即死。",
+      "source_ids": [
+        "tswn-core-weapon",
+        "tswn-weapon-runtime"
+      ],
+      "aliases_add": [
+        "DeathNote"
+      ],
+      "checked_at": "2026-11-16",
+      "definition": "具有目标标记和独立处决结算的特殊武器；tswn 的结算同时付出速度与 MP 代价。",
+      "category": "equipment"
+    },
+    {
+      "term_id": "language-attribute-modifier",
+      "context_id": "tswn-language-attribute-modifier",
+      "scope": "tswn-core d12b462；core 0.7.0、Openbox 0.5.2、WASM wrapper 0.5.12。",
+      "explanation": "仅 @Rinick 阵营进入属性修改器分支，其他阵营按 NoWeapon。还区分 id_key_name 恰为 Rinick 的身份分支；不是能随意修改任何角色的通用管理接口。",
+      "source_ids": [
+        "tswn-core-weapon",
+        "tswn-weapon-runtime"
+      ],
+      "aliases_add": [
+        "RinickModifier"
+      ],
+      "checked_at": "2026-11-16",
+      "definition": "有阵营与身份分支限制的特殊武器名；在 tswn 中并非任意名字均可生效的通用属性编辑器。",
+      "category": "equipment"
+    },
+    {
+      "term_id": "skill-clone",
+      "context_id": "tswn-skill-clone",
+      "scope": "tswn-core d12b462；core 0.7.0、Openbox 0.5.2、WASM wrapper 0.5.12。",
+      "explanation": "创建新实体并重派生属性。非蓄力本体才执行相应 HP/原始属性衰减，分身技能本体随机衰减、克隆体开根号；其他技能按构造基底截断后重放 boost。",
+      "source_ids": [
+        "tswn-clone",
+        "tswn-decay",
+        "tswn-core-skill",
+        "tswn-base"
+      ],
+      "aliases_add": [
+        "sklclone",
+        "分身"
+      ],
+      "checked_at": "2026-11-16",
+      "definition": "生成新克隆实体的分身技能；tswn 会重派生属性与技能，涉及本体状态、分身技能衰减及加成重放，不能概括为面板完全复制。"
+    },
+    {
+      "term_id": "skill-heal",
+      "context_id": "tswn-skill-heal",
+      "scope": "tswn-core d12b462；core 0.7.0、Openbox 0.5.2、WASM wrapper 0.5.12。",
+      "explanation": "当前 tswn 使用等级>8 才减 1 的熟练度衰减，低等级不衰减；不能用“每次减半”概括。",
+      "source_ids": [
+        "tswn-decay",
+        "tswn-core-skill",
+        "tswn-base"
+      ],
+      "aliases_add": [
+        "sklheal",
+        "治愈"
+      ],
+      "checked_at": "2026-11-16"
+    },
+    {
+      "term_id": "skill-revive",
+      "context_id": "tswn-skill-revive",
+      "scope": "tswn-core d12b462；core 0.7.0、Openbox 0.5.2、WASM wrapper 0.5.12。",
+      "explanation": "当前 tswn 在 level≥2 使用后按 (level+1)/2 的整数除法衰减。",
+      "source_ids": [
+        "tswn-decay",
+        "tswn-core-skill",
+        "tswn-base"
+      ],
+      "aliases_add": [
+        "sklrevive",
+        "苏生"
+      ],
+      "checked_at": "2026-11-16"
+    },
+    {
+      "term_id": "skill-exchange",
+      "context_id": "tswn-skill-exchange",
+      "scope": "tswn-core d12b462；core 0.7.0、Openbox 0.5.2、WASM wrapper 0.5.12。",
+      "explanation": "当前 tswn 在 level≥2 使用后按 (level+1)/2 的整数除法衰减。",
+      "source_ids": [
+        "tswn-decay",
+        "tswn-core-skill",
+        "tswn-base"
+      ],
+      "aliases_add": [
+        "sklexchange",
+        "命轮"
+      ],
+      "checked_at": "2026-11-16"
+    },
+    {
+      "term_id": "skill-shadow",
+      "context_id": "tswn-skill-shadow",
+      "scope": "tswn-core d12b462；core 0.7.0、Openbox 0.5.2、WASM wrapper 0.5.12。",
+      "explanation": "官方表称幻影、语言包和 tswn 常称幻术；tswn 普通技能 ID 24，生成的幻影默认有附体，熟练度用 max(ceil(level×3/4),1) 更新。",
+      "source_ids": [
+        "tswn-overlay",
+        "tswn-decay",
+        "tswn-core-skill",
+        "tswn-base"
+      ],
+      "aliases_add": [
+        "sklshadow",
+        "幻术"
+      ],
+      "checked_at": "2026-11-16",
+      "definition": "召唤幻影的技能，官方表称幻影，语言包与 tswn 常称幻术；与生成出的幻影实体及其附体技能分开。"
+    },
+    {
+      "term_id": "skill-shield",
+      "context_id": "tswn-skill-shield",
+      "scope": "tswn-core d12b462；core 0.7.0、Openbox 0.5.2、WASM wrapper 0.5.12。",
+      "explanation": "当前盾值不硬性截断到技能熟练度。快照 shield 是剩余吸收量，max_shield 是当前技能熟练度这个展示尺度，两者不等同。",
+      "source_ids": [
+        "tswn-api",
+        "tswn-states",
+        "tswn-core-skill",
+        "tswn-base"
+      ],
+      "aliases_add": [
+        "sklshield",
+        "护盾"
+      ],
+      "checked_at": "2026-11-16",
+      "definition": "行动前积累、受击时抵消部分伤害的护盾技能；tswn 的实际盾量与当前技能熟练度这个展示尺度分开。"
+    },
+    {
+      "term_id": "attribute-magic",
+      "context_id": "tswn-attribute-magic",
+      "scope": "tswn-core d12b462；core 0.7.0、Openbox 0.5.2、WASM wrapper 0.5.12。",
+      "explanation": "magic 是魔法攻击属性；magic_point 是 MP。分身条件中的 hp+magic 不能误写为 hp+MP。",
+      "source_ids": [
+        "tswn-clone",
+        "tswn-runtime-model"
+      ],
+      "aliases_add": [],
+      "checked_at": "2026-11-16",
+      "definition": "魔法攻击属性，参与魔法攻击威力；tswn 中的 magic 与独立的 MP（magic_point）字段不同。"
+    },
+    {
+      "term_id": "skill-fire",
+      "context_id": "tswn-skill-fire",
+      "scope": "tswn-core d12b462；core 0.7.0、Openbox 0.5.2、WASM wrapper 0.5.12。",
+      "explanation": "tswn 普通技能 ID 0，导出 key 为 sklfire；Openbox 短名为“火球”。",
+      "source_ids": [
+        "tswn-core-skill",
+        "tswn-base"
+      ],
+      "aliases_add": [
+        "sklfire",
+        "火球"
+      ],
+      "checked_at": "2026-11-16"
+    },
+    {
+      "term_id": "skill-ice",
+      "context_id": "tswn-skill-ice",
+      "scope": "tswn-core d12b462；core 0.7.0、Openbox 0.5.2、WASM wrapper 0.5.12。",
+      "explanation": "tswn 普通技能 ID 1，导出 key 为 sklice；Openbox 短名为“冰冻”。",
+      "source_ids": [
+        "tswn-core-skill",
+        "tswn-base"
+      ],
+      "aliases_add": [
+        "sklice",
+        "冰冻"
+      ],
+      "checked_at": "2026-11-16"
+    },
+    {
+      "term_id": "skill-thunder",
+      "context_id": "tswn-skill-thunder",
+      "scope": "tswn-core d12b462；core 0.7.0、Openbox 0.5.2、WASM wrapper 0.5.12。",
+      "explanation": "tswn 普通技能 ID 2，导出 key 为 sklthunder；Openbox 短名为“雷击”。",
+      "source_ids": [
+        "tswn-core-skill",
+        "tswn-base"
+      ],
+      "aliases_add": [
+        "sklthunder",
+        "雷击"
+      ],
+      "checked_at": "2026-11-16"
+    },
+    {
+      "term_id": "skill-quake",
+      "context_id": "tswn-skill-quake",
+      "scope": "tswn-core d12b462；core 0.7.0、Openbox 0.5.2、WASM wrapper 0.5.12。",
+      "explanation": "tswn 普通技能 ID 3，导出 key 为 sklquake；Openbox 短名为“地裂”。",
+      "source_ids": [
+        "tswn-core-skill",
+        "tswn-base"
+      ],
+      "aliases_add": [
+        "sklquake",
+        "地裂"
+      ],
+      "checked_at": "2026-11-16"
+    },
+    {
+      "term_id": "skill-absorb",
+      "context_id": "tswn-skill-absorb",
+      "scope": "tswn-core d12b462；core 0.7.0、Openbox 0.5.2、WASM wrapper 0.5.12。",
+      "explanation": "tswn 普通技能 ID 4，导出 key 为 sklabsorb；Openbox 短名为“吸血”。",
+      "source_ids": [
+        "tswn-core-skill",
+        "tswn-base"
+      ],
+      "aliases_add": [
+        "sklabsorb",
+        "吸血"
+      ],
+      "checked_at": "2026-11-16"
+    },
+    {
+      "term_id": "skill-poison",
+      "context_id": "tswn-skill-poison",
+      "scope": "tswn-core d12b462；core 0.7.0、Openbox 0.5.2、WASM wrapper 0.5.12。",
+      "explanation": "tswn 普通技能 ID 5，导出 key 为 sklpoison；Openbox 短名为“投毒”。",
+      "source_ids": [
+        "tswn-core-skill",
+        "tswn-base"
+      ],
+      "aliases_add": [
+        "sklpoison",
+        "投毒"
+      ],
+      "checked_at": "2026-11-16"
+    },
+    {
+      "term_id": "skill-combo",
+      "context_id": "tswn-skill-combo",
+      "scope": "tswn-core d12b462；core 0.7.0、Openbox 0.5.2、WASM wrapper 0.5.12。",
+      "explanation": "tswn 普通技能 ID 6，导出 key 为 sklrapid；Openbox 短名为“连击”。",
+      "source_ids": [
+        "tswn-core-skill",
+        "tswn-base"
+      ],
+      "aliases_add": [
+        "sklrapid",
+        "连击"
+      ],
+      "checked_at": "2026-11-16"
+    },
+    {
+      "term_id": "skill-critical",
+      "context_id": "tswn-skill-critical",
+      "scope": "tswn-core d12b462；core 0.7.0、Openbox 0.5.2、WASM wrapper 0.5.12。",
+      "explanation": "tswn 普通技能 ID 7，导出 key 为 sklcritical；Openbox 短名为“会心”。",
+      "source_ids": [
+        "tswn-core-skill",
+        "tswn-base"
+      ],
+      "aliases_add": [
+        "sklcritical",
+        "会心"
+      ],
+      "checked_at": "2026-11-16"
+    },
+    {
+      "term_id": "skill-plague",
+      "context_id": "tswn-skill-plague",
+      "scope": "tswn-core d12b462；core 0.7.0、Openbox 0.5.2、WASM wrapper 0.5.12。",
+      "explanation": "tswn 普通技能 ID 8，导出 key 为 sklhalf；Openbox 短名为“瘟疫”。",
+      "source_ids": [
+        "tswn-core-skill",
+        "tswn-base"
+      ],
+      "aliases_add": [
+        "sklhalf",
+        "瘟疫"
+      ],
+      "checked_at": "2026-11-16"
+    },
+    {
+      "term_id": "skill-berserk",
+      "context_id": "tswn-skill-berserk",
+      "scope": "tswn-core d12b462；core 0.7.0、Openbox 0.5.2、WASM wrapper 0.5.12。",
+      "explanation": "tswn 普通技能 ID 10，导出 key 为 sklberserk；Openbox 短名为“狂暴”。",
+      "source_ids": [
+        "tswn-core-skill",
+        "tswn-base"
+      ],
+      "aliases_add": [
+        "sklberserk",
+        "狂暴"
+      ],
+      "checked_at": "2026-11-16"
+    },
+    {
+      "term_id": "skill-charm",
+      "context_id": "tswn-skill-charm",
+      "scope": "tswn-core d12b462；core 0.7.0、Openbox 0.5.2、WASM wrapper 0.5.12。",
+      "explanation": "tswn 普通技能 ID 11，导出 key 为 sklcharm；Openbox 短名为“魅惑”。",
+      "source_ids": [
+        "tswn-core-skill",
+        "tswn-base"
+      ],
+      "aliases_add": [
+        "sklcharm",
+        "魅惑"
+      ],
+      "checked_at": "2026-11-16"
+    },
+    {
+      "term_id": "skill-haste",
+      "context_id": "tswn-skill-haste",
+      "scope": "tswn-core d12b462；core 0.7.0、Openbox 0.5.2、WASM wrapper 0.5.12。",
+      "explanation": "tswn 普通技能 ID 12，导出 key 为 sklhaste；Openbox 短名为“加速”。",
+      "source_ids": [
+        "tswn-core-skill",
+        "tswn-base"
+      ],
+      "aliases_add": [
+        "sklhaste",
+        "加速"
+      ],
+      "checked_at": "2026-11-16"
+    },
+    {
+      "term_id": "skill-slow",
+      "context_id": "tswn-skill-slow",
+      "scope": "tswn-core d12b462；core 0.7.0、Openbox 0.5.2、WASM wrapper 0.5.12。",
+      "explanation": "tswn 普通技能 ID 13，导出 key 为 sklslow；Openbox 短名为“减速”。",
+      "source_ids": [
+        "tswn-core-skill",
+        "tswn-base"
+      ],
+      "aliases_add": [
+        "sklslow",
+        "减速"
+      ],
+      "checked_at": "2026-11-16"
+    },
+    {
+      "term_id": "skill-curse",
+      "context_id": "tswn-skill-curse",
+      "scope": "tswn-core d12b462；core 0.7.0、Openbox 0.5.2、WASM wrapper 0.5.12。",
+      "explanation": "tswn 普通技能 ID 14，导出 key 为 sklcurse；Openbox 短名为“诅咒”。",
+      "source_ids": [
+        "tswn-core-skill",
+        "tswn-base"
+      ],
+      "aliases_add": [
+        "sklcurse",
+        "诅咒"
+      ],
+      "checked_at": "2026-11-16"
+    },
+    {
+      "term_id": "skill-purify",
+      "context_id": "tswn-skill-purify",
+      "scope": "tswn-core d12b462；core 0.7.0、Openbox 0.5.2、WASM wrapper 0.5.12。",
+      "explanation": "tswn 普通技能 ID 17，导出 key 为 skldisperse；Openbox 短名为“净化”。",
+      "source_ids": [
+        "tswn-core-skill",
+        "tswn-base"
+      ],
+      "aliases_add": [
+        "skldisperse",
+        "净化"
+      ],
+      "checked_at": "2026-11-16"
+    },
+    {
+      "term_id": "skill-iron",
+      "context_id": "tswn-skill-iron",
+      "scope": "tswn-core d12b462；core 0.7.0、Openbox 0.5.2、WASM wrapper 0.5.12。",
+      "explanation": "tswn 普通技能 ID 18，导出 key 为 skliron；Openbox 短名为“铁壁”。",
+      "source_ids": [
+        "tswn-core-skill",
+        "tswn-base"
+      ],
+      "aliases_add": [
+        "skliron",
+        "铁壁"
+      ],
+      "checked_at": "2026-11-16"
+    },
+    {
+      "term_id": "skill-charge",
+      "context_id": "tswn-skill-charge",
+      "scope": "tswn-core d12b462；core 0.7.0、Openbox 0.5.2、WASM wrapper 0.5.12。",
+      "explanation": "tswn 普通技能 ID 19，导出 key 为 sklcharge；Openbox 短名为“蓄力”。",
+      "source_ids": [
+        "tswn-core-skill",
+        "tswn-base"
+      ],
+      "aliases_add": [
+        "sklcharge",
+        "蓄力"
+      ],
+      "checked_at": "2026-11-16"
+    },
+    {
+      "term_id": "skill-accumulate",
+      "context_id": "tswn-skill-accumulate",
+      "scope": "tswn-core d12b462；core 0.7.0、Openbox 0.5.2、WASM wrapper 0.5.12。",
+      "explanation": "tswn 普通技能 ID 20，导出 key 为 sklaccumulate；Openbox 短名为“聚气”。",
+      "source_ids": [
+        "tswn-core-skill",
+        "tswn-base"
+      ],
+      "aliases_add": [
+        "sklaccumulate",
+        "聚气"
+      ],
+      "checked_at": "2026-11-16"
+    },
+    {
+      "term_id": "skill-stealth",
+      "context_id": "tswn-skill-stealth",
+      "scope": "tswn-core d12b462；core 0.7.0、Openbox 0.5.2、WASM wrapper 0.5.12。",
+      "explanation": "tswn 普通技能 ID 21，导出 key 为 sklassassinate；Openbox 短名为“潜行”。",
+      "source_ids": [
+        "tswn-core-skill",
+        "tswn-base"
+      ],
+      "aliases_add": [
+        "sklassassinate",
+        "潜行"
+      ],
+      "checked_at": "2026-11-16"
+    },
+    {
+      "term_id": "skill-summon",
+      "context_id": "tswn-skill-summon",
+      "scope": "tswn-core d12b462；core 0.7.0、Openbox 0.5.2、WASM wrapper 0.5.12。",
+      "explanation": "tswn 普通技能 ID 22，导出 key 为 sklsummon；Openbox 短名为“血祭”。",
+      "source_ids": [
+        "tswn-core-skill",
+        "tswn-base"
+      ],
+      "aliases_add": [
+        "sklsummon",
+        "血祭"
+      ],
+      "checked_at": "2026-11-16"
+    },
+    {
+      "term_id": "skill-defend",
+      "context_id": "tswn-skill-defend",
+      "scope": "tswn-core d12b462；core 0.7.0、Openbox 0.5.2、WASM wrapper 0.5.12。",
+      "explanation": "tswn 普通技能 ID 25，导出 key 为 skldefend；Openbox 短名为“防御”。",
+      "source_ids": [
+        "tswn-core-skill",
+        "tswn-base"
+      ],
+      "aliases_add": [
+        "skldefend",
+        "防御"
+      ],
+      "checked_at": "2026-11-16"
+    },
+    {
+      "term_id": "skill-protect",
+      "context_id": "tswn-skill-protect",
+      "scope": "tswn-core d12b462；core 0.7.0、Openbox 0.5.2、WASM wrapper 0.5.12。",
+      "explanation": "tswn 普通技能 ID 26，导出 key 为 sklprotect；Openbox 短名为“守护”。",
+      "source_ids": [
+        "tswn-core-skill",
+        "tswn-base"
+      ],
+      "aliases_add": [
+        "sklprotect",
+        "守护"
+      ],
+      "checked_at": "2026-11-16"
+    },
+    {
+      "term_id": "skill-reflect",
+      "context_id": "tswn-skill-reflect",
+      "scope": "tswn-core d12b462；core 0.7.0、Openbox 0.5.2、WASM wrapper 0.5.12。",
+      "explanation": "tswn 普通技能 ID 27，导出 key 为 sklreflect；Openbox 短名为“反弹”。",
+      "source_ids": [
+        "tswn-core-skill",
+        "tswn-base"
+      ],
+      "aliases_add": [
+        "sklreflect",
+        "反弹"
+      ],
+      "checked_at": "2026-11-16"
+    },
+    {
+      "term_id": "skill-reraise",
+      "context_id": "tswn-skill-reraise",
+      "scope": "tswn-core d12b462；core 0.7.0、Openbox 0.5.2、WASM wrapper 0.5.12。",
+      "explanation": "tswn 普通技能 ID 28，导出 key 为 sklreraise；Openbox 短名为“护符”。",
+      "source_ids": [
+        "tswn-core-skill",
+        "tswn-base"
+      ],
+      "aliases_add": [
+        "sklreraise",
+        "护符"
+      ],
+      "checked_at": "2026-11-16"
+    },
+    {
+      "term_id": "skill-counter",
+      "context_id": "tswn-skill-counter",
+      "scope": "tswn-core d12b462；core 0.7.0、Openbox 0.5.2、WASM wrapper 0.5.12。",
+      "explanation": "tswn 普通技能 ID 30，导出 key 为 sklcounter；Openbox 短名为“反击”。",
+      "source_ids": [
+        "tswn-core-skill",
+        "tswn-base"
+      ],
+      "aliases_add": [
+        "sklcounter",
+        "反击"
+      ],
+      "checked_at": "2026-11-16"
+    },
+    {
+      "term_id": "skill-merge",
+      "context_id": "tswn-skill-merge",
+      "scope": "tswn-core d12b462；core 0.7.0、Openbox 0.5.2、WASM wrapper 0.5.12。",
+      "explanation": "tswn 普通技能 ID 31，导出 key 为 sklmerge；Openbox 短名为“吞噬”。",
+      "source_ids": [
+        "tswn-core-skill",
+        "tswn-base"
+      ],
+      "aliases_add": [
+        "sklmerge",
+        "吞噬"
+      ],
+      "checked_at": "2026-11-16"
+    },
+    {
+      "term_id": "skill-zombie",
+      "context_id": "tswn-skill-zombie",
+      "scope": "tswn-core d12b462；core 0.7.0、Openbox 0.5.2、WASM wrapper 0.5.12。",
+      "explanation": "tswn 普通技能 ID 32，导出 key 为 sklzombie；Openbox 短名为“亡灵”。",
+      "source_ids": [
+        "tswn-core-skill",
+        "tswn-base"
+      ],
+      "aliases_add": [
+        "sklzombie",
+        "亡灵"
+      ],
+      "checked_at": "2026-11-16"
+    },
+    {
+      "term_id": "skill-upgrade",
+      "context_id": "tswn-skill-upgrade",
+      "scope": "tswn-core d12b462；core 0.7.0、Openbox 0.5.2、WASM wrapper 0.5.12。",
+      "explanation": "tswn 普通技能 ID 33，导出 key 为 sklupgrade；Openbox 短名为“垂死”。",
+      "source_ids": [
+        "tswn-core-skill",
+        "tswn-base"
+      ],
+      "aliases_add": [
+        "sklupgrade",
+        "垂死"
+      ],
+      "checked_at": "2026-11-16"
+    }
+  ]
+}

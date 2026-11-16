@@ -1,0 +1,88 @@
+{
+  "schema_version": "0.1",
+  "repository": "https://github.com/shenjackyuanjie/tswn-core",
+  "local_checkout_hint": "D:\\namerena\\tswn-core",
+  "commit": "d12b462aa532f95be793c00dfed37b8fea0672bb",
+  "recorded_at": "2026-11-16",
+  "versions": {
+    "tswn_core": "0.7.0",
+    "tswn_openbox": "0.5.2",
+    "tswn_openbox_backend": "0.5.2",
+    "tswn_wasm": "0.5.12"
+  },
+  "source_ids": [
+    "tswn-project",
+    "tswn-project-map"
+  ],
+  "scope": {
+    "focus": [
+      "tswn_core",
+      "tswn_openbox",
+      "tswn_openbox_backend",
+      "tswn_wasm",
+      "docs"
+    ],
+    "focus_tracked_file_counts": {
+      "tswn_core": 209,
+      "tswn_openbox": 35,
+      "tswn_openbox_backend": 38,
+      "tswn_wasm": 47
+    },
+    "other_modules": "keywords_only; no dedicated README or implementation deep dive"
+  },
+  "other_module_keywords": {
+    "tswn_py": [
+      "Python",
+      "PyO3",
+      "绑定",
+      "类型声明"
+    ],
+    "tswn_capi": [
+      "C ABI",
+      "FFI",
+      "动态库",
+      "静态库",
+      "句柄"
+    ],
+    "tswn_ds4": [
+      "模型评分",
+      "ABCP5",
+      "配对",
+      "实战筛选",
+      "增量缓存"
+    ],
+    "tswn_lane_ranker": [
+      "lane",
+      "两两胜率",
+      "校准",
+      "排名",
+      "SQLite"
+    ],
+    "tswn_ladder": [
+      "天梯",
+      "匹配",
+      "ELO",
+      "handicap",
+      "周期更新",
+      "PostgreSQL"
+    ],
+    "tswn_name_ranker": [
+      "独立单号排名",
+      "校准资源",
+      "主 workspace 排除项"
+    ],
+    "tswn_pwp": [
+      "胜率数据集",
+      "状态采样",
+      "Parquet",
+      "校准",
+      "离线特征编码"
+    ],
+    "tswn_test": [
+      "共享测试",
+      "golden",
+      "corpus",
+      "差分"
+    ]
+  }
+}

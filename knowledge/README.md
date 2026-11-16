@@ -2,7 +2,7 @@
 
 `overview.md` 保存入门概览；`glossary.json` 保存结构化术语；`sources.json` 保存引用来源，供 skill、agent、MCP 和后续检索服务共同使用。
 
-[官方资料](official/README.md) 包含正文快照、属性、技能、特殊名字、语言包词汇索引与抓取清单。[维护者约定](project-context.json) 记录版本及收录范围；工具项目和历史资料分别留在 `tools/`、`history/`，等待后续提供材料。
+[官方资料](official/README.md) 包含正文快照、属性、技能、特殊名字、语言包词汇索引与抓取清单。[tswn 重写与工具](tools/tswn-core/README.md) 补充实现、评分、别名和网页接入。[维护者约定](project-context.json) 记录版本及范围，其他工具和独立史料等待后续提供。
 
 ## 来源
 
@@ -22,5 +22,9 @@
 有来源支持不等于当前社区已达成共识。不同年代或群体的定义冲突可新增独立词条，标注语境。新旧版本都在收录范围内。问答中保留名字、战队名和输入字符，避免改写改变角色或对战条件。
 
 `origin: official-index` 的词条由 `scripts/build_official_index.py` 从归档生成，完整字段见 `details_path` 和 `details_id`，其他词条为人工整理。语言包独有词汇与完整机制定义分开记录。
+
+`origin: tswn-curation` 的新词与已有词条的 `context_notes` 由工具目录中的 `terminology.json` 维护，通过 `scripts/merge_term_contexts.py` 应用。`context_refs` 指向其维护入口；官方索引再生成会再次合并，保留 tswn 对附体、自爆、隐匿等名称的实现解释。别名允许一词多义，回答时读取 scope 与语境，不强行把所有命中合成同一机制。
+
+仓库来源记录 `commit`、`repository_path`、行号和 `sha256`，链接指向不可变 GitHub blob。上游本地路径只是定位提示，不是本知识仓库的构建依赖。
 
 待整理材料可暂存于被 Git 忽略的 `data/raw/` 其他子目录，官方归档子目录已纳入版本管理。维护者后续口述的信息记录为维护者来源，不伪装成已抓取的公开文档。

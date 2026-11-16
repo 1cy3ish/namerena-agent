@@ -6,6 +6,8 @@ import json
 import re
 from pathlib import Path
 
+from merge_term_contexts import merge_contexts
+
 ROOT = Path(__file__).resolve().parents[1]
 RAW = ROOT / "data/raw/official-namerena/deepmess.com"
 OUTPUT = ROOT / "knowledge/official"
@@ -118,7 +120,9 @@ def main():
                                   "definition": "官方中文语言包中出现的名称；当前只确认名称和对应消息键，未从官方说明中取得完整机制。",
                                   "category": "language-only", "status": "source_supported", "scope": "显示词汇证据，不能据此推断触发条件、获取方式或数值。",
                                   "source_ids": ["official-language-zh"], "checked_at": DATE, "origin": "official-index"})
-    glossary_file.write_text(json.dumps(glossary, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+    glossary = merge_contexts(glossary)
+    with glossary_file.open("w", encoding="utf-8", newline="\n") as handle:
+        handle.write(json.dumps(glossary, ensure_ascii=False, indent=2) + "\n")
     print(json.dumps({"attributes": len(attributes), "skills": len(skills), "bosses": len(bosses), "languages": len(languages), "language_terms": len(vocabulary), "glossary_terms": len(glossary["terms"])}, ensure_ascii=False))
 
 

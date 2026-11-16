@@ -11,8 +11,17 @@
   "collection_policy": {
     "official": "Deep Mess 官方说明和游戏本体是最基础的资料，但不保证词条完整。",
     "historical": "过时资料同样需要收录，保留时间、版本和来源语境。",
-    "tools": "等待维护者提供测号、评分、模拟和其他工具仓库，目前留空。",
+    "tools": "已提供 tswn-core 本地仓库；重点收录 core、Openbox（含共享后端）、WASM 和 docs，其他模块仅关键词。其他工具仓库等待后续提供。",
     "history": "等待维护者提供史料或口述，目前留空。"
   },
-  "note": "维护者确认优先于初始化时对入口版本的推测；具体页面中的编辑提示、旧链接和表述仍按原文保存。"
+  "note": "维护者确认优先于初始化时对入口版本的推测；具体页面中的编辑提示、旧链接和表述仍按原文保存。",
+  "provided_repositories": [
+    {
+      "name": "tswn-core",
+      "local_checkout_hint": "D:\\namerena\\tswn-core",
+      "repository": "https://github.com/shenjackyuanjie/tswn-core",
+      "commit": "d12b462aa532f95be793c00dfed37b8fea0672bb",
+      "provided_at": "2026-11-16"
+    }
+  ]
 }

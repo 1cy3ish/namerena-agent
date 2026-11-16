@@ -1,0 +1,35 @@
+{
+  "schema_version": "0.1",
+  "checked_at": "2026-11-16",
+  "source_ids": [
+    "tswn-live-cloudflare",
+    "tswn-live-shenjack"
+  ],
+  "notes": "入口由维护者提供；只核对页面与可见版本，没有验证线上 WASM 与本地提交字节一致，也没有推断两个站点一定同构建。",
+  "deployments": [
+    {
+      "source_id": "tswn-live-cloudflare",
+      "requested_url": "https://fast-namerena.pages.dev/branch/tswn/",
+      "final_url": "https://fast-namerena.pages.dev/branch/tswn/",
+      "status_code": 200,
+      "scrape_id": "01a1e39e-72ea-7526-a641-9d0603be1db5",
+      "visible_version": {
+        "wrapper": "0.5.12",
+        "core": "0.7.0"
+      },
+      "observation": "页面可见 wrapper/core 版本，并显示已初始化。"
+    },
+    {
+      "source_id": "tswn-live-shenjack",
+      "requested_url": "https://shenjack.top:10007/tswn",
+      "final_url": "https://shenjack.top:10007/static/tswn/examples/show.html",
+      "status_code": 200,
+      "scrape_id": "01a1e39e-72dc-73e7-ac28-99d956ce4739",
+      "visible_version": {
+        "wrapper": null,
+        "core": null
+      },
+      "observation": "正文可读取，版本位置为占位符；未据此判定构建版本。"
+    }
+  ]
+}

@@ -1,0 +1,2049 @@
+{
+  "schema_version": "0.1",
+  "commit": "d12b462aa532f95be793c00dfed37b8fea0672bb",
+  "recorded_at": "2026-11-16",
+  "docs_count": 113,
+  "documentation_inventory": [
+    {
+      "path": "docs/README.md",
+      "title": "文档中心",
+      "section_headings": [
+        "## 从这里开始",
+        "## 目录导航",
+        "## 文档约定",
+        "## 维护审阅记录"
+      ],
+      "sha256": "b01b8c7f9d3d9623581cd94b75648789058e1962b771ac52d0d3d3bd233d9bc4",
+      "lines": 55,
+      "reading_level": "heading_survey",
+      "document_kind": "reference_or_report"
+    },
+    {
+      "path": "docs/archive/README.md",
+      "title": "项目历史与兼容复盘",
+      "section_headings": [
+        "## 项目背景",
+        "## 原始实现与兼容经验",
+        "## 号库回归方案",
+        "## 查阅完整历史"
+      ],
+      "sha256": "74771438ecfecdb2e1caf8b85c34a378109d1b629eacf956d28e4193c5c16419",
+      "lines": 25,
+      "reading_level": "heading_survey",
+      "document_kind": "historical"
+    },
+    {
+      "path": "docs/archive/dart-architecture.md",
+      "title": "项目架构文档（面向重写者）—— 技术与架构视角",
+      "section_headings": [
+        "## 1. 整体架构概览（扫一遍）",
+        "## 2. 模块说明（职责与交互）",
+        "## 3. Plr 相关详解（字段与关键函数，便于重写复现行为）",
+        "## 4. 典型调用序列（时序图，Mermaid）",
+        "## 5. 关键实现要点与重写建议（面向开发者）",
+        "## 6. 代码定位索引（便于快速查阅）",
+        "## 7. 可继续深入的方向"
+      ],
+      "sha256": "e3ce135d4304258d5bd4d25cf8830cb327b0ba2e6b04222fa670ff08de1c2fce",
+      "lines": 312,
+      "reading_level": "heading_survey",
+      "document_kind": "historical"
+    },
+    {
+      "path": "docs/archive/legacy-readme.md",
+      "title": "namerena 但是 rust 版",
+      "section_headings": [],
+      "sha256": "e4151fa02d8d9e940150f5e253442a33b90022c7f111fc855aa3d116017b42e3",
+      "lines": 92,
+      "reading_level": "heading_survey",
+      "document_kind": "historical"
+    },
+    {
+      "path": "docs/archive/project-origins.md",
+      "title": "项目起源：从 Dart 网页到 Rust 重写",
+      "section_headings": [
+        "## 项目概况"
+      ],
+      "sha256": "a27324ec11d3fa8c26866226aa5a597070f4b873c31e8111dc728f8d4002e447",
+      "lines": 23,
+      "reading_level": "focused_sections",
+      "document_kind": "historical"
+    },
+    {
+      "path": "docs/archive/sby-test-plan.md",
+      "title": "历史文档：SBY Test 修复要求与执行计划",
+      "section_headings": [
+        "## 以下为历史原文",
+        "## 当前任务",
+        "## 执行原则",
+        "## 推荐工作流",
+        "## 对 AI 的明确要求",
+        "## 测试目标",
+        "## 测试输入",
+        "## 标准测试方法",
+        "## 结果查看方法",
+        "## 已知大样本运行记录（2026-04-22）",
+        "## `md5.js` 相关检查原则",
+        "## 研究 `md5.js` 时的注释维护要求",
+        "## 尝试修复后的验证方法",
+        "## 修复判定标准",
+        "## 最终修复目标"
+      ],
+      "sha256": "3e4459cea46a04a3dc41a1246507f7e3d30efe98c725aa2fcc9cad8bfddffc70",
+      "lines": 370,
+      "reading_level": "heading_survey",
+      "document_kind": "historical"
+    },
+    {
+      "path": "docs/archive/why-ns-review.md",
+      "title": "why_ns：JS 机制与兼容排查复盘",
+      "section_headings": [
+        "## JS 构造序号的生命周期",
+        "## 当时真正闭环的差异",
+        "## 排查方法",
+        "## 历史来源"
+      ],
+      "sha256": "68510f9adef22584479391615a23ae7daae97f08374f0f763702b0959fbbdcc5",
+      "lines": 57,
+      "reading_level": "heading_survey",
+      "document_kind": "historical"
+    },
+    {
+      "path": "docs/core-guide/README.md",
+      "title": "从名字竞技场到 tswn：项目与 core 原理指南",
+      "section_headings": [
+        "## 阅读路线",
+        "## 五个先记住的词",
+        "## 在本机看 API 文档",
+        "# 用浏览器打开 target/doc/tswn_core/index.html",
+        "# 深入 binary 或绑定内部实现时，生成含内部模块的文档",
+        "# 只看核心 API，保留核心调试配置",
+        "## 与其他文档配合使用"
+      ],
+      "sha256": "bf321a6d7eddabb8fad854f36fb3a4719b788123d186b7b7edd5dbfe48fbe3a9",
+      "lines": 78,
+      "reading_level": "heading_survey",
+      "document_kind": "reference_or_report"
+    },
+    {
+      "path": "docs/core-guide/battle-flow.md",
+      "title": "一场战斗怎样推进：行动条、攻击与效果链",
+      "section_headings": [
+        "## 先分清三个粒度",
+        "## 普通角色的行动条",
+        "## 行动主线",
+        "## 一次典型攻击怎样结算",
+        "## 效果队列怎样组织连锁",
+        "## 胜负与正常终止",
+        "## 源码入口"
+      ],
+      "sha256": "d98a69ee4166ad09b7a6203d4bbefa3bbd6fe7a589f39834ac8d507de76ccf76",
+      "lines": 146,
+      "reading_level": "focused_sections",
+      "document_kind": "reference_or_report"
+    },
+    {
+      "path": "docs/core-guide/contributing-and-debugging.md",
+      "title": "开发与排查：从游戏现象找到对应实现",
+      "section_headings": [
+        "## 按问题找代码",
+        "## 一次机制排查的节奏",
+        "## 可直接执行的验证",
+        "# 受影响核心行为",
+        "# 跨 crate 与完整 Runtime corpus",
+        "# 正式 release/no_debug 口径",
+        "# Rust 静态检查与统一格式",
+        "# 文档与可执行示例",
+        "## 文档层次怎样配合",
+        "## 文档里的正向表达",
+        "## 性能改动的验证方式",
+        "## 提交与远端同步",
+        "## 常用源码与资料"
+      ],
+      "sha256": "74592f22b06d35597e34cae5b4486ec38cef33887bc36caa366c88bcbde30d6e",
+      "lines": 132,
+      "reading_level": "heading_survey",
+      "document_kind": "reference_or_report"
+    },
+    {
+      "path": "docs/core-guide/datasets-and-extension.md",
+      "title": "数据与批量计算：从重复对局到训练输入",
+      "section_headings": [
+        "## 三条计算路线",
+        "## PreparedRunner：同一阵容准备一次",
+        "## 胜率、profile 评分和组合评估",
+        "## 学习状态保存什么",
+        "## PWP 怎样生成一局的样本",
+        "## 从 Parquet 到固定形状张量",
+        "## 其他批量工具怎样接入",
+        "## 源码入口"
+      ],
+      "sha256": "8c5bfada6889cab514b5f24af667bd6c829bc5d182670046423a0f06f9563752",
+      "lines": 171,
+      "reading_level": "heading_survey",
+      "document_kind": "reference_or_report"
+    },
+    {
+      "path": "docs/core-guide/interfaces-and-tools.md",
+      "title": "交互与工具：CLI、WASM、Python、C ABI 和业务应用",
+      "section_headings": [
+        "## 接入方式总览",
+        "## CLI：从参数到输出",
+        "## WASM：宿主调用与页面播放",
+        "## Python：脚本中的规范会话",
+        "## C ABI：显式所有权",
+        "## Openbox：业务任务与增量结果",
+        "## DS4 与排名服务的交互",
+        "## 继续查阅"
+      ],
+      "sha256": "8b031bd49e0376c88e6414514b3d406e019e16077a60af2f5939d78356bc3135",
+      "lines": 138,
+      "reading_level": "heading_survey",
+      "document_kind": "reference_or_report"
+    },
+    {
+      "path": "docs/core-guide/name-to-player.md",
+      "title": "从名字到角色：输入解析、构建与本场初始化",
+      "section_headings": [
+        "## 文本里的三种关系",
+        "## 完整构建链路",
+        "## 身份名为什么有好几个",
+        "## 名字怎样决定属性和技能",
+        "## 用 OL 显式观察机制",
+        "## Boss、特殊名字与蓝图",
+        "## 动手查看",
+        "## 源码入口"
+      ],
+      "sha256": "3e901a91bb921a534b2ad1a6d7312eb8f757c34fd0847abd3d069db92f782e8c",
+      "lines": 129,
+      "reading_level": "focused_sections",
+      "document_kind": "reference_or_report"
+    },
+    {
+      "path": "docs/core-guide/project-map.md",
+      "title": "项目地图：规则、接口与工具怎样组成 tswn",
+      "section_headings": [
+        "## 三层结构",
+        "## 各 crate 的角色",
+        "## core 内部也有三种关注点",
+        "## 同样叫“评分”，计算来源可以不同",
+        "## 仓库目录的用途",
+        "## 源码入口"
+      ],
+      "sha256": "fb5a94c44a70f7329a244ad10a176685fbdc04ed6a115e2aeb35f150505bbb13",
+      "lines": 106,
+      "reading_level": "focused_sections",
+      "document_kind": "reference_or_report"
+    },
+    {
+      "path": "docs/core-guide/randomness-and-compatibility.md",
+      "title": "随机与兼容：怎样复现同一场战斗",
+      "section_headings": [
+        "## 随机流怎样贯穿项目",
+        "## RC4 在这里的用途",
+        "## 复现输入应记录什么",
+        "## JS 兼容的几个细节",
+        "## 如何阅读差分",
+        "## 批量战斗中的确定性",
+        "## 源码入口"
+      ],
+      "sha256": "0198b1973953b426ed5033e95727d42c511a2822e605a2f72eb8f7452eb6e790",
+      "lines": 114,
+      "reading_level": "focused_sections",
+      "document_kind": "reference_or_report"
+    },
+    {
+      "path": "docs/core-guide/runtime-model.md",
+      "title": "运行时模型：一场战斗保存了哪些信息",
+      "section_headings": [
+        "## 谁拥有数据",
+        "## 模板与当前值如何配合",
+        "## 实体 ID 的几个层次",
+        "## 世界视图为什么保存好几个列表",
+        "## 状态登记有两条信息线",
+        "## 三种扩展槽",
+        "## 可复用对局怎样恢复",
+        "## 四种状态出口",
+        "## 源码入口"
+      ],
+      "sha256": "a14a0a9856fafc9ad9cfbd25bd10deb9252002a58305198763242e06591a5bbd",
+      "lines": 112,
+      "reading_level": "focused_sections",
+      "document_kind": "reference_or_report"
+    },
+    {
+      "path": "docs/core-guide/sessions-and-replay.md",
+      "title": "会话与回放：把机制推进交给 core，把播放交给应用",
+      "section_headings": [
+        "## 一套推进策略，三种使用方式",
+        "## 一次调用的生命周期",
+        "## 可复制的 Rust 示例",
+        "## 正常终止与失败各怎样观察",
+        "## 数据粒度从 frame 到文字片段",
+        "## 玩家快照如何理解",
+        "## 网页播放游标与机制位置",
+        "## 选项与成本",
+        "## 源码入口"
+      ],
+      "sha256": "f385e4446009c5f984560d2f171675a259be36f7d09ddf263c30f57046b86270",
+      "lines": 140,
+      "reading_level": "focused_sections",
+      "document_kind": "reference_or_report"
+    },
+    {
+      "path": "docs/core-guide/skills-and-hooks.md",
+      "title": "技能与 hook：注册、阶段、排序和实际执行",
+      "section_headings": [
+        "## 一项技能包含哪些部分",
+        "## 八种 hook 的定位",
+        "## fixed lane 与尝试顺序",
+        "## 先后关系怎样确定",
+        "## 上下文提供什么",
+        "## 一个可运行的低层例子",
+        "## 把低层机制接到整个项目",
+        "## 源码入口"
+      ],
+      "sha256": "0c6a51f73297613d86384011b8beeddd544aba5d57c78c615ae9d6a1e36742fd",
+      "lines": 149,
+      "reading_level": "focused_sections",
+      "document_kind": "reference_or_report"
+    },
+    {
+      "path": "docs/core-guide/statuses-and-minions.md",
+      "title": "状态、护盾与召唤物：持续机制怎样保存和变化",
+      "section_headings": [
+        "## 状态由载荷和生命周期组成",
+        "## 为什么部分状态在专用字段里",
+        "## 护盾的一生",
+        "## 死亡、护身符与复活",
+        "## 分身、幻影、使魔与丧尸",
+        "## 吞噬为什么同时影响好几处",
+        "## 源码入口"
+      ],
+      "sha256": "eb9bd9011e3e8b639d0daeded2c7964432e7ea76673bb93d4c8c47fdc6e28ed6",
+      "lines": 113,
+      "reading_level": "focused_sections",
+      "document_kind": "reference_or_report"
+    },
+    {
+      "path": "docs/design/README.md",
+      "title": "设计与机制规格",
+      "section_headings": [
+        "## 阅读关系",
+        "## 当前实现依据"
+      ],
+      "sha256": "1c165b56f9bddad2b7ffbf67a712c44002ff4fd72ae4da656553ba8ace12063b",
+      "lines": 29,
+      "reading_level": "heading_survey",
+      "document_kind": "reference_or_report"
+    },
+    {
+      "path": "docs/design/battle-analyze.md",
+      "title": "tswn-pwp：战斗状态导出与胜率数据生成",
+      "section_headings": [
+        "## 当前实现与源码依据",
+        "## 目标与边界",
+        "## 状态与 Rust 接口",
+        "## 两遍运行与分层抽样",
+        "## 输入、切分和 Parquet",
+        "## 确定性、恢复和失败",
+        "## 后续训练和网页约束"
+      ],
+      "sha256": "8e8bf1d6f69d1bc6a51d188d0ae74f19a9b0631db2b47d6fbf4ed460d24680cb",
+      "lines": 107,
+      "reading_level": "heading_survey",
+      "document_kind": "reference_or_report"
+    },
+    {
+      "path": "docs/design/battle-model-state-audit.md",
+      "title": "BattleModelState v1：Runtime 状态审计",
+      "section_headings": [
+        "## 字段来源",
+        "## 身份与延迟构造",
+        "## 明确排除",
+        "## 契约与校验",
+        "## 当前源码依据"
+      ],
+      "sha256": "2c657a7ec09ea9e29a814ee5edc4eced3aef17ae573022f7b23ed86fac122545",
+      "lines": 70,
+      "reading_level": "heading_survey",
+      "document_kind": "reference_or_report"
+    },
+    {
+      "path": "docs/design/battle-session.md",
+      "title": "BattleSession 与网页增量播放的设计",
+      "section_headings": [
+        "## 核心分层",
+        "## 网页的三个游标",
+        "## 关键设计理由",
+        "## 演进与验证",
+        "## 历史来源"
+      ],
+      "sha256": "21aefeedf447c5931e646a99e088a371b3be297333fdc1de9afe0f2247597f53",
+      "lines": 71,
+      "reading_level": "focused_sections",
+      "document_kind": "reference_or_report"
+    },
+    {
+      "path": "docs/design/feature-encoder-spec.md",
+      "title": "tswn-pwp FeatureEncoder 设计规格",
+      "section_headings": [
+        "## 当前实现与验收边界",
+        "## 1. 目标与边界",
+        "## 2. 输入契约",
+        "## 3. 字段映射表",
+        "## 4. 张量契约",
+        "## 5. 归一化与数值域",
+        "## 6. 索引与 ID",
+        "## 7. 技能槽方案",
+        "## 8. 状态载荷方案",
+        "## 9. 变长与特殊实体",
+        "## 10. team_mask 与获胜资格",
+        "## 11. 禁止泄漏清单",
+        "## 12. 置换语义",
+        "## 13. 浮点与 bit 精度",
+        "## 14. 接口边界",
+        "## 15. 测试与验收",
+        "## 16. 冻结决策与后续验收事项",
+        "## 17. 参考来源表"
+      ],
+      "sha256": "ecd7514ff256eb4d3eef4653f84b068f742ecb065d2a99babbea6bc582dd3aea",
+      "lines": 728,
+      "reading_level": "heading_survey",
+      "document_kind": "reference_or_report"
+    },
+    {
+      "path": "docs/design/runtime-redesign-assessment.md",
+      "title": "Runtime 架构评估与重构建议：保留行为，重整执行内核",
+      "section_headings": [
+        "## 1. 结论",
+        "## 2. 当前架构：已经做对了什么，问题在哪里",
+        "## 3. “不考虑兼容性，只考虑行为”的具体含义",
+        "## 4. 建议的新架构",
+        "## 5. 执行流程：让阶段成为程序，不是广播消息",
+        "## 6. 伤害和生命周期：不能统一成一个万能 Damage",
+        "## 7. 扩展：合并定义与实现，保留受限能力",
+        "## 8. 观察、批量执行、复位与模型出口",
+        "## 9. 行为验收：以现有 tswn_test 为主线",
+        "# 既有入口：release / no_debug 核心、CLI 与 release corpus",
+        "# 明确运行完整 corpus 的 debug 构建",
+        "# 补充组合：让 tswn_test 的被测 tswn_core 也开启 no_debug",
+        "# 默认库测试包含 session/replay 跨模块验收；同时回归整个工作区",
+        "## 10. 实施顺序与停止条件",
+        "## 11. 本次评估的边界与最终建议",
+        "## 源码依据"
+      ],
+      "sha256": "066afed68970e0029e64fd7a2d70a2551a53cdb8c06222bb32220a7c681560d2",
+      "lines": 526,
+      "reading_level": "focused_sections",
+      "document_kind": "proposal"
+    },
+    {
+      "path": "docs/diff/README.md",
+      "title": "差分报告",
+      "section_headings": [],
+      "sha256": "4009c1003710ea684ec40845ebe616dea21469e1068a5473fdd0b9cc4124210e",
+      "lines": 9,
+      "reading_level": "heading_survey",
+      "document_kind": "reference_or_report"
+    },
+    {
+      "path": "docs/diff/bun-tswn-round-mismatches.md",
+      "title": "Bun / tswn 逐局分叉报告",
+      "section_headings": [
+        "## 方法",
+        "## 汇总",
+        "## QF9iBQK4HfUAE+Mmt0ZrdGnlpjwB",
+        "## QF9iBQK4HfUAE+MpsB4DH2nlptYB",
+        "## Jm0MGgK4HfUAAQ5u8M44wWnlpzQB",
+        "## Jm0MGgK4HfUAAQ5yKW59XGnlp0EB",
+        "## Jm0MGgK4HfUAAQ565d9J3mnlp7UB",
+        "## Jm0MGgK4HfUAAQ59YmDV0WnlqCcB",
+        "## Jm0MGgK4HfUAAQ6FZnIJEGnlqR8B",
+        "## QF9iBQK4HfUAE+M1GSOv6Wnlq/oB",
+        "## Jm0MGgK4HfUAAQ6MYo7rXGnlxeYB",
+        "## Jm0MGgK4HfUAAQ6V8AOp8GnlxmkB",
+        "## QF9iBQK4HfUAE/HjYZR2WGnt5foB",
+        "## QF9iBQK4HfUAE/QeiKV6MGnu3OIB",
+        "## QF9iBQK4HfUAE/lWjx76DmnyAhYB",
+        "## QF9iBQK4HfUAE/lZ+dgrkGnyAkAB",
+        "## QF9iBQK4HfUAFA97RnwMbmn8gEQB",
+        "## QF9iBQK4HfUAFBCcvlX8Emn8khwB",
+        "## QF9iBQK4HfUAFBV75kAW62n9OqcB",
+        "## QF9iBQK4HfUAFBV+CZ+mFWn9OrYB",
+        "## QF9iBQK4HfUAFBWVYq6wqWn9PBIB",
+        "## QF9iBQK4HfUAFDuRzBfDYGoIZisB"
+      ],
+      "sha256": "6786883fb919ecc66a62ca4070019cdd193eff46c68007cd158115c7a1db37da",
+      "lines": 703,
+      "reading_level": "heading_survey",
+      "document_kind": "reference_or_report"
+    },
+    {
+      "path": "docs/guides/README.md",
+      "title": "使用指南",
+      "section_headings": [],
+      "sha256": "718b43c86cdde56f769c00ad3a07cf6d2fb0f0a56649cbc501104fcc84b1d253",
+      "lines": 14,
+      "reading_level": "heading_survey",
+      "document_kind": "reference_or_report"
+    },
+    {
+      "path": "docs/guides/build-all.md",
+      "title": "全量构建与聚合打包",
+      "section_headings": [
+        "## 1. 构建范围与前提",
+        "## 2. 当前主机的最短流程",
+        "## 3. Windows 包额外收录 WSL/Linux 产物",
+        "# 首次创建；与 Windows 的 .venv 分开保存",
+        "# 保留先前的 Windows wheel，不加 --clean",
+        "# 按需准备额外的 Linux 产物",
+        "## 4. 常用选项与独立构建",
+        "# 自定义名称和输出目录",
+        "# 不收录 Python，或跳过不需要的组件",
+        "# 单独构建与打包",
+        "## 5. 输出与验收"
+      ],
+      "sha256": "2d38331cddffb2bee579c65cc2266297fcce878081202693dd1660613d649e3a",
+      "lines": 169,
+      "reading_level": "heading_survey",
+      "document_kind": "reference_or_report"
+    },
+    {
+      "path": "docs/guides/c-api-cpp-windows.md",
+      "title": "Windows 下使用 `tswn_capi` 编译 C++ 示例",
+      "section_headings": [
+        "## 1. 目录与前提",
+        "## 2. C++ 源文件推荐写法",
+        "## 3. `PreparedRunner` 的 seed 格式",
+        "## 4. `raw` 无 seed 与 `prepared` 无 seed 是否一致",
+        "## 5. Windows 下的链接形式",
+        "## 6. `clang++` 动态链接命令",
+        "## 7. `clang++` 静态链接命令",
+        "## 8. `g++` / MinGW 动态链接",
+        "## 9. `g++` 更稳的做法：先生成 `.dll.a`",
+        "## 10. 推荐顺序",
+        "## 11. 运行时输入",
+        "## 12. 常见报错与排查",
+        "## 13. 备注"
+      ],
+      "sha256": "05c8f16995f196528ce4101d197eabc0a54fef38444817dad7dcda1a093ef0b6",
+      "lines": 420,
+      "reading_level": "heading_survey",
+      "document_kind": "reference_or_report"
+    },
+    {
+      "path": "docs/guides/development.md",
+      "title": "开发入口与模块边界",
+      "section_headings": [
+        "## 代码放在哪里",
+        "## 验证怎么选",
+        "## 测试与文档各管什么",
+        "## 产物与提交"
+      ],
+      "sha256": "a5a9ad0e84e8d1f9a09a271a9a42a74cfa7349ce509b2d2cf833e25f985b7064",
+      "lines": 61,
+      "reading_level": "heading_survey",
+      "document_kind": "reference_or_report"
+    },
+    {
+      "path": "docs/guides/diy-validation.md",
+      "title": "DIY 往返验证：当前工作流与历史记录",
+      "section_headings": [
+        "## 1. 当前工具状态",
+        "## 2. 验证目标与层次",
+        "## 3. 当前 CLI 冒烟工作流",
+        "# 原始输入保留队伍间空行；此例没有武器后缀。",
+        "# 转换正文写入文件，避免 stdout 的欢迎 banner；按原分组回读。",
+        "## 4. 现有源码测试",
+        "# 导出格式、准备后导出和 overlay / 武器后缀切分",
+        "# 输入解析与召唤物模板构造",
+        "# 当前等级、构造基底与分身加成重建",
+        "## 5. 差异分级与限制",
+        "## 6. 历史验证记录",
+        "## 7. 与 JS / Rust 对齐验证的关系"
+      ],
+      "sha256": "3fbec46ca612cb617eefa7848893cb77a71a2f7bfd376585b9ba9eed78b14ad3",
+      "lines": 119,
+      "reading_level": "heading_survey",
+      "document_kind": "reference_or_report"
+    },
+    {
+      "path": "docs/guides/openharmony.md",
+      "title": "OpenHarmony 交叉编译",
+      "section_headings": [],
+      "sha256": "bf1ced43ab44d37c8209fc0f7b966b62f6deda10355d41b789066557c90b4bb0",
+      "lines": 80,
+      "reading_level": "heading_survey",
+      "document_kind": "reference_or_report"
+    },
+    {
+      "path": "docs/guides/runtime-0.5-migration.md",
+      "title": "主 Runtime 0.5 迁移指南",
+      "section_headings": [
+        "## 版本边界",
+        "## Rust",
+        "## CLI",
+        "## Python",
+        "## C",
+        "## WASM 与 replay",
+        "## 回归门禁"
+      ],
+      "sha256": "d0cf82c9c03d639b2b684d15f0b38adb75ec1a305cbc5d5675f1b896ccb5483e",
+      "lines": 94,
+      "reading_level": "heading_survey",
+      "document_kind": "reference_or_report"
+    },
+    {
+      "path": "docs/maintenance-2026-10.md",
+      "title": "2026-10 工作区维护审查",
+      "section_headings": [
+        "## 范围与方法",
+        "## 依赖结果",
+        "## 已修复的问题与优化",
+        "## 文档审查",
+        "## 验证记录",
+        "## 保留的后续改进",
+        "## 旧传递分支清单",
+        "## 分块提交记录",
+        "## 后续性能与正确性复测（2026-10-24）"
+      ],
+      "sha256": "c5ec62abf2cce1b7134af0be3f37a64645d348d2548dc1b4e0ddd2ff5bca9079",
+      "lines": 309,
+      "reading_level": "heading_survey",
+      "document_kind": "reference_or_report"
+    },
+    {
+      "path": "docs/mechanics/README.md",
+      "title": "战斗机制分析",
+      "section_headings": [],
+      "sha256": "017d49791b56801d5d479ba1dafb986bde80778114c3081696e0befb3f2cf552",
+      "lines": 10,
+      "reading_level": "heading_survey",
+      "document_kind": "reference_or_report"
+    },
+    {
+      "path": "docs/mechanics/clone.md",
+      "title": "分身机制详解（CloneSkill）",
+      "section_headings": [
+        "## 1. 本体与克隆体的属性",
+        "## 2. 分身技能自身的衰减",
+        "## 3. 其他技能：基底截断后重放加成",
+        "## 4. 对 DIY 拟合与往返验证的影响",
+        "## 5. 验证入口"
+      ],
+      "sha256": "0a23d18b953d9cb822cb31530084db3039d1d8b1489d98ce2e8cf3e81f57e34b",
+      "lines": 115,
+      "reading_level": "focused_sections",
+      "document_kind": "reference_or_report"
+    },
+    {
+      "path": "docs/mechanics/name-factor-rq.md",
+      "title": "name_factor 与 rq：对打和胜率评估的属性差异",
+      "section_headings": [
+        "## 简要结论",
+        "## 1. 当前构造链",
+        "## 2. rq 改变了什么",
+        "## 3. 对属性的影响",
+        "## 4. seed 与 rq 是两个独立维度",
+        "## 5. 如何对齐比较"
+      ],
+      "sha256": "2cc3ff19141df5881f0ed5080cc8bec42ab7072a3f4fa77416768678eb4af352",
+      "lines": 116,
+      "reading_level": "focused_sections",
+      "document_kind": "reference_or_report"
+    },
+    {
+      "path": "docs/mechanics/skill-decay.md",
+      "title": "技能衰减机制",
+      "section_headings": [
+        "## 1. 生命之轮（ExchangeSkill, ID = 9）",
+        "## 2. 治愈魔法（HealSkill, ID = 15）",
+        "## 3. 苏生术（ReviveSkill, ID = 16）",
+        "## 4. 分身（CloneSkill, ID = 23）",
+        "## 5. 幻术（ShadowSkill, ID = 24）",
+        "## 汇总",
+        "## 当前源码依据"
+      ],
+      "sha256": "f25cb8cbefc7518cc8d37cafe9f7f40885016fef035f5c28c7da7a1e31a47b0a",
+      "lines": 202,
+      "reading_level": "focused_sections",
+      "document_kind": "reference_or_report"
+    },
+    {
+      "path": "docs/mechanics/winner.md",
+      "title": "判胜语义",
+      "section_headings": [
+        "## 1. Rust 侧定义",
+        "## 2. legacy 侧定义（`md5.js`）",
+        "## 3. `alive_group_count` 的语义与边界",
+        "## 4. 历史缺陷与修复",
+        "## 5. 复活与“获胜资格”",
+        "## 6. 复现与验证",
+        "# Rust 侧两条判胜路径的逐回合一致性",
+        "# 计数残留 + 复活残局的定点回归",
+        "# 金标基线（含 winner_team_index）",
+        "# 名字池上的频率扫描（本地诊断，依赖未纳入版本库的 tests/sqp5900.txt）",
+        "# legacy 对照（需要外部 md5.js）",
+        "## 7. 源码定位"
+      ],
+      "sha256": "08785ca83f6b400bb1ce998c88cf39c5add6c13141451a2f61eaa5f5268e17c4",
+      "lines": 209,
+      "reading_level": "focused_sections",
+      "document_kind": "reference_or_report"
+    },
+    {
+      "path": "docs/perf/README.md",
+      "title": "性能文档与数据",
+      "section_headings": [
+        "## 方法与追踪",
+        "## 调查报告",
+        "## Runtime 基准与快照",
+        "## 固定输入与原始结果"
+      ],
+      "sha256": "85640297e827d3a6a7d87e979b9b82915295ce6cd1d3016520ad7779655e91b4",
+      "lines": 62,
+      "reading_level": "heading_survey",
+      "document_kind": "reference_or_report"
+    },
+    {
+      "path": "docs/perf/benchmark-history.md",
+      "title": "性能追踪与历史比较",
+      "section_headings": [
+        "## 1. 口径",
+        "## 2. 30-case 固定 benchmark",
+        "## 3. 100k 参考总表",
+        "## 4. 1M 长跑表",
+        "## 5. 历史版本 `0.3.2` 快速查看",
+        "## 6. 结论"
+      ],
+      "sha256": "cd287f60e11623df3fb191f6cb1306ae551404a83a0b8c9f87b3a0cdc3779adf",
+      "lines": 144,
+      "reading_level": "heading_survey",
+      "document_kind": "reference_or_report"
+    },
+    {
+      "path": "docs/perf/fixed_cases_30_results/perf_cases.md",
+      "title": "tswn_core 性能用例阶梯",
+      "section_headings": [
+        "## 已选用例",
+        "## 汇总分组",
+        "## 基准测试结果"
+      ],
+      "sha256": "dec454e45e8775342d031d274bf10e1aa5bc3a71cd7fbc59b8a6e136c44113e0",
+      "lines": 88,
+      "reading_level": "heading_survey",
+      "document_kind": "reference_or_report"
+    },
+    {
+      "path": "docs/perf/fixed_cases_30_results/perf_cases_0.3.10.md",
+      "title": "tswn_core 性能用例阶梯",
+      "section_headings": [
+        "## 已选用例",
+        "## 汇总分组",
+        "## 基准测试结果"
+      ],
+      "sha256": "dec454e45e8775342d031d274bf10e1aa5bc3a71cd7fbc59b8a6e136c44113e0",
+      "lines": 88,
+      "reading_level": "heading_survey",
+      "document_kind": "reference_or_report"
+    },
+    {
+      "path": "docs/perf/fixed_cases_30_results/perf_cases_0.3.8.md",
+      "title": "tswn_core 性能用例阶梯",
+      "section_headings": [
+        "## 已选用例",
+        "## 汇总分组",
+        "## 基准测试结果"
+      ],
+      "sha256": "435fbe7c469537dd16b0266b01cd99e7304999bda87a2b1340b3c3d1beb66c99",
+      "lines": 88,
+      "reading_level": "heading_survey",
+      "document_kind": "reference_or_report"
+    },
+    {
+      "path": "docs/perf/guides/amd-uprof.md",
+      "title": "AMD uProf CPU 性能分析",
+      "section_headings": [
+        "## 适用范围",
+        "## 标准热点采样",
+        "## Agent 判读",
+        "## 深入诊断",
+        "## 无管理员权限时"
+      ],
+      "sha256": "639329179894c7dc7d043fbe2ddda7f90c612325af1e2274f3d35e80844a8dd2",
+      "lines": 75,
+      "reading_level": "heading_survey",
+      "document_kind": "reference_or_report"
+    },
+    {
+      "path": "docs/perf/guides/fixed30-benchmark.md",
+      "title": "固定 30 用例性能基准测试",
+      "section_headings": [
+        "## 当前复测入口",
+        "## 1. 固定输入",
+        "## 2. 新增 case 覆盖",
+        "## 3. 历史工具的运行口径",
+        "## 4. 报告分组",
+        "## 5. 判读"
+      ],
+      "sha256": "1b85625185ad7d93154fb38de3fe047cbd2bc12b615d74a70a3b13d8edf715fe",
+      "lines": 94,
+      "reading_level": "heading_survey",
+      "document_kind": "reference_or_report"
+    },
+    {
+      "path": "docs/perf/guides/openbox-pair-probe.md",
+      "title": "OpenBox pair 并行基准（`openbox_pair_probe`）",
+      "section_headings": [
+        "## 1. 构建",
+        "## 2. 参数",
+        "## 3. 输出约定",
+        "## 4. 同机交替 A/B 流程",
+        "# 用 PowerShell 7 重定向，避免 Windows PowerShell 5.1 的 UTF-16 输出影响哈希",
+        "## 5. 输入与派生输入",
+        "# 前 8 个 / 前 2 个选手组",
+        "# 前 4 个队友组（文本；带权 TOML 见下方说明）",
+        "# 单个靶子（用于“少 matchup × 长轮次”场景）",
+        "## 6. 其他入口的仪表注意事项",
+        "## 7. 已发布结果",
+        "## 8. 实时 GUI 数据通路"
+      ],
+      "sha256": "e8e859ddbae74b4f72e4e372e3318762599c5871530cef6f336287085b2b7c31",
+      "lines": 196,
+      "reading_level": "heading_survey",
+      "document_kind": "reference_or_report"
+    },
+    {
+      "path": "docs/perf/guides/performance.md",
+      "title": "性能优化与验证准则",
+      "section_headings": [
+        "## 核心准则",
+        "## Release profile 选择",
+        "## 行为验证",
+        "## Benchmark 方法",
+        "## PGO 构建",
+        "## 采样"
+      ],
+      "sha256": "bf93af046e1a5bc1d377d7c49b90fd364a50fafcf86dfe7ef4a99de4f552033f",
+      "lines": 151,
+      "reading_level": "heading_survey",
+      "document_kind": "reference_or_report"
+    },
+    {
+      "path": "docs/perf/reports/cqp-runtime-baseline.md",
+      "title": "CQP/CQD legacy Runtime 基线与 Runtime 优化结果",
+      "section_headings": [
+        "## 1. 口径",
+        "## 2. 验收结果",
+        "## 3. 生效的优化",
+        "## 4. 正确性门禁",
+        "## 5. 复测命令",
+        "# 单人；把 count 依次改为 100、1000、10000",
+        "# 双人；把 count 依次改为 100、1000、10000"
+      ],
+      "sha256": "560d97721577534cceeca9c4257ebb2f454a71870d71c9718306e84573b453c3",
+      "lines": 81,
+      "reading_level": "heading_survey",
+      "document_kind": "reference_or_report"
+    },
+    {
+      "path": "docs/perf/reports/maintenance-2026-10-24.md",
+      "title": "2026-10-24 维护前后性能与正确性报告",
+      "section_headings": [
+        "## 1. 结论先行",
+        "## 2. 比较对象与环境",
+        "## 3. 方法、数量与边界",
+        "## 4. fixed30：核心战斗整体持平",
+        "## 5. 编码器：减少重复工作，未证明普遍明显提速",
+        "## 6. 会话与初测信号的独立确认",
+        "## 7. CLI 与 Openbox 主矩阵",
+        "## 8. PWP：真实数据、确认结果与校准缺口",
+        "## 9. Python / Node WASM 与浏览器",
+        "## 10. 官方JS横向参考（不是维护收益）",
+        "## 11. 正确性监测：最终17项通过",
+        "## 12. 复现与归档校验",
+        "# 构建阶段统一环境；不修改全局Cargo配置",
+        "# 已准备baseline/current隔离产物后，各阶段串行执行",
+        "# 当前真实校准会在pwp_encode阶段按契约拒绝：保留失败后继续独立阶段",
+        "# 精确的三组七轮确认命令/脚本在原始ZIP的confirm_*.py与元数据内",
+        "# 二进制快照解压后，从工作区根手动复测微基准，显式提供输入避免依赖编译期worktree",
+        "# DOM正确性脚本必须打开VM Modules；纯模块单独跑",
+        "## 13. 后续优先级"
+      ],
+      "sha256": "5a967a971f9dc13c6203ac2e57ebd2562f136cdd609e2cc38135f54fc94bd9b7",
+      "lines": 283,
+      "reading_level": "heading_survey",
+      "document_kind": "reference_or_report"
+    },
+    {
+      "path": "docs/perf/reports/openbox-live-2026-09-29.md",
+      "title": "Openbox 实时结果通路验证（2026-09-29）",
+      "section_headings": [
+        "## 吞吐对照",
+        "## 正确性与界面",
+        "## 检查命令"
+      ],
+      "sha256": "61f06e35fd9aa767f75a0bfdbbd0e2ca88e3471bd1845f14b576826094481e15",
+      "lines": 65,
+      "reading_level": "heading_survey",
+      "document_kind": "reference_or_report"
+    },
+    {
+      "path": "docs/perf/reports/openbox-pair-parallelism-2026-09-15.md",
+      "title": "OpenBox pair 并行修复：同机交替 A/B 复测",
+      "section_headings": [
+        "## 1. 复测环境与构建",
+        "# 两个 worktree 分别执行：",
+        "## 2. 方法",
+        "## 3. 结果：pair 路径",
+        "## 4. 结果：其余路径",
+        "## 5. 仪表伪影：`openbox_mem_probe` 的周期性 RSS 上报",
+        "## 6. `RangePlan` 分片公式的敏感性实验（未提交）",
+        "## 7. 复测命令",
+        "# 两个 worktree 各自构建",
+        "# 派生输入（仓库不跟踪这些子集，按需生成；哈希见第 2.2 节）",
+        "# teammate_fz4.toml = teammate_fz.toml 的前 4 个 [[targets]] 块",
+        "# fixed30",
+        "# CQP 单人 20 × target1（count 依次 100 / 1000 / 10000；--report-ms 关掉周期性 RSS 上报）",
+        "# CQD 双人 32 × target2（count 依次 100 / 1000 / 10000）",
+        "# 少 matchup × 长轮次：--players 换成 sqp6000_first8/first2、--targets 换成 target1_first1.txt",
+        "# OpenBox pair 后端（入口见附录 A 与 guides/openbox-pair-probe.md；-t 依次 1 / 2 / 4 / auto）",
+        "# CLI pair",
+        "# 输出对账（单人 / 双人各一次，比较剔除计时字段后的 JSONL）",
+        "## 8. 结论",
+        "## 附录 A：OpenBox pair 探针",
+        "# 小网格：8 选手 × 4 队友 × 41 靶子 = 1312 matchup",
+        "# 全网格：20 选手 × 16 队友 × 41 靶子 = 13120 matchup",
+        "# 带权组合"
+      ],
+      "sha256": "dd65d0b8c9b916dbe41370a61917b0ac5f6f2dc8547b2ce3aea51ecb30fd0391",
+      "lines": 361,
+      "reading_level": "heading_survey",
+      "document_kind": "reference_or_report"
+    },
+    {
+      "path": "docs/perf/reports/openbox-review-2026-09-29.md",
+      "title": "Openbox 代码与性能检查（2026-09-29）",
+      "section_headings": [
+        "## 问题与处理",
+        "## 模块结构与界面收尾",
+        "## 同机交替对照",
+        "## 验证"
+      ],
+      "sha256": "2109305bd10f333ab51db6a69f1fde6fc40228dd95f9e4816ed502178a71147e",
+      "lines": 84,
+      "reading_level": "heading_survey",
+      "document_kind": "reference_or_report"
+    },
+    {
+      "path": "docs/perf/reports/optimization-opportunities-0.5.3.md",
+      "title": "0.5.3 性能优化评估与落地记录（tswn_core）",
+      "section_headings": [
+        "## 1. 环境与方法",
+        "## 2. 全量 benchmark 结果",
+        "## 3. PGO：目前唯一的量级收益",
+        "## 4. 热点数据（PGO 计数，40 万场合计）",
+        "## 5. 还没做、值得继续评估的",
+        "## 6. 明确**不要**做的（实测反例）"
+      ],
+      "sha256": "9ddefec7d10cf3b2553cef64b0f24be2dcbf926e34979b8cdfce634300e0c879",
+      "lines": 281,
+      "reading_level": "heading_survey",
+      "document_kind": "reference_or_report"
+    },
+    {
+      "path": "docs/perf/reports/performance-branch-2026-10-29.md",
+      "title": "无武器路径成本简报（2026-10-29）",
+      "section_headings": [
+        "## 同步与改动",
+        "## 实测与限制",
+        "## 验证与上游缺口",
+        "## 复现入口",
+        "# 每个源码 worktree 必须有独立 target；先核对 git rev-parse HEAD 与 sha256sum。",
+        "## 同日追加：合并剩余 Rinick 快照"
+      ],
+      "sha256": "4b5a619a33b4276886ac5fc13032b4fa2fb879dfc56abad6ba27f5918a60cd1e",
+      "lines": 70,
+      "reading_level": "heading_survey",
+      "document_kind": "reference_or_report"
+    },
+    {
+      "path": "docs/perf/reports/python-battle-session-baseline.md",
+      "title": "Python BattleSession DTO 转换性能基线",
+      "section_headings": [
+        "## 环境与口径",
+        "## Python 实测结果",
+        "## 复测与优化门槛",
+        "## 固定输入",
+        "## 复现"
+      ],
+      "sha256": "97f7bf47dd819dff1b1083d0362a99f940eef0368889f174a006fa31cb3c7ccc",
+      "lines": 70,
+      "reading_level": "heading_survey",
+      "document_kind": "reference_or_report"
+    },
+    {
+      "path": "docs/perf/reports/rc4-profile-2026-09-05.md",
+      "title": "tswn_core 0.5.3：uProf 热点与 RC4 优化调查",
+      "section_headings": [
+        "## 环境与判定方法",
+        "## 1. 实际热点",
+        "## 2. RC4：哪些方案值得做",
+        "## 3. 扩展 A/B",
+        "## 4. RC4 之后的候选",
+        "## 5. 复现与验证"
+      ],
+      "sha256": "72238d0758741aeddf62b05e6409a9e750dded1624bbd47aab237c70ce453b37",
+      "lines": 247,
+      "reading_level": "heading_survey",
+      "document_kind": "reference_or_report"
+    },
+    {
+      "path": "docs/perf/reports/runtime-0.4.0-baseline.md",
+      "title": "Runtime 0.4.0 性能基线",
+      "section_headings": [
+        "## 1. 环境与计时口径",
+        "## 2. 总览",
+        "## 3. fixed30 新基线",
+        "## 4. score 单线程裸时间与 legacy 硬目标",
+        "## 5. win-rate 与 CQP/CQD 自动调度",
+        "## 6. 复测命令",
+        "# fixed30 单线程；自动线程把 --thread 改为 0",
+        "# score：CQP 10% 单人；双人替换输入为 cqp_double_target.txt",
+        "# win-rate 单线程"
+      ],
+      "sha256": "b285980d5d093c80c27eff9d3a1d6f6c2b1c1f63be935a4551995cf38d646258",
+      "lines": 137,
+      "reading_level": "heading_survey",
+      "document_kind": "reference_or_report"
+    },
+    {
+      "path": "docs/perf/reports/runtime-0.4.2-1ed1258-allocator-snapshot.md",
+      "title": "Runtime 0.4.2 `1ed1258` 完整性能快照",
+      "section_headings": [
+        "## 1. 环境与口径",
+        "## 2. 总览",
+        "## 3. fixed30",
+        "## 4. 普通 win-rate",
+        "## 5. score 单线程裸时间",
+        "## 6. CQP/CQD 自动调度",
+        "## 7. 正确性插曲与最终门禁",
+        "## 8. 复测命令",
+        "# mimalloc：默认 feature 保持开启",
+        "# 系统分配器：使用独立 target，保留 png_render 以只移除 mimalloc_alloc",
+        "# fixed30；自动线程把 --thread 改为 0",
+        "# score；其余输入替换为 sqp6000_first20.txt / cqp_double_target.txt",
+        "# CQP；双人替换 players/targets，各档把 count 改为 100、1000、10000"
+      ],
+      "sha256": "0c63162ed4d13a9f0affb891b99a3ad2fbfb0cdc855b5c1bd21fee696511a55c",
+      "lines": 168,
+      "reading_level": "heading_survey",
+      "document_kind": "reference_or_report"
+    },
+    {
+      "path": "docs/perf/reports/runtime-0.4.2-d813e5f-snapshot.md",
+      "title": "Runtime 0.4.2 `d813e5f` 完整性能快照",
+      "section_headings": [
+        "## 1. 环境与口径",
+        "## 2. 总体结论",
+        "## 3. fixed30",
+        "## 4. win-rate",
+        "## 5. score 单线程裸时间",
+        "## 6. CQP/CQD 自动调度",
+        "## 7. 本次命令",
+        "# fixed30；自动线程把 --thread 改为 0",
+        "# score；其余输入替换为 sqp6000_first20.txt / cqp_double_target.txt",
+        "# CQP；双人替换 players/targets，各档把 count 改为 100、1000、10000"
+      ],
+      "sha256": "2ce2509666c61168d451952dd5dbdefdebf10538f4d4ba1998b1eb06b1b700cd",
+      "lines": 120,
+      "reading_level": "heading_survey",
+      "document_kind": "reference_or_report"
+    },
+    {
+      "path": "docs/perf/reports/runtime-0.4.3-9d3a3b9-release-benchmark.md",
+      "title": "Runtime 0.4.3 `9d3a3b9` 发版基准",
+      "section_headings": [
+        "## 1. 环境与测量口径",
+        "## 2. 总体结论",
+        "## 3. fixed30",
+        "## 4. 普通 win-rate",
+        "## 5. score 单线程裸时间",
+        "## 6. CQP/CQD OpenBox 自动调度",
+        "## 7. 正确性与发版门禁",
+        "## 8. 复测命令",
+        "# fixed30；单线程正式跑 3 次，自动线程把 --thread 改为 0 并跑 5 次",
+        "# 普通 win-rate，正式跑 5 次",
+        "# score；三个输入各跑 5 次，并在相邻轮次切换 --first main/legacy",
+        "# OpenBox；单双人、100/1000/10000 六档各跑 5 次"
+      ],
+      "sha256": "08afab4cd2b451b81cd3219ab713eb531413d9777a1c7a43d38e56a95ac78da8",
+      "lines": 154,
+      "reading_level": "heading_survey",
+      "document_kind": "reference_or_report"
+    },
+    {
+      "path": "docs/perf/reports/runtime-0.5.0-749fcd1-release-benchmark.md",
+      "title": "Runtime 0.5.0 `749fcd1` 发版基准",
+      "section_headings": [
+        "## 1. 环境与口径",
+        "## 2. 发版门禁结论",
+        "## 3. 为什么 OpenBox 使用同机 A/B",
+        "## 4. fixed30",
+        "## 5. win-rate 与 score",
+        "## 6. OpenBox CQP/CQD",
+        "## 7. 正确性与发布验证",
+        "## 8. 复测说明"
+      ],
+      "sha256": "0e8cbe124ea0ed45a114e684bcb25ed55b6e2c827e00f8a88433ca178c7a301b",
+      "lines": 153,
+      "reading_level": "heading_survey",
+      "document_kind": "reference_or_report"
+    },
+    {
+      "path": "docs/perf/reports/runtime-four-way-2026-07-15.md",
+      "title": "Node.js / Bun / legacy Runtime / runtime 四方性能报告",
+      "section_headings": [
+        "## 1. 总结",
+        "## 2. 环境与计时口径",
+        "## 3. fixed30",
+        "## 4. 普通 win-rate 与 score",
+        "## 5. CQP/CQD 自动多线程矩阵",
+        "## 6. 测试门禁",
+        "## 7. 复测入口",
+        "# Rust fixed；legacy/runtime 分别执行，自动线程把 --thread 改为 0",
+        "# Rust score；input 可替换为 CQP 单人或 CQD 双人文件",
+        "# Rust CQP/CQD 同轮 legacy/runtime 对账",
+        "# Node.js；把 node 换成 bun 即执行相同 Bun 基准",
+        "## 8. 最终判断"
+      ],
+      "sha256": "9909b8e9745c34d9e825fa145cb3fb33394fba685cc629ee3b4bf7ebddbe0b6c",
+      "lines": 254,
+      "reading_level": "heading_survey",
+      "document_kind": "reference_or_report"
+    },
+    {
+      "path": "docs/perf/reports/target-selection-optimization.md",
+      "title": "性能报告：将目标选择热路径优化移植回 main 分支",
+      "section_headings": [
+        "## 背景",
+        "## 本次移植的优化",
+        "## 验证",
+        "## 基准口径",
+        "## 基准结果",
+        "## 结论"
+      ],
+      "sha256": "9519f8d1a721e581904314e8f1b687eb5f0b3a3eb4fef23464a38e9d8e422ab8",
+      "lines": 74,
+      "reading_level": "heading_survey",
+      "document_kind": "reference_or_report"
+    },
+    {
+      "path": "docs/perf/reports/ub-fix-no-debug.md",
+      "title": "性能报告：post_kill 别名 UB 修复 + no_debug 环境变量泄漏修复",
+      "section_headings": [
+        "## 测试环境",
+        "## 修改内容",
+        "## 基准测试结果",
+        "## 分析"
+      ],
+      "sha256": "93c21a3451ed49e444256e6bae6414a68aa9845565b80ef92f4cbeb4590041e0",
+      "lines": 76,
+      "reading_level": "heading_survey",
+      "document_kind": "reference_or_report"
+    },
+    {
+      "path": "docs/perf/reports/web-streaming-baseline.md",
+      "title": "Web streaming 性能基线",
+      "section_headings": [
+        "## 环境与采样方式",
+        "## 实测结果",
+        "## 固定输入",
+        "## 复现",
+        "# 前端回归测试：Bun 与 Node 任选一种",
+        "# 真实页面行为测试",
+        "## 页面截图"
+      ],
+      "sha256": "c52c09fe39e27a6b3354fcd0128f4957514a675237a59c77a74cbf0fcfc5eead",
+      "lines": 83,
+      "reading_level": "heading_survey",
+      "document_kind": "reference_or_report"
+    },
+    {
+      "path": "docs/perf/reports/winprob-dataset-scale-baseline.md",
+      "title": "winprob 数据集生成规模基线",
+      "section_headings": [
+        "## 结论",
+        "## 环境与方法",
+        "# 10k：100 个阵容 × 100 局，每分片 250 局（40 分片，16 worker）",
+        "# 100k：500 个阵容 × 200 局，每分片 1000 局（100 分片，16 worker）",
+        "# 分布统计（只读）",
+        "## 行组缺陷与修复",
+        "## 规模结果",
+        "## 每样本字节构成（100k）",
+        "## 数据集分布（100k）",
+        "## 待跟进",
+        "## 并行度修复（2026-09-09）"
+      ],
+      "sha256": "3b35c09386e02044a57ac0469de415c531f2d08006dcca8e4421e7f0a03dc69a",
+      "lines": 301,
+      "reading_level": "heading_survey",
+      "document_kind": "reference_or_report"
+    },
+    {
+      "path": "docs/perf/reports/winprob-hp-baseline.md",
+      "title": "胜率数据集 HP-only 基线（100k 局）",
+      "section_headings": [
+        "## 数据集与复现命令",
+        "# 生成（Windows 上 sccache 偶发超时，故显式关闭 wrapper）",
+        "# 容量溢出与标量校准（都只读数据集）",
+        "# HP-only 基线",
+        "## 容量溢出（profile `baseline-64`，上界计费）",
+        "## 标量校准",
+        "## HP-only 基线结果",
+        "## 结论",
+        "## 已核对的差异（原「待核对」）"
+      ],
+      "sha256": "8232b2b0a119f4078fb13cab973f4cfe3ac991fec3634fcca47a25f71df22614",
+      "lines": 104,
+      "reading_level": "heading_survey",
+      "document_kind": "reference_or_report"
+    },
+    {
+      "path": "docs/reference/README.md",
+      "title": "接口与格式参考",
+      "section_headings": [],
+      "sha256": "ab93488e29e593f7a5c2583468abf66a29e721639149df0a1530a8d7ebca834c",
+      "lines": 8,
+      "reading_level": "heading_survey",
+      "document_kind": "reference_or_report"
+    },
+    {
+      "path": "docs/reference/diy-overlay.md",
+      "title": "DIY / OL Overlay 说明",
+      "section_headings": [
+        "## 基本格式",
+        "## 技能值格式",
+        "## 普通玩家技能",
+        "## 分类技能通道",
+        "## 召唤物模板",
+        "## 召唤物的召唤物",
+        "## 伤害传导与分身",
+        "## 分身与 DIY 技能加成",
+        "## Boss 与特殊玩家",
+        "## 导出命令",
+        "## 验证"
+      ],
+      "sha256": "80c394fffec94e24b7644178756a75b1f70cbc14c79e23d479d43202a5230d6d",
+      "lines": 393,
+      "reading_level": "focused_sections",
+      "document_kind": "reference_or_report"
+    },
+    {
+      "path": "docs/reference/public-api.md",
+      "title": "公共 API 与跨语言契约",
+      "section_headings": [
+        "## 入口选择",
+        "## 会话与结果",
+        "## 规范 DTO",
+        "## Python",
+        "## WASM",
+        "## C ABI 4",
+        "## CLI JSONL 输出",
+        "## 网页流式播放",
+        "## 错误与其他高层 API",
+        "## 稳定性边界"
+      ],
+      "sha256": "4684cadbee1c70050a31b859a98cd9717aa75a5972a1990f2e54a0d28057de9b",
+      "lines": 179,
+      "reading_level": "focused_sections",
+      "document_kind": "reference_or_report"
+    },
+    {
+      "path": "docs/releases/0.2.0.md",
+      "title": "tswn_core 0.2.0 详细更新说明",
+      "section_headings": [
+        "## 1. 这次版本要解决的核心问题",
+        "## 2. 设计思路（为什么这样做）",
+        "## 3. 具体改动（原因 / 实现 / 效果）",
+        "## 3.1 状态系统去 `Any`（Breaking Change）",
+        "## 3.2 技能系统注册中心化 + 快路径优化",
+        "## 3.3 Boss 系统注册中心化",
+        "## 3.4 Hook 管线增加动态扩展通道",
+        "## 3.5 `RunUpdates` 无帧采集高速路径",
+        "## 3.6 `--win_rate` 端到端热路径优化",
+        "## 3.7 目标选择热路径小对象优化（`SmallVec`）",
+        "## 3.8 Release 编译配置优化",
+        "## 4. 性能验证与结果",
+        "## 4.1 验证方法",
+        "## 4.2 结果（同机对比）",
+        "## 4.3 目标达成情况",
+        "## 5. Breaking Change 清单与迁移建议",
+        "## 5.1 Breaking Change",
+        "## 5.2 迁移建议",
+        "## 6. 回归验证",
+        "## 7. 本版本未完成但已识别的后续工作",
+        "## 8. 关键改动文件（按主题）"
+      ],
+      "sha256": "9419ea9e4456ab079e799bcf0ddf5bceec192d2d860f11bbc73b907c0e5f2760",
+      "lines": 359,
+      "reading_level": "heading_survey",
+      "document_kind": "versioned_release"
+    },
+    {
+      "path": "docs/releases/0.2.1.md",
+      "title": "tswn_core 0.2.1 更新说明（单线程优化 + bench 模式拆分 + Python 接口同步）",
+      "section_headings": [
+        "## 1. 改动目标",
+        "## 2. CLI benchmark 模式拆分",
+        "## 3. 单线程热点优化（核心）",
+        "## 4. 评分模式并行化",
+        "## 5. tswn_py 接口同步",
+        "## 6. 性能结果（代表性数据）",
+        "## 7. 验证"
+      ],
+      "sha256": "d736c1fd381033242cd5ccc4a378c4857bbc9d708bcb17e1f0e291563dda88d7",
+      "lines": 167,
+      "reading_level": "heading_survey",
+      "document_kind": "versioned_release"
+    },
+    {
+      "path": "docs/releases/0.2.10.md",
+      "title": "tswn_core 0.2.10 更新说明（CLI clap 化、子命令重构与 win-rate 对齐 JS 基准）",
+      "section_headings": [
+        "## 1. 改动目标",
+        "## 2. 主要改动",
+        "## 2.1 `tswn-cli` 参数解析迁移到 `clap`",
+        "## 2.2 CLI 改成子命令结构，并完成模块化拆分",
+        "## 2.3 benchmark 参数统一：移除 worker 环境变量，改成显式参数",
+        "## 2.4 新增 `bench group-win-rate`",
+        "## 2.5 `fight` 输出追加 `win_idx`，保留 stdin 默认行为",
+        "## 2.6 `bench win-rate` 重新对齐 JS `md5.js::win_rate`",
+        "## 2.7 `eval_name` 中的 `rq=4/6` 语义明确化",
+        "## 2.8 版本与发布准备",
+        "## 2.9 分发与打包补充",
+        "## 2.10 `release + no_debug` 与 Bun 的 `win-rate` 性能对比",
+        "## 3. 影响 / 对齐点 / 兼容性",
+        "## 4. 验证",
+        "## 5. 关键改动文件"
+      ],
+      "sha256": "d03a1c73e25a370d4a0a32b8eeb4d0e052ff58b5823d8efe3b7c12330f1e92be",
+      "lines": 639,
+      "reading_level": "heading_survey",
+      "document_kind": "versioned_release"
+    },
+    {
+      "path": "docs/releases/0.2.11.md",
+      "title": "tswn_core 0.2.11 更新说明（prepare/raw 一致性补测、CAPI 调用约定补充与 core/capi/py lint 清理）",
+      "section_headings": [
+        "## 1. 改动目标",
+        "## 2. 主要改动",
+        "## 2.1 `PreparedRunner` 与普通 raw 构造路径的一致性补测",
+        "## 2.2 补充无 seed 场景下的 raw / prepared 一致性测试",
+        "## 2.3 `tswn_core` 侧 clippy 低风险问题清理",
+        "## 2.4 `tswn_capi` 的 `unsafe` 导出补充中文 `# Safety` 文档，并清理原始指针访问写法",
+        "## 2.5 `tswn_py` 侧 lint 与类型声明同步整理",
+        "## 3. 影响 / 对齐点 / 兼容性",
+        "## 4. CAPI / C++ 调用补充说明",
+        "## 5. 验证",
+        "## 6. 关键改动文件"
+      ],
+      "sha256": "89f239756341fe85c679d0689b9ddca5b8604ead54b2dfac7e3201d0dd838eef",
+      "lines": 350,
+      "reading_level": "heading_survey",
+      "document_kind": "versioned_release"
+    },
+    {
+      "path": "docs/releases/0.2.12.md",
+      "title": "tswn_core 0.2.12 更新说明（raw 子命令补齐、`!test!` 路由整理与 benchmark 性能补充）",
+      "section_headings": [
+        "## 1. 改动目标",
+        "## 2. 主要改动",
+        "## 2.1 新增独立 `raw` 子命令",
+        "## 2.2 `raw` 按 `!test!` 头自动分流到 benchmark 语义",
+        "## 2.3 `!test!` 识别补齐前导空行 / BOM 等边界情况",
+        "## 2.4 为 `raw` 路由补充单元测试",
+        "## 3. 性能补充报告",
+        "## 4. 影响 / 对齐点 / 兼容性",
+        "## 5. 验证",
+        "## 6. 关键改动文件"
+      ],
+      "sha256": "b57196893f36154e423c8ca547faaa454d5214dbd11dd8968e0f45ae9c36027f",
+      "lines": 343,
+      "reading_level": "heading_survey",
+      "document_kind": "versioned_release"
+    },
+    {
+      "path": "docs/releases/0.2.13.md",
+      "title": "tswn_core 0.2.13 更新说明（胜率执行逻辑下沉到 core、CLI/CAPI/Python 统一复用）",
+      "section_headings": [
+        "## 1. 改动目标",
+        "## 2. 主要改动",
+        "## 2.1 在 `tswn_core` 中新增统一的 `win_rate` 模块",
+        "## 2.2 `tswn-cli` 胜率相关路径改为统一调用 core 实现",
+        "## 2.3 `tswn_capi` 改为复用 `tswn_core::win_rate`",
+        "## 2.4 `tswn_py` 高层接口补齐 `thread` 参数，并改为复用 core 实现",
+        "## 3. 版本与兼容性说明",
+        "## 4. 验证与构建",
+        "## 5. 小结"
+      ],
+      "sha256": "c317fef05a9aa8853f95a25f762dfbe7ed8e519505461d207e2d04a97b3be61f",
+      "lines": 262,
+      "reading_level": "heading_survey",
+      "document_kind": "versioned_release"
+    },
+    {
+      "path": "docs/releases/0.2.14.md",
+      "title": "tswn_core 0.2.14 更新说明（回迁性能优化、补齐跨版本性能对照）",
+      "section_headings": [
+        "## 1. 改动目标",
+        "## 2. 主要改动",
+        "## 2.1 `PlayerStateStore` 改为单表存储",
+        "## 2.2 `run_to_completion()` 复用 `RunUpdates`",
+        "## 2.3 `Storage::player_group` 反向索引与热路径去分配",
+        "## 3. 性能对照",
+        "## 4. 验证",
+        "## 5. 小结"
+      ],
+      "sha256": "c677d57692b0136df7ab3092eb41864bc214c9b20cd1bc71be998c32bb7a2201",
+      "lines": 247,
+      "reading_level": "heading_survey",
+      "document_kind": "versioned_release"
+    },
+    {
+      "path": "docs/releases/0.2.15.md",
+      "title": "tswn_core 0.2.15 更新说明（新增 batch-rate 批量胜率命令、补齐中文注释）",
+      "section_headings": [
+        "## 1. 改动目标",
+        "## 2. 主要改动",
+        "## 2.1 新增 `bench batch-rate` / `bench cqp`",
+        "## 2.2 批量输出会保留原始行标签",
+        "## 2.3 统一整理为中文注释与帮助文案",
+        "## 2.4 修正 `--perf` / `--verbose` 透传顺序",
+        "## 3. 使用示例",
+        "## 4. 版本信息",
+        "## 5. 验证"
+      ],
+      "sha256": "50a1f58455a05de33fa1b5b7e0789f0d87428fc3eb8c984c6a64a8b19e93728b",
+      "lines": 175,
+      "reading_level": "heading_survey",
+      "document_kind": "versioned_release"
+    },
+    {
+      "path": "docs/releases/0.2.16.md",
+      "title": "tswn_core 0.2.16 更新说明（对齐 md5.js 的最小 trim 语义）",
+      "section_headings": [
+        "## 1. 问题背景",
+        "## 2. 本轮改动范围",
+        "## 3. 具体实现",
+        "## 4. 回归测试",
+        "## 5. 版本信息",
+        "## 6. 后续建议"
+      ],
+      "sha256": "53dfc5213610d9c1d1bd89cd32f3de8b8889396dc1e3c1f77f287cb88448fb46",
+      "lines": 166,
+      "reading_level": "heading_survey",
+      "document_kind": "versioned_release"
+    },
+    {
+      "path": "docs/releases/0.2.17.md",
+      "title": "tswn_core 0.2.17 更新说明（改进 cqp 帮助、batch-rate 终端输出，并统一 benchmark 并行阈值）",
+      "section_headings": [
+        "## 1. 改动目标",
+        "## 2. 主要改动",
+        "## 2.1 帮助信息明确标出 `cqp` 别名",
+        "## 2.2 新增 `--min-wr/-m` 过滤终端显示",
+        "## 2.3 为长批次任务补上总进度和双 ETA",
+        "## 2.4 进度条只在交互终端下刷新",
+        "## 2.5 统一 benchmark 并行启用阈值",
+        "## 3. 使用示例",
+        "## 4. 版本信息",
+        "## 5. 验证"
+      ],
+      "sha256": "9c6447550bdb8b46be2c4ac38160b3d885b2f77f9b15b7b2b9a441dac7ea79df",
+      "lines": 213,
+      "reading_level": "heading_survey",
+      "document_kind": "versioned_release"
+    },
+    {
+      "path": "docs/releases/0.2.18.md",
+      "title": "tswn_core 0.2.18 更新说明（新增 diff 对账输出，修正 slow/haste 同层顺序，并补齐 runner 回归样例）",
+      "section_headings": [
+        "## 1. 改动目标",
+        "## 2. 主要改动",
+        "## 2.1 新增 `tswn-cli diff` 子命令",
+        "## 2.2 diff 输出逻辑按 runner 对账格式整理",
+        "## 2.3 `win_idx` 继续按原始输入顺序输出",
+        "## 2.4 slow / haste 改为同层优先级，由注册顺序打平",
+        "## 2.5 runner 回归测试扩充到 case 65",
+        "## 3. 使用示例",
+        "## 4. 版本信息",
+        "## 5. 验证"
+      ],
+      "sha256": "e76a00dca9e1d9fca6da74e5c9b8fc706303d186d6092a0345f6ada61947c065",
+      "lines": 218,
+      "reading_level": "heading_survey",
+      "document_kind": "versioned_release"
+    },
+    {
+      "path": "docs/releases/0.2.19.md",
+      "title": "tswn_core 0.2.19 更新说明（收口 3v3v3 大样本 diff，并补跑当前性能口径）",
+      "section_headings": [
+        "## 1. 改动目标",
+        "## 2. 主要改动",
+        "## 2.1 revive / spawn / death 改成“先 revive，再 spawn，最后 remove”",
+        "## 2.2 `Hide` 的 same-action alive 视图继续对齐 JS",
+        "## 2.3 `Assassinate` / `Hide` 的 pre_action 累积语义继续对齐",
+        "## 2.4 summon / merge / combat minion 的固定槽位语义收紧",
+        "## 2.5 回归测试与大样本结果",
+        "## 3. 性能口径补跑",
+        "## 4. 当前 git 修改摘要",
+        "## 5. 版本信息",
+        "## 6. 建议验证"
+      ],
+      "sha256": "62a2b5b49d0eaeb6cb3be68177ab52f5a103c37fe3e2520784a24ea23cad7599",
+      "lines": 339,
+      "reading_level": "heading_survey",
+      "document_kind": "versioned_release"
+    },
+    {
+      "path": "docs/releases/0.2.2.md",
+      "title": "tswn_core 0.2.2 更新说明（版本标识与 CLI 对外文案整理）",
+      "section_headings": [
+        "## 1. 改动目标",
+        "## 2. 主要改动",
+        "## 2.1 crate 元数据更新",
+        "## 2.2 CLI 启动文案整理",
+        "## 2.3 细节文案与示例同步",
+        "## 3. 影响 / 兼容性",
+        "## 4. 验证",
+        "## 5. 关键改动文件"
+      ],
+      "sha256": "faae3b177316b9354dcbc6af42272bb3f5279ec6605c34738ce5df1b7581aaa4",
+      "lines": 116,
+      "reading_level": "heading_survey",
+      "document_kind": "versioned_release"
+    },
+    {
+      "path": "docs/releases/0.2.20.md",
+      "title": "tswn_core 0.2.20 更新说明（继续回收 win-rate 性能回退）",
+      "section_headings": [
+        "## 1. 改动目标",
+        "## 2. 主要改动",
+        "## 2.1 `SkillStorage` 的 dynamic `pre_action` 热路径继续收紧",
+        "## 2.2 `Hide` 改成借引用 + iterator + `SmallVec`",
+        "## 2.3 alive-group 长度查询改成基于 team index 的 O(1) 路径",
+        "## 2.4 目标选择热路径补充 single-candidate 提前返回",
+        "## 2.5 `tick.rs` 的 `ally_dead` 改用 `is_alive_now` 直接判断",
+        "## 2.6 UTF-8 BOM 兼容性修复",
+        "## 2.7 构建文档与脚本说明迁移至 uv",
+        "## 3. 撤回的尝试",
+        "## 4. 结果与 benchmark",
+        "## 5. 当前 git 修改摘要",
+        "## 6. 版本信息",
+        "## 7. 建议验证"
+      ],
+      "sha256": "e64794f3899d2f4b5de21a225ff37e919aec7ef13ca7cb8dca4d4ae0635c8769",
+      "lines": 317,
+      "reading_level": "heading_survey",
+      "document_kind": "versioned_release"
+    },
+    {
+      "path": "docs/releases/0.2.21.md",
+      "title": "tswn_core 0.2.21 更新说明（状态标签接口 + Accumulate/Hide 运行时态标识）",
+      "section_headings": [
+        "## 1. 改动目标",
+        "## 2. 主要改动",
+        "## 2.1 `Player::skill_storage()` — 暴露技能遍历入口",
+        "## 2.2 `dynamic_update_state_enabled()` — 技能运行时态标识",
+        "## 3. WASM 层的配合改动",
+        "## 4. 没有引入的潜在改动",
+        "## 5. 版本信息",
+        "## 6. 向下兼容性",
+        "## 7. 建议验证"
+      ],
+      "sha256": "3934e2e5617fca66fe951d7c69d5b7cf2bdc8dec474d03fd34ebee82ff8ebd06",
+      "lines": 178,
+      "reading_level": "heading_survey",
+      "document_kind": "versioned_release"
+    },
+    {
+      "path": "docs/releases/0.2.22.md",
+      "title": "tswn_core 0.2.22 更新说明（ProtectSkill 查询接口 + 状态标签展示增强）",
+      "section_headings": [
+        "## 1. 改动目标",
+        "## 2. 主要改动",
+        "## 3. 版本信息",
+        "## 4. 向下兼容性",
+        "## 5. 建议验证"
+      ],
+      "sha256": "ac26e53704d4726842428f5eacadb537c43973f13b50854b91f5d1165d8ba932",
+      "lines": 141,
+      "reading_level": "heading_survey",
+      "document_kind": "versioned_release"
+    },
+    {
+      "path": "docs/releases/0.2.3.md",
+      "title": "tswn_core 0.2.3 更新说明（`--out-raw` 聚合日志输出）",
+      "section_headings": [
+        "## 1. 改动目标",
+        "## 2. 主要改动",
+        "## 2.1 新增 `--out-raw` 命令行开关",
+        "## 2.2 输出格式改为“按动作聚合”",
+        "## 2.3 Raw 模式下关闭额外装饰输出",
+        "## 2.4 CLI 帮助与示例同步补齐",
+        "## 3. 影响 / 对齐点 / 兼容性",
+        "## 4. 验证",
+        "## 5. 关键改动文件"
+      ],
+      "sha256": "21f052b05eefb96e7da1a125a62c8790905a5c4940528625f18271327070b791",
+      "lines": 148,
+      "reading_level": "heading_survey",
+      "document_kind": "versioned_release"
+    },
+    {
+      "path": "docs/releases/0.2.4.md",
+      "title": "tswn_core 0.2.4 更新说明（Charm 视角、`post_damage` 顺序与 linked minion 清理修正）",
+      "section_headings": [
+        "## 1. 改动目标",
+        "## 2. 主要改动",
+        "## 2.1 Charm 队伍比较改为基于有效队伍视角",
+        "## 2.2 引入 `post_damage_priority()`，统一 `post_damage` 排序语义",
+        "## 2.3 linked minion 清理顺序改为队伍 roster 顺序",
+        "## 2.4 净化取消文案只在“目标仍存活”时输出",
+        "## 3. 影响 / 对齐点 / 兼容性",
+        "## 4. 验证",
+        "## 5. 关键改动文件"
+      ],
+      "sha256": "9b2f4bfc57d6527b747f7a633e553bfe9ba57fd333587c238577a002b9be1dc4",
+      "lines": 165,
+      "reading_level": "heading_survey",
+      "document_kind": "versioned_release"
+    },
+    {
+      "path": "docs/releases/0.2.5.md",
+      "title": "tswn_core 0.2.5 更新说明（战斗结束中断、状态时序与对账路径继续收敛）",
+      "section_headings": [
+        "## 1. 改动目标",
+        "## 2. 主要改动",
+        "## 2.1 战斗结束与后处理时序继续对齐",
+        "## 2.2 队伍语义、状态生命周期与日志继续对齐",
+        "## 2.3 召唤物、技能升级与运行时一致性修复",
+        "## 2.4 调试与热路径整理",
+        "## 3. 影响 / 对齐点 / 兼容性",
+        "## 4. 验证",
+        "## 5. 关键改动文件"
+      ],
+      "sha256": "d0851f7fee9030c8922b6101b6062c93e1e9eb32c2bc4ea66a3582da984a97d6",
+      "lines": 190,
+      "reading_level": "heading_survey",
+      "document_kind": "versioned_release"
+    },
+    {
+      "path": "docs/releases/0.2.6.md",
+      "title": "tswn_core 0.2.6 更新说明（同级状态顺序、召唤物同步与调试追踪补强）",
+      "section_headings": [
+        "## 1. 改动目标",
+        "## 2. 主要改动",
+        "## 2.1 同级状态后处理顺序改为按注册顺序稳定执行",
+        "## 2.2 技能与状态边界行为继续对齐",
+        "## 2.3 召唤物名称、固定槽位与 owner 死亡时清理继续修复",
+        "## 2.4 调试追踪继续补强",
+        "## 3. 影响 / 对齐点 / 兼容性",
+        "## 4. 验证",
+        "## 5. 关键改动文件"
+      ],
+      "sha256": "f97b404608b07939426e9e8e24fbe5eeb031a22757b349fd6061792b3f72ce91",
+      "lines": 169,
+      "reading_level": "heading_survey",
+      "document_kind": "versioned_release"
+    },
+    {
+      "path": "docs/releases/0.2.7.md",
+      "title": "tswn_core 0.2.7 更新说明（时序链、Charm / alive 顺序与召唤物生命周期继续对齐）",
+      "section_headings": [
+        "## 1. 改动目标",
+        "## 2. 主要改动",
+        "## 2.1 `post_action` / `post_defend` 顺序继续统一到 JS 语义",
+        "## 2.2 Charm、全局 alive 视图与复活同步顺序修复",
+        "## 2.3 隐匿、召唤物、分身与日志一致性继续修复",
+        "## 2.4 数值边界、样本扩展与排查能力补强",
+        "## 3. 影响 / 对齐点 / 兼容性",
+        "## 4. 验证",
+        "## 5. 关键改动文件"
+      ],
+      "sha256": "ce89209d6bdfc19d3cecfa2995bfe9bc77c0cc94629dad4bc2189285a1317d0f",
+      "lines": 214,
+      "reading_level": "heading_survey",
+      "document_kind": "versioned_release"
+    },
+    {
+      "path": "docs/releases/0.2.8.md",
+      "title": "tswn_core 0.2.8 更新说明（分段 case miner、缓存可见性与 SBY 排查流程补强）",
+      "section_headings": [
+        "## 1. 改动目标",
+        "## 2. 主要改动",
+        "## 2.1 case miner 支持按模式稳定分段排查",
+        "## 2.2 TS 缓存命中与 bun 调用可见化",
+        "## 2.3 比较范围变化时不再误判回归",
+        "## 2.4 文档补齐 `tswn-cli` / offset 用法",
+        "## 3. 影响 / 对齐点 / 兼容性",
+        "## 4. 验证",
+        "## 5. 关键改动文件"
+      ],
+      "sha256": "341890afca055773cea3f373d644fec462d2e22297c31a1ae85778b129607f29",
+      "lines": 162,
+      "reading_level": "heading_survey",
+      "document_kind": "versioned_release"
+    },
+    {
+      "path": "docs/releases/0.2.9.md",
+      "title": "tswn_core 0.2.9 更新说明（修复 Protect 防御链提前刷新疾走倍率）",
+      "section_headings": [
+        "## 1. 改动目标",
+        "## 2. 主要改动",
+        "## 2.1 `pre_defend` 清态只在必要时才重算属性",
+        "## 2.2 `Reraise` 语义继续保持与 JS 一致",
+        "## 2.3 调试探针与 md5.js 注释继续保留",
+        "## 3. 影响 / 对齐点 / 兼容性",
+        "## 4. 验证",
+        "## 5. 关键改动文件"
+      ],
+      "sha256": "a4a2731069aaf4bd7a0d8a816e1caeade04bd953cf5e26d947357b887797a515",
+      "lines": 167,
+      "reading_level": "heading_survey",
+      "document_kind": "versioned_release"
+    },
+    {
+      "path": "docs/releases/0.3.0.md",
+      "title": "tswn_core 0.3.0 更新说明（Breaking Change — 玩家属性 mp → magic_point 重命名）",
+      "section_headings": [
+        "## 1. 改动动机",
+        "## 2. 变更清单",
+        "## 3. 下游 crate 同步变更",
+        "## 4. 迁移指南",
+        "## 5. 版本信息",
+        "## 6. 验证",
+        "# → 零错误"
+      ],
+      "sha256": "8dacac05dbab6bf9386d3d3547d1baa8165c43137bd10f6337256078b82a45d1",
+      "lines": 124,
+      "reading_level": "heading_survey",
+      "document_kind": "versioned_release"
+    },
+    {
+      "path": "docs/releases/0.3.1.md",
+      "title": "tswn_core 0.3.1 更新说明（ChargeSkill / AssassinateSkill 查询接口）",
+      "section_headings": [
+        "## 1. 改动目标",
+        "## 2. 变更清单",
+        "## 3. 兼容性",
+        "## 4. 性能补跑"
+      ],
+      "sha256": "b3f55fcb454db7f3fea45106dd51632780c58253add2eed57ef66573a629dc31",
+      "lines": 72,
+      "reading_level": "heading_survey",
+      "document_kind": "versioned_release"
+    },
+    {
+      "path": "docs/releases/0.3.10.md",
+      "title": "tswn_core 0.3.10 更新说明",
+      "section_headings": [
+        "## 版本定位",
+        "## CLI 与共享 API",
+        "## CLI 功能与修复",
+        "## DIY / OL 导出",
+        "## 行为对齐修复",
+        "## Python / WASM / C-API 支持",
+        "## OpenHarmony / OHOS / 鸿蒙",
+        "## 新增内部工具 crate",
+        "## 测试与验证",
+        "## 行为与兼容性",
+        "## 总结"
+      ],
+      "sha256": "e4f46f3ab931cdc94385e04f5ae645dfb3483a5b2458f22c2581e68557d1ad22",
+      "lines": 335,
+      "reading_level": "heading_survey",
+      "document_kind": "versioned_release"
+    },
+    {
+      "path": "docs/releases/0.3.11.md",
+      "title": "tswn_core 0.3.11 更新说明",
+      "section_headings": [
+        "## 版本定位",
+        "## 更新内容",
+        "## 测试与验证",
+        "## 兼容性"
+      ],
+      "sha256": "b655b03ed48d7f13ed9cab7dff87f9e88aa06a84aade1f5f3a16b1e25eda8c46",
+      "lines": 21,
+      "reading_level": "heading_survey",
+      "document_kind": "versioned_release"
+    },
+    {
+      "path": "docs/releases/0.3.2.md",
+      "title": "tswn_core 0.3.2 更新说明（DIY / overlay 覆盖系统）",
+      "section_headings": [
+        "## 1. 改动目标",
+        "## 2. 变更清单",
+        "## 3. 兼容性",
+        "## 4. 性能",
+        "## 5. 使用示例"
+      ],
+      "sha256": "5f5adb6fb7c2fc555930b858483cec529e697ce3451a651539471635464d8464",
+      "lines": 135,
+      "reading_level": "heading_survey",
+      "document_kind": "versioned_release"
+    },
+    {
+      "path": "docs/releases/0.3.3.md",
+      "title": "tswn_core 0.3.3 更新说明（alive_group_count 对齐 / case miner 缓存修复）",
+      "section_headings": [
+        "## 1. 改动目标",
+        "## 2. 变更清单",
+        "## 3. 兼容性与影响",
+        "## 4. 性能与验证"
+      ],
+      "sha256": "2ca3aa16096248ec68752580d1cd7459409c9b5e0f0399063ae96c4fb5674e68",
+      "lines": 116,
+      "reading_level": "heading_survey",
+      "document_kind": "versioned_release"
+    },
+    {
+      "path": "docs/releases/0.3.4.md",
+      "title": "tswn_core 0.3.4 更新说明（RunUpdate delay 对齐）",
+      "section_headings": [
+        "## 1. 改动目标",
+        "## 2. 变更清单",
+        "## 3. 兼容性与影响",
+        "## 4. 验证"
+      ],
+      "sha256": "babe0901e23a38280267c864ffd42e6a0fc60a8c79fea8f9b2e8a65b5e7daa63",
+      "lines": 96,
+      "reading_level": "heading_survey",
+      "document_kind": "versioned_release"
+    },
+    {
+      "path": "docs/releases/0.3.5.md",
+      "title": "tswn_core 0.3.5 更新说明",
+      "section_headings": [
+        "## DIY / Overlay 系统增强",
+        "## 内联格式扩展",
+        "## DIY 分身后 clone 衰减下限",
+        "## 名字 → DIY/OL 转换",
+        "## 修复",
+        "## 文档"
+      ],
+      "sha256": "bce83dd663cb92d46dd59cc8482d0c07e2a4991b44cf4767ab4f7c8f0aa072cc",
+      "lines": 45,
+      "reading_level": "heading_survey",
+      "document_kind": "versioned_release"
+    },
+    {
+      "path": "docs/releases/0.3.6.md",
+      "title": "tswn_core 0.3.6 更新说明",
+      "section_headings": [
+        "## CLI",
+        "## 修复",
+        "## 行为调整",
+        "## 测试与文档"
+      ],
+      "sha256": "d36b6c80f5c87060577c69e76a4912f840d3577e329d5c7c1b93181c4f66f929",
+      "lines": 26,
+      "reading_level": "heading_survey",
+      "document_kind": "versioned_release"
+    },
+    {
+      "path": "docs/releases/0.3.7.md",
+      "title": "tswn_core 0.3.7 更新说明",
+      "section_headings": [
+        "## DIY / Overlay 支持",
+        "## 格式与导出",
+        "## 修复",
+        "## 文档"
+      ],
+      "sha256": "a283c4c48b40cdbd57d04d11dc3ccc31f3ee9f5d2e3dbf73fb9d4cd7d6e01b5d",
+      "lines": 28,
+      "reading_level": "heading_survey",
+      "document_kind": "versioned_release"
+    },
+    {
+      "path": "docs/releases/0.3.8.md",
+      "title": "tswn_core 0.3.8 更新说明",
+      "section_headings": [
+        "## 版本定位",
+        "## DIY / Overlay 支持",
+        "## 性能优化",
+        "## 固定 30-case 性能口径",
+        "## 跟踪与验证工具",
+        "## 行为与兼容性",
+        "## 总结"
+      ],
+      "sha256": "5a7b31bbfbbc6d726b9376c69351deb226e09953f2927b918563ceb3728791c0",
+      "lines": 226,
+      "reading_level": "heading_survey",
+      "document_kind": "versioned_release"
+    },
+    {
+      "path": "docs/releases/0.3.9.md",
+      "title": "tswn_core 0.3.9 更新说明",
+      "section_headings": [
+        "## 版本定位",
+        "## 行为对齐修复",
+        "## CLI 功能增强",
+        "## WASM",
+        "## 工具链",
+        "## 文档",
+        "## 测试",
+        "## 行为与兼容性",
+        "## 总结"
+      ],
+      "sha256": "29d7be4bae44dcef170d4a3546cfae9f86724239a3c952052bc5eeb7568e53ac",
+      "lines": 191,
+      "reading_level": "heading_survey",
+      "document_kind": "versioned_release"
+    },
+    {
+      "path": "docs/releases/0.5.1.md",
+      "title": "tswn_core 0.5.1 更新说明",
+      "section_headings": [
+        "## namer-pf 正确性修复",
+        "## 性能复测",
+        "## 测试与验证"
+      ],
+      "sha256": "494390c67630d639198a927a4b0d094f1c76ff7d62c62d2df64b86b672c1089a",
+      "lines": 67,
+      "reading_level": "heading_survey",
+      "document_kind": "versioned_release"
+    },
+    {
+      "path": "docs/releases/0.5.2.md",
+      "title": "tswn_core 0.5.2 更新说明（开发中）",
+      "section_headings": [
+        "## Merge 状态刷新",
+        "## 铁壁打破后的残留 hook",
+        "## 尾部空队名",
+        "## 冒号队名后缀",
+        "## 嵌套自定义幻影的延迟蓝图",
+        "## 当前进度",
+        "## 调试探针"
+      ],
+      "sha256": "c47beea88fbe23bf11b67d291cb7b9b781c532a5e6d2736b44912e22f7df96d8",
+      "lines": 97,
+      "reading_level": "heading_survey",
+      "document_kind": "versioned_release"
+    },
+    {
+      "path": "docs/releases/0.6.0.md",
+      "title": "tswn_core 0.6.0 更新说明",
+      "section_headings": [
+        "## 版本定位",
+        "## 迁移说明",
+        "## 跨语言会话",
+        "## 正确性修复",
+        "## 性能与工具",
+        "## 发布验证"
+      ],
+      "sha256": "6eb6ae463348666684f92d12a42462b1db88a4cc74e1e77d76310a2dd6f44515",
+      "lines": 62,
+      "reading_level": "heading_survey",
+      "document_kind": "versioned_release"
+    },
+    {
+      "path": "docs/releases/0.7.0.md",
+      "title": "tswn_core 0.7.0 更新说明",
+      "section_headings": [
+        "## 版本清单",
+        "## 迁移说明",
+        "## 主要更新",
+        "## 分发边界",
+        "## 验证"
+      ],
+      "sha256": "06e057dcf16d9cb98e2310fe4cd0f9cb5e9a5cb0e8bf352d637dcf0555ce2fc7",
+      "lines": 92,
+      "reading_level": "heading_survey",
+      "document_kind": "versioned_release"
+    },
+    {
+      "path": "docs/releases/README.md",
+      "title": "版本更新记录",
+      "section_headings": [
+        "## 0.7.x",
+        "## 0.6.x",
+        "## 0.5.x",
+        "## 0.3.x",
+        "## 0.2.x"
+      ],
+      "sha256": "6a327d4e58572cd43c0c529bd8145815d8c85d749c3fb814a070192699cc9ab5",
+      "lines": 59,
+      "reading_level": "heading_survey",
+      "document_kind": "versioned_release"
+    },
+    {
+      "path": "docs/reviews/2026-10-maintenance-doc-audit.md",
+      "title": "2026-10 文档审查覆盖与验证",
+      "section_headings": [
+        "## 范围与方法",
+        "## 主要过时点与处理",
+        "## 实际验证",
+        "## 原 148 份 Markdown 逐项覆盖",
+        "## scripts 源文件逐项覆盖",
+        "## 建议分块提交"
+      ],
+      "sha256": "089039c10551cc1a2d7765613a02db226863db5324159081b5df7152dc809eac",
+      "lines": 270,
+      "reading_level": "heading_survey",
+      "document_kind": "reference_or_report"
+    }
+  ],
+  "detailed_evidence_sources": [
+    "tswn-project",
+    "tswn-project-map",
+    "tswn-origins",
+    "tswn-name-build",
+    "tswn-runtime-model",
+    "tswn-battle-flow",
+    "tswn-hooks",
+    "tswn-states",
+    "tswn-randomness",
+    "tswn-replay",
+    "tswn-api",
+    "tswn-overlay",
+    "tswn-rq",
+    "tswn-clone",
+    "tswn-decay",
+    "tswn-winner",
+    "tswn-core-input",
+    "tswn-core-skill",
+    "tswn-core-rules",
+    "tswn-core-weapon",
+    "tswn-weapon-runtime",
+    "tswn-possess",
+    "tswn-hide",
+    "tswn-effective-stats",
+    "tswn-explode",
+    "tswn-batch-engine",
+    "tswn-batch-summary",
+    "tswn-openbox",
+    "tswn-openbox-options",
+    "tswn-score-dispatch",
+    "tswn-score-scale",
+    "tswn-batch-ui",
+    "tswn-pair",
+    "tswn-pair-matrix",
+    "tswn-skill-board",
+    "tswn-base",
+    "tswn-settings",
+    "tswn-wasm",
+    "tswn-web",
+    "tswn-routing",
+    "tswn-session-design",
+    "tswn-proposal",
+    "tswn-input-identities",
+    "tswn-embedded-presets"
+  ],
+  "method": "通览仓库结构与 docs 标题/章节，详读核心指南、格式契约、机制与重点工具段落，按术语跟踪相关实现；不声称逐行通读所有源码或全部历史报告。",
+  "validation_boundary": "只读审阅上游，未修改上游或运行 Rust 引擎测试、性能测试、部署一致性测试。",
+  "hash_kind": "git_blob_sha256"
+}

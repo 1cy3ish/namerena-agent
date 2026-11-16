@@ -1,0 +1,234 @@
+{
+  "schema_version": "0.1",
+  "repository_commit": "d12b462aa532f95be793c00dfed37b8fea0672bb",
+  "source_ids": [
+    "tswn-score-dispatch",
+    "tswn-score-scale",
+    "tswn-batch-engine",
+    "tswn-openbox",
+    "tswn-skill-board",
+    "tswn-pair",
+    "tswn-pair-matrix",
+    "tswn-settings",
+    "tswn-embedded-presets",
+    "tswn-input-identities"
+  ],
+  "profile_scores": {
+    "scope": "namer-pf 单号输入；多成员组合按 runtime score 实际布局处理",
+    "scale": "wins/total*10000",
+    "default_eval_rq": 6.0,
+    "metrics": [
+      {
+        "id": "pp",
+        "label": "普评",
+        "profile_modifier": "\u0002",
+        "duplicate_target_marker": false,
+        "single_name_layout": "被测号+普通profile vs 两个普通profile"
+      },
+      {
+        "id": "pd",
+        "label": "普单",
+        "profile_modifier": "\u0002",
+        "duplicate_target_marker": true,
+        "single_name_layout": "被测号 vs 一个普通profile"
+      },
+      {
+        "id": "qp",
+        "label": "强评",
+        "profile_modifier": "!",
+        "duplicate_target_marker": false,
+        "single_name_layout": "被测号+强化profile vs 两个强化profile"
+      },
+      {
+        "id": "qd",
+        "label": "强单",
+        "profile_modifier": "!",
+        "duplicate_target_marker": true,
+        "single_name_layout": "被测号 vs 一个强化profile"
+      },
+      {
+        "id": "sum",
+        "label": "四项总分",
+        "formula": "pp+pd+qp+qd"
+      }
+    ],
+    "sampling": "profile 数字名字随轮次变化，使用空的额外 seed；不把固定阵容胜率的 profile seed 调度套用到这里。"
+  },
+  "target_set_scores": {
+    "labels": [
+      "cqd",
+      "cqp"
+    ],
+    "scale": "胜率百分比，单项范围0..100",
+    "aggregation": "sum(rate_i*target_factor_i)/sum(target_factor_i)，只计有效 matchup",
+    "grouping": "同一批量后端，单双人语境由实际选手组和靶子组决定，不由命令别名单独强制。",
+    "mirror": "带权靶子下，归一化成员集合完全一致直接50%，仍计入加权。",
+    "duplicate": "不带权时重名跳过；带权时部分重名正常计算。"
+  },
+  "pair": {
+    "prepare": "选手与队友每个普通成员单独构建为 OL 后组合；现有 overlay 原样保留。",
+    "per_teammate": "target_weighted_mean_rate * teammate_factor",
+    "final": "sum(top_head(per_teammate))",
+    "tie_break": "同分按原队友输入顺序",
+    "limits": "score 是头部和，队友 factor 还可放大，不是0..100的单项胜率。"
+  },
+  "skill_board": {
+    "selection": "全组熟练度最高的技能，保留并列去重项",
+    "blank_rule": "所有已提取技能level<30",
+    "threshold_file": "setting/score_now.toml",
+    "all_rounder": {
+      "sum": "达到对应技能all阈值",
+      "pp_min": 8000,
+      "pd_min": 9000,
+      "qp_min": 6000,
+      "qd_min": 7000
+    }
+  },
+  "precision_presets": {
+    "1%": 100,
+    "10%": 1000,
+    "100%": 10000
+  },
+  "working_directory_presets": {
+    "targets": [
+      {
+        "id": 1,
+        "name": "单人组",
+        "file": "targets/newTarget1.toml",
+        "factor_enabled": true
+      },
+      {
+        "id": 2,
+        "name": "双人组",
+        "file": "targets/newTarget2.toml",
+        "factor_enabled": true
+      },
+      {
+        "id": 3,
+        "name": "三人组",
+        "file": "targets/target3.txt"
+      }
+    ],
+    "teammate": [
+      {
+        "head": 4,
+        "name": "刺评",
+        "file": "teammates/teammate_fz.toml",
+        "factor_enabled": true
+      },
+      {
+        "head": 4,
+        "name": "辅评",
+        "file": "teammates/teammate_bc.toml",
+        "factor_enabled": true
+      },
+      {
+        "head": 4,
+        "name": "无刺评",
+        "file": "teammates/teammate_wc.toml",
+        "factor_enabled": true
+      },
+      {
+        "head": 4,
+        "name": "分身评",
+        "file": "teammates/teammate_pj.toml",
+        "factor_enabled": true
+      },
+      {
+        "head": 4,
+        "name": "配件评",
+        "file": "teammates/teammate_fs.toml",
+        "factor_enabled": true
+      }
+    ]
+  },
+  "embedded_default_presets": {
+    "targets": [
+      {
+        "id": 1,
+        "name": "单人组",
+        "file": "targets/newTarget1.toml",
+        "factor_enabled": true
+      },
+      {
+        "id": 2,
+        "name": "双人组",
+        "file": "targets/newTarget2.toml",
+        "factor_enabled": true
+      },
+      {
+        "id": 3,
+        "name": "三人组",
+        "file": "targets/target3.txt"
+      },
+      {
+        "id": 4,
+        "name": "单人组20251102",
+        "file": "targets/target1.txt"
+      },
+      {
+        "id": 5,
+        "name": "双人组20251102",
+        "file": "targets/target2.txt"
+      }
+    ],
+    "teammate": [
+      {
+        "head": 4,
+        "name": "刺评",
+        "file": "teammates/teammate_fz.toml",
+        "factor_enabled": true
+      },
+      {
+        "head": 4,
+        "name": "辅评",
+        "file": "teammates/teammate_bc.toml",
+        "factor_enabled": true
+      },
+      {
+        "head": 4,
+        "name": "无刺评",
+        "file": "teammates/teammate_wc.toml",
+        "factor_enabled": true
+      },
+      {
+        "head": 4,
+        "name": "分身评",
+        "file": "teammates/teammate_pj.toml",
+        "factor_enabled": true
+      },
+      {
+        "head": 4,
+        "name": "配件评",
+        "file": "teammates/teammate_fs.toml",
+        "factor_enabled": true
+      },
+      {
+        "head": 5,
+        "name": "刺评20251109",
+        "file": "teammates/teammate_fz.txt"
+      },
+      {
+        "head": 5,
+        "name": "辅评20251109",
+        "file": "teammates/teammate_bc.txt"
+      },
+      {
+        "head": 5,
+        "name": "无刺评20251109",
+        "file": "teammates/teammate_wc.txt"
+      },
+      {
+        "head": 3,
+        "name": "分身评20251109",
+        "file": "teammates/teammate_pj.txt"
+      },
+      {
+        "head": 3,
+        "name": "配件评20251109",
+        "file": "teammates/teammate_fs.txt"
+      }
+    ]
+  },
+  "configuration_note": "根 setting/settings.toml 是本地工作目录配置；内嵌 assets/settings.toml 还包含单人组20251102、双人组20251102，二者不混写，保留带日期命名的预设。"
+}
