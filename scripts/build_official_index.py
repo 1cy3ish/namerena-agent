@@ -37,6 +37,8 @@ def base_record(record_id, name, source):
 
 
 def main():
+    if any((ROOT / "knowledge/wiki/revisions").glob("*/*.json")):
+        raise SystemExit("已有在线编辑历史，请先人工合并；停止覆盖当前术语表。")
     attributes = []
     attr_ids = dict(zip("攻防速敏魔抗智", ("attack", "defense", "speed", "agility", "magic", "resistance", "intelligence")))
     for name, section in re.findall(r"<h3\b[^>]*>(.*?)</h3>(.*?)(?=<h3|$)", main_content("attribute.html"), re.S):

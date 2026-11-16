@@ -28,4 +28,5 @@
 - 修改 JSON 后检查能否解析、稳定 ID 是否唯一、来源引用能否解析到 `knowledge/sources.json`。
 - 修改文档或 skill 后检查仓库内相对路径。独立分发 skill 时需要一并打包其知识依赖。
 - `evals/cases.json` 是后续问答行为评估素材；当前没有自动运行器，不将其描述为已通过的模型测试。
-- 静态百科源文件在 `web/`，数据从共享知识构建到忽略的 `dist/wiki/`。不要手工维护另一份词条；修改搜索或分类时运行 `node --test tests/wiki.test.mjs`，页面交互需用本地预览核查。
+- 百科代码已移至独立 `namerena-wiki` 项目；本仓库仅保留共享知识、在线编辑历史和每日快照。`knowledge/glossary.json` 是在线阅读的当前版本；`knowledge/wiki/revisions/` 保存署名的修改前后内容。
+- 存在在线编辑历史时，不得直接运行索引重建覆盖总表；先人工核对并合并。维基和定时快照不调用爬虫。

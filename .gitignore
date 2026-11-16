@@ -26,3 +26,6 @@ data/processed/
 .DS_Store
 Thumbs.db
 Desktop.ini
+
+# Wiki runtime locks and crash-recovery journal (not knowledge)
+.wiki-state/

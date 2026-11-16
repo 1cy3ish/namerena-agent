@@ -42,6 +42,8 @@ def merge_contexts(glossary):
 
 
 def main():
+    if any((ROOT / "knowledge/wiki/revisions").glob("*/*.json")):
+        raise SystemExit("已有在线编辑历史，请先人工合并；停止覆盖当前术语表。")
     file = ROOT / "knowledge/glossary.json"
     result = merge_contexts(json.loads(file.read_text(encoding="utf-8")))
     with file.open("w", encoding="utf-8", newline="\n") as handle:
