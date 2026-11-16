@@ -1282,6 +1282,122 @@
       "recorded_at": "2026-11-16",
       "read_status": "provided",
       "notes": "无修饰的天梯指10007民间天梯；官方天梯通常加限定词；10008是配套论坛。历史“老天梯”按原链接判断。"
+    },
+    {
+      "id": "attachment-qqbot",
+      "title": "qq群bot.txt（委托方提供的QQ群bot简介与用法）",
+      "type": "maintainer",
+      "read_status": "provided",
+      "recorded_at": "2026-11-16",
+      "accessed_at": "2026-11-16",
+      "local_path": "data/raw/provided/qq群bot.txt",
+      "sha256_file": "5f9be431b1028a87797b5b95b7ad24e3227b73bda2dcf635603d813d2638b51f",
+      "notes": "委托方随任务提供的文档来源：小鱼bot命令一览、名竞测试bot（namerena-v0.10.4）、shenjack的bot（已禁用）、鱼煲（已弃用）、namerena-测试中（已失效）。按附件原文登记，未验证任何 bot 当前在线状态。",
+      "version_status": "unverified_online"
+    },
+    {
+      "id": "attachment-ds4",
+      "title": "DataStructure4-Readme.md（委托方提供的DataStructure4使用说明）",
+      "type": "maintainer",
+      "read_status": "provided",
+      "recorded_at": "2026-11-16",
+      "accessed_at": "2026-11-16",
+      "local_path": "data/raw/provided/DataStructure4-Readme.md",
+      "sha256_file": "d3e06883558431509397216f1e30e0d300910c33c4db55285d4bcb04b94a69ad",
+      "notes": "委托方随任务提供的文档来源：Data_Structure4.0 all_new 主流程（增量配对、五类分拣、二人组/三人组、ABCP5、sieve 配置）。按任务约定只提取少量关键词（knowledge/tools/datastructure4/terminology.json，8条）；不推演模型公式与性能；示例阈值只属于该文档配置。",
+      "version_status": "provided_document"
+    },
+    {
+      "id": "pbb7-repo",
+      "title": "PBB 名字评分测号器（AsunderSquall/pbb-new2，PBB7）",
+      "type": "community",
+      "url": "https://github.com/AsunderSquall/pbb-new2/blob/2408dcb78eb67dcbbc942f09b420c7998f87d44a/README.md",
+      "repository": "https://github.com/AsunderSquall/pbb-new2",
+      "commit": "2408dcb78eb67dcbbc942f09b420c7998f87d44a",
+      "accessed_at": "2026-11-16",
+      "read_status": "retrieved",
+      "notes": "委托方指定的最新版PBB7测号器入口。在线读取了仓库主页 README 渲染、VERSION（7.0.6）与 changelog.md（commit 2408dcb，2026-10-30）；未逐一打开 pbb/ tools/ docs/ config/ 等目录原始文件（由 README 与 changelog 交叉印证）。GitHub 本地 git clone 因代理 CONNECT 502 失败，故未提供 blob sha256； Releases 页面为空，无 tag/发布资产。术语维护入口 knowledge/tools/pbb-new2/terminology.json。",
+      "version_status": "commit_pinned"
+    },
+    {
+      "id": "tutorial-new",
+      "title": "Namerena_tutorial 新教程（abrucestd）",
+      "type": "community",
+      "url": "https://abrucestd.github.io/Namerena_tutorial/deep-chp2/",
+      "accessed_at": "2026-11-16",
+      "read_status": "retrieved",
+      "notes": "本次新增链接1。MkDocs 站点，共读取 12 页全部可访问章节：首页、basic、new_pbb、pbb、SP&htmltools&官评测试、DataStructure、openbox、常用语&bot、ex-chp1、ex-chp8、deep-chp1、deep-chp2。教程尚不完善：作者自述「正在实时更新，并且并没有写完」「我们写的不一定对」；进阶第5、7章被引用但站点暂缺；未写到的机制不判定为不存在。工具下载多依赖 QQ 群 1079992837 群文件。",
+      "version_status": "current_unstable"
+    },
+    {
+      "id": "tutorial-old",
+      "title": "namern-help 旧教程（sqrt2802，群讨论版）",
+      "type": "community",
+      "url": "https://github.com/sqrt2802/namern-help",
+      "accessed_at": "2026-11-16",
+      "read_status": "retrieved",
+      "notes": "本次新增链接2。git clone 主仓库与 wiki（最新提交 cfb43c7，2026-07-08）后逐文件读取全部 24 个文本文件（README、mkdocs.yml、requirements.txt、docs/ 21 个 md、wiki Home.md）；docs/files/ 14 个二进制附件仅登记未读取；Releases 网页读取失败、改用 GitHub API 取得 3 个资产清单。相当一部分内容过时：原文多处自标「可能已经过时/不一定对/coming soon」；天梯（官方）、三人组团战配队与靶子、GPU测号等明确停用。逐项核查结论见术语正文。",
+      "version_status": "partially_outdated"
+    },
+    {
+      "id": "tieba-forum",
+      "title": "百度贴吧「名字竞技场」吧",
+      "type": "community",
+      "url": "https://tieba.baidu.com/f?kw=%E5%90%8D%E5%AD%97%E7%AB%9E%E6%8A%80%E5%9C%BA&ie=utf-8",
+      "accessed_at": "2026-11-16",
+      "read_status": "retrieved",
+      "notes": "本次新增链接4。吧主页简介可读（建吧2016-04-26）；帖子列表与精品区无法直接抓取。经 WebSearch+变体域名读到全文的：p/6647221980（Rinick天梯上线帖）、p/6660706992（挖矿，2020）、p/8855627332（四十大ID，2024，部分楼层）；被百度安全验证拦截仅链接/摘要的：p/6764482291（涵虚测号器）、p/6745973338（天梯教程二）；p/6904236734（武术大赛总贴）已删除。全文转读的站外史料：CSDN LDXX31 教程转载（2023-05，2023语境称号门槛）、洛谷 r7364oxh 基本常识（2023-12）。旧称号门槛、旧工具规则、玩笑均按历史资料保留，不当现行共识。",
+      "version_status": "historical_mixed"
+    },
+    {
+      "id": "community-csdn-tutorial",
+      "title": "《名字竞技场》贴吧教程转载（CSDN LDXX31，2023-05）",
+      "type": "community",
+      "url": "https://blog.csdn.net/LDXX31/article/details/130548771",
+      "accessed_at": "2026-11-16",
+      "read_status": "retrieved",
+      "notes": "贴吧侦察中全文转读的站外史料（整理自贴吧教程与吧友讨论）。2023-05 语境：四项评分定义、称号门槛（圣尊7500/天尊5000/武圣5000/仙尊8000或5500/武帝9000或6000/负至尊<1000）、一表/二表/三表阈值、测号原理、技能机制细节。所有数值均为2023语境，不当现行标准。",
+      "version_status": "historical_2023"
+    },
+    {
+      "id": "community-luogu-basics",
+      "title": "《关于名字竞技场你应该知道的一些基本常识》（洛谷，2023-12）",
+      "type": "community",
+      "url": "https://www.luogu.com/article/r7364oxh",
+      "accessed_at": "2026-11-16",
+      "read_status": "retrieved",
+      "notes": "贴吧侦察中全文转读的站外史料（贴吧社区成员所写）。要点：哈希决定属性技能、seed 语法、战队名所有权、@! 与 + 装备禁赛、评分与胜率解读、克制关系、2023末测号器生态（pl 测号器推荐）。需与2025-2026论坛资料核对后使用。",
+      "version_status": "historical_2023"
+    },
+    {
+      "id": "community-ladder-forum-2026",
+      "title": "民间天梯（shenjack.top:10007）与名竞论坛（shenjack.top:10008）2026-11-16 定向阅读",
+      "type": "community",
+      "url": "https://shenjack.top:10007/",
+      "accessed_at": "2026-11-16",
+      "read_status": "retrieved",
+      "notes": "本次任务对天梯与论坛的补充定向阅读（在既有 observations 之上）。已读：10007 首页/register/profile/newlive(/list,history,api)/tournament/instant/live/cards(仅占位)/static/HtmlTools 界面/tswn show+demo 页与 wasm glue；10008 论坛 264 个讨论清单、tags、讨论215（天梯主帖含更新日志与周赛草案）、讨论227（周赛规程及楼31/38规则变更）、讨论19/4（站务）、讨论401（游客）、207/150（帮测计划）、273（HtmlTools 1.8）、250（tswn-x）、306（pbb_new 0.1.2）、6（pbb4.3.1历史）、139（subproc-multithr）、218（sqROP）、51（弱评筛号器历史）、38（民间负榜与弱评公式）、229（环境评估）、200（周豹）、308（第十九届武术大赛规程）、410（名竞尖塔）、247（S6王者赛）、383（qp=强评直证）、166（T/d）、163、54、100、416（帮测贴）、274（why_ns 分析）。受限：/forum、/battle、/team-binding 需登录；/cards/ 正文仅占位文案；tianwei.txt 已404；写操作未尝试。动态排行榜、当届名单、奖励数值均按动态/单次内容记录。",
+      "version_status": "current_snapshot"
+    },
+    {
+      "id": "community-ladder-forum-2026-discussions",
+      "title": "名竞论坛关键讨论帖（shenjack.top:10008/d/*，2026-11-16）",
+      "type": "community",
+      "url": "https://shenjack.top:10008/",
+      "accessed_at": "2026-11-16",
+      "read_status": "retrieved",
+      "notes": "与 community-ladder-forum-2026 配套的逐帖证据清单（原始 HTML 存于任务工作区 notes/_raw/，共 47 个讨论帖快照）：d/19、d/38、d/51、d/54、d/6、d/58、d/77、d/85、d/100、d/106、d/136、d/139、d/150、d/153、d/156、d/163、d/166、d/176、d/185、d/200、d/202、d/207、d/213、d/215、d/218、d/227、d/229、d/231、d/234、d/235、d/247、d/250、d/255、d/273、d/274、d/306、d/308、d/311、d/379、d/383、d/401、d/402、d/403、d/410、d/416 等。重点：d/215（民间天梯试运行，2025-10-11首帖，更新日志至2026-11-06）、d/227（周赛规程；楼31锦标赛改单败、楼38奖励数值）、d/19（用户须知与运营方变更）、d/4（注册指南，论坛关闭自助注册改走天梯战队注册）、d/401（游客提问区试行）、d/207（弱队补强计划）、d/150（比赛承办激励计划）、d/273/250/306/6/139/218/51（工具发布与更新）、d/38（民间负榜与弱评公式、靶子版本250830）、d/229（环境评估）、d/200（名竞周豹五档）、d/185（二人组七榜/分身评语境）、d/308（第十九届武术大赛规程）、d/410（名竞尖塔）、d/247（S6王者赛）、d/383（qp=强评直证）、d/166（测号速度T/d）、d/416（帮测贴与靶子换代）、d/274（why_ns 分析）。赛事规则区分首帖与后续更新；奖励数值为动态。",
+      "version_status": "current_snapshot"
+    },
+    {
+      "id": "htmltools-model-scripts",
+      "title": "HtmlTools 前端脚本（res/main.js、res/model.js，shenjack.top:10007/static/HtmlTools/）",
+      "type": "community",
+      "url": "https://shenjack.top:10007/static/HtmlTools/",
+      "accessed_at": "2026-11-16",
+      "read_status": "retrieved",
+      "notes": "HtmlTools 评分模型脚本级一手阅读：res/main.js 与 res/model.js 中的模型定义（XP / SP常规 / SP人海 / SPnew-1 / SPnew-2 的加权模型与版本串）、计算路径（解析→属性→模型评分）、局限与实测不可复现的原因（旧脚本缺负分判定、依赖 target 数据）。只读静态脚本文本，未在浏览器实际运行。",
+      "version_status": "current_snapshot"
     }
   ]
 }

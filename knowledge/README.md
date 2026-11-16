@@ -2,7 +2,7 @@
 
 `overview.md` 保存入门概览；`glossary.json` 保存结构化术语；`sources.json` 保存引用来源，供 skill、agent、MCP 和后续检索服务共同使用。
 
-[官方资料](official/README.md) 包含正文快照、属性、技能、特殊名字、语言包词汇索引与抓取清单。[tswn 重写与工具](tools/tswn-core/README.md) 补充实现、评分、别名和网页接入。[维护者约定](project-context.json) 记录版本及范围，其他工具和独立史料等待后续提供。
+[官方资料](official/README.md) 包含正文快照、属性、技能、特殊名字、语言包词汇索引与抓取清单。[tswn 重写与工具](tools/tswn-core/README.md) 补充实现、评分、别名和网页接入。[维护者约定](project-context.json) 记录版本及范围。[PBB7 测号器](tools/pbb-new2/terminology.json) 与 [DataStructure4](tools/datastructure4/terminology.json) 为委托方指定工具的术语入口；[教程与社区史料](community/tutorials-and-history/terminology.json) 收录新旧教程、贴吧与论坛定项阅读产出；[QQ 群 bot](community/qq-bots/terminology.json) 收录群 bot 生态。委托方附件归档于 `data/raw/provided/`。
 
 [民间天梯与论坛](community/ladder-forum/README.md) 保存社区称呼、赛事、协作和工具关键词。观察摘要记录页面、帖子楼号和读取范围，不作为全站镜像或永久活动政策。
 
@@ -16,10 +16,11 @@
 
 - `id`：稳定英文标识；`term`：常用名称；`aliases`：别名或缩写。
 - `definition`：结合名字竞技场语境的简短解释。
+- `detailed_description`：可直接用于问答的详细中文正文；大多数实质词条必备，包含机制、数值出处、版本语境与待核实项。简单标签/纯称呼允许省略。
+- `outdated`：独立布尔标记，`true` 表示历史内容、已废弃或极少使用；与是否有来源、是否待核实分开。已确认过时：旧天梯（historical-ladder-name）、粗评（rough-evaluation）、精评（refined-evaluation）；其余条目过时与否见正文依据。
 - `category`：概念、玩法、输入规则或评分。
 - `status`：`source_supported` 表示有来源支持这项释义；`unverified` 表示尚待核实。
-- `scope`：来源语境和版本局限，不能省略为“适用于所有版本”。
-- `source_ids`：指向来源目录的 ID；`checked_at`：核查日期。
+- `source_ids`：指向来源目录的 ID；`checked_at`：核查日期。版本、年代与条件写在正文及 `context_notes`，不设词条级 `scope` 栏。
 
 有来源支持不等于当前社区已达成共识。不同年代或群体的定义冲突可新增独立词条，标注语境。新旧版本都在收录范围内。问答中保留名字、战队名和输入字符，避免改写改变角色或对战条件。
 

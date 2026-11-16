@@ -1,0 +1,222 @@
+{
+  "schema_version": 0.1,
+  "checked_at": "2026-11-16",
+  "scope": "PBB 名字评分测号器（AsunderSquall/pbb-new2，PBB7）的术语与语境补充，证据基于 commit 2408dcb78eb67dcbbc942f09b420c7998f87d44a 的 README、VERSION 与 changelog（来源 pbb7-repo）；未实际运行该工具。",
+  "terms": [
+    {
+      "id": "pbb7",
+      "term": "PBB 名字评分测号器",
+      "aliases": [
+        "PBB",
+        "PBB7",
+        "pbb-new2",
+        "名字评分测号器"
+      ],
+      "definition": "PBB 7.x 的名字评分测号器，仓库 pbb-new2：用真实名字计算属性、技能和评分，支持顺序及随机枚举、前后缀、队伍名、潜力筛选和特殊属性号收集。“PBB7”是社区对 7.x 的称呼，README 与 changelog 均未出现该字面名。",
+      "category": "tool",
+      "status": "source_supported",
+      "source_ids": [
+        "pbb7-repo",
+        "tutorial-new",
+        "tutorial-old"
+      ],
+      "checked_at": "2026-11-16",
+      "detailed_description": "「PBB 名字评分测号器」是仓库 pbb-new2（https://github.com/AsunderSquall/pbb-new2）自述的工具名。README 首段自述：“PBB 用真实名字计算属性、技能和评分，支持顺序及随机枚举、前后缀、队伍名、潜力筛选和特殊属性号收集。”\n\n版本与命名（来源：pbb-new2 仓库，读取 commit 2408dcb78eb67dcbbc942f09b420c7998f87d44a，2026-10-30；VERSION 文件内容 7.0.6）：\n- README 标题与 changelog 中均未出现“PBB7”这个字面名，也未引用其他 PBB 版本仓库或 tswn；“PBB7”是社区对 7.x 的称呼。旁证：社区论坛讨论 402（10008 论坛，作者 @AsunderSquall，2026-10-23）里出现“能被 pbb7.0.x 接受的格式文件”的写法；该帖尚未登记为来源，属旁证。\n- changelog 演进：7.0.0（2026-10-11）首次发布，八个评分族 QP、QD、CQD、CP、FP、WC、FS、PJ；7.0.1（2026-10-11~12）配置选择窗口、「自动更新 start」、编辑器自动维护 score_list；7.0.2（2026-10-13~15）评分族扩到十个（新增 PP、PD）、QP 连续二次扣分、多字符集格式（flex）、顺序任务检查点续测、Linux CLI 版 pbb_linux/；7.0.3（2026-10-16~21）线程数配置修复（随包配置改回 -1 自动）；7.0.4（2026-10-29）启动默认配置、测号配置 config/ 与应用设置 settings/ 分目录、输出统一到包根 out/；7.0.5 / 7.0.6（2026-10-30）界面小修、CLI 默认配置、「自动更新 start」改为每 0.01T 写一次、--no-auto-start。\n- GitHub Releases 页面为空（“There aren't any releases here”），没有 tag 与发布资产；发布包不走 Releases，而是两个 zip：pure（PBB-windows-x64-pure-<版本>.zip：监控器、源码、预编译引擎、默认配置、启动脚本和说明）与 environment（PBB-windows-x64-environment.zip：完整 Python 3.12、MinGW GCC 工具链及其依赖和许可说明）。\n\n必须区分的三个不同对象（本仓库 README 与 changelog 不引用后两者，也未出现 tswn）：\n1. 本仓库 pbb-new2 7.x，自述名为“PBB 名字评分测号器”。\n2. pbb_new：社区论坛讨论 306 提到的 C++ 重写、多 CPU 架构版本，GitHub GoldenFish123321/Namerena-pbb_new，release tag 0_1_2（该讨论尚未登记为来源，属社区资料旁证）。\n3. 旧 pbb 4.x / 5.x / 6.x 系（含论坛里的 pbb6 改装版等），与旧教程所述 pl 测号器、早期 pbb 测号器同属另一条谱系（详见旧教程笔记）。\n本仓库 src/ 下保留的 v0_diag_ksa/ … v5_nobranch_restrict/ 历史实验版本与 vgen/（虚拟属性生成分析工具）只属本工具内部历史，不用于正常入口编译；changelog 里的“旧配置”指本工具 7.0.2 之前的 character_set + variable_length 单字符集配置格式，仍兼容。\n\n与社区教程所称“新版 pbb”的关系（待核实）：新教程的“pbb 测号器（新版）”字段命名（single_char_length / variable_length / types / custom_values / unicode_ranges / collect_mode / output_xp / worker_threads）与本仓库的旧配置格式高度一致，可能是同源工具或同源的早期版本；但教程给出的 xp_min 推荐 4900~5000、xd_min 推荐 5600~6000 与本仓库当前发布配置（QP5400、QD6200）不同，教程未记录版本号，同源关系与版本对应关系待核实。"
+    },
+    {
+      "id": "pbb7-score-family",
+      "term": "PBB7 评分族",
+      "aliases": [
+        "score_list",
+        "评分族",
+        "rh"
+      ],
+      "definition": "PBB7 用 score_list 指定要计算与输出的评分类别，共十个：qp、qd、pp、pd、cqd、cp、fp、wc、fs、pj，其中 rh 是 fs 的别名，空列表表示全部十族。",
+      "category": "rating",
+      "status": "source_supported",
+      "source_ids": [
+        "pbb7-repo",
+        "tswn-openbox",
+        "tutorial-old"
+      ],
+      "checked_at": "2026-11-16",
+      "detailed_description": "PBB7 用 `score_list` 指定要计算并输出哪几个评分类别（评分族）。README 原文：“`score_list` 选择计算族；可用名称为 `qp,qd,pp,pd,cqd,cp,fp,wc,fs,pj`，`rh` 为 `fs` 别名。空列表表示全部十族。`score_mode: all` 按计划计算；`any` 遇到达标族后停止后续族，会改变计算和输出语义，不能作为保持语义的提速手段。”\n\n十个评分族与随包默认阈值（README「配置与编辑器」，当前发布 config.yaml 由足球配置生成）：“当前普通阈值为 QP5400、QD6200、PP8000、PD8800、CQD4000、CP4100、FP4200、WC4000、FS3900、PJ4100；潜力阈值为 CP4500、FP4600、WC4400、FS4300、PJ4500。其他初筛条件由当前评分源码决定。”\n\n要点：\n- 族集合是版本化的：7.0.0 只有八族（QP、QD、CQD、CP、FP、WC、FS、PJ），7.0.2 起扩到十族（新增 PP、PD）。旧配置或旧结果文件不带版本信息时，不要直接按十族读。\n- `rh` 只是 `fs` 的别名，不是第十一族，配置里写 rh 与写 fs 等价。\n- 图形编辑器在保存时会自动把有正阈值的族补进 `score_list`（7.0.1 起）；反过来，有正阈值却不在 `score_list` 中的手工配置会在校验阶段被拒绝。\n- 量纲是整数分数，阈值在数千量级；QP 自 7.0.2 起带连续二次扣分并截断为整数（见「QP 二次扣分」）。\n- `score_mode: any` 是短路语义：命中第一个达标族后不再计算后续族，输出与耗时都会改变，不能当成保持语义的提速手段。\n- 评分规则会影响续测：输出规则身份包含 QP 二次扣分版本，规则变更后格式任务的旧检查点会被拒绝。\n\n跨工具比较警告（重要）：tswn/Openbox 语境里的 cp、fp、wc、fs、pj 一类缩写指队友预设（settings.toml 中命名为刺评、辅评、无刺评、分身评、配件评，对应 teammates/teammate_fz.toml、teammate_bc.toml、teammate_wc.toml、teammate_pj.toml、teammate_fs.toml），语义是“被测号与基准号组队后得到的配队分”；PBB7 的 cp、fp、wc、fs、pj 是另一套评分族（普通阈值 CP4100、FP4200、WC4000、FS3900、PJ4100）。两套同名缩写的字母与含义的对应关系在不同资料里并不统一（tswn 的预设文件命名与旧教程丝评模型里 fs/pj 的用法就不一致），PBB7 的 README 又完全没有展开各族的算法与量纲，因此两套数值不可跨工具直接比大小，对应关系待核实。同理，PBB7 的 qp/qd/cqd 与 tswn 的 profile 强评强单（万分制）以及社区靶子胜率百分比（cqp/cqd，0~100，依赖靶子集）不是同一量纲，引用时必须同时注明工具、版本与靶子。"
+    },
+    {
+      "id": "pbb7-enumeration",
+      "term": "PBB7 枚举模式",
+      "aliases": [
+        "模式1",
+        "模式2",
+        "模式3",
+        "模式4",
+        "enumeration",
+        "prefix_ranges"
+      ],
+      "definition": "PBB7 生成候选名字的四种方式：顺序枚举、随机前后缀加局部顺序展开、逐位随机抽样、随机区间按序号配对；顺序模式下全局区间是唯一的总控制器。",
+      "category": "input",
+      "status": "source_supported",
+      "source_ids": [
+        "pbb7-repo"
+      ],
+      "checked_at": "2026-11-16",
+      "detailed_description": "PBB7 的候选名字生成方式由 `enumeration.mode` 在四种模式中选择。README「枚举、种子与前后缀」原文：“模式1顺序枚举 `start, end)`，各前缀分别处理范围，后缀按前缀序号循环配对。模式2随机选择前后缀并在每个任务中顺序展开局部编号。模式3逐位随机抽样，可能重复。模式4采用模式2的编码方式，前后缀按序号配对。”\n\n全局区间是总控制器（README 原文）：“`enumeration.ranges[0]`（顺序模式）：**全局区间是唯一的总控制器**。`start` 表示“总量里已经测过多少、从哪开始”，`end` 是总量坐标的上界、`-1` 表示所有前缀的总量之和。`prefix_ranges` 只是各前缀的**布局**，程序永不修改它的 start/end……resume 与「自动更新 start」都只改全局 `start`。”\n\n其他关键语义：\n- `end: -1`：changelog 7.0.2 起由 `0` 改为 `2**64-1`，即极大的无符号范围，不是一个有限任务；界面上的“已测数量 / 预计总量”就是这个全局 start 与 end（7.0.4 起使用这组 UI 名称）。\n- 分块与重复（README 原文）：“引擎以一百万为 chunk 大小。模式2/4的尾 chunk 仍处理一百万候选……局部空间小于处理量或不同 chunk 取到重叠空间时仍可能重复，模式2/4不保证全程去重。”模式3逐位随机抽样同样可能重复；所以随机模式的输出不代表覆盖了全部空间。\n- 随机性与可复现（README）：随机模式指定 `seed` 后，chunk 种子由全局种子和任务编号派生；要比较两次运行的结果，必须同时固定字符集、前后缀、范围等配置，只固定 seed 不够。\n- 命令行覆盖项：`--mode`、`--vlen`（可变单元数）、`--range-start`、`--range-end`、`--seed`。\n- 续测限制与枚举模式绑定：只有模式1支持 Resume 续测（见「PBB7 续测检查点」）。"
+    },
+    {
+      "id": "pbb7-flex",
+      "term": "PBB7 多字符集格式",
+      "aliases": [
+        "flex",
+        "多字符集格式",
+        "枚举单元",
+        "config_words_sequential.yaml"
+      ],
+      "definition": "PBB7 的多字符集名字格式：固定字符串与 {charset: 族名} 交错排列，族内枚举单元等宽；单元按 1~8 字节宽度分类，字节宽度不一定等于一个 Unicode 字符。",
+      "category": "input",
+      "status": "source_supported",
+      "source_ids": [
+        "pbb7-repo"
+      ],
+      "checked_at": "2026-11-16",
+      "detailed_description": "多字符集格式（changelog 7.0.2 引入，README 称 flex）允许一条名字模板里混排固定字符串与多个字符集。README 原文：“支持具名多字符集与格式列表：固定字符串和 `{charset: 族名}` 可交错排列，族内枚举单元等宽。旧配置继续兼容……可从 `config/config_flex.example.yaml` 开始。”\n\n枚举单元与字节宽度（README「字符类型」）：字符类型按枚举单元的字节宽度分类——1 字节（数字/小写/大写/自定义等）、2 字节（希腊/俄文/拉丁/自定义/Unicode 区间）、3 字节（基础汉字/内置汉字表/平假名/片假名/盲文/扩展汉字等）、4 字节（扩展汉字/自定义/Unicode 区间）、5~8 字节（自定义/Unicode 区间）。字节宽度是一个枚举单元的长度，不一定等于一个 Unicode 字符；足球配置采用 6 字节单元。\n\nUnicode 区间与文件字符集：`unicode_ranges` 用 `start`/`end` 数值字段，终点包含在内（UI 中形如 `U+4E00-U+9FFF`）；文件字符集族支持 `file` + `file_format`，`lines`（每行一个单元）或 `text`（逐字符导入）。完整名字加前后缀须少于 512 字节且不含 NUL。\n\n随包词库与预设（README）：随包另提供 `config/config_words_sequential.yaml` 和 `charsets/` 词库，顺序枚举“形容词的名词副词地动词”，例如“重要的经济必须地发展”。所有随附测号配置均启用 PP8000 与 PD8800。词库规模（changelog 7.0.2）：形容词 1059、副词 504、名词 6156、动词 5837 行；动词最先变化。\n\n旧格式兼容：“旧配置”“旧单字符集配置”指本工具自己 7.0.2 之前的 `character_set + variable_length` 配置格式，现仍兼容；旧格式的续测与新格式不同（见「PBB7 续测检查点」）。"
+    },
+    {
+      "id": "pbb7-resume",
+      "term": "PBB7 续测检查点",
+      "aliases": [
+        ".resume",
+        "resume",
+        "自动更新 start",
+        "--no-auto-start"
+      ],
+      "definition": "PBB7 的断点续测机制：多字符集格式任务用与结果文件同名的 .resume 检查点记录连续完成位置，仅顺序（模式1）支持；旧配置按结果文件最后一条命中反推位置，可能落后。",
+      "category": "tool",
+      "status": "source_supported",
+      "source_ids": [
+        "pbb7-repo"
+      ],
+      "checked_at": "2026-11-16",
+      "detailed_description": "README 原文：“**Resume 续测仅支持模式1**。多字符集格式任务使用结果文件对应的 `.resume` 连续完成检查点；旧单字符集配置仍按最后一条命中反推位置——命中稀少或结果文件还是空的时候，续测会比实际进度**落后**（甚至从头开始），这是已知限制……继续原任务需要选择原配置和原结果文件，不能用随机模式或自动生成的新文件名代替。评分规则版本改变后，格式任务的旧检查点会被拒绝。”\n\n检查点校验内容（changelog 7.0.2）：字符集顺序、格式、前后缀、队伍、评分与收集配置；输出规则身份包含 QP 二次扣分版本。检查点文件与结果文件同名，随结果文件一起落在包根 `out/`（7.0.4 起结果文件、blue.txt、检查点与线程控制文件统一在 out/）。\n\n「自动更新 start」默认开启（README 原文）：“测号过程中每处理 0.01T（10^10 个候选）就把进度写回配置的全局 `start`，中途断电/崩溃最多损失 0.01T；写盘由引擎自己的进度行触发，不轮询、不占线程。`--no-auto-start` 可以关掉（关掉后跑完也不回写）。”\n\n与区间语义一致：resume 与「自动更新 start」都只改全局 `start`，程序永不修改各前缀 `prefix_ranges` 的 start/end；因此顺序模式续测是精确续接，而随机模式（模式2/3/4）本来就不保证去重，只能靠模式1的连续编号来定位。命令行覆盖项含 `--resume`、`--rebuild`、`--no-auto-start`。"
+    },
+    {
+      "id": "pbb7-qp-correction",
+      "term": "QP 二次扣分",
+      "aliases": [
+        "QP连续二次扣分",
+        "QP 修正"
+      ],
+      "definition": "PBB7 自 7.0.2 起对 QP 施加的连续二次扣分修正：按原 QP 截断后减去扣分并再截断为整数，扣分负值夹到 0；旧的 QP−PP 差值过滤与幻影强度硬排除均已废除。",
+      "category": "rating",
+      "status": "source_supported",
+      "source_ids": [
+        "pbb7-repo"
+      ],
+      "checked_at": "2026-11-16",
+      "detailed_description": "自 7.0.2 起，PBB7 的 QP 分数带一道“连续二次扣分”修正。README「UI 运行与输出」原文：“QP使用连续二次扣分：`max(0, u*(82.48156669219784-0.24932235019037452*s+0.0001942206736111687*s*s))`，其中 `u` 是SP1模型有效幻术熟练度，`s` 是SP1幻影属性加权强度。先按旧口径截断原QP，再减扣分并截断为整数；负扣分夹到0。没有有效熟练度60或左零点的硬排除，也不使用QP−PP差值过滤。普通/UI Top/输出阈值使用修正QP。”\n\n要点与误区：\n- 计算顺序：原 QP 先按旧口径截断为整数 → 减去扣分 → 再截断为整数；扣分为负时夹到 0。两个输入量都来自 SP1 模型：u 是有效幻术熟练度，s 是幻影属性加权强度；按公式，u 为 0 时扣分为 0。\n- 已废除的旧口径（changelog 7.0.2 明确“不再使用 `QP−PP` 差值或幻影强度硬排除整名”）：QP−PP 差值过滤、幻影强度硬排除、“有效熟练度 60”硬排除三者都已取消。旧教程或旧版本说明里出现这些条件时，须按版本区分，不能套到 7.0.2 之后的结果上。\n- 影响面：普通筛选、UI Top 5 排行榜与输出阈值都使用修正后的 QP；输出规则身份包含 QP 二次扣分版本，所以评分规则变更后格式任务的旧 `.resume` 检查点会被拒绝。"
+    },
+    {
+      "id": "pbb7-output",
+      "term": "PBB7 输出格式",
+      "aliases": [
+        "output_xp",
+        "blue.txt",
+        "名字@队伍名",
+        "特殊属性号"
+      ],
+      "definition": "PBB7 的结果写法：普通结果为 名字@队伍名 加可选分数列，分数列按 qp qd pp pd cqd cp fp wc fs pj 固定顺序取被计算族；特殊属性号另写入 out/blue.txt。",
+      "category": "tool",
+      "status": "source_supported",
+      "source_ids": [
+        "pbb7-repo"
+      ],
+      "checked_at": "2026-11-16",
+      "detailed_description": "README 原文：“普通结果为 `名字@队伍名`，后接可选分数。……`output_xp: 0` 只写名字与队伍，1附加实际被计算评分族的整数分数；列按 `qp qd pp pd cqd cp fp wc fs pj` 的固定顺序取被计算的子集，并非固定只有 XP/XD 两列。”\n\n要点：\n- 分数列的个数与顺序由 `score_list` 决定，不是固定两列；“只有 XP/XD 两列”是旧版本留下的印象，属于常见误区。\n- 特殊属性号走另一条线：`collect_mode: 0` 关闭特殊号收集，1 使用内置规则，2 使用 `special_thresholds`；README 指出“普通结果与特殊属性号的收集规则不同”，特殊号追加到 `out/blue.txt`。\n- 输出位置：7.0.4 起所有结果文件、`blue.txt`、续测检查点（`.resume`）与线程控制文件统一落在包根 `out/`。\n- 文件名与去向（CLI）：`-` 表示时间戳、`+` 表示随机名，其他为自定义名（自动加 `out/` 前缀）；`--output-dest` 可选 `file`（默认）、`stdout`、`both`。\n- 名称限制：名称不能包含逗号、换行、回车、制表符或 NUL——引擎参数与结果文件按这些字符分隔且不转义，校验阶段会报错。\n- 日志与速度输出（社区论坛讨论 402 中由作者 @AsunderSquall 贴出的 PBB 7.x TOML 配置示例；该帖尚未登记为来源，属旁证）：`log_output` 0=文件（out/task_log.txt）1=屏幕，`speed_output` 0=文件（out/speed_log.txt）1=屏幕。"
+    },
+    {
+      "id": "pbb7-autotune",
+      "term": "PBB7 自动测速调优",
+      "aliases": [
+        "autotune",
+        "tune_full",
+        "tune_quick",
+        "build_config.json"
+      ],
+      "definition": "PBB7 随包的本机编译优化自动测试：用 GCC 对过滤路径、指令集、KSA、编码复制、属性比较、编译选项等组合做局部搜索，结果写入 settings/build_config.json，且与本机环境绑定。",
+      "category": "tool",
+      "status": "source_supported",
+      "source_ids": [
+        "pbb7-repo"
+      ],
+      "checked_at": "2026-11-16",
+      "detailed_description": "PBB7 随包提供本机编译优化的自动测试（autotune）。README 说明：用 GCC 尝试过滤路径、指令集、KSA、编码复制、属性比较、编译选项等组合的**局部搜索**；细节在 `source/AUTOTUNE.md`。\n\n输入与时长（README「首次使用」）：输入以前完整测号的速度，单位 **T/day**，例如 `6.1`；期望测试时长建议 20 分钟；初始按输入吞吐量的 90% 估算，取整到一百万倍数。\n\n结果落地：写入 `settings/build_config.json`（初始 `tested: false`、`status: \"none\"`），其中选择绑定机器、编译器路径和源码哈希——也就是说调优结果与本机环境绑定，换机器或换编译器需要重跑。发布包根目录的批处理入口为 `tune_full.bat` / `tune_quick.bat`（自动测速）、`rebuild.bat`（重建引擎）、`environment.bat`；7.0.4 起测号配置在 `config/`、应用设置在 `settings/`。\n\n速度口径提醒（README 原文）：“不要把降低阈值、少算评分族、改成短路评分所得的速度当成同一生产任务的优化收益。”即 autotune 给出的 T/day 只有在与同一生产任务（同样的字符集、阈值、评分族、枚举模式）对比时才有意义；`score_mode: any` 短路或少算评分族带来的“提速”不计入同一口径。"
+    },
+    {
+      "id": "pbb7-quantity",
+      "term": "PBB7 测号量单位",
+      "aliases": [
+        "T/day",
+        "0.01T",
+        "chunk",
+        "count:X.XXXXXXT"
+      ],
+      "definition": "PBB7 内部的数量与速度单位：1T = 10^12 个候选，chunk 是一百万候选的引擎处理单位，0.01T（10^10）是进度写盘粒度，速度以 T/day 计。",
+      "category": "community",
+      "status": "source_supported",
+      "source_ids": [
+        "pbb7-repo",
+        "community-forum-help-testing",
+        "tutorial-old"
+      ],
+      "checked_at": "2026-11-16",
+      "detailed_description": "PBB7 内部的数量与速度单位（工具口径，来自 pbb-new2 仓库 README 与 changelog）：\n- 1T = 10^12 个候选。\n- chunk：引擎以一百万为 chunk 大小，即引擎的处理单位是 10^6 个候选。\n- 0.01T：即 10^10 个候选，是「自动更新 start」的写盘粒度——每处理这么多候选就把进度写回配置的全局 start，断电或崩溃最多损失 0.01T。\n- count:X.XXXXXXT：引擎的进度行格式，每 100 个 chunk（≈10^8 候选）输出一次（changelog 7.0.6）。\n- T/day：每天能测多少 T，是 autotune 的输入速度单位（README「首次使用」示例 `6.1`）。\n\n这些量只描述“测了多少”，不是号的强度；号的强度看 QP/cqp/cqd 等评分，两者不可混用。\n\n与社区语境的区分（重要）：10008 论坛讨论 416 楼#1（2026-11-14，社区资料）里用“T”表达帮测额度与测号量，例如“总共10T”“每超出 0.5 的 cqp 或 0.5 的 cqd，在总量上增加 10T”；这类 T 属于工作量与报酬的约定，与本工具的候选计数口径未必一致。旧教程另提过测号量单位还有 E（亿，10^8）——量级与本工具 count:X.XXXXXXT 的输出间隔（≈10^8 候选）相近，但不是同一约定。引用具体数字时必须说明来自哪个工具、哪份约定与哪个时间点。"
+    },
+    {
+      "id": "pbb7-engine",
+      "term": "PBB7 引擎结构",
+      "aliases": [
+        "engine.hpp",
+        "scoring_1124.hpp",
+        "name.hpp",
+        "sp_models_extra.hpp",
+        "pbb_core",
+        "PBB_UI_ENGINE",
+        "UI 引擎",
+        "普通引擎"
+      ],
+      "definition": "PBB7 的实现分层：C++17 引擎子进程负责真实测号（engine.hpp / scoring_1124.hpp / name.hpp / sp_models_extra.hpp），Python 侧 pbb_core 只提供字符集接口；普通引擎与 UI 引擎按 PBB_UI_ENGINE 分别编译，只有 UI 引擎维护 Top 5 排行榜。",
+      "category": "implementation",
+      "status": "source_supported",
+      "source_ids": [
+        "pbb7-repo"
+      ],
+      "checked_at": "2026-11-16",
+      "detailed_description": "README「源码结构与计算路径」：真实测号由 C++17 引擎子进程执行，Python 侧 `pbb_core`（pyd）只提供字符集接口。引擎源码分几层：`engine.hpp` / `scoring_1124.hpp`（评分特征、模型、评分计划及门控）、`name.hpp`（名字状态、KSA、属性及技能计算）、`sp_models_extra.hpp`（附加评分模型系数）。\n\n两种引擎：普通引擎与 UI 引擎通过 `PBB_UI_ENGINE` 分别编译，**只有 UI 引擎维护 Top 5 排行榜**；发布包的图形监控器 PBBMonitor 使用 `_internal/build/` 里的 UI 引擎。也就是说排行榜是界面侧能力，CLI 批量跑没有 Top 5 列表。\n\n依赖与运行（README「源码运行与命令行」原文）：\n```\n# 在源码目录执行；发布包可使用 ../runtime/python/python.exe\npython -m pip install pybind11 PyYAML\npython main.py -c config_football.yaml --range-end 1000000\npython ui.py\n```\n依赖 Python、pybind11、PyYAML 与 C++17 编译器；TOML 用 Python 3.11+ 标准库（更早需 `tomli`）；随包环境为 Python 3.12。\n\n其他源码树：`src/` 下保留 `v0_diag_ksa/ … v5_nobranch_restrict/` 历史实验版本与 `vgen/`（虚拟属性生成分析工具），**不用于正常入口编译**；`pbb_linux/` 是独立的 Linux CLI 源码树（无 UI，PR #1 `add-pbb-linux` 合入，GCC + Python 3.10+）。工作线程数由 `threads.worker_threads` 控制，`-1` 表示自动检测逻辑 CPU 数（上限 256）。\n\n待核实：KSA 出现在 `name.hpp` 的计算环节（“名字状态、KSA、属性及技能计算”），autotune 的候选组合里也含 KSA，但 README 未展开解释其含义与公式，不能据名称推断算法。"
+    }
+  ],
+  "enrichments": [
+    {
+      "context_id": "pbb7-testing-workflow",
+      "term_id": "name-testing",
+      "aliases_add": [],
+      "source_ids": [
+        "pbb7-repo"
+      ],
+      "scope": "pbb-new2 仓库（commit 2408dcb78eb67dcbbc942f09b420c7998f87d44a，VERSION 7.0.6）的工具语境；与论坛/贴吧的帮测工作量语境不是同一套口径。",
+      "explanation": "PBB7 是当前社区语境里现行的测号器之一，在“测号”工作流中承担“枚举候选名字→按评分族筛选→输出候选号”这一段。它的具体形态是：先用枚举模式（模式1 顺序 / 模式2、3、4 随机）配合字符集与前后缀生成候选名字；再用评分族（qp、qd、pp、pd、cqd、cp、fp、wc、fs、pj，rh 是 fs 别名）与阈值筛选，score_list 决定算哪几族、score_mode 决定是否短路；最后按“名字@队伍名”（可选附加整数分数列）写结果文件到包根 out/，特殊属性号另写入 out/blue.txt。效率维度上，工具内部用 1T=10^12 候选、chunk=一百万、T/day 计量工作量，其中 0.01T（10^10）是进度写盘粒度。引用这一段时要保留三点边界：一是本仓库 README 与 changelog 未引用其他 PBB 版本仓库与 tswn，PBB7 不等于论坛里的 pbb_new（旧 pbb 也与之不是同一对象）；二是评分族与社区/其他工具里的 cp、fp、wc、fs、pj、cqp、cqd 等同名缩写不是同一计算，跨工具数值不可直接比较；三是社区论坛里用“T”表达帮测额度与测号量（如讨论 416 的“总共10T”），那属于工作量约定，与本工具的候选计数口径未必一致。",
+      "checked_at": "2026-11-16"
+    },
+    {
+      "context_id": "pbb7-cqp-name-collision",
+      "term_id": "tswn-cqp",
+      "aliases_add": [],
+      "source_ids": [
+        "pbb7-repo",
+        "tswn-openbox",
+        "community-forum-help-testing"
+      ],
+      "scope": "并列比较 tswn/Openbox 的 cqd/cqp 语境与 pbb-new2 7.x 评分族语境；两者关系待核实。",
+      "explanation": "“cqp / 超强评”在 tswn/Openbox 与社区论坛语境里是对具体靶子集计算出的组队胜率百分比（可带权，依赖靶子集版本，靶子换代后分数不可直接比较）；“cqd / 超强单”是同一套工具的单人对应项。PBB7 侧的评分族清单里有 cqd（随包默认阈值 CQD4000），但并没有 cqp 这一族，且它的 README 未说明各族如何计算、量纲如何定义，只有阈值与“整数分数”这一层描述。因此：社区/Openbox 的 cqp（胜率百分比）与 PBB7 的 cqd（整数分数族）虽然共用字母，语义与数值体系不同，不能互相换算或直接比较；要引用 PBB7 的 cqd 时必须注明工具与版本，要引用 cqp 时必须同时注明靶子集与靶子版本。两套体系是否共享底层模型（pbb-new2 的 README 未引用 tswn，也未引用社区靶子），本轮没有资料可核实，标为待核实。",
+      "checked_at": "2026-11-16"
+    }
+  ]
+}

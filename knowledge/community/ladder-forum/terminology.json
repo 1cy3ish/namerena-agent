@@ -14,7 +14,6 @@
       "definition": "本项目当前社区语境中，不加限定词的天梯默认指 shenjack.top:10007 的民间天梯，是玩家运营的非官方站点。",
       "category": "community",
       "status": "source_supported",
-      "scope": "10007民间天梯及10008论坛的页面/帖子语境；规则和活动状态按来源时间核对。",
       "source_ids": [
         "maintainer-community-naming",
         "community-ladder-home"
@@ -29,7 +28,6 @@
       "definition": "为区别当前民间天梯而加限定词的称呼，指游戏官方体系中的天梯；不能把民间站的赛事、账号和分数规则套用到它。",
       "category": "community",
       "status": "source_supported",
-      "scope": "10007民间天梯及10008论坛的页面/帖子语境；规则和活动状态按来源时间核对。",
       "source_ids": [
         "maintainer-community-naming",
         "official-ladder"
@@ -46,7 +44,6 @@
       "definition": "带有历史指向的称呼。维护者说明当前交流中官方天梯常带“官方/旧”等限定；但215号帖的“老天梯”链接明确指已停维护的旧民间站，需要看年代和链接。",
       "category": "community",
       "status": "source_supported",
-      "scope": "10007民间天梯及10008论坛的页面/帖子语境；规则和活动状态按来源时间核对。",
       "source_ids": [
         "maintainer-community-naming",
         "community-forum-ladder"
@@ -65,7 +62,6 @@
       "definition": "shenjack.top:10008 的玩家交流社区，与10007天梯配套；包含玩法讨论、比赛、帮测、战队基地和创作等主题。",
       "category": "community",
       "status": "source_supported",
-      "scope": "10007民间天梯及10008论坛的页面/帖子语境；规则和活动状态按来源时间核对。",
       "source_ids": [
         "maintainer-community-naming",
         "community-forum-home",
@@ -83,7 +79,6 @@
       "definition": "民间天梯站点以战队名注册并管理成员的账户或组织语境，不等于游戏里用空行划分的一局队伍，也不能把站点账号操作当作名字输入规则。",
       "category": "community",
       "status": "source_supported",
-      "scope": "10007民间天梯及10008论坛的页面/帖子语境；规则和活动状态按来源时间核对。",
       "source_ids": [
         "community-ladder-register",
         "community-ladder-profile"
@@ -100,7 +95,6 @@
       "definition": "天梯战队的编号成员项，可填单号或多人组合，页面分别显示分数、排名和状态；不是必然对应一个自然人。",
       "category": "community",
       "status": "source_supported",
-      "scope": "10007民间天梯及10008论坛的页面/帖子语境；规则和活动状态按来源时间核对。",
       "source_ids": [
         "community-ladder-profile",
         "community-ladder-home"
@@ -126,7 +120,6 @@
       "definition": "民间天梯的成员编号。所读页面中1A/1B各为单号、2A/2B各为双人组合、3A为三人组合；周赛取1A和2A。A/B本身不证明哪一个必然更强。",
       "category": "community",
       "status": "source_supported",
-      "scope": "10007民间天梯及10008论坛的页面/帖子语境；规则和活动状态按来源时间核对。",
       "source_ids": [
         "community-ladder-home",
         "community-ladder-profile",
@@ -144,7 +137,6 @@
       "definition": "民间天梯页面用于成员排名的分数字段。它与注册时要求的QP验证不是同一字段，本轮没有核查其计算或更新算法。",
       "category": "rating",
       "status": "source_supported",
-      "scope": "10007民间天梯及10008论坛的页面/帖子语境；规则和活动状态按来源时间核对。",
       "source_ids": [
         "community-ladder-home",
         "community-ladder-profile",
@@ -162,7 +154,6 @@
       "definition": "天梯首页排名当前只显示的成员状态；不能仅凭此状态断言已经激活周赛。具体活跃判定与失活时长尚未核查。",
       "category": "community",
       "status": "source_supported",
-      "scope": "10007民间天梯及10008论坛的页面/帖子语境；规则和活动状态按来源时间核对。",
       "source_ids": [
         "community-ladder-home",
         "community-ladder-profile"
@@ -180,7 +171,6 @@
       "definition": "让天梯1A/2A的号进入周赛自动提取名单的状态。周赛帖记载换号/上号会自动激活、最长保持30天；具体有效期及当前赛季要求需核对。",
       "category": "competition",
       "status": "source_supported",
-      "scope": "10007民间天梯及10008论坛的页面/帖子语境；规则和活动状态按来源时间核对。",
       "source_ids": [
         "community-forum-weekly",
         "community-ladder-profile"
@@ -198,7 +188,6 @@
       "definition": "周赛名单确定前的限制时段；周赛帖记载此时不能换号或取消激活。该首帖的部分日期互相矛盾，不能据此直接给出当前开赛时间。",
       "category": "competition",
       "status": "source_supported",
-      "scope": "10007民间天梯及10008论坛的页面/帖子语境；规则和活动状态按来源时间核对。",
       "source_ids": [
         "community-forum-weekly",
         "community-ladder-weekly"
@@ -216,7 +205,6 @@
       "definition": "民间天梯的周期性单双人比赛。所读规则以激活的1A/2A自动取号，描述bo5单败、按排名排种子和前四取得锦标赛资格；这些是该赛事规则。",
       "category": "competition",
       "status": "source_supported",
-      "scope": "10007民间天梯及10008论坛的页面/帖子语境；规则和活动状态按来源时间核对。",
       "source_ids": [
         "community-forum-weekly",
         "community-ladder-weekly"
@@ -231,7 +219,6 @@
       "definition": "民间天梯由周赛资格汇集选手的阶段性赛事；所读首帖描述8周取得32名额、第9周举行、bo7双败，当前安排应再查当届赛程。",
       "category": "competition",
       "status": "source_supported",
-      "scope": "10007民间天梯及10008论坛的页面/帖子语境；规则和活动状态按来源时间核对。",
       "source_ids": [
         "community-forum-weekly",
         "community-ladder-tournament"
@@ -249,7 +236,6 @@
       "definition": "天梯赛事的组织和编号语境；Newlive以S编号及week周次展示进度，周赛帖还将赛季/周次写入赛事seed。不是引擎版本号。",
       "category": "competition",
       "status": "source_supported",
-      "scope": "10007民间天梯及10008论坛的页面/帖子语境；规则和活动状态按来源时间核对。",
       "source_ids": [
         "community-ladder-weekly",
         "community-forum-weekly"
@@ -267,7 +253,6 @@
       "definition": "显示赛事匹配和轮次的表。周赛帖的种子排位指按天梯排名安排对阵，和改变战斗随机过程的seed输入含义不同。",
       "category": "competition",
       "status": "source_supported",
-      "scope": "10007民间天梯及10008论坛的页面/帖子语境；规则和活动状态按来源时间核对。",
       "source_ids": [
         "community-ladder-bracket",
         "community-forum-weekly"
@@ -289,7 +274,6 @@
       "definition": "多局系列赛的常用写法；bo5通常指最多5局先胜3局、bo7最多7局先胜4局。周赛帖分别用于加赛、周赛和锦标赛，不指测号量或评分。",
       "category": "competition",
       "status": "source_supported",
-      "scope": "10007民间天梯及10008论坛的页面/帖子语境；规则和活动状态按来源时间核对。",
       "source_ids": [
         "community-forum-weekly"
       ],
@@ -303,7 +287,6 @@
       "definition": "以输掉一个系列赛即淘汰为基本含义的赛制；所读周赛帖称周赛采用bo5单败。",
       "category": "competition",
       "status": "source_supported",
-      "scope": "10007民间天梯及10008论坛的页面/帖子语境；规则和活动状态按来源时间核对。",
       "source_ids": [
         "community-forum-weekly"
       ],
@@ -319,7 +302,6 @@
       "definition": "包含败者组的淘汰赛制，通常给予一次系列赛失利后的继续参赛机会；所读锦标赛帖称bo7双败，决赛等细节需以当届赛制为准。",
       "category": "competition",
       "status": "source_supported",
-      "scope": "10007民间天梯及10008论坛的页面/帖子语境；规则和活动状态按来源时间核对。",
       "source_ids": [
         "community-forum-weekly",
         "community-ladder-tournament"
@@ -334,7 +316,6 @@
       "definition": "由其他玩家代为执行测号、提供测号工作量的社区协助；也可用作比赛奖励、悬赏或扶持。不是承诺直接交付特定强度的号。",
       "category": "community",
       "status": "source_supported",
-      "scope": "10007民间天梯及10008论坛的页面/帖子语境；规则和活动状态按来源时间核对。",
       "source_ids": [
         "community-forum-help-testing",
         "community-forum-event-support",
@@ -350,7 +331,6 @@
       "definition": "用于描述或约定名字搜索工作量的量，与测出的号的QP/cqp等实力评分不同。所读活动以T表达数量，但未统一核查不同工具的计数口径。",
       "category": "community",
       "status": "source_supported",
-      "scope": "10007民间天梯及10008论坛的页面/帖子语境；规则和活动状态按来源时间核对。",
       "source_ids": [
         "community-forum-team-support",
         "community-forum-event-support",
@@ -370,7 +350,6 @@
       "definition": "所读帖子中测号量和帮测额度的计量写法。本轮只确认这种用法，尚未核对1T的精确换算，以及按候选、迭代还是其他口径计数。",
       "category": "community",
       "status": "source_supported",
-      "scope": "10007民间天梯及10008论坛的页面/帖子语境；规则和活动状态按来源时间核对。",
       "source_ids": [
         "community-forum-ladder",
         "community-forum-team-support",
@@ -388,7 +367,6 @@
       "definition": "比赛承办激励帖用于表达给战队的测号工作量补偿；具体字符集、搜索模式及执行条件按帮测约定，不是天梯分数补偿。",
       "category": "community",
       "status": "source_supported",
-      "scope": "10007民间天梯及10008论坛的页面/帖子语境；规则和活动状态按来源时间核对。",
       "source_ids": [
         "community-forum-event-support",
         "community-forum-help-testing"
@@ -407,7 +385,6 @@
       "definition": "论坛中以战队为中心集中发布和交流的主题用法，首页有多个同类标题；不是Openbox的base数据文件，也不自动表示一个独立网站。",
       "category": "community",
       "status": "source_supported",
-      "scope": "10007民间天梯及10008论坛的页面/帖子语境；规则和活动状态按来源时间核对。",
       "source_ids": [
         "community-forum-base",
         "community-forum-home",
@@ -423,7 +400,6 @@
       "definition": "论坛的公开分区标签，用户须知指引一般讨论发帖选择此标签；不是一项游戏玩法。",
       "category": "forum-tag",
       "status": "source_supported",
-      "scope": "10007民间天梯及10008论坛的页面/帖子语境；规则和活动状态按来源时间核对。",
       "source_ids": [
         "community-forum-tags",
         "community-forum-notice"
@@ -438,7 +414,6 @@
       "definition": "论坛公开分区标签名称，对应站点事务语境；具体发帖权限和管理规则未在本轮核查。",
       "category": "forum-tag",
       "status": "source_supported",
-      "scope": "10007民间天梯及10008论坛的页面/帖子语境；规则和活动状态按来源时间核对。",
       "source_ids": [
         "community-forum-tags"
       ],
@@ -452,7 +427,6 @@
       "definition": "论坛公开分区标签之一，用于定位比赛主题；比赛规则应继续读取具体帖子。",
       "category": "forum-tag",
       "status": "source_supported",
-      "scope": "10007民间天梯及10008论坛的页面/帖子语境；规则和活动状态按来源时间核对。",
       "source_ids": [
         "community-forum-tags"
       ],
@@ -466,7 +440,6 @@
       "definition": "论坛公开分区标签名称；不能据此认为其中每条发言都是游戏官方说明或已实测结论。",
       "category": "forum-tag",
       "status": "source_supported",
-      "scope": "10007民间天梯及10008论坛的页面/帖子语境；规则和活动状态按来源时间核对。",
       "source_ids": [
         "community-forum-tags",
         "community-forum-notice"
@@ -481,7 +454,6 @@
       "definition": "论坛公开分区标签的原名，本轮仅确认名称，不由字面推导管理处罚、账号或实力等级。",
       "category": "forum-tag",
       "status": "source_supported",
-      "scope": "10007民间天梯及10008论坛的页面/帖子语境；规则和活动状态按来源时间核对。",
       "source_ids": [
         "community-forum-tags"
       ],
@@ -495,7 +467,6 @@
       "definition": "论坛用于定位基地类主题的公开分区标签，与某一战队的具体基地帖分开理解。",
       "category": "forum-tag",
       "status": "source_supported",
-      "scope": "10007民间天梯及10008论坛的页面/帖子语境；规则和活动状态按来源时间核对。",
       "source_ids": [
         "community-forum-tags",
         "community-forum-home"
@@ -512,7 +483,6 @@
       "definition": "论坛的试行提问主题，首帖说明此入口允许游客发言并设字数、频率和会话期限；不表示整个论坛都可匿名发帖。",
       "category": "community",
       "status": "source_supported",
-      "scope": "10007民间天梯及10008论坛的页面/帖子语境；规则和活动状态按来源时间核对。",
       "source_ids": [
         "community-forum-guest"
       ],
@@ -526,7 +496,6 @@
       "definition": "论坛接受创作投稿的主题；首帖称优质内容可进入QQ群语录。这里只确认主题用途。",
       "category": "community",
       "status": "source_supported",
-      "scope": "10007民间天梯及10008论坛的页面/帖子语境；规则和活动状态按来源时间核对。",
       "source_ids": [
         "community-forum-creative"
       ],
@@ -540,7 +509,6 @@
       "definition": "论坛的一项以帮测鼓励承办比赛的计划，帖子涉及武术大赛、娱乐赛、奖励报销和补偿；是否继续执行及额度需向活动方核对。",
       "category": "community",
       "status": "source_supported",
-      "scope": "10007民间天梯及10008论坛的页面/帖子语境；规则和活动状态按来源时间核对。",
       "source_ids": [
         "community-forum-event-support"
       ],
@@ -554,7 +522,6 @@
       "definition": "论坛按队伍测号量等条件提供帮测的扶持活动；不等同于天梯注册政策，也不是自动享有的固定福利。",
       "category": "community",
       "status": "source_supported",
-      "scope": "10007民间天梯及10008论坛的页面/帖子语境；规则和活动状态按来源时间核对。",
       "source_ids": [
         "community-forum-team-support"
       ],
@@ -571,7 +538,6 @@
       "definition": "天梯工具导航中的网页工具集，界面包含去皮、成队、ID属性转换、评分模型和组队加成转换；本轮只读取界面，没有运行或审核公式。",
       "category": "tool",
       "status": "source_supported",
-      "scope": "10007民间天梯及10008论坛的页面/帖子语境；规则和活动状态按来源时间核对。",
       "source_ids": [
         "community-htmltools",
         "community-ladder-home"
@@ -586,7 +552,6 @@
       "definition": "在HtmlTools中指去掉测号器输出附带的评分字段，界面支持头部/尾部及单/双评分等形式；不是改变号本身的技能或强度。",
       "category": "tool",
       "status": "source_supported",
-      "scope": "10007民间天梯及10008论坛的页面/帖子语境；规则和活动状态按来源时间核对。",
       "source_ids": [
         "community-htmltools"
       ],
@@ -600,7 +565,6 @@
       "definition": "HtmlTools中将A、B两组输入生成A+B组队形式的功能名；页面文字未证明它会自动做胜率优化或等同Openbox pair评分。",
       "category": "tool",
       "status": "source_supported",
-      "scope": "10007民间天梯及10008论坛的页面/帖子语境；规则和活动状态按来源时间核对。",
       "source_ids": [
         "community-htmltools"
       ],
@@ -614,7 +578,6 @@
       "definition": "HtmlTools转换栏的功能名，可选单行/双行格式及幻影、使魔、丧尸标签；仅确认界面入口，不补造转换公式。",
       "category": "tool",
       "status": "source_supported",
-      "scope": "10007民间天梯及10008论坛的页面/帖子语境；规则和活动状态按来源时间核对。",
       "source_ids": [
         "community-htmltools"
       ],
@@ -634,7 +597,6 @@
       "definition": "HtmlTools评分栏可选择的模型名称；未据此确认缩写全称、计算公式或与其他工具同名评分的等价关系。",
       "category": "rating",
       "status": "source_supported",
-      "scope": "10007民间天梯及10008论坛的页面/帖子语境；规则和活动状态按来源时间核对。",
       "source_ids": [
         "community-htmltools"
       ],
@@ -650,7 +612,6 @@
       "definition": "HtmlTools加成栏的功能名，提供旧DIY/新DIY选项；不由这两个标签推定与tswn所有DIY格式完全兼容。",
       "category": "tool",
       "status": "source_supported",
-      "scope": "10007民间天梯及10008论坛的页面/帖子语境；规则和活动状态按来源时间核对。",
       "source_ids": [
         "community-htmltools"
       ],
@@ -666,7 +627,6 @@
       "definition": "天梯新战队注册页面的名字强评验证字段。读取时写明qp6000+；这是当前页面的准入提示，不等于榜单分数或永久阈值。",
       "category": "community",
       "status": "source_supported",
-      "scope": "10007民间天梯及10008论坛的页面/帖子语境；规则和活动状态按来源时间核对。",
       "source_ids": [
         "community-ladder-register"
       ],
@@ -680,7 +640,6 @@
       "definition": "天梯首页公告使用的榜类称呼，提示相关战队可联系运营者解除QP限制。本轮未核查负榜排序、参赛或成员配置规则。",
       "category": "community",
       "status": "source_supported",
-      "scope": "10007民间天梯及10008论坛的页面/帖子语境；规则和活动状态按来源时间核对。",
       "source_ids": [
         "community-ladder-home"
       ],
@@ -696,7 +655,6 @@
       "definition": "民间天梯当前周赛入口的页面名称，位于/newlive/，提供名单、对阵表及历史等导航；不把旧帖/live链接当作唯一现行入口。",
       "category": "tool",
       "status": "source_supported",
-      "scope": "10007民间天梯及10008论坛的页面/帖子语境；规则和活动状态按来源时间核对。",
       "source_ids": [
         "community-ladder-weekly",
         "community-forum-weekly"
@@ -711,7 +669,6 @@
       "definition": "民间天梯小游戏导航中的入口/instant/。天梯帖更新还提到观战、历史、房间和模式；本轮没有运行这些功能。",
       "category": "community",
       "status": "source_supported",
-      "scope": "10007民间天梯及10008论坛的页面/帖子语境；规则和活动状态按来源时间核对。",
       "source_ids": [
         "community-ladder-home",
         "community-forum-ladder"
@@ -726,7 +683,6 @@
       "definition": "民间天梯导航和论坛介绍的小游戏，链接/cards/，介绍涉及卡牌、属性、加成和爬塔；具体玩法与文案中的角色未在本轮核验。",
       "category": "community",
       "status": "source_supported",
-      "scope": "10007民间天梯及10008论坛的页面/帖子语境；规则和活动状态按来源时间核对。",
       "source_ids": [
         "community-ladder-home",
         "community-forum-spire"
@@ -741,7 +697,6 @@
       "definition": "更新测号或配队评估使用的靶子集合的语境；帮测帖专门说明换代时奖励是否失效。跨靶子集比较cqp/cqd时应保留工具和靶子上下文。",
       "category": "rating",
       "status": "source_supported",
-      "scope": "10007民间天梯及10008论坛的页面/帖子语境；规则和活动状态按来源时间核对。",
       "source_ids": [
         "community-forum-help-testing",
         "tswn-settings"
@@ -756,7 +711,6 @@
       "definition": "天梯试运行帖提到的号的称号用语，与测号量和特殊处理需求并列；具体评分体系、门槛及年代尚未核实，不按字面或旧阈值补造。",
       "category": "community",
       "status": "unverified",
-      "scope": "10007民间天梯及10008论坛的页面/帖子语境；规则和活动状态按来源时间核对。",
       "source_ids": [
         "community-forum-ladder"
       ],

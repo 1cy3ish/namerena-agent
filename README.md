@@ -4,7 +4,7 @@
 
 ## 当前状态
 
-已归档 Deep Mess 官方基础资料，收录 tswn-core 的引擎、Openbox 评分、WASM 网页及 docs 知识，并吸收民间天梯与论坛关键词。现有 230 个词条，其中 tswn 新增100个、社区新增46个，分别给50个和7个已有词条补充了语境。百科网站代码已拆分到独立项目 `namerena-wiki`；本仓库继续保存全部共享知识和在线编辑快照。机器人和 MCP server 尚未实现，Python 脚本用于资料维护及校验。
+已归档 Deep Mess 官方基础资料，收录 tswn-core 的引擎、Openbox 评分、WASM 网页及 docs 知识，并吸收民间天梯与论坛关键词。现有 311 个词条（全部带详细描述），其中本轮新增 81 个：委托方附件 QQ 群 bot 生态 6 个、DataStructure4 8 个、PBB7 测号器 10 个、新旧教程/贴吧/天梯论坛定项阅读 57 个；为全部 230 个基线词条补充了详细描述，并为 12 个已有词条追加了语境补充。来源目录 98 条（新增委托方附件归档、PBB7 仓库、新旧教程、贴吧史料、2026-11-16 天梯/论坛定项阅读与 HtmlTools 脚本级证据）。词条级 `scope` 栏已取消，改为 `detailed_description` + `outdated` 独立过时标记；历史内容保留并标记。百科网站代码已拆分到独立项目 `namerena-wiki`；本仓库继续保存全部共享知识和在线编辑快照。机器人和 MCP server 尚未实现，Python 脚本用于资料维护及校验。
 
 名字竞技场是 MD5 大作战的续作，玩家输入名字后自动推演战斗。基础资料来自 [Deep Mess 官方说明](https://deepmess.com/zh/namerena/)，实现与工具补充见 [tswn-core](knowledge/tools/tswn-core/README.md)。维护者确认 GitHub Pages 旧站过时，其他已讨论入口按最新版本处理；不同实现与历史资料保留各自语境。其他工具和独立史料等待后续提供。整理日期：2026-11-16。
 
@@ -32,6 +32,10 @@
 │   ├── project-context.json       # 维护者确认的版本与收录约定
 │   ├── tools/tswn-core/           # 重写引擎、评分、网页、术语与阅读覆盖
 │   ├── community/ladder-forum/    # 民间天梯、论坛关键词与定向阅读依据
+│   ├── community/qq-bots/         # QQ 群 bot 生态词条与命令语境
+│   ├── community/tutorials-and-history/ # 新旧教程、贴吧与论坛史料的术语入口
+│   ├── tools/pbb-new2/            # PBB7 测号器术语与评分族
+│   ├── tools/datastructure4/      # DataStructure4 批量整理工具术语
 │   ├── wiki/                      # 在线编辑历史和每日快照元信息
 │   └── history/                   # 等待维护者提供史料与口述
 ├── data/raw/official-namerena/     # 纳入 Git 的官方原始资源归档
