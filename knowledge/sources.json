@@ -1376,7 +1376,7 @@
       "url": "https://shenjack.top:10007/",
       "accessed_at": "2026-11-16",
       "read_status": "retrieved",
-      "notes": "本次任务对天梯与论坛的补充定向阅读（在既有 observations 之上）。已读：10007 首页/register/profile/newlive(/list,history,api)/tournament/instant/live/cards(仅占位)/static/HtmlTools 界面/tswn show+demo 页与 wasm glue；10008 论坛 264 个讨论清单、tags、讨论215（天梯主帖含更新日志与周赛草案）、讨论227（周赛规程及楼31/38规则变更）、讨论19/4（站务）、讨论401（游客）、207/150（帮测计划）、273（HtmlTools 1.8）、250（tswn-x）、306（pbb_new 0.1.2）、6（pbb4.3.1历史）、139（subproc-multithr）、218（sqROP）、51（弱评筛号器历史）、38（民间负榜与弱评公式）、229（环境评估）、200（周豹）、308（第十九届武术大赛规程）、410（名竞尖塔）、247（S6王者赛）、383（qp=强评直证）、166（T/d）、163、54、100、416（帮测贴）、274（why_ns 分析）。受限：/forum、/battle、/team-binding 需登录；/cards/ 正文仅占位文案；tianwei.txt 已404；写操作未尝试。动态排行榜、当届名单、奖励数值均按动态/单次内容记录。",
+      "notes": "本次任务对天梯与论坛的补充定向阅读（在既有 observations 之上）。已读：10007 首页/register/profile/newlive(/list,history,api)/tournament/instant/live/cards(仅占位)/static/HtmlTools 界面/tswn show+demo 页与 wasm glue；10008 论坛 264 个讨论清单、tags、讨论215（天梯主帖含更新日志与周赛草案）、讨论227（周赛规程及楼31/38规则变更）、讨论19/4（站务）、讨论401（游客）、207/150（帮测计划）、273（HtmlTools 1.8）、250（tswn-x）、306（pbb_new 0.1.2）、6（pbb4.3.1历史）、139（subproc-multithr）、218（sqROP）、51（弱评筛号器历史）、38（民间负榜与弱评公式）、229（环境评估）、200（周豹）、308（第十九届武术大赛规程）、410（名竞尖塔）、247（S6王者赛）、383（qp=强评直证）、166（T/d）、163、54、100、416（帮测贴）、274（why_ns 分析）。受限：/forum、/battle、/team-binding 需登录；/cards/ 正文仅占位文案；tianwei.txt 已404；写操作未尝试。动态排行榜、当届名单、奖励数值均按动态/单次内容记录。收尾补充：同轮还完成旧站 namerena.flarum.cloud（含 d/401《本论坛即将下线》下线公告与旧→新站迁移核实、全量编号比对）及官方 ladder.html 页面与 ladder.deepmess.com 数据源、47.109.79.252 旧民间天梯的 2026-11-16 定向访问核实，详见侦察笔记 notes/ladder-forum.md（快照含 notes/_raw/flarum_d401.txt）。",
       "version_status": "current_snapshot"
     },
     {
