@@ -1282,6 +1282,15 @@
       "recorded_at": "2026-11-16",
       "read_status": "provided",
       "notes": "无修饰的天梯指10007民间天梯；官方天梯通常加限定词；10008是配套论坛。历史“老天梯”按原链接判断。"
+    },
+    {
+      "id": "maintainer-entry-policy",
+      "title": "维护者确认：词条描述字段及过时标记",
+      "type": "maintainer_statement",
+      "local_path": "knowledge/project-context.json",
+      "recorded_at": "2026-11-16",
+      "read_status": "provided",
+      "notes": "维护者要求去除词条适用范围栏、保留简要描述并预留详细描述，标记历史/已废弃/极少用的内容；首批包括旧天梯、粗评、精评。"
     }
   ]
 }

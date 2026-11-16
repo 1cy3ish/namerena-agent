@@ -41,6 +41,17 @@ def main():
     glossary = read("knowledge/glossary.json")
     term_ids = {term["id"] for term in glossary["terms"]}
 
+    def validate_entries(terms, file):
+        for term in terms:
+            assert isinstance(term.get("definition"), str) and term["definition"].strip(), f"Missing brief description: {file}: {term['id']}"
+            assert isinstance(term.get("detailed_description"), str), f"Missing detail field: {file}: {term['id']}"
+            assert type(term.get("outdated")) is bool, f"Invalid outdated flag: {file}: {term['id']}"
+            assert "scope" not in term, f"Removed entry field: {file}: {term['id']}"
+
+    validate_entries(glossary["terms"], "knowledge/glossary.json")
+    for file in [p for folder in ("tools", "community") for p in (ROOT / "knowledge" / folder).rglob("terminology.json")]:
+        validate_entries(json.loads(file.read_text(encoding="utf-8"))["terms"], file)
+
     def walk(value, file):
         if isinstance(value, dict):
             if "source_ids" in value:
@@ -106,6 +117,7 @@ def main():
             assert (file.parent / target.split("#", 1)[0]).exists(), f"Broken link in {file}: {target}"
     print(f"Validated {len(files)} JSON files, {len(sources)} sources, {len(read('knowledge/glossary.json')['terms'])} terms, {len(downloaded)} archived URL records and local links.")
     print(f"Known official archive gaps retained: {len(known)} unavailable URL; official ladder live results not collected.")
+    print(f"Detailed descriptions pending: {sum(not term['detailed_description'].strip() for term in glossary['terms'])}; empty details are allowed during the current preparation stage.")
 
 
 if __name__ == "__main__":

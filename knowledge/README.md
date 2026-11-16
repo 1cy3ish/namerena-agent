@@ -16,16 +16,19 @@
 
 - `id`：稳定英文标识；`term`：常用名称；`aliases`：别名或缩写。
 - `definition`：结合名字竞技场语境的简短解释。
+- `detailed_description`：详细描述正文，当前全部预留为空字符串；后续实质词条按根目录 [AGENTS.md](../AGENTS.md) 的类型标准补全。简单分区标签、纯别名等可不要求展开。
+- `outdated`：布尔值；`true` 表示历史内容、已废弃或极少用，与待核实状态无关。首批标记旧天梯、粗评、精评；`false` 只表示尚未标记。
 - `category`：概念、玩法、输入规则或评分。
 - `status`：`source_supported` 表示有来源支持这项释义；`unverified` 表示尚待核实。
-- `scope`：来源语境和版本局限，不能省略为“适用于所有版本”。
 - `source_ids`：指向来源目录的 ID；`checked_at`：核查日期。
 
 有来源支持不等于当前社区已达成共识。不同年代或群体的定义冲突可新增独立词条，标注语境。新旧版本都在收录范围内。问答中保留名字、战队名和输入字符，避免改写改变角色或对战条件。
 
+词条不再设置“适用范围”字段。必要的年代、版本和条件在正文、已有语境补充与来源证据中说明；本轮只调整字段，不填详细正文，不删除旧版历史记录或原始资料。过时词条仍可阅读、检索和补全，不与当前规则混用。
+
 `origin: official-index` 的词条由 `scripts/build_official_index.py` 从归档生成，完整字段见 `details_path` 和 `details_id`，其他词条为人工整理。语言包独有词汇与完整机制定义分开记录。
 
-`origin: tswn-curation` 和 `origin: community-curation` 的新词与已有词条的 `context_notes` 分别由工具、社区目录中的 `terminology.json` 维护，通过 `scripts/merge_term_contexts.py` 应用。`context_refs` 指向补充解释的维护入口；官方索引再生成会再次合并，保留 tswn 实现解释和社区语境。别名允许一词多义，回答时读取 scope 与语境，不强行把所有命中合成同一机制。
+`origin: tswn-curation` 和 `origin: community-curation` 的新词与已有词条的 `context_notes` 分别由工具、社区目录中的 `terminology.json` 维护，通过 `scripts/merge_term_contexts.py` 应用。`context_refs` 指向补充解释的维护入口；已有在线历史时须先人工合并，不能直接重建覆盖。别名允许一词多义，回答时结合正文、语境补充与来源，不强行把所有命中合成同一机制。语境补充和原始证据中的历史字段保留，不等于重新引入词条级“适用范围”栏。
 
 仓库来源记录 `commit`、`repository_path`、行号和 `sha256`，链接指向不可变 GitHub blob。上游本地路径只是定位提示，不是本知识仓库的构建依赖。
 

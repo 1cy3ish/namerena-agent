@@ -15,7 +15,12 @@ def merge_contexts(glossary):
     for file in files:
         data = json.loads(file.read_text(encoding="utf-8"))
         for term in data.get("terms", []):
-            terms[term["id"]] = copy.deepcopy(term)
+            incoming = copy.deepcopy(term)
+            previous = terms.get(term["id"], {})
+            for field in ("detailed_description", "outdated"):
+                if field in previous:
+                    incoming[field] = previous[field]
+            terms[term["id"]] = incoming
     for file in files:
         data = json.loads(file.read_text(encoding="utf-8"))
         context_path = file.relative_to(ROOT / "knowledge").as_posix()
@@ -37,6 +42,10 @@ def merge_contexts(glossary):
             ref = {"path": context_path, "context_id": enrichment["context_id"]}
             if ref not in refs:
                 refs.append(ref)
+    for term in terms.values():
+        term.pop("scope", None)
+        term.setdefault("detailed_description", "")
+        term.setdefault("outdated", False)
     glossary["terms"] = list(terms.values())
     return glossary
 

@@ -45,5 +45,21 @@
     "game_subpath": "https://shenjack.top:10007/tswn/",
     "historical_caution": "限定称呼不是跨年代的强制映射；215号帖的老天梯明确指旧民间站 http://47.109.79.252。",
     "collection_scope": "定向吸收公开天梯和论坛关键词，不代表要求全站爬取或账号操作。"
+  },
+  "entry_policy": {
+    "source_ids": [
+      "maintainer-entry-policy"
+    ],
+    "recorded_at": "2026-11-16",
+    "brief_description": "每条词条必须有非空definition。",
+    "detailed_description": "大部分实质词条后续必须提供详细描述；本阶段只预留detailed_description空字符串，不填正文。",
+    "removed_entry_field": "scope",
+    "outdated_flag": "outdated为布尔值，表示历史内容、已废弃或极少用，与核查状态分开。",
+    "initial_outdated_term_ids": [
+      "historical-ladder-name",
+      "refined-evaluation",
+      "rough-evaluation"
+    ],
+    "completion_standards": "各类型和模块的后续填写深度见根目录AGENTS.md。"
   }
 }

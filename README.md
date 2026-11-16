@@ -27,7 +27,7 @@
 │   ├── README.md                  # 资料与术语的数据约定
 │   ├── overview.md                # 基本玩法、入口、版本差异与开发线索
 │   ├── sources.json               # 来源目录、核查日期及局限
-│   ├── glossary.json              # 基础术语、别名、来源与适用范围
+│   ├── glossary.json              # 简要/详细描述、过时标记、别名与来源
 │   ├── official/                  # 官方正文快照、结构化索引和覆盖报告
 │   ├── project-context.json       # 维护者确认的版本与收录约定
 │   ├── tools/tswn-core/           # 重写引擎、评分、网页、术语与阅读覆盖
