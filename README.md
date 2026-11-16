@@ -4,11 +4,21 @@
 
 ## 当前状态
 
-已归档 Deep Mess 官方基础资料，收录 tswn-core 的引擎、Openbox 评分、WASM 网页及 docs 知识，并吸收民间天梯与论坛关键词。现有 230 个词条，其中 tswn 新增100个、社区新增46个，分别给50个和7个已有词条补充了语境。机器人、检索服务和 MCP server 尚未实现，Python 脚本仅用于资料维护。
+已归档 Deep Mess 官方基础资料，收录 tswn-core 的引擎、Openbox 评分、WASM 网页及 docs 知识，并吸收民间天梯与论坛关键词。现有 230 个词条，其中 tswn 新增100个、社区新增46个，分别给50个和7个已有词条补充了语境。静态百科已提供分类浏览、关键词搜索和词条详情；机器人和 MCP server 尚未实现，Python 脚本用于资料维护、静态构建及本地预览。
 
 名字竞技场是 MD5 大作战的续作，玩家输入名字后自动推演战斗。基础资料来自 [Deep Mess 官方说明](https://deepmess.com/zh/namerena/)，实现与工具补充见 [tswn-core](knowledge/tools/tswn-core/README.md)。维护者确认 GitHub Pages 旧站过时，其他已讨论入口按最新版本处理；不同实现与历史资料保留各自语境。其他工具和独立史料等待后续提供。整理日期：2026-11-16。
 
 当前社区中“天梯”默认指 [10007民间天梯](https://shenjack.top:10007/)，[10008](https://shenjack.top:10008/) 是配套论坛。称呼、赛事、帮测、基地帖和网页工具等关键词见 [社区知识入口](knowledge/community/ladder-forum/README.md)。
+
+## 本地百科
+
+在仓库根目录运行：
+
+```powershell
+python scripts/serve_wiki.py
+```
+
+打开 [http://127.0.0.1:8765/](http://127.0.0.1:8765/)，即可分类查阅、搜索名称/别名/释义，并查看适用范围、语境补充和参考来源。无需安装 npm 依赖；按 `Ctrl+C` 停止服务。修改知识或页面后重新运行命令即可更新，完整说明见 [网页文档](web/README.md)。
 
 ## 目录
 
@@ -27,6 +37,8 @@
 │   └── history/                   # 等待维护者提供史料与口述
 ├── data/raw/official-namerena/     # 纳入 Git 的官方原始资源归档
 ├── scripts/                       # 抓取、索引生成与资料校验
+├── web/                           # 静态百科页面、搜索与分类
+├── tests/wiki.test.mjs             # 搜索、分类覆盖与链接状态测试
 ├── skills/
 │   └── namerena-knowledge/
 │       └── SKILL.md               # 仓库内使用的领域 skill 初稿

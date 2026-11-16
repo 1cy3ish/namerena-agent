@@ -1,6 +1,6 @@
 # 资料维护脚本
 
-这些脚本只用于收录和校验资料，不决定未来机器人或 MCP 的运行语言。使用 Python 3.9 以上版本及系统可用的 `Asia/Shanghai` 时区数据，无第三方 Python 库依赖。
+这些脚本用于收录、校验资料，以及静态百科的构建与本地预览，不决定未来机器人或 MCP 的运行语言。使用 Python 3.9 以上版本及系统可用的 `Asia/Shanghai` 时区数据，无第三方 Python 库依赖。
 
 ```powershell
 python scripts/archive_official.py
@@ -20,3 +20,11 @@ python scripts/validate_knowledge.py
 校验器验证 JSON、稳定 ID、来源引用、本地路径、归档哈希、抓取队列闭合和已审阅的上游缺口。运行时观察记录来自一次独立的全新浏览器加载及本地对战页面触发，保留资源请求证据，不作为评分或引擎兼容性测试。
 
 若本机仍有提供的 tswn 仓库，可运行 `python scripts/validate_knowledge.py --source-checkout D:/namerena/tswn-core`，按记录的 commit 从 Git 对象核对源码哈希与行号；默认校验不依赖该外部路径。
+
+## 静态百科
+
+`python scripts/build_wiki.py` 将 `web/` 页面与共享知识生成到 `dist/wiki/`，包括术语、来源和官方补充字段。生成目录已忽略，词条仍只在 `knowledge/` 维护。
+
+`python scripts/serve_wiki.py` 构建并启动本地预览，默认绑定 `127.0.0.1:8765`，可传 `--port` 更换端口。服务只公开生成的静态目录；修改源文件后重新构建，修改服务脚本后重新启动。
+
+搜索逻辑和分类覆盖用 `node --test tests/wiki.test.mjs` 验证，使用 Node.js 内置测试工具，无 npm 依赖。这些测试验证网页功能，不是问答模型评估。

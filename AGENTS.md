@@ -28,3 +28,4 @@
 - 修改 JSON 后检查能否解析、稳定 ID 是否唯一、来源引用能否解析到 `knowledge/sources.json`。
 - 修改文档或 skill 后检查仓库内相对路径。独立分发 skill 时需要一并打包其知识依赖。
 - `evals/cases.json` 是后续问答行为评估素材；当前没有自动运行器，不将其描述为已通过的模型测试。
+- 静态百科源文件在 `web/`，数据从共享知识构建到忽略的 `dist/wiki/`。不要手工维护另一份词条；修改搜索或分类时运行 `node --test tests/wiki.test.mjs`，页面交互需用本地预览核查。
