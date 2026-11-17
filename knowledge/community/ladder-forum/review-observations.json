@@ -1,0 +1,335 @@
+{
+  "schema_version": "0.1",
+  "checked_at": "2026-11-17",
+  "record_kind": "curated_public_observations",
+  "scope": "PR 修复时只读指定的 9 个公开楼层与标签元数据；不声称全站比对。",
+  "retention": "只保留资料定位、阅读范围、时间和整理摘要，不保存完整帖子镜像、个人账号数据或隐藏分区内容。",
+  "pages": [
+    {
+      "id": "review-old-forum-401-1",
+      "title": "本论坛即将下线（第 1 楼）",
+      "url": "https://namerena.flarum.cloud/d/401/1",
+      "checked_at": "2026-11-17",
+      "retrieval_api_url": "https://namerena.flarum.cloud/api/posts/9685",
+      "posts_read": [
+        1
+      ],
+      "post_created_at": "2026-10-23T04:59:40+00:00",
+      "observations": [
+        "2026-10-23 公告标注旧论坛运行区间 2024.7.23—2026.10.23，并说明自该讨论起新增帖子不再同步新论坛。"
+      ]
+    },
+    {
+      "id": "review-old-forum-401-2",
+      "title": "本论坛即将下线（第 2 楼）",
+      "url": "https://namerena.flarum.cloud/d/401/2",
+      "checked_at": "2026-11-17",
+      "retrieval_api_url": "https://namerena.flarum.cloud/api/posts/9686",
+      "posts_read": [
+        2
+      ],
+      "post_created_at": "2026-10-23T05:00:46+00:00",
+      "observations": [
+        "同一公告的第 2 楼明确给出新论坛 https://shenjack.top:10008/，并说明将同步此前数据；足以支持旧站到新站的迁移关系，不等同于核验所有编号或标签。"
+      ]
+    },
+    {
+      "id": "review-old-forum-401-15",
+      "title": "本论坛即将下线（第 15 楼）",
+      "url": "https://namerena.flarum.cloud/d/401/15",
+      "checked_at": "2026-11-17",
+      "retrieval_api_url": "https://namerena.flarum.cloud/api/posts/9716",
+      "posts_read": [
+        15
+      ],
+      "post_created_at": "2026-10-25T07:19:09+00:00",
+      "observations": [
+        "2026-10-25 后续公告宣布关闭注册、发帖、回复和私信；首帖早先允许继续发帖的表述需要结合这一后续更新理解。"
+      ]
+    },
+    {
+      "id": "review-forum-227-1",
+      "title": "周赛（第 1 楼）",
+      "url": "https://shenjack.top:10008/d/227/1",
+      "checked_at": "2026-11-17",
+      "retrieval_api_url": "https://shenjack.top:10008/api/posts/6536",
+      "posts_read": [
+        1
+      ],
+      "post_created_at": "2025-12-07T08:24:48+00:00",
+      "observations": [
+        "首帖记载周赛 bo5 单败、激活与冻结规则；锦标赛的首版规则为九周一届、bo7 双败。首帖的冻结与开赛星期表述存在冲突，不合成为统一永久时间。"
+      ]
+    },
+    {
+      "id": "review-forum-227-31",
+      "title": "周赛（第 31 楼）",
+      "url": "https://shenjack.top:10008/d/227/31",
+      "checked_at": "2026-11-17",
+      "retrieval_api_url": "https://shenjack.top:10008/api/posts/8245",
+      "posts_read": [
+        31
+      ],
+      "post_created_at": "2026-05-07T16:48:51+00:00",
+      "observations": [
+        "2026-05-07T16:48:51Z（北京时间 5 月 8 日）宣布锦标赛从 S3 赛季开始改为单败，说明原因是长期承办工作量。"
+      ]
+    },
+    {
+      "id": "review-forum-227-38",
+      "title": "周赛（第 38 楼）",
+      "url": "https://shenjack.top:10008/d/227/38",
+      "checked_at": "2026-11-17",
+      "retrieval_api_url": "https://shenjack.top:10008/api/posts/9210",
+      "posts_read": [
+        38
+      ],
+      "post_created_at": "2026-08-02T04:46:15+00:00",
+      "observations": [
+        "2026-08-02 后续楼层将代播酬金调整为 6T、冠亚季奖励为 4.5T/3T/1.5T；仅属该时点公告，不保证以后不变。"
+      ]
+    },
+    {
+      "id": "review-forum-215-52",
+      "title": "民间天梯试运行（第 52 楼）",
+      "url": "https://shenjack.top:10008/d/215/52",
+      "checked_at": "2026-11-17",
+      "retrieval_api_url": "https://shenjack.top:10008/api/posts/7774",
+      "posts_read": [
+        52
+      ],
+      "post_created_at": "2026-03-26T17:29:15+00:00",
+      "observations": [
+        "该楼更新日志的 3.27 条目说明旧天梯停止维护、后续公告默认指新天梯，且当周周赛仍以老天梯为准；发帖时间与日志中写到的更新日期分别保留。"
+      ]
+    },
+    {
+      "id": "review-forum-200-1",
+      "title": "名竞周豹（第 1 楼）",
+      "url": "https://shenjack.top:10008/d/200/1",
+      "checked_at": "2026-11-17",
+      "retrieval_api_url": "https://shenjack.top:10008/api/posts/5180",
+      "posts_read": [
+        1
+      ],
+      "post_created_at": "2025-08-17T13:10:41+00:00",
+      "observations": [
+        "《名竞周豹》首帖列出小豹、中豹、大豹、超大豹、神豹五档，由作者主观划分；未给固定分数阈值。"
+      ]
+    },
+    {
+      "id": "review-forum-tags",
+      "title": "论坛分区公开元数据",
+      "url": "https://shenjack.top:10008/api/tags",
+      "checked_at": "2026-11-17",
+      "observations": [
+        "公开 API 返回的元数据包含明镜铭记（graveyard，id 11，isHidden=true）与基地专区（quilt，id 12，isHidden=false）。未读取隐藏分区内容；不保存讨论数、排名或账号资料。"
+      ]
+    },
+    {
+      "id": "review-forum-401-1",
+      "title": "游客提问区（试行）（第 1 楼）",
+      "url": "https://shenjack.top:10008/d/401/1",
+      "checked_at": "2026-11-17",
+      "retrieval_api_url": "https://shenjack.top:10008/api/posts/9685",
+      "posts_read": [
+        1
+      ],
+      "post_created_at": "2026-10-23T05:09:27+00:00",
+      "observations": [
+        "新站讨论 401 首帖于 2026-10-23T05:09:27Z 发出，说明每条 300 字、全站游客合计每小时最多 50 条、会话 12 小时过期；与旧站同号迁移公告是不同讨论。只读规则文案，没有登录或提交发言。"
+      ]
+    }
+  ],
+  "original_submission": {
+    "claimed_snapshot_count": 47,
+    "snapshots_delivered": false,
+    "notes": "原 PR 声称读取 47 个讨论，但未交付原始快照或侦察笔记。下列是其明确列出的讨论定位，reading_status 仅记录原交付报告，不冒充本轮逐帖重读。",
+    "discussions": [
+      {
+        "url": "https://shenjack.top:10008/d/4",
+        "reading_status": "reported_in_pr"
+      },
+      {
+        "url": "https://shenjack.top:10008/d/6",
+        "reading_status": "reported_in_pr"
+      },
+      {
+        "url": "https://shenjack.top:10008/d/19",
+        "reading_status": "reported_in_pr"
+      },
+      {
+        "url": "https://shenjack.top:10008/d/38",
+        "reading_status": "reported_in_pr"
+      },
+      {
+        "url": "https://shenjack.top:10008/d/51",
+        "reading_status": "reported_in_pr"
+      },
+      {
+        "url": "https://shenjack.top:10008/d/54",
+        "reading_status": "reported_in_pr"
+      },
+      {
+        "url": "https://shenjack.top:10008/d/58",
+        "reading_status": "reported_in_pr"
+      },
+      {
+        "url": "https://shenjack.top:10008/d/77",
+        "reading_status": "reported_in_pr"
+      },
+      {
+        "url": "https://shenjack.top:10008/d/85",
+        "reading_status": "reported_in_pr"
+      },
+      {
+        "url": "https://shenjack.top:10008/d/100",
+        "reading_status": "reported_in_pr"
+      },
+      {
+        "url": "https://shenjack.top:10008/d/106",
+        "reading_status": "reported_in_pr"
+      },
+      {
+        "url": "https://shenjack.top:10008/d/136",
+        "reading_status": "reported_in_pr"
+      },
+      {
+        "url": "https://shenjack.top:10008/d/139",
+        "reading_status": "reported_in_pr"
+      },
+      {
+        "url": "https://shenjack.top:10008/d/150",
+        "reading_status": "reported_in_pr"
+      },
+      {
+        "url": "https://shenjack.top:10008/d/153",
+        "reading_status": "reported_in_pr"
+      },
+      {
+        "url": "https://shenjack.top:10008/d/156",
+        "reading_status": "reported_in_pr"
+      },
+      {
+        "url": "https://shenjack.top:10008/d/163",
+        "reading_status": "reported_in_pr"
+      },
+      {
+        "url": "https://shenjack.top:10008/d/166",
+        "reading_status": "reported_in_pr"
+      },
+      {
+        "url": "https://shenjack.top:10008/d/176",
+        "reading_status": "reported_in_pr"
+      },
+      {
+        "url": "https://shenjack.top:10008/d/185",
+        "reading_status": "reported_in_pr"
+      },
+      {
+        "url": "https://shenjack.top:10008/d/200",
+        "reading_status": "reported_in_pr"
+      },
+      {
+        "url": "https://shenjack.top:10008/d/202",
+        "reading_status": "reported_in_pr"
+      },
+      {
+        "url": "https://shenjack.top:10008/d/207",
+        "reading_status": "reported_in_pr"
+      },
+      {
+        "url": "https://shenjack.top:10008/d/213",
+        "reading_status": "reported_in_pr"
+      },
+      {
+        "url": "https://shenjack.top:10008/d/215",
+        "reading_status": "reported_in_pr"
+      },
+      {
+        "url": "https://shenjack.top:10008/d/218",
+        "reading_status": "reported_in_pr"
+      },
+      {
+        "url": "https://shenjack.top:10008/d/227",
+        "reading_status": "reported_in_pr"
+      },
+      {
+        "url": "https://shenjack.top:10008/d/229",
+        "reading_status": "reported_in_pr"
+      },
+      {
+        "url": "https://shenjack.top:10008/d/231",
+        "reading_status": "reported_in_pr"
+      },
+      {
+        "url": "https://shenjack.top:10008/d/234",
+        "reading_status": "reported_in_pr"
+      },
+      {
+        "url": "https://shenjack.top:10008/d/235",
+        "reading_status": "reported_in_pr"
+      },
+      {
+        "url": "https://shenjack.top:10008/d/247",
+        "reading_status": "reported_in_pr"
+      },
+      {
+        "url": "https://shenjack.top:10008/d/250",
+        "reading_status": "reported_in_pr"
+      },
+      {
+        "url": "https://shenjack.top:10008/d/255",
+        "reading_status": "reported_in_pr"
+      },
+      {
+        "url": "https://shenjack.top:10008/d/273",
+        "reading_status": "reported_in_pr"
+      },
+      {
+        "url": "https://shenjack.top:10008/d/274",
+        "reading_status": "reported_in_pr"
+      },
+      {
+        "url": "https://shenjack.top:10008/d/306",
+        "reading_status": "reported_in_pr"
+      },
+      {
+        "url": "https://shenjack.top:10008/d/308",
+        "reading_status": "reported_in_pr"
+      },
+      {
+        "url": "https://shenjack.top:10008/d/311",
+        "reading_status": "reported_in_pr"
+      },
+      {
+        "url": "https://shenjack.top:10008/d/379",
+        "reading_status": "reported_in_pr"
+      },
+      {
+        "url": "https://shenjack.top:10008/d/383",
+        "reading_status": "reported_in_pr"
+      },
+      {
+        "url": "https://shenjack.top:10008/d/401",
+        "reading_status": "reported_in_pr"
+      },
+      {
+        "url": "https://shenjack.top:10008/d/402",
+        "reading_status": "reported_in_pr"
+      },
+      {
+        "url": "https://shenjack.top:10008/d/403",
+        "reading_status": "reported_in_pr"
+      },
+      {
+        "url": "https://shenjack.top:10008/d/410",
+        "reading_status": "reported_in_pr"
+      },
+      {
+        "url": "https://shenjack.top:10008/d/416",
+        "reading_status": "reported_in_pr"
+      }
+    ]
+  }
+}

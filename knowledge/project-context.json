@@ -11,7 +11,7 @@
   "collection_policy": {
     "official": "Deep Mess 官方说明和游戏本体是最基础的资料，但不保证词条完整。",
     "historical": "过时资料同样需要收录，保留时间、版本和来源语境。",
-    "tools": "已提供 tswn-core 本地仓库；重点收录 core、Openbox（含共享后端）、WASM 和 docs，其他模块仅关键词。其他工具仓库等待后续提供。",
+    "tools": "已提供 tswn-core、PBB7、新旧教程及两份附件；tswn 重点收录 core、Openbox（含共享后端）、WASM 和 docs，其他模块仅关键词；DataStructure4 仅按提供的 README 提取少量关键词。",
     "history": "等待维护者提供史料或口述，目前留空。"
   },
   "note": "维护者确认优先于初始化时对入口版本的推测；具体页面中的编辑提示、旧链接和表述仍按原文保存。",
@@ -45,5 +45,34 @@
     "game_subpath": "https://shenjack.top:10007/tswn/",
     "historical_caution": "限定称呼不是跨年代的强制映射；215号帖的老天梯明确指旧民间站 http://47.109.79.252。",
     "collection_scope": "定向吸收公开天梯和论坛关键词，不代表要求全站爬取或账号操作。"
-  }
+  },
+  "entry_policy": {
+    "source_ids": [
+      "maintainer-entry-policy"
+    ],
+    "recorded_at": "2026-11-16",
+    "brief_description": "每条词条必须有非空definition。",
+    "detailed_description": "大部分实质词条必须提供详细描述；当前已获维护者授权补全文字，纯称呼等可保留空字符串但不能省略字段。",
+    "removed_entry_field": "scope",
+    "outdated_flag": "outdated为布尔值，表示历史内容、已废弃或极少用，与核查状态分开。",
+    "initial_outdated_term_ids": [
+      "historical-ladder-name",
+      "refined-evaluation",
+      "rough-evaluation"
+    ],
+    "completion_standards": "各类型和模块的后续填写深度见根目录AGENTS.md。",
+    "content_update_authorized_at": "2026-11-17"
+  },
+  "provided_documents": [
+    {
+      "name": "qq群bot.txt",
+      "source_id": "attachment-qqbot",
+      "provided_at": "2026-11-16"
+    },
+    {
+      "name": "DataStructure4-Readme.md",
+      "source_id": "attachment-ds4",
+      "provided_at": "2026-11-16"
+    }
+  ]
 }

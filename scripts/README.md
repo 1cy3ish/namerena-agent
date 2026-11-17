@@ -15,6 +15,8 @@ python scripts/validate_knowledge.py
 
 构建脚本从原始官方 HTML 和语言 JSON 提取属性、技能、Boss 与词形，更新 `origin: official-index` 的词条，保留人工词条。日期取自抓取清单。手工维护输入规则、来源与页面快照时，应同步检查对应原文。
 
+词条级 `scope` 已移除，统一使用非空简要描述 `definition`、详细描述 `detailed_description` 和独立布尔标记 `outdated`。合并/构建会保留已有详细正文与过时标记，不将空模板覆盖人工内容。规范入口保存审核后的简述、正文、分类、状态与来源；enrichment 可同步这些编辑字段。合并保留总表中已有来源、别名及语境，官方重建保留已经核对的编辑字段，不重写原始官方资料。校验允许确无展开必要的条目保留空详细正文，但会报告空字段数量；校验通过不表示详细内容已经完成。
+
 工具、社区知识分别以 `knowledge/tools/**/terminology.json` 和 `knowledge/community/**/terminology.json` 维护新增词条及已有词条的语境解释。`merge_term_contexts.py` 先加载新词再应用补充，可单独执行；官方构建脚本也会在末尾执行同一合并，避免重新生成时丢失实现或社区语境、重复叠加别名/注释。
 
 校验器验证 JSON、稳定 ID、来源引用、本地路径、归档哈希、抓取队列闭合和已审阅的上游缺口。运行时观察记录来自一次独立的全新浏览器加载及本地对战页面触发，保留资源请求证据，不作为评分或引擎兼容性测试。
@@ -26,3 +28,5 @@ python scripts/validate_knowledge.py
 百科应用、编辑 API 和每日快照任务位于独立 `namerena-wiki` 项目。本仓库保存全部数据，在线编辑不会修改官方原始归档，也不会自动运行抓取或重建。
 
 有在线编辑历史后，`build_official_index.py` 和 `merge_term_contexts.py` 会拒绝覆盖总表。更新原始资料需先人工核对在线修改，再合并到当前知识库；不要通过删除历史绕过保护。
+
+可运行 `python scripts/test_knowledge_maintenance.py` 验证完整词条合并的稳定性、两次官方重建、在线历史保护与附件被修改时的哈希拦截。测试只操作临时副本，不抓取资料、不运行游戏或模型。

@@ -5,3 +5,4 @@
 *.pdf binary
 # Preserve archived upstream bytes so recorded SHA-256 hashes survive checkout.
 data/raw/official-namerena/** binary
+data/raw/provided/** binary

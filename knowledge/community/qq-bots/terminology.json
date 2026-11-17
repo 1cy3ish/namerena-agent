@@ -1,0 +1,254 @@
+{
+  "schema_version": 0.1,
+  "checked_at": "2026-11-16",
+  "scope": "委托方提供的《qq群bot.txt》附件（2026-11-16 读取，SHA-256 5f9be431b1028a87797b5b95b7ad24e3227b73bda2dcf635603d813d2638b51f）。该附件描述多个 QQ bot 的用法与状态；本文件只登记附件明确记载的内容，未验证任何 bot 当前在线状态。",
+  "terms": [
+    {
+      "id": "bot-xiaoyu",
+      "term": "小鱼bot",
+      "aliases": [
+        "小鱼"
+      ],
+      "definition": "运行于名竞 QQ 群的群聊 bot，提供天梯绑定与查询、周赛激活与赛况、名字评测（调用 tswn-core / openbox-cli）、随机 Say、随机二创、随机表情包等娱乐功能。",
+      "category": "tool",
+      "status": "source_supported",
+      "source_ids": [
+        "attachment-qqbot"
+      ],
+      "checked_at": "2026-11-16",
+      "detailed_description": "小鱼bot 是名竞 QQ 群内的多功能 bot（依据：委托方提供的《qq群bot.txt》，2026-11-16 读取；未验证当前在线状态）。\n\n调用方式：群聊中需要先 @ bot，或使用 /ladder- 前缀（如 /ladder-check）；「随机 Say / 随机二创」不需要 @。\n\n功能组（附件原文用法，未经实测）：\n- 绑定：bind <主队名> 申请把主队绑定到当前 QQ（等主队在网站确认）；unbind 解除绑定。\n- 周赛激活：check [主队名] 查看激活状态；check 后回复序号激活对应周赛组；activate <战队> [组别]（省略组别＝全部）；deactivate 同理（也可用序号）；activate-all 激活本主队及所有常驻战队的全部周赛组。\n- 本周周赛：week / 周赛 [组别] 查赛程；赛况 <组别> [战队名] 查名次、淘汰状态、已打对手与下一场对手；history / 历史 [组别] [数量] 查最近几届冠军（默认 5）；「关注周赛」开关开赛/开局/赛果提醒。\n- 天梯：rank / 排行 [组别] [数量]（指定组别默认前 10，不指定则每组前 3）；查排名 [战队名]；战绩 <组别> [战队名]。\n- 名字评测（tswn-core / openbox-cli）：第一行发命令、第二行开始每行一个输入。pp / pd / qp / qd 单项评分（一行一个名字，或 + 连接多个）；pf 一次算 pp/pd/qp/qd/合计；cqp 算 100% CQP（一行一组，双人组用 + 连接）；cp / fp / wcp / fsp / pjp 为 Openbox 队友评测；peek / peeks 查看属性 / 技能；todiy 导出 +ol DIY 文本（多人组用 ++ 分隔）；base 原始 base 工具（一次一个名字）；team / teams 查看同队加成后的属性 / 技能；namer 按网页格式打一场（空行分队，无空行全体混战，输出胜者）；rate 测两队胜率（正好两行，格式同 cqp）。普通名字组用 + 连接；已导出的 +ol:/+diy[ 组用 ++ 分隔。\n- 随机 Say：随机Say / say 抽一句；投稿 <一句话>（超 100 字或多行建议改投随机二创）；确认投稿（被提示后 10 分钟内强制投到随机 Say）。\n- 随机二创：随机二创 / erchuang 抽一篇（最长 3000 字）；投稿 <内容> 支持多行。\n- 随机表情包：表情包 / 随机表情包 抽一个；投稿 开 1 分钟窗口后发图。\n\n同一评分名在小鱼bot下的调用形式（第一行命令、后续行输入、@ 或 /ladder- 前缀）与名竞测试bot（/namer- 前缀）不同，使用时需分别对待。",
+      "outdated": false
+    },
+    {
+      "id": "bot-namerena-test",
+      "term": "名竞测试bot",
+      "aliases": [
+        "namerena测试bot",
+        "名竞测试"
+      ],
+      "definition": "名竞 QQ 群内以 /namer- 为命令前缀的测试 bot（自述版本 namerena-v0.10.4），提供网页同格式对战、四项评分、CQP/CQD、Openbox 队友评测、属性技能查看等命令。",
+      "category": "tool",
+      "status": "source_supported",
+      "source_ids": [
+        "attachment-qqbot"
+      ],
+      "checked_at": "2026-11-16",
+      "detailed_description": "名竞测试bot 是名竞 QQ 群内的测试 bot，附件记载其自述版本为 namerena-v0.10.4（依据：《qq群bot.txt》，2026-11-16 读取；未验证当前在线状态）。命令均以 /namer- 前缀调用：\n\n- /namer-help：查看帮助。\n- /namerena：运行名字竞技场，每一行是一个输入，输入格式与网页版相同。\n- /namer：简化输入。\n- /namer-[pd|pp|qp|qd]：四项评分，一行一个名字或 + 连接的多个名字（附件命令一览中写作 \"/namer-[pd|pd|qp|qd]\"，疑似笔误，应为 pp|pd|qp|qd，待核实）。\n- /namer-pf：一下子全评（四项），一行一个名字或 + 连接。\n- /namer-cqp / /namer-cqd：使用 tswn 计算 100% CQP/CQD，一行一组，双人组用 + 连接。\n- /namer-cp /namer-bcp /namer-fp /namer-fzp /namer-wcp /namer-dp /namer-fsp /namer-pjp：Openbox 队友评测（bcp=cp，fzp=fp，dp=wcp）；支持命令后直接输入或换行输入；「A+B 评测与 B 组队加成后的 A」。\n- /namer-peek：查看一个名字的属性，每一行一个名字。\n- /namer-peeks：查看属性与技能，技能按原始顺序输出。\n- /namer-base：base 工具，只支持单个名字（避免刷屏）。\n- /namer-team / /namer-teams：查看同队加成后的属性和熟练度（teams 技能按原始顺序输出）。\n- /namer-fight：1v1 战斗，格式 \"AAA+BBB+[seed]\"，例如 \"AAA+BBB+seed:123@!\" 表示以 123@! 为种子战斗；可以输入多行。\n\n注意：附件中 /namer-pd|pd|qp|qd 的重复 pd、以及别名对应关系（bcp=cp、fzp=fp、dp=wcp）均按附件原文记录，其中重复 pd 列为疑似笔误待核实，未实测验证。",
+      "outdated": false
+    },
+    {
+      "id": "bot-shenjack",
+      "term": "shenjack的bot",
+      "aliases": [],
+      "definition": "功能与名竞测试bot相同的 QQ bot；附件记载其已被禁用。",
+      "category": "tool",
+      "status": "source_supported",
+      "outdated": true,
+      "source_ids": [
+        "attachment-qqbot"
+      ],
+      "checked_at": "2026-11-16",
+      "detailed_description": "shenjack的bot 是与名竞测试bot功能相同的 QQ bot。委托方提供的《qq群bot.txt》（2026-11-16 读取）记载：「和名竞测试bot功能相同，但是已被禁用」。该条目作为历史内容保留；依据仅为这份附件，未验证其当前在线状态。某个 bot 被停用不代表底层命令或评分体系被废弃：其命令形式与名竞测试bot一致，评分体系本身仍见 pp/pd/qp/qd、CQP/CQD、Openbox 队友评测等词条。"
+    },
+    {
+      "id": "bot-yubao",
+      "term": "鱼煲",
+      "aliases": [],
+      "definition": "小鱼bot的前身；附件记载已弃用。",
+      "category": "tool",
+      "status": "source_supported",
+      "outdated": true,
+      "source_ids": [
+        "attachment-qqbot"
+      ],
+      "checked_at": "2026-11-16",
+      "detailed_description": "鱼煲 是小鱼bot的前身。委托方提供的《qq群bot.txt》（2026-11-16 读取）记载：「小鱼bot的前身，已弃用」。作为历史内容保留；其现存功能与命令应参考小鱼bot词条，依据仅为附件，未验证当前状态。"
+    },
+    {
+      "id": "bot-namerena-testing",
+      "term": "namerena-测试中",
+      "aliases": [],
+      "definition": "含有第二代民间天梯的 bot/服务；附件记载已失效。",
+      "category": "tool",
+      "status": "source_supported",
+      "outdated": true,
+      "source_ids": [
+        "attachment-qqbot"
+      ],
+      "checked_at": "2026-11-16",
+      "detailed_description": "namerena-测试中 是附件列举的 bot 对象之一。委托方提供的《qq群bot.txt》（2026-11-16 读取）记载：「含有第二代民间天梯，已失效」。作为历史内容保留：它提示存在过「第二代民间天梯」这一对象，与当前默认指 shenjack.top:10007 的民间天梯、已关闭的官方天梯均有区别，具体形态待核实；依据仅为附件，未验证当前状态。"
+    },
+    {
+      "id": "bot-ladder-prefix",
+      "term": "/ladder- 前缀",
+      "aliases": [
+        "/ladder-"
+      ],
+      "definition": "小鱼bot在群聊中的命令前缀之一：不用 @ bot、直接以 /ladder- 开头调用命令，如 /ladder-check、/ladder-排行。",
+      "category": "command",
+      "status": "source_supported",
+      "source_ids": [
+        "attachment-qqbot"
+      ],
+      "checked_at": "2026-11-16",
+      "detailed_description": "/ladder- 前缀是小鱼bot的两种调用方式之一（依据：《qq群bot.txt》，2026-11-16 读取；未实测）。群聊中通常需要先 @ bot；使用 /ladder- 前缀可以免 @，例如 /ladder-check、/ladder-排行 1a 20。附件示例同时给出中文与英文命令名（rank / 排行、week / 周赛、history / 历史），说明同一功能存在双语命令别名；「随机 Say / 随机二创」等娱乐命令不适用前缀规则、也不需要 @。\ncheck [主队名] 查询周赛激活状态；查排名 [战队名] 查询战队各组别名次，两者不是别名。",
+      "outdated": false
+    }
+  ],
+  "enrichments": [
+    {
+      "context_id": "qqbot-pp-invocation",
+      "term_id": "normal-team-rating",
+      "aliases_add": [],
+      "source_ids": [
+        "attachment-qqbot"
+      ],
+      "scope": "《qq群bot.txt》记载的 QQ bot 调用形式；未实测验证 bot 当前在线状态。",
+      "explanation": "在小鱼bot中测普评：群聊先 @ bot 或用 /ladder- 前缀，第一行发命令 pp，第二行开始每行一个名字（或用 + 连接多个名字）；名竞测试bot中对应命令为 /namer-pp（一行一个名字或 + 连接）。pf 命令一次给出 pp/pd/qp/qd 与合计。同一评分在不同 bot 下调用形式不同，需分别对待。",
+      "checked_at": "2026-11-16"
+    },
+    {
+      "context_id": "qqbot-pd-invocation",
+      "term_id": "normal-duel-rating",
+      "aliases_add": [],
+      "source_ids": [
+        "attachment-qqbot"
+      ],
+      "scope": "《qq群bot.txt》记载的 QQ bot 调用形式；未实测验证 bot 当前在线状态。",
+      "explanation": "在小鱼bot中测普单：第一行发命令 pd，第二行开始每行一个名字或 + 连接多个；名竞测试bot中对应 /namer-pd。附件 /namer-[pd|pd|qp|qd] 写法存在重复 pd，列为疑似笔误待核实。",
+      "checked_at": "2026-11-16"
+    },
+    {
+      "context_id": "qqbot-qp-invocation",
+      "term_id": "enhanced-team-rating",
+      "aliases_add": [],
+      "source_ids": [
+        "attachment-qqbot"
+      ],
+      "scope": "《qq群bot.txt》记载的 QQ bot 调用形式；未实测验证 bot 当前在线状态。",
+      "explanation": "在小鱼bot中测强评：第一行发命令 qp，第二行开始每行一个名字或 + 连接；名竞测试bot中对应 /namer-qp。pf 命令可一次性给出四项评分与合计。",
+      "checked_at": "2026-11-16"
+    },
+    {
+      "context_id": "qqbot-qd-invocation",
+      "term_id": "enhanced-duel-rating",
+      "aliases_add": [],
+      "source_ids": [
+        "attachment-qqbot"
+      ],
+      "scope": "《qq群bot.txt》记载的 QQ bot 调用形式；未实测验证 bot 当前在线状态。",
+      "explanation": "在小鱼bot中测强单：第一行发命令 qd，第二行开始每行一个名字或 + 连接；名竞测试bot中对应 /namer-qd。",
+      "checked_at": "2026-11-16"
+    },
+    {
+      "context_id": "qqbot-cqp-invocation",
+      "term_id": "tswn-cqp",
+      "aliases_add": [],
+      "source_ids": [
+        "attachment-qqbot"
+      ],
+      "scope": "《qq群bot.txt》记载的 QQ bot 调用形式；未实测验证 bot 当前在线状态。",
+      "explanation": "小鱼bot的 cqp 命令计算 100% CQP：一行一组，双人组用 + 连接；名竞测试bot对应 /namer-cqp，同样「一行一组，双人组用 + 连接」。普通名字组用 + 连接，已导出的 +ol:/+diy[ 组用 ++ 分隔。",
+      "checked_at": "2026-11-16"
+    },
+    {
+      "context_id": "qqbot-cqd-invocation",
+      "term_id": "tswn-cqd",
+      "aliases_add": [],
+      "source_ids": [
+        "attachment-qqbot"
+      ],
+      "scope": "《qq群bot.txt》记载的 QQ bot 调用形式；未实测验证 bot 当前在线状态。",
+      "explanation": "名竞测试bot的 /namer-cqd 使用 tswn 计算 100% CQD，一行一组，双人组用 + 连接；小鱼bot未单列 cqd 命令（pf 只含四项评分与合计），附件未见小鱼bot直接输出 CQD 的命令形式。",
+      "checked_at": "2026-11-16"
+    },
+    {
+      "context_id": "qqbot-pf-invocation",
+      "term_id": "tswn-namer-pf",
+      "aliases_add": [],
+      "source_ids": [
+        "attachment-qqbot"
+      ],
+      "scope": "《qq群bot.txt》记载的 QQ bot 调用形式；未实测验证 bot 当前在线状态。",
+      "explanation": "小鱼bot的 pf 命令「一次算 pp/pd/qp/qd/合计」；名竞测试bot对应 /namer-pf「一下子全评」，输入均为一行一个名字或 + 连接的多个名字。",
+      "checked_at": "2026-11-16"
+    },
+    {
+      "context_id": "qqbot-teammate-eval-invocation",
+      "term_id": "tswn-teammate-preset",
+      "aliases_add": [],
+      "source_ids": [
+        "attachment-qqbot"
+      ],
+      "scope": "《qq群bot.txt》记载的 QQ bot 调用形式；未实测验证 bot 当前在线状态。",
+      "explanation": "小鱼bot的 cp / fp / wcp / fsp / pjp 命令为 Openbox 队友评测；名竞测试bot对应 /namer-cp /namer-bcp /namer-fp /namer-fzp /namer-wcp /namer-dp /namer-fsp /namer-pjp，其中 bcp=cp、fzp=fp、dp=wcp（附件原文）。支持命令后直接输入或换行输入，并有「A+B 评测与 B 组队加成后的 A」两种用法。",
+      "checked_at": "2026-11-16"
+    },
+    {
+      "context_id": "qqbot-base-invocation",
+      "term_id": "tswn-base",
+      "aliases_add": [],
+      "source_ids": [
+        "attachment-qqbot"
+      ],
+      "scope": "《qq群bot.txt》记载的 QQ bot 调用形式；未实测验证 bot 当前在线状态。",
+      "explanation": "小鱼bot的 base 命令调用「原始 base 工具」，一次只支持一个名字；名竞测试bot的 /namer-base 同样只支持单个名字（避免刷屏）。",
+      "checked_at": "2026-11-16"
+    },
+    {
+      "context_id": "qqbot-todiy-invocation",
+      "term_id": "tswn-to-diy",
+      "aliases_add": [],
+      "source_ids": [
+        "attachment-qqbot"
+      ],
+      "scope": "《qq群bot.txt》记载的 QQ bot 调用形式；未实测验证 bot 当前在线状态。",
+      "explanation": "小鱼bot的 todiy 命令导出 +ol DIY 文本：多人组用 ++ 分隔（例：a@t++b@t）；普通名字组用 + 连接，已导出的 +ol:/+diy[ 组用 ++ 分隔。",
+      "checked_at": "2026-11-16"
+    },
+    {
+      "context_id": "qqbot-team-invocation",
+      "term_id": "tswn-team-upgrade",
+      "aliases_add": [],
+      "source_ids": [
+        "attachment-qqbot"
+      ],
+      "scope": "《qq群bot.txt》记载的 QQ bot 调用形式；未实测验证 bot 当前在线状态。",
+      "explanation": "小鱼bot的 team / teams 命令查看同队加成后的属性 / 技能：一行一组，格式同 cqp，组间用空行分隔；名竞测试bot对应 /namer-team 与 /namer-teams（teams 技能按原始顺序输出）。",
+      "checked_at": "2026-11-16"
+    },
+    {
+      "context_id": "qqbot-rate-invocation",
+      "term_id": "tswn-win-rate-session",
+      "aliases_add": [],
+      "source_ids": [
+        "attachment-qqbot"
+      ],
+      "scope": "《qq群bot.txt》记载的 QQ bot 调用形式；未实测验证 bot 当前在线状态。",
+      "explanation": "小鱼bot的 rate 命令测两队胜率：命令后「正好两行」，每行格式同 cqp；namer 命令按网页格式打一场（空行分队、无空行全体混战，输出胜者）。",
+      "checked_at": "2026-11-16"
+    },
+    {
+      "context_id": "qqbot-weekly-activation-invocation",
+      "term_id": "ladder-weekly-activation",
+      "aliases_add": [],
+      "source_ids": [
+        "attachment-qqbot"
+      ],
+      "scope": "《qq群bot.txt》记载的 QQ bot 调用形式；未实测验证 bot 当前在线状态。",
+      "explanation": "小鱼bot提供周赛激活命令组：bind <主队名> 申请绑定 QQ（等主队在网站确认）；check [主队名] 查看主队与常驻战队激活状态，回复序号可激活对应周赛组；activate <战队> [组别]（省略组别＝全部）、deactivate 同理；activate-all 激活全部周赛组。激活动作与网站上的激活状态对应。",
+      "checked_at": "2026-11-16"
+    },
+    {
+      "context_id": "qqbot-ladder-query-invocation",
+      "term_id": "community-ladder",
+      "aliases_add": [],
+      "source_ids": [
+        "attachment-qqbot"
+      ],
+      "scope": "《qq群bot.txt》记载的 QQ bot 调用形式；未实测验证 bot 当前在线状态。",
+      "explanation": "小鱼bot的天梯查询命令组：rank / 排行 [组别] [数量]（指定组别默认前 10，不指定则每组前 3）；查排名 [战队名] 查该战队各组别名次；战绩 <组别> [战队名] 查近期战绩；week / 周赛、赛况、history / 历史等命令查询周赛赛程与历届冠军。",
+      "checked_at": "2026-11-16"
+    }
+  ]
+}

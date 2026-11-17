@@ -17,6 +17,10 @@ coverage/
 .cache/
 data/raw/*
 !data/raw/official-namerena/
+!data/raw/provided/
+data/raw/provided/*
+!data/raw/provided/qq群bot.txt
+!data/raw/provided/DataStructure4-Readme.md
 data/processed/
 *.log
 

@@ -487,6 +487,262 @@
         "community-forum-ladder",
         "community-ladder-register"
       ]
+    },
+    {
+      "id": "add-term-xp-xd",
+      "question": "测号器输出里的 xp、xd 是官方评分吗？能不能直接拿去和强评 6000 比？",
+      "expected_points": [
+        "识别 xp 为虚评、xd 为虚单，是用属性与熟练度等数值拟合出的本地评分",
+        "说明它与官方 !test! 统计胜负得出的评分不是同一口径",
+        "指出虚评阈值只是筛号配置，不是社区统一强号标准"
+      ],
+      "avoid": [
+        "说成官方评分或官方榜单分数",
+        "把某个工具里的虚评阈值当成当前通用强号门槛"
+      ],
+      "source_ids": [
+        "tutorial-old",
+        "tutorial-new",
+        "pbb7-repo"
+      ]
+    },
+    {
+      "id": "add-term-silk-rating",
+      "question": "群里说 scp 除以 100 约等于 cp 平均值，那丝评是不是就能当 cqp 分数用？",
+      "expected_points": [
+        "说明丝评是模型预测输出，主要作筛子与入库排序，不是实测评分",
+        "给出读数规则：scqd÷100 为预测 cqd，scp÷100 约对应 pair 中 cp 平均值",
+        "区分丝评分数与 cqp/cqd 开箱指标，不能直接等同"
+      ],
+      "avoid": [
+        "断言丝评等于实际 cqp/cqd",
+        "声称模型公式或训练数据已公开可复算"
+      ],
+      "source_ids": [
+        "tutorial-new",
+        "tutorial-old"
+      ]
+    },
+    {
+      "id": "add-term-ptt",
+      "question": "SP2 测出来的 ptt 是这个号现在的最高评分吗？",
+      "expected_points": [
+        "ptt 指经过一次加成后可能达到的最高评分，是潜力预测值",
+        "说明由 SP2 之类的工具计算，与潜力丝评、ptt_sieve 配置相关",
+        "明确这是预测/估值，不是实测对战结果"
+      ],
+      "avoid": [
+        "说成号当前的面板评分",
+        "声称已实测或已验证"
+      ],
+      "source_ids": [
+        "tutorial-new",
+        "attachment-ds4"
+      ]
+    },
+    {
+      "id": "add-term-taunt-value",
+      "question": "为什么给背刺号加了一点攻，配出来的二人组 cqp 反而暴跌？",
+      "expected_points": [
+        "给出嘲讽值公式 2×[(攻−防)+(魔−抗)+速+(敏+智)×0.5]，并说明是玩家研究结论",
+        "解释二人组中嘲讽值高的一方显著更容易被大部分攻击索敌，且差距是突变型",
+        "指出加攻使背刺嘲讽值反超辅助即为逆嘲讽现象"
+      ],
+      "avoid": [
+        "把嘲讽值说成游戏显示的第九项官方属性",
+        "断言所有技能的索敌都遵循这一规则"
+      ],
+      "source_ids": [
+        "tutorial-old",
+        "tutorial-new"
+      ]
+    },
+    {
+      "id": "add-term-double-boost",
+      "question": "同样几十点组队加成，为什么有的组合两个号一起变强，有的几乎没变化？",
+      "expected_points": [
+        "说明组队加成需按 name_base 位点匹配，改的是加成后的 namebonus，不是简单覆盖原序列",
+        "解释形如 x,y,x（y 很大）的片段具有双加成性质，能打上两处加成标记",
+        "区分组队加成与末尾熟练度加成，后者不能简称加成"
+      ],
+      "avoid": [
+        "说成只要同战队名组队就必定有加成",
+        "把组队加成和末尾熟练度加成混为一谈"
+      ],
+      "source_ids": [
+        "tutorial-old",
+        "tutorial-new"
+      ]
+    },
+    {
+      "id": "add-pbb7-scale",
+      "question": "PBB7 里 QP5400、CQD4000，是不是就是强评 5400、cqd 40%？",
+      "expected_points": [
+        "说明 PBB7 的十评分族是本地引擎算出的整数分数，阈值在数千量级",
+        "区分官方评分（胜利次数÷总战斗次数×10000）与社区 cqp/cqd（对靶子平均胜率）",
+        "指出三者量纲与算法不同，不存在可直接换算的比值"
+      ],
+      "avoid": [
+        "把 PBB7 阈值当成官方评分或胜率百分数",
+        "断言两个评分体系之间有固定换算公式"
+      ],
+      "source_ids": [
+        "pbb7-repo",
+        "tutorial-old",
+        "official-testing"
+      ]
+    },
+    {
+      "id": "add-pbb7-qp-correction",
+      "question": "PBB7 的 QP 是不是先按 QP−PP 差值过滤掉一批号再算的？",
+      "expected_points": [
+        "说明 7.0.2 起 QP 使用连续二次扣分，输入为 SP1 有效幻术熟练度 u 与 SP1 幻影属性加权强度 s",
+        "给出计算顺序：先按旧口径截断原 QP，再减扣分并截断为整数，负扣分夹到 0",
+        "明确 QP−PP 差值过滤、幻影强度硬排除、有效熟练度 60 硬排除均为已废除的旧口径"
+      ],
+      "avoid": [
+        "说成仍在使用 QP−PP 差值过滤",
+        "把 PBB7 的 SP1 模型与 DataStructure4 的 SP1/SP2 程序混为一谈"
+      ],
+      "source_ids": [
+        "pbb7-repo"
+      ]
+    },
+    {
+      "id": "add-pbb7-resume",
+      "question": "PBB7 测到一半断电，改成随机模式继续跑能接上进度吗？",
+      "expected_points": [
+        "说明自动更新 start 每处理 0.01T 把进度写回全局 start，中途断电最多损失 0.01T",
+        "指出 Resume 续测仅支持模式1，必须用原配置和原结果文件",
+        "说明评分规则版本改变后格式任务的旧检查点会被拒绝"
+      ],
+      "avoid": [
+        "说成任意枚举模式都能续测",
+        "声称断电后进度零损失"
+      ],
+      "source_ids": [
+        "pbb7-repo"
+      ]
+    },
+    {
+      "id": "add-pbb7-flex",
+      "question": "PBB7 里说汉字是 3 字节字符类型，是不是一个汉字就要占 3 个可变位置？",
+      "expected_points": [
+        "说明字节宽度是一个枚举单元的长度，不一定等于一个 Unicode 字符",
+        "列出 1/2/3/4/5~8 字节各类的例子，并说明 3 字节类含基础汉字、假名、盲文等",
+        "说明 flex 用 character_sets 族字典与 format 列表交错 {charset: 族名} 构造名字"
+      ],
+      "avoid": [
+        "把字节宽度说成字符个数或可变位置数",
+        "断言所有汉字一律为 3 字节"
+      ],
+      "source_ids": [
+        "pbb7-repo",
+        "tutorial-old"
+      ]
+    },
+    {
+      "id": "add-pbb7-enumeration",
+      "question": "PBB7 的模式2随机测号，是不是保证全程不会重复测到同一个名字？",
+      "expected_points": [
+        "说明引擎以一百万候选为一个 chunk",
+        "指出模式2/4 的尾 chunk 仍处理一百万候选，局部空间小于处理量或不同 chunk 取到重叠空间时仍可能重复",
+        "补充模式3逐位随机抽样本身也可能重复，模式1为顺序枚举"
+      ],
+      "avoid": [
+        "断言随机模式全程去重",
+        "把 chunk 说成一个 Unicode 字符或一个名字"
+      ],
+      "source_ids": [
+        "pbb7-repo"
+      ]
+    },
+    {
+      "id": "add-pbb7-output",
+      "question": "PBB7 结果文件里的分数是不是固定就 xp、xd 两列？",
+      "expected_points": [
+        "说明 output_xp=0 只写名字@队伍名，output_xp=1 才附加整数分数",
+        "指出列按 qp qd pp pd cqd cp fp wc fs pj 固定顺序取实际被计算评分族的子集，并非固定 XP/XD 两列",
+        "说明特殊属性号另追加到包根 out/blue.txt"
+      ],
+      "avoid": [
+        "说成固定只有 XP/XD 两列",
+        "把 blue.txt 当成普通结果文件"
+      ],
+      "source_ids": [
+        "pbb7-repo"
+      ]
+    },
+    {
+      "id": "add-pbb7-autotune",
+      "question": "autotune 里填 6.1 是什么意思，跑完是不是就保证测号提速？",
+      "expected_points": [
+        "说明输入速度单位为 T/day，T=10^12 候选，期望测试时长建议 20 分钟",
+        "说明结果写入 settings/build_config.json 并绑定机器、编译器路径与源码哈希",
+        "区分编译层面优化与降低阈值、少算评分族、短路评分这类改变语义的提速"
+      ],
+      "avoid": [
+        "声称已实测或保证提速",
+        "把 T/day 当成评分分数"
+      ],
+      "source_ids": [
+        "pbb7-repo",
+        "tutorial-old"
+      ]
+    },
+    {
+      "id": "add-old-tutorial-history",
+      "question": "旧教程里写的天梯六榜，现在还能去打榜吗？",
+      "expected_points": [
+        "说明旧教程记载 2020 年 5 月发布第一代天梯、后扩为六榜（1a/1b/2/3/4/5 人组）",
+        "指出旧教程原文称天梯因服务器欠费关闭、至今未再次打开",
+        "区分官方旧天梯与民间 10007 天梯、10008 论坛，并说明旧教程部分章节自标可能过时"
+      ],
+      "avoid": [
+        "断言官方天梯当前仍开放",
+        "把民间天梯直接当成官方天梯"
+      ],
+      "source_ids": [
+        "tutorial-old",
+        "community-ladder-home",
+        "maintainer-community-naming"
+      ]
+    },
+    {
+      "id": "add-slang-mirror-upset",
+      "question": "胜率高的一边反而输了，群里说的「不等式」「镜子」是同一个意思吗？五五开陷阱又指什么？",
+      "expected_points": [
+        "说明不等式/镜子指比赛中胜率高的一方反而输掉",
+        "说明陷阱/五五开陷阱指双方胜率接近五五开但实际比分一边倒",
+        "指出这些是社区俗语，不是游戏机制或官方判定"
+      ],
+      "avoid": [
+        "解释成游戏 bug 或官方判定规则",
+        "把「镜子」当成某个技能或装备"
+      ],
+      "source_ids": [
+        "tutorial-old",
+        "tutorial-new",
+        "tieba-forum"
+      ]
+    },
+    {
+      "id": "add-slang-monkey-parent",
+      "question": "「猴儿」和「使魔父亲」说的是同一类东西吗？",
+      "expected_points": [
+        "说明猴儿在新教程常用语表中既指滑稽的号或行为，也指二人组加成组合「加成猴儿」",
+        "说明使魔父亲/幻影父亲指召唤物的猎豹操作（大量输出、承伤、救主），可反衬本体入机",
+        "指出两者语境不同，都是社区用语"
+      ],
+      "avoid": [
+        "把「猴儿」当成玩家账号等级或某个固定号",
+        "把召唤物的表现说成本体技能"
+      ],
+      "source_ids": [
+        "tutorial-new",
+        "tutorial-old",
+        "community-forum-creative"
+      ]
     }
   ]
 }

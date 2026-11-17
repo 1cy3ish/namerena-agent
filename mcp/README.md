@@ -6,7 +6,7 @@
 
 | 暂定能力 | 输入 | 预期输出 |
 | --- | --- | --- |
-| `lookup_term` | 术语或别名、可选语境 | 匹配词条、释义、适用范围与来源 ID；未命中时明确返回未知 |
+| `lookup_term` | 术语或别名、可选语境 | 匹配词条、简要/详细描述、过时标记与来源 ID；未命中时明确返回未知 |
 | `search_knowledge` | 问题或关键词 | 相关知识条目、来源与核查日期 |
 | `get_source` | 来源 ID | 标题、URL、类型、检索日期和局限 |
 
@@ -14,4 +14,4 @@
 
 游戏对战、属性计算和评分暂不作为已有能力。后续如果接入，需要明确引擎来源、许可证、游戏版本、输入语义和实测依据。官方网页嵌入文档见 [资料概览](../knowledge/overview.md)，它不等于可直接调用的服务端对战接口。
 
-[tswn-core 知识](../knowledge/tools/tswn-core/README.md) 已记录一个实际重写引擎、Openbox 评分与 WASM 会话接口，可作为后续封装依据。知识检索应一并返回 scope、context_notes、固定 commit 和来源，避免把原站基础定义、tswn 实现及不同评分单位混为一谈；当前仍未实现执行这些能力的 MCP server。
+[tswn-core 知识](../knowledge/tools/tswn-core/README.md) 已记录一个实际重写引擎、Openbox 评分与 WASM 会话接口，可作为后续封装依据。知识检索应一并返回过时标记、context_notes、固定 commit 和来源，避免把原站基础定义、tswn 实现及不同评分单位混为一谈；当前仍未实现执行这些能力的 MCP server。
