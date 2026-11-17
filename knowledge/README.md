@@ -16,7 +16,7 @@
 
 - `id`：稳定英文标识；`term`：常用名称；`aliases`：别名或缩写。
 - `definition`：结合名字竞技场语境的简短解释。
-- `detailed_description`：可直接用于问答的详细中文正文；大多数实质词条必备，包含机制、数值出处、版本语境与待核实项。简单标签/纯称呼允许省略。
+- `detailed_description`：可直接用于问答的详细中文正文；大多数实质词条必备，包含机制、数值出处、版本语境与待核实项。简单标签/纯称呼确无展开必要时可留空字符串，不能省略字段。
 - `outdated`：独立布尔标记，`true` 表示历史内容、已废弃或极少使用；与是否有来源、是否待核实分开。已确认过时：旧天梯（historical-ladder-name）、粗评（rough-evaluation）、精评（refined-evaluation）；其余条目过时与否见正文依据。
 - `category`：概念、玩法、输入规则或评分。
 - `status`：`source_supported` 表示有来源支持这项释义；`unverified` 表示尚待核实。
@@ -26,8 +26,10 @@
 
 `origin: official-index` 的词条由 `scripts/build_official_index.py` 从归档生成，完整字段见 `details_path` 和 `details_id`，其他词条为人工整理。语言包独有词汇与完整机制定义分开记录。
 
-`origin: tswn-curation` 和 `origin: community-curation` 的新词与已有词条的 `context_notes` 分别由工具、社区目录中的 `terminology.json` 维护，通过 `scripts/merge_term_contexts.py` 应用。`context_refs` 指向补充解释的维护入口；官方索引再生成会再次合并，保留 tswn 实现解释和社区语境。别名允许一词多义，回答时读取 scope 与语境，不强行把所有命中合成同一机制。
+`origin: tswn-curation` 和 `origin: community-curation` 的新词与已有词条的 `context_notes` 分别由工具、社区目录中的 `terminology.json` 维护，通过 `scripts/merge_term_contexts.py` 应用。`context_refs` 指向补充解释的维护入口；官方索引再生成会再次合并，保留 tswn 实现解释和社区语境。别名允许一词多义，回答时读取简要/详细描述及语境补充，不强行把所有命中合成同一机制。
 
 仓库来源记录 `commit`、`repository_path`、行号和 `sha256`，链接指向不可变 GitHub blob。上游本地路径只是定位提示，不是本知识仓库的构建依赖。
 
-待整理材料可暂存于被 Git 忽略的 `data/raw/` 其他子目录，官方归档子目录已纳入版本管理。维护者后续口述的信息记录为维护者来源，不伪装成已抓取的公开文档。
+待整理材料可暂存于被 Git 忽略的 `data/raw/` 其他子目录；官方归档及明确提供的两份 `provided/` 附件已纳入版本管理，并保留原始字节。维护者后续口述的信息记录为维护者来源，不伪装成已抓取的公开文档。
+
+PR 修复的公开楼层摘要与未交付资料说明见 [复核观察](community/ladder-forum/review-observations.json)；Boss 源码推导的条件及结果见 [构建观察](tools/tswn-core/boss-build-observations.json)。这两份资料都不是对战实测报告。

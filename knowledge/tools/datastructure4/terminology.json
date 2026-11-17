@@ -6,90 +6,149 @@
     {
       "id": "datastructure4",
       "term": "DataStructure4",
-      "aliases": ["Data_Structure4.0", "all_new", "DS", "ds"],
+      "aliases": [
+        "Data_Structure4.0",
+        "all_new",
+        "DS",
+        "ds"
+      ],
       "definition": "社区批量测号整理主流程「all_new」的可分发工具包，用于批量整理号库、过滤与去重输入、按分类筛选、做二人组/三人组增量配对，并调用 ABCP5 模型输出预测结果。",
       "category": "tool",
       "status": "source_supported",
-      "source_ids": ["attachment-ds4"],
+      "source_ids": [
+        "attachment-ds4"
+      ],
       "checked_at": "2026-11-16",
-      "detailed_description": "Data_Structure4.0 是社区批量测号整理工具「all_new 主流程」的可分发版本（依据：委托方提供的《DataStructure4-Readme.md》，2026-11-16 读取；未运行该程序）。\n\n用途与主流程：把待处理的 .txt 测号输出放入 input/，配置 config.json 的 team_name 后运行 all_new.exe，依次执行：①合并 input/ 并校验 team_name、过滤不属于当前队伍的行；②与 file/old.txt 去重得到本轮新增输入；③用 SP1/SP2 计算单项与类型分数，生成 BC、FZ、WC、FS、PJ 等分类；④用 two_FC_new、two_WC_new、two_RH_new 做 old/new 增量配对；⑤get_3=1 时先用 ABCP5 筛选二人组，再分类并执行八类三人组增量配对；⑥abcp.enable=1 时汇总二人组结果并输出 ABCP5 预测；⑦更新 file/ 历史状态。首次完整重跑用 reset_and_run_all_new.bat（支持 --dry-run --no-pause）。\n\n主要输出（README 表格）：out/FC.txt（FZ x BC 二人组）、out/WC.txt（WC 内部二人组）、out/RH.txt（FS x PJ 二人组）、out/new_qp.txt 等单项结果、out/qp_skill.txt 等技能筛选结果、out/ignore_input.txt（被过滤输入）、abcp5/result.txt（带 ABCP5 分数的预测）、3ren/FFC.txt 等三人组结果、file/old*.txt（增量历史状态）。README 特别说明输出行顺序受多线程影响，不应视为语义。\n\n与社区教程的关系：新教程（tutorial-new，基础5）将其列为批量测号整理工具，说明其用途为「批量整理号、配二人组、获得全号库各种拟合评分」，并提示子程序用法参照同目录 readme.md。\n\n注意：README 中的 BC/FZ/WC/FS/PJ 等分类含义、SP1/SP2 模型原理均未在该文档中解释，本知识库不推演；具体阈值见 ds4-sieve 词条。"
+      "detailed_description": "Data_Structure4.0 是社区批量测号整理工具「all_new 主流程」的可分发版本（依据：委托方提供的《DataStructure4-Readme.md》，2026-11-16 读取；未运行该程序）。\n\n用途与主流程：把待处理的 .txt 测号输出放入 input/，配置 config.json 的 team_name 后运行 all_new.exe，依次执行：①合并 input/ 并校验 team_name、过滤不属于当前队伍的行；②与 file/old.txt 去重得到本轮新增输入；③用 SP1/SP2 计算单项与类型分数，生成 BC、FZ、WC、FS、PJ 等分类；④用 two_FC_new、two_WC_new、two_RH_new 做 old/new 增量配对；⑤get_3=1 时先用 ABCP5 筛选二人组，再分类并执行八类三人组增量配对；⑥abcp.enable=1 时汇总二人组结果并输出 ABCP5 预测；⑦更新 file/ 历史状态。首次完整重跑用 reset_and_run_all_new.bat（支持 --dry-run --no-pause）。\n\n主要输出（README 表格）：out/FC.txt（FZ x BC 二人组）、out/WC.txt（WC 内部二人组）、out/RH.txt（FS x PJ 二人组）、out/new_qp.txt 等单项结果、out/qp_skill.txt 等技能筛选结果、out/ignore_input.txt（被过滤输入）、abcp5/result.txt（带 ABCP5 分数的预测）、3ren/FFC.txt 等三人组结果、file/old*.txt（增量历史状态）。README 特别说明输出行顺序受多线程影响，不应视为语义。\n\n与社区教程的关系：新教程（tutorial-new，基础5）将其列为批量测号整理工具，说明其用途为「批量整理号、配二人组、获得全号库各种拟合评分」，并提示子程序用法参照同目录 readme.md。\n\n注意：README 中的 BC/FZ/WC/FS/PJ 等分类含义、SP1/SP2 模型原理均未在该文档中解释，本知识库不推演；具体阈值见 ds4-sieve 词条。",
+      "outdated": false
     },
     {
       "id": "ds4-abcp5",
       "term": "ABCP5",
-      "aliases": ["abcp5", "get_abcp"],
+      "aliases": [
+        "abcp5",
+        "get_abcp"
+      ],
       "definition": "DataStructure4 包内携带的二人组预测模型：对二人组 cqp 进行模型预估评分，基于 ONNX Runtime 运行，随包带模型与运行库、不依赖 Python。",
       "category": "tool",
       "status": "source_supported",
-      "source_ids": ["attachment-ds4"],
+      "source_ids": [
+        "attachment-ds4"
+      ],
       "checked_at": "2026-11-16",
-      "detailed_description": "ABCP5 是 DataStructure4.0 包 abcp5/ 目录内的二人组预测模型与推理程序（依据：《DataStructure4-Readme.md》，2026-11-16 读取；未运行）。\n\n用途：对二人组 cqp 进行模型预估评分。在 all_new 主流程中，abcp.enable=1 时汇总二人组结果并运行 ABCP5 输出预测；get_3=1 时先以 pair_abcp_sieve 阈值用 ABCP5 筛选二人组，再进入三人组配对。\n\n独立命令（README）：./abcp.exe model3.onnx input.txt scale.txt [线程数] (阈值)，线程数必须提供，生成 result.txt；result_process.exe 可排序并生成去分数版 result_without_score.txt。\n\n环境：已携带模型、ONNX Runtime 与 x64 VC++ 运行库，不依赖 Python；双击无输出或 DLL 初始化错误时运行 check_abcp5.bat 诊断，必要时用兼容版 abcp5_compatible.exe。模型公式、训练方式与性能不在该文档范围内，本知识库不作推演。\n\n社区教程（tutorial-new 基础5）同样把 abcp5 描述为「对二人组 cqp 进行模型预估评分」，与 README 一致。"
+      "detailed_description": "ABCP5 是 DataStructure4.0 包 abcp5/ 目录内的二人组预测模型与推理程序（依据：《DataStructure4-Readme.md》，2026-11-16 读取；未运行）。\n\n用途：对二人组 cqp 进行模型预估评分。在 all_new 主流程中，abcp.enable=1 时汇总二人组结果并运行 ABCP5 输出预测；get_3=1 时先以 pair_abcp_sieve 阈值用 ABCP5 筛选二人组，再进入三人组配对。\n\n独立命令（README）：./abcp.exe model3.onnx input.txt scale.txt [线程数] (阈值)，线程数必须提供，生成 result.txt；result_process.exe 可排序并生成去分数版 result_without_score.txt。\n\n环境：已携带模型、ONNX Runtime 与 x64 VC++ 运行库，不依赖 Python；双击无输出或 DLL 初始化错误时运行 check_abcp5.bat 诊断，必要时用兼容版 abcp5_compatible.exe。模型公式、训练方式与性能不在该文档范围内，本知识库不作推演。\n\n社区教程（tutorial-new 基础5）同样把 abcp5 描述为「对二人组 cqp 进行模型预估评分」，与 README 一致。",
+      "outdated": false
     },
     {
       "id": "ds4-incremental-pairing",
       "term": "增量配对",
-      "aliases": ["old/new 增量配对", "two_FC", "two_WC", "two_RH"],
+      "aliases": [
+        "old/new 增量配对",
+        "two_FC",
+        "two_WC",
+        "two_RH"
+      ],
       "definition": "DataStructure4 主流程的配对方式：只计算 new x new、new x old、old x new 三类组合，不重复计算 old x old，避免重复处理历史数据。",
       "category": "mechanics",
       "status": "source_supported",
-      "source_ids": ["attachment-ds4"],
+      "source_ids": [
+        "attachment-ds4"
+      ],
       "checked_at": "2026-11-16",
-      "detailed_description": "增量配对是 DataStructure4.0 主流程处理二人组/三人组组合的核心机制（依据：《DataStructure4-Readme.md》，2026-11-16 读取）。\n\nall_new.exe 先把本轮输入与 file/old.txt（历史状态）去重得到新增输入，再做 old/new 增量拆分：二人组增量只计算 new x new、new x old 和 old x new，不会重复计算 old x old；完全相同的两个字符串不会组成一组。配对子程序为 two_FC_new、two_WC_new、two_RH_new，分别对应 out/FC.txt（FZ x BC）、out/WC.txt（WC 内部）、out/RH.txt（FS x PJ）三类二人组输出。\n\n三人组同理：get_3=1 时先经 ABCP5 筛选（阈值 three.pair_abcp_sieve）再执行八类三人组（FFC/WFC/FWC/WWC/RWC/RRH/PRH/WRH）增量配对，结果写入 3ren/。two_<TYPE>.exe 也可以独立调用，接口为 two_<TYPE>.exe <type> <thread_number> <sieve> <single_input> <pair_input> <output_file>（当前 type 必须为 1），程序只做一次 single_input x pair_input 计算并以追加方式写入输出；old/new 拆分由 all_new.exe 负责。\n\n增量状态保存在 file/old*.txt，正常增量运行不要清空 file/；需要从头重跑时用 reset_and_run_all_new.bat 清理 tmp/、out/、new/、file/、3ren/、3-out/ 及 ABCP5 临时结果。"
+      "detailed_description": "增量配对是 DataStructure4.0 主流程处理二人组/三人组组合的核心机制（依据：《DataStructure4-Readme.md》，2026-11-16 读取）。\n\nall_new.exe 先把本轮输入与 file/old.txt（历史状态）去重得到新增输入，再做 old/new 增量拆分：二人组增量只计算 new x new、new x old 和 old x new，不会重复计算 old x old；完全相同的两个字符串不会组成一组。配对子程序为 two_FC_new、two_WC_new、two_RH_new，分别对应 out/FC.txt（FZ x BC）、out/WC.txt（WC 内部）、out/RH.txt（FS x PJ）三类二人组输出。\n\n三人组同理：get_3=1 时先经 ABCP5 筛选（阈值 three.pair_abcp_sieve）再执行八类三人组（FFC/WFC/FWC/WWC/RWC/RRH/PRH/WRH）增量配对，结果写入 3ren/。two_<TYPE>.exe 也可以独立调用，接口为 two_<TYPE>.exe <type> <thread_number> <sieve> <single_input> <pair_input> <output_file>（当前 type 必须为 1），程序只做一次 single_input x pair_input 计算并以追加方式写入输出；old/new 拆分由 all_new.exe 负责。\n\n增量状态保存在 file/old*.txt，正常增量运行不要清空 file/；需要从头重跑时用 reset_and_run_all_new.bat 清理 tmp/、out/、new/、file/、3ren/、3-out/ 及 ABCP5 临时结果。",
+      "outdated": false
     },
     {
       "id": "ds4-classify",
       "term": "五类基础分拣",
-      "aliases": ["分类筛选", "BC", "FZ", "WC", "FS", "PJ"],
+      "aliases": [
+        "分类筛选",
+        "BC",
+        "FZ",
+        "WC",
+        "FS",
+        "PJ"
+      ],
       "definition": "DataStructure4 主流程用 SP1/SP2 计算单项与类型分数后，把号按 BC、FZ、WC、FS、PJ 五个类别分拣的步骤；五类的语义在 README 中未解释。",
       "category": "rating",
       "status": "unverified",
-      "source_ids": ["attachment-ds4"],
+      "source_ids": [
+        "attachment-ds4"
+      ],
       "checked_at": "2026-11-16",
-      "detailed_description": "五类基础分拣指 DataStructure4.0 主流程第 3 阶段：「用 SP1/SP2 计算单项与类型分数，并生成 BC、FZ、WC、FS、PJ 等分类」（依据：《DataStructure4-Readme.md》，2026-11-16 读取）。\n\nREADME 只给出五个类别名与各自配置键（bc/fz/wc/fs/pj 的 sieve 与 ptt_sieve 阈值），没有解释 BC、FZ、WC、FS、PJ 的具体语义。从新教程（tutorial-new 基础6 openbox 章）可旁证：openbox 的 pair 队友文件按 bc/fs/fz/pj/wc 命名，教程对应为「背刺/主力人海/辅助/人海配件/无刺」等队友类型——据此推断这五个字母是号的功能类型分类，但该对应关系未在 DS4 文档中直接确认，具体含义待核实。\n\n配套输出：分类结果可按 copy_to_new 配置复制到 new/ 目录供检查；out/WC.txt 等按类别做二人组配对。分类阈值与 PTT 阈值见 ds4-sieve 词条。"
+      "detailed_description": "五类基础分拣指 DataStructure4.0 主流程第 3 阶段：「用 SP1/SP2 计算单项与类型分数，并生成 BC、FZ、WC、FS、PJ 等分类」（依据：《DataStructure4-Readme.md》，2026-11-16 读取）。\n\nREADME 只给出五个类别名与各自配置键（bc/fz/wc/fs/pj 的 sieve 与 ptt_sieve 阈值），没有解释 BC、FZ、WC、FS、PJ 的具体语义。从新教程（tutorial-new 基础6 openbox 章）可旁证：openbox 的 pair 队友文件按 bc/fs/fz/pj/wc 命名，教程对应为「背刺/主力人海/辅助/人海配件/无刺」等队友类型——据此推断这五个字母是号的功能类型分类，但该对应关系未在 DS4 文档中直接确认，具体含义待核实。\n\n配套输出：分类结果可按 copy_to_new 配置复制到 new/ 目录供检查；out/WC.txt 等按类别做二人组配对。分类阈值与 PTT 阈值见 ds4-sieve 词条。",
+      "outdated": false
     },
     {
       "id": "ds4-three-team",
       "term": "三人组流程",
-      "aliases": ["get_3", "八类三人组", "3ren"],
+      "aliases": [
+        "get_3",
+        "八类三人组",
+        "3ren"
+      ],
       "definition": "DataStructure4 的可选阶段（get_3=1 时启用）：先用 ABCP5 筛选二人组，再把单人输入与筛选后的二人组按 FFC、WFC、FWC、WWC、RWC、RRH、PRH、WRH 八类做增量配对。",
       "category": "mechanics",
       "status": "source_supported",
-      "source_ids": ["attachment-ds4"],
+      "source_ids": [
+        "attachment-ds4"
+      ],
       "checked_at": "2026-11-16",
-      "detailed_description": "三人组流程是 DataStructure4.0 主流程的可选阶段（依据：《DataStructure4-Readme.md》，2026-11-16 读取；未运行）。\n\n开关与门槛：config.json 中 get_3=1 启用；三人组详细数据结构与评分含义见包内 README_3.md（不在本次附件内，未读取）。进入三人配对前，二人组须先过 ABCP5 筛选，最低分数由 three.pair_abcp_sieve 控制（示例配置 4400）。\n\n八类三人组（程序、单人类型、二人组类型、默认输出）：two_FFC（FZ x FC → 3ren/FFC.txt）、two_WFC（WC x FC → WFC.txt）、two_FWC（FZ x WC → FWC.txt）、two_WWC（WC x WC → WWC.txt）、two_RWC（FS x WC → RWC.txt）、two_RRH（FS x RH → RRH.txt）、two_PRH（PJ x RH → PRH.txt）、two_WRH（WC x RH → WRH.txt）。每类有独立 enable 开关与 sieve 输出阈值。\n\n配对输入：单人输入直接来自本轮去重结果；二人组输入是已由 ABCP5 筛选、再由 classify.exe 换算为 two 对应分数的结果。三人组程序只负责一次 single_input x pair_input 计算，以追加方式写入指定输出；old/new 增量拆分由 all_new.exe 完成。\n\nREADME 另注明：two_FF、two_RR 仅用于训练数据收集，不属于 all_new 主流程，也不包含在发布包中。FFC/WFC 等缩写中字母的具体语义未在该文档解释，待核实。"
+      "detailed_description": "三人组流程是 DataStructure4.0 主流程的可选阶段（依据：《DataStructure4-Readme.md》，2026-11-16 读取；未运行）。\n\n开关与门槛：config.json 中 get_3=1 启用；三人组详细数据结构与评分含义见包内 README_3.md（不在本次附件内，未读取）。进入三人配对前，二人组须先过 ABCP5 筛选，最低分数由 three.pair_abcp_sieve 控制（示例配置 4400）。\n\n八类三人组（程序、单人类型、二人组类型、默认输出）：two_FFC（FZ x FC → 3ren/FFC.txt）、two_WFC（WC x FC → WFC.txt）、two_FWC（FZ x WC → FWC.txt）、two_WWC（WC x WC → WWC.txt）、two_RWC（FS x WC → RWC.txt）、two_RRH（FS x RH → RRH.txt）、two_PRH（PJ x RH → PRH.txt）、two_WRH（WC x RH → WRH.txt）。每类有独立 enable 开关与 sieve 输出阈值。\n\n配对输入：单人输入直接来自本轮去重结果；二人组输入是已由 ABCP5 筛选、再由 classify.exe 换算为 two 对应分数的结果。三人组程序只负责一次 single_input x pair_input 计算，以追加方式写入指定输出；old/new 增量拆分由 all_new.exe 完成。\n\nREADME 另注明：two_FF、two_RR 仅用于训练数据收集，不属于 all_new 主流程，也不包含在发布包中。FFC/WFC 等缩写中字母的具体语义未在该文档解释，待核实。",
+      "outdated": false
     },
     {
       "id": "ds4-sieve",
       "term": "sieve 阈值",
-      "aliases": ["筛阈值", "ptt_sieve", "skill_sieve"],
+      "aliases": [
+        "筛阈值",
+        "ptt_sieve",
+        "skill_sieve"
+      ],
       "definition": "DataStructure4 config.json 中控制各阶段保留输出的数值门槛：每个分类/评分/配对阶段有 sieve（保留阈值）与 ptt_sieve（PTT 阈值），单人评分另有 skill_sieve（技能阈值）。",
       "category": "rating",
       "status": "source_supported",
-      "source_ids": ["attachment-ds4"],
+      "source_ids": [
+        "attachment-ds4"
+      ],
       "checked_at": "2026-11-16",
-      "detailed_description": "sieve 阈值是 DataStructure4.0 config.json 中各阶段输出筛选门槛的总称（依据：《DataStructure4-Readme.md》，2026-11-16 读取）。\n\n字段含义（README 字段说明表）：bc/fz/wc/fs/pj 为五类基础分拣的保留阈值与 PTT 阈值（sieve、ptt_sieve）；two_fc/two_wc/two_rh 为二人组开关与保留阈值；qp/qd/pp 为单人评分开关、保留阈值与技能阈值（sieve、skill_sieve）；pd/cqd 为单人评分开关与保留阈值；abcp.sieve 为 ABCP5 最终输出阈值；three.pair_abcp_sieve 为二人组进入三人配对前的 ABCP5 最低分数；three.<type>.sieve 为对应三人组类型的输出阈值。\n\n随包示例配置的数值（例如 pp sieve 8000、pd 9000、qp 5700、qd 6500、cqd 4300、bc 4100/ptt 4500 等）按任务约定只作为该文档配置示例记录，不是社区统一的强号标准；PTT 含义见 ptt 词条（「经过一次加成后可能达到的最高评分」）。\n\n阈值改变输出集大小但不改变评分计算本身；README 未给出各阈值的推荐值与来历，待核实。"
+      "detailed_description": "sieve 阈值是 DataStructure4.0 config.json 中各阶段输出筛选门槛的总称（依据：《DataStructure4-Readme.md》，2026-11-16 读取）。\n\n字段含义（README 字段说明表）：bc/fz/wc/fs/pj 为五类基础分拣的保留阈值与 PTT 阈值（sieve、ptt_sieve）；two_fc/two_wc/two_rh 为二人组开关与保留阈值；qp/qd/pp 为单人评分开关、保留阈值与技能阈值（sieve、skill_sieve）；pd/cqd 为单人评分开关与保留阈值；abcp.sieve 为 ABCP5 最终输出阈值；three.pair_abcp_sieve 为二人组进入三人配对前的 ABCP5 最低分数；three.<type>.sieve 为对应三人组类型的输出阈值。\n\n随包示例配置的数值（例如 pp sieve 8000、pd 9000、qp 5700、qd 6500、cqd 4300、bc 4100/ptt 4500 等）按任务约定只作为该文档配置示例记录，不是社区统一的强号标准；PTT 含义见 ptt 词条（「经过一次加成后可能达到的最高评分」）。\n\n阈值改变输出集大小但不改变评分计算本身；README 未给出各阈值的推荐值与来历，待核实。",
+      "outdated": false
     },
     {
       "id": "ds4-team-name-filter",
       "term": "team_name 过滤",
-      "aliases": ["队伍名过滤", "team_name"],
+      "aliases": [
+        "队伍名过滤",
+        "team_name"
+      ],
       "definition": "DataStructure4 的输入校验机制：config.json 的 team_name 必填，每行最后一个 @ 后的队伍名必须与之相同，否则该行写入 out/ignore_input.txt 不参与计算。",
       "category": "input",
       "status": "source_supported",
-      "source_ids": ["attachment-ds4"],
+      "source_ids": [
+        "attachment-ds4"
+      ],
       "checked_at": "2026-11-16",
-      "detailed_description": "team_name 过滤是 DataStructure4.0 处理输入的第一道机制（依据：《DataStructure4-Readme.md》，2026-11-16 读取）。\n\n规则：config.json 的 team_name 为必填字符串，值为空或未配置时程序在处理前报错退出；每行最后一个 @ 后面的队伍名必须与 team_name 相同；队伍名比较会忽略行尾空格、Tab、CR 等空白字符。队伍名不同、缺少 @ 或格式不合法的行写入 out/ignore_input.txt，不参与计算。\n\n配套行为：input/ 下的普通文件会被合并处理；合并后与 file/old.txt 去重得到本轮新增输入（run_dup=1 时启用去重）。\n\n与游戏输入语法的关系：测号输出行通常是「名字@队伍名 [分数]」格式，team_name 过滤相当于按战队名筛选号库；这里的「每行最后一个 @」与名字主体中可能出现的字符之间的关系未在该文档展开，待核实。"
+      "detailed_description": "team_name 过滤是 DataStructure4.0 处理输入的第一道机制（依据：《DataStructure4-Readme.md》，2026-11-16 读取）。\n\n规则：config.json 的 team_name 为必填字符串，值为空或未配置时程序在处理前报错退出；每行最后一个 @ 后面的队伍名必须与 team_name 相同；队伍名比较会忽略行尾空格、Tab、CR 等空白字符。队伍名不同、缺少 @ 或格式不合法的行写入 out/ignore_input.txt，不参与计算。\n\n配套行为：input/ 下的普通文件会被合并处理；合并后与 file/old.txt 去重得到本轮新增输入（run_dup=1 时启用去重）。\n\n与游戏输入语法的关系：测号输出行通常是「名字@队伍名 [分数]」格式，team_name 过滤相当于按战队名筛选号库；这里的「每行最后一个 @」与名字主体中可能出现的字符之间的关系未在该文档展开，待核实。",
+      "outdated": false
     },
     {
       "id": "ds4-sp1-sp2",
       "term": "SP1/SP2",
-      "aliases": ["SP", "SP_fast"],
+      "aliases": [
+        "SP",
+        "SP_fast"
+      ],
       "definition": "DataStructure4 主流程第 3 阶段用于计算单项与类型分数的程序；SP2 可测 PTT（经过一次加成后可能达到的最高评分），另有 SP_fast 多线程版。模型原理不在文档范围内。",
       "category": "tool",
       "status": "source_supported",
-      "source_ids": ["attachment-ds4", "tutorial-new"],
+      "source_ids": [
+        "attachment-ds4",
+        "tutorial-new"
+      ],
       "checked_at": "2026-11-16",
-      "detailed_description": "SP1/SP2 是 DataStructure4.0 主流程第 3 阶段「计算单项与类型分数」所用的程序（依据：《DataStructure4-Readme.md》，2026-11-16 读取；未运行）。运行所需评分数据为包根 score_now.txt（SP1 所需评分数据）。另有 SP_fast（多线程 SP）列于新教程的子程序表中。\n\n新教程（tutorial-new 基础4）把 SP 描述为入库前的预估工具：「入库耗时长，可用 SP 预估，检测可能的单体强号并测试」；使用方法为把无 xp xd、UTF-8 编码的测号文件改名 input.txt 放入 SP_new^3 目录，开 SP1.exe 一般输入 5、SP2.exe 一般输入 6（文档用法，未实测）。读数规则（教程原文）：单人组评分 scqd ÷ 100 = 预测 cqd（scqd 4900 → cqd 49）；双人评分以丝刺评 scp 为例，scp ÷ 100 对应 pair 中 cp 平均值。\n\nSP2 与 PTT：新教程在 DataStructure 章说明 SP1 能测普单、SP2 能测 ptt（经过一次加成后可能达到的最高评分），与 DS4 README 的 ptt_sieve 配置对应。\n\nSP 的模型公式、训练来源未在任何已读文档中说明，本知识库不推演；SP 与 PBB7 的 SP1 模型（QP 扣分所用）是否同源待核实。"
+      "detailed_description": "SP1/SP2 是 DataStructure4.0 主流程第 3 阶段「计算单项与类型分数」所用的程序（依据：《DataStructure4-Readme.md》，2026-11-16 读取；未运行）。运行所需评分数据为包根 score_now.txt（SP1 所需评分数据）。另有 SP_fast（多线程 SP）列于新教程的子程序表中。\n\n新教程（tutorial-new 基础4）把 SP 描述为入库前的预估工具：「入库耗时长，可用 SP 预估，检测可能的单体强号并测试」；使用方法为把无 xp xd、UTF-8 编码的测号文件改名 input.txt 放入 SP_new^3 目录，开 SP1.exe 一般输入 5、SP2.exe 一般输入 6（文档用法，未实测）。读数规则（教程原文）：单人组评分 scqd ÷ 100 = 预测 cqd（scqd 4900 → cqd 49）；双人评分以丝刺评 scp 为例，scp ÷ 100 对应 pair 中 cp 平均值。\n\nSP2 与 PTT：新教程在 DataStructure 章说明 SP1 能测普单、SP2 能测 ptt（经过一次加成后可能达到的最高评分），与 DS4 README 的 ptt_sieve 配置对应。\n\nSP 的模型公式、训练来源未在任何已读文档中说明，本知识库不推演；SP 与 PBB7 的 SP1 模型（QP 扣分所用）是否同源待核实。",
+      "outdated": false
     }
   ],
   "enrichments": [
@@ -97,7 +156,9 @@
       "context_id": "ds4-ptt-config",
       "term_id": "ptt",
       "aliases_add": [],
-      "source_ids": ["attachment-ds4"],
+      "source_ids": [
+        "attachment-ds4"
+      ],
       "scope": "《DataStructure4-Readme.md》的配置语境；未运行程序。",
       "explanation": "DataStructure4 config.json 中 bc/fz/wc/fs/pj 五类各有 ptt_sieve（PTT 阈值），示例配置为 bc 4500、fz 4600、wc 4400、fs 4300、pj 4500；SP2 用于计算 PTT（见 SP1/SP2 词条）。示例阈值只属于该文档配置，不是社区统一强号标准。",
       "checked_at": "2026-11-16"
@@ -106,7 +167,10 @@
       "context_id": "ds4-cqp-filter",
       "term_id": "tswn-cqp",
       "aliases_add": [],
-      "source_ids": ["attachment-ds4", "tutorial-new"],
+      "source_ids": [
+        "attachment-ds4",
+        "tutorial-new"
+      ],
       "scope": "DataStructure4 文档与新教程 openbox/DS 章节语境；未运行程序。",
       "explanation": "ABCP5 在 DataStructure4 中对二人组 cqp 进行模型预估评分（输出 abcp5/result.txt）；新教程读数示例「4758.71 爱13358052689149@abruce+祈00505662462088@abruce」表示该二人组被模型预测为 cqp 47.59，即输出分数约等于 cqp 的 100 倍记法。三人组流程中二人组需先过 three.pair_abcp_sieve 的 ABCP5 分数门槛。",
       "checked_at": "2026-11-16"
@@ -115,7 +179,9 @@
       "context_id": "ds4-scqd-reading",
       "term_id": "tswn-cqd",
       "aliases_add": [],
-      "source_ids": ["tutorial-new"],
+      "source_ids": [
+        "tutorial-new"
+      ],
       "scope": "新教程基础4（SP 章）语境；教程自述「我们写的不一定对」。",
       "explanation": "SP 工具的单人组评分 scqd 除以 100 等于预测 cqd（scqd 4900 → cqd 49）。这是 SP 预估值与 cqp/cqd 开箱指标之间的换算读法，不能把 SP 分数直接当作 cqp/cqd。",
       "checked_at": "2026-11-16"

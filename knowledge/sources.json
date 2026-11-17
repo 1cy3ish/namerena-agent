@@ -1376,8 +1376,10 @@
       "url": "https://shenjack.top:10007/",
       "accessed_at": "2026-11-16",
       "read_status": "retrieved",
-      "notes": "本次任务对天梯与论坛的补充定向阅读（在既有 observations 之上）。已读：10007 首页/register/profile/newlive(/list,history,api)/tournament/instant/live/cards(仅占位)/static/HtmlTools 界面/tswn show+demo 页与 wasm glue；10008 论坛 264 个讨论清单、tags、讨论215（天梯主帖含更新日志与周赛草案）、讨论227（周赛规程及楼31/38规则变更）、讨论19/4（站务）、讨论401（游客）、207/150（帮测计划）、273（HtmlTools 1.8）、250（tswn-x）、306（pbb_new 0.1.2）、6（pbb4.3.1历史）、139（subproc-multithr）、218（sqROP）、51（弱评筛号器历史）、38（民间负榜与弱评公式）、229（环境评估）、200（周豹）、308（第十九届武术大赛规程）、410（名竞尖塔）、247（S6王者赛）、383（qp=强评直证）、166（T/d）、163、54、100、416（帮测贴）、274（why_ns 分析）。受限：/forum、/battle、/team-binding 需登录；/cards/ 正文仅占位文案；tianwei.txt 已404；写操作未尝试。动态排行榜、当届名单、奖励数值均按动态/单次内容记录。收尾补充：同轮还完成旧站 namerena.flarum.cloud（含 d/401《本论坛即将下线》下线公告与旧→新站迁移核实、全量编号比对）及官方 ladder.html 页面与 ladder.deepmess.com 数据源、47.109.79.252 旧民间天梯的 2026-11-16 定向访问核实，详见侦察笔记 notes/ladder-forum.md（快照含 notes/_raw/flarum_d401.txt）。",
-      "version_status": "current_snapshot"
+      "notes": "原 PR 报告于 2026-11-16 定向读取天梯公开页面与论坛讨论；原始 HTML、全量编号/标签比对记录没有随 PR 交付，不能据此独立复核这些统计。本次 2026-11-17 重新核对指定公开楼层，迁移公告、规则变更和阅读限制见 review-observations.json。未登录、发言、调用写接口或读取隐藏分区。",
+      "version_status": "current_snapshot",
+      "snapshot_path": "knowledge/community/ladder-forum/review-observations.json",
+      "snapshot_kind": "review_evidence_index"
     },
     {
       "id": "community-ladder-forum-2026-discussions",
@@ -1386,8 +1388,10 @@
       "url": "https://shenjack.top:10008/",
       "accessed_at": "2026-11-16",
       "read_status": "retrieved",
-      "notes": "与 community-ladder-forum-2026 配套的逐帖证据清单（原始 HTML 存于任务工作区 notes/_raw/，共 47 个讨论帖快照）：d/19、d/38、d/51、d/54、d/6、d/58、d/77、d/85、d/100、d/106、d/136、d/139、d/150、d/153、d/156、d/163、d/166、d/176、d/185、d/200、d/202、d/207、d/213、d/215、d/218、d/227、d/229、d/231、d/234、d/235、d/247、d/250、d/255、d/273、d/274、d/306、d/308、d/311、d/379、d/383、d/401、d/402、d/403、d/410、d/416 等。重点：d/215（民间天梯试运行，2025-10-11首帖，更新日志至2026-11-06）、d/227（周赛规程；楼31锦标赛改单败、楼38奖励数值）、d/19（用户须知与运营方变更）、d/4（注册指南，论坛关闭自助注册改走天梯战队注册）、d/401（游客提问区试行）、d/207（弱队补强计划）、d/150（比赛承办激励计划）、d/273/250/306/6/139/218/51（工具发布与更新）、d/38（民间负榜与弱评公式、靶子版本250830）、d/229（环境评估）、d/200（名竞周豹五档）、d/185（二人组七榜/分身评语境）、d/308（第十九届武术大赛规程）、d/410（名竞尖塔）、d/247（S6王者赛）、d/383（qp=强评直证）、d/166（测号速度T/d）、d/416（帮测贴与靶子换代）、d/274（why_ns 分析）。赛事规则区分首帖与后续更新；奖励数值为动态。",
-      "version_status": "current_snapshot"
+      "notes": "原 PR 声称读取 47 个讨论，未交付原始快照；其明确列出的讨论链接和本次实际重读的楼层分别登记于 review-observations.json。原交付的阅读报告保留为贡献者陈述，不能冒充接收方可访问的 HTML 归档或全站比对证据。",
+      "version_status": "current_snapshot",
+      "snapshot_path": "knowledge/community/ladder-forum/review-observations.json",
+      "snapshot_kind": "review_evidence_index"
     },
     {
       "id": "htmltools-model-scripts",
@@ -1398,6 +1402,380 @@
       "read_status": "retrieved",
       "notes": "HtmlTools 评分模型脚本级一手阅读：res/main.js 与 res/model.js 中的模型定义（XP / SP常规 / SP人海 / SPnew-1 / SPnew-2 的加权模型与版本串）、计算路径（解析→属性→模型评分）、局限与实测不可复现的原因（旧脚本缺负分判定、依赖 target 数据）。只读静态脚本文本，未在浏览器实际运行。",
       "version_status": "current_snapshot"
+    },
+    {
+      "id": "maintainer-entry-policy",
+      "title": "维护者确认：词条描述字段及过时标记",
+      "type": "maintainer_statement",
+      "local_path": "knowledge/project-context.json",
+      "recorded_at": "2026-11-16",
+      "read_status": "provided",
+      "notes": "维护者要求去除词条适用范围栏、保留简要描述并预留详细描述，标记历史/已废弃/极少用的内容；首批包括旧天梯、粗评、精评。"
+    },
+    {
+      "id": "tswn-review-boss-rules",
+      "title": "tswn Boss 名单、属性追加、技能等级与免疫阈值",
+      "type": "repository",
+      "url": "https://github.com/shenjackyuanjie/tswn-core/blob/d12b462aa532f95be793c00dfed37b8fea0672bb/crates/tswn_core/src/namerena/rules.rs#L3-L174",
+      "commit": "d12b462aa532f95be793c00dfed37b8fea0672bb",
+      "repository_path": "crates/tswn_core/src/namerena/rules.rs",
+      "line_start": 3,
+      "line_end": 174,
+      "sha256": "b1c4d3892f42be9c511e1ac451834e660407d1df750a06143eafe38a0b2f51ca",
+      "accessed_at": "2026-11-17",
+      "read_status": "retrieved",
+      "notes": "PR 修复时按固定 Git 对象只读核查；数值推导与对战实测分开记录。"
+    },
+    {
+      "id": "tswn-review-boss-build",
+      "title": "tswn 名字与 Boss 属性、初始状态构建",
+      "type": "repository",
+      "url": "https://github.com/shenjackyuanjie/tswn-core/blob/d12b462aa532f95be793c00dfed37b8fea0672bb/crates/tswn_core/src/namerena/build.rs#L241-L530",
+      "commit": "d12b462aa532f95be793c00dfed37b8fea0672bb",
+      "repository_path": "crates/tswn_core/src/namerena/build.rs",
+      "line_start": 241,
+      "line_end": 530,
+      "sha256": "59eef8ba4bdcff694df0ff5186104a8066612b72e816e58021d37519898f7f73",
+      "accessed_at": "2026-11-17",
+      "read_status": "retrieved",
+      "notes": "PR 修复时按固定 Git 对象只读核查；数值推导与对战实测分开记录。"
+    },
+    {
+      "id": "tswn-review-name-base",
+      "title": "tswn name_base 映射与属性换算",
+      "type": "repository",
+      "url": "https://github.com/shenjackyuanjie/tswn-core/blob/d12b462aa532f95be793c00dfed37b8fea0672bb/crates/tswn_core/src/namerena/build.rs#L615-L645",
+      "commit": "d12b462aa532f95be793c00dfed37b8fea0672bb",
+      "repository_path": "crates/tswn_core/src/namerena/build.rs",
+      "line_start": 615,
+      "line_end": 645,
+      "sha256": "59eef8ba4bdcff694df0ff5186104a8066612b72e816e58021d37519898f7f73",
+      "accessed_at": "2026-11-17",
+      "read_status": "retrieved",
+      "notes": "PR 修复时按固定 Git 对象只读核查；数值推导与对战实测分开记录。"
+    },
+    {
+      "id": "tswn-review-rc4",
+      "title": "tswn 名字用 RC4 密钥调度",
+      "type": "repository",
+      "url": "https://github.com/shenjackyuanjie/tswn-core/blob/d12b462aa532f95be793c00dfed37b8fea0672bb/crates/tswn_core/src/rc4.rs#L330-L406",
+      "commit": "d12b462aa532f95be793c00dfed37b8fea0672bb",
+      "repository_path": "crates/tswn_core/src/rc4.rs",
+      "line_start": 330,
+      "line_end": 406,
+      "sha256": "43d02c80c8f85c39edf42bf9af018ab8ef22b5d2a50c686cbc25381ca42c5d48",
+      "accessed_at": "2026-11-17",
+      "read_status": "retrieved",
+      "notes": "PR 修复时按固定 Git 对象只读核查；数值推导与对战实测分开记录。"
+    },
+    {
+      "id": "tswn-review-name-factor",
+      "title": "tswn 名字系数计算",
+      "type": "repository",
+      "url": "https://github.com/shenjackyuanjie/tswn-core/blob/d12b462aa532f95be793c00dfed37b8fea0672bb/crates/tswn_core/src/namerena/eval_name.rs#L63-L235",
+      "commit": "d12b462aa532f95be793c00dfed37b8fea0672bb",
+      "repository_path": "crates/tswn_core/src/namerena/eval_name.rs",
+      "line_start": 63,
+      "line_end": 235,
+      "sha256": "74d139537ebd32133cc3a94cfced71643f5fc06546b771f6d0df36e153489b0c",
+      "accessed_at": "2026-11-17",
+      "read_status": "retrieved",
+      "notes": "PR 修复时按固定 Git 对象只读核查；数值推导与对战实测分开记录。"
+    },
+    {
+      "id": "tswn-review-boss-actions",
+      "title": "tswn Boss 行动、冰河时代、柯南、马里奥与心灵控制",
+      "type": "repository",
+      "url": "https://github.com/shenjackyuanjie/tswn-core/blob/d12b462aa532f95be793c00dfed37b8fea0672bb/crates/tswn_core/src/runtime/combat/skills_boss.rs#L1-L643",
+      "commit": "d12b462aa532f95be793c00dfed37b8fea0672bb",
+      "repository_path": "crates/tswn_core/src/runtime/combat/skills_boss.rs",
+      "line_start": 1,
+      "line_end": 643,
+      "sha256": "82c43d616927430473470e2a3c5ff852b775774de7bdbf8eaa5828cda2b44ef2",
+      "accessed_at": "2026-11-17",
+      "read_status": "retrieved",
+      "notes": "PR 修复时按固定 Git 对象只读核查；数值推导与对战实测分开记录。"
+    },
+    {
+      "id": "tswn-review-boss-defense",
+      "title": "tswn 青雉与斑鸠的专属防御与吸收回血",
+      "type": "repository",
+      "url": "https://github.com/shenjackyuanjie/tswn-core/blob/d12b462aa532f95be793c00dfed37b8fea0672bb/crates/tswn_core/src/runtime/combat/defense.rs#L498-L568",
+      "commit": "d12b462aa532f95be793c00dfed37b8fea0672bb",
+      "repository_path": "crates/tswn_core/src/runtime/combat/defense.rs",
+      "line_start": 498,
+      "line_end": 568,
+      "sha256": "87a3db12d9b0fb99f7f7ffdfe0e2bd7facbfddb135f667b9046c58f5e5b2f25f",
+      "accessed_at": "2026-11-17",
+      "read_status": "retrieved",
+      "notes": "PR 修复时按固定 Git 对象只读核查；数值推导与对战实测分开记录。"
+    },
+    {
+      "id": "tswn-review-boss-initial",
+      "title": "tswn Boss 初始命数、推理与分裂状态",
+      "type": "repository",
+      "url": "https://github.com/shenjackyuanjie/tswn-core/blob/d12b462aa532f95be793c00dfed37b8fea0672bb/crates/tswn_core/src/runtime/entity/runtime.rs#L180-L205",
+      "commit": "d12b462aa532f95be793c00dfed37b8fea0672bb",
+      "repository_path": "crates/tswn_core/src/runtime/entity/runtime.rs",
+      "line_start": 180,
+      "line_end": 205,
+      "sha256": "e1441dde673aabaa38419fee8465585dd4ec8f0e6470d62bbf42fd761cc6b639",
+      "accessed_at": "2026-11-17",
+      "read_status": "retrieved",
+      "notes": "PR 修复时按固定 Git 对象只读核查；数值推导与对战实测分开记录。"
+    },
+    {
+      "id": "tswn-review-mario-boost",
+      "title": "tswn 马里奥蘑菇的攻击倍率",
+      "type": "repository",
+      "url": "https://github.com/shenjackyuanjie/tswn-core/blob/d12b462aa532f95be793c00dfed37b8fea0672bb/crates/tswn_core/src/runtime/entity/runtime.rs#L696-L718",
+      "commit": "d12b462aa532f95be793c00dfed37b8fea0672bb",
+      "repository_path": "crates/tswn_core/src/runtime/entity/runtime.rs",
+      "line_start": 696,
+      "line_end": 718,
+      "sha256": "e1441dde673aabaa38419fee8465585dd4ec8f0e6470d62bbf42fd761cc6b639",
+      "accessed_at": "2026-11-17",
+      "read_status": "retrieved",
+      "notes": "PR 修复时按固定 Git 对象只读核查；数值推导与对战实测分开记录。"
+    },
+    {
+      "id": "tswn-review-slime",
+      "title": "tswn 史莱姆分裂代数、子体属性及技能",
+      "type": "repository",
+      "url": "https://github.com/shenjackyuanjie/tswn-core/blob/d12b462aa532f95be793c00dfed37b8fea0672bb/crates/tswn_core/src/runtime/plain_slime.rs#L1-L145",
+      "commit": "d12b462aa532f95be793c00dfed37b8fea0672bb",
+      "repository_path": "crates/tswn_core/src/runtime/plain_slime.rs",
+      "line_start": 1,
+      "line_end": 145,
+      "sha256": "06accdd6bede962ae1735172bce5e6864e56d7d8de740671dd238f4b87f7e429",
+      "accessed_at": "2026-11-17",
+      "read_status": "retrieved",
+      "notes": "PR 修复时按固定 Git 对象只读核查；数值推导与对战实测分开记录。"
+    },
+    {
+      "id": "tswn-review-saitama",
+      "title": "tswn 一拳超人等待、攻击与离场规则",
+      "type": "repository",
+      "url": "https://github.com/shenjackyuanjie/tswn-core/blob/d12b462aa532f95be793c00dfed37b8fea0672bb/crates/tswn_core/src/runtime/combat/attack.rs#L172-L295",
+      "commit": "d12b462aa532f95be793c00dfed37b8fea0672bb",
+      "repository_path": "crates/tswn_core/src/runtime/combat/attack.rs",
+      "line_start": 172,
+      "line_end": 295,
+      "sha256": "63811406cd0707b00dfafddf0d5241d24aa90ba9812739939af83c2c55d71f37",
+      "accessed_at": "2026-11-17",
+      "read_status": "retrieved",
+      "notes": "PR 修复时按固定 Git 对象只读核查；数值推导与对战实测分开记录。"
+    },
+    {
+      "id": "tswn-review-boss-states",
+      "title": "tswn 懒癌行动中断与一拳超人减伤",
+      "type": "repository",
+      "url": "https://github.com/shenjackyuanjie/tswn-core/blob/d12b462aa532f95be793c00dfed37b8fea0672bb/crates/tswn_core/src/runtime/handlers/states.rs#L364-L490",
+      "commit": "d12b462aa532f95be793c00dfed37b8fea0672bb",
+      "repository_path": "crates/tswn_core/src/runtime/handlers/states.rs",
+      "line_start": 364,
+      "line_end": 490,
+      "sha256": "114b803d5eb0c9a7f057131d312bf5b6fcf68829b83bd98c802341cc9501818f",
+      "accessed_at": "2026-11-17",
+      "read_status": "retrieved",
+      "notes": "PR 修复时按固定 Git 对象只读核查；数值推导与对战实测分开记录。"
+    },
+    {
+      "id": "tswn-review-infection",
+      "title": "tswn 感染、肺炎伤害与恢复结算",
+      "type": "repository",
+      "url": "https://github.com/shenjackyuanjie/tswn-core/blob/d12b462aa532f95be793c00dfed37b8fea0672bb/crates/tswn_core/src/runtime/combat/infection.rs#L174-L391",
+      "commit": "d12b462aa532f95be793c00dfed37b8fea0672bb",
+      "repository_path": "crates/tswn_core/src/runtime/combat/infection.rs",
+      "line_start": 174,
+      "line_end": 391,
+      "sha256": "0fa6deee4c1de5f1ae7766c36c05bf44010ba511147816fd7cca9712ebeba208",
+      "accessed_at": "2026-11-17",
+      "read_status": "retrieved",
+      "notes": "PR 修复时按固定 Git 对象只读核查；数值推导与对战实测分开记录。"
+    },
+    {
+      "id": "tswn-review-initial-states",
+      "title": "tswn 新冠、懒癌与一拳超人初始状态",
+      "type": "repository",
+      "url": "https://github.com/shenjackyuanjie/tswn-core/blob/d12b462aa532f95be793c00dfed37b8fea0672bb/crates/tswn_core/src/runtime/prepared_init/init.rs#L184-L205",
+      "commit": "d12b462aa532f95be793c00dfed37b8fea0672bb",
+      "repository_path": "crates/tswn_core/src/runtime/prepared_init/init.rs",
+      "line_start": 184,
+      "line_end": 205,
+      "sha256": "194375d8cbda4904725013a33221641a70155503b06e3f6333be5e2272d0b90a",
+      "accessed_at": "2026-11-17",
+      "read_status": "retrieved",
+      "notes": "PR 修复时按固定 Git 对象只读核查；数值推导与对战实测分开记录。"
+    },
+    {
+      "id": "review-old-forum-401-1",
+      "title": "本论坛即将下线（第 1 楼）",
+      "type": "community",
+      "url": "https://namerena.flarum.cloud/d/401/1",
+      "accessed_at": "2026-11-17",
+      "read_status": "retrieved",
+      "retrieval_api_url": "https://namerena.flarum.cloud/api/posts/9685",
+      "posts_read": [
+        1
+      ],
+      "snapshot_kind": "curated_observations",
+      "snapshot_path": "knowledge/community/ladder-forum/review-observations.json",
+      "notes": "只读指定公开楼层，摘要中分别记录帖子时间与规则/日志日期；不保存账号资料或动态榜单。"
+    },
+    {
+      "id": "review-old-forum-401-2",
+      "title": "本论坛即将下线（第 2 楼）",
+      "type": "community",
+      "url": "https://namerena.flarum.cloud/d/401/2",
+      "accessed_at": "2026-11-17",
+      "read_status": "retrieved",
+      "retrieval_api_url": "https://namerena.flarum.cloud/api/posts/9686",
+      "posts_read": [
+        2
+      ],
+      "snapshot_kind": "curated_observations",
+      "snapshot_path": "knowledge/community/ladder-forum/review-observations.json",
+      "notes": "只读指定公开楼层，摘要中分别记录帖子时间与规则/日志日期；不保存账号资料或动态榜单。"
+    },
+    {
+      "id": "review-old-forum-401-15",
+      "title": "本论坛即将下线（第 15 楼）",
+      "type": "community",
+      "url": "https://namerena.flarum.cloud/d/401/15",
+      "accessed_at": "2026-11-17",
+      "read_status": "retrieved",
+      "retrieval_api_url": "https://namerena.flarum.cloud/api/posts/9716",
+      "posts_read": [
+        15
+      ],
+      "snapshot_kind": "curated_observations",
+      "snapshot_path": "knowledge/community/ladder-forum/review-observations.json",
+      "notes": "只读指定公开楼层，摘要中分别记录帖子时间与规则/日志日期；不保存账号资料或动态榜单。"
+    },
+    {
+      "id": "review-forum-227-1",
+      "title": "周赛（第 1 楼）",
+      "type": "community",
+      "url": "https://shenjack.top:10008/d/227/1",
+      "accessed_at": "2026-11-17",
+      "read_status": "retrieved",
+      "retrieval_api_url": "https://shenjack.top:10008/api/posts/6536",
+      "posts_read": [
+        1
+      ],
+      "snapshot_kind": "curated_observations",
+      "snapshot_path": "knowledge/community/ladder-forum/review-observations.json",
+      "notes": "只读指定公开楼层，摘要中分别记录帖子时间与规则/日志日期；不保存账号资料或动态榜单。"
+    },
+    {
+      "id": "review-forum-227-31",
+      "title": "周赛（第 31 楼）",
+      "type": "community",
+      "url": "https://shenjack.top:10008/d/227/31",
+      "accessed_at": "2026-11-17",
+      "read_status": "retrieved",
+      "retrieval_api_url": "https://shenjack.top:10008/api/posts/8245",
+      "posts_read": [
+        31
+      ],
+      "snapshot_kind": "curated_observations",
+      "snapshot_path": "knowledge/community/ladder-forum/review-observations.json",
+      "notes": "只读指定公开楼层，摘要中分别记录帖子时间与规则/日志日期；不保存账号资料或动态榜单。"
+    },
+    {
+      "id": "review-forum-227-38",
+      "title": "周赛（第 38 楼）",
+      "type": "community",
+      "url": "https://shenjack.top:10008/d/227/38",
+      "accessed_at": "2026-11-17",
+      "read_status": "retrieved",
+      "retrieval_api_url": "https://shenjack.top:10008/api/posts/9210",
+      "posts_read": [
+        38
+      ],
+      "snapshot_kind": "curated_observations",
+      "snapshot_path": "knowledge/community/ladder-forum/review-observations.json",
+      "notes": "只读指定公开楼层，摘要中分别记录帖子时间与规则/日志日期；不保存账号资料或动态榜单。"
+    },
+    {
+      "id": "review-forum-215-52",
+      "title": "民间天梯试运行（第 52 楼）",
+      "type": "community",
+      "url": "https://shenjack.top:10008/d/215/52",
+      "accessed_at": "2026-11-17",
+      "read_status": "retrieved",
+      "retrieval_api_url": "https://shenjack.top:10008/api/posts/7774",
+      "posts_read": [
+        52
+      ],
+      "snapshot_kind": "curated_observations",
+      "snapshot_path": "knowledge/community/ladder-forum/review-observations.json",
+      "notes": "只读指定公开楼层，摘要中分别记录帖子时间与规则/日志日期；不保存账号资料或动态榜单。"
+    },
+    {
+      "id": "review-forum-200-1",
+      "title": "名竞周豹（第 1 楼）",
+      "type": "community",
+      "url": "https://shenjack.top:10008/d/200/1",
+      "accessed_at": "2026-11-17",
+      "read_status": "retrieved",
+      "retrieval_api_url": "https://shenjack.top:10008/api/posts/5180",
+      "posts_read": [
+        1
+      ],
+      "snapshot_kind": "curated_observations",
+      "snapshot_path": "knowledge/community/ladder-forum/review-observations.json",
+      "notes": "只读指定公开楼层，摘要中分别记录帖子时间与规则/日志日期；不保存账号资料或动态榜单。"
+    },
+    {
+      "id": "review-forum-tags",
+      "title": "论坛分区公开元数据",
+      "type": "community",
+      "url": "https://shenjack.top:10008/api/tags",
+      "accessed_at": "2026-11-17",
+      "read_status": "retrieved",
+      "snapshot_kind": "curated_observations",
+      "snapshot_path": "knowledge/community/ladder-forum/review-observations.json",
+      "notes": "仅核对公开标签名称、slug、ID 与 isHidden，不读取隐藏分区正文。"
+    },
+    {
+      "id": "tswn-boss-source-calculation",
+      "title": "tswn Boss 构造属性与初始状态的源码推导记录",
+      "type": "analysis",
+      "local_path": "knowledge/tools/tswn-core/boss-build-observations.json",
+      "recorded_at": "2026-11-17",
+      "read_status": "derived",
+      "notes": "整理者按固定提交的模块与构建公式计算，条件与口径见记录。不是官方完整属性表、真实对战测试或部署版本验证。"
+    },
+    {
+      "id": "review-forum-401-1",
+      "title": "游客提问区（试行）（第 1 楼）",
+      "type": "community",
+      "url": "https://shenjack.top:10008/d/401/1",
+      "accessed_at": "2026-11-17",
+      "read_status": "retrieved",
+      "retrieval_api_url": "https://shenjack.top:10008/api/posts/9685",
+      "posts_read": [
+        1
+      ],
+      "snapshot_kind": "curated_observations",
+      "snapshot_path": "knowledge/community/ladder-forum/review-observations.json",
+      "notes": "只读公开首帖规则，不测试游客发言，不保存游客或账号数据。"
+    },
+    {
+      "id": "tswn-review-status-immunity",
+      "title": "tswn Boss 状态免疫判定",
+      "type": "repository",
+      "url": "https://github.com/shenjackyuanjie/tswn-core/blob/d12b462aa532f95be793c00dfed37b8fea0672bb/crates/tswn_core/src/runtime/combat/defense.rs#L890-L903",
+      "commit": "d12b462aa532f95be793c00dfed37b8fea0672bb",
+      "repository_path": "crates/tswn_core/src/runtime/combat/defense.rs",
+      "line_start": 890,
+      "line_end": 903,
+      "sha256": "87a3db12d9b0fb99f7f7ffdfe0e2bd7facbfddb135f667b9046c58f5e5b2f25f",
+      "accessed_at": "2026-11-17",
+      "read_status": "retrieved",
+      "notes": "next_u8() 与 boss_immune_threshold 比较；阈值不是百分数，须由对应状态调用。"
     }
   ]
 }

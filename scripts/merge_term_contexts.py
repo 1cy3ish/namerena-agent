@@ -15,16 +15,27 @@ def merge_contexts(glossary):
     for file in files:
         data = json.loads(file.read_text(encoding="utf-8"))
         for term in data.get("terms", []):
-            terms[term["id"]] = copy.deepcopy(term)
+            incoming = copy.deepcopy(term)
+            previous = terms.get(term["id"], {})
+            for field in ("detailed_description", "outdated"):
+                if field in previous:
+                    incoming[field] = previous[field]
+            # Keep citations/contexts already added to the current reading copy.
+            # The canonical record supplies the reviewed brief, category and status.
+            for field in ("aliases", "source_ids"):
+                incoming[field] = list(dict.fromkeys(incoming.get(field, []) + previous.get(field, [])))
+            for field in ("context_notes", "context_refs"):
+                if field in previous:
+                    incoming[field] = copy.deepcopy(previous[field])
+            terms[term["id"]] = incoming
     for file in files:
         data = json.loads(file.read_text(encoding="utf-8"))
         context_path = file.relative_to(ROOT / "knowledge").as_posix()
         for enrichment in data.get("enrichments", []):
             target = terms[enrichment["term_id"]]
-            if enrichment.get("definition"):
-                target["definition"] = enrichment["definition"]
-            if enrichment.get("category"):
-                target["category"] = enrichment["category"]
+            for field in ("definition", "category", "status", "detailed_description", "outdated", "checked_at"):
+                if field in enrichment:
+                    target[field] = copy.deepcopy(enrichment[field])
             target["aliases"] = list(dict.fromkeys(target["aliases"] + enrichment.get("aliases_add", [])))
             target["source_ids"] = list(dict.fromkeys(target["source_ids"] + enrichment["source_ids"]))
             note = {"context_id": enrichment["context_id"], "scope": enrichment["scope"],
@@ -37,6 +48,10 @@ def merge_contexts(glossary):
             ref = {"path": context_path, "context_id": enrichment["context_id"]}
             if ref not in refs:
                 refs.append(ref)
+    for term in terms.values():
+        term.pop("scope", None)
+        term.setdefault("detailed_description", "")
+        term.setdefault("outdated", False)
     glossary["terms"] = list(terms.values())
     return glossary
 

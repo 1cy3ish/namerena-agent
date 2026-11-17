@@ -103,6 +103,7 @@ def main():
     glossary_file = ROOT / "knowledge/glossary.json"
     glossary = json.loads(glossary_file.read_text(encoding="utf-8"))
     previous_order = [term["id"] for term in glossary["terms"]]
+    previous_terms = {term["id"]: term for term in glossary["terms"]}
     glossary["terms"] = [term for term in glossary["terms"] if term.get("origin") != "official-index"]
     for record, category, details in [(r, "attribute", "attributes.json") for r in attributes] + [(r, "skill", "skills.json") for r in skills] + [(r, "boss", "special-names.json") for r in bosses]:
         description = record["description"]
@@ -115,14 +116,28 @@ def main():
             aliases.append("幻术")
         glossary["terms"].append({"id": record["id"], "term": record["name"], "aliases": aliases,
                                   "definition": description, "category": category, "status": "source_supported",
-                                  "scope": "当前官方说明的基础记载；原文数值和完整字段见详情，不表示已独立实测或涵盖全部机制。",
+                                  "detailed_description": previous_terms.get(record["id"], {}).get("detailed_description", ""),
+                                  "outdated": previous_terms.get(record["id"], {}).get("outdated", False),
                                   "source_ids": record["source_ids"] + (["official-language-zh"] if aliases and category == "skill" else []),
                                   "checked_at": DATE, "origin": "official-index", "details_path": "official/" + details, "details_id": record["id"]})
     for term, suffix in (("附体", "possess"), ("自爆", "explode"), ("隐匿", "hide"), ("死亡笔记", "death-note"), ("属性修改器", "attribute-modifier")):
         glossary["terms"].append({"id": "language-" + suffix, "term": term, "aliases": [],
                                   "definition": "官方中文语言包中出现的名称；当前只确认名称和对应消息键，未从官方说明中取得完整机制。",
-                                  "category": "language-only", "status": "source_supported", "scope": "显示词汇证据，不能据此推断触发条件、获取方式或数值。",
+                                  "category": "language-only", "status": "source_supported",
+                                  "detailed_description": previous_terms.get("language-" + suffix, {}).get("detailed_description", ""),
+                                  "outdated": previous_terms.get("language-" + suffix, {}).get("outdated", False),
                                   "source_ids": ["official-language-zh"], "checked_at": DATE, "origin": "official-index"})
+    # Generated source indexes stay faithful to the archive; preserve reviewed
+    # explanations, aliases and citations in the current reading copy.
+    for term in glossary["terms"]:
+        previous = previous_terms.get(term["id"], {})
+        if term.get("origin") != "official-index":
+            continue
+        for field in ("definition", "detailed_description", "outdated", "category", "status", "checked_at", "context_notes", "context_refs"):
+            if field in previous:
+                term[field] = previous[field]
+        for field in ("aliases", "source_ids"):
+            term[field] = list(dict.fromkeys(previous.get(field, []) + term.get(field, [])))
     glossary = merge_contexts(glossary)
     # Regeneration replaces official definitions without moving them past new contexts.
     by_id = {term["id"]: term for term in glossary["terms"]}

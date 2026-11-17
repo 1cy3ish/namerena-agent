@@ -14,10 +14,13 @@
       "status": "source_supported",
       "source_ids": [
         "tswn-project",
-        "tswn-origins"
+        "tswn-origins",
+        "tswn-project-map"
       ],
       "checked_at": "2026-11-16",
-      "origin": "tswn-curation"
+      "origin": "tswn-curation",
+      "detailed_description": "TSWN（tswn、tswn-core）是名字竞技场的 Rust 重写及配套工具仓库，GitHub 地址为 shenjackyuanjie/tswn-core。起源文档（docs/archive/project-origins.md）中项目写作 \"tsw namerena\"，核心 crate 名为 tswn_core。\n\n版本信息（tswn-core 提交 d12b462aa532f95be793c00dfed37b8fea0672bb，2026-11-16 审阅）：包清单中 core 为 0.7.0、Openbox 与共享后端为 0.5.2、WASM wrapper 为 0.5.12；发布记录中的旧版本表另按当时记录理解。\n\n组成（按项目地图与 README）：\n- tswn_core：名字构建、解析、Runtime、技能与状态、评分批处理；\n- tswn_py（Python/PyO3 绑定）、tswn_capi（C ABI/FFI）、tswn_wasm（浏览器 WASM 包装与静态对战页）；\n- tswn_openbox 开箱器（GUI/CLI）与 tswn_openbox_backend 共享后端；\n- 其他模块关键词：tswn_ds4（模型评分/配对/实战筛选）、tswn_lane_ranker（两两胜率排名）、tswn_ladder（天梯/ELO）、tswn_name_ranker（独立单号排名）、tswn_pwp（胜率数据集）、tswn_test（共享行为测试）。\n\n适用范围：以上证据只对提交 d12b462 负责，不等同于官方原站或其他重写的行为。知识仓库层面，官方基础说明仍保留自己的原文与适用范围；tswn 对某些\"未知机制\"的实现解释不代表官方原文已包含这些细节。\n\n依据为仓库文档与包清单（提交 d12b462），未构建或运行测试。",
+      "outdated": false
     },
     {
       "id": "tswn-openbox",
@@ -31,10 +34,18 @@
       "status": "source_supported",
       "source_ids": [
         "tswn-project",
-        "tswn-openbox"
+        "tswn-openbox",
+        "tswn-openbox-options",
+        "tswn-score-dispatch",
+        "tswn-score-scale",
+        "tswn-pair",
+        "tswn-settings",
+        "tswn-skill-board"
       ],
       "checked_at": "2026-11-16",
-      "origin": "tswn-curation"
+      "origin": "tswn-curation",
+      "detailed_description": "开箱器（Openbox，crate 名 tswn_openbox，版本 0.5.2）是 tswn-core（提交 d12b462）中的 GUI/CLI 工具，把 DIY 导出、基础评分、靶子对抗、配队、base、技能榜等流程集中在一个界面里；具体计算由共用后端 tswn_openbox_backend 执行，GUI 与 openbox-cli 共用同一份 setting/settings.toml 配置——修改它会同时影响两者。\n\n主要模式（按 README 与评分体系文件）：\n1. profile 评分：pp（普评）、pd（普单）、qp（强评）、qd（强单），量纲为胜率×10000；sum 为四项之和。单号 pp/qp 布局是\"被测号+一个生成队友，对抗两个生成对手\"，pd/qd 用重复单号标记进入 1v1 布局。默认评估 rq 为 6.0。\n2. 靶子对抗：cqd/cqp 为对配置靶子的平均胜率（0..100），按靶子权重加权平均，只计有效 matchup；带权下归一化成员集合完全一致直接记 50%。\n3. 配队（pair）：每个队友组合先求靶子加权平均，再乘队友 factor，取最高 head 项求和；它是头部和而非 0..100 的单项胜率，同分按原队友输入顺序破平。工作目录预设队友含刺评、辅评、无刺评、分身评、配件评（head=4）。\n4. 技能榜：按全组最高熟练度技能与配置阈值（setting/score_now.toml）筛选；全能资格要求 sum 达阈值且 pp≥8000、pd≥9000、qp≥6000、qd≥7000。\n5. base 与导出 DIY 见对应词条。\n\n注意：内嵌默认预设还保留带 20251102/20251109 日期名的靶子与队友组，与工作目录配置分别记录，不混写。\n\n以上均为文档/源码定位证据（如 namer_pf.rs 评分分派、batch.rs 布局），未运行工具实测。",
+      "outdated": false
     },
     {
       "id": "tswn-openboxing",
@@ -48,7 +59,9 @@
         "tswn-openbox"
       ],
       "checked_at": "2026-11-16",
-      "origin": "tswn-curation"
+      "origin": "tswn-curation",
+      "detailed_description": "开箱指搜索、评估和筛选名字以发现强号的活动。tswn（core d12b462）语境：项目起源文档把提升开箱效率作为 Rust 重写的动机之一；Openbox（tswn_openbox，GUI/CLI 共用后端）集中了相关评估流程。\nOpenbox 提供的开箱相关能力（依据其 README 与术语资料）：\n- 基础评分：namer-pf 单号输出 pp/pd/qp/qd/sum（对生成 profile 基准的万分制评分）。\n- 靶子对抗：cqd/cqp 计算对具体靶子集的平均胜率，可按靶子权重平均。\n- 配队评分：pair 与队友预设（刺评、辅评、无刺评、分身评、配件评等）。\n- 技能榜：按最高熟练度技能与配置阈值筛选。\n- to-diy 导出：把名字导出为可回读的 OL/DIY 覆盖输入。\n- base：查看单个普通名字的 128 字节 roll、HP 区间、七围与技能槽。\n精确度选项 1%/10%/100% 分别对应 100/1000/10000 场。开箱作为活动概念早于 tswn 存在，官方 !test! 的搜索/评估也可视作其原始形式；不同工具与评分模式的分数不能跨体系比较。",
+      "outdated": false
     },
     {
       "id": "tswn-seven-stats",
@@ -59,10 +72,14 @@
       "status": "source_supported",
       "source_ids": [
         "tswn-name-build",
-        "tswn-openbox"
+        "tswn-openbox",
+        "tswn-rq",
+        "official-attribute"
       ],
       "checked_at": "2026-11-16",
-      "origin": "tswn-curation"
+      "origin": "tswn-curation",
+      "detailed_description": "七围指攻、防、速、敏、魔、抗、智这七项属性的集合，是社区讨论角色强弱时最常用的汇总口径。在 tswn-core（提交 d12b462，core 0.7.0、Openbox 0.5.2、WASM wrapper 0.5.12）的语境中，有几点需要分清：\n\n1. 生成方式（tswn 实现，tswn-rq / tswn-name-build 文档）：普通名字在构建阶段先由名字与阵营字符评估得到名字系数 name_factor（普通构建取 max(名字评估值, 阵营评估值−6)），再由它缩放七围的派生。评估参数 rq 会影响这一步：普通 fight/BattleSession 默认 rq=4，评分与胜率默认 rq=6，因此同一名字在不同口径下可能得到不同的构造七围。HP 不参与这一缩放，也不计入七围。\n2. 三种\"值\"的口径：说\"七围之和\"时必须注明用的是 (a) 构造值——名字构建或 overlay 给出的基础八围中的前七项；(b) DIY 编码值——+diy[...] 文本中前七项按 +36 编码的数值；(c) 当前战斗有效值——Runtime 中经状态和临时机制修正后真正用于结算的值。三者数值不同，跨口径比较会得出错误结论。\n3. 查看工具：openbox-cli 的 base 入口可以查看单个普通原始名字的七围原始三元组（连同 128 字节 roll 与 HP 区间），但不接受武器、DIY/OL 或多行名字。\n\n官方属性页（deepmess.com/zh/namerena/attribute.html）只对七项各自的作用作定性说明，没有\"七围\"这一汇总口径和任何数值公式；\"七围\"的称呼与求和讨论主要来自社区和 tswn 文档语境，不能直接套用到原站或其他重写版本上。",
+      "outdated": false
     },
     {
       "id": "tswn-eight-stats",
@@ -73,10 +90,13 @@
       "status": "source_supported",
       "source_ids": [
         "tswn-openbox",
-        "tswn-overlay"
+        "tswn-overlay",
+        "tswn-name-build"
       ],
       "checked_at": "2026-11-16",
-      "origin": "tswn-curation"
+      "origin": "tswn-curation",
+      "detailed_description": "八围有两种常见含义，使用时要分清：\n\n1. 八项数据：七围（攻、防、速、敏、魔、抗、智）加 HP 构成的八项。tswn 构造属性的存储顺序就是这八项：攻、防、速、敏、魔、抗、智、maxhp（tswn-name-build / tswn-overlay 文档）。DIY 文本中前七项按 +36 编码、HP 原样，因此八项的编码规则并不一致。\n2. 汇总分数：Openbox 详情中显示的\"八围分数\"不是把八项简单相加，而是按\"七围之和 + HP/3\"计算，显示到一位小数（tswn_openbox 实现，提交 d12b462）。把 HP 全额加进和里会得到偏大的错误数字。\n\n因此看到\"八围 xxx\"这类说法时，要先确认说话者用的是原始八项之和、Openbox 的 HP/3 折算分数，还是战斗中的有效值——三种口径结果不同。\n\n官方原版说明页面没有\"八围\"这一口径，该词来自社区与 tswn 工具的展示习惯，不能不加区分地套用到原站、其他重写或所有社区时期。",
+      "outdated": false
     },
     {
       "id": "tswn-hp",
@@ -91,10 +111,14 @@
       "status": "source_supported",
       "source_ids": [
         "tswn-replay",
-        "tswn-runtime-model"
+        "tswn-runtime-model",
+        "tswn-clone",
+        "official-attribute"
       ],
       "checked_at": "2026-11-16",
-      "origin": "tswn-curation"
+      "origin": "tswn-curation",
+      "detailed_description": "HP（体力）在 tswn-core（提交 d12b462）的运行时模型中分两个字段：hp 是当前体力，max_hp 是最大体力。两者都会在战斗中变化：受伤减少当前 HP，治疗技能回复；分身创建时会对非蓄力本体执行相应的 HP 衰减（使用兼容浮点常量，不能精确简化为最终显示值乘 0.78）；吞噬等改变技能的机制也会引起相关数值更新。当前 HP 归零即阵亡，而判胜要求恰好一队仍有存活实体。\n\n生成方式（tswn 实现）：构造阶段 HP 由名字 roll 得出，base 工具可显示单个普通名字的 HP 区间；HP 与七围分开处理——七围经名字系数（rq 影响 name_factor）缩放，HP 不做这一缩放；DIY 文本中 HP 原样写入，不像前七项那样 +36 编码。\n\n与其他属性的关系：HP 与魔法值（MP，运行时独立的 magic_point 字段）和魔法攻击属性（magic）分开记录，三者互不混用。官方属性页还记载智力影响对手选择算法，高智力会偏好攻击体力较低的对手，因此 HP 的高低也影响被集火的概率（官方定性说明，无具体公式数值）。\n\n注意：社区语境中\"HP 多少\"有时指 max_hp，有时指当前 hp，读回放数据或代码时要区分两个字段。",
+      "outdated": false
     },
     {
       "id": "tswn-mp",
@@ -111,7 +135,9 @@
         "tswn-runtime-model"
       ],
       "checked_at": "2026-11-16",
-      "origin": "tswn-curation"
+      "origin": "tswn-curation",
+      "detailed_description": "MP（魔法值）在 tswn-core（提交 d12b462）的运行时模型中是独立的 magic_point 字段，与魔法攻击属性 magic（对应七围中的\"魔\"）是完全不同的两个东西。\n\n最容易出错的地方是分身机制：分身条件表达式中的 hp+magic 里的 magic 指魔法攻击属性，不能误写成 hp+MP（tswn-clone 分身机制文档明确强调这一点）。涉及属性公式或分身条件时，把 magic 当成 MP 会导致机制理解错误。\n\n可以确认的边界：MP 与 HP（hp/max_hp）分开记录，与魔法属性分开记录。本轮资料中没有给出 MP 的消耗、回复或上限公式等数值细节，相关数值待核实。\n\n官方原版说明页面没有单独的\"魔法值\"条目，该字段的名称与语义证据来自 tswn 实现与文档（runtime-model、clone），不能不加区分地套用到原站或其他重写版本。",
+      "outdated": false
     },
     {
       "id": "tswn-attract-display",
@@ -121,10 +147,15 @@
       "category": "attribute",
       "status": "source_supported",
       "source_ids": [
-        "tswn-openbox"
+        "tswn-openbox",
+        "tutorial-new",
+        "tutorial-old",
+        "tswn-hide"
       ],
       "checked_at": "2026-11-16",
-      "origin": "tswn-curation"
+      "origin": "tswn-curation",
+      "detailed_description": "嘲讽是 Openbox（tswn 开箱工具，提交 d12b462）详情页中的一个属性组合指标，按以下公式显示（tswn_openbox 文档）：\n\n|防×2 + 抗×2 − 攻×2 − 魔×2 − 速×2 − 敏 − 智|（取绝对值）\n\n即防御和抗性各占权重 2，攻击、魔法、速度各占权重 2，敏捷和智力各占权重 1；防抗高而攻魔速敏智低的角色会得到较大的嘲讽值。\n\n该文档明确提醒：不要把这个展示值直接等同于百分比命中率，也不要当成固定的锁敌规则——它是从属性组合算出的展示指标。\n\n相关机制区分：运行时存在 attract 字段，隐匿技能触发时会降低 attract（tswn 隐匿实现，提交 d12b462），说明 attract 在战斗中是可被技能修改的量；但 Openbox 详情中的\"嘲讽\"是按上述公式从属性算出的展示值，两者语境不同，不能混用。\n\n官方原版说明没有\"嘲讽\"这一指标和公式，该词与公式证据均来自 tswn 工具语境（提交 d12b462）。",
+      "outdated": false
     },
     {
       "id": "tswn-move-points",
@@ -141,7 +172,9 @@
         "tswn-battle-flow"
       ],
       "checked_at": "2026-11-16",
-      "origin": "tswn-curation"
+      "origin": "tswn-curation",
+      "detailed_description": "行动点是 tswn 重写引擎（tswn-core，commit d12b462）\"普通兼容调度\"下逐 tick 累积的行动资源，对应社区口语中的\"行动条\"。\n\n积累与触发规则（tswn 实现，依据 docs/core-guide/battle-flow.md）：每个 tick 按实体的有效速度结算累积量，另叠加随机步长；冰冻状态会影响积累。当行动点严格大于 2048 时，扣除 2048 并获得一次行动机会——注意阈值判断是\">\"而非\"≥\"。\n\n要点与常见误解：\n1. 行动点不是官方向玩家公开的界面概念，官方文档没有给出这套数值；这是 tswn 为兼容官方行为而实现的内部调度参数。\n2. 影响出手频率的是有效速度（受属性派生与状态影响），随机步长意味着同样速度也不保证严格固定的出手节奏（整理者推断：累积量与有效速度的具体换算式未见于本批资料）。\n3. \"行动条\"只是俗称；2048 这一阈值数值仅适用于 tswn 该提交的实现，不应直接套用到原站或其他重写。\n\n待核实：每 tick 累积量与有效速度的精确换算公式、随机步长的取值范围。",
+      "outdated": false
     },
     {
       "id": "tswn-raw",
@@ -157,7 +190,9 @@
         "tswn-randomness"
       ],
       "checked_at": "2026-11-16",
-      "origin": "tswn-curation"
+      "origin": "tswn-curation",
+      "detailed_description": "原始输入（raw）指保留完整信息的输入文本：完整名字、战队、武器、DIY/OL 覆盖段、分组空行和 seed 行。这是 tswn（core d12b462）语境中的概念（tswn-name-build、tswn-randomness）。\n要点：\n- 复现对局需要原始输入，不能用显示名替代。战斗中显示的简化名（不含空格后部分与战队名）无法重新构建出同样属性的角色。\n- tswn 网页文档进一步说明：除 raw 外，复现还需要保留 seed、rq、core commit 与 wrapper 版本；rq 影响构造口径，改变 rq 应重新准备阵容，不能只换 seed。\n- tswn 的 PlayerSpec 保留 raw 原文，id_name 只是身份键，不是复现材料。\n本词条仅适用于 tswn-core d12b462 实现或文档语境，不宜不加区分地套用到原站或所有社区时期；官方文档没有“raw”这一术语名，对应的官方概念是四种名字构成、空行分组和 seed 行等输入规则。",
+      "outdated": false
     },
     {
       "id": "tswn-clan",
@@ -174,7 +209,9 @@
         "tswn-core-input"
       ],
       "checked_at": "2026-11-16",
-      "origin": "tswn-curation"
+      "origin": "tswn-curation",
+      "detailed_description": "阵营名（clan_name，别名公会名）指名字中 @ 之后用于身份和属性构建的队名信息，是 tswn（core d12b462）语境中的称呼，对应官方命名规则的“战队名”。\n职责区分（tswn 实现）：\n1. 阵营 clan：参与名字构建与属性推导；同阵营成员构建完整阵容时可能触发组队加成；普通构建的名字系数取 max(名字评估值, 阵营评估值−6)，阵营评估也参与比较。\n2. 输入分组：由空行控制，同阵营不等于同一输入队伍。\n3. 运行时 team：玩家实体保存的运行时队伍归属及与输入组的映射。\n4. 展示 Team N：显示层的队伍编号。\n解析细节（input.rs）：名字与有效阵营各最多 256 个 UTF-8 字节，这是 tswn 解析器约束，不覆盖官方 21 汉字/63 英数字的记载；空队名或含冒号的 @ 后缀按无队名处理（含冒号形式常被评分工具输入附带的元数据使用）。\n示例：Rick@中国 中“中国”是阵营名，它决定徽章并参与属性生成，但不把 Rick 划入任何空行分组。",
+      "outdated": false
     },
     {
       "id": "tswn-team-upgrade",
@@ -187,10 +224,13 @@
       "status": "source_supported",
       "source_ids": [
         "tswn-openbox",
-        "tswn-api"
+        "tswn-api",
+        "attachment-qqbot"
       ],
       "checked_at": "2026-11-16",
-      "origin": "tswn-curation"
+      "origin": "tswn-curation",
+      "detailed_description": "组队加成指按完整阵容（多成员一起）构建角色时可能发生的属性或技能修正——同一名字单独构建与编入队伍后构建，结果可能不同（tswn 实现，commit d12b462）。\n\n在 tswn 工具链中的体现：\n1. Openbox 的详情视图用\"同队构建\"与\"单独构建\"的差值展示这类修正，形如 (+N)/(-N)，N 为具体属性或技能数值差。\n2. pair（配队评分）会先把选手与队友的每个普通成员单独冻结为 OL 再组合，目的正是排除重新组队带来的组队加成，保证各队友组合之间可比。\n\n常见误解：\n- 组队加成不是战斗中队友互相施放的增益状态，而是构建阶段的属性/技能口径差异；\n- 详情中的 (+N)/(-N) 不代表战斗内有额外 buff，只反映构建口径差异。\n\n适用范围：tswn-core 提交 d12b462 的 Openbox（crates/tswn_openbox/README.md）与公共 API（docs/reference/public-api.md）语境。官方原站是否存在同样的组队构建差异，本批资料未给出，待核实。",
+      "outdated": false
     },
     {
       "id": "tswn-testex",
@@ -203,10 +243,13 @@
       "status": "source_supported",
       "source_ids": [
         "community-tutorial",
-        "tswn-core-input"
+        "tswn-core-input",
+        "tswn-core-rules"
       ],
       "checked_at": "2026-11-16",
-      "origin": "tswn-curation"
+      "origin": "tswn-curation",
+      "detailed_description": "天卫（TestEx）是社区对强化评分基准角色的称呼。\n\n来历与解析规则：在 tswn（commit d12b462）的输入解析中，形如\"名字@!\"的输入，如果不是预设 Boss、不是 Boost 特殊角色、也不是 seed 行，会被解析为 TestEx（tswn 实现，tswn-core-input；整理者依据 terminology 语境归纳）。社区教程（名字竞技场 Wiki 教程页）以 TestEx 作为强化评分的基准对手，\"天卫\"即为这一基准角色的社区称呼（社区资料，community-tutorial）。\n\n边界（重要）：不能把所有 @! 输入都称为天卫。tswn 对 @! 输入有多条分支：预设 Boss 表中的角色、Boost 特殊角色（云剑狄卡敢、云剑穸跄祇、田一人在 ! 战队下被分类为 Boost 并各自设置 boost_value）、seed 前缀行都不走普通 TestEx 路径（tswn 实现，tswn-core-rules/tswn-core-input）。因此\"@! 结尾\"只是必要形式，是否为 TestEx 取决于解析结果。\n\n用法与误区：该称呼属于社区强化评分语境（tswn 及相关教程），不能不加区分地套用到官方原站、其他重写或所有社区时期。TestEx 与官方 Boss 表中的实验体 #C8（testsubject）是不同对象：后者是 tswn 内置 Boss 表的源码补充条目，不是天卫。",
+      "outdated": false
     },
     {
       "id": "tswn-testsubject",
@@ -218,10 +261,33 @@
       "category": "boss",
       "status": "source_supported",
       "source_ids": [
-        "tswn-core-rules"
+        "tswn-core-rules",
+        "official-special",
+        "official-testing",
+        "official-skill",
+        "official-attribute",
+        "official-language-zh",
+        "tswn-review-boss-rules",
+        "tswn-review-boss-build",
+        "tswn-review-name-base",
+        "tswn-review-rc4",
+        "tswn-review-name-factor",
+        "tswn-review-boss-actions",
+        "tswn-review-boss-defense",
+        "tswn-review-boss-initial",
+        "tswn-review-mario-boost",
+        "tswn-review-slime",
+        "tswn-review-saitama",
+        "tswn-review-boss-states",
+        "tswn-review-infection",
+        "tswn-review-initial-states",
+        "tswn-boss-source-calculation",
+        "tswn-review-status-immunity"
       ],
-      "checked_at": "2026-11-16",
-      "origin": "tswn-curation"
+      "checked_at": "2026-11-17",
+      "origin": "tswn-curation",
+      "detailed_description": "实验体 #C8的完整输入为 testsubject@!。以下数值限定 tswn-core 提交 d12b462aa532f95be793c00dfed37b8fea0672bb，单独构建该角色、无装备/OL 覆盖、无同组同阵营加成、普通构建 rq=4；seed 只影响后续对战过程。\n\n此角色只在 tswn 固定提交的 Boss 表中确认。官方页未给出完整属性；下面明确区分实现中的构造属性与初始 PlayerStats，不视作官方原站数值或任意部署的实测。\n\ntswn 构造七围（攻、防、速、敏、魔、抗、智）为 80、80、80、80、80、80、80，最大 HP=100。按名字系数和初始化公式得到的 PlayerStats 同序为 80、80、240、80、80、80、80，初始 MP=1000；此处 speed 字段含调度基准 +160。不能把 boss_append_attr 的追加量、DIY 前七项 +36 编码或网页显示格式直接当作这些字段。\n\n属性推导：以带前导零字节的阵营 ! 做 1 轮 RC4 KSA，再以带前导零的名字做 2 轮；映射到 128 项 name_base。每组 3 项取中位数形成七围，排序后头部第 4–7 项之和加 154 得 HP，再加 Boss 追加量并下限置 0。PlayerStats 前六项按 round(attr×(1−name_factor/128))，智按分母 80；speed 再加 160，MP 为智字段右移 1。实验体有末尾固定覆盖。具体结果与来源见 boss-build-observations.json，属于按源码计算，未运行完整引擎或对战。\n\n技能与特殊机制：该提交在构建末尾把七项 attrs 固定为 80、HP 固定为 100、名字系数置 0、初始 MP=1000，普通技能和 Boss 主动技能表均为空。它是重写新增实验角色，不在官方 11 个 Boss 名单中；没有文档证据时不能给它套用官方“Boss 9900 分以上”的整体说明。\n\n状态免疫阈值（该提交）：256：狂暴；其余 84。 status_immune 以 next_u8()<阈值判定；在等概率字节模型下 84/192/240/256 分别对应 32.8125%/75%/93.75%/100%。它只作用于实际调用这个函数的状态路径，不能推广到直接改血、专属控制等绕过该判定的机制。\n\n通用边界：Boss 不走普通名字的随机技能生成、末位翻倍和技能槽强化；专属动作/状态可能不以普通技能等级表示。状态免疫还需查 boss_immune_threshold 与具体结算分支，不能把阈值当百分数或绝对免疫。判胜仍按存活实体所属队伍计算，恰好一队存活才产生赢家，全部阵亡无胜者；截断和运行失败另行处理。官方未公开且本次未复核的交互保留未知。",
+      "outdated": false
     },
     {
       "id": "tswn-boost",
@@ -237,7 +303,9 @@
         "tswn-core-rules"
       ],
       "checked_at": "2026-11-16",
-      "origin": "tswn-curation"
+      "origin": "tswn-curation",
+      "detailed_description": "Boost 特殊角色是 tswn（core d12b462）对三个特定名字的分类。实现依据 input.rs 的 classify：当战队名为 ! 且名字是“云剑狄卡敢”“云剑穸跄祇”“田一人”之一时，玩家类别为 PlayerClass::Boost，并设置各自的 boost_value（boost_value 具体数值本轮资料未列出，待核实）。\n分类意义：这三个 @! 名字不归入普通随机 TestEx（天卫）通道，也不是 Boss 表成员（tswn 的 12 项 Boss 表不含它们）；它们与 Boss、Seed、Test1/Test2（@ 后缀为 U+0002/U+0003 的测试类别）在类型系统中并列。\n注意：该分类是 tswn-core d12b462 的实现语境；官方特殊名字页没有记载这三个名字，不能把 Boost 分类不加区分地套用到原站、其他重写或所有社区时期。",
+      "outdated": false
     },
     {
       "id": "tswn-namer-pf",
@@ -251,10 +319,17 @@
       "status": "source_supported",
       "source_ids": [
         "tswn-openbox",
-        "tswn-score-dispatch"
+        "tswn-score-dispatch",
+        "attachment-qqbot",
+        "tswn-score-scale",
+        "tswn-openbox-options",
+        "tswn-skill-board",
+        "tswn-rq"
       ],
       "checked_at": "2026-11-16",
-      "origin": "tswn-curation"
+      "origin": "tswn-curation",
+      "detailed_description": "namer-pf（昵称\"命配\"，亦写作 namer_pf）是 tswn Openbox 中的 profile 评分工具，一次运行可输出 pp、pd、qp、qd、sum 五项结果。\n\n功能：pp（普通基准组队）、pd（普通基准单挑）、qp（强化基准组队）、qd（强化基准单挑）四项均为对生成数字 profile 的万分制评分（wins/total×10000，默认 eval_rq=6.0，--keep-rq 可保留 rq=4），sum 为四项之和（tswn 实现，commit d12b462；tswn-score-dispatch/tswn-score-scale）。工具支持逐指标设置是否输出及输出阈值，并接入技能榜：按组内最高熟练度技能与 score_now.toml 阈值给出\"技能名\"或\"技能名全能\"等结果（tswn-skill-board）。\n\n对战布局需要分两种情况理解（ratings.json profile_scores）：\n- 单号模式：pp/qd 等布局不同——pp 是被测号+一名生成 profile 队友 vs 两名同类 profile；pd/qd 通过重复单号标记触发被测号 1v1 单个生成 profile。\n- 多成员组合：不再套用单号布局，需按 runtime score 的实际布局解释，不能把单号结论直接外推到组合输入。\n\n采样条件：profile 数字名字随轮次变化，使用空的额外 seed；精确度 1%/10%/100% 对应 100/1000/10000 场（tswn-openbox-options）。\n\n版本与边界：以上描述限定 tswn-core 提交 d12b462（core 0.7.0、Openbox 0.5.2、WASM wrapper 0.5.12）的实现或文档语境，不能套用到官方原站、其他重写或所有社区时期。namer-pf 输出与 Openbox 的 cqd/cqp 批量靶子对抗、pair 配队评分是不同入口，量纲与测量对象都不同，不可跨模式比较分数。",
+      "outdated": false
     },
     {
       "id": "tswn-sum",
@@ -270,7 +345,9 @@
         "tswn-skill-board"
       ],
       "checked_at": "2026-11-16",
-      "origin": "tswn-curation"
+      "origin": "tswn-curation",
+      "detailed_description": "四项总分（sum）是 tswn namer-pf 输出的汇总指标，定义为 pp+pd+qp+qd（tswn 实现，commit d12b462，ratings.json；tswn-score-dispatch）。\n\n量纲：四项各自是 wins/total×10000 的万分制（单项范围 0..10000），sum 是四个万分制分数的算术和；按此推算 sum 的理论范围约 0..40000（整理者推断，资料未直接写明上限）。\n\n结果读法的两条边界（来自词条定义与 ratings.json）：\n1. sum 不是一项独立胜率。它是四个不同基准（普通/强化）、不同布局（组队/单挑）分数的相加，不能当成某个对局的胜率百分比解读，也不能与 cqd/cqp 的 0..100 百分比换算。\n2. sum 高不自动意味着满足技能榜的\"全能\"资格。全能要求的是逐项阈值（pp≥8000、pd≥9000、qp≥6000、qd≥7000）加上所选技能的 all 总分阈值（score_now.toml），单看 sum 无法判断是否达标（tswn-skill-board）。\n\n用途：sum 适合快速横向比较同一个 namer-pf 配置下多个号的整体强度，但比较的前提是同一工具、同一提交、同一基准与配置；不同工具或版本的 sum 不能混比。",
+      "outdated": false
     },
     {
       "id": "tswn-all-rounder",
@@ -283,7 +360,9 @@
         "tswn-skill-board"
       ],
       "checked_at": "2026-11-16",
-      "origin": "tswn-curation"
+      "origin": "tswn-curation",
+      "detailed_description": "全能是当前 tswn Openbox 技能榜的一种输出结果：当被测号既满足所选技能的 all 总分阈值，又同时满足四项 profile 评分的逐项下限时，技能榜输出\"技能名全能\"（tswn 实现，commit d12b462，skill_board.rs；tswn-skill-board）。\n\n具体条件（tswn-skill-board 语境）：\n- sum（pp+pd+qp+qd）达到该技能在 score_now.toml 中配置的 all 总分阈值；\n- pp ≥ 8000（普通基准组队）；\n- pd ≥ 9000（普通基准单挑）；\n- qp ≥ 6000（强化基准组队）；\n- qd ≥ 7000（强化基准单挑）。\n\n这组数值表明全能强调\"没有明显短板\"：单挑阈值（9000/7000）高于组队阈值（8000/6000），qp 线相对最低，这与 qp 是社区常用门槛的现状一致。\n\n边界：这是当前 Openbox 技能榜的工具规则，不是所有时代的统一称号，也不是官方设定；阈值来自配置文件 score_now.toml，随配置变化，换版本或换配置后结论可能不同。sum 高不自动等于全能——必须逐项过线且达到技能 all 阈值。全能与民间天梯的称号/门槛体系无关，二者分数不可比。",
+      "outdated": false
     },
     {
       "id": "tswn-skill-board",
@@ -299,7 +378,9 @@
         "tswn-openbox"
       ],
       "checked_at": "2026-11-16",
-      "origin": "tswn-curation"
+      "origin": "tswn-curation",
+      "detailed_description": "技能榜（skill-board）是 tswn Openbox 的评分输出层：按名字或组合中熟练度最高的技能，以及该技能对应的阈值，来组织 namer-pf 的评分结果（tswn 实现，commit d12b462，skill_board.rs；tswn-skill-board）。\n\n工作机制：\n- 技能选择：取全组（名字或组合）中熟练度最高的技能；出现并列最高时保留并列项并去重，即可能按多个技能分别输出结果（tswn-skill-board）。\n- 阈值来源：各技能的分数阈值来自设置文件 setting/score_now.toml（settings 预设之一）。它是当前工具的配置文件，不是引擎内置的永久榜单——换配置或换版本，称号线就变，社区引用阈值时应注明出处版本。\n- 白板归类：组内所有已提取技能熟练度都小于 30 的输入会被额外归入 lessskl（白板号）筛选（见白板号词条）。\n- 全能判定：满足所选技能 all 总分阈值且 pp≥8000、pd≥9000、qp≥6000、qd≥7000 时输出\"技能名全能\"（tswn-skill-board）。\n\n边界：技能榜输出的分数本体仍来自 namer-pf 的 profile 评分（万分制）或其阈值判定，技能名只是组织维度，不改变量纲。该机制限定 tswn-core 提交 d12b462 的实现语境，不能套用到官方原站、其他重写或所有社区时期；与民间天梯榜单（按战队/成员排名）是完全不同的东西。",
+      "outdated": false
     },
     {
       "id": "tswn-blank",
@@ -315,7 +396,9 @@
         "tswn-skill-board"
       ],
       "checked_at": "2026-11-16",
-      "origin": "tswn-curation"
+      "origin": "tswn-curation",
+      "detailed_description": "白板号（白板，筛选标识 lessskl）是当前 tswn Openbox 技能榜对低技能输入的归类：当输入（名字或组合）中所有已提取技能的熟练度都小于 30 时，技能榜把它额外归入 lessskl 筛选（tswn 实现，commit d12b462，skill_board.rs；tswn-skill-board）。\n\n两条判定边界：\n1. \"白板\"不表示完全没有技能。名字的 128 字节 roll 总会派生出技能槽内容，只是提取出的技能熟练度都很低；lessskl 是一个相对阈值筛选，不是\"零技能\"断言。\n2. 阈值是严格小于 30：恰为 30 的技能不满足这项条件，即熟练度恰为 30 的号不算白板（tswn-skill-board：blank_rule 为所有已提取技能 level<30）。\n\n用途与语境：lessskl 是技能榜的筛选维度，方便把低技能号与按最高技能出结果的号分开看待。这一规则限定 tswn-core 提交 d12b462 的实现语境，不能不加区分地套用到官方原站、其他重写或所有社区时期；社区口语中\"白板\"的其他泛指用法（如完全没有任何加成的号）与该工具定义不同，引用时应注明语境。",
+      "outdated": false
     },
     {
       "id": "tswn-target",
@@ -328,10 +411,15 @@
       "status": "source_supported",
       "source_ids": [
         "tswn-batch-engine",
-        "tswn-openbox"
+        "tswn-openbox",
+        "tswn-settings",
+        "tswn-embedded-presets",
+        "community-forum-help-testing"
       ],
       "checked_at": "2026-11-16",
-      "origin": "tswn-curation"
+      "origin": "tswn-curation",
+      "detailed_description": "靶子（target）是用于测定某个名字或队伍表现的对手组，是 cqd/cqp 批量靶子对抗、pair 配队评分以及 profile 评分中对手一方的统称（tswn 实现，commit d12b462；tswn-batch-engine/tswn-openbox）。\n\n两类来源（词条定义与 ratings.json）：\n1. 数字 profile 生成器：pp/pd/qp/qd 评分的对手是按轮次变化的生成 profile（普通或强化基准），数字名字随轮次变化、使用空额外 seed；\n2. 用户配置的具体名字：cqd/cqp 批量对抗和 pair 配队评分的靶子来自用户配置的靶子集文件（文本或带权 TOML）。\n\n这两类对手不是同一套基准：前者是随轮次变化的生成基准，后者是固定的具体阵容。因此 profile 评分（万分制）与靶子对抗分数（百分比）不能互相换算，不同靶子集之间的 cqd/cqp 分数也不能直接比较——换靶子等于换标尺。\n\n相关概念：多组具体对手构成\"靶子集\"（targets）；带权模式下每组靶子有 factor 权重，参与加权平均 Σ(胜率×factor)/Σfactor，权重必须是有限正数，且这是靶子组之间的权重，不是角色属性倍率（tswn-openbox/tswn-batch-ui）。Openbox 预设靶子文件包括 targets/newTarget1.toml（单人组）、newTarget2.toml（双人组）、target3.txt（三人组）等（tswn-settings/tswn-embedded-presets）。靶子换代（更换靶子集）会使新旧分数不可比，帮测活动帖中也专门按换代语境说明奖励有效性（社区资料，community-forum-help-testing）。",
+      "outdated": false
     },
     {
       "id": "tswn-target-set",
@@ -343,10 +431,14 @@
       "category": "rating",
       "status": "source_supported",
       "source_ids": [
-        "tswn-openbox"
+        "tswn-openbox",
+        "tswn-settings",
+        "tswn-embedded-presets"
       ],
       "checked_at": "2026-11-16",
-      "origin": "tswn-curation"
+      "origin": "tswn-curation",
+      "detailed_description": "靶子集（targets）是批量靶子对抗所用的多组具体对手的集合，即 cqd/cqp、pair 等模式里\"对手有哪些\"的定义（tswn 实现，commit d12b462；tswn-openbox）。\n\n两种格式（tswn-openbox/settings 语境）：\n1. 普通文本：按每行一组解析，每行是一个对手组；\n2. 带权 TOML：用每个 [[targets]] 条目定义一组——players 数组列出该组成员，factor 定义该组在加权平均中的权重（组间权重，不是属性倍率，必须是有限正数）。带权平均公式为 Σ(胜率×factor)/Σfactor，只计有效 matchup（ratings.json target_set_scores）。\n\nOpenbox 内置预设（tswn-settings 与内嵌 assets/settings.toml）：工作目录配置含单人组（targets/newTarget1.toml，带权）、双人组（newTarget2.toml，带权）、三人组（target3.txt）；内嵌默认另含\"单人组20251102\"（target1.txt）、\"双人组20251102\"（target2.txt）等带日期命名的预设，两份配置不混写、带日期命名按原名保留（configuration_note）。\n\n镜像与重名规则（ratings.json）：带权靶子下，双方归一化成员集合完全一致时直接记 50% 并计入加权，这是评分约定而非实际镜像对局；不带权时重名 matchup 直接跳过，带权时只有完整镜像记 50%、部分重名仍实际计算。\n\n边界：靶子集是 tswn Openbox 的配置概念，限定提交 d12b462 语境；不同靶子集得出的 cqd/cqp 分数互不可比，引用任何靶子百分比都应同时注明靶子集内容与工具版本。",
+      "outdated": false
     },
     {
       "id": "tswn-cqd",
@@ -359,10 +451,16 @@
       "category": "rating",
       "status": "source_supported",
       "source_ids": [
-        "tswn-openbox"
+        "tswn-openbox",
+        "tutorial-new",
+        "community-forum-help-testing",
+        "community-ladder-register",
+        "attachment-qqbot"
       ],
       "checked_at": "2026-11-16",
-      "origin": "tswn-curation"
+      "origin": "tswn-curation",
+      "detailed_description": "超强单（cqd，亦写作 CQD）是 tswn Openbox cqd/cqp 批量靶子对抗模式中的单人评估语境：分数是被测选手组对选定靶子集的平均胜率百分比（tswn 实现，commit d12b462；tswn-openbox/tswn-batch-engine）。\n\n计算方法与量纲：对每个有效 matchup 求胜率，再按靶子权重做有效平均 Σ(胜率×factor)/Σ(factor)，只计有效 matchup；单项范围 0..100，即百分比而非万分制（ratings.json target_set_scores；tswn-score-scale 语境）。\n\n\"单\"的语义边界：程序中 cqd 与 cqp 共用同一个批量入口，实际的 1v1 单挑还是多人组队，由输入组的人数和靶子组的人数决定，cqd 这个命令名并不自动保证 1v1（ratings.json grouping；词条定义）。换句话说，cqd 是\"单个选手组对靶子集\"的评估语境，不是强制单挑的开关。\n\n与相近概念的区分：\n- cqd（0..100 百分比，对具体配置靶子）≠ qd（0..10000 万分制，对生成强化 profile）；\n- cqd 与 cqp 共用批量入口，区别主要在评估语境（单人/组队），分数算法同为靶子集加权平均；\n- 与民间天梯榜单分、官方 !test! 评估互不可比。\n\n社区用法（社区资料，2026-11-16 观察）：10008 论坛\"一个帮测贴\"（2026-11-14 发帖）以 cqd50 作为该次悬赏目标之一，并提到靶子换代；cqd50 属于该次活动的具体目标，不是所有时期的称号线，应与 QP 注册门槛、天梯榜单分数分开解释。引用任何 cqd 数值都需注明靶子集、工具与版本。",
+      "outdated": false
     },
     {
       "id": "tswn-cqp",
@@ -376,10 +474,17 @@
       "status": "source_supported",
       "source_ids": [
         "tswn-openbox",
-        "tswn-batch-ui"
+        "tswn-batch-ui",
+        "attachment-ds4",
+        "tutorial-new",
+        "pbb7-repo",
+        "community-forum-help-testing",
+        "attachment-qqbot"
       ],
       "checked_at": "2026-11-16",
-      "origin": "tswn-curation"
+      "origin": "tswn-curation",
+      "detailed_description": "超强评（cqp，亦写作 CQP）是 tswn Openbox cqd/cqp 批量靶子对抗模式中的组队评估语境：计算选手组对各靶子胜率的有效平均，支持带权（tswn 实现，commit d12b462；tswn-openbox/tswn-batch-ui）。\n\n计算方法与量纲：与 cqd 相同的聚合公式 Σ(胜率×factor_i)/Σ(factor_i)，只计有效 matchup，单项范围 0..100 的百分比（ratings.json target_set_scores）。带权时 factor 是靶子组之间的权重（有限正数），不是属性倍率；带权模式下双方归一化成员集合完全一致的镜像 matchup 直接记 50% 并计入加权，这是评分约定而非真实镜像对局（tswn-mirror）。\n\n与 qp 的根本区别（易混点）：cqp 与强评 qp 只差一个字母但完全是两个体系——qp 是 namer-pf 对生成强化 profile 的万分制评分（0..10000，对手随轮次变化）；cqp 是对用户配置的具体靶子集的组队胜率百分比平均（0..100，对手固定），不能互相换算或比较。\n\n与 cqd 的关系：两者共用同一个批量入口，分数算法一致；区别在于评估语境（cqp 偏组队语境，cqd 偏单人语境），实际单挑还是组队由输入组和靶子组的人数决定，命令名不强制布局。\n\n社区用法（社区资料，2026-11-16 观察）：10008 论坛\"一个帮测贴\"（2026-11-14）以 cqp51.5 有刺/无刺、cqp51.0 人海等作为该次悬赏的具体目标，并提到双人组合取两号、工具配出组合与靶子换代；这些阈值属于该次活动的悬赏目标，需要连同其靶子、模型和配队约束一起理解，不是官方或全部工具通用的强度门槛。",
+      "outdated": false
     },
     {
       "id": "tswn-pair",
@@ -394,10 +499,14 @@
       "source_ids": [
         "tswn-openbox",
         "tswn-pair",
-        "tswn-pair-matrix"
+        "tswn-pair-matrix",
+        "tswn-settings",
+        "tswn-openbox-options"
       ],
       "checked_at": "2026-11-16",
-      "origin": "tswn-curation"
+      "origin": "tswn-curation",
+      "detailed_description": "配队评分（pair，结果亦称 pair_rate）是 tswn Openbox 的配队评估流程：把选手组分别与多个队友组拼接，评估各组合对靶子集的表现，输出头部队友组合的分数和（tswn 实现，commit d12b462；tswn-openbox/tswn-pair/tswn-pair-matrix）。\n\n计算流程（ratings.json pair；tswn-pair-matrix）：\n1. 预处理：选手和队友的每个普通成员先单独构建并冻结为 OL，以排除重新组队时产生的组队加成对评分的干扰；现有 overlay 原样保留；\n2. 逐队友组合：每个队友组合与选手组拼接后，对各靶子求平均胜率（带权靶子用 Σ(胜率×factor)/Σfactor），得到该组合的基础分；\n3. 队友权重：基础分乘以该队友组合的 factor（teammate_factor），乘权后的分数参与排名，因此 factor 会改变最终分数；\n4. 汇总：按乘权分数降序取前 head 个求和得到最终 score；同分按原队友输入顺序破平（tie_break）。\n\n结果读法（ratings.json limits）：score 是头部组合分数之和，队友 factor 还可以放大数值，因此它不是 0..100 的单项胜率，数值可能超出胜率量纲，不能与 cqd/cqp 百分比、pp/qp 万分制直接比较。\n\n明细与进度：pair 的明细模式（有效 cqp）显示排在最高 head 个位置的队友组合评分；运行中界面上的当前 Top 只是预览，全部队友组合完成后才形成最终排名和总分（tswn-openbox-options 语境）。\n\n配置：队友集合来自 settings.toml 的队友预设（如刺评、辅评、无刺评、分身评、配件评等，各带文件、head 与 factor_enabled），靶子集来自靶子预设。该机制限定提交 d12b462 语境，不能套用到其他工具或时代。",
+      "outdated": false
     },
     {
       "id": "tswn-head",
@@ -410,10 +519,16 @@
       "category": "rating",
       "status": "source_supported",
       "source_ids": [
-        "tswn-pair"
+        "tswn-pair",
+        "community-ladder-forum-2026",
+        "tutorial-old",
+        "tswn-settings",
+        "tswn-embedded-presets"
       ],
       "checked_at": "2026-11-16",
-      "origin": "tswn-curation"
+      "origin": "tswn-curation",
+      "detailed_description": "头部数量（head，界面语境亦作 Top head）是 tswn Openbox pair 配队评分最终保留的最高分队友组合数量（tswn 实现，commit d12b462；tswn-pair）。\n\n作用：pair 对每个队友组合算出乘权后的分数并降序排列，最终 score = sum(top_head(各组合分数))，即只累加排名前 head 的组合（ratings.json pair.final）。\n\n三条边界（词条定义与 ratings.json）：\n1. 保留项不足时按实际数量求和——例如可用组合只有 2 个而 head=4，就累加这 2 个，不会补零也不会报错；\n2. head 不是\"取前 head 个输入队友\"——排序对象是队友组合的分数而非输入顺序，输入顺序只在同分时作为破平依据（tie_break：同分按原队友输入顺序）；\n3. head 不做平均——最终是求和而非除以 head 求平均，head 值越大、累加的组合越多，score 数值就越高，因此不同 head 配置下的 pair 分数不可直接比较。\n\n默认配置参考（tswn-settings/tswn-embedded-presets）：当前预设中刺评、辅评、无刺评、分身评、配件评等 TOML 预设均为 head=4；20251109 日期版 TXT 预设中刺评/辅评/无刺评为 head=5、分身评/配件评为 head=3。head 连同队友文件和 factor_enabled 一起写在 settings.toml 的队友预设里，改配置会同时影响 GUI 与 openbox-cli。",
+      "outdated": false
     },
     {
       "id": "tswn-effective-cqp",
@@ -424,10 +539,14 @@
       "status": "source_supported",
       "source_ids": [
         "tswn-openbox",
-        "tswn-openbox-options"
+        "tswn-openbox-options",
+        "tswn-pair",
+        "tswn-pair-matrix"
       ],
       "checked_at": "2026-11-16",
-      "origin": "tswn-curation"
+      "origin": "tswn-curation",
+      "detailed_description": "有效 cqp 是 tswn Openbox「pair」（配队评分）页里 cqp 明细的三种显示模式之一，另外两种是「不显示 cqp」和「每组 cqp」（逐条列出每个队友组合的 cqp，可另设 cqp 阈值过滤）。\n\n**显示内容**：有效 cqp 只显示该名字得分最高的头部若干个队友组合的 cqp。这里「最高 head 个」的 head 来自队友预设自带的 head（当前工作目录配置中五个队友预设都是 head=4），命令行可用 `--head` 覆盖；手动输入队友时默认取 3 个。CLI 侧对应 `--detail top`（取值 none / every / top，默认 every）。\n\n**运行中与最终结果的区别**：README 明确写着「有效 cqp 在运行中展示当前 Top，全部队友算完后才确定最终排名和总分」；也就是说运行期间看到的是当前已算完部分的领先组合，属于预览。同分时按原队友输入顺序排列，加权计算不受线程完成顺序影响。任务被手动停止时，未完成的靶子或未完成的队友组合不会被当作最终分数输出。\n\n**与相邻概念的区别**：有效 cqp 里显示的是「乘过队友权重之后」的分数，不是靶子集上的原始平均胜率；pair 的最终分数是头部若干项之和，队友权重还能再放大，因此它不是 0~100 的单项百分比，不能和 cqp 靶子集平均胜率或官方 pp/pd/qp/qd 直接混用。\n\n（依据：tswn-core 提交 d12b462 的 Openbox README「pair」章节与 pair/matrix.rs、pair.rs 实现；未实际运行工具。）",
+      "outdated": false
     },
     {
       "id": "tswn-teammate-preset",
@@ -440,10 +559,14 @@
       "status": "source_supported",
       "source_ids": [
         "tswn-settings",
-        "tswn-openbox"
+        "tswn-openbox",
+        "attachment-qqbot",
+        "tswn-embedded-presets"
       ],
       "checked_at": "2026-11-16",
-      "origin": "tswn-curation"
+      "origin": "tswn-curation",
+      "detailed_description": "队友预算是 Openbox 配置文件 `setting/settings.toml` 里的 `[[teammate]]` 段，一个预设由四个字段组成：`name`（预设名）、`file`（队友名单文件，路径相对于 setting 目录解析）、`head`（该预设取头部几个组合参与求和）、`factor_enabled`（是否启用队友权重）。GUI 与 `openbox-cli` 共用同一份配置，改它会同时影响两者；文件不存在时启动会自动释放内嵌默认预设，文件格式损坏时界面只给出警告。\n\n**当前工作目录配置里的一组预设**（根 `setting/settings.toml`）：刺评（teammates/teammate_fz.toml）、辅评（teammates/teammate_bc.toml）、无刺评（teammates/teammate_wc.toml）、分身评（teammates/teammate_pj.toml）、配件评（teammates/teammate_fs.toml），五者 head 均为 4 且 factor_enabled = true。同一份配置的靶子侧是三组：单人组、双人组（均 factor_enabled = true）与三人组（不带权）。\n\n**内嵌默认与工作目录不是同一份**：内嵌 `assets/settings.toml` 除上述条目外，还保留带日期名的靶子预设（单人组20251102、双人组20251102）与队友预设（刺评/辅评/无刺评20251109 的 head=5，分身评/配件评20251109 的 head=3），这些带日期的条目不被当作冗余丢弃。\n\n**边界**：预设名称只是工具配置里的名字，不能据此推断完整社区含义；手动输入或从文件读取的队友按文本列表解析，不读取 TOML 里的队友权重，也不受预设 head 约束（CLI 手动队友默认 head=3）。\n\n（依据：tswn-core 提交 d12b462 的 setting/settings.toml、assets/settings.toml、Openbox README「配置文件」章节与 args.rs；未实际运行工具。）",
+      "outdated": false
     },
     {
       "id": "tswn-target-factor",
@@ -457,10 +580,13 @@
       "status": "source_supported",
       "source_ids": [
         "tswn-openbox",
-        "tswn-batch-ui"
+        "tswn-batch-ui",
+        "tswn-score-scale"
       ],
       "checked_at": "2026-11-16",
-      "origin": "tswn-curation"
+      "origin": "tswn-curation",
+      "detailed_description": "靶子权重是「靶子组之间」的权重，用来把一次评估对多组靶子的胜率做加权平均；它不是角色属性倍率，也不影响单个靶子组内部的胜率计算方式。\n\n**开启方式**：在 settings.toml 的对应 `[[targets]]` 写 `factor_enabled = true`，Openbox 就改用带权 TOML 读取该靶子文件。带权文件的每一项 `[[targets]]` 含一个 `factor`（权重，必须是有限正数，否则报「带权靶子 targets[i].factor 必须是有限正数。」）和一个 `players` 数组（该靶子组的成员，不能为空或含空名字）。\n\n**计算式**：最终平均胜率 = Σ(胜率 × factor) / Σfactor，只统计有效 matchup；被跳过或执行失败的靶子组不进入分母。手动输入的靶子不走带权 TOML，此时会忽略预设里的 factor_enabled。\n\n**与镜像约定的关系**：在带权模式下，如果选手组与靶子组的成员集合完全一致，该组直接记 50% 并照常参与加权平均（不是跳过，也不是真的打一场镜像对局）。\n\n**与队友权重的分层**：靶子权重作用于「同一队友组合对不同靶子组」的横向平均；队友权重作用于「不同队友组合之间」，两者相乘的先后顺序由实现规定，先算靶子加权平均再乘队友 factor。\n\n（依据：tswn-core 提交 d12b462 的 Openbox README「cqd/cqp」章节、backend/parse.rs 的 parse_factored_target_groups 与 backend/score.rs、backend/batch.rs；未实际运行工具。）",
+      "outdated": false
     },
     {
       "id": "tswn-teammate-factor",
@@ -473,10 +599,13 @@
       "status": "source_supported",
       "source_ids": [
         "tswn-openbox",
-        "tswn-pair-matrix"
+        "tswn-pair-matrix",
+        "tswn-pair"
       ],
       "checked_at": "2026-11-16",
-      "origin": "tswn-curation"
+      "origin": "tswn-curation",
+      "detailed_description": "队友权重是「队友组之间」的权重，用在 Openbox 的 pair（配队评分）里。\n\n**计算顺序**：先按靶子权重算出该队友组合对各靶子的平均胜率，再乘该队友组自己的 factor；随后按乘权后的分数降序排序，取前 head 个求和得到该名字的最终分数。也就是说队友权重不只影响展示的平均胜率，它会改变排名和最终分数本身——某个队友组合权重高，即使原始胜率略低也可能排到前面并进入头部。\n\n**与「头部数量」的关系**：最终分数是头部若干项的和，队友 factor 还能再放大，所以 pair 的总分可以超过 100，不能当成 0~100 的单项胜率来读。\n\n**开启与边界**：队友预设写 `factor_enabled = true` 时，队友文件按带权 TOML 解析（`[[targets]]` 结构，每项含 factor 与 players）。手动输入队友或从普通文本文件读队友时，不读取 TOML 权重（factor 视为 1）。同分时按原队友输入顺序排列，不因线程完成顺序改变。\n\n（依据：tswn-core 提交 d12b462 的 Openbox README「pair」章节、backend/pair/matrix.rs 与 backend/pair.rs；未实际运行工具。）",
+      "outdated": false
     },
     {
       "id": "tswn-mirror",
@@ -490,10 +619,13 @@
       "source_ids": [
         "tswn-openbox",
         "tswn-batch-ui",
-        "tswn-input-identities"
+        "tswn-input-identities",
+        "tswn-score-scale"
       ],
       "checked_at": "2026-11-16",
-      "origin": "tswn-curation"
+      "origin": "tswn-curation",
+      "detailed_description": "「镜像 50%」是带权靶子模式下一条评分约定：当选手组与靶子组归一化后的成员集合完全一致时，这一组 matchup 不实际开战，直接按 50% 计入，并照常参与靶子权重加权平均。\n\n**「归一化一致」的判定**：把每组的成员按 raw 名字解析成身份键后排序再比较，因此不要求顺序相同；例如 `mario+luigi` 与 `luigi+mario` 视为同一组。实现上对应 normalized_group_players 与 raw_namerena_to_id_name 的组合。\n\n**记账方式**：在批量胜率路径里，镜像项按 wins 记 1、total 记 2，等价于一半的胜率；汇总时镜像项先累计，其余靶子再按输入顺序累计实际对局。\n\n**与「重名跳过」的分界**：只有成员集合完全相同才算镜像；部分同名在带权模式下仍会实际计算，不走跳过逻辑。未启用带权模式时，同样的情形落在「重名跳过」一侧，不会记 50%。\n\n**性质**：这是一项评分约定，而不是实际运行镜像战斗得出的胜率，也没有跑过任何对局来验证；把它理解成「镜像对局实测五五开」是误读。\n\n（依据：tswn-core 提交 d12b462 的 Openbox README「cqd/cqp」章节、backend/score.rs 中 MIRROR_RATE = 50.0 与 backend/batch.rs、backend/pair/matrix.rs 的 Slot::Mirror 分支；未实际运行工具。）",
+      "outdated": false
     },
     {
       "id": "tswn-duplicate-skip",
@@ -504,10 +636,13 @@
       "status": "source_supported",
       "source_ids": [
         "tswn-openbox",
-        "tswn-input-identities"
+        "tswn-input-identities",
+        "tswn-batch-ui"
       ],
       "checked_at": "2026-11-16",
-      "origin": "tswn-curation"
+      "origin": "tswn-curation",
+      "detailed_description": "重名跳过指：未启用靶子带权模式时，如果选手组与靶子组之间出现重复身份（同一个名字出现在同一场的双方），该 matchup 直接跳过，不计入平均胜率。\n\n**判定方式**：把双方成员按 raw 名字解析成身份键后查重，命中即跳过；被跳过的项在明细里显示为「跳过或计算失败」，在汇总里计入 skipped_matchups，而不是按 0% 计入。\n\n**为什么会有这条规则**：同号对战没有意义，先验地跳过比跑一场自我对战更合理；这也解释了为什么带权模式要另立镜像约定。\n\n**与带权模式的关系**：启用靶子带权后不再按重名跳过——只有成员集合完全一致的整组镜像记 50%；部分同名（只有一部分成员重名）仍按正常对局实际计算。\n\n**与其他「重名」用法的区分**：namer-pf 的 pp/pd/qp/qd 里，pd/qd 用「重复单号标记」触发 1v1 布局，那是为了构造对战布局，和这里的跳过规则不是一回事。\n\n（依据：tswn-core 提交 d12b462 的 Openbox README「cqd/cqp」章节、backend/parse.rs 的 first_duplicate_name_in_matchup 与 backend/batch.rs、backend/score.rs 的跳过分支；未实际运行工具。）",
+      "outdated": false
     },
     {
       "id": "tswn-count",
@@ -523,10 +658,13 @@
       "source_ids": [
         "tswn-openbox-options",
         "tswn-batch-summary",
-        "tswn-api"
+        "tswn-api",
+        "tswn-batch-engine"
       ],
       "checked_at": "2026-11-16",
-      "origin": "tswn-curation"
+      "origin": "tswn-curation",
+      "detailed_description": "场数指一次 matchup 或一次评分所请求的模拟局数，也就是同一对输入之间重复跑多少场再取平均。\n\n**参数位置**：CLI 上是公共参数 `-n/--count`（namer-pf、cqd、pair 共用），省略时默认 10000，显式传入的值会归一化到至少 1。GUI 上对应「更多设置」里的场数输入框，并且与「精确度」三档二选一（1% / 10% / 100% 分别对应 100 / 1000 / 10000 场）。\n\n**与另外两个容易混淆的参数区分**：\n- 与单场内部回合上限不同：批量层每局最多推进 100,000 回合，触及保护上限的局仍计入 total 并单独记 guard_exhausted；公共 API 的 BattleOptions.max_rounds 默认 20,000 属于另一个入口的参数，与这里的场数不是一回事。\n- 与屏幕保留小数位数不同：那是显示精度，只影响输出格式，不增加样本。\n\n**样本与随机条件**：胜率轮次从 0 开始，第 0 轮不附加 seed，后续轮次使用 `seed:{PROFILE_START + round}@!`；评分路径则让 profile 名字随轮次变化并使用空的额外 seed。两套轮次编号规则不能混用；并行调度只影响完成顺序，不改变每轮输入。\n\n**代价**：场数越大采样越稳，耗时也近似线性增长；跨工具比较 cqp/cqd 时，场数与靶子集同样属于必须对齐的上下文。\n\n（依据：tswn-core 提交 d12b462 的 Openbox README「更多设置」章节、openbox_cli/args.rs（DEFAULT_COUNT = 10000）与 crates/tswn_core/src/runtime/batch.rs 的模块说明；未实际运行工具。）",
+      "outdated": false
     },
     {
       "id": "tswn-accuracy",
@@ -536,10 +674,14 @@
       "category": "rating",
       "status": "source_supported",
       "source_ids": [
-        "tswn-openbox-options"
+        "tswn-openbox-options",
+        "official-testing",
+        "tutorial-old"
       ],
       "checked_at": "2026-11-16",
-      "origin": "tswn-curation"
+      "origin": "tswn-curation",
+      "detailed_description": "「精确度」是 Openbox 普通设置里的一个三档采样规模开关：1% / 10% / 100%，分别对应 100 / 1000 / 10000 场模拟。它选的是跑多少场，不是结果有多准。\n\n**边界（容易误解的地方）**：\n- 不是胜率或胜率百分比；胜率是这场评估算出来的结果，精确度是它背后的样本量。\n- 不是统计置信度，也不是「结果正确的概率」，资料里没有任何置信区间或误差界的说明。\n- 不是官方 pp/pd/qp/qd 那套 0~10000 分里的任何一项。\n\n**与其他「精度」用法的区分**：官方原站 !test! 测号页把评分进度分成 0%~10%、11%~100%、101%~??? 三段，说的是「快速粗略评分 / 较精确评分 / 更精确评分」的进度百分比，与本词条的三档不是同一套概念。旧教程还列过一张「精度 → 加速网址」对照表（1%、2%、5%、10%、25%、100%），那是网页端加速开箱的进度百分比口径；同一教程在介绍 openbox.exe 时说「准确度」表示进行多少百场战斗，输入 100 即一万场，并称这与测官方评分时的 100% 一致。旧网页开箱与 Openbox 的三档同名而口径不同，不要互相代入。\n\n**CLI 侧**：没有百分比档位，直接用 `-n/--count` 给场数（默认 10000，等价于 100% 档）。\n\n（依据：tswn-core 提交 d12b462 的 Openbox README「普通设置」与 openbox_cli/args.rs；对照官方测号技巧页（official-testing）的进度百分比说明与旧教程的精度/准确度对照；未实际运行工具。）",
+      "outdated": false
     },
     {
       "id": "tswn-precision",
@@ -553,10 +695,13 @@
       "category": "rating",
       "status": "source_supported",
       "source_ids": [
-        "tswn-openbox"
+        "tswn-openbox",
+        "tswn-score-scale"
       ],
       "checked_at": "2026-11-16",
-      "origin": "tswn-curation"
+      "origin": "tswn-curation",
+      "detailed_description": "显示精度指结果格式化时保留的小数位数，是输出层参数，与模拟场数完全分开：调更多小数位不会多跑一场对战，也不会提高结果的统计质量。\n\n**两个入口**：namer-pf 用 `--precision`（默认 0，即整数输出）；cqd/cqp 与 pair 用 `--wr-precision`（默认 3），后两者是胜率与配队分数的小数位。实现里格式化前会把位数上限压到 9。\n\n**内部得分本来就可能是真小数**：profile 评分的量纲是 wins/total × 10000，胜率量纲是 wins/total × 100；当 total 不能整除时，这些比值本身就是分数。README 明确说开启后「保留计算得到的真实小数分数，再统一格式化到普通评分和技能榜的屏幕/文件输出；不会只在整数后补零」。\n\n**读法提醒**：小数位变多会让采样误差造成的尾数抖动显性化，两个号比较时应统一精度、场数与靶子集；跨工具比较 cqp/cqd 时显示精度不参与换算。\n\n（依据：tswn-core 提交 d12b462 的 Openbox README「namer-pf」章节与 openbox_cli/args.rs 的 precision / wr_precision 参数说明、backend/score.rs；未实际运行工具。）",
+      "outdated": false
     },
     {
       "id": "tswn-rq",
@@ -572,7 +717,9 @@
         "tswn-rq"
       ],
       "checked_at": "2026-11-16",
-      "origin": "tswn-curation"
+      "origin": "tswn-curation",
+      "detailed_description": "rq 是角色构造阶段影响 name_factor（名字系数）的评估参数。它不是战斗中的运行时伤害倍率，也不决定固定阵容胜率所用 profile seed 的编号（tswn 实现，commit d12b462，依据 docs/mechanics/name-factor-rq.md）。\n\n默认取值：\n- 普通 fight（对打）：rq=4；\n- 胜率与评分流程：默认 rq=6。\n即同一个名字在对打与评分里可能构造出不同属性，短号场景差异尤其明显。Openbox/CLI 提供 `--keep-rq`（\"不低估短号\"）选项，让相应评分或胜率流程保留 rq=4 而不是默认 6；这不意味着自动增加评分或改用另一套靶子。\n\n相关约束：\n1. 已\"准备好\"（PreparedRunner）的阵容固定了构造口径，换 rq 需要重新准备；只换 seed 只改变本场初始化和随机过程，不改变构造属性。\n2. 数字 profile 评分与固定阵容胜率使用不同的轮次构造规则，两者不能混同。\n\n与官方原版的关系：rq 是 tswn 重写中显式化的构造参数，用于兼容官方对打/评估的口径差异，官方文档未见该参数名。常见误解：把 rq 当成伤害倍率、名字评分本身或 seed 编号——它只在构造阶段影响 name_factor。",
+      "outdated": false
     },
     {
       "id": "tswn-name-factor",
@@ -587,20 +734,28 @@
         "tswn-rq"
       ],
       "checked_at": "2026-11-16",
-      "origin": "tswn-curation"
+      "origin": "tswn-curation",
+      "detailed_description": "name_factor（名字系数）是从名字与阵营字符评估得到的属性缩放因子（tswn 实现，commit d12b462，依据 docs/mechanics/name-factor-rq.md）。\n\n普通构建的取值规则：取 max(名字评估值, 阵营评估值−6)。即阵营字符的评估也参与系数决定，不能只看名字本身；短名可能因阵营评估值而获得更高系数。\n\n作用范围：\n1. 影响七围（攻、防、速、敏、魔、抗、智）的派生；\n2. 不缩放 HP——HP 不做这一系数缩放；\n3. DIY/OL 输入可关闭名字系数（overlay 提供覆盖选项），关闭后按覆盖值构造。\n\n常见误解：\n- 名字系数不等于 rq 本身：rq 是评估参数，name_factor 是受其影响的评估结果；\n- 它不是战斗中的伤害倍率，只在构造阶段影响属性派生；\n- 名字长度不是唯一决定因素，字符类别与阵营都参与评估。\n\n待核实：名字评估值与阵营评估值的具体计算公式（逐字符权重等）本批资料未展开，见 tswn 仓库 docs/mechanics/name-factor-rq.md。",
+      "outdated": false
     },
     {
       "id": "tswn-short-name",
       "term": "短号",
-      "aliases": [],
+      "aliases": [
+        "超短号"
+      ],
       "definition": "名字常见度评估会产生与长度、字符类别及阵营有关的系数的短名字语境；rq=4 与 rq=6 可能给出不同构造属性，不能只按字符数推断最终强弱。",
       "category": "concept",
       "status": "source_supported",
       "source_ids": [
-        "tswn-rq"
+        "tswn-rq",
+        "community-ladder-forum-2026",
+        "tswn-openbox"
       ],
       "checked_at": "2026-11-16",
-      "origin": "tswn-curation"
+      "origin": "tswn-curation",
+      "detailed_description": "短号指字符数很少的名字。tswn（core d12b462）rq 机制语境：名字评估参数 rq 在角色构造阶段影响 name_factor（名字系数），后者影响七围派生（HP 不做该缩放）；名字常见度评估会产生与长度、字符类别及阵营有关的系数。\n要点：\n- 普通 fight/BattleSession 默认 rq=4，胜率和评分默认 rq=6；rq=4 与 rq=6 可能给出不同构造属性，因此短号在不同口径下的强弱判断可能不同，不能只按字符数推断最终强弱。\n- 普通构建的名字系数还要比较名字和阵营评估值（取 max(名字评估值, 阵营评估值−6)），阵营部分也会影响短号。\n- Openbox/CLI 提供 --keep-rq（“不低估短号”）选项，让评分或胜率流程保留 rq=4；这不意味着自动增加评分，也不改用另一套靶子。\n- 改变 rq 需要重新准备阵容，不能只换 seed。\n本词条为 tswn 实现语境；官方页面没有 rq 概念。",
+      "outdated": false
     },
     {
       "id": "tswn-keep-rq",
@@ -617,7 +772,9 @@
         "tswn-rq"
       ],
       "checked_at": "2026-11-16",
-      "origin": "tswn-curation"
+      "origin": "tswn-curation",
+      "detailed_description": "「不低估短号」是 Openbox/CLI 的一个选项名（CLI `--keep-rq`，GUI 在「更多设置」里），含义是让相应的评分或胜率流程保留普通对打使用的 rq=4，而不是评分/胜率入口默认使用的 rq=6。\n\n**为什么与短号有关**：rq 是构造阶段的名字评估参数，进入 name_factor，再影响由原始七围派生的战斗属性（HP 不做这一缩放）。对负系数的短名，rq=6 会让系数更接近 0，属性加成小于 rq=4；也就是说用默认 rq=6 评分，短号会被低估。keep-rq 就是把评估口径调回普通对打那一档，从而不低估短号。\n\n**默认状态不同**：CLI 文档写明 namer-pf 默认关闭，cqd 与 pair 默认开启，与 GUI 勾选状态一致。\n\n**边界**：\n- 它不会自动加分，也不更换靶子；只是改构造口径。\n- 换 seed 不能替代换 rq：rq 属于构造参数，seed 只决定本场初始化与随机过程；已准备好的阵容在构造时固定了口径，比较不同 rq 要分别准备阵容。\n- rq 不是运行时伤害倍率，也不决定 profile seed 编号。\n\n（依据：tswn-core 提交 d12b462 的 docs/mechanics/name-factor-rq.md、openbox_cli/args.rs 的 keep_rq 说明与 mechanics.md；未实际运行工具。）",
+      "outdated": false
     },
     {
       "id": "tswn-base",
@@ -630,10 +787,13 @@
       "status": "source_supported",
       "source_ids": [
         "tswn-base",
-        "tswn-openbox"
+        "tswn-openbox",
+        "attachment-qqbot"
       ],
       "checked_at": "2026-11-16",
-      "origin": "tswn-curation"
+      "origin": "tswn-curation",
+      "detailed_description": "base（别名 raw_name_base）是开箱器（Openbox）中的一个工具入口，实现位于 crates/tswn_openbox_backend/src/backend/base.rs（tswn-core 提交 d12b462）。\n\n用途：查看单个普通原始名字在引擎内部的生成基础数据，包括：\n- 128 字节的原始 roll（名字确定性生成的原始字节）；\n- HP 区间；\n- 七围的原始三元组；\n- 16 个技能槽的内容。\n\n输入限制（按实现文件定位的证据）：只接受单个普通原始名字，不接受武器、不接受 DIY/OL 覆盖输入、不接受多行名字。想看带武器或 DIY 覆盖后的结果，应使用其他模式而非 base。\n\n用途场景：核对一个名字的原始素质（roll 是否如预期、七围分布、技能槽），常用于测号前的基础检查，或验证名字生成可复现性。因为输出直接对应确定性 roll，同一名字的 base 结果在同版本引擎下应当一致。\n\n常见误区：\n1. 把 base 结果当成强度评分——base 只展示原始数据，不做胜率或评分计算；\n2. 用 base 查 DIY/OL 名字——它不受理这类输入；\n3. 与论坛\"基地\"帖混淆——论坛基地是战队交流主题，与本工具完全不同（社区观察资料明确提示不把两者当作同一种对象）。\n\n依据为 tswn 实现源码定位（提交 d12b462），未运行实测。",
+      "outdated": false
     },
     {
       "id": "tswn-roll",
@@ -650,7 +810,9 @@
         "tswn-name-build"
       ],
       "checked_at": "2026-11-16",
-      "origin": "tswn-curation"
+      "origin": "tswn-curation",
+      "detailed_description": "原始 roll（name_base、128 字节 roll）指名字和阵营经兼容随机构建流程产生的 128 字节基础材料（tswn 实现，commit d12b462）。\n\n用途：可用 tswn 的 base 工具（raw_name_base 入口）查看单个普通原始名字的 128 字节 roll、HP 区间、七围原始三元组及 16 个技能槽，从而追查属性和技能槽的来源。base 工具的限制：只接受单个普通名字，不接受武器、DIY/OL 覆盖或多行名字。\n\n常见误解：\n1. 原始 roll 不等于当前战斗属性——从 roll 到战斗面板还要经过名字系数、武器、运行时状态等派生与修正；\n2. \"128 字节\"不是 128 个不同名字，而是单次构建产生的 128 字节材料；\n3. 同一名字与阵营在固定 seed 和口径下可复现相同 roll（整理者推断：复现依赖 seed 设置，具体关系待核实）。\n\n与官方原版的关系：官方从未公开这种以字节形式呈现的中间材料；这是 tswn 重写为兼容官方随机构建而还原的内部表示，适合排查\"这个技能/属性是哪来的\"。",
+      "outdated": false
     },
     {
       "id": "tswn-assassin-preset",
@@ -661,10 +823,15 @@
       "status": "source_supported",
       "source_ids": [
         "tswn-settings",
-        "tswn-openbox"
+        "tswn-openbox",
+        "tswn-embedded-presets",
+        "tutorial-old",
+        "tutorial-new"
       ],
       "checked_at": "2026-11-16",
-      "origin": "tswn-curation"
+      "origin": "tswn-curation",
+      "detailed_description": "刺评是当前 Openbox `setting/settings.toml` 中的一个**带权队友预设**，用于 pair（配队评分）：\n\n- `name` = 刺评；`file` = teammates/teammate_fz.toml；`head` = 4；`factor_enabled` = true。\n- 通过 pair 使用：把队友名单文件里的每一组队友分别与选手组拼成二人组，逐靶子算胜率，取该队友组合的靶子加权平均胜率，再乘该队友组的 factor，按乘权后的分数排序取前 head 个求和。\n- 同类条目：内嵌默认另有「刺评20251109」（teammates/teammate_fz.txt，head=5）。工作目录配置与内嵌默认是两套，两套并存，不合并。\n\n**社区语境的补充（与上面的配置事实分开看）**：旧教程记载的社区含义：按「基准号测交法」，配基准辅助的背刺号评分称为刺评（缩写 cp）；新教程列出的 openbox 队友文件 teammate_fz 对应 pair 里的辅助队友。这类简称对应的是社区基准号与配对方向的口语用法，不同年代、不同工具的基准号会更换，因此不能反过来用名字推定当前预设的具体成员与算法。\n\n**边界**：这里确认的是预设名称、文件名、head、权重开关与它在 pair 里的计算入口；预设内部用什么基准号、覆盖哪一代靶子，社区侧还需要更多资料。\n\n（依据：tswn-core 提交 d12b462 的 setting/settings.toml 与 assets/settings.toml、Openbox README「pair」「配置文件」章节；社区用法见旧教程/新教程相应章节；未实际运行工具。）",
+      "outdated": false
     },
     {
       "id": "tswn-support-preset",
@@ -675,10 +842,15 @@
       "status": "source_supported",
       "source_ids": [
         "tswn-settings",
-        "tswn-openbox"
+        "tswn-openbox",
+        "tswn-embedded-presets",
+        "tutorial-old",
+        "tutorial-new"
       ],
       "checked_at": "2026-11-16",
-      "origin": "tswn-curation"
+      "origin": "tswn-curation",
+      "detailed_description": "辅评是当前 Openbox `setting/settings.toml` 中的一个**带权队友预设**，用于 pair（配队评分）：\n\n- `name` = 辅评；`file` = teammates/teammate_bc.toml；`head` = 4；`factor_enabled` = true。\n- 通过 pair 使用：把队友名单文件里的每一组队友分别与选手组拼成二人组，逐靶子算胜率，取该队友组合的靶子加权平均胜率，再乘该队友组的 factor，按乘权后的分数排序取前 head 个求和。\n- 同类条目：内嵌默认另有「辅评20251109」（teammates/teammate_bc.txt，head=5）。工作目录配置与内嵌默认是两套，两套并存，不合并。\n\n**社区语境的补充（与上面的配置事实分开看）**：旧教程记载：配基准背刺的辅助号评分称为辅评（缩写 fp）；新教程列出的 openbox 队友文件 teammate_bc 对应 pair 里的背刺队友。这类简称对应的是社区基准号与配对方向的口语用法，不同年代、不同工具的基准号会更换，因此不能反过来用名字推定当前预设的具体成员与算法。\n\n**边界**：这里确认的是预设名称、文件名、head、权重开关与它在 pair 里的计算入口；预设内部用什么基准号、覆盖哪一代靶子，社区侧还需要更多资料。\n\n（依据：tswn-core 提交 d12b462 的 setting/settings.toml 与 assets/settings.toml、Openbox README「pair」「配置文件」章节；社区用法见旧教程/新教程相应章节；未实际运行工具。）",
+      "outdated": false
     },
     {
       "id": "tswn-no-assassin-preset",
@@ -689,10 +861,15 @@
       "status": "source_supported",
       "source_ids": [
         "tswn-settings",
-        "tswn-openbox"
+        "tswn-openbox",
+        "tswn-embedded-presets",
+        "tutorial-old",
+        "tutorial-new"
       ],
       "checked_at": "2026-11-16",
-      "origin": "tswn-curation"
+      "origin": "tswn-curation",
+      "detailed_description": "无刺评是当前 Openbox `setting/settings.toml` 中的一个**带权队友预设**，用于 pair（配队评分）：\n\n- `name` = 无刺评；`file` = teammates/teammate_wc.toml；`head` = 4；`factor_enabled` = true。\n- 通过 pair 使用：把队友名单文件里的每一组队友分别与选手组拼成二人组，逐靶子算胜率，取该队友组合的靶子加权平均胜率，再乘该队友组的 factor，按乘权后的分数排序取前 head 个求和。\n- 同类条目：内嵌默认另有「无刺评20251109」（teammates/teammate_wc.txt，head=5）。工作目录配置与内嵌默认是两套，两套并存，不合并。\n\n**社区语境的补充（与上面的配置事实分开看）**：旧教程记载：配基准地裂的无刺号评分称为地评（缩写 dp），并提到后来出现过一套「新的无刺号基准化评分」但命名当时未统一；新教程列出的 openbox 队友文件 teammate_wc 对应 pair 里的无刺队友。这类简称对应的是社区基准号与配对方向的口语用法，不同年代、不同工具的基准号会更换，因此不能反过来用名字推定当前预设的具体成员与算法。\n\n**边界**：这里确认的是预设名称、文件名、head、权重开关与它在 pair 里的计算入口；预设内部用什么基准号、覆盖哪一代靶子，社区侧还需要更多资料。\n\n（依据：tswn-core 提交 d12b462 的 setting/settings.toml 与 assets/settings.toml、Openbox README「pair」「配置文件」章节；社区用法见旧教程/新教程相应章节；未实际运行工具。）",
+      "outdated": false
     },
     {
       "id": "tswn-clone-preset",
@@ -703,10 +880,15 @@
       "status": "source_supported",
       "source_ids": [
         "tswn-settings",
-        "tswn-openbox"
+        "tswn-openbox",
+        "tswn-embedded-presets",
+        "tutorial-new",
+        "tutorial-old"
       ],
       "checked_at": "2026-11-16",
-      "origin": "tswn-curation"
+      "origin": "tswn-curation",
+      "detailed_description": "分身评是当前 Openbox `setting/settings.toml` 中的一个**带权队友预设**，用于 pair（配队评分）：\n\n- `name` = 分身评；`file` = teammates/teammate_pj.toml；`head` = 4；`factor_enabled` = true。\n- 通过 pair 使用：把队友名单文件里的每一组队友分别与选手组拼成二人组，逐靶子算胜率，取该队友组合的靶子加权平均胜率，再乘该队友组的 factor，按乘权后的分数排序取前 head 个求和。\n- 同类条目：内嵌默认另有「分身评20251109」（teammates/teammate_pj.txt，head=3）。工作目录配置与内嵌默认是两套，两套并存，不合并。\n\n**社区语境的补充（与上面的配置事实分开看）**：旧教程把二人组分「有刺、传统无刺、人海」三类，人海又分分身组与幻术组，构成都是「核心+配件」，对应丝评 fs、hs、fspj、hspj；论坛 10008 的二人组评分榜帖则把榜单拆成辅助、无刺、背刺与分身主力、分身配件、幻术主力、幻术配件七榜；新教程列出的 openbox 队友文件 teammate_pj 对应 pair 里的人海配件队友。这类简称对应的是社区基准号与配对方向的口语用法，不同年代、不同工具的基准号会更换，因此不能反过来用名字推定当前预设的具体成员与算法。\n\n**边界**：这里确认的是预设名称、文件名、head、权重开关与它在 pair 里的计算入口；预设内部用什么基准号、覆盖哪一代靶子，社区侧还需要更多资料。\n\n（依据：tswn-core 提交 d12b462 的 setting/settings.toml 与 assets/settings.toml、Openbox README「pair」「配置文件」章节；社区用法见旧教程/新教程相应章节；未实际运行工具。）",
+      "outdated": false
     },
     {
       "id": "tswn-accessory-preset",
@@ -717,10 +899,15 @@
       "status": "source_supported",
       "source_ids": [
         "tswn-settings",
-        "tswn-openbox"
+        "tswn-openbox",
+        "tswn-embedded-presets",
+        "tutorial-old",
+        "tutorial-new"
       ],
       "checked_at": "2026-11-16",
-      "origin": "tswn-curation"
+      "origin": "tswn-curation",
+      "detailed_description": "配件评是当前 Openbox `setting/settings.toml` 中的一个**带权队友预设**，用于 pair（配队评分）：\n\n- `name` = 配件评；`file` = teammates/teammate_fs.toml；`head` = 4；`factor_enabled` = true。\n- 通过 pair 使用：把队友名单文件里的每一组队友分别与选手组拼成二人组，逐靶子算胜率，取该队友组合的靶子加权平均胜率，再乘该队友组的 factor，按乘权后的分数排序取前 head 个求和。\n- 同类条目：内嵌默认另有「配件评20251109」（teammates/teammate_fs.txt，head=3）。工作目录配置与内嵌默认是两套，两套并存，不合并。\n\n**社区语境的补充（与上面的配置事实分开看）**：旧教程提到丝评模型里的分身（fs）、幻术（hs）、分身配件（fspj）、幻术配件（hspj）等命名；新教程列出的 openbox 队友文件 teammate_fs 对应 pair 里的主力人海队友。这类简称对应的是社区基准号与配对方向的口语用法，不同年代、不同工具的基准号会更换，因此不能反过来用名字推定当前预设的具体成员与算法。\n\n**边界**：这里确认的是预设名称、文件名、head、权重开关与它在 pair 里的计算入口；预设内部用什么基准号、覆盖哪一代靶子，社区侧还需要更多资料。\n\n（依据：tswn-core 提交 d12b462 的 setting/settings.toml 与 assets/settings.toml、Openbox README「pair」「配置文件」章节；社区用法见旧教程/新教程相应章节；未实际运行工具。）",
+      "outdated": false
     },
     {
       "id": "tswn-raw-stats",
@@ -734,10 +921,14 @@
       "status": "source_supported",
       "source_ids": [
         "tswn-name-build",
-        "tswn-overlay"
+        "tswn-overlay",
+        "tswn-rq",
+        "tswn-base"
       ],
       "checked_at": "2026-11-16",
-      "origin": "tswn-curation"
+      "origin": "tswn-curation",
+      "detailed_description": "构造属性（也叫原始八围、attrs）指名字构建或 overlay 提供的八项基础数据，固定顺序为：攻、防、速、敏、魔、抗、智、maxhp（tswn-name-build / tswn-overlay 文档，提交 d12b462）。\n\n来源有两种：\n1. 普通名字：由名字 roll 产生，base 工具可查看单个普通原始名字的七围原始三元组、HP 区间和 128 字节 roll。官方语境整体上把属性描述为\"名字关联固定属性\"：同一输入在同一版本下结果可重复（knowledge/overview.md 整理）。\n2. DIY/OL 覆盖：+diy[...] 文本中前七项按 +36 编码、HP 原样；带玩家级 attrs/skills 覆盖会禁用普通武器效果，仅覆盖召唤模板则不会（tswn DIY/OL 契约文档）。\n\n构造属性还不是战斗中真正结算的值：它要再经名字系数（rq 影响构造阶段的 name_factor，普通构建取 max(名字评估值, 阵营评估值−6)）、武器等规则派生战斗值；HP 不做名字系数缩放。经状态与临时机制修正后的最终值称为有效属性，两者必须分开讨论。\n\n注意：DIY 文本的编码值与普通 roll 出的构造值口径不同，读 DIY 文本时需按 +36 编码约定还原后才能与面板值比较，不能把文本数值直接当成面板值。",
+      "outdated": false
     },
     {
       "id": "tswn-effective-stats",
@@ -748,10 +939,14 @@
       "status": "source_supported",
       "source_ids": [
         "tswn-runtime-model",
-        "tswn-clone"
+        "tswn-clone",
+        "tswn-effective-stats",
+        "tswn-hide"
       ],
       "checked_at": "2026-11-16",
-      "origin": "tswn-curation"
+      "origin": "tswn-curation",
+      "detailed_description": "有效属性指当前 Runtime（tswn-core 提交 d12b462）中真正用于结算的属性，与构造属性（原始八围）相对。它由构造模板、状态和临时机制共同形成，在战斗中会动态变化：例如隐匿触发且等级高于 63 时会另增敏、防、抗（tswn 隐匿实现）；分身会创建新实体并重派生属性，而不是复制当前面板。\n\n两个常见误区（tswn-clone / tswn-runtime-model 文档明确指出）：\n1. 分身属性衰减使用兼容浮点常量执行，不能对界面显示的最终值统一乘 0.78 来精确复现分身属性——0.78 只是近似观感，不是精确规则。\n2. 分身重建技能时先以当前等级截断构造基底，再重放 LastBoost 或 SlotBoost，因此有效属性/技能熟练度不能从最终显示值直接反推。\n\n有效属性与构造属性的区别也解释了为什么\"七围之和\"必须注明口径：同一角色在进入战斗前后、以及战斗中的不同时刻，有效值都可能不同。相关源码位置为 crates/tswn_core/src/runtime/entity/runtime.rs L515-L560（本轮为静态只读审阅，未运行验证）。",
+      "outdated": false
     },
     {
       "id": "tswn-decay",
@@ -764,23 +959,31 @@
         "tswn-decay"
       ],
       "checked_at": "2026-11-16",
-      "origin": "tswn-curation"
+      "origin": "tswn-curation",
+      "detailed_description": "技能衰减指使用部分技能后当前技能熟练度下降的机制（tswn 实现，commit d12b462，依据 docs/mechanics/skill-decay.md）。该提交的分析涵盖命轮、治愈、苏生、分身、幻术五类，各自门槛和公式不同，不是所有技能统一减半：\n\n1. 命轮（skill-exchange）：level≥2 时使用后按 (level+1)/2 的整数除法衰减；\n2. 苏生（skill-revive）：level≥2 时使用后同样按 (level+1)/2 整数除法衰减；\n3. 治愈（skill-heal）：等级大于 8 才每次使用减 1，低等级不衰减；\n4. 幻术：按向上取整的 3/4 更新（资料原文如此，精确语义待核实）；\n5. 分身：有特殊流程——本体分身技能随机衰减，克隆体分身等级再开根号；非蓄力本体还执行相应的 HP 与原始七围衰减（使用兼容浮点常量，不能精确简化为显示值乘 0.78）。\n\n常见误解：\"所有技能使用后熟练度减半\"不成立——不同技能的门槛（2、8）与公式（(level+1)/2、减 1、3/4、开根号）各异。\n\n与官方原版的关系：这些公式来自 tswn 对该提交实现的分析，官方文档未公布衰减公式。",
+      "outdated": false
     },
     {
       "id": "tswn-last-boost",
       "term": "末尾主动加成",
       "aliases": [
-        "LastBoost"
+        "LastBoost",
+        "末尾熟练度加成"
       ],
       "definition": "保存主动技能末尾强化的构成；可用 \"2*base\" 导出。分身重建时先用当前等级截断构造基底，再重放翻倍，不能只保存最终熟练度。",
       "category": "mechanics",
       "status": "source_supported",
       "source_ids": [
         "tswn-clone",
-        "tswn-overlay"
+        "tswn-overlay",
+        "tutorial-new",
+        "tutorial-old",
+        "community-ladder-forum-2026"
       ],
       "checked_at": "2026-11-16",
-      "origin": "tswn-curation"
+      "origin": "tswn-curation",
+      "detailed_description": "LastBoost（末尾主动加成）是 tswn（commit d12b462）保存主动技能\"末尾强化\"构成的数据结构，DIY/OL 导出时可写成 \"2*base\" 这类形式，表示在基底上重放的翻倍等强化。\n\n为什么需要它：分身（克隆）重建技能时不能只保存最终熟练度——最终值是\"构造基底经过强化\"的结果，直接复制最终值会在基底被当前等级截断后丢失强化构成。正确流程是：先用当前等级截断构造基底，再重放 LastBoost 中的强化（如翻倍），得到重建后的熟练度。\n\n对应关系：与 SlotBoost（末端座位加成，\"base+boost\" 形式）并列，两者覆盖不同类型的技能加成构成；分身重建时按技能情况分别重放。\n\n适用范围：tswn 实现，依据 docs/mechanics/clone.md 与 docs/reference/diy-overlay.md。这是重写内部的数据构成概念，官方文档未公开对应结构；在 DIY/OL 导出格式中能看到对应的导出写法。",
+      "outdated": false
     },
     {
       "id": "tswn-slot-boost",
@@ -796,23 +999,31 @@
         "tswn-overlay"
       ],
       "checked_at": "2026-11-16",
-      "origin": "tswn-curation"
+      "origin": "tswn-curation",
+      "detailed_description": "SlotBoost（末端座位加成）是 tswn（commit d12b462）保存\"技能基底 + 座位加成量\"构成的数据结构，导出可写为 \"base+boost\"。\n\n分身重建规则：重建时取 base=min(构造基底, 当前等级)，再加 min(原加成, base)——加成也受截断后的基底约束，不是无条件把原加成加回去。这样保证克隆体的技能不超过其当前等级允许的范围。\n\n与 LastBoost 的关系：两者是分身重建时重放技能加成的两种构成（\"2*base\" 与 \"base+boost\"），分别对应不同类型的强化；都不能简化为\"只保存最终熟练度\"。\n\n常见误解：认为克隆体直接继承原技能最终等级——实际是\"截断基底 + 受限重放加成\"的组合，结果可能低于原值。\n\n适用范围：tswn 实现，依据 docs/mechanics/clone.md 与 docs/reference/diy-overlay.md；官方文档未公开该结构。",
+      "outdated": false
     },
     {
       "id": "tswn-fixed-lane",
       "term": "固定技能槽",
       "aliases": [
         "fixed_lane",
-        "fixed lane"
+        "fixed lane",
+        "技能座位"
       ],
       "definition": "技能数据在布局中的固定读取位置；与主动技能的尝试顺序 active_order 分开，重排技能不等于改变固定编号。",
       "category": "implementation",
       "status": "source_supported",
       "source_ids": [
-        "tswn-hooks"
+        "tswn-hooks",
+        "tutorial-new",
+        "tutorial-old",
+        "tswn-overlay"
       ],
       "checked_at": "2026-11-16",
-      "origin": "tswn-curation"
+      "origin": "tswn-curation",
+      "detailed_description": "固定技能槽（fixed_lane）是 tswn 重写引擎中技能数据在角色技能表里的固定存放位置，回答的是\"到哪里读取这个技能的数据\"；它与 active_order（技能尝试顺序）是两套独立数据（tswn 实现，commit d12b462，依据 docs/core-guide/skills-and-hooks.md 与 crates/tswn_core/src/runtime/entity/skill_loadout.rs）。\n\n具体关系：\n1. 角色技能表 SkillLoadout 里，skills / levels / build_levels / boosts / boosted / fixed_lane_keys 与 active_order / pre_action_order / post_damage_order / post_action_after_states 分开存放。源码注释写明：\"`fixed_lane` 是技能数据槽位置；`active_order` 保存遍历这些位置的排列。\"\n2. 执行时 handler 从 SkillHookPlanEntry.fixed_lane 反查当前等级；技能 hook 计划按 (priority, active_order, registration_order) 排序，priority 小的先执行。\n3. 评分用的标准 score profile 使用一张固定 35-lane 技能表：lane_by_key 把技能 key 映射到槽位，active_order 只是这张表的遍历排列。\n4. 机制状态导出里，ModelSkill.skill_id 是\"默认注册表的稳定 1-based 技能 ID；不是 fixed_lane 或 legacy_key\"，同时另有 fixed_lane_key 记录槽位——两个编号空间不能混用。\n\n常见误解：\n- 把重排技能（改 OL 里 skills 对象的字段顺序）当成改了固定编号：顺序只影响尝试次序，固定槽位不变。\n- 把固定槽位当成技能 ID：fixed_lane 是槽下标，skill_id 是注册表的 1-based 编号，来源不同。\n- 把 current level 与 build_level 混为一谈：初始等级与当前等级分别存在 build_levels 与 levels，吞噬改的是当前等级，槽位不变。\n\n与吞噬的关系：吞噬按固定槽位逐位抬等级（沿用 JS 行为），改的是槽内等级与顺序，而不是重排槽位本身。\n\n与官方原版的关系：fixed_lane 是 tswn 重写内部字段名，官方文档没有公开对应概念。",
+      "outdated": false
     },
     {
       "id": "tswn-active-order",
@@ -828,7 +1039,9 @@
         "tswn-hooks"
       ],
       "checked_at": "2026-11-16",
-      "origin": "tswn-curation"
+      "origin": "tswn-curation",
+      "detailed_description": "active_order（技能尝试顺序）指实体选择主动技能时的尝试次序（tswn 实现，commit d12b462，依据 docs/reference/diy-overlay.md 与 docs/core-guide/skills-and-hooks.md）。\n\n关键点：\n1. OL 的 skills 对象保留 JSON 字段顺序，字段顺序就是尝试顺序；把 skills 按技能 ID 重新排序后战斗行为可能改变，不能认为\"只是排序、行为不变\"。\n2. 固定技能槽（fixed_lane）与 active_order 是两回事：固定槽是技能数据在布局中的固定读取位置，重排主动技能顺序不等于改变固定槽编号。\n3. 技能的固定槽位存储（普通技能 ID 0..34、35 为空占位、36..39 保留槽等）与主动尝试顺序分开维护。\n\n实践含义：写 OL/DIY 配置时，若希望某技能优先被尝试，应把它放在 skills 对象靠前的字段位置。\n\n与官方原版的关系：\"尝试顺序\"这一显式概念属于 tswn 重写的实现契约，官方文档未以该名称公开；但 JSON 字段顺序影响行为的契约在 tswn 是确定的。",
+      "outdated": false
     },
     {
       "id": "tswn-none-skill",
@@ -845,7 +1058,9 @@
         "tswn-core-skill"
       ],
       "checked_at": "2026-11-16",
-      "origin": "tswn-curation"
+      "origin": "tswn-curation",
+      "detailed_description": "空技能（NoneSkill，导出名 sklnone）是 tswn 重写引擎在普通技能编号表里保留的空占位，编号为 35（tswn 实现，commit d12b462，依据 docs/reference/diy-overlay.md 与 crates/tswn_core/src/namerena/skill.rs）。\n\n编号布局：\n1. 普通玩家实际技能 ID 为 0..34，共 35 项，其中包括隐匿（sklhide，ID 34）。官方基础技能页只列 34 项，tswn 多出的那一项是隐匿。\n2. 35 是 NoneSkill 空占位；36..39 是保留槽位。技能名解析函数把 \"none\" 映射到 35，纯数字写法只接受小于 40 的编号，导出时 35 写成 sklnone，越界编号导出为 skill{N}。\n3. 因此玩家 overlay 中只写普通技能名时，技能槽顺序固定为 0..39；40 个存储槽不等于 40 个可发动的普通技能——真正存在的普通技能只有 35 项。\n\n常见误解：\n- 把空技能当成\"第 36 个普通技能\"：它在实现里是占位，不是可发动技能。\n- 把存储槽总数当作普通技能总数：附体、自爆、使魔火球等专用槽不在这张普通 ID 表里，另行编号（见\"分类技能通道\"）。\n- 混淆 tswn 的 35 项与官方技能页的 34 项：差异来自隐匿，不是官方多出一项，也不是编号错位。\n\n与官方原版的关系：这套编号布局属于 tswn 重写的实现契约；官方文档以技能名称与表格描述，没有公开\"35 号为空占位、36..39 保留\"的说法。",
+      "outdated": false
     },
     {
       "id": "tswn-classified-skills",
@@ -855,10 +1070,13 @@
       "category": "implementation",
       "status": "source_supported",
       "source_ids": [
-        "tswn-overlay"
+        "tswn-overlay",
+        "tswn-core-skill"
       ],
       "checked_at": "2026-11-16",
-      "origin": "tswn-curation"
+      "origin": "tswn-curation",
+      "detailed_description": "分类技能通道是 tswn 重写引擎在 DIY/OL 覆盖配置中把不同类别的技能分开编号存放的机制，目的是避免吞噬或覆盖时按同一编号串槽（tswn 实现，commit d12b462，依据 docs/reference/diy-overlay.md 与 crates/tswn_core/src/namerena/skill.rs）。\n\n四类通道与内部编号：\n- 普通技能：overlay 写 sklfire 或 normal:sklfire；玩家内部编号 0..39，使魔模板内部编号 80..119。\n- 使魔火球 1：summon:sklfire1 或 sklfire1，内部 40。\n- 使魔火球 2：summon:sklfire2 或 sklfire2，内部 41。\n- 使魔自爆：summon:sklexplode 或 sklexplode，内部 42。\n- 幻影附体：phantom:sklpossess 或 sklpossess，内部 43。\n前缀别名同样接受 player/plr/玩家、summon/familiar/使魔、phantom/shadow/幻影。\n\n使用要点：\n1. 不带前缀时按类别猜：sklfire1/sklfire2/sklexplode 识别为使魔固定槽，possess/附体 识别为幻影附体，其余落到普通技能名表。\n2. 使魔模板若未使用前缀，只接受三个固定槽位名；旧别名 sklfire、fire1、explode 会被忽略。0 熟练度技能导出时省略，但内部固定槽位仍保留为 [sklfire1, sklfire2, sklexplode]，吞噬使魔时仍按固定槽位继承等级。\n3. 一旦模板中出现分类前缀，就整体走分类使魔通道，可以把 normal:sklsummon（让使魔继续血祭生成子使魔）、normal:sklclone（使魔分身）与固定火球、自爆槽混写而不串槽。\n4. 幻影与丧尸模板未加前缀时可直接写普通技能名；出现 normal:/summon:/phantom: 前缀后同样进入分类通道。\n\n与吞噬的关系：吞噬仍按固定槽位逐位抬等级（JS 行为），分类通道的作用是让特殊技能占独立槽，从而普通 sklfire 不会与使魔火球 1 互相覆盖。\n\n与官方原版的关系：normal:/summon:/phantom: 前缀与 40/41/42/43 编号属于 tswn 重写的配置契约，官方文档没有公开这套前缀写法。",
+      "outdated": false
     },
     {
       "id": "tswn-shadow-entity",
@@ -871,10 +1089,17 @@
       "status": "source_supported",
       "source_ids": [
         "tswn-overlay",
-        "tswn-states"
+        "tswn-states",
+        "official-skill",
+        "official-language-zh",
+        "tswn-possess",
+        "tswn-decay",
+        "tswn-name-build"
       ],
       "checked_at": "2026-11-16",
-      "origin": "tswn-curation"
+      "origin": "tswn-curation",
+      "detailed_description": "【定位与范围】幻影实体（ShadowMinion）是 tswn-core（提交 d12b462）中由「幻术/幻影」技能生成的召唤实体，默认具有「附体」。它是实体表中的实例，不是技能名、也不是分身：官方技能表把「幻影」列为辅助技能项，官方语言包把该技能记作「幻术」(sklShadow)、生成物记作「幻影」(sklShadowName)，三者不要混为一类。本词条限定 tswn 实现与文档语境，不能套用到原站、其他重写或所有社区时期。（tswn 实现 / 官方说明）\n\n【生成来源与官方对照】官方技能页「幻影」(辅助技能) 原文「召唤幻影，幻影体力低，两回合后开始行动」，只给定性描述；语言包另有 sklShadow「使用[幻术]」、sklShadowed「召唤出[1]」、sklPossess「使用[附体]」、minionDie「[1]消失了」等显示文本。tswn 把幻术列为普通技能 ID 24，熟练度按 max(ceil(level×3/4),1) 更新，生成的幻影默认带附体。官方基础层只确认名称与文本，附体机制来自 tswn 实现。（官方说明 / 官方语言包 / tswn 实现）\n\n【属性、技能槽与特殊机制】tswn 召唤物按「蓝图—实例—owner」组织：蓝图是召唤时才用的属性、技能和策略构造资料，与实体表实例分开，可延迟构建、由嵌套 OL 模板覆盖。DIY/OL 用分类技能通道 normal:、summon:、phantom: 把普通技能、使魔火球/自爆、幻影附体分开编号，避免吞噬或覆盖时串槽；附体、自爆、使魔火球与武器技能另有专用槽，不能算进普通技能 0..34（35 空占位、36..39 保留槽）。附体是幻影默认技能：经过免疫、回避判断后给目标增加狂暴状态步数，并令施法实体 HP 归零进入死亡链，与改变友敌关系的「魅惑」不同，回避成功时不走该分支。（tswn 实现）\n\n【行动、判胜与限制】tswn 侧幻影作为实体参与行动与来源队伍映射，有直接主人(owner)与根来源(source_id)用于归属、清理与判胜；判胜要求恰好一队仍有存活实体、全部阵亡无胜者，死亡角色可能仍留在实体表/roster 支持复活与来源关系但不代表存活或参与胜负。待核实：幻影默认 HP/七围、附体附加的狂暴步数、延迟蓝图默认值，以及「两回合后开始行动」在 tswn 中的对应规则。（官方说明 / tswn 实现 / 整理者标注）",
+      "outdated": false
     },
     {
       "id": "tswn-summon-entity",
@@ -887,10 +1112,15 @@
       "category": "minion",
       "status": "source_supported",
       "source_ids": [
-        "tswn-overlay"
+        "tswn-overlay",
+        "official-skill",
+        "official-language-zh",
+        "tswn-explode"
       ],
       "checked_at": "2026-11-16",
-      "origin": "tswn-curation"
+      "origin": "tswn-curation",
+      "detailed_description": "【定位与范围】使魔（SummonMinion，别名 familiar）是 tswn-core（提交 d12b462）中由「血祭」技能生成的召唤实体，普通模板具有两个独立火球槽与自爆槽，并可带向 owner 传导伤害的机制。它是实体类别，不要与官方「血祭」技能项、普通玩家「火球术」「自爆」混为一类。本词条限定 tswn 实现与文档语境，不能套用到原站、其他重写或所有社区时期。（tswn 实现 / 官方说明）\n\n【生成来源与官方对照】官方技能页「血祭」(辅助技能) 原文「召唤使魔，使魔受到伤害时施法者连带受到 50% 伤害」；语言包有 sklSummon「使用[血祭]」、sklSummonName「使魔」、sklSummoned「召唤出[1]」、sklExplode「使用[自爆]」、sklFire「使用[火球术]」、minionDie「[1]消失了」等文本；官方技能表另有「净化」(对召唤兽伤害加倍)。官方基础层给出名称、文本与 50% 传导这一个数值，细化来自 tswn 实现。（官方说明 / 官方语言包 / tswn 实现）\n\n【属性、技能槽与特殊机制】tswn 用分类技能通道 normal:、summon:、phantom: 把普通技能、使魔两种火球与自爆、幻影附体分开编号；附体、自爆、使魔火球和武器技能另有专用槽，不能计入普通技能 0..34。自爆是使魔专用技能（summon:sklexplode）：走火系魔法伤害分支并结算施法者自身死亡，与玩家普通火球分开。伤害传导：普通使魔受伤可将整数伤害的一半传给直接 owner，嵌套链继续传导；使魔克隆的相应分摊直接到根主角色、不按父使魔再折半。召唤物按「蓝图—实例—owner」组织；再次施放涉及「重施」——使魔模板可复用已死亡实例技能，手写模板默认 false、minions 导出写 true。DIY/OL 八项属性前七项按 +36 编码、HP 原样，仅覆盖召唤模板不禁用普通武器效果。（tswn 实现）\n\n【行动、判胜与限制】使魔带直接主人(owner)与根来源(source_id)用于归属、清理与来源队伍映射，嵌套使魔的直接主人可能是另一只使魔。tswn 判胜要求恰好一队仍有存活实体、全部阵亡无胜者；召唤物死亡显示「消失了」，清理顺序按队伍 roster 处理。待核实：使魔默认 HP/七围、两个火球槽技能 ID、自爆伤害公式、传导取整与重施默认值细节。（官方说明 / tswn 实现 / 整理者标注）",
+      "outdated": false
     },
     {
       "id": "tswn-zombie-entity",
@@ -904,10 +1134,14 @@
       "status": "source_supported",
       "source_ids": [
         "tswn-states",
-        "tswn-overlay"
+        "tswn-overlay",
+        "official-skill",
+        "official-language-zh"
       ],
       "checked_at": "2026-11-16",
-      "origin": "tswn-curation"
+      "origin": "tswn-curation",
+      "detailed_description": "【定位与范围】丧尸（ZombieMinion，别名「僵尸」）是 tswn-core（提交 d12b462）中与「召唤亡灵」技能相关的生成实体，有独立 zombie 蓝图与归属。它不是把「尸体状态」简单改名，而是新生成、进入实体表的召唤实体；DIY/OL 可配置其属性与技能。本词条限定 tswn 实现与文档语境，不能套用到原站、其他重写或所有社区时期。（tswn 实现）\n\n【生成来源与官方对照】官方技能表把「召唤亡灵」列为被动技能，触发条件「击倒对手」，说明「将对手的尸体变成丧尸为自己战斗」；语言包有 sklZombie「[召唤亡灵]」、sklZombieName「丧尸」、sklZombied「[2]变成了[1]」、minionDie「[1]消失了」等文本；官方技能表另有「净化」(对召唤兽伤害加倍)。官方基础层确认名称与触发文本，独立蓝图、归属与可配置能力来自 tswn 实现。（官方说明 / 官方语言包 / tswn 实现）\n\n【属性、技能与特殊机制】tswn 把「尸体」与「丧尸实体」分开：死亡角色仍可能保留在实体表或 roster 以支持复活、召唤亡灵及来源关系，但不代表仍在存活列表或参与胜负；「召唤亡灵」正是基于这样的尸体来源生成新实体。召唤物统一按「蓝图—实例—owner」组织，蓝图是召唤时才用的构造资料，可延迟构建、由嵌套 OL 模板覆盖，丧尸用独立 zombie 蓝图与归属。DIY(+diy[...]) 与 OL(+ol:{...}) 可覆盖召唤模板属性与技能，前七项属性按 +36 编码、HP 原样；仅覆盖召唤模板不禁用普通武器效果，提供玩家级 attrs/skills 才会禁用。状态标签（疾走、迟缓、潜行、隐匿等）不等于完整机制存档。（tswn 实现）\n\n【行动、判胜与限制】丧尸带直接主人与根来源用于归属、清理与来源队伍映射；tswn 判胜要求恰好一队仍有存活实体、全部阵亡无胜者，尸体状态不参与胜负。待核实：zombie 蓝图默认 HP/七围与技能清单、尸体转丧尸时保留/重置哪些字段、与「尸体/分身/幻影实体」的清理顺序细节。（官方说明 / tswn 实现 / 整理者标注）",
+      "outdated": false
     },
     {
       "id": "tswn-clone-entity",
@@ -919,10 +1153,15 @@
       "category": "minion",
       "status": "source_supported",
       "source_ids": [
-        "tswn-clone"
+        "tswn-clone",
+        "official-skill",
+        "official-language-zh",
+        "tswn-decay"
       ],
       "checked_at": "2026-11-16",
-      "origin": "tswn-curation"
+      "origin": "tswn-curation",
+      "detailed_description": "【定位与范围】克隆体（别名「分身实体」）是 tswn-core（提交 d12b462）中由「分身」技能创建的新实体，按 CloneBuildData 重新派生属性与技能，有自己的实体 ID、行动点和分身技能等级，不是当前面板的完整复制。本词条限定 tswn 实现与文档语境，不能套用到原站、其他重写或所有社区时期；也要与官方技能表「分身」技能项、史莱姆「分裂」等生成物区分。（tswn 实现 / 官方说明）\n\n【生成来源与官方对照】官方技能页「分身」(辅助技能) 原文「分成两人，分身后属性下降，技能不变」，只给定性描述；语言包有 sklClone「使用[分身]」、sklCloned「出现一个新的[1]」。tswn 的实现比这更细：分身创建新实体并重派生属性，而非复制当前面板。官方基础层只确认名称与文本，重派生与衰减规则来自 tswn 实现。（官方说明 / 官方语言包 / tswn 实现）\n\n【属性、技能与特殊机制】tswn 分身机制（clone.md / skill-decay.md）要点：非蓄力本体才执行相应 HP 与原始七围衰减，使用兼容浮点常量，不能精确简化为「最终显示值乘 0.78」；本体分身技能随机衰减，克隆体分身等级再开根号；其他技能先以当前等级截断构造基底，再重放 LastBoost 或 SlotBoost。不同技能衰减各异：命轮、苏生整数半衰，治愈高于 8 才每次减 1，幻术按向上取整 3/4 更新，分身另有特殊流程。分身条件中的 magic 指魔法属性而非 MP，不能误写成 hp+MP。克隆体按 CloneBuildData 构造，拥有独立实体 ID、行动点与分身技能等级。（tswn 实现）\n\n【行动、判胜与限制】克隆体作为独立实体参与行动条与存活判定；tswn 判胜要求恰好一队仍有存活实体、全部阵亡无胜者，粘性计数 alive_group_count 不能用于判胜。召唤实体带直接主人与根来源用于归属与清理，但分身是「本体派生」而非召唤蓝图生成，构造路径不同。待核实：HP/七围衰减的兼容浮点常量值、本体分身技能随机衰减分布、CloneBuildData 完整字段与克隆体默认技能清单。（官方说明 / tswn 实现 / 整理者标注）",
+      "outdated": false
     },
     {
       "id": "tswn-owner",
@@ -939,7 +1178,9 @@
         "tswn-api"
       ],
       "checked_at": "2026-11-16",
-      "origin": "tswn-curation"
+      "origin": "tswn-curation",
+      "detailed_description": "owner（直接主人，owner_id）指召唤实体的直接来源实体（tswn 实现，commit d12b462，依据 docs/core-guide/statuses-and-minions.md 与 docs/reference/public-api.md）。\n\n核心特性：\n1. \"直接\"意味着不跳层：嵌套使魔（使魔再召唤使魔）的直接主人是另一只使魔，不一定是最初的玩家主角色。\n2. owner 关系参与机制结算：例如普通使魔受伤后的伤害传导会把整数伤害的一半传给直接 owner，并沿嵌套链继续传导。\n3. owner 与根来源（root_owner，规范 DTO 中为 source_id）分工：owner 用于直接交互（如分摊），根来源用于归属、清理与来源队伍映射。\n\n常见误解：把 owner 等同于\"施法的主名字玩家\"——在嵌套召唤场景下不成立；查状态和传导逻辑时要按直接 owner 判断。API/DTO 中以 owner_id 字段表达该关系。\n\n与官方原版的关系：owner_id 是 tswn 重写的内部字段命名，官方文档未公开对应结构。",
+      "outdated": false
     },
     {
       "id": "tswn-root-owner",
@@ -956,7 +1197,9 @@
         "tswn-api"
       ],
       "checked_at": "2026-11-16",
-      "origin": "tswn-curation"
+      "origin": "tswn-curation",
+      "detailed_description": "root_owner（根来源，规范 DTO 中以 source_id 表达）指沿 owner（直接主人）关系一路追溯到头的根实体（tswn 实现，commit d12b462，依据 docs/core-guide/statuses-and-minions.md 与 docs/reference/public-api.md）。\n\n用途：\n1. 召唤归属：确定一个召唤物最终属于哪个主名字；\n2. 清理：主人死亡或战斗结束时按根来源清理相关召唤实体；\n3. 来源队伍映射：对外结果需要把实体映射回输入队伍，根来源提供映射依据。\n\n与直接 owner 的关系：嵌套使魔链中，中间使魔既是下层实体的直接 owner，又不是根来源；使魔克隆的伤害分摊就直接落到根主名字，而不是按父使魔逐级折半，体现两种溯源的分工。\n\n常见误解：把 source_id 理解成输入文本里的来源标注或技能来源 ID——在本语境它是规范 DTO 中表达根来源的字段名。\n\n与官方原版的关系：source_id 字段是 tswn 重写的公开 API 契约，官方原版无此公开字段。",
+      "outdated": false
     },
     {
       "id": "tswn-recast",
@@ -971,7 +1214,9 @@
         "tswn-overlay"
       ],
       "checked_at": "2026-11-16",
-      "origin": "tswn-curation"
+      "origin": "tswn-curation",
+      "detailed_description": "重施（reuse_skills_on_recast）指再次施放召唤技能时，复用或重建已有召唤物的过程（tswn 实现，commit d12b462，依据 docs/reference/diy-overlay.md）。\n\n行为要点：\n1. 使魔模板可选择\"复用已死亡实例的技能\"——重施时不重新生成技能，而是沿用先前实例的技能构成；\n2. 手写模板的默认值为 false（不复用）；\n3. minions 导出格式会为兼容行为写 true——从导出文件读到的默认行为可能与手写模板不同，不能把导出值当成手写默认。\n\n常见误解：\n- 认为重施总是生成全新召唤物——是否复用技能由模板的 reuse_skills_on_recast 决定；\n- 把导出文件里的 true 泛化成\"tswn 默认复用\"——手写模板默认是 false。\n\n适用范围：该字段属于 tswn DIY/OL 召唤模板契约，官方文档未公开对应机制名称。重施行为与 owner/根来源关系配合处理。",
+      "outdated": false
     },
     {
       "id": "tswn-shared-damage",
@@ -986,7 +1231,9 @@
         "tswn-overlay"
       ],
       "checked_at": "2026-11-16",
-      "origin": "tswn-curation"
+      "origin": "tswn-curation",
+      "detailed_description": "伤害传导（伤害分摊）指普通使魔受伤后把部分伤害传给主人的机制（tswn 实现，commit d12b462，依据 docs/reference/diy-overlay.md）。\n\n规则：\n1. 普通使魔受到整数伤害后，可将其中一半传给直接 owner——直接主人可能是另一只使魔，不一定是最初的主角色；\n2. 嵌套链继续传导：下层使魔分摊给上层使魔，逐级向上；\n3. 使魔克隆的对应分摊规则不同——直接传到主名字（根主角色），不按父使魔再折半。\n\n常见误解：\n- 分摊按整数伤害的\"一半\"计算，取半时如何取整（向下/向上）本批资料未明确，待核实；\n- 不能把使魔克隆与普通嵌套使魔的分摊路径混为一谈，两者终点不同；\n- 分摊不等于伤害反弹：反弹把伤害给施法者，分摊给的是自己的主人链。\n\n与官方原版的关系：该机制是 tswn 为兼容官方使魔行为而实现的内部规则，官方文档未公开精确数值。",
+      "outdated": false
     },
     {
       "id": "tswn-blueprint",
@@ -1002,7 +1249,9 @@
         "tswn-states"
       ],
       "checked_at": "2026-11-16",
-      "origin": "tswn-curation"
+      "origin": "tswn-curation",
+      "detailed_description": "召唤物蓝图（blueprint）是 tswn 重写引擎中\"将来生成时才使用\"的构造资料，与已经进入实体表的召唤物实例分开（tswn 实现，commit d12b462，依据 docs/core-guide/name-to-player.md 与 docs/core-guide/statuses-and-minions.md）。\n\n蓝图与实例的区别：\n1. 蓝图保存属性、技能与重施策略；实例是 arena 里的 EntityRecord。真正生成时 Runtime 才分配或使用实体 ID、绑定 owner、加入世界视图，随后才参与战斗。\n2. 蓝图可以延迟构建：实体槽按需保存或延迟构建蓝图，不是在角色构建阶段就把召唤物实体建出来。\n3. 生成时可能消耗预留 ID（reserved_player_ids_before_spawn），并更新世界顺序、登记实例。\n4. 重施时再根据蓝图的 reuse_skills_on_recast、统计复用与防抗继承策略处理，决定是复用已死使魔的技能对象还是重新套用模板。\n\n蓝图携带的策略字段（源码 PreparedMinionBlueprint）：kind（幻影 Shadow / 使魔 Summon / 丧尸 Zombie）、reuse_skills_on_recast（血祭重施是否复用已死使魔的技能对象，默认 false）、reuse_stats_on_recast、inherit_owner_def_res（在 attrs 覆盖后是否再继承施法者防御与魔抗，默认 false）。to-diy --minions 导出会写 reuse_skills_on_recast=true 以贴近原始血祭重施行为。\n\nDIY/OL 侧，蓝图可由 shadow/summon/zombie 模板覆盖，并可嵌套：使魔模板里再写 summon，就构成\"召唤物的召唤物\"——父使魔生成时用外层模板，它再释放血祭时子使魔用内层模板。\n\n归属关系：owner 指向直接主人，root_owner 指向根来源；嵌套生成时这两个关系为来源队伍标签与策略提供依据。\n\n常见误解：\n- 把蓝图当成战斗中已经存在的召唤物实体——蓝图只是构造资料；\n- 以为召唤物属性在角色构建阶段就固定了——实际生成时还要按蓝图与继承策略决定；\n- 以为分身与召唤物是同一套东西——分身走 CloneBuildData 派生，召唤物走蓝图加实体槽。\n\n与官方原版的关系：蓝图与实体的两级分离是 tswn 重写的实现结构，官方文档只描述召唤技能效果，没有对应的蓝图/实体两级概念。",
+      "outdated": false
     },
     {
       "id": "tswn-corpse",
@@ -1015,7 +1264,9 @@
         "tswn-states"
       ],
       "checked_at": "2026-11-16",
-      "origin": "tswn-curation"
+      "origin": "tswn-curation",
+      "detailed_description": "尸体指战斗中已死亡、但引擎仍保留其记录的角色（tswn 实现，commit d12b462，依据 docs/core-guide/statuses-and-minions.md）。\n\n为什么要保留：\n1. 支持复活类效果——复活/苏生需要死亡角色仍可被引用；\n2. 支持召唤亡灵（丧尸）——需要从尸体获取来源信息生成 ZombieMinion；\n3. 维护来源关系——owner/根来源链和对外队伍映射可能引用已死亡实体。\n\n边界：尸体不代表仍在存活列表，也不参与判胜——判胜只统计仍有存活实体的队伍；死亡实体不再作为常规行动者参与战斗（整理者推断）。\n\n常见误解：从实体表或 roster 中\"看到\"某个名字就认为它还活着；实际上\"记录存在\"与\"存活\"是两回事。\n\n与官方原版的关系：实体表/roster 的这种内部表示方式是 tswn 重写的实现细节，官方文档未公开对应结构。",
+      "outdated": false
     },
     {
       "id": "tswn-state-payload",
@@ -1030,7 +1281,9 @@
         "tswn-states"
       ],
       "checked_at": "2026-11-16",
-      "origin": "tswn-curation"
+      "origin": "tswn-curation",
+      "detailed_description": "状态载荷（StatePayload）是 tswn 重写引擎中持续状态的实际参数部分，与\"状态类别/登记信息\"分成两条信息线（tswn 实现，commit d12b462，依据 docs/core-guide/statuses-and-minions.md 与 crates/tswn_core/src/runtime/entity/state.rs）。\n\n数据分工：StateEntry 保存状态类别相关的登记信息（legacy_order_key、可选扩展状态 ID、hook mask、优先级、注册序），StatePayload 保存实际参数；StateStore 负责注册、清理、查找与计划 generation，并用 payload_kinds 位图加速\"是否可能含有某类载荷\"的判断。\n\n主要载荷（源码枚举）：\n- 冰冻 Ice{frozen_step}：冰冻步数。\n- 中毒 Poison{caster, target, atp_bits, count}：来源、威力 bits、剩余次数。\n- 加速 Haste{faster, effective_faster, step}：加速值、有效加速值、持续步数。\n- 减速 Slow{step}、狂暴 Berserk{step}。\n- 魅惑 Charm{group_id, effective_team_idx, source_team_idx, target, step}：原组、有效队伍、来源队伍、目标与步数。\n- 诅咒 Curse{prob, multiply}。\n- 铁壁 Iron{protect, step}。\n- 火球叠层 FireMagHalfSteps(i32)、扩展护盾 ShieldValue(i32)。\n- Boss/感染类：CovidBoss{mutation}、CovidInfection（感染条目、变异集合、是否已恢复）、SaitamaBoss{turns, damages, hitters, minions}、LazyBoss{at_boost_bits} 等。\n\n关键边界：\n1. 载荷不是完整状态描述——部分常用机制压缩为标记或专用 runtime 字段（常规 shield、守护关系、强化、尸体类别），登记时仍占用状态注册位置，从而保持吞噬新增 hook 的相对位置。\n2. 展示用的 status_labels 不包含全部载荷；做机制分析必须读实际字段与载荷。\n3. 载荷之外还有运行期注册顺序（runtime_registration_order）与注册游标，决定同一行动中的先后次序。\n4. 每个状态的精确更新条件在其 handler 与对应效果分支里，还伴随随机消费、消息与清理时机。\n\n与官方原版的关系：官方文档按技能效果描述中毒次数、加速时长等，不公开载荷结构、注册顺序与压缩标记。",
+      "outdated": false
     },
     {
       "id": "tswn-status-labels",
@@ -1046,23 +1299,32 @@
         "tswn-wasm"
       ],
       "checked_at": "2026-11-16",
-      "origin": "tswn-curation"
+      "origin": "tswn-curation",
+      "detailed_description": "状态标签（status_labels）是 tswn 重写引擎从当前 Runtime 投影给网页与快照的人类可读状态字符串列表（tswn 实现，commit d12b462，依据 crates/tswn_core/src/runtime/session.rs 与 crates/tswn_wasm/README.md）。\n\n标签内容与来源：先从角色 runtime 的专用字段取（聚气、蓄力（含步数）、隐匿、潜行至 #目标），再遍历状态条目按载荷类型生成（冰冻、诅咒（含倍率）、中毒 N层、疾走（含加速值）、狂暴（含步数）、魅惑（含步数）、迟缓（含步数）、铁壁（含减伤值）），最后补守护关系（被 #N 守护、守护 #N 中）与垂死标记。\n\n网页侧用法：WASM README 列出正面状态（绿色）聚气、蓄力、隐匿、潜行、狂暴、疾走、铁壁、守护；负面状态（红色）魅惑、诅咒、冰冻、中毒、迟缓、垂死。前端直接把它们渲染成状态提示 pill；侧栏与角色详情从实时 shield 另行补出\"护盾 +数值\"，不修改规范 status_labels。\n\n关键边界：\n1. 标签是显示投影，不是可完整重建机制的状态存档——载荷细节、注册顺序、压缩标记都不在标签里。机制分析要用实际字段与载荷，或用回合边界的机制状态导出。\n2. status_labels 仍是字符串类型；TypeScript 侧的稳定 literal 类型列表（BattleMinionKind、BattleUpdateType、BattleTone、BattleReplayTextPartKind）不包含它。\n3. 同一标签可能重复出现（例如冰冻既来自载荷分支也来自冻结标记分支），这不是错误。\n4. 护盾有专门字段（shield / max_shield）而不是标签，\"护盾 +xx\"是展示层从实时值补出的。\n\n与官方原版的关系：这套中文标签及其渲染是 tswn 网页实现的表现层，官方页面没有公开对应的状态标签契约。",
+      "outdated": false
     },
     {
       "id": "tswn-diy",
       "term": "DIY",
       "aliases": [
         "+diy",
-        "diy[...]"
+        "diy[...]",
+        "+diy[]{}",
+        "捏假人",
+        "diy属性滴定"
       ],
       "definition": "紧凑的属性/技能覆盖格式，八项属性前七项按 +36 编码、HP 原样。它是显式覆盖输入，不是一次测号的自然产物保证。",
       "category": "input",
       "status": "source_supported",
       "source_ids": [
-        "tswn-overlay"
+        "tswn-overlay",
+        "tutorial-old",
+        "tutorial-new"
       ],
       "checked_at": "2026-11-16",
-      "origin": "tswn-curation"
+      "origin": "tswn-curation",
+      "detailed_description": "DIY 是 tswn（core d12b462）支持的紧凑属性/技能覆盖格式，写作 +diy[...]，附加在名字（含战队名、武器段）之后。文档示例（原样保留）：\nPlayerName+diy[72,39,69,76,67,66,0,84]{\"sklfire\":5}\n格式规则：\n- diy[] 中必须有 8 个整数，顺序为攻、防、速、敏、魔、抗、智、maxhp。\n- 前七围使用 JS 兼容编码：解析时文本值减 36 后取非负；HP 原样保留。上例解析后的内部属性为 [36, 3, 33, 40, 31, 30, 0, 84]。\n- 后跟 JSON 对象写技能覆盖，如 {\"sklfire\":5}。\n- JSON 字符串内部的 + 不会被拆段，引号外的 + 才用于分隔武器与覆盖段。\n性质：DIY 是显式覆盖输入，由使用者主动写入并直接覆盖构建结果，不是一次测号自然产物的保证。tswn 的 to-diy 命令可将构建结果导出为可回读的覆盖输入（默认导出 OL 格式，--old 输出旧 DIY 紧凑格式，--minions 连召唤模板导出且与 --old 互斥）。\n本格式是 tswn-core d12b462 的实现/文档语境；官方页面没有记载 DIY 格式，不能不加区分地套用到原站。",
+      "outdated": false
     },
     {
       "id": "tswn-ol",
@@ -1079,7 +1341,9 @@
         "tswn-overlay"
       ],
       "checked_at": "2026-11-16",
-      "origin": "tswn-curation"
+      "origin": "tswn-curation",
+      "detailed_description": "OL 是 tswn（core d12b462）的 JSON overlay 格式，写作 +ol:{...}，可覆盖本体属性技能、名字系数选项及召唤蓝图。文档示例（原样保留）：\nPlayerName+ol:{\"attrs\":[86,86,86,86,86,86,86,300],\"skills\":{\"sklfire\":5},\"name_factor_enabled\":true}\n顶层字段：attrs（玩家八围覆盖，前七围 +36 编码、HP 原样，上例对应内部 [50,50,50,50,50,50,50,300]）；skills（有序 object，字段顺序即行动尝试顺序）；weapon（记录武器名）；name_factor_enabled（是否启用名字系数，默认 true）；shadow/summon/zombie（幻影/使魔/丧尸召唤模板）。\n技能值三种写法：5（普通等级）、\"40+30\"（SlotBoost，基底 40 加成 30，最终 70）、\"2*46\"（LastBoost，最终 92）。技能名大小写不敏感，fire、sklfire、skillfire 均可。分类技能通道用 normal:/summon:/phantom: 前缀把普通技能、使魔两种火球与自爆、幻影附体分开编号，避免吞噬时串槽。\n武器交互：提供玩家级 attrs 或 skills 时，武器强制无效；只有召唤模板覆盖则不单独禁用武器。overlay 不改变玩家类型，Boss 仍是 Boss，但 Boss 提供 attrs/skills 时走覆盖分支。\n与武器段并用示例：PlayerName@Team+weapon+ol:{\"attrs\":[86,86,86,86,86,86,86,300]}。",
+      "outdated": false
     },
     {
       "id": "tswn-to-diy",
@@ -1093,10 +1357,13 @@
       "status": "source_supported",
       "source_ids": [
         "tswn-overlay",
-        "tswn-openbox"
+        "tswn-openbox",
+        "attachment-qqbot"
       ],
       "checked_at": "2026-11-16",
-      "origin": "tswn-curation"
+      "origin": "tswn-curation",
+      "detailed_description": "导出 DIY（to-diy / to_diy）是开箱器提供的导出功能：把构建结果导出为可回读的覆盖输入，即生成一段可以再次粘贴进对战输入框、被引擎当作覆盖（overlay）读回的文本。\n\n格式选项（依据 DIY/OL Overlay 说明 docs/reference/diy-overlay.md 与开箱器文档，tswn-core 提交 d12b462）：\n1. 默认输出 OL 格式（tswn 当前的覆盖输入格式）；\n2. old 选项输出旧 DIY 格式（社区旧 DIY 语法），用于需要旧格式的场合；\n3. minions 选项输出召唤物模板，且与 old 互斥——不能同时要求旧格式和召唤模板。\n\n工作流：先在开箱器中构建或调整角色（技能、属性等），再用导出 DIY 生成文本；生成的文本可在 tswn 引擎或接受相应格式的场合回读。导出与回读构成闭环，因此导出格式的字段与覆盖说明文档中的格式定义对应。\n\n常见误区：\n1. 默认输出是 OL 不是旧 DIY；把 OL 导出贴到只认旧 DIY 的环境会解析失败或语义错位，反之亦然；\n2. old 与 minions 互斥，不是可叠加的开关；\n3. 导出的是覆盖输入文本，不是引擎内部存档，两者不能混为一谈。\n\n与 HtmlTools\"组队加成转换器\"的关系：后者是社区网页工具，界面列出旧DIY/新DIY 选项，但两套工具的格式兼容性未经验证，不能因名称相近就推定互通。\n\n依据为 tswn 文档（提交 d12b462），未运行实测。",
+      "outdated": false
     },
     {
       "id": "tswn-s11",
@@ -1109,10 +1376,14 @@
       "status": "source_supported",
       "source_ids": [
         "tswn-core-weapon",
-        "tswn-weapon-runtime"
+        "tswn-weapon-runtime",
+        "official-language-zh",
+        "official-language-en"
       ],
       "checked_at": "2026-11-16",
-      "origin": "tswn-curation"
+      "origin": "tswn-curation",
+      "detailed_description": "【词条性质】「剁手刀」（别名 S11）是 tswn-core 整理新增的特殊武器词条（origin=tswn-curation），机制语境限于提交 d12b462（core 0.7.0 / Openbox 0.5.2 / WASM 0.5.12）的实现或文档，不能套用到原站、其他重写或所有社区时期。\n\n【官方侧旁证】四份官方语言包都未出现「剁手刀」三字，但 zh.json 有整组 weaponS11_* 显示文案：weaponS11_0「[0]在促销日[购买]了武器」、weaponS11_1「但是并没有什么用」、weaponS11_2「增加了[2]点」、weaponS11Done1「信用卡刷爆」、weaponS11Done2/3「砍下了自己的右/左手」；en.json 对应「buys a weapon on Black Friday」等，zh-TW、zh-money 亦保留同组键。language-index.json 把「购买」收在 weaponS11_0 下。这些是显示消息（[2] 为运行期占位符），按 language-index.json 只构成名称/词形证据，不构成机制定义；但与「促销购买—增长—刷爆—砍手」主题吻合，可作显示层旁证。naming.html 只给「+装备」形式、未列清单。\n\n【tswn 实现】据输入定义与 tswn-core-weapon（weapon.rs L53-297）、tswn-weapon-runtime（skills_weapon.rs L7-186）：剁手刀可触发促销购买、属性增长、耐久损耗及耗尽后的自伤等机制；tswn 把普通武器与剁手刀、死亡笔记、属性修改器、桂月/玄月奖杯并列，玩家级 attrs/skills 覆盖会禁用武器效果。以上为静态阅读，未实测。\n\n【待核实：耐久初始值、每次增长点数、促销触发条件与概率、自伤数值、官方原版是否使用「剁手刀」这一名称（语言包只见 weaponS11_* 键与「购买」词形）。】",
+      "outdated": false
     },
     {
       "id": "tswn-gui-yue",
@@ -1122,10 +1393,13 @@
       "category": "equipment",
       "status": "source_supported",
       "source_ids": [
-        "tswn-core-weapon"
+        "tswn-core-weapon",
+        "official-game-fight"
       ],
       "checked_at": "2026-11-16",
-      "origin": "tswn-curation"
+      "origin": "tswn-curation",
+      "detailed_description": "【词条性质】「桂月奖杯」是 tswn-core 整理新增的特殊武器词条（origin=tswn-curation），语境限于提交 d12b462（core 0.7.0 / Openbox 0.5.2 / WASM 0.5.12）的实现或文档，不能套用到原站、其他重写或所有社区时期。\n\n【官方侧证据缺口】四份官方语言包与 language-index.json 都没有「桂月奖杯」或「奖杯」相关键；naming.html 只给「+装备」形式、未列装备清单，技能页与特殊名字页亦未提。整理者对归档官方原版对战脚本 fight-jCYO3eM7.js 做静态字符串检索：全文约 38 万字符、经混淆，唯一明文中文是「玄月奖杯」，「桂月」未以明文或 Unicode 转义出现（其余字符串由解码函数运行时生成）；本轮未运行脚本、未还原逻辑，官方 README.md 也声明归档不代表完整开发源码。故桂月奖杯在官方侧既无显示文本名称证据，也无机制证据。待核实：官方原版是否存在同名武器及其显示名称。\n\n【tswn 实现】据输入定义与 tswn-core-weapon（weapon.rs L53-297）：桂月奖杯是有阵营白名单条件的特殊武器分支，未满足按 NoWeapon 处理，不能假定「任意名字加奖杯」都有加成；tswn 把普通武器与剁手刀、死亡笔记、属性修改器、桂月/玄月奖杯并列，部分带阵营限制，玩家级 attrs/skills 覆盖会禁用武器效果。它与玄月奖杯的白名单和效果并不相同。以上为静态阅读，未实测。\n\n【待核实：白名单具体阵营、加成内容与数值、与玄月奖杯确切差异、NoWeapon 判定式；官方原版是否存在及效果。】",
+      "outdated": false
     },
     {
       "id": "tswn-xuan-yue",
@@ -1135,10 +1409,13 @@
       "category": "equipment",
       "status": "source_supported",
       "source_ids": [
-        "tswn-core-weapon"
+        "tswn-core-weapon",
+        "official-game-fight"
       ],
       "checked_at": "2026-11-16",
-      "origin": "tswn-curation"
+      "origin": "tswn-curation",
+      "detailed_description": "【词条性质】「玄月奖杯」是 tswn-core 整理新增的特殊武器词条（origin=tswn-curation），语境限于提交 d12b462（core 0.7.0 / Openbox 0.5.2 / WASM 0.5.12）的实现或文档，不能套用到原站、其他重写或所有社区时期。\n\n【官方侧额外旁证】四份官方语言包与 language-index.json 都无「玄月奖杯」或「奖杯」键；naming.html 只给「+装备」形式、未列装备清单，技能页与特殊名字页亦未提。但整理者对归档官方原版对战脚本 fight-jCYO3eM7.js 静态字符串检索发现：「玄月奖杯」是全文唯一明文中文，出现在形如「['玄月奖杯', (…) => { if(白名单判断) return new … else return new … }]」的「名字→构造器」查表结构中，并伴随条件判断返回不同类（另有 rinick 作白名单/阵营判断标识）。这可确认原版脚本存在以「玄月奖杯」为名的武器代码路径与白名单式分支，属名称/存在性旁证；脚本经混淆，本轮未运行、未还原完整逻辑，官方 README.md 声明归档不代表完整开发源码，故不据此补造机制。语言包与说明页层面仍属无名称证据。\n\n【tswn 实现】据输入定义与 tswn-core-weapon（weapon.rs L53-297）：玄月奖杯是有独立阵营白名单条件的特殊武器分支，与桂月奖杯名单和效果并不相同，未满足按 NoWeapon 处理。以上为静态阅读，只对 d12b462 负责，未实测，不等同官方原版。\n\n【待核实：白名单具体阵营、加成内容与数值、与桂月奖杯确切差异；原版脚本该分支的完整逻辑（混淆未还原）。】",
+      "outdated": false
     },
     {
       "id": "tswn-runtime",
@@ -1151,10 +1428,13 @@
       "category": "implementation",
       "status": "source_supported",
       "source_ids": [
-        "tswn-runtime-model"
+        "tswn-runtime-model",
+        "tswn-battle-flow"
       ],
       "checked_at": "2026-11-16",
-      "origin": "tswn-curation"
+      "origin": "tswn-curation",
+      "detailed_description": "战斗运行时（Runtime / CombatRuntime）是 tswn 重写引擎中承载一场战斗全部可变机制状态的核心容器，负责实际的机制执行（tswn 实现，commit d12b462，依据 docs/core-guide/runtime-model.md 与 crates/tswn_core/src/runtime/combat/mod.rs）。\n\n持有的数据（源码字段）：\n- entities：EntityArena，保存实体本体；每个实体记录由 PlayerTemplate（当前构造基底、身份、技能、分身资料）、PlayerRuntime（本场当前值与专用机制状态）、StateStore（状态条目与注册游标）、EntitySlotStorage（实体扩展数据）组成。\n- world：WorldArena，保存顺序与队伍视图（round_order、team_roster、team_alive、flat_alive 等）。\n- scheduler：PhaseScheduler，负责行动条与 hook 计划。\n- effects：EffectQueue，待提交的效果队列。\n- effect_handlers / skill_handlers / state_handlers：各机制的执行函数；replay_renderers、show_renderers 负责回放与展示渲染。\n- scratch、template_slots、slots（BattleSlotStorage）、registry（扩展注册表）、rng（本场 RC4）、round。\n\n角色数据分层的意义：模板提供重新计算有效属性的基底，运行时保存这一刻的有效值；吞噬会改模板属性或技能，分身沿派生数据衰减，所以\"模板\"表示结构角色而非冻结的初值。初始等级与当前等级分别存在 build_levels 与 levels。\n\n实体标识有若干层次：EntityIdx 是 arena 的稳定索引，PlrId/DTO id 是对外数值标识，display_name / display_index 面向读者；arena 为生成兼容保留 ID 空槽，entity_slot_count 表示含空槽的容量身份范围，实际 entities 列表只列已存在的实体。\n\n四种状态出口（同一场战斗可导出不同粒度）：完整 CombatRuntime（研究与执行机制）、RuntimePlayerSnapshot/BattlePlayerState（展示当前值与人类可读标签）、BattleModelState（回合边界保存学习所需机制）、EncodedBatch（向数值模型提供张量、mask 与精确旁路）。\n\n常见误解：把 Runtime 与对外快照混为一谈——Runtime 是引擎内部工作台，跨语言显示数据由会话层投影；把模板值当成当前有效值。\n\n与官方原版的关系：Runtime 是 tswn 重写的引擎内核结构，官方文档未公开这一层。",
+      "outdated": false
     },
     {
       "id": "tswn-runner",
@@ -1171,7 +1451,9 @@
         "tswn-api"
       ],
       "checked_at": "2026-11-16",
-      "origin": "tswn-curation"
+      "origin": "tswn-curation",
+      "detailed_description": "对局执行器（Runner / RuntimeRunner）是围绕 CombatRuntime 提供的对局入口：负责构造、推进、判胜，并把运行时队伍映射回输入队伍（tswn 实现，commit d12b462，依据 docs/core-guide/runtime-model.md 与 docs/reference/public-api.md）。\n\n结构与职责：RuntimeRunner 内含 runtime（CombatRuntime）、input_groups（输入分组到实体 ID 的映射）与 prepared_seed。对外方法覆盖 run_round（推进一个 Runtime 回合）、run_round_normalized（归一化对比输出）、run_until_winner（跑到有胜者并保留逐回合 outcome）、run_to_completion 与 run_to_completion_prevalidated（批量热路径，不保留逐回合结果，后者跳过 immutable handler 就绪扫描），以及 winner_team_index / winner_team_indices / input_group_won（判胜映射）。\n\n判胜的两条路径必须一致：run_until_winner 走 sync_winner（全量扫描实体表），run_to_completion(_prevalidated) 走 sync_winner_from_alive_views（只读存活视图）。文档明确要求两者结论一致，并且任何入口都不要用 alive_group_count 判断胜负。\n\n接入选择：正式增量 API 是 cli_api::BattleSession（逐帧播放、交互、跨语言 UI，四端一致），结果由 result()/battle_replay 收集；根级 Runner / PreparedRunner 属于 Advanced / Compatibility API，由调用方自行管理 seed 行格式、模板复用、生命周期与批量并行策略。新的逐帧展示应用通常从 BattleSession 接入，而不是直接驱动 Runner。\n\n常见误解：\n1. 把 Runner 当成会话：Runner 不收集逐帧展示数据，也不做回合预算与终止决策，那些在 BattleSession / BattleDriver。\n2. 把运行期 team 当成输入队伍：运行时 team 表达当前机制队伍（魅惑可改变它），输入分组才是用户原始分组，胜者标签用输入队伍索引。\n3. 一个 runtime 队伍可能对应多个输入分组，做数据集标签时要求胜者唯一。\n\n与官方原版的关系：Runner 是 tswn 重写的 Rust 入口层，官方页面没有同名概念。",
+      "outdated": false
     },
     {
       "id": "tswn-prepared-roster",
@@ -1186,7 +1468,9 @@
         "tswn-name-build"
       ],
       "checked_at": "2026-11-16",
-      "origin": "tswn-curation"
+      "origin": "tswn-curation",
+      "detailed_description": "已构建阵容（PreparedRoster）是 tswn 重写引擎中\"名字解析、属性技能推导与团队强化完成之后\"的构建结果，是构造阶段的产物，而不是只保存单个名字的显示信息（tswn 实现，commit d12b462，依据 docs/core-guide/name-to-player.md 与 crates/tswn_core/src/namerena/build.rs）。\n\n结构：PreparedRoster { players: Vec<PreparedPlayer>, groups: Vec<Vec<usize>> }。players 仍以输入时分配的连续 ID 索引，groups 保存这些 ID 的分组。PreparedPlayer 保存 id、name、clan_name、id_key_name、display_name、class，以及推导出的 attrs（八围基础数据）、PlayerStats（体力、攻防、速度、敏捷、魔法、抗性、智慧等）、SkillLoadoutSpec（技能、等级、强化与尝试顺序）、weapon_attr_bonus、name_factor 与 clone_* 分身派生信息。\n\n构建口径要点：\n1. 构建以完整队伍为单位：团队强化与座位相关技能修正会改变导入结果，所以批量准备应按完整阵容准备，不能只按单个名字。\n2. 组内顺序会按构建规则排序以应用团队强化；这与 Runtime 的随机行动顺序不是一回事。\n3. 构建阶段不含本场战斗 RNG：PreparedRoster::build 只做属性与技能推导，seed 在后续战斗初始化时才起作用。\n4. 同一构建结果可重复导入，不会因为之后的战斗自动改变。\n\n常见误解：\n- 把 PreparedRoster 当成\"某个名字的解析结果\"或显示信息缓存——它是整队口径的构建快照，导入后被固化为 PlayerTemplate 与技能表；\n- 把 id_key_name 与 display_name 混用：前者用于身份推导、排序与图标，后者面向人类展示；\n- 以为构造顺序等于战斗行动顺序——前者按 id_key_name 排序，后者按 seed 初始化。\n\n与官方原版的关系：PreparedRoster 是 tswn 重写的构建层数据结构，官方没有对应公开概念。",
+      "outdated": false
     },
     {
       "id": "tswn-prepared-runner",
@@ -1203,7 +1487,9 @@
         "tswn-rq"
       ],
       "checked_at": "2026-11-16",
-      "origin": "tswn-curation"
+      "origin": "tswn-curation",
+      "detailed_description": "准备好的对局（PreparedRunner / PreparedRuntimeRunner）是 tswn 重写引擎中固化阵容、名字评估参数与导入配置的模板，可按不同 seed 反复创建独立对局（tswn 实现，commit d12b462，依据 docs/core-guide/runtime-model.md 与 docs/mechanics/name-factor-rq.md）。\n\n它保存什么：准备基线（场前的实体、技能、状态与槽快照）、阵容材料 battle_roster 与技能导入表 skill_import，以及构造时选定的 eval_rq。eval_rq 在创建时固定；文档明确要求比较不同 rq 时分别准备 roster，而不是只替换运行期 seed。\n\n使用方式：\n1. new_reusable_runner() 为单个批量 worker 克隆场前原型，独占后续战斗与复位缓冲；不要让多个 worker 共享同一个可变 runner。\n2. reset_with_seed(runner, seed) 从同一准备模板恢复下一局，步骤是：恢复实体、技能、状态和槽的基线；清理本场效果、世界与临时 scratch；按 seed 更新队伍排序、行动顺序和初始行动点；建立本场 RC4，然后开始下一局。\n3. 复位失败不保证保留旧对局，调用方可从模板重新创建 runner。\n4. dirty 标记、generation 与缓存用于减少重复分配与无变化复位；它们服务于相同的机制结果。\n\n常见误解：\n1. 换 seed 等于换构造口径——seed 只改变本场初始化和随机过程，属性与技能口径由准备时固定的 eval_rq 决定；要换 rq 必须重新准备阵容。\n2. 把准备好的对局当成可回放的存档——它的目的是\"同口径换局\"，不是存盘回放。\n3. 以为复位会重装注册表与 handler——该入口只恢复战斗状态，注册表、handler 与模板配置不在此重装。\n\n与官方原版的关系：批量复用对局是 tswn 重写为评分与胜率批处理设计的机制，官方原版没有对应概念。",
+      "outdated": false
     },
     {
       "id": "tswn-rc4",
@@ -1218,7 +1504,9 @@
         "tswn-randomness"
       ],
       "checked_at": "2026-11-16",
-      "origin": "tswn-curation"
+      "origin": "tswn-curation",
+      "detailed_description": "游戏随机流（RC4）是 tswn 重写引擎中承担游戏随机协议的确定性字节流，用于兼容原 JS 行为（tswn 实现，commit d12b462，依据 docs/core-guide/randomness-and-compatibility.md 与 crates/tswn_core/src/rc4.rs）。\n\n实现形态：RC4 结构保存 256 字节的状态排列 main_val 与 i、j 两个游标，另有调试用的 byte_count；逐字节消费时游标按低八位推进。复制一条流必须同时复制排列与游标，修改排列会改变后续全部输出。\n\n方法族（观察重点是调用时机与字节序列）：next_u8 消费一个字节；r127/r63/r31/r15/r7/r3 等掩码型 0 起始范围值，r256/r64/r16 等 1 起始范围值；next_i32(max) 兼容范围选择；c50/c25/c75/c94/c12/c33/c66 等概率判断（阈值、比较符与消费次数都重要）；pick / pick_skip / pick_skip_range / sort_list 用于目标与顺序选择。文档提醒：两个表达式即使概率接近，也可能在端点或消费数量上不同。\n\n两条流各有状态：构建用 RC4 过程（名字、阵营与武器材料 → 属性、技能、顺序与蓝图）与本场战斗流（CombatRuntime.rng，用于行动条步长、智慧判定、目标与技能概率、威力、闪避、状态与连锁）。二者共同决定可复现结果；数据抽样、任务匹配或天梯扰动另有各工具自己的随机来源。\n\n关键边界：多消费一个字节就会让后续整条行为链分叉——一个字节可能决定本次智慧，下一个决定技能，再下一个决定威力；中间改变消费次数，后续过程就会读到本属其他决策的字节。文档强调行为对齐时应保留原来的随机方法与调用顺序。\n\n复现一份对局应记录：完整 raw 文本、seed 行及顺序、eval_rq、core 版本或 commit、包装层版本、最大回合数、自定义 registry / 模板配置、外部模型或校准摘要。批量场景中胜率范围任务按绝对局号派生 profile seed：round == 0 不附加 profile seed，round > 0 附加 seed:{PROFILE_START + round}@!；任务分段仍保留同一场采样身份。\n\n常见误解：\n- 把 RC4 当安全随机数生成器——它承担的是游戏随机兼容协议，文档明确安全相关的新功能应另选方案；\n- 认为\"同 seed 必然同结果\"——还取决于 core 版本、eval_rq、调用顺序与输入原文；\n- 把构建流与战斗流当成一条——它们是两个独立状态。\n\n与官方原版的关系：RC4 兼容实现是 tswn 重写对齐原 JS 行为的一部分，官方文档不公开随机算法细节。",
+      "outdated": false
     },
     {
       "id": "tswn-hook",
@@ -1234,7 +1522,9 @@
         "tswn-hooks"
       ],
       "checked_at": "2026-11-16",
-      "origin": "tswn-curation"
+      "origin": "tswn-curation",
+      "detailed_description": "阶段钩子（hook / ProcMask）是 tswn 重写引擎给技能与状态提供执行机会的阶段标记，共八类（tswn 实现，commit d12b462，依据 docs/core-guide/skills-and-hooks.md 与 crates/tswn_core/src/runtime/scheduler.rs）。\n\n八种阶段与典型用途：\n- PRE_ACTION：行动开始前，护盾积累、行动前状态准备。\n- POST_ACTION：行动后收尾，守护、持续状态、蓄力等。\n- PRE_DAMAGE：主线普通攻击分支之前，行动者的攻击前机制。\n- POST_DAMAGE：主线攻击分支之后；专用受伤链也使用此类技能。\n- PRE_DEFEND：受击者处理浮点攻击威力（Atp），反弹、守护链。\n- POST_DEFEND：受击者处理整数伤害（Damage），防御、护盾、铁壁、诅咒等。\n- DIE：致命伤害链，护身符等可改变最终死亡结果。\n- KILL：满足条件的击杀后链，吞噬、亡灵相关效果。\n多个位可用 | 合并；ProcMask::NONE 也有明确用途——许多主动技能走 BuiltinActiveSkill 的专用行动分支，hook mask 只表示其附加生命周期参与情况。\n\n执行机制：\n1. 技能 hook 计划按 (priority, active_order, registration_order) 排序，priority 小的先执行；状态计划按 (priority, registration_order) 稳定排序，并另外保存运行期注册位置。\n2. POST_ACTION 采用更细的分区链路：early 技能 → 按状态运行期游标穿插 deferred 技能 → 逐项状态 hook → 剩余 deferred 技能 → 统一提交延后状态清理 → late 技能；执行期间若发生技能变化，Runtime 按 generation 更新相关计划。\n3. 上下文分三种：SkillContext（owner、当前等级、选定目标、受击值、RNG、专用修改与效果队列）、StateContext（当前 hook、状态 owner、载荷、行动接管与延后清理）、EffectContext（caster/target、槽、RNG、嵌套队列与更新消息）。\n4. PRE_DEFEND 使用 Atp、POST_DEFEND 使用 Damage，选择匹配阶段的 getter/setter 就能清楚表达意图。\n\n关键边界：阶段名本身不能替代实际 owner 与调用链判断——同一个 POST_DAMAGE 类技能，究竟是攻击者还是受击者参与、属于主线攻击链还是专用受伤链，必须沿源码中的实际调用位置确认。\n\n与官方原版的关系：hook 与 ProcMask 是 tswn 重写的实现框架，官方文档按技能效果描述，没有公开阶段划分。",
+      "outdated": false
     },
     {
       "id": "tswn-effect-queue",
@@ -1250,7 +1540,9 @@
         "tswn-battle-flow"
       ],
       "checked_at": "2026-11-16",
-      "origin": "tswn-curation"
+      "origin": "tswn-curation",
+      "detailed_description": "效果队列（EffectQueue / QueuedEffect）是 tswn 重写引擎中排队提交攻击、恢复、生成等效果的机制，Runtime 从队首逐项处理并维护实体与世界（tswn 实现，commit d12b462，依据 docs/core-guide/battle-flow.md 与 crates/tswn_core/src/runtime/effect/queue.rs）。\n\n三个基本操作：push 入队尾（排队执行恢复、状态或其他普通效果）；push_nested 入队首（优先完成嵌套反弹、吞噬等链路）；pop_next 从队首取出，Runtime 逐项提交并维护世界。队列本身是 VecDeque<QueuedEffect>，另有 iter / len / is_empty / clear。\n\n连锁语义：效果 handler 还可以继续入队；连续加入队首的效果会按队首插入顺序形成优先关系，这是复现连锁机制时的重要信息。\n\n主要效果变体（源码枚举）：Damage（caster / target / amount）、ReflectedAttack（携带原来的附伤语义与伤害种类）、PoisonTick（毒跳有自己的清理和死亡后处理）、FireAttack、SummonExplode（自爆）、DisperseAttack / DisperseHit（驱散）、CovidContact / CovidAttack / CovidPneumonia（感染与 Boss 接触）、LazyFlare、Heal（恢复）、Spawn（生成，携带 PlayerTemplate）。\n\n关键边界：\n1. hook 与技能也可以不走队列，直接用专用上下文修改受击值（例如 PRE_DEFEND 改 Atp、POST_DEFEND 改 Damage）；队列是\"延后统一提交\"的那条路。\n2. push 与 push_nested 的区别会改变执行顺序，混淆二者会得到不同的连锁结果。\n3. 队列里的效果不是并列的独立结算——它们共享同一份实体与世界视图，提交顺序影响后续可见结果。\n\n与官方原版的关系：效果队列是 tswn 重写的机制调度结构，官方文档不公开队列语义。",
+      "outdated": false
     },
     {
       "id": "tswn-attack-power",
@@ -1267,7 +1559,9 @@
         "tswn-hooks"
       ],
       "checked_at": "2026-11-16",
-      "origin": "tswn-curation"
+      "origin": "tswn-curation",
+      "detailed_description": "攻击威力（Atp/atp）是 tswn 战斗流程中 PRE_DEFEND 阶段处理的浮点威力值（tswn 实现，commit d12b462，依据 docs/core-guide/battle-flow.md 与 docs/core-guide/skills-and-hooks.md）。\n\n流程定位：攻击产生浮点威力 → 经命中判断、防御或抗性换算得到整数伤害值 → 伤害值在 POST_DEFEND 阶段处理。PRE_DEFEND 与 POST_DEFEND 是两个不同的 hook 阶段，钩子在哪个阶段介入决定了它能修改的是威力还是伤害。\n\n常见误解：\n1. 不能把攻击威力与扣除的 HP 数值混同——威力是换算前的浮点中间量，最终掉血还要经过护盾、减伤等后处理；\n2. \"Atp\"是内部字段命名，不是官方对外界面用语；\n3. 物理攻击走防御换算、魔法攻击走抗性换算（整理者推断），具体换算公式本批资料未展开，待核实。\n\n与官方原版的关系：PRE_DEFEND/POST_DEFEND 这套阶段命名为 tswn 重写的实现契约，用于兼容官方攻击结算流程；官方文档未以这些名称公开。",
+      "outdated": false
     },
     {
       "id": "tswn-damage",
@@ -1283,7 +1577,9 @@
         "tswn-battle-flow"
       ],
       "checked_at": "2026-11-16",
-      "origin": "tswn-curation"
+      "origin": "tswn-curation",
+      "detailed_description": "伤害值（Damage/damage）是 tswn 战斗流程中 POST_DEFEND 阶段处理的整数伤害（tswn 实现，commit d12b462，依据 docs/core-guide/battle-flow.md）。\n\n来源与去向：攻击威力（浮点）经命中、防御或抗性换算后得到整数伤害；伤害值之后仍可能经过护盾吸收、减伤效果和生命周期规则，最终才落到 HP 扣减。即 POST_DEFEND 拿到的整数伤害不一定是最终掉血量。\n\n常见误解：\n1. 把攻击威力直接当作最终掉血——中间还有换算与后处理；\n2. 认为伤害一经算出就不可修改——护盾会吸收、减伤会缩放，相关状态的生命周期规则也参与；\n3. 伤害是整数、威力是浮点，两者量纲不同，读回放或调试输出时不要混读。\n\n与官方原版的关系：官方文档没有公开\"威力→伤害\"的阶段划分术语；PRE_DEFEND/POST_DEFEND 是 tswn 重写实现的 hook 阶段名。威力到伤害的具体换算公式待核实。",
+      "outdated": false
     },
     {
       "id": "tswn-alive-views",
@@ -1300,7 +1596,9 @@
         "tswn-winner"
       ],
       "checked_at": "2026-11-16",
-      "origin": "tswn-curation"
+      "origin": "tswn-curation",
+      "detailed_description": "存活视图（team_alive / flat_alive）是 tswn 重写引擎中维护\"当前哪些实体还活着\"的索引，由世界视图 WorldArena 统一更新，用来选择目标和同步胜者（tswn 实现，commit d12b462，依据 docs/core-guide/runtime-model.md 与 docs/mechanics/winner.md）。\n\n世界视图保存的几组列表：\n- round_order：当前按什么顺序轮询，兼容调度保留相应顺序信息。\n- team_roster：这一队有哪些登记实体，死亡后仍可保留成员身份。\n- team_alive：这一队现在有哪些存活实体，随生命周期更新。\n- flat_alive：全场有哪些存活实体，用于目标与胜负视图。\n- input_groups：用户原输入怎样成队，由 runner 保存来源映射。\n\n维护入口：add_spawned_alive（召唤或入场，必要时扩容队伍槽并加入轮询顺序）、revive_alive（复活放回存活视图；flat_alive 中按原队友位置插入，保持同队相邻）、remove_alive（移出存活视图；该队存活列表变空时递减 legacy 计数）、mark_dead（死亡登记，同时从轮询顺序中移除）。死亡、复活、召唤、移除和魅惑各有生命周期入口，会协调实体本体与这些索引。\n\n与判胜的关系：可交互路径用 sync_winner 全量扫描实体表 runtime.alive；批量路径用 sync_winner_from_alive_views，按 team_alive 的非空槽位计数，复杂度与队伍数成正比。两者结论必须一致，仓库有逐回合核对存活视图与实体表是否一致的判胜路径一致性测试。\n\n常见误解：\n1. 把 team_roster 当存活名单——死亡实体仍留在 roster 与 arena 中，以支持复活、尸体以及来源关系；\n2. 认为某实体在某帧 0 存活就等于该队已出局——复活、召唤、僵尸化都会把实体放回存活视图；\n3. 把 alive 与 active 混用——alive 是存活登记，active 还要结合正 HP 表示当前活动状态。\n\n与官方原版的关系：存活视图是 tswn 重写的内部索引，官方文档不公开其结构。",
+      "outdated": false
     },
     {
       "id": "tswn-alive-group-count",
@@ -1315,7 +1613,9 @@
         "tswn-winner"
       ],
       "checked_at": "2026-11-16",
-      "origin": "tswn-curation"
+      "origin": "tswn-curation",
+      "detailed_description": "legacy 队伍计数（alive_group_count）是 tswn 重写引擎中为兼容原行为保留的粘性计数，与\"当前存活队伍数\"不是一回事（tswn 实现，commit d12b462，依据 docs/mechanics/winner.md）。\n\n维护规则：\n- 初始化：按非空队伍数计一次（只数非空队伍）。\n- 某队被清空（remove_alive 后该队存活列表变空）：饱和减一。\n- 复活或入场：只有在队伍槽是新建时才加一；已有队伍槽复活不补回。\n所以它等于\"初始非空队伍数 + 新建队伍槽次数 − 队伍清空次数\"，既不是累计出现过的队伍数，也不是当前非空队伍数。\n\n合法用途（两条）：\n1. 智能选目标时的 > 2 判断（对应 legacy 实现的 Engine.y.a.Q > 2）。\n2. 死亡行动者的 post-action 状态循环提前退出：行动者已死亡且 alive_group_count() <= 1 时跳出。\n这是对 legacy 行为的有意对齐，修改它需要先拿到能区分 legacy 行为的用例。\n\n不能用于判胜。历史缺陷记录：批量胜率路径曾用 alive_group_count == 1 判胜，在\"3 队 → A 队被清空（计数 3→2）→ A 队成员被魅惑的敌人用苏生术复活（计数仍是 2）→ B 队被清空（计数 2→1）\"这类可达局面中会错判为已有胜者并提前结束该局；修复把判据换成 team_alive 非空槽位计数，legacy 语义原样保留（技能目标选择依赖它）。该边界在 0.3.3 更新说明中已经写死并明确警告过。\n\n对数据使用者的结论：不要用 runtime.alive > 0 当 team_mask，也不要用 alive_group_count 当任何 mask；需要表达\"获胜资格\"时应显式定义该队伍是否仍可能被复活或召唤。\n\n与官方原版的关系：该计数对齐的是 legacy md5.js 的 Engine.y.a.Q（初始化、递减与使用三处），官方文档未公开。",
+      "outdated": false
     },
     {
       "id": "tswn-winner",
@@ -1328,7 +1628,9 @@
         "tswn-winner"
       ],
       "checked_at": "2026-11-16",
-      "origin": "tswn-curation"
+      "origin": "tswn-curation",
+      "detailed_description": "判胜指战斗结束时决定胜者的规则（tswn 实现，commit d12b462，依据 docs/mechanics/winner.md）。\n\n规则：\n1. 当恰好一个运行时队伍仍有存活实体时，产生胜者；\n2. 全部阵亡（所有队伍都无存活实体）也是无胜者，不产生赢家；\n3. 对外展示时再映射为输入队伍——运行时队伍与输入分组（空行分组）经映射对应，对外报的是输入队伍视角的胜者。\n\n不能用 alive_group_count 判胜：它是兼容旧行为的粘性计数——队伍清空会减一，但已有队伍复活不会补回，因此它不等于当前存活队伍数。判胜按实际存活实体重新统计。\n\n结果语义区分：规范会话的回合预算/无进展截断、Runtime 粘性失败、正常胜利是不同结果；截断或失败不等于判胜胜利，读取会话结果时要区分。\n\n与官方原版的关系：判胜语义是 tswn 重写对官方行为的兼容实现，官方文档未以\"判胜\"术语公开这些细节。",
+      "outdated": false
     },
     {
       "id": "tswn-battle-session",
@@ -1344,7 +1646,9 @@
         "tswn-replay"
       ],
       "checked_at": "2026-11-16",
-      "origin": "tswn-curation"
+      "origin": "tswn-curation",
+      "detailed_description": "规范对局会话（BattleSession）是 tswn-core 提交 d12b462 中正式推荐的增量对局 API，公共 API 契约文档（docs/reference/public-api.md）规定 Rust、Python（tswn_py）、WASM（tswn_wasm）和 C ABI（tswn_capi）四个语言入口共享同一套语义。\n\n文档用法：新接入方按以下流程使用——构造会话时提交输入并取得初始快照；随后循环调用 next_frame() 逐帧推进；会话达到终局后读取结果；最后显式调用 free() 释放句柄（跨语言边界由句柄管理，这一点在 C ABI 语境尤其重要）。会话内部管理三件事：输入（原始名字与队伍映射）、推进预算（回合数上限等）、以及快照与可见帧的输出。\n\n关键边界：\n1. frame 与 round 是两个计数：空回合（没有可见事件的回合）不产生可见帧，但仍消耗推进预算，因此帧序号不等于 Runtime 回合序号。\n2. FightSession 与 WinRateSession 属于进阶兼容入口，它们的字段含义或停止条件不能直接套用到规范会话上。\n3. 会话正常终止分两条通道：达到预算或无进展是\"截断\"（正常结束、不冒充有赢家）；Runtime 内部错误走\"粘性失败\"通道，二者语义不同。\n\n以上均来自该提交的公共 API 文档与会话/回放指南（docs/core-guide/sessions-and-replay.md），属于 tswn 实现的文档证据，未做运行验证。",
+      "outdated": false
     },
     {
       "id": "tswn-battle-replay",
@@ -1361,7 +1665,9 @@
         "tswn-replay"
       ],
       "checked_at": "2026-11-16",
-      "origin": "tswn-curation"
+      "origin": "tswn-curation",
+      "detailed_description": "完整回放（BattleReplay，文档中亦作 battle_replay）是 tswn-core 提交 d12b462 会话指南（docs/core-guide/sessions-and-replay.md）中定义的回放收集结构：它收集同一个 BattleSession 的初始状态、全部可见帧和最终结果，形成一场对局的完整记录。\n\n要点：回放不是独立的第二套引擎。收集过程中对局的推进仍然由与实时对战完全相同的 Runtime 机制执行，回放结构只负责把已经发生的初始快照、每帧事件和终局结果存下来。这保证了回放内容与同一会话实时播放的内容一致，不存在\"回放引擎与对战引擎结果不同\"的分叉。\n\n与流式回放的关系：网页的流式播放（BattleStreamController/BattleStreamSource）按需从同一个 BattleSession 拉帧并维护播放游标，面向\"边算边播\"的场景；完整回放则面向\"一次收集、之后任意回看\"的场景。两者消费的是同一个会话，只是消费方式不同。\n\n常见误区：\n1. 不要把 battle_replay 理解成重新随机生成一场战斗——它记录的是同一会话已经确定的内容。\n2. 不要把回放帧序号当作 Runtime 回合序号（空回合会被 next_frame 吸收）。\n\n依据为 tswn 实现文档（提交 d12b462），未运行验证。",
+      "outdated": false
     },
     {
       "id": "tswn-snapshot",
@@ -1378,7 +1684,9 @@
         "tswn-replay"
       ],
       "checked_at": "2026-11-16",
-      "origin": "tswn-curation"
+      "origin": "tswn-curation",
+      "detailed_description": "玩家快照（别名 BattlePlayerState、canonical snapshot）是 tswn-core 提交 d12b462 中规范会话对外输出的玩家状态投影，服务于展示层。\n\n快照包含的字段（按会话/回放指南与网页说明）：身份与归属（该角色属于哪一侧）、当前属性、HP/MP、护盾值和标签。它是某一时刻状态的\"投影\"，不是 Runtime 内部实体本身。\n\n关键边界：修改返回的快照对象不会改变 Runtime。这条规则有两个直接推论：\n1. 网页上修改显示昵称、更换 CSS 图标等显示层数据，只影响展示，不修改快照中的原始身份，不重新生成属性，也不替换复现所需的原始输入（tswn 术语表中\"显示昵称\"词条同样强调这点）。\n2. 拿到快照后随意改动其中的数值，不会把改动写回战斗引擎；下一帧的快照仍由 Runtime 真实状态生成。\n\n用途：前端渲染、回放展示、把每帧的 HP/盾条与死亡特效画出来，都消费快照数据；网页说明明确正文展示使用 rows/clips/parts 中的文本与延迟等信息，不从伤害数值自行猜测展示含义。\n\n依据为 tswn 实现文档（提交 d12b462：docs/core-guide/sessions-and-replay.md、docs/design/battle-session.md 及 tswn_wasm 说明），未运行验证。",
+      "outdated": false
     },
     {
       "id": "tswn-frame",
@@ -1395,7 +1703,9 @@
         "tswn-battle-flow"
       ],
       "checked_at": "2026-11-16",
-      "origin": "tswn-curation"
+      "origin": "tswn-curation",
+      "detailed_description": "可见帧（frame）是 tswn-core 提交 d12b462 规范会话中 next_frame() 的一次输出：一批对外可见的事件，加上帧末状态。调用方逐次调用 next_frame() 即可按帧回放或直播一场对局。\n\n最重要的规则：frame 与 round 是不同计数。Runtime 内部的回合（round）可能出现\"空回合\"——没有产生任何可见事件的回合；next_frame() 会吸收这些空回合，不为它们输出帧。但空回合仍然消耗推进预算。因此：帧序号（frame_index）不等于 Runtime 回合序号；一段回放的第 N 帧可能对应 Runtime 的第 M 个回合（M >= N，中间隔着被吸收的空回合）。\n\n帧的内容：按网页本体的说明，正文展示使用帧内 rows/clips/parts 中的文本、延迟、HP/盾条与死亡特效等信息，前端不从伤害数值自行猜测展示含义。帧末状态以玩家快照形式给出。\n\n常见误区：\n1. 用帧号去对 Runtime 回合日志会对不上号，中间差值来自被吸收的空回合。\n2. 空回合不是错误或卡死，它消耗预算但不出帧，长时间只有空回合推进最终会以\"截断（无进展）\"终止，而不是报错。\n\n依据为 tswn 实现文档（提交 d12b462：sessions-and-replay.md、battle-flow.md），未运行验证。",
+      "outdated": false
     },
     {
       "id": "tswn-round",
@@ -1412,7 +1722,9 @@
         "tswn-api"
       ],
       "checked_at": "2026-11-16",
-      "origin": "tswn-curation"
+      "origin": "tswn-curation",
+      "detailed_description": "运行时回合（round / round_index）是 tswn 重写引擎中 Runner 的一次推进边界：一次回合可能是完整的一次行动、只有状态消息，或一次空推进（tswn 实现，commit d12b462，依据 docs/core-guide/battle-flow.md 与 docs/reference/public-api.md）。\n\n与相邻粒度的区别：调度步（scheduler tick）是轮询一个候选行动者并推进其行动条；运行时回合是 runner 完成一次推进边界；可见帧（frame）是应用收到的一批可见事件。BattleSession 的 next_frame() 会连续推进空回合，直到有可见帧或正常终止，因此页面上的帧编号与 Runtime 回合编号各自有意义。\n\n计数与预算规则：\n1. frame_index 与 round_index 都从 0 开始。frame_index 对可见帧连续编号；round_index 记录真实推进轮次，允许跳号（因为空回合被吸收但仍计入）。\n2. 空回合也消耗会话 max_rounds 预算（默认值 20_000，即 Runtime main_round() 的调用次数上限，必须大于零）。\n3. 空 updates 的获胜轮仍会生成包含 winner row 的末帧。\n\n终止与预算：会话先检查胜者，再检查回合上限，随后检查无进展保护；无进展阈值按 max(1, 当前实体数) * 16 计算，出现可见进展会重置计数。终止原因分为 winner（finished）、max_rounds 与 no_progress（truncated）三类；Runtime 内部失败另走粘性失败通道，不伪装为截断。\n\n常见误解：\n1. 把回合数当帧数——两者之间差着被吸收的空回合；\n2. 以为空回合是卡死——它消耗预算但不出帧，长期只有空回合最终以截断（no_progress）而非报错结束；\n3. 把截断当成某一侧获胜——截断结果里没有赢家。\n\n与官方原版的关系：回合边界与预算属于 tswn 重写会话层的实现契约，官方页面的回合上限表现是另一套实现，不能不加区分地混用。",
+      "outdated": false
     },
     {
       "id": "tswn-tick",
@@ -1428,7 +1740,9 @@
         "tswn-battle-flow"
       ],
       "checked_at": "2026-11-16",
-      "origin": "tswn-curation"
+      "origin": "tswn-curation",
+      "detailed_description": "调度步（tick / scheduler tick）是 tswn 重写引擎中的调度粒度：轮询一个候选行动者并推进其行动条，既不等于一次可见帧，也不等于一个技能（tswn 实现，commit d12b462，依据 docs/core-guide/battle-flow.md 与 crates/tswn_core/src/runtime/scheduler.rs）。\n\nLegacyStep 模式（对齐原游戏的速度步进）的 tick 逻辑：\n\nstep_roll = next_u8() & 3\nstep = 冰冻处理(effective_speed × step_roll)\nspeed_points += step\n当 speed_points > 2048：\n    speed_points -= 2048\n    获得一次行动机会\n\n即每个 tick 取一个 RC4 字节，用低两位得到 0～3 的步长，再结合有效速度与冰冻处理更新行动点；阈值判断是\"严格大于\"而非\"大于等于\"。\n\n相关边界：\n1. 有效速度综合模板/runtime 与加速、减速等状态；初始行动点来自本场初始化，同一个名字在不同 seed 下可以处于不同起点和轮询顺序。\n2. 调度器每轮轮询世界 roster；死亡与召唤通过 world 的 round_order 维护。\n3. 另一种模式 Minimal 用于低层最小模板，可以直接选择行动者和基础目标，适合单独验证特定 hook。两种模式都在当前 Runtime 中实现；调度模式从实体特征推断：普通实体中只要有速度就走 LegacyStep，Boss/Boost 类走 Minimal。\n4. 冰冻会在 tick 中被处理（步进与解除）。\n\n常见误解：\n1. 把 tick 当成一帧或一次技能——tick 只推进行动条，可能连续多个 tick 才产生一次行动；\n2. 认为出手节奏完全由速度决定——随机步长让同速度的实体间隔也不完全固定；\n3. 把 tick 计数当作回合计数——见\"运行时回合\"。\n\n与官方原版的关系：2048 阈值与 tick 结构是 tswn 重写为兼容原行为而实现的内部参数，官方文档未公开。",
+      "outdated": false
     },
     {
       "id": "tswn-truncated",
@@ -1445,7 +1759,9 @@
         "tswn-api"
       ],
       "checked_at": "2026-11-16",
-      "origin": "tswn-curation"
+      "origin": "tswn-curation",
+      "detailed_description": "截断（truncated）是 tswn-core 提交 d12b462 公共 API 文档定义的规范会话正常终止方式之一：当会话达到回合预算（如 max_rounds 设置的上限），或持续没有可见进展（no_progress）时，会话按截断正常结束。\n\n核心语义：截断不冒充已产生赢家。截断结束时没有胜者结果，调用方不应把截断当作某一侧获胜来处理。这与判胜语义文档（docs/mechanics/winner.md）中\"有明确赢家才算胜\"的口径一致。\n\n与错误通道的区分：Runtime 内部失败（引擎出错）不走截断，而是走独立的\"粘性失败\"通道（is_failed=true）。因此判断一场会话的结局时应区分三种状态：产生赢家的正常终局、截断（预算耗尽/无进展）、粘性失败（错误）。三者互不冒充。\n\n与官方原版的关系：本词条描述的是 tswn 规范会话（提交 d12b462）的 API 语义；官方原站网页上回合上限的表现（如原站到达上限时的显示方式）属于另一套实现，不能不加区分地混用。\n\n常见误区：把\"截断\"当成异常或引擎 bug——按 tswn 文档它是有定义的正常终止；也不要把截断后的 result 当作有效的胜者数据。\n\n依据为 tswn 实现文档，未运行验证。",
+      "outdated": false
     },
     {
       "id": "tswn-sticky-failure",
@@ -1461,7 +1777,9 @@
         "tswn-api"
       ],
       "checked_at": "2026-11-16",
-      "origin": "tswn-curation"
+      "origin": "tswn-curation",
+      "detailed_description": "粘性失败（sticky failure，别名 poisoned）是 tswn-core 提交 d12b462 公共 API 文档定义的规范会话错误通道：当 Runtime 在推进中发生错误时，会话保存首个错误并进入失败状态。\n\n判别特征（按文档）：is_failed=true 而 is_done=false，result 为空。也就是说失败会话既不是完成态，也不提供胜者结果。粘性体现在后续行为上：之后的每次推进调用都返回同一个已保存的错误，不会恢复推进，也不会覆盖成新的错误。设计意图是错误状态一旦发生就固定下来，调用方拿到的错误信息是确定的首因。\n\n它不是普通截断：截断是达到回合预算或无可见进展的正常终止，is_done 语义下会话正常收束、不冒充有赢家；粘性失败则表示引擎层面出了问题。两者走不同通道，调用方应分别处理。\n\n常见误区：\n1. 反复调用推进试图\"重试\"失败会话——按文档只会不断拿到同一错误，正确做法是丢弃该会话、检查输入后重建。\n2. 把 is_failed 会话的空 result 解析成平局——文档口径是错误不产生结果。\n\n依据为 tswn 实现文档（提交 d12b462），未运行验证。",
+      "outdated": false
     },
     {
       "id": "tswn-model-state",
@@ -1477,7 +1795,9 @@
         "tswn-api"
       ],
       "checked_at": "2026-11-16",
-      "origin": "tswn-curation"
+      "origin": "tswn-curation",
+      "detailed_description": "机制状态（BattleModelState）是 tswn 重写引擎中用于回合边界机制采样的实验性导出，比展示快照包含更多技能、载荷、顺序与归属信息（tswn 实现，commit d12b462，依据 docs/core-guide/runtime-model.md 与 docs/reference/public-api.md）。\n\n导出内容（源码结构）：schema_version（MODEL_STATE_SCHEMA_VERSION，当前为 1）、round、entity_slot_count（含为使魔生成保留的空 ID 槽，与实体列表长度不同）、input_teams、world（ModelWorld：round_order、team_roster、team_alive、flat_alive、alive_group_count、round_pos、winner_team）、entities（每项含 id、input_team_index、template、runtime、states、state_registration_cursor、compressed_state_flags、slots）、template_slots、battle_slots、legacy_step_scheduler、ice_release_events。\n\n与展示快照的差别：展示快照（RuntimePlayerSnapshot / BattlePlayerState）只给当前数值与人类可读标签；机制状态同时给出模板基底与运行期值、每条状态的载荷与 hook mask、优先级与两种注册顺序、实体归属（owner / root_owner）、以及压缩状态标记与槽值。因此不能把展示快照当作机制状态的替代。\n\n编号口径提醒：ModelSkill 里的 skill_id 是\"默认注册表的稳定 1-based 技能 ID；不是 fixed_lane 或 legacy_key\"，同时另有 fixed_lane_key 表示技能数据槽位——两个编号空间不能混用。状态条目也分 legacy_order_key 与 runtime_registration_order 两套顺序信息。\n\n稳定性边界：公共 API 文档把 BattleModelState（MODEL_STATE_SCHEMA_VERSION）、BattleModelSession 与数据集格式列为 Experimental，允许按版本调整；使用入口是 cli_api::battle::BattleModelSession，它在 PreparedRunner 之上以相同 seed 两遍运行，next_frame() 给可见帧边界，model_state() 导出当前机制状态。\n\n常见误解：\n- 把机制状态当成可长期依赖的稳定格式——它是实验性导出；\n- 用它替代 Runtime 本身做机制研究——完整 Runtime 才是权威状态，机制状态是回合边界的采样投影；\n- 把它和展示快照混为一谈——两者粒度不同。\n\n与官方原版的关系：这是 tswn 重写为训练数据与机制分析新增的导出层，官方原版没有对应概念。",
+      "outdated": false
     },
     {
       "id": "tswn-wasm",
@@ -1491,10 +1811,15 @@
       "status": "source_supported",
       "source_ids": [
         "tswn-wasm",
-        "tswn-web"
+        "tswn-web",
+        "tswn-routing",
+        "tswn-live-cloudflare",
+        "tswn-live-shenjack"
       ],
       "checked_at": "2026-11-16",
-      "origin": "tswn-curation"
+      "origin": "tswn-curation",
+      "detailed_description": "网页本体（tswn_wasm、WASM 本体）由两部分组成：Rust core 的浏览器 WASM 包装（crate tswn_wasm，wrapper 版本 0.5.12，core 0.7.0，提交 d12b462）和配套的静态对战展示页。\n\n部署入口（维护者提供，2026-11-16 抓取）：Cloudflare 页面 https://fast-namerena.pages.dev/branch/tswn/ （页面可见 wrapper 0.5.12 / core 0.7.0 并显示已初始化）；shenjack.top 页面 https://shenjack.top:10007/tswn （重定向到 /static/tswn/examples/show.html，正文可读但版本位置为占位符，未据此判定版本）。两个部署未做产物与本地提交的逐字节一致性验证。\n\n提供的调用（按 tswn_wasm README）：规范 BattleSession 及相关 API；展示页当前专注 Fight，demo.html 保留快速验证战斗和胜率的入口。显示、昵称、播放计划（含流式拉帧与播放游标）由前端处理。\n\n分享与输入：展示页使用 ?input=<UTF-8 URL-safe Base64> 查询参数，接受 replay、data 作为兼容别名；分享生成器会清理旧 engine/runtime 参数并清空 hash。原站文档的 #n= 是另一种入口约定，不能当作本页查询参数使用。页面上的 normal/fast/turbo、暂停、逐事件/逐帧、重播和昵称只调整显示过程；复现一场战斗需要保留 raw、seed、rq、core commit 和 wrapper 版本。\n\n边界：已存在引擎与 JS API，但知识仓库记录时点没有 MCP server，也没有确认可直接调用的远程 HTTP 对战服务。\n\n依据为部署抓取记录与仓库文档（提交 d12b462），未运行验证。",
+      "outdated": false
     },
     {
       "id": "tswn-streaming",
@@ -1511,7 +1836,9 @@
         "tswn-web"
       ],
       "checked_at": "2026-11-16",
-      "origin": "tswn-curation"
+      "origin": "tswn-curation",
+      "detailed_description": "流式回放是 tswn-core 提交 d12b462 网页增量播放的设计模式（docs/design/battle-session.md，涉及 BattleStreamController 与 BattleStreamSource）：网页不等待整场对局算完，而是先显示初始状态，再按需从同一个 BattleSession 拉取下一帧。\n\n工作方式（按设计文档）：\n1. 页面打开后先展示初始快照；\n2. 播放推进时向源（BattleStreamSource）请求帧，源从会话计算并给出；\n3. 为平滑播放最多预取两帧；\n4. 用户回看时直接读取已收到的历史，不触发重新计算；只有播放位置追上尾部时才继续从会话拉新帧。\n\n关键边界：流式回放消费的是同一个 BattleSession，动画回退不会让引擎倒退、也不会重新随机——回退只是把播放游标在已有历史上移动。WASM 侧的胜率分批调用（WinRateSession）仍是同步计算，使用异步 source 并不会自动获得多线程或后台 Worker。\n\n常见误区：把流式回放当成第二套回放引擎，或以为拖动进度条会重掷随机数——两者都不成立。\n\n依据为 tswn 设计文档与网页说明（提交 d12b462），未运行验证。",
+      "outdated": false
     },
     {
       "id": "tswn-playback-cursor",
@@ -1524,7 +1851,9 @@
         "tswn-session-design"
       ],
       "checked_at": "2026-11-16",
-      "origin": "tswn-curation"
+      "origin": "tswn-curation",
+      "detailed_description": "播放游标是 tswn-core 提交 d12b462 网页增量播放设计（docs/design/battle-session.md）中的显示层概念：流式页面内部保存三个各自独立的位置——源端推进位置（会话已经计算到哪一帧）、已收到的历史尾部（本地已缓存多少帧）、当前播放位置（画面正在展示哪一帧）。\n\n三者分离的意义：计算进度与播放进度解耦。播放位置可以在历史范围内任意前后移动（快进、回退、暂停），这些操作只移动播放游标；源端推进位置只在播放追上尾部时才向前走，触发从 BattleSession 拉取新帧。\n\n核心保证：动画回退不表示引擎倒退或重新随机。回退播放只是把游标移回历史中的某一帧并重新展示该帧内容，会话状态和随机序列没有任何变化；再次前进时看到的仍是同一批已计算的历史帧。\n\n与显示层其他概念的关系：播放游标与显示昵称、CSS 图标一样，属于前端显示层数据，不修改规范快照中的原始身份，不重新生成属性，也不影响复现所需的原始输入（raw、seed、rq、core commit、wrapper 版本）。\n\n依据为 tswn 设计文档（提交 d12b462），未运行验证。",
+      "outdated": false
     },
     {
       "id": "tswn-nickname",
@@ -1538,7 +1867,9 @@
         "tswn-session-design"
       ],
       "checked_at": "2026-11-16",
-      "origin": "tswn-curation"
+      "origin": "tswn-curation",
+      "detailed_description": "显示昵称是 tswn（core d12b462）网页展示层的自定义名字。要点（tswn-session-design、tswn-api）：\n- 只存在于派生显示层：网页的昵称、CSS 图标与播放游标是显示数据，修改昵称不修改规范快照（BattlePlayerState）中的身份。\n- 不会重新生成属性：属性由原始输入构建，昵称不参与构建。\n- 不替换复现所需的原始输入：复现对局需要 raw、seed、rq、core commit 与 wrapper 版本，显示昵称不在其中。\n- tswn 另区分 raw、id_key_name、实体 ID 与 display_name；显示昵称或短名不能作为角色身份主键。\n典型用途：给战斗展示中的角色起一个便于观看的名字，而角色计算与身份完全不变。它与官方“显示名简化”（空格后与战队名不显示）是两层概念：官方显示名由输入结构决定，tswn 昵称是网页的额外自定义，二者都不影响实际角色数据。",
+      "outdated": false
     },
     {
       "id": "tswn-share",
@@ -1551,10 +1882,14 @@
       "status": "source_supported",
       "source_ids": [
         "tswn-routing",
-        "tswn-web"
+        "tswn-web",
+        "tswn-live-cloudflare",
+        "tswn-live-shenjack"
       ],
       "checked_at": "2026-11-16",
-      "origin": "tswn-curation"
+      "origin": "tswn-curation",
+      "detailed_description": "分享链接是 tswn（core d12b462）展示页分享对局的 URL 约定。格式（show-routing.js 实现证据）：把 UTF-8 输入编码为 URL-safe Base64（+ 替换为 -、/ 替换为 _，按原文保留填充行为），放入 input 查询参数，即 ?input=<编码文本>；replay 与 data 查询参数是兼容别名。分享生成器会清理旧的 engine/runtime 参数并清空 hash。\n部署入口：维护者提供的 https://fast-namerena.pages.dev/branch/tswn/ 与 https://shenjack.top:10007/tswn（2026-11-16 抓取时前者显示 wrapper 0.5.12 / core 0.7.0，后者重定向到 /static/tswn/examples/show.html）。\n与原站入口的区别：官方嵌入文档使用 URL 的 #n= 片段参数（iframe 加 postMessage，结果字段 winners/all），这是另一种入口约定，不能把 #n= 直接当作 tswn 展示页的查询参数使用。\n网页的 normal/fast/turbo、暂停、逐事件/逐帧、重播和昵称设置只调整显示过程；复现仍需保留 raw、seed、rq、core commit 与 wrapper 版本。",
+      "outdated": false
     },
     {
       "id": "tswn-win-rate-session",
@@ -1566,10 +1901,13 @@
       "category": "api",
       "status": "source_supported",
       "source_ids": [
-        "tswn-wasm"
+        "tswn-wasm",
+        "attachment-qqbot"
       ],
       "checked_at": "2026-11-16",
-      "origin": "tswn-curation"
+      "origin": "tswn-curation",
+      "detailed_description": "增量胜率会话（WinRateSession）是 tswn-core 提交 d12b462 WASM 包装（crates/tswn_wasm/README.md）提供的进阶兼容入口：与一次性跑完整批对局不同，它允许宿主分批驱动胜率计算，每次调用 step 同步执行一批对局，然后返回控制权。\n\n关键参数与用法（按 WASM 说明文档）：宿主在每次 step 之间需要让出事件循环（例如用 setTimeout/requestAnimationFrame 分片），这样浏览器页面才能在长时间胜率计算中保持响应。批次大小由调用方控制。\n\n重要限制（文档明确）：\n1. 每批 step 是同步计算，没有后台线程参与；\n2. 当前 WASM 构建只接受自动或单线程配置，不支持多线程；\n3. 使用异步 source 不会自动获得多线程或后台 Worker——这只是接口形式，不是并行能力。\n\n定位：文档把 FightSession 与 WinRateSession 都归为\"进阶兼容入口\"，新的接入应以规范 BattleSession 为准；WinRateSession 的字段含义或停止条件不能直接替代规范会话的语义。\n\n常见误区：以为用了增量入口就等于并行加速——它改善的是页面响应性（分片让出主线程），不是计算吞吐。\n\n依据为 tswn WASM 文档（提交 d12b462），未运行验证。",
+      "outdated": false
     }
   ],
   "enrichments": [
@@ -1585,7 +1923,10 @@
       ],
       "aliases_add": [],
       "checked_at": "2026-11-16",
-      "definition": "普通综合评分的简称。tswn namer-pf 中是对生成普通 profile 基准的万分制评分，具体单号布局见 tswn 语境说明。"
+      "definition": "普通综合评分的简称。tswn namer-pf 中是对生成普通 profile 基准的万分制评分，具体单号布局见 tswn 语境说明。",
+      "detailed_description": "普评（pp）是 tswn namer-pf（昵称\"命配\"）四项 profile 评分中的普通基准组队评分。\n\n测量对象与布局：单号输入时，被测号加一名由数字名字生成器产出的普通 profile 队友，对抗另外两名同类普通 profile，即 2v2 组队布局（tswn 实现，commit d12b462，ratings.json profile_scores；tswn-score-dispatch）。pd/qp/qd 与它共用同一套调度，只是基准和对战布局不同。\n\n计算方法与量纲：按 wins/total×10000 计分，即胜场数除以总场数再乘 10000 的万分制，理论范围 0..10000（tswn-score-scale）。评分默认 eval_rq=6.0 构造，可用 --keep-rq（\"不低估短号\"）保留普通对打的 rq=4；rq 影响名字系数进而影响七围派生（tswn 实现，mechanics/name-factor-rq.md）。\n\n随机条件：profile 的数字名字随轮次变化，使用空的额外 seed；不能把固定阵容胜率的 profile seed 调度套用到这类评分上（tswn-score-dispatch）。采样规模由精确度选项决定：1%、10%、100% 分别对应 100、1000、10000 场（tswn-openbox-options）。\n\n结果读法与边界：分数越高表示在该普通 profile 基准下组队表现越强。多成员组合输入时，需按 score 的实际布局解释，不能把单号布局直接外推。pp 与 qp（强化基准）量纲相同但基准不同，不可混读；pp 是万分制，与 cqd/cqp 的 0..100 百分比、天梯榜单分数、官方 !test! 万分制评估都不是同一体系，互相之间不能换算或跨工具比较。生态位上，pp 偏重有队友时的综合（组队）表现，与偏单挑的 pd 互补。",
+      "outdated": false,
+      "status": "source_supported"
     },
     {
       "term_id": "normal-duel-rating",
@@ -1599,7 +1940,10 @@
       ],
       "aliases_add": [],
       "checked_at": "2026-11-16",
-      "definition": "普通单挑评分的简称。tswn namer-pf 中是对生成普通 profile 基准的万分制评分，具体单号布局见 tswn 语境说明。"
+      "definition": "普通单挑评分的简称。tswn namer-pf 中是对生成普通 profile 基准的万分制评分，具体单号布局见 tswn 语境说明。",
+      "detailed_description": "普单（pd）是 tswn namer-pf 四项 profile 评分中的普通基准单挑评分。\n\n测量对象与布局：单号输入时，通过重复单号标记触发\"单号对单个生成 profile\"的一对一布局，即被测号单独对抗一名普通 profile，没有队友（tswn 实现，commit d12b462，ratings.json profile_scores；tswn-score-dispatch）。这与 pp 的 2v2 布局形成对照：同样的普通基准，pd 只看单挑能力，pp 看组队表现。\n\n计算方法与量纲：wins/total×10000 万分制，范围 0..10000（tswn-score-scale）。评分默认 eval_rq=6.0，可用 --keep-rq 保留 rq=4；profile 数字名字随轮次变化、使用空额外 seed，固定阵容胜率的 seed 调度不适用于此。精确度 1%/10%/100% 对应 100/1000/10000 场（tswn-openbox-options）。\n\n结果读法与边界：多成员组合输入时按 score 实际布局解释。pd 与 qd 是同一 1v1 布局下普通/强化两种基准的对照；pd 与 pp 是同一普通基准下单挑/组队的对照。pd 是万分制，不能与 cqd 的靶子平均胜率百分比混用，也不能与官方 !test! 评估、天梯分数直接比较；高分表示对该普通 profile 基准胜率高，不代表对任意名字必胜。",
+      "outdated": false,
+      "status": "source_supported"
     },
     {
       "term_id": "enhanced-team-rating",
@@ -1613,7 +1957,10 @@
       ],
       "aliases_add": [],
       "checked_at": "2026-11-16",
-      "definition": "强化综合评分的简称。tswn namer-pf 中是对生成强化 profile 基准的万分制评分，具体单号布局见 tswn 语境说明。"
+      "definition": "强化综合评分的简称。tswn namer-pf 中是对生成强化 profile 基准的万分制评分，具体单号布局见 tswn 语境说明。",
+      "detailed_description": "强评（qp）是 tswn namer-pf 四项 profile 评分中的强化基准组队评分，是四项中最常被社区引用作门槛的一项。\n\n测量对象与布局：单号输入时，被测号加一名生成的强化 profile 队友，对抗另外两名同类强化 profile，即强化基准下的 2v2 布局（tswn 实现，commit d12b462，ratings.json profile_scores；tswn-score-dispatch）。\"强化\"与\"普通\"的差别由 profile 修饰符控制：qp/qd 使用 ! 修饰符一类强化基准，pp/pd 使用普通基准。\n\n计算方法与量纲：wins/total×10000 的万分制，范围 0..10000（tswn-score-scale）；评分默认 eval_rq=6.0，--keep-rq 可保留 rq=4。采样时 profile 数字名字随轮次变化、使用空额外 seed；精确度 1%/10%/100% 对应 100/1000/10000 场。\n\n结果读法与边界：多成员组合需按 score 实际布局解释。qp 与 qd（同为强化基准但为 1v1 布局）、pp（同布局但普通基准）要分开读；尤其注意 qp 与 cqp 完全是两回事：qp 是对生成 profile 的万分制评分，cqp 是对具体靶子集的组队胜率百分比平均，数字不可互相换算。\n\n社区用法（社区资料，2026-11-16 观察）：10007 民间天梯注册页读取时要求新战队提供 qp6000+ 的名字做 QP 验证；10008 论坛\"弱队补强计划\"帖的申请条件也用到 qp6000+ 证明。但这两处分别是站点注册门槛和活动条件，不是天梯计分公式，也不能当作全社区固定称号线； qp 分数本身只表示对强化 profile 基准的胜率，不能推出对任意名字必胜。",
+      "outdated": false,
+      "status": "source_supported"
     },
     {
       "term_id": "enhanced-duel-rating",
@@ -1627,7 +1974,10 @@
       ],
       "aliases_add": [],
       "checked_at": "2026-11-16",
-      "definition": "强化单挑评分的简称。tswn namer-pf 中是对生成强化 profile 基准的万分制评分，具体单号布局见 tswn 语境说明。"
+      "definition": "强化单挑评分的简称。tswn namer-pf 中是对生成强化 profile 基准的万分制评分，具体单号布局见 tswn 语境说明。",
+      "detailed_description": "强单（qd）是 tswn namer-pf 四项 profile 评分中的强化基准单挑评分。\n\n测量对象与布局：单号输入时，通过重复单号标记触发一对一布局：被测号单独对抗一名强化 profile（tswn 实现，commit d12b462，ratings.json profile_scores；tswn-score-dispatch）。它使用与 qp 相同的强化基准，但布局是 1v1 而非 2v2。\n\n计算方法与量纲：wins/total×10000 万分制，范围 0..10000（tswn-score-scale）；评分默认 eval_rq=6.0，--keep-rq 可保留 rq=4；采样时 profile 数字名字随轮次变化、使用空额外 seed；精确度选项 1%/10%/100% 对应 100/1000/10000 场。\n\n结果读法与边界：多成员组合按 score 实际布局解释。qd 高说明对强化 profile 的单挑胜率高，但它是相对于特定生成基准的胜率，不等同于角色等级，也不能推出对任意名字必胜。注意区分：qd（万分制 profile 评分）与 cqd（对具体靶子集的平均胜率百分比）仅一字母之差，量纲（0..10000 vs 0..100）和测量对象（生成 profile vs 用户配置靶子）都不同，绝不能混用；qd 与天梯榜单分、官方 !test! 万分制评估也互不可比。",
+      "outdated": false,
+      "status": "source_supported"
     },
     {
       "term_id": "name-testing",
@@ -1650,7 +2000,10 @@
         "tswn-core-input"
       ],
       "aliases_add": [],
-      "checked_at": "2026-11-16"
+      "checked_at": "2026-11-16",
+      "detailed_description": "随机数种子是官方特殊名字页定义的特殊输入：所有以 seed: 开头并在 ! 战队的输入都是随机数种子，官方示例为 seed:123@! 和 seed:上海@!。它不加入战斗、不作为参战者，仅改变战斗过程。名字竞技场相同输入结果可复现，seed 用于在同一名单下改变随机过程。\ntswn（core d12b462）实现语境补充：解析入口提取所有区分大小写的 seed: 前缀行（常量 SEED_PREFIX 为 \"seed:\"），不要求每行必须以 @! 结尾；seed 原文按出现顺序保存，不进入玩家列表、不占参战者位置。官方标准示例仍写作 seed:...@!。\n社区语境（10007 民间天梯及 10008 论坛周赛帖，保留帖子时效）：周赛帖曾用赛季、周次、福彩3D 号码和场次构造 seed:...@! 的赛事输入以保证当局可复现；帖中“赛程排位的种子”指按天梯排名安排对阵顺序，与这里的战斗随机输入是不同概念。彩票号码和具体排期是该赛事的约定，不是游戏通用规则。",
+      "outdated": false,
+      "status": "source_supported"
     },
     {
       "term_id": "team-name",
@@ -1662,7 +2015,10 @@
         "tswn-name-build"
       ],
       "aliases_add": [],
-      "checked_at": "2026-11-16"
+      "checked_at": "2026-11-16",
+      "detailed_description": "战队名指名字中 @ 之后的部分，官方命名规则给出四种输入形式：名字、名字@战队名、名字+装备、名字@战队名+装备。\n官方说明的战队名作用：\n1. 参与人物属性生成——改变名字或战队名中的任何一项，人物属性完全改变。\n2. 决定徽章：没有战队名时徽章由名字决定；加上战队名后由战队名决定。\n3. 战队名称只在最初的人物列表里显示，之后的战斗过程中不显示。\n4. 同一战队里不同成员间，还会有小概率互相属性加成。\n输入示例：Rick@中国。\n需要区分三个不同概念：@战队名（参与属性生成与徽章）、空行划分的对战分组（一局中的队伍，见组队战）、战斗界面显示的 Team N（展示层编号）。tswn（core d12b462）实现语境中，@ 后的队名称为阵营 clan；输入分组由空行控制，阵营与运行时 team 各有职责；解析器会把空队名或含冒号的 @ 后缀当作无队名处理。\n另外，在 10007 民间天梯语境中“战队”还指玩家组织的注册与管理单位（天梯以战队为账户语境管理成员），这与 @战队名的属性生成规则、空行定义的一局分组分别解释，需按上下文区分。",
+      "outdated": false,
+      "status": "source_supported"
     },
     {
       "term_id": "display-name",
@@ -1674,7 +2030,10 @@
         "tswn-api"
       ],
       "aliases_add": [],
-      "checked_at": "2026-11-16"
+      "checked_at": "2026-11-16",
+      "detailed_description": "显示名指战斗过程中显示的简化名字。官方规则：名字中有空格的话，战斗中只显示空格前的部分；战队名称只在最初的人物列表里显示，战斗过程中不显示。简化只影响显示，不影响属性——完整输入仍参与属性生成（官方命名与测号页）。\n官方示例：Rick、Rick Zhou、Rick@中国、Rick Zhou@中国 四个输入在战斗中都显示为 Rick。\n这是测号的重要技巧：显示名不变的前提下，改空格后缀或战队名可以得到不同数值，从而在保留显示效果的同时追求更强属性。\ntswn（core d12b462）语境补充：实现中进一步区分 raw（原始输入）、id_key_name（身份键名）、实体 ID 与 display_name（显示名）；显示昵称或短名不能作为角色身份主键，也不能用显示名替代完整输入来复现对局。",
+      "outdated": false,
+      "status": "source_supported"
     },
     {
       "term_id": "equipment",
@@ -1686,7 +2045,10 @@
         "tswn-overlay"
       ],
       "aliases_add": [],
-      "checked_at": "2026-11-16"
+      "checked_at": "2026-11-16",
+      "detailed_description": "装备是官方命名形式中通过 +装备 添加的输入部分，四种名字构成中有两种带装备：名字+装备、名字@战队名+装备。装备段位于名字（和战队名）之后、以 + 引出。\n官方命名页只给出形式，没有列出完整装备清单与机制；具体装备种类和数值在官方说明快照中未见（待核实）。\ntswn（core d12b462）实现语境：存在普通武器与特殊武器分支，如剁手刀（S11，可触发促销购买、属性增长、耐久损耗及耗尽后自伤）、死亡笔记（标记目标后结算处决，付出速度与 MP 代价）、属性修改器（仅 @Rinick 阵营生效）、桂月奖杯与玄月奖杯（各自有阵营白名单，未满足条件按无武器处理）。当 DIY/OL 提供玩家级 attrs 或 skills 覆盖时，普通武器效果被禁用；只有召唤模板覆盖不单独禁用武器。\n与改名字或战队名一样，带不带装备、带什么装备都会完全改变角色构建。",
+      "outdated": false,
+      "status": "source_supported"
     },
     {
       "term_id": "boss",
@@ -1697,7 +2059,10 @@
         "tswn-core-rules"
       ],
       "aliases_add": [],
-      "checked_at": "2026-11-16"
+      "checked_at": "2026-11-16",
+      "detailed_description": "Boss 是官方预设的特殊名字角色，采用战队名 !，输入形式为 名字@!。属性计算与普通名字不同，有的有 Boss 级超强实力，有的带特殊技能或功能（官方特殊名字页）。\n官方列出 11 个 Boss（输入形式按原文）：aokiji@!（青雉，无视物理攻击、强力冰冻技能）、conan@!（柯南）、ikaruga@!（斑鸠，吸收所有奇数伤害，只有偶数攻击有效）、mario@!（马里奥，吃蘑菇会变厉害）、slime@!（史莱姆，死后分身成小史莱姆）、sonic@!（索尼克，超高速度）、yuri@!（尤里，心灵控制）、mosquito@!（蚊，打不到）、lazy@!（懒癌，犯懒什么都不想做）、saitama@!（一拳超人，强到几乎无敌但总要到最后才出手）、covid@!（新冠病毒，人多会交差传染，最好装备口罩）。\n官方参考强度：2 个比较强的普通名字 2 对 1 对抗任何一个 Boss，胜率大概为 10%。内置 Boss 在官方实力评估中得分都在 9900 以上。\ntswn（core d12b462）实现补充：Boss 表共 12 个代码条目，比官方说明页多一个 testsubject@!（实验体 #C8）；官方列表与 tswn 表的范围分别保留，不据此改写官方列表。",
+      "outdated": false,
+      "status": "source_supported"
     },
     {
       "term_id": "language-possess",
@@ -1714,7 +2079,10 @@
       ],
       "checked_at": "2026-11-16",
       "definition": "附体是幻影默认技能；tswn 中成功施加目标狂暴并使施法实体进入死亡链，存在免疫与回避判断。",
-      "category": "skill"
+      "category": "skill",
+      "detailed_description": "【名称证据】「附体」是官方语言包 zh.json 的消息词形，键 sklPossess 原文「[0]使用[附体]」，language-index.json 收为 bracketed_terms（附体→sklPossess）。同一键 en.json 作「uses [Possession]」、zh-TW.json 作「[附體]」，大富翁版 zh-money.json 却被改成「[0]对[1][洗脑]」。custom_lan.html 说明语言包可「完全改变游戏显示的内容」；language-index.json 明确「词形只证明在显示文本中出现，不构成机制定义」。故这里只能确认「附体」这一名称与显示句式。\n\n【官方说明】官方技能页 skill.html 列 34 项技能（14 攻击/11 辅助/9 被动），无「附体」；辅助技能「幻影」只写「召唤幻影，幻影体力低，两回合后开始行动」。官方 README.md 把附体、自爆、隐匿、死亡笔记、属性修改器归为「官方基础层只确认名称证据」，tswn 实现补充另带语境、不反向改写官方原文。待核实：官方原版附体的触发条件、作用对象、效果数值与获取方式；不能由显示文本反推机制。\n\n【tswn 实现】tswn-core d12b462（core 0.7.0 / Openbox 0.5.2 / WASM 0.5.12）里，附体是「幻影」（幻术生成的召唤实体）默认独立技能，别名 sklpossess、phantom:sklpossess，占 phantom: 专用通道，不在普通技能 ID 0..34 表内（DIY/OL 用 normal:/summon:/phantom: 把普通技能、使魔火球、自爆、幻影附体分开编号以免串槽）。通过免疫与回避判断后给目标增加「狂暴」状态步数，并令施法实体 HP 归零进入死亡链；被回避则不走成功分支。与「魅惑」（改变友敌关系）不同。依据 tswn-possess（skills_lifecycle.rs L437-520）、tswn-overlay、mechanics.md、skill-map.json。以上为 tswn 静态阅读所得，未实测，不等同官方原版。\n\n【待核实：官方原版是否存在同名技能；tswn 狂暴步数值、免疫/回避判定式、附体与原版「幻影」的对应关系。】",
+      "outdated": false,
+      "status": "source_supported"
     },
     {
       "term_id": "language-explode",
@@ -1731,7 +2099,10 @@
       ],
       "checked_at": "2026-11-16",
       "definition": "使魔的专用自爆技能；tswn 以火系魔法伤害效果处理，同时结算施法实体自身死亡。",
-      "category": "skill"
+      "category": "skill",
+      "detailed_description": "【名称证据】「自爆」来自官方语言包 zh.json 键 sklExplode「[0]使用[自爆]」，language-index.json 收为 bracketed_terms；en.json 作「[self-destructs]」，zh-money.json 却改成「[0]使用[拦路抢劫]」。custom_lan.html 允许语言包整体替换显示内容，language-index.json 明确词形不构成机制定义，故这里只确认名称与句式。语言包另有 sklSummonName=使魔 等召唤文案，同属显示文本。\n\n【官方说明】skill.html 的 34 项技能无「自爆」；辅助「血祭」只写「召唤使魔，使魔受到伤害时施法者连带受到50%伤害」。官方 README.md 把自爆列入「只确认名称证据」。待核实：官方原版自爆的触发条件、伤害倍率、作用范围、是否消耗使魔。\n\n【tswn 实现】tswn-core d12b462（core 0.7.0 / Openbox 0.5.2 / WASM 0.5.12）里，自爆是「使魔」（血祭召唤实体）专用技能，别名 sklexplode、summon:sklexplode；普通使魔模板有两个独立火球槽和一个自爆槽，并可向 owner 传导伤害。它进入火系魔法伤害分支并结算施法者自身死亡，单独存槽，不能归入普通玩家火球、也不能列作普通技能 ID（tswn 普通 ID 0..34 共 35 项，35 空、36..39 保留，附体/自爆/使魔火球/武器技能另有专用槽）。依据 tswn-explode（effects.rs L141-205）、tswn-overlay、mechanics.md、skill-map.json。以上为静态阅读，未实测，不等同官方原版。\n\n【待核实：官方原版是否作独立技能；tswn 自爆伤害倍率、目标范围、触发条件；是否沿用官方火球术「多次受火系伤害每次+25%」叠加（不同槽，不能默认套用）；火系伤害与使魔半伤传导如何共同结算。】",
+      "outdated": false,
+      "status": "source_supported"
     },
     {
       "term_id": "language-hide",
@@ -1752,7 +2123,10 @@
       ],
       "checked_at": "2026-11-16",
       "definition": "受伤后有条件触发的被动隐匿技能；tswn 将其与主动潜行/背刺分开，隐匿会降低受关注程度并可附带高等级属性增益。",
-      "category": "skill"
+      "category": "skill",
+      "detailed_description": "【名称证据】「隐匿」来自官方语言包 zh.json 键 sklHide「[0]发动[隐匿]」，language-index.json 收为 bracketed_terms，别名 sklhide、Hide；en.json 作「slips into [stealth]」，zh-TW/zh-money 同简体。按 custom_lan.html 与 language-index.json，这只是显示层词形、不构成机制定义，可确认的仅名称与「发动」句式。\n\n【官方说明】skill.html 列 34 项技能，无「隐匿」；官方另有「潜行」（攻击技能 500%，两回合潜行+背刺、中途受伤打断）。官方 README.md 把隐匿归入「只确认名称证据」。待核实：官方原版是否把隐匿作为独立技能、其发动条件与数值；不可把官方「潜行」说明安到「隐匿」上。\n\n【tswn 实现】tswn-core d12b462（core 0.7.0 / Openbox 0.5.2 / WASM 0.5.12）里，隐匿是普通技能 ID 34（skill-map.json），也是 tswn 普通 ID 0..34 共 35 项比官方 34 项多出的一项（35 空技能、36..39 保留）。受伤后被动触发：条件为「受伤后仍活动、尚未隐匿、有效队伍存活成员多于一人」。效果降低 attract（受关注程度）；tswn 文档记有明确数值——等级高于 63 时另增敏、防、抗。与主动潜行/背刺是不同技能，也不同于 Runtime 投影给网页的可读标签（仅用于显示）。依据 tswn-hide（passive.rs L408-481）、tswn-effective-stats（runtime.rs L515-560）、tswn-core-skill、tswn-base、tswn-overlay、mechanics.md。以上为静态阅读，未实测。\n\n【待核实：官方原版对应机制；tswn 中 attract 公式与降低幅度、等级 63 以上增益数值、持续与解除条件。除 ID 34、等级 63 外资料未给数值，未编造。】",
+      "outdated": false,
+      "status": "source_supported"
     },
     {
       "term_id": "language-death-note",
@@ -1768,7 +2142,10 @@
       ],
       "checked_at": "2026-11-16",
       "definition": "具有目标标记和独立处决结算的特殊武器；tswn 的结算同时付出速度与 MP 代价。",
-      "category": "equipment"
+      "category": "equipment",
+      "detailed_description": "【名称证据】「死亡笔记」来自官方语言包 zh.json 键 weaponDeathNoteAtk「[0]在[死亡笔记]写下[1]的名字」，language-index.json 收为 bracketed_terms，别名 DeathNote；en.json 作「writes the name [1] in the [Death Note]」，zh-TW 作「死亡筆記」。这是「写下名字」的显示消息，只能确认武器名与这一显示行为；language-index.json 明确词形不构成机制定义。\n\n【官方说明】naming.html 只列出「名字+装备」等四种输入形式，未列装备清单及机制；技能页、特殊名字页均未提。官方 README.md 把死亡笔记列入「只确认名称证据」。待核实：标记如何建立、处决判定、速度与 MP 代价的原版数值；不能把文案当成完整机制。\n\n【tswn 实现】tswn-core d12b462（core 0.7.0 / Openbox 0.5.2 / WASM 0.5.12）里，武器名须精确等于「死亡笔记」才进入独立分支，并非任意名字加后缀都生效；运行期对已标记目标结算处决，随后降低自身模板速度、清空正 MP 并清除标记，不是无条件全场即死。tswn 把普通武器与剁手刀、死亡笔记、属性修改器、桂月/玄月奖杯并列为不同分支，部分带阵营限制；玩家级 attrs/skills 覆盖会禁用普通武器效果。依据 tswn-core-weapon（weapon.rs L53-297）、tswn-weapon-runtime（skills_weapon.rs L7-186）、mechanics.md。以上为静态阅读，未实测，不等同官方原版。\n\n【待核实：官方原版是否同名同效；tswn 标记建立步骤（是否即「写下名字」一步）、处决判定式、速度降低幅度、清空 MP 范围。】",
+      "outdated": false,
+      "status": "source_supported"
     },
     {
       "term_id": "language-attribute-modifier",
@@ -1784,7 +2161,10 @@
       ],
       "checked_at": "2026-11-16",
       "definition": "有阵营与身份分支限制的特殊武器名；在 tswn 中并非任意名字均可生效的通用属性编辑器。",
-      "category": "equipment"
+      "category": "equipment",
+      "detailed_description": "【名称证据】「属性修改器」来自官方语言包 zh.json 键 weaponRModifierUse「[0]使用[属性修改器]」，language-index.json 收为 bracketed_terms，别名 RinickModifier；en.json 作「uses the [Stat Editor]」，zh-TW 作「屬性修改器」。按 custom_lan.html 与 language-index.json，这只是显示层词形、不构成机制定义，可确认的仅名称与「使用」句式。\n\n【官方说明】naming.html 只给「+装备」输入形式、未列装备清单；技能页、特殊名字页未提。about.html 记作者为 Rinick（微博/GitHub 同名），可解释「@Rinick」名称由来，但官方未说明该装备。官方 README.md 把它列入「只确认名称证据」。待核实：官方原版是否存在同名装备、能否任意改属性、改动量与限制。\n\n【tswn 实现】tswn-core d12b462（core 0.7.0 / Openbox 0.5.2 / WASM 0.5.12）里，仅 @Rinick 阵营进入属性修改器分支，其他阵营按 NoWeapon；还区分 id_key_name 恰为 Rinick 的身份分支，不是能随意改任何角色的通用管理接口。依据 tswn-core-weapon（weapon.rs L53-297）、tswn-weapon-runtime（skills_weapon.rs L7-186）、terminology.json 的 equipment 补充。旁证：整理者对归档官方原版对战脚本 fight-jCYO3eM7.js 做静态字符串检索，rinick 出现 2 处（某类 static 白名单数组首元素、「=== rinick」阵营判断）；脚本经混淆，此仅作名称/代码路径存在性旁证，未运行、未还原逻辑（官方 README.md 声明归档不代表完整开发源码），不据此补造机制。\n\n【待核实：官方原版是否同名同效；tswn 可改属性种类与改动量、身份分支效果、白名单完整名单。】",
+      "outdated": false,
+      "status": "source_supported"
     },
     {
       "term_id": "skill-clone",
@@ -1802,7 +2182,10 @@
         "分身"
       ],
       "checked_at": "2026-11-16",
-      "definition": "生成新克隆实体的分身技能；tswn 会重派生属性与技能，涉及本体状态、分身技能衰减及加成重放，不能概括为面板完全复制。"
+      "definition": "生成新克隆实体的分身技能；tswn 会重派生属性与技能，涉及本体状态、分身技能衰减及加成重放，不能概括为面板完全复制。",
+      "detailed_description": "官方技能页（official-skill）将分身列为辅助技能，效果为「分成两人，分身后属性下降，技能不变」。官方文字强调技能不变、属性下降，但没有给出下降比例。\n语言包（official-language-zh）对局文本：sklClone「[0]使用[分身]」、sklCloned「出现一个新的[1]」。\ntswn 实现（tswn-core 提交 d12b462）对分身的处理比“复制面板”复杂得多（tswn-clone、tswn-decay）：分身创建新实体并按 CloneBuildData 重新派生属性与技能，克隆体有自己的实体 ID、行动点和分身技能等级；非蓄力本体才执行相应的 HP 与原始七围衰减，使用兼容浮点常量，不能精确简化为最终显示值乘 0.78；分身技能本体随机衰减、克隆体等级再开根号；其他技能先以当前等级截断构造基底（base=min(构造基底,当前等级)），再重放 LastBoost 或 SlotBoost，不是无条件加回原加成。分身条件中的 magic 指魔法属性，不是 MP，不能写成 hp+MP。官方「属性下降」的比例数值官方表未给出，待核实。",
+      "outdated": false,
+      "status": "source_supported"
     },
     {
       "term_id": "skill-heal",
@@ -1818,7 +2201,10 @@
         "sklheal",
         "治愈"
       ],
-      "checked_at": "2026-11-16"
+      "checked_at": "2026-11-16",
+      "detailed_description": "官方技能页（official-skill）将治愈术列为辅助技能，效果为「回复自己或队友的体力，并去除异常状态」。它兼具回复与驱散异常（如中毒、冰冻等负面状态）两种功能，目标可选自己或队友；回复量公式官方未给出，待核实。\n语言包（official-language-zh）对局文本为 sklHeal「[0]使用[治愈魔法]」，即语言包中该技能动作称「治愈魔法」，与技能表名「治愈术」并存，本词条别名已收录。\ntswn 实现（tswn-core 提交 d12b462）中治愈术是普通技能 ID 15，导出 key 为 sklheal，Openbox 短名「治愈」。tswn 的技能衰减分析（tswn-decay）中治愈是特例：当前 tswn 使用「等级 >8 才每次减 1」的熟练度衰减，低等级（≤8）使用不衰减；不能用「每次减半」概括——命轮、苏生才是整数半衰类，各技能衰减门槛和公式不同。",
+      "outdated": false,
+      "status": "source_supported"
     },
     {
       "term_id": "skill-revive",
@@ -1834,7 +2220,10 @@
         "sklrevive",
         "苏生"
       ],
-      "checked_at": "2026-11-16"
+      "checked_at": "2026-11-16",
+      "detailed_description": "官方技能页（official-skill）将苏生术列为辅助技能，效果为「复活一名被击倒的队友」。复活后队友的体力恢复量、复活位置与行动时序官方未给出，待核实。\n语言包（official-language-zh）对局文本：sklRevive「[0]使用[苏生术]」、sklRevived「[1][复活]了」。\ntswn 实现（tswn-core 提交 d12b462）中苏生术是普通技能 ID 16，导出 key 为 sklrevive，Openbox 短名「苏生」。两点 tswn 语境值得注意：其一，tswn 的技能衰减（tswn-decay）对苏生采用与命轮相同的规则——level≥2 的使用后按 (level+1)/2 的整数除法衰减；其二，tswn 判胜要求恰好一队仍有存活实体、全部阵亡也是无胜者（tswn-winner），死亡角色仍保留尸体以支持复活与召唤亡灵，但兼容的 alive_group_count 粘性计数不用于判胜，即“全灭后被苏生翻盘”在 tswn 的判胜语义下按当前存活实体重新评估。",
+      "outdated": false,
+      "status": "source_supported"
     },
     {
       "term_id": "skill-exchange",
@@ -1850,7 +2239,10 @@
         "sklexchange",
         "命轮"
       ],
-      "checked_at": "2026-11-16"
+      "checked_at": "2026-11-16",
+      "detailed_description": "官方技能页（official-skill）记载生命之轮为攻击技能、魔法属性，伤害栏为「-」，效果为「和目标体力值互换」。它不造成常规伤害，而是直接交换施法者与目标的体力值，是典型的以弱换强技能：残血时对满血目标使用可瞬间恢复。\n语言包（official-language-zh）对局文本：sklExchange「[0]使用[生命之轮]」、sklExchanged「[1]的体力值与[0]互换」。交换是否受免疫类机制影响官方未说明。\ntswn 实现（tswn-core 提交 d12b462）中生命之轮是普通技能 ID 9，导出 key 为 sklexchange，Openbox 短名「命轮」。tswn 的技能衰减分析（tswn-decay）覆盖命轮、治愈、苏生、分身、幻术五个技能，各自门槛与公式不同：命轮在熟练度 level≥2 的使用后按 (level+1)/2 的整数除法衰减，即大约每次用后熟练度减半（整数除法），不能用统一「每次减半」概括所有技能。",
+      "outdated": false,
+      "status": "source_supported"
     },
     {
       "term_id": "skill-shadow",
@@ -1868,7 +2260,10 @@
         "幻术"
       ],
       "checked_at": "2026-11-16",
-      "definition": "召唤幻影的技能，官方表称幻影，语言包与 tswn 常称幻术；与生成出的幻影实体及其附体技能分开。"
+      "definition": "召唤幻影的技能，官方表称幻影，语言包与 tswn 常称幻术；与生成出的幻影实体及其附体技能分开。",
+      "detailed_description": "官方技能表称此技能为「幻影」（official-skill，辅助技能），效果为「召唤幻影，幻影体力低，两回合后开始行动」。注意名称层次：官方表名幻影；语言包（official-language-zh）中施法动作是 sklShadow「[0]使用[幻术]」、实体名是 sklShadowName「幻影」、召唤文案 sklShadowed「召唤出[1]」；tswn 也常称幻术。本词条指召唤技能本身，与召唤出的幻影实体、幻影的附体技能要分开。\ntswn 实现（tswn-core 提交 d12b462）中它是普通技能 ID 24，导出 key 为 sklshadow，Openbox 短名「幻术」；生成的幻影（ShadowMinion）默认带有附体技能（tswn-possess）：附体经免疫、回避判断后给目标增加狂暴状态步数，并使施法实体 HP 归零进入死亡链。技能衰减（tswn-decay）：幻术熟练度按 max(ceil(level×3/4),1) 更新，即大约每次用后乘 3/4 向上取整、且至少为 1。「幻影体力低」的具体数值与「两回合后开始行动」的调度细节官方未给出，待核实。",
+      "outdated": false,
+      "status": "source_supported"
     },
     {
       "term_id": "skill-shield",
@@ -1886,7 +2281,10 @@
         "护盾"
       ],
       "checked_at": "2026-11-16",
-      "definition": "行动前积累、受击时抵消部分伤害的护盾技能；tswn 的实际盾量与当前技能熟练度这个展示尺度分开。"
+      "definition": "行动前积累、受击时抵消部分伤害的护盾技能；tswn 的实际盾量与当前技能熟练度这个展示尺度分开。",
+      "detailed_description": "官方技能页（official-skill）将护盾列为被动技能，发动条件为「每回合」，效果为「恢复少量的护盾，受到伤害时护盾抵消一部分伤害」。即每回合自动蓄盾，受击时先扣盾再扣血。蓄盾量与抵消比例的公式官方未给出，待核实。\ntswn 实现（tswn-core 提交 d12b462）对护盾有两个容易混淆的量（tswn-api、tswn-states）：快照字段 shield 是当前实际剩余吸收量，max_shield 是当前技能熟练度这个展示尺度，两者不等同——当前盾值不硬性截断到技能熟练度，一次蓄盾可能超过该尺度（tswn-core mechanics.md）。因此读 tswn 快照时不能把 shield 与 max_shield 互相推算；吞噬改变技能后，max_shield 这个尺度会随技能更新。tswn 的伤害结算中，护盾在整数伤害（POST_DEFEND）之后、最终掉血之前参与抵消（tswn-battle-flow 语境）。",
+      "outdated": false,
+      "status": "source_supported"
     },
     {
       "term_id": "attribute-magic",
@@ -1899,7 +2297,10 @@
       ],
       "aliases_add": [],
       "checked_at": "2026-11-16",
-      "definition": "魔法攻击属性，参与魔法攻击威力；tswn 中的 magic 与独立的 MP（magic_point）字段不同。"
+      "definition": "魔法攻击属性，参与魔法攻击威力；tswn 中的 magic 与独立的 MP（magic_point）字段不同。",
+      "detailed_description": "魔是官方属性页记载的属性之一，官方原文为：\n- 决定魔法攻击的攻击力，包括普通攻击和物理攻击。\n- 少量影响魔法攻击的命中率。\n\n第一句的\"包括普通攻击和物理攻击\"措辞按官方页面原样保留（官方资料整理时未静默纠错）；结合智力条目的上下文（\"当魔法攻击力高于物理攻击时，决定普通攻击出现魔攻的概率\"）理解，它应指普通攻击在魔法攻击力更高时会按魔攻结算，精确措辞以官方原文为准。\n\n作用：魔是魔法伤害的输出主属性，对位防御属性是抗；它对魔法攻击命中率只是少量影响，命中/回避主属性是敏。当魔高于攻时，普通攻击会按概率转为魔攻（官方智力条目记载，概率由智力决定）；魔不高于攻时普攻永远走物理分支。\n\n与 MP 的区分（tswn 实现，提交 d12b462）：tswn 运行时模型中 magic 是魔法攻击属性（七围之一），magic_point 才是 MP（魔法值）；分身条件中的 hp+magic 指属性而非 MP，两者不能混写。\n\ntswn 语境补充：魔是七围第五项，构造时参与名字系数派生；Openbox 嘲讽指标中魔出现在减项（魔×2）。官方与 tswn 资料均未给出魔法伤害的具体数值公式，待核实。",
+      "outdated": false,
+      "status": "source_supported"
     },
     {
       "term_id": "skill-fire",
@@ -1914,7 +2315,10 @@
         "sklfire",
         "火球"
       ],
-      "checked_at": "2026-11-16"
+      "checked_at": "2026-11-16",
+      "detailed_description": "官方技能页（official-skill）记载火球术为攻击技能、魔法属性，伤害 137%，效果为「若多次受到火系伤害，每次伤害增加 25%」，即对同一目标连续吃到火系伤害时逐次递增。递增是否有上限、受新一轮攻击时是否重置，官方未说明，待核实。\n语言包（official-language-zh）对局文本为 sklFire「[0]使用[火球术]」。\ntswn 实现（tswn-core 提交 d12b462）中火球术是普通技能 ID 0，导出 key 为 sklfire，Openbox 短名「火球」。需要区分 tswn 的分类技能通道（tswn-overlay）：普通玩家的火球、使魔的两种火球及自爆分开编号（normal:、summon: 等前缀），避免吞噬或 DIY/OL 覆盖时串槽；使魔专用自爆走火系魔法伤害分支，但它是独立槽位，不能把自爆当作普通玩家的火球术。",
+      "outdated": false,
+      "status": "source_supported"
     },
     {
       "term_id": "skill-ice",
@@ -1929,7 +2333,10 @@
         "sklice",
         "冰冻"
       ],
-      "checked_at": "2026-11-16"
+      "checked_at": "2026-11-16",
+      "detailed_description": "官方技能页（official-skill）记载冰冻术为攻击技能、魔法属性，伤害 70%，效果为「命中后冰冻对手半回合」。冰冻使目标损失部分行动机会，官方未给出半回合在调度上的精确含义（如按行动点扣除还是按回合跳过），待核实。\n语言包（official-language-zh）对局文本：sklIce「[0]使用[冰冻术]」、sklIceHit「[1]被[冰冻]了」、sklIceEnd「[1]从[冰冻]中解除」，冰冻是可见的异常状态名。语言包还有 sklAokijiDefend「[0][吸收]所有冰冻伤害」等 Boss 专属文本，说明存在能吸收冰冻伤害的特殊角色，但这属于 Boss 专属机制，不在官方普通技能表内。\ntswn 实现（tswn-core 提交 d12b462）中冰冻术是普通技能 ID 1，导出 key 为 sklice，Openbox 短名「冰冻」；冰冻以状态载荷（StatePayload）保存步数等参数，且冰冻会影响行动点（行动条）的积累，这是 tswn 语境的实现细节。",
+      "outdated": false,
+      "status": "source_supported"
     },
     {
       "term_id": "skill-thunder",
@@ -1944,7 +2351,10 @@
         "sklthunder",
         "雷击"
       ],
-      "checked_at": "2026-11-16"
+      "checked_at": "2026-11-16",
+      "detailed_description": "官方技能页（official-skill）记载雷击术为攻击技能、魔法属性，伤害 35% × (3~6)，对单一目标多次伤害。段数 3~6 为随机区间，抽取分布官方未公布。单段倍率低、段数多，总期望区间为 105%~210%，与地裂、连击同属多段输出，但目标固定为单一目标。\n语言包（official-language-zh）对局文本：sklThunder「[0]使用[雷击术]」、sklThunderEnd「[0][回避]了攻击」，后者显示雷击的攻击存在被目标回避的情况。\ntswn 实现（tswn-core 提交 d12b462）中雷击术是普通技能 ID 2，导出 key 为 sklthunder，Openbox 短名「雷击」。倍率与段数以官方表格为准，tswn 侧未公开额外数值。",
+      "outdated": false,
+      "status": "source_supported"
     },
     {
       "term_id": "skill-quake",
@@ -1959,7 +2369,10 @@
         "sklquake",
         "地裂"
       ],
-      "checked_at": "2026-11-16"
+      "checked_at": "2026-11-16",
+      "detailed_description": "官方技能页（official-skill）记载地裂术为攻击技能、魔法属性，伤害 140% ~ 200%，效果为「将伤害平分给 1~5 个目标，人数越多则单体伤害越小，但总伤害越大」。即它是对群体的魔法攻击：命中目标越多，总伤害越高、单目标分到的越少。1~5 人的选取方式与总伤害随人数增长的具体公式官方未给出，待核实。\n语言包（official-language-zh）对局文本为 sklQuake「[0]使用[地裂术]」。\ntswn 实现（tswn-core 提交 d12b462）中地裂术是普通技能 ID 3，导出 key 为 sklquake，Openbox 短名「地裂」。倍率区间以官方表格为准。",
+      "outdated": false,
+      "status": "source_supported"
     },
     {
       "term_id": "skill-absorb",
@@ -1974,7 +2387,10 @@
         "sklabsorb",
         "吸血"
       ],
-      "checked_at": "2026-11-16"
+      "checked_at": "2026-11-16",
+      "detailed_description": "官方技能页（official-skill）记载吸血攻击为攻击技能、魔法属性，伤害 115%，效果为「命中后吸收一半体力」。官方文字未明确「吸收一半」的基准是所造成伤害的一半还是目标已损体力的一半，回复量计算方式待核实。\n语言包（official-language-zh）对局文本为 sklAbsorb「[0]发起[吸血攻击]」，无单独的命中后回复文案。\ntswn 实现（tswn-core 提交 d12b462）中吸血攻击是普通技能 ID 4，导出 key 为 sklabsorb，Openbox 短名「吸血」。倍率 115% 以官方表格为准。",
+      "outdated": false,
+      "status": "source_supported"
     },
     {
       "term_id": "skill-poison",
@@ -1989,7 +2405,10 @@
         "sklpoison",
         "投毒"
       ],
-      "checked_at": "2026-11-16"
+      "checked_at": "2026-11-16",
+      "detailed_description": "官方技能页（official-skill）记载投毒为攻击技能、魔法属性，伤害 90%，效果为「命中后施加中毒状态，每回合损失体力」。中毒是持续性伤害状态，每回合的具体损失量官方未给出数值，待核实。\n语言包（official-language-zh）对局文本：sklPoison「[0][投毒]」、sklPoisonHit「[1][中毒]」、sklPoisonDamage「[1][毒性发作]」、sklPoisonEnd「[1]从[中毒]中解除」，中毒与毒性发作是可见状态文案。\ntswn 实现（tswn-core 提交 d12b462）中投毒是普通技能 ID 5，导出 key 为 sklpoison，Openbox 短名「投毒」；tswn 的状态载荷（StatePayload）保存中毒的来源和次数等参数，这些载荷细节不体现在人类可读的状态标签里。",
+      "outdated": false,
+      "status": "source_supported"
     },
     {
       "term_id": "skill-combo",
@@ -2004,7 +2423,10 @@
         "sklrapid",
         "连击"
       ],
-      "checked_at": "2026-11-16"
+      "checked_at": "2026-11-16",
+      "detailed_description": "官方技能页（official-skill，2026-11-16 检索）将连击列为攻击技能、物理属性，伤害 75% × (2~3)：连续多次攻击，若击中同一目标，后续伤害下降 15%。攻击段数 2~3 按官方表格记为随机区间，具体抽取分布官方未公布，待核实。官方同页说明每个名字有其对应的技能和技能熟练度，熟练度高低影响技能发动概率，这一规则适用于连击。\n语言包（official-language-zh）对局文本为 SklRapid「[0]发起攻击」与 SklRapidNext「[0][连击]」，即第一段以普通攻击文案显示、后续段才标为连击；连击不附带异常状态。\ntswn 实现（tswn-core 提交 d12b462；core 0.7.0、Openbox 0.5.2、WASM wrapper 0.5.12；静态阅读非实测）中连击是普通技能 ID 6，导出 key 为 sklrapid，Openbox 短名「连击」。技能数据存放在固定槽位，主动技能的尝试顺序 active_order 与槽位编号是两套概念，重排技能不等于改变固定编号。",
+      "outdated": false,
+      "status": "source_supported"
     },
     {
       "term_id": "skill-critical",
@@ -2019,7 +2441,10 @@
         "sklcritical",
         "会心"
       ],
-      "checked_at": "2026-11-16"
+      "checked_at": "2026-11-16",
+      "detailed_description": "官方技能页（official-skill）记载会心一击为攻击技能、物理属性，伤害 145%，效果为「稳定输出伤害，随机性低」。与连击、雷击这类带段数区间的技能相比，它只给出单一倍率、不附加状态，定位是输出方差小的物理攻击。官方页面没有记载与暴击率、会心触发概率相关的额外机制，若在其他资料见到此类说法需先核对出处。\n语言包（official-language-zh）对局文本为 sklCritical「[0]发动[会心一击]」。\ntswn 实现（tswn-core 提交 d12b462）中它是普通技能 ID 7，导出 key 为 sklcritical，Openbox 短名「会心」。熟练度影响发动概率的官方规则同样适用；tswn 侧未公开额外数值，145% 以官方表格为准。",
+      "outdated": false,
+      "status": "source_supported"
     },
     {
       "term_id": "skill-plague",
@@ -2034,7 +2459,10 @@
         "sklhalf",
         "瘟疫"
       ],
-      "checked_at": "2026-11-16"
+      "checked_at": "2026-11-16",
+      "detailed_description": "官方技能页（official-skill）记载瘟疫为攻击技能、魔法属性，伤害栏为「-」（无固定倍率），效果为「目标按比例损失体力 50% ~ 99%」。它不按攻击力结算，而是直接按目标当前（或最大，官方未指明）体力的百分比扣血，比例在 50%~99% 间抽取，抽取分布官方未公布。\n语言包（official-language-zh）对局文本：sklHalf「[0]使用[瘟疫]」、sklHalfDamage「[1]体力减少[2]%」，确认结算显示为百分比扣血。tswn 导出 key 为 sklhalf，语源与「减半」相关，仅作命名由来参考（整理者推断）。\ntswn 实现（tswn-core 提交 d12b462）中瘟疫是普通技能 ID 8，Openbox 短名「瘟疫」。百分比基于当前体力还是最大体力，官方与 tswn 资料均未指明，待核实。",
+      "outdated": false,
+      "status": "source_supported"
     },
     {
       "term_id": "skill-berserk",
@@ -2049,7 +2477,10 @@
         "sklberserk",
         "狂暴"
       ],
-      "checked_at": "2026-11-16"
+      "checked_at": "2026-11-16",
+      "detailed_description": "官方技能页（official-skill）记载狂暴术为攻击技能、魔法属性，伤害 80%，效果为「命中后施加狂暴状态，下回合只能进行敌我不分的狂暴攻击」。即被命中的目标下回合失去目标选择，攻击可能落在包括队友在内的任意实体上。\n语言包（official-language-zh）对局文本：sklBerserk「[0]使用[狂暴术]」、sklBerserkHit「[1]进入[狂暴]状态」、sklBerserkAttack「[0]发起[狂暴攻击]」、sklBerserkEnd「[1]从[狂暴]中解除」，狂暴是可见状态名。\ntswn 实现（tswn-core 提交 d12b462）中狂暴术是普通技能 ID 10，导出 key 为 sklberserk，Openbox 短名「狂暴」。注意区分两个给目标加狂暴的来源：幻影默认的附体技能（tswn-possess）经免疫、回避判断后给目标增加狂暴状态步数，而狂暴术是独立的攻击技能；tswn 的状态载荷保存狂暴步数等参数。狂暴攻击的伤害倍率官方未给出，待核实。",
+      "outdated": false,
+      "status": "source_supported"
     },
     {
       "term_id": "skill-charm",
@@ -2064,7 +2495,10 @@
         "sklcharm",
         "魅惑"
       ],
-      "checked_at": "2026-11-16"
+      "checked_at": "2026-11-16",
+      "detailed_description": "官方技能页（official-skill）将魅惑列为辅助技能，效果为「命中后 目标下回合行动会将施法者视作队友」。即被魅惑的目标在下回合的敌我判断中把施法者当成自己人，从而不会攻击施法者、甚至可能攻击其原本的队友。\n语言包（official-language-zh）对局文本：sklCharm「[0]使用[魅惑]」、sklCharmHit「[1]被[魅惑]了」、sklCharmEnd「[1]从[魅惑]中解除」，魅惑是可见状态名，且文案显示其为有时限的状态。\ntswn 实现（tswn-core 提交 d12b462）中魅惑是普通技能 ID 11，导出 key 为 sklcharm，Openbox 短名「魅惑」。tswn 文档特别强调它与幻影默认的附体技能不同：附体是经免疫、回避判断后给目标增加狂暴状态步数并使施法实体进入死亡链（tswn-possess），而魅惑改变的是友敌关系判断；tswn 的状态载荷保存魅惑的有效队伍等参数（tswn-states）。",
+      "outdated": false,
+      "status": "source_supported"
     },
     {
       "term_id": "skill-haste",
@@ -2079,7 +2513,10 @@
         "sklhaste",
         "加速"
       ],
-      "checked_at": "2026-11-16"
+      "checked_at": "2026-11-16",
+      "detailed_description": "官方技能页（official-skill）将加速术列为辅助技能，效果为「自己或队友速度加倍，持续 3 回合」。它是少数官方明确写明目标可选（自己或队友）与持续回合数（3 回合）的辅助技能。\n语言包（official-language-zh）对局文本：sklHaste「[0]使用[加速术]」、sklHasteHit「[1]进入[疾走]状态」、sklHasteEnd「[1]从[疾走]中解除」，加速产生的状态名是「疾走」。\ntswn 实现（tswn-core 提交 d12b462）中加速术是普通技能 ID 12，导出 key 为 sklhaste，Openbox 短名「加速」。tswn 的调度以行动点为基础：实体行动点严格大于 2048 时扣除 2048 并获得行动机会，有效速度、随机步长和冰冻都会影响积累（tswn 行动点机制），速度加倍因此直接提高行动频率；tswn 的状态标签投影中也可见「疾走」。",
+      "outdated": false,
+      "status": "source_supported"
     },
     {
       "term_id": "skill-slow",
@@ -2094,7 +2531,10 @@
         "sklslow",
         "减速"
       ],
-      "checked_at": "2026-11-16"
+      "checked_at": "2026-11-16",
+      "detailed_description": "官方技能页（official-skill）将减速术列为辅助技能，效果为「目标速度减半，持续 2 回合」。与加速术（速度加倍、3 回合）相对，减速的减益幅度与持续时间都略弱，官方同样明确写出了数值与回合数。\n语言包（official-language-zh）对局文本：sklSlow「[0]使用[减速术]」、sklSlowHit「[1]进入[迟缓]状态」、sklSlowEnd「[1]从[迟缓]中解除」，减速产生的状态名是「迟缓」。\ntswn 实现（tswn-core 提交 d12b462）中减速术是普通技能 ID 13，导出 key 为 sklslow，Openbox 短名「减速」。在 tswn 的行动点调度下，有效速度下降会减缓行动点积累从而降低行动频率；「迟缓」同样出现在 tswn 的状态标签投影中。",
+      "outdated": false,
+      "status": "source_supported"
     },
     {
       "term_id": "skill-curse",
@@ -2109,7 +2549,10 @@
         "sklcurse",
         "诅咒"
       ],
-      "checked_at": "2026-11-16"
+      "checked_at": "2026-11-16",
+      "detailed_description": "官方技能页（official-skill）记载诅咒为攻击技能、魔法属性，伤害 100%，效果为「命中后施加诅咒状态，之后受到其他攻击随机出现伤害加倍效果」。诅咒本身只造成基础伤害，价值在于后续的随机加倍窗口。\n语言包（official-language-zh）对局文本：sklCurse「[0]使用[诅咒]」、sklCurseHit「[1]被[诅咒]了」、sklCurseDamage「[诅咒]使伤害加倍」、sklCurseEnd「[1]从[诅咒]中解除」，诅咒是可见状态名。\ntswn 实现（tswn-core 提交 d12b462）中诅咒是普通技能 ID 14，导出 key 为 sklcurse，Openbox 短名「诅咒」。「随机出现」的具体概率、诅咒持续几个回合，官方与 tswn 资料均未给出数值，待核实。",
+      "outdated": false,
+      "status": "source_supported"
     },
     {
       "term_id": "skill-purify",
@@ -2124,7 +2567,10 @@
         "skldisperse",
         "净化"
       ],
-      "checked_at": "2026-11-16"
+      "checked_at": "2026-11-16",
+      "detailed_description": "官方技能页（official-skill）记载净化为攻击技能、魔法属性，伤害 100%，效果为「命中后去除目标身上所有有益效果，对召唤兽伤害加倍」。它是兼具驱散与输出双重功能的魔法攻击：命中玩家时清除其增益，命中召唤物时伤害翻倍。\n语言包（official-language-zh）对局文本为 sklDisperse「[0]使用[净化]」（导出 key skldisperse 即 disperse「驱散」的语源）。语言包中另有 sklAccumulateCancel「[1]的[聚气]被打消了」、sklIronCancel「[1]的[铁壁]被打消了」、sklChargeCancel「[1]的[蓄力]被中止了」等增益被消除的文案；这些增益可被打消与净化的驱散定位吻合，但语言包未注明由哪个技能触发，属于整理者推断。\ntswn 实现（tswn-core 提交 d12b462）中净化是普通技能 ID 17，导出 key 为 skldisperse，Openbox 短名「净化」。「所有有益效果」的完整清单官方未列出，待核实。",
+      "outdated": false,
+      "status": "source_supported"
     },
     {
       "term_id": "skill-iron",
@@ -2139,7 +2585,10 @@
         "skliron",
         "铁壁"
       ],
-      "checked_at": "2026-11-16"
+      "checked_at": "2026-11-16",
+      "detailed_description": "官方技能页（official-skill）将铁壁列为辅助技能，效果为「两回合内防御大幅上升」。官方只给出持续回合（2 回合）与定性描述「大幅上升」，未给出具体防御倍率，待核实。\n语言包（official-language-zh）对局文本：sklIron「[0]发动[铁壁]」、sklIrond「[0]防御力大幅上升」、sklIronCancel「[1]的[铁壁]被打消了」、sklIronEnd「[0]从[铁壁]中解除」，可见铁壁是可被“打消”的限时增益。\ntswn 实现（tswn-core 提交 d12b462）中铁壁是普通技能 ID 18，导出 key 为 skliron，Openbox 短名「铁壁」。tswn 的机制文档（mechanics.md）在护盾语境提到「铁壁的减伤资料另算」，即 tswn 侧对铁壁减伤有单独的资料记录，本知识库当前未收录其具体数值，引用时不要把铁壁的减伤与护盾吸收混同。",
+      "outdated": false,
+      "status": "source_supported"
     },
     {
       "term_id": "skill-charge",
@@ -2154,7 +2603,10 @@
         "sklcharge",
         "蓄力"
       ],
-      "checked_at": "2026-11-16"
+      "checked_at": "2026-11-16",
+      "detailed_description": "官方技能页（official-skill）将蓄力列为辅助技能，效果为「下回合结束前伤害提升到 300%，各种主动技能的特殊效果都有加成」。与聚气只提升攻击力不同，蓄力把下回合的伤害倍率提到 300%，并且让主动技能的附带效果（如冰冻、中毒、吸血等）也获得加成，是官方文字中唯一明确“加成技能特殊效果”的增益。窗口为「下回合结束前」，即蓄力后的一次行动。\n语言包（official-language-zh）对局文本：sklCharge「[0]开始[蓄力]」、sklChargeCancel「[1]的[蓄力]被中止了」，可见蓄力可被中止。\ntswn 实现（tswn-core 提交 d12b462）中蓄力是普通技能 ID 19，导出 key 为 sklcharge，Openbox 短名「蓄力」。蓄力状态还参与 tswn 的分身重建分支（tswn-clone）：非蓄力本体才执行相应的 HP/原始属性衰减，说明蓄力本体分身时的衰减处理不同，细节见分身词条。",
+      "outdated": false,
+      "status": "source_supported"
     },
     {
       "term_id": "skill-accumulate",
@@ -2169,7 +2621,10 @@
         "sklaccumulate",
         "聚气"
       ],
-      "checked_at": "2026-11-16"
+      "checked_at": "2026-11-16",
+      "detailed_description": "官方技能页（official-skill）将聚气列为辅助技能（不造成伤害），效果为「攻击力提高 60%」。提高的持续时间官方未写明，待核实。\n语言包（official-language-zh）对局文本：sklAccumulate「[0]开始[聚气]」、sklAccumulated「[1]攻击力上升」、sklAccumulateCancel「[1]的[聚气]被打消了」，可见聚气是可被“打消”的增益状态，即存在驱散/打断路径；语言包未注明由哪个技能打消。\ntswn 实现（tswn-core 提交 d12b462）中聚气是普通技能 ID 20，导出 key 为 sklaccumulate，Openbox 短名「聚气」。60% 的增益对象是攻击力（攻属性相关结算），与蓄力的伤害全面提升不同：聚气不加成技能特殊效果。",
+      "outdated": false,
+      "status": "source_supported"
     },
     {
       "term_id": "skill-stealth",
@@ -2184,7 +2639,10 @@
         "sklassassinate",
         "潜行"
       ],
-      "checked_at": "2026-11-16"
+      "checked_at": "2026-11-16",
+      "detailed_description": "官方技能页（official-skill）记载潜行为攻击技能、魔法属性，伤害 500%，效果为「耗费两回合，第一回合潜行，第二回合背刺，中途受到伤害则潜行被打断」。它是全表倍率最高的攻击技能，代价是两回合的发动时间与被打断风险；背刺倍率即这 500%，还是另有加成，官方未细分，待核实。\n语言包（official-language-zh）对局文本：sklAssassinate1「[0][潜行]到[1]身后」、sklAssassinate2「[0]发动[背刺]」、sklAssassinateFailed「[0]的[潜行]被识破」，可见「潜行—背刺」两段流程与被识破的失败分支。\ntswn 实现（tswn-core 提交 d12b462）中潜行是普通技能 ID 21，导出 key 为 sklassassinate（assassinate「刺杀」语源），Openbox 短名「潜行」。必须与被动技能「隐匿」（tswn 普通技能 ID 34，sklhide）区分：隐匿是受伤后有条件触发的被动，会降低 attract 并在等级高于 63 时另增敏、防、抗，与主动潜行/背刺是两个不同技能。",
+      "outdated": false,
+      "status": "source_supported"
     },
     {
       "term_id": "skill-summon",
@@ -2199,7 +2657,10 @@
         "sklsummon",
         "血祭"
       ],
-      "checked_at": "2026-11-16"
+      "checked_at": "2026-11-16",
+      "detailed_description": "官方技能页（official-skill）将血祭列为辅助技能，效果为「召唤使魔，使魔受到伤害时施法者连带受到 50% 伤害」。即血祭的代价机制：召唤物承伤的一半传导回施法者本人，使魔越硬代价越低，被集火则主人掉血很快。\n语言包（official-language-zh）对局文本：sklSummon「[0]使用[血祭]」、sklSummonName「使魔」、sklSummoned「召唤出[1]」，使魔是召唤实体的类别名。\ntswn 实现（tswn-core 提交 d12b462）中血祭是普通技能 ID 22，导出 key 为 sklsummon，Openbox 短名「血祭」；生成的使魔（SummonMinion）有独立蓝图、实例与 owner（tswn-overlay）：普通模板具有两个独立火球槽和自爆槽（自爆走火系魔法伤害分支并结算施法者死亡，槽位独立）。伤害传导细节：整数伤害的一半传给直接 owner，嵌套链继续传导，但使魔克隆的分摊直接到根主角色、不按父使魔再折半。再次施放时的重施选项 reuse_skills_on_recast 决定是否复用已死亡实例的技能，手写模板默认 false，minions 导出为兼容写 true。官方技能名「血祭」与召唤物「使魔」是两个概念，与 tswn 词条分类一致。",
+      "outdated": false,
+      "status": "source_supported"
     },
     {
       "term_id": "skill-defend",
@@ -2214,7 +2675,10 @@
         "skldefend",
         "防御"
       ],
-      "checked_at": "2026-11-16"
+      "checked_at": "2026-11-16",
+      "detailed_description": "官方技能页（official-skill）将防御列为被动技能，发动条件为「受到伤害」，效果为「进行防御，伤害减半」。即受到伤害时以减半伤害作为响应，不占用自己的回合。它与守护的区别：防御作用于自己受击，守护作用于队友受击。\n语言包（official-language-zh）中未见单独的 sklDefend 动作文案，防御的发动可能通过通用受击文案体现（整理者推断，待核实）。\ntswn 实现（tswn-core 提交 d12b462）中防御是普通技能 ID 25，导出 key 为 skldefend，Openbox 短名「防御」。减半发生在攻击威力（Atp）经命中、防御或抗性换算为整数伤害的流程中（tswn 的 PRE_DEFEND/POST_DEFEND 分阶段机制），具体挂钩位置资料未展开，待核实。",
+      "outdated": false,
+      "status": "source_supported"
     },
     {
       "term_id": "skill-protect",
@@ -2229,7 +2693,10 @@
         "sklprotect",
         "守护"
       ],
-      "checked_at": "2026-11-16"
+      "checked_at": "2026-11-16",
+      "detailed_description": "官方技能页（official-skill）将守护列为被动技能，发动条件为「队友受到攻击」，效果为「进行守护代替伤害，伤害减半」。即当队友成为攻击目标时，守护者代为承受并把伤害减半，是保护型被动技能；与防御（自己受击减半）相区分。\n语言包（official-language-zh）对局文本为 sklProtect「[0][守护][1]」，可见守护者与被保护者两个实体出现在同一条文案中。\ntswn 实现（tswn-core 提交 d12b462）中守护是普通技能 ID 26，导出 key 为 sklprotect，Openbox 短名「守护」。多人同时具备守护时的优先级、守护是否消耗行动机会等细节资料未记载，待核实。",
+      "outdated": false,
+      "status": "source_supported"
     },
     {
       "term_id": "skill-reflect",
@@ -2244,7 +2711,10 @@
         "sklreflect",
         "反弹"
       ],
-      "checked_at": "2026-11-16"
+      "checked_at": "2026-11-16",
+      "detailed_description": "官方技能页（official-skill）将伤害反弹列为被动技能，发动条件为「受到攻击」，效果为「将伤害反弹到施法者」。注意触发措辞是“受到攻击”而非“受到伤害”，与防御、反击（受伤触发）的措辞不同，是否意味着被完全格挡时也能反弹，官方未说明，待核实。反弹的比例（全部还是部分）官方也未给出。\n语言包（official-language-zh）对局文本为 sklReflect「[0]使用[伤害反弹]」，tswn/Openbox 短名为「反弹」。\ntswn 实现（tswn-core 提交 d12b462）中伤害反弹是普通技能 ID 27，导出 key 为 sklreflect。",
+      "outdated": false,
+      "status": "source_supported"
     },
     {
       "term_id": "skill-reraise",
@@ -2259,7 +2729,10 @@
         "sklreraise",
         "护符"
       ],
-      "checked_at": "2026-11-16"
+      "checked_at": "2026-11-16",
+      "detailed_description": "官方技能页（official-skill）将护身符列为被动技能，发动条件为「被击倒」，效果为「复活自己并恢复少量体力」。即在致命一击后自动原地复活一次。「少量体力」的具体数值官方未给出；护身符是一次性消耗还是可反复触发，官方未说明，均待核实。\n语言包（official-language-zh）对局文本为 sklReraise「[0]使用[护身符]抵挡了一次死亡」，“抵挡了一次死亡”的措辞暗示一次性触发的语感（整理者推断）。\ntswn 实现（tswn-core 提交 d12b462）中护身符是普通技能 ID 28，导出 key 为 sklreraise，Openbox 短名「护符」。它与苏生术（主动复活队友）、召唤亡灵（把对手尸体变成丧尸）共同构成围绕“死亡/复活”的技能组；tswn 的死亡角色保留尸体、判胜按当前存活实体评估（tswn-winner），护身符触发会把本体重新计入存活。",
+      "outdated": false,
+      "status": "source_supported"
     },
     {
       "term_id": "skill-counter",
@@ -2274,7 +2747,10 @@
         "sklcounter",
         "反击"
       ],
-      "checked_at": "2026-11-16"
+      "checked_at": "2026-11-16",
+      "detailed_description": "官方技能页（official-skill）将反击列为被动技能，发动条件为「受到伤害」，效果为「回合结束后向对手进行物理攻击」。被动技能满足特定条件时发动、不占用自己的回合；反击在受击后的回合结算点追加一次物理攻击。\n语言包（official-language-zh）对局文本为 sklCounter「[0]发起[反击]」。\ntswn 实现（tswn-core 提交 d12b462）中反击是普通技能 ID 30，导出 key 为 sklcounter，Openbox 短名「反击」。tswn 的机制按阶段钩子组织（行动前后、攻击前后、受击前后、死亡和击杀等八类，tswn-hooks），被动技能经由钩子参与结算，但具体到反击挂在哪个钩子、追加攻击的伤害倍率，本库资料未记载，待核实。",
+      "outdated": false,
+      "status": "source_supported"
     },
     {
       "term_id": "skill-merge",
@@ -2289,7 +2765,10 @@
         "sklmerge",
         "吞噬"
       ],
-      "checked_at": "2026-11-16"
+      "checked_at": "2026-11-16",
+      "detailed_description": "官方技能页（official-skill）将吞噬列为被动技能，发动条件为「击倒对手」，效果为「吞噬对手提高自己的属性，并获得对手的技能」。与召唤亡灵同样以击杀为触发，但收益是强化自身而非生成单位：属性成长加技能吸收双重滚雪球。属性提升幅度官方未给出数值，待核实。\n语言包（official-language-zh）对局文本：sklMerge「[0][吞噬]了[1]」、sklMerged「[0]属性上升」。\ntswn 实现（tswn-core 提交 d12b462）中吞噬是普通技能 ID 31，导出 key 为 sklmerge，Openbox 短名「吞噬」。两个 tswn 语境细节：其一，tswn 的分类技能通道（normal:、summon:、phantom: 前缀，tswn-overlay）专门用于避免吞噬或覆盖时技能串槽，吞噬获得的技能按通道归位；其二，吞噬改变技能后，护盾的 max_shield 展示尺度会随之更新（tswn-core mechanics.md）。",
+      "outdated": false,
+      "status": "source_supported"
     },
     {
       "term_id": "skill-zombie",
@@ -2304,7 +2783,10 @@
         "sklzombie",
         "亡灵"
       ],
-      "checked_at": "2026-11-16"
+      "checked_at": "2026-11-16",
+      "detailed_description": "官方技能页（official-skill）将召唤亡灵列为被动技能，发动条件为「击倒对手」，效果为「将对手的尸体变成丧尸为自己战斗」。即击杀后把敌方尸体转化为己方战斗力，滚雪球型被动。\n语言包（official-language-zh）对局文本：sklZombie「[0][召唤亡灵]」、sklZombied「[2]变成了[1]」、sklZombieName「丧尸」，丧尸是生成实体的类别名。\ntswn 实现（tswn-core 提交 d12b462）中召唤亡灵是普通技能 ID 32，导出 key 为 sklzombie，Openbox 短名「亡灵」；生成的丧尸（ZombieMinion）有独立的 zombie 蓝图与归属（tswn-states、tswn-overlay），不是简单把尸体状态改名，DIY/OL 可配置丧尸的属性与技能。丧尸的基础属性数值官方与 tswn 资料均未给出，待核实。",
+      "outdated": false,
+      "status": "source_supported"
     },
     {
       "term_id": "skill-upgrade",
@@ -2319,7 +2801,329 @@
         "sklupgrade",
         "垂死"
       ],
-      "checked_at": "2026-11-16"
+      "checked_at": "2026-11-16",
+      "detailed_description": "官方技能页（official-skill）将垂死抗争列为被动技能，发动条件为「受到伤害」，效果为「当所剩体力极少，所有属性上升」。即体力降到某个阈值以下时全属性获得提升，是低血量翻盘型被动。「极少」的阈值与上升幅度官方均未给出数值，待核实。\n语言包（official-language-zh）对局文本：sklUpgrade「[0]做出[垂死]抗争」、sklUpgraded「[0]所有属性上升」、sklUpgradeCancel「[1]的[垂死]属性被打消」，可见垂死加成是可被“打消”的属性增益。\ntswn 实现（tswn-core 提交 d12b462）中垂死抗争是普通技能 ID 33，导出 key 为 sklupgrade，Openbox 短名「垂死」。",
+      "outdated": false,
+      "status": "source_supported"
+    },
+    {
+      "context_id": "tswn-reviewed-boss-mario",
+      "term_id": "boss-mario",
+      "aliases_add": [],
+      "source_ids": [
+        "tswn-review-boss-rules",
+        "tswn-review-boss-build",
+        "tswn-review-name-base",
+        "tswn-review-rc4",
+        "tswn-review-name-factor",
+        "tswn-review-boss-actions",
+        "tswn-review-boss-defense",
+        "tswn-review-boss-initial",
+        "tswn-review-mario-boost",
+        "tswn-review-slime",
+        "tswn-review-saitama",
+        "tswn-review-boss-states",
+        "tswn-review-infection",
+        "tswn-review-initial-states",
+        "tswn-boss-source-calculation",
+        "tswn-review-status-immunity"
+      ],
+      "scope": "tswn 固定提交的实现与源码推导，不代表官方或部署实测。",
+      "explanation": "采菇在成长不足 2 阶时使用 c50；已成长且命数至少 2 时不采菇，少于 2 时判定 next_u8()<7。第 1 次成长使攻击倍率 ×1.5，第 2 次学得火球术 120，之后增加 1 条命。每次成长行动点 +2000。初始 3 条命；死亡先减 1，剩余大于 0 时清除负状态、满血复活并重置成长及火球等级，否则进入普通死亡链。普通火球初始等级为 0。",
+      "detailed_description": "马里奥的完整输入为 mario@!。以下数值限定 tswn-core 提交 d12b462aa532f95be793c00dfed37b8fea0672bb，单独构建该角色、无装备/OL 覆盖、无同组同阵营加成、普通构建 rq=4；seed 只影响后续对战过程。\n\n官方《特殊名字》页的定性特点：吃了蘑菇会变厉害。官方页未给出完整属性；下面明确区分实现中的构造属性与初始 PlayerStats，不视作官方原站数值或任意部署的实测。\n\ntswn 构造七围（攻、防、速、敏、魔、抗、智）为 52、57、41、54、58、56、43，最大 HP=386。按名字系数和初始化公式得到的 PlayerStats 同序为 55、60、203、57、61、59、47，初始 MP=23；此处 speed 字段含调度基准 +160。不能把 boss_append_attr 的追加量、DIY 前七项 +36 编码或网页显示格式直接当作这些字段。\n\n属性推导：以带前导零字节的阵营 ! 做 1 轮 RC4 KSA，再以带前导零的名字做 2 轮；映射到 128 项 name_base。每组 3 项取中位数形成七围，排序后头部第 4–7 项之和加 154 得 HP，再加 Boss 追加量并下限置 0。PlayerStats 前六项按 round(attr×(1−name_factor/128))，智按分母 80；speed 再加 160，MP 为智字段右移 1。实验体有末尾固定覆盖。具体结果与来源见 boss-build-observations.json，属于按源码计算，未运行完整引擎或对战。\n\n技能与特殊机制：采菇在成长不足 2 阶时使用 c50；已成长且命数至少 2 时不采菇，少于 2 时判定 next_u8()<7。第 1 次成长使攻击倍率 ×1.5，第 2 次学得火球术 120，之后增加 1 条命。每次成长行动点 +2000。初始 3 条命；死亡先减 1，剩余大于 0 时清除负状态、满血复活并重置成长及火球等级，否则进入普通死亡链。普通火球初始等级为 0。\n\n状态免疫阈值（该提交）：192：潜行（assassinate）；其余 84。 status_immune 以 next_u8()<阈值判定；在等概率字节模型下 84/192/240/256 分别对应 32.8125%/75%/93.75%/100%。它只作用于实际调用这个函数的状态路径，不能推广到直接改血、专属控制等绕过该判定的机制。\n\n通用边界：Boss 不走普通名字的随机技能生成、末位翻倍和技能槽强化；专属动作/状态可能不以普通技能等级表示。状态免疫还需查 boss_immune_threshold 与具体结算分支，不能把阈值当百分数或绝对免疫。判胜仍按存活实体所属队伍计算，恰好一队存活才产生赢家，全部阵亡无胜者；截断和运行失败另行处理。官方未公开且本次未复核的交互保留未知。",
+      "outdated": false,
+      "status": "source_supported",
+      "checked_at": "2026-11-17"
+    },
+    {
+      "context_id": "tswn-reviewed-boss-sonic",
+      "term_id": "boss-sonic",
+      "aliases_add": [],
+      "source_ids": [
+        "tswn-review-boss-rules",
+        "tswn-review-boss-build",
+        "tswn-review-name-base",
+        "tswn-review-rc4",
+        "tswn-review-name-factor",
+        "tswn-review-boss-actions",
+        "tswn-review-boss-defense",
+        "tswn-review-boss-initial",
+        "tswn-review-mario-boost",
+        "tswn-review-slime",
+        "tswn-review-saitama",
+        "tswn-review-boss-states",
+        "tswn-review-infection",
+        "tswn-review-initial-states",
+        "tswn-boss-source-calculation",
+        "tswn-review-status-immunity"
+      ],
+      "scope": "tswn 固定提交的实现与源码推导，不代表官方或部署实测。",
+      "explanation": "默认普通技能为连击 48、会心一击 48、反击 48，主动按连击、会心顺序尝试；速度追加 1000 已计入构造属性，不把追加量当最终速度。反击属于受击后的被动路径，不计作第三个主动技能。",
+      "detailed_description": "索尼克的完整输入为 sonic@!。以下数值限定 tswn-core 提交 d12b462aa532f95be793c00dfed37b8fea0672bb，单独构建该角色、无装备/OL 覆盖、无同组同阵营加成、普通构建 rq=4；seed 只影响后续对战过程。\n\n官方《特殊名字》页的定性特点：超高速度。官方页未给出完整属性；下面明确区分实现中的构造属性与初始 PlayerStats，不视作官方原站数值或任意部署的实测。\n\ntswn 构造七围（攻、防、速、敏、魔、抗、智）为 43、47、1028、43、44、35、48，最大 HP=299。按名字系数和初始化公式得到的 PlayerStats 同序为 45、50、1247、45、47、37、52，初始 MP=26；此处 speed 字段含调度基准 +160。不能把 boss_append_attr 的追加量、DIY 前七项 +36 编码或网页显示格式直接当作这些字段。\n\n属性推导：以带前导零字节的阵营 ! 做 1 轮 RC4 KSA，再以带前导零的名字做 2 轮；映射到 128 项 name_base。每组 3 项取中位数形成七围，排序后头部第 4–7 项之和加 154 得 HP，再加 Boss 追加量并下限置 0。PlayerStats 前六项按 round(attr×(1−name_factor/128))，智按分母 80；speed 再加 160，MP 为智字段右移 1。实验体有末尾固定覆盖。具体结果与来源见 boss-build-observations.json，属于按源码计算，未运行完整引擎或对战。\n\n技能与特殊机制：默认普通技能为连击 48、会心一击 48、反击 48，主动按连击、会心顺序尝试；速度追加 1000 已计入构造属性，不把追加量当最终速度。反击属于受击后的被动路径，不计作第三个主动技能。\n\n状态免疫阈值（该提交）：192：投毒；其余 84。 status_immune 以 next_u8()<阈值判定；在等概率字节模型下 84/192/240/256 分别对应 32.8125%/75%/93.75%/100%。它只作用于实际调用这个函数的状态路径，不能推广到直接改血、专属控制等绕过该判定的机制。\n\n通用边界：Boss 不走普通名字的随机技能生成、末位翻倍和技能槽强化；专属动作/状态可能不以普通技能等级表示。状态免疫还需查 boss_immune_threshold 与具体结算分支，不能把阈值当百分数或绝对免疫。判胜仍按存活实体所属队伍计算，恰好一队存活才产生赢家，全部阵亡无胜者；截断和运行失败另行处理。官方未公开且本次未复核的交互保留未知。",
+      "outdated": false,
+      "status": "source_supported",
+      "checked_at": "2026-11-17"
+    },
+    {
+      "context_id": "tswn-reviewed-boss-mosquito",
+      "term_id": "boss-mosquito",
+      "aliases_add": [],
+      "source_ids": [
+        "tswn-review-boss-rules",
+        "tswn-review-boss-build",
+        "tswn-review-name-base",
+        "tswn-review-rc4",
+        "tswn-review-name-factor",
+        "tswn-review-boss-actions",
+        "tswn-review-boss-defense",
+        "tswn-review-boss-initial",
+        "tswn-review-mario-boost",
+        "tswn-review-slime",
+        "tswn-review-saitama",
+        "tswn-review-boss-states",
+        "tswn-review-infection",
+        "tswn-review-initial-states",
+        "tswn-boss-source-calculation",
+        "tswn-review-status-immunity"
+      ],
+      "scope": "tswn 固定提交的实现与源码推导，不代表官方或部署实测。",
+      "explanation": "默认吸血攻击 100，敏捷追加 729 已计入构造属性。smart 路径若缺血不足 32 则不尝试吸血概率，否则以 r127()<100 判定；非 smart 路径仍按普通概率扫描。高敏不等同于绝对回避，技能仍要经过对应结算。",
+      "detailed_description": "蚊的完整输入为 mosquito@!。以下数值限定 tswn-core 提交 d12b462aa532f95be793c00dfed37b8fea0672bb，单独构建该角色、无装备/OL 覆盖、无同组同阵营加成、普通构建 rq=4；seed 只影响后续对战过程。\n\n官方《特殊名字》页的定性特点：打不到它。。。。官方页未给出完整属性；下面明确区分实现中的构造属性与初始 PlayerStats，不视作官方原站数值或任意部署的实测。\n\ntswn 构造七围（攻、防、速、敏、魔、抗、智）为 44、50、48、749、37、29、41，最大 HP=244。按名字系数和初始化公式得到的 PlayerStats 同序为 44、50、208、751、37、29、41，初始 MP=20；此处 speed 字段含调度基准 +160。不能把 boss_append_attr 的追加量、DIY 前七项 +36 编码或网页显示格式直接当作这些字段。\n\n属性推导：以带前导零字节的阵营 ! 做 1 轮 RC4 KSA，再以带前导零的名字做 2 轮；映射到 128 项 name_base。每组 3 项取中位数形成七围，排序后头部第 4–7 项之和加 154 得 HP，再加 Boss 追加量并下限置 0。PlayerStats 前六项按 round(attr×(1−name_factor/128))，智按分母 80；speed 再加 160，MP 为智字段右移 1。实验体有末尾固定覆盖。具体结果与来源见 boss-build-observations.json，属于按源码计算，未运行完整引擎或对战。\n\n技能与特殊机制：默认吸血攻击 100，敏捷追加 729 已计入构造属性。smart 路径若缺血不足 32 则不尝试吸血概率，否则以 r127()<100 判定；非 smart 路径仍按普通概率扫描。高敏不等同于绝对回避，技能仍要经过对应结算。\n\n状态免疫阈值（该提交）：240：潜行（assassinate）、净化；192：狂暴、魅惑；其余 84。 status_immune 以 next_u8()<阈值判定；在等概率字节模型下 84/192/240/256 分别对应 32.8125%/75%/93.75%/100%。它只作用于实际调用这个函数的状态路径，不能推广到直接改血、专属控制等绕过该判定的机制。\n\n通用边界：Boss 不走普通名字的随机技能生成、末位翻倍和技能槽强化；专属动作/状态可能不以普通技能等级表示。状态免疫还需查 boss_immune_threshold 与具体结算分支，不能把阈值当百分数或绝对免疫。判胜仍按存活实体所属队伍计算，恰好一队存活才产生赢家，全部阵亡无胜者；截断和运行失败另行处理。官方未公开且本次未复核的交互保留未知。",
+      "outdated": false,
+      "status": "source_supported",
+      "checked_at": "2026-11-17"
+    },
+    {
+      "context_id": "tswn-reviewed-boss-yuri",
+      "term_id": "boss-yuri",
+      "aliases_add": [],
+      "source_ids": [
+        "tswn-review-boss-rules",
+        "tswn-review-boss-build",
+        "tswn-review-name-base",
+        "tswn-review-rc4",
+        "tswn-review-name-factor",
+        "tswn-review-boss-actions",
+        "tswn-review-boss-defense",
+        "tswn-review-boss-initial",
+        "tswn-review-mario-boost",
+        "tswn-review-slime",
+        "tswn-review-saitama",
+        "tswn-review-boss-states",
+        "tswn-review-infection",
+        "tswn-review-initial-states",
+        "tswn-boss-source-calculation",
+        "tswn-review-status-immunity"
+      ],
+      "scope": "tswn 固定提交的实现与源码推导，不代表官方或部署实测。",
+      "explanation": "普通被动为防御 48、伤害反弹 48；专属主动心灵控制基础等级 256，进入 Boss 扫描后概率比较恒通过，但仍需有可选目标。控制不做免疫和闪避检查，附加魅惑步数为 max(目标所在队伍初始人数,3)，已有同状态时叠加步数；改变有效敌我关系，不直接改写原始队伍归属。",
+      "detailed_description": "尤里的完整输入为 yuri@!。以下数值限定 tswn-core 提交 d12b462aa532f95be793c00dfed37b8fea0672bb，单独构建该角色、无装备/OL 覆盖、无同组同阵营加成、普通构建 rq=4；seed 只影响后续对战过程。\n\n官方《特殊名字》页的定性特点：心灵控制。官方页未给出完整属性；下面明确区分实现中的构造属性与初始 PlayerStats，不视作官方原站数值或任意部署的实测。\n\ntswn 构造七围（攻、防、速、敏、魔、抗、智）为 36、63、53、46、55、56、50，最大 HP=315。按名字系数和初始化公式得到的 PlayerStats 同序为 39、67、217、49、59、60、56，初始 MP=28；此处 speed 字段含调度基准 +160。不能把 boss_append_attr 的追加量、DIY 前七项 +36 编码或网页显示格式直接当作这些字段。\n\n属性推导：以带前导零字节的阵营 ! 做 1 轮 RC4 KSA，再以带前导零的名字做 2 轮；映射到 128 项 name_base。每组 3 项取中位数形成七围，排序后头部第 4–7 项之和加 154 得 HP，再加 Boss 追加量并下限置 0。PlayerStats 前六项按 round(attr×(1−name_factor/128))，智按分母 80；speed 再加 160，MP 为智字段右移 1。实验体有末尾固定覆盖。具体结果与来源见 boss-build-observations.json，属于按源码计算，未运行完整引擎或对战。\n\n技能与特殊机制：普通被动为防御 48、伤害反弹 48；专属主动心灵控制基础等级 256，进入 Boss 扫描后概率比较恒通过，但仍需有可选目标。控制不做免疫和闪避检查，附加魅惑步数为 max(目标所在队伍初始人数,3)，已有同状态时叠加步数；改变有效敌我关系，不直接改写原始队伍归属。\n\n状态免疫阈值（该提交）：所有走该判定的状态阈值 84。 status_immune 以 next_u8()<阈值判定；在等概率字节模型下 84/192/240/256 分别对应 32.8125%/75%/93.75%/100%。它只作用于实际调用这个函数的状态路径，不能推广到直接改血、专属控制等绕过该判定的机制。\n\n通用边界：Boss 不走普通名字的随机技能生成、末位翻倍和技能槽强化；专属动作/状态可能不以普通技能等级表示。状态免疫还需查 boss_immune_threshold 与具体结算分支，不能把阈值当百分数或绝对免疫。判胜仍按存活实体所属队伍计算，恰好一队存活才产生赢家，全部阵亡无胜者；截断和运行失败另行处理。官方未公开且本次未复核的交互保留未知。",
+      "outdated": false,
+      "status": "source_supported",
+      "checked_at": "2026-11-17"
+    },
+    {
+      "context_id": "tswn-reviewed-boss-slime",
+      "term_id": "boss-slime",
+      "aliases_add": [],
+      "source_ids": [
+        "tswn-review-boss-rules",
+        "tswn-review-boss-build",
+        "tswn-review-name-base",
+        "tswn-review-rc4",
+        "tswn-review-name-factor",
+        "tswn-review-boss-actions",
+        "tswn-review-boss-defense",
+        "tswn-review-boss-initial",
+        "tswn-review-mario-boost",
+        "tswn-review-slime",
+        "tswn-review-saitama",
+        "tswn-review-boss-states",
+        "tswn-review-infection",
+        "tswn-review-initial-states",
+        "tswn-boss-source-calculation",
+        "tswn-review-status-immunity"
+      ],
+      "scope": "tswn 固定提交的实现与源码推导，不代表官方或部署实测。",
+      "explanation": "本体死亡分裂成 2 个第一代子体，本体尸体仍进入死亡链；第一代死亡各再分裂成 2 个第二代，第二代不再分裂。第一代 name_base 前 10 项固定 16、10..49 项或上 16，HP=218；第二代前 10 项固定 -5、10..49 项或上 32，HP=134，技能为瘟疫（half）32、治愈术 32。子体是普通玩家实体，不随本体死亡清理，不继承 Boss 免疫；该提交对子体按名字系数 0 换算，这与源码注释所述旧版缩放有差异。",
+      "detailed_description": "史莱姆的完整输入为 slime@!。以下数值限定 tswn-core 提交 d12b462aa532f95be793c00dfed37b8fea0672bb，单独构建该角色、无装备/OL 覆盖、无同组同阵营加成、普通构建 rq=4；seed 只影响后续对战过程。\n\n官方《特殊名字》页的定性特点：死后会分身成小史莱姆。官方页未给出完整属性；下面明确区分实现中的构造属性与初始 PlayerStats，不视作官方原站数值或任意部署的实测。\n\ntswn 构造七围（攻、防、速、敏、魔、抗、智）为 39、57、53、33、44、50、62，最大 HP=356。按名字系数和初始化公式得到的 PlayerStats 同序为 41、60、216、35、47、53、68，初始 MP=34；此处 speed 字段含调度基准 +160。不能把 boss_append_attr 的追加量、DIY 前七项 +36 编码或网页显示格式直接当作这些字段。\n\n属性推导：以带前导零字节的阵营 ! 做 1 轮 RC4 KSA，再以带前导零的名字做 2 轮；映射到 128 项 name_base。每组 3 项取中位数形成七围，排序后头部第 4–7 项之和加 154 得 HP，再加 Boss 追加量并下限置 0。PlayerStats 前六项按 round(attr×(1−name_factor/128))，智按分母 80；speed 再加 160，MP 为智字段右移 1。实验体有末尾固定覆盖。具体结果与来源见 boss-build-observations.json，属于按源码计算，未运行完整引擎或对战。\n\n技能与特殊机制：本体死亡分裂成 2 个第一代子体，本体尸体仍进入死亡链；第一代死亡各再分裂成 2 个第二代，第二代不再分裂。第一代 name_base 前 10 项固定 16、10..49 项或上 16，HP=218；第二代前 10 项固定 -5、10..49 项或上 32，HP=134，技能为瘟疫（half）32、治愈术 32。子体是普通玩家实体，不随本体死亡清理，不继承 Boss 免疫；该提交对子体按名字系数 0 换算，这与源码注释所述旧版缩放有差异。\n\n状态免疫阈值（该提交）：192：投毒；其余 84。 status_immune 以 next_u8()<阈值判定；在等概率字节模型下 84/192/240/256 分别对应 32.8125%/75%/93.75%/100%。它只作用于实际调用这个函数的状态路径，不能推广到直接改血、专属控制等绕过该判定的机制。\n\n通用边界：Boss 不走普通名字的随机技能生成、末位翻倍和技能槽强化；专属动作/状态可能不以普通技能等级表示。状态免疫还需查 boss_immune_threshold 与具体结算分支，不能把阈值当百分数或绝对免疫。判胜仍按存活实体所属队伍计算，恰好一队存活才产生赢家，全部阵亡无胜者；截断和运行失败另行处理。官方未公开且本次未复核的交互保留未知。",
+      "outdated": false,
+      "status": "source_supported",
+      "checked_at": "2026-11-17"
+    },
+    {
+      "context_id": "tswn-reviewed-boss-ikaruga",
+      "term_id": "boss-ikaruga",
+      "aliases_add": [],
+      "source_ids": [
+        "tswn-review-boss-rules",
+        "tswn-review-boss-build",
+        "tswn-review-name-base",
+        "tswn-review-rc4",
+        "tswn-review-name-factor",
+        "tswn-review-boss-actions",
+        "tswn-review-boss-defense",
+        "tswn-review-boss-initial",
+        "tswn-review-mario-boost",
+        "tswn-review-slime",
+        "tswn-review-saitama",
+        "tswn-review-boss-states",
+        "tswn-review-infection",
+        "tswn-review-initial-states",
+        "tswn-boss-source-calculation",
+        "tswn-review-status-immunity"
+      ],
+      "scope": "tswn 固定提交的实现与源码推导，不代表官方或部署实测。",
+      "explanation": "专属主动 IkarugaAttack 等级 48；选取候选目标（smart 为 6，否则 5），一次魔法攻击威力 ×2.5/(实际目标数+0.5) 逐目标走防御换算，跳过普通闪避路径。专属防御检查换算后的正整数伤害，奇数转为等额回复、偶数继续结算，回复受最大 HP 限制；不是按施法技能编号判断颜色。",
+      "detailed_description": "斑鸠的完整输入为 ikaruga@!。以下数值限定 tswn-core 提交 d12b462aa532f95be793c00dfed37b8fea0672bb，单独构建该角色、无装备/OL 覆盖、无同组同阵营加成、普通构建 rq=4；seed 只影响后续对战过程。\n\n官方《特殊名字》页的定性特点：吸收所有奇数伤害，只有偶数攻击有效。官方页未给出完整属性；下面明确区分实现中的构造属性与初始 PlayerStats，不视作官方原站数值或任意部署的实测。\n\ntswn 构造七围（攻、防、速、敏、魔、抗、智）为 54、60、51、53、58、60、42，最大 HP=463。按名字系数和初始化公式得到的 PlayerStats 同序为 56、62、212、55、60、62、44，初始 MP=22；此处 speed 字段含调度基准 +160。不能把 boss_append_attr 的追加量、DIY 前七项 +36 编码或网页显示格式直接当作这些字段。\n\n属性推导：以带前导零字节的阵营 ! 做 1 轮 RC4 KSA，再以带前导零的名字做 2 轮；映射到 128 项 name_base。每组 3 项取中位数形成七围，排序后头部第 4–7 项之和加 154 得 HP，再加 Boss 追加量并下限置 0。PlayerStats 前六项按 round(attr×(1−name_factor/128))，智按分母 80；speed 再加 160，MP 为智字段右移 1。实验体有末尾固定覆盖。具体结果与来源见 boss-build-observations.json，属于按源码计算，未运行完整引擎或对战。\n\n技能与特殊机制：专属主动 IkarugaAttack 等级 48；选取候选目标（smart 为 6，否则 5），一次魔法攻击威力 ×2.5/(实际目标数+0.5) 逐目标走防御换算，跳过普通闪避路径。专属防御检查换算后的正整数伤害，奇数转为等额回复、偶数继续结算，回复受最大 HP 限制；不是按施法技能编号判断颜色。\n\n状态免疫阈值（该提交）：192：潜行（assassinate）、瘟疫（half）、命轮、投毒、减速、冰冻；其余 84。 status_immune 以 next_u8()<阈值判定；在等概率字节模型下 84/192/240/256 分别对应 32.8125%/75%/93.75%/100%。它只作用于实际调用这个函数的状态路径，不能推广到直接改血、专属控制等绕过该判定的机制。\n\n通用边界：Boss 不走普通名字的随机技能生成、末位翻倍和技能槽强化；专属动作/状态可能不以普通技能等级表示。状态免疫还需查 boss_immune_threshold 与具体结算分支，不能把阈值当百分数或绝对免疫。判胜仍按存活实体所属队伍计算，恰好一队存活才产生赢家，全部阵亡无胜者；截断和运行失败另行处理。官方未公开且本次未复核的交互保留未知。",
+      "outdated": false,
+      "status": "source_supported",
+      "checked_at": "2026-11-17"
+    },
+    {
+      "context_id": "tswn-reviewed-boss-conan",
+      "term_id": "boss-conan",
+      "aliases_add": [],
+      "source_ids": [
+        "tswn-review-boss-rules",
+        "tswn-review-boss-build",
+        "tswn-review-name-base",
+        "tswn-review-rc4",
+        "tswn-review-name-factor",
+        "tswn-review-boss-actions",
+        "tswn-review-boss-defense",
+        "tswn-review-boss-initial",
+        "tswn-review-mario-boost",
+        "tswn-review-slime",
+        "tswn-review-saitama",
+        "tswn-review-boss-states",
+        "tswn-review-infection",
+        "tswn-review-initial-states",
+        "tswn-boss-source-calculation",
+        "tswn-review-status-immunity"
+      ],
+      "scope": "tswn 固定提交的实现与源码推导，不代表官方或部署实测。",
+      "explanation": "专属推理行动取代普通主动技能表。候选最多抽取 4 个敌方非召唤物并排序，只处理首目标。初始 thinking=-1，只有单目标时先转入推理；thinking>0 的行动只递减并输出推理信息，归零后将目标当前 HP 直接清零并走死亡链。多目标击杀后 thinking 设为 1；击杀后自身行动点增加目标队伍剩余存活人数×1000，上限 3000。",
+      "detailed_description": "柯南的完整输入为 conan@!。以下数值限定 tswn-core 提交 d12b462aa532f95be793c00dfed37b8fea0672bb，单独构建该角色、无装备/OL 覆盖、无同组同阵营加成、普通构建 rq=4；seed 只影响后续对战过程。\n\n官方《特殊名字》页的定性特点：不小心遇到他就会有生命危险。。。。官方页未给出完整属性；下面明确区分实现中的构造属性与初始 PlayerStats，不视作官方原站数值或任意部署的实测。\n\ntswn 构造七围（攻、防、速、敏、魔、抗、智）为 33、62、28、43、60、61、51，最大 HP=269。按名字系数和初始化公式得到的 PlayerStats 同序为 35、66、190、45、63、64、56，初始 MP=28；此处 speed 字段含调度基准 +160。不能把 boss_append_attr 的追加量、DIY 前七项 +36 编码或网页显示格式直接当作这些字段。\n\n属性推导：以带前导零字节的阵营 ! 做 1 轮 RC4 KSA，再以带前导零的名字做 2 轮；映射到 128 项 name_base。每组 3 项取中位数形成七围，排序后头部第 4–7 项之和加 154 得 HP，再加 Boss 追加量并下限置 0。PlayerStats 前六项按 round(attr×(1−name_factor/128))，智按分母 80；speed 再加 160，MP 为智字段右移 1。实验体有末尾固定覆盖。具体结果与来源见 boss-build-observations.json，属于按源码计算，未运行完整引擎或对战。\n\n技能与特殊机制：专属推理行动取代普通主动技能表。候选最多抽取 4 个敌方非召唤物并排序，只处理首目标。初始 thinking=-1，只有单目标时先转入推理；thinking>0 的行动只递减并输出推理信息，归零后将目标当前 HP 直接清零并走死亡链。多目标击杀后 thinking 设为 1；击杀后自身行动点增加目标队伍剩余存活人数×1000，上限 3000。\n\n状态免疫阈值（该提交）：240：魅惑；192：潜行（assassinate）、狂暴、瘟疫（half）、诅咒、命轮、减速、冰冻；其余 84。 status_immune 以 next_u8()<阈值判定；在等概率字节模型下 84/192/240/256 分别对应 32.8125%/75%/93.75%/100%。它只作用于实际调用这个函数的状态路径，不能推广到直接改血、专属控制等绕过该判定的机制。\n\n通用边界：Boss 不走普通名字的随机技能生成、末位翻倍和技能槽强化；专属动作/状态可能不以普通技能等级表示。状态免疫还需查 boss_immune_threshold 与具体结算分支，不能把阈值当百分数或绝对免疫。判胜仍按存活实体所属队伍计算，恰好一队存活才产生赢家，全部阵亡无胜者；截断和运行失败另行处理。官方未公开且本次未复核的交互保留未知。",
+      "outdated": false,
+      "status": "source_supported",
+      "checked_at": "2026-11-17"
+    },
+    {
+      "context_id": "tswn-reviewed-boss-aokiji",
+      "term_id": "boss-aokiji",
+      "aliases_add": [],
+      "source_ids": [
+        "tswn-review-boss-rules",
+        "tswn-review-boss-build",
+        "tswn-review-name-base",
+        "tswn-review-rc4",
+        "tswn-review-name-factor",
+        "tswn-review-boss-actions",
+        "tswn-review-boss-defense",
+        "tswn-review-boss-initial",
+        "tswn-review-mario-boost",
+        "tswn-review-slime",
+        "tswn-review-saitama",
+        "tswn-review-boss-states",
+        "tswn-review-infection",
+        "tswn-review-initial-states",
+        "tswn-boss-source-calculation",
+        "tswn-review-status-immunity"
+      ],
+      "scope": "tswn 固定提交的实现与源码推导，不代表官方或部署实测。",
+      "explanation": "主动依次尝试冰河时代 70、冰冻术 80；专属防御不以普通熟练度表示。正冰伤转为等额回血、实际回复不超过最大 HP；Physical 类伤害置零，Default 类不由该分支改写。冰河时代选取候选目标（smart 为 6，否则 5），按一次魔法攻击威力 ×2.5/(实际目标数+0.5) 分别结算冰伤和冰冻，不能把倍率直接当扣血。",
+      "detailed_description": "青雉的完整输入为 aokiji@!。以下数值限定 tswn-core 提交 d12b462aa532f95be793c00dfed37b8fea0672bb，单独构建该角色、无装备/OL 覆盖、无同组同阵营加成、普通构建 rq=4；seed 只影响后续对战过程。\n\n官方《特殊名字》页的定性特点：无视物理攻击，强力冰冻技能。官方页未给出完整属性；下面明确区分实现中的构造属性与初始 PlayerStats，不视作官方原站数值或任意部署的实测。\n\ntswn 构造七围（攻、防、速、敏、魔、抗、智）为 56、63、58、58、57、56、61，最大 HP=394。按名字系数和初始化公式得到的 PlayerStats 同序为 58、66、221、61、59、58、65，初始 MP=32；此处 speed 字段含调度基准 +160。不能把 boss_append_attr 的追加量、DIY 前七项 +36 编码或网页显示格式直接当作这些字段。\n\n属性推导：以带前导零字节的阵营 ! 做 1 轮 RC4 KSA，再以带前导零的名字做 2 轮；映射到 128 项 name_base。每组 3 项取中位数形成七围，排序后头部第 4–7 项之和加 154 得 HP，再加 Boss 追加量并下限置 0。PlayerStats 前六项按 round(attr×(1−name_factor/128))，智按分母 80；speed 再加 160，MP 为智字段右移 1。实验体有末尾固定覆盖。具体结果与来源见 boss-build-observations.json，属于按源码计算，未运行完整引擎或对战。\n\n技能与特殊机制：主动依次尝试冰河时代 70、冰冻术 80；专属防御不以普通熟练度表示。正冰伤转为等额回血、实际回复不超过最大 HP；Physical 类伤害置零，Default 类不由该分支改写。冰河时代选取候选目标（smart 为 6，否则 5），按一次魔法攻击威力 ×2.5/(实际目标数+0.5) 分别结算冰伤和冰冻，不能把倍率直接当扣血。\n\n状态免疫阈值（该提交）：192：潜行（assassinate）、魅惑、狂暴、瘟疫（half）、诅咒、命轮、减速、冰冻；其余 84。 status_immune 以 next_u8()<阈值判定；在等概率字节模型下 84/192/240/256 分别对应 32.8125%/75%/93.75%/100%。它只作用于实际调用这个函数的状态路径，不能推广到直接改血、专属控制等绕过该判定的机制。\n\n通用边界：Boss 不走普通名字的随机技能生成、末位翻倍和技能槽强化；专属动作/状态可能不以普通技能等级表示。状态免疫还需查 boss_immune_threshold 与具体结算分支，不能把阈值当百分数或绝对免疫。判胜仍按存活实体所属队伍计算，恰好一队存活才产生赢家，全部阵亡无胜者；截断和运行失败另行处理。官方未公开且本次未复核的交互保留未知。",
+      "outdated": false,
+      "status": "source_supported",
+      "checked_at": "2026-11-17"
+    },
+    {
+      "context_id": "tswn-reviewed-boss-lazy",
+      "term_id": "boss-lazy",
+      "aliases_add": [],
+      "source_ids": [
+        "tswn-review-boss-rules",
+        "tswn-review-boss-build",
+        "tswn-review-name-base",
+        "tswn-review-rc4",
+        "tswn-review-name-factor",
+        "tswn-review-boss-actions",
+        "tswn-review-boss-defense",
+        "tswn-review-boss-initial",
+        "tswn-review-mario-boost",
+        "tswn-review-slime",
+        "tswn-review-saitama",
+        "tswn-review-boss-states",
+        "tswn-review-infection",
+        "tswn-review-initial-states",
+        "tswn-boss-source-calculation",
+        "tswn-review-status-immunity"
+      ],
+      "scope": "tswn 固定提交的实现与源码推导，不代表官方或部署实测。",
+      "explanation": "无普通随机技能或 Boss 主动技能表，特殊效果由感染状态实现。初始攻击倍率 1.0；感染者行动前 next_u8()<128 时被拦截，本次什么也不做。成功行动后的发作在 Boss 与感染者都存活时结算，伤害为 ceil(Boss 本次魔法威力/感染者魔防)。感染传播、重复感染和攻击倍率增长由相应攻击/受击分支处理，不能按单个技能熟练度概括。",
+      "detailed_description": "懒癌的完整输入为 lazy@!。以下数值限定 tswn-core 提交 d12b462aa532f95be793c00dfed37b8fea0672bb，单独构建该角色、无装备/OL 覆盖、无同组同阵营加成、普通构建 rq=4；seed 只影响后续对战过程。\n\n官方《特殊名字》页的定性特点：犯了懒癌就什么都不想做。。。官方页未给出完整属性；下面明确区分实现中的构造属性与初始 PlayerStats，不视作官方原站数值或任意部署的实测。\n\ntswn 构造七围（攻、防、速、敏、魔、抗、智）为 22、96、42、17、49、94、38，最大 HP=372。按名字系数和初始化公式得到的 PlayerStats 同序为 24、103、205、18、52、101、42，初始 MP=21；此处 speed 字段含调度基准 +160。不能把 boss_append_attr 的追加量、DIY 前七项 +36 编码或网页显示格式直接当作这些字段。\n\n属性推导：以带前导零字节的阵营 ! 做 1 轮 RC4 KSA，再以带前导零的名字做 2 轮；映射到 128 项 name_base。每组 3 项取中位数形成七围，排序后头部第 4–7 项之和加 154 得 HP，再加 Boss 追加量并下限置 0。PlayerStats 前六项按 round(attr×(1−name_factor/128))，智按分母 80；speed 再加 160，MP 为智字段右移 1。实验体有末尾固定覆盖。具体结果与来源见 boss-build-observations.json，属于按源码计算，未运行完整引擎或对战。\n\n技能与特殊机制：无普通随机技能或 Boss 主动技能表，特殊效果由感染状态实现。初始攻击倍率 1.0；感染者行动前 next_u8()<128 时被拦截，本次什么也不做。成功行动后的发作在 Boss 与感染者都存活时结算，伤害为 ceil(Boss 本次魔法威力/感染者魔防)。感染传播、重复感染和攻击倍率增长由相应攻击/受击分支处理，不能按单个技能熟练度概括。\n\n状态免疫阈值（该提交）：192：潜行（assassinate）、瘟疫（half）、诅咒、命轮；其余 84。 status_immune 以 next_u8()<阈值判定；在等概率字节模型下 84/192/240/256 分别对应 32.8125%/75%/93.75%/100%。它只作用于实际调用这个函数的状态路径，不能推广到直接改血、专属控制等绕过该判定的机制。\n\n通用边界：Boss 不走普通名字的随机技能生成、末位翻倍和技能槽强化；专属动作/状态可能不以普通技能等级表示。状态免疫还需查 boss_immune_threshold 与具体结算分支，不能把阈值当百分数或绝对免疫。判胜仍按存活实体所属队伍计算，恰好一队存活才产生赢家，全部阵亡无胜者；截断和运行失败另行处理。官方未公开且本次未复核的交互保留未知。",
+      "outdated": false,
+      "status": "source_supported",
+      "checked_at": "2026-11-17"
+    },
+    {
+      "context_id": "tswn-reviewed-boss-covid",
+      "term_id": "boss-covid",
+      "aliases_add": [],
+      "source_ids": [
+        "tswn-review-boss-rules",
+        "tswn-review-boss-build",
+        "tswn-review-name-base",
+        "tswn-review-rc4",
+        "tswn-review-name-factor",
+        "tswn-review-boss-actions",
+        "tswn-review-boss-defense",
+        "tswn-review-boss-initial",
+        "tswn-review-mario-boost",
+        "tswn-review-slime",
+        "tswn-review-saitama",
+        "tswn-review-boss-states",
+        "tswn-review-infection",
+        "tswn-review-initial-states",
+        "tswn-boss-source-calculation",
+        "tswn-review-status-immunity"
+      ],
+      "scope": "tswn 固定提交的实现与源码推导，不代表官方或部署实测。",
+      "explanation": "无普通随机技能或 Boss 主动技能表，初始 CovidBoss mutation=40。造成伤害后，目标尚未感染且 (next_u8()&63)<damage 时尝试感染；自身不能感染自身。新感染会使目标行动点 +2048、其余存活者 -256。肺炎伤害 ceil((感染者本次魔法攻击威力+mutation×80)/感染者魔防)，再依实际伤害及 Boss 血量计算恢复；同变体恢复后不再次感染的限制由 mutation_set 记录。变异与逐日传播的完整状态流程需另查对应状态 handler，不由本段简化公式推定。",
+      "detailed_description": "新冠病毒的完整输入为 covid@!。以下数值限定 tswn-core 提交 d12b462aa532f95be793c00dfed37b8fea0672bb，单独构建该角色、无装备/OL 覆盖、无同组同阵营加成、普通构建 rq=4；seed 只影响后续对战过程。\n\n官方《特殊名字》页的定性特点：人多就会交差传染，最好装备上口罩。官方页未给出完整属性；下面明确区分实现中的构造属性与初始 PlayerStats，不视作官方原站数值或任意部署的实测。\n\ntswn 构造七围（攻、防、速、敏、魔、抗、智）为 30、62、12、56、11、59、43，最大 HP=326。按名字系数和初始化公式得到的 PlayerStats 同序为 32、66、173、59、12、62、47，初始 MP=23；此处 speed 字段含调度基准 +160。不能把 boss_append_attr 的追加量、DIY 前七项 +36 编码或网页显示格式直接当作这些字段。\n\n属性推导：以带前导零字节的阵营 ! 做 1 轮 RC4 KSA，再以带前导零的名字做 2 轮；映射到 128 项 name_base。每组 3 项取中位数形成七围，排序后头部第 4–7 项之和加 154 得 HP，再加 Boss 追加量并下限置 0。PlayerStats 前六项按 round(attr×(1−name_factor/128))，智按分母 80；speed 再加 160，MP 为智字段右移 1。实验体有末尾固定覆盖。具体结果与来源见 boss-build-observations.json，属于按源码计算，未运行完整引擎或对战。\n\n技能与特殊机制：无普通随机技能或 Boss 主动技能表，初始 CovidBoss mutation=40。造成伤害后，目标尚未感染且 (next_u8()&63)<damage 时尝试感染；自身不能感染自身。新感染会使目标行动点 +2048、其余存活者 -256。肺炎伤害 ceil((感染者本次魔法攻击威力+mutation×80)/感染者魔防)，再依实际伤害及 Boss 血量计算恢复；同变体恢复后不再次感染的限制由 mutation_set 记录。变异与逐日传播的完整状态流程需另查对应状态 handler，不由本段简化公式推定。\n\n状态免疫阈值（该提交）：192：魅惑、狂暴、命轮；其余 84。 status_immune 以 next_u8()<阈值判定；在等概率字节模型下 84/192/240/256 分别对应 32.8125%/75%/93.75%/100%。它只作用于实际调用这个函数的状态路径，不能推广到直接改血、专属控制等绕过该判定的机制。\n\n通用边界：Boss 不走普通名字的随机技能生成、末位翻倍和技能槽强化；专属动作/状态可能不以普通技能等级表示。状态免疫还需查 boss_immune_threshold 与具体结算分支，不能把阈值当百分数或绝对免疫。判胜仍按存活实体所属队伍计算，恰好一队存活才产生赢家，全部阵亡无胜者；截断和运行失败另行处理。官方未公开且本次未复核的交互保留未知。",
+      "outdated": false,
+      "status": "source_supported",
+      "checked_at": "2026-11-17"
+    },
+    {
+      "context_id": "tswn-reviewed-boss-saitama",
+      "term_id": "boss-saitama",
+      "aliases_add": [],
+      "source_ids": [
+        "tswn-review-boss-rules",
+        "tswn-review-boss-build",
+        "tswn-review-name-base",
+        "tswn-review-rc4",
+        "tswn-review-name-factor",
+        "tswn-review-boss-actions",
+        "tswn-review-boss-defense",
+        "tswn-review-boss-initial",
+        "tswn-review-mario-boost",
+        "tswn-review-slime",
+        "tswn-review-saitama",
+        "tswn-review-boss-states",
+        "tswn-review-infection",
+        "tswn-review-initial-states",
+        "tswn-boss-source-calculation",
+        "tswn-review-status-immunity"
+      ],
+      "scope": "tswn 固定提交的实现与源码推导，不代表官方或部署实测。",
+      "explanation": "专属普通行动最先检查累计伤害/（不同攻击来源数+召唤物数整除3+1）是否大于 255，满足则离场、置为死亡。否则前 10 次自己的行动只累加 turns；之后以物理攻击威力 ×12 攻击，随后清零同队行动点并把自身设为 1700。POST_DEFEND 先累计原整数伤害及攻击来源，再将承受伤害整除 100。BossActionSkill::Saitama 表中的 0 不表示上述特殊行动不运行，而是专属流程不经该普通概率槽。",
+      "detailed_description": "一拳超人的完整输入为 saitama@!。以下数值限定 tswn-core 提交 d12b462aa532f95be793c00dfed37b8fea0672bb，单独构建该角色、无装备/OL 覆盖、无同组同阵营加成、普通构建 rq=4；seed 只影响后续对战过程。\n\n官方《特殊名字》页的定性特点：强到几乎无敌，但总要到最后才出手。官方页未给出完整属性；下面明确区分实现中的构造属性与初始 PlayerStats，不视作官方原站数值或任意部署的实测。\n\ntswn 构造七围（攻、防、速、敏、魔、抗、智）为 93、93、93、93、93、93、12，最大 HP=399。按名字系数和初始化公式得到的 PlayerStats 同序为 96、96、256、96、96、96、13，初始 MP=6；此处 speed 字段含调度基准 +160。不能把 boss_append_attr 的追加量、DIY 前七项 +36 编码或网页显示格式直接当作这些字段。\n\n属性推导：以带前导零字节的阵营 ! 做 1 轮 RC4 KSA，再以带前导零的名字做 2 轮；映射到 128 项 name_base。每组 3 项取中位数形成七围，排序后头部第 4–7 项之和加 154 得 HP，再加 Boss 追加量并下限置 0。PlayerStats 前六项按 round(attr×(1−name_factor/128))，智按分母 80；speed 再加 160，MP 为智字段右移 1。实验体有末尾固定覆盖。具体结果与来源见 boss-build-observations.json，属于按源码计算，未运行完整引擎或对战。\n\n技能与特殊机制：专属普通行动最先检查累计伤害/（不同攻击来源数+召唤物数整除3+1）是否大于 255，满足则离场、置为死亡。否则前 10 次自己的行动只累加 turns；之后以物理攻击威力 ×12 攻击，随后清零同队行动点并把自身设为 1700。POST_DEFEND 先累计原整数伤害及攻击来源，再将承受伤害整除 100。BossActionSkill::Saitama 表中的 0 不表示上述特殊行动不运行，而是专属流程不经该普通概率槽。\n\n状态免疫阈值（该提交）：240：瘟疫（half）、命轮；192：狂暴、减速、冰冻；其余 84。 status_immune 以 next_u8()<阈值判定；在等概率字节模型下 84/192/240/256 分别对应 32.8125%/75%/93.75%/100%。它只作用于实际调用这个函数的状态路径，不能推广到直接改血、专属控制等绕过该判定的机制。\n\n通用边界：Boss 不走普通名字的随机技能生成、末位翻倍和技能槽强化；专属动作/状态可能不以普通技能等级表示。状态免疫还需查 boss_immune_threshold 与具体结算分支，不能把阈值当百分数或绝对免疫。判胜仍按存活实体所属队伍计算，恰好一队存活才产生赢家，全部阵亡无胜者；截断和运行失败另行处理。官方未公开且本次未复核的交互保留未知。",
+      "outdated": false,
+      "status": "source_supported",
+      "checked_at": "2026-11-17"
     }
   ]
 }
