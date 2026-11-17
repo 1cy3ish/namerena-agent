@@ -8176,6 +8176,21 @@
       "notes": "教程页面标注 3.2.0，讨论 218 要求 3.3.x，两个版本号均为不同时点的记录。",
       "checked_at": "2026-11-16",
       "outdated": false
+    },
+    {
+      "id": "hanbo",
+      "term": "涵伯",
+      "definition": "涵虚的别称。",
+      "detailed_description": "来源于玩家 Squall 测出的人海配件号 `涵伯发威@昀澤`。",
+      "category": "community",
+      "status": "source_supported",
+      "checked_at": "2026-11-17",
+      "outdated": false,
+      "aliases": [],
+      "source_ids": [
+        "official-guide"
+      ],
+      "context_notes": []
     }
   ]
 }

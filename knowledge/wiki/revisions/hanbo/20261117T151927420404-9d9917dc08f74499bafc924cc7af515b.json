@@ -1,0 +1,28 @@
+{
+  "revision_id": "9d9917dc08f74499bafc924cc7af515b",
+  "term_id": "hanbo",
+  "timestamp": "2026-11-17T15:19:27.420404+08:00",
+  "author": {
+    "user_id": "19",
+    "teamname": "Squall"
+  },
+  "summary": "无",
+  "before": null,
+  "after": {
+    "id": "hanbo",
+    "term": "涵伯",
+    "definition": "涵虚的别称。",
+    "detailed_description": "来源于玩家 Squall 测出的人海配件号 `涵伯发威@昀澤`。",
+    "category": "community",
+    "status": "source_supported",
+    "checked_at": "2026-11-17",
+    "outdated": false,
+    "aliases": [],
+    "source_ids": [
+      "official-guide"
+    ],
+    "context_notes": []
+  },
+  "base_revision": null,
+  "revision": "be1f842c2d4404d32034e82262cdc0421e81be0276cf3337657e68881b1a6baf"
+}
