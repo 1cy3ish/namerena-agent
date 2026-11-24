@@ -1,0 +1,63 @@
+{
+  "revision_id": "ac29d63abfa84bc7b36cf08c0ab1afce",
+  "term_id": "tswn-openbox",
+  "timestamp": "2026-11-24T11:25:52.133018+08:00",
+  "author": {
+    "user_id": "208",
+    "teamname": "shenjack"
+  },
+  "summary": "step5preview修复GPT言GPT语中",
+  "before": {
+    "id": "tswn-openbox",
+    "term": "开箱器",
+    "aliases": [
+      "Openbox",
+      "tswn_openbox"
+    ],
+    "definition": "将 DIY 导出、基础评分、靶子对抗、配队和 base 等流程集中在 GUI/CLI 中的工具；具体模式由共用后端执行。",
+    "category": "tool",
+    "status": "source_supported",
+    "source_ids": [
+      "tswn-project",
+      "tswn-openbox",
+      "tswn-openbox-options",
+      "tswn-score-dispatch",
+      "tswn-score-scale",
+      "tswn-pair",
+      "tswn-settings",
+      "tswn-skill-board"
+    ],
+    "checked_at": "2026-11-16",
+    "origin": "tswn-curation",
+    "detailed_description": "开箱器（Openbox，crate 名 tswn_openbox，版本 0.5.2）是 tswn-core（提交 d12b462）中的 GUI/CLI 工具，把 DIY 导出、基础评分、靶子对抗、配队、base、技能榜等流程集中在一个界面里；具体计算由共用后端 tswn_openbox_backend 执行，GUI 与 openbox-cli 共用同一份 setting/settings.toml 配置——修改它会同时影响两者。\n\n主要模式（按 README 与评分体系文件）：\n1. profile 评分：pp（普评）、pd（普单）、qp（强评）、qd（强单），量纲为胜率×10000；sum 为四项之和。单号 pp/qp 布局是\"被测号+一个生成队友，对抗两个生成对手\"，pd/qd 用重复单号标记进入 1v1 布局。默认评估 rq 为 6.0。\n2. 靶子对抗：cqd/cqp 为对配置靶子的平均胜率（0..100），按靶子权重加权平均，只计有效 matchup；带权下归一化成员集合完全一致直接记 50%。\n3. 配队（pair）：每个队友组合先求靶子加权平均，再乘队友 factor，取最高 head 项求和；它是头部和而非 0..100 的单项胜率，同分按原队友输入顺序破平。工作目录预设队友含刺评、辅评、无刺评、分身评、配件评（head=4）。\n4. 技能榜：按全组最高熟练度技能与配置阈值（setting/score_now.toml）筛选；全能资格要求 sum 达阈值且 pp≥8000、pd≥9000、qp≥6000、qd≥7000。\n5. base 与导出 DIY 见对应词条。\n\n注意：内嵌默认预设还保留带 20251102/20251109 日期名的靶子与队友组，与工作目录配置分别记录，不混写。\n\n以上均为文档/源码定位证据（如 namer_pf.rs 评分分派、batch.rs 布局），未运行工具实测。",
+    "outdated": false
+  },
+  "after": {
+    "id": "tswn-openbox",
+    "term": "开箱器",
+    "aliases": [
+      "Openbox",
+      "tswn_openbox"
+    ],
+    "definition": "开箱器（Openbox）是 tswn-core 自带的本地工作面板：GUI 版 `tswn_openbox` 把常用 `tswn-cli` 流程做成点击即用，另有配套的无头命令行 `openbox-cli` 把同一套流程脚本化。两者共用 `tswn_openbox_backend` 后端与 `setting` 目录下的配置，行为口径一致。",
+    "category": "tool",
+    "status": "source_supported",
+    "source_ids": [
+      "tswn-project",
+      "tswn-openbox",
+      "tswn-openbox-options",
+      "tswn-score-dispatch",
+      "tswn-score-scale",
+      "tswn-pair",
+      "tswn-skill-board",
+      "tswn-settings"
+    ],
+    "checked_at": "2026-11-16",
+    "origin": "tswn-curation",
+    "detailed_description": "开箱器（Openbox，crate 名 `tswn_openbox`，版本 0.5.4）是 tswn-core（提交 75db4e8）中的 GUI/CLI 工具。GUI 版 `tswn_openbox` 是本地交互面板，把常用 `tswn-cli` 工作流做成点击即用的界面；`openbox-cli` 是无头命令行，复用同一后端与配置，数据走 stdout、进度走 stderr，用于把面板流程脚本化。两者的解析、执行、文件输出格式、排序、标签清洗完全一致，且共用同一份 `setting/settings.toml`（靶子/队友预设）与 `setting/score_now.toml`（技能榜阈值）——改配置会同时影响 GUI 和 CLI。\n\n支持的模式：\n\n- `to-diy`：名字导出为 DIY/OL 行，支持旧 `+diy`（`--old`）与召唤物 DIY（`--minions`）；多人组用 `++` 连接，可直接粘贴进 pair 的「DIY选手」输入框。\n- `namer-pf`：五项评分 `pp`/`pd`/`qp`/`qd`/`sum`，量纲为胜率×10000（`wins * 10000 / total`），`sum` 为四项之和。`pd`/`qd` 通过把被测组复制一份与其自身对战得到，`pp`/`qp` 直接对生成对手评估。默认按胜率口径 `rq=6.0`；勾选“不低估短号”（`--keep-rq`）后改按默认口径 `rq=4.0`。每项可分别设置是否在屏幕显示、屏幕阈值、是否写入文件、文件阈值。\n- 技能榜：`namer-pf` 的输出之一。名字转 `+diy` 后取熟练度最高的技能，按 `score_now.toml` 的每技能阈值（`pp`/`qp`/`qd`/`all`）筛选；全部技能熟练度小于 30 时改按 `[lessskl]` 白板号阈值。「全能」除达到对应技能的 `all` 外，还需同时满足 `pp>=8000`、`pd>=9000`、`qp>=6000`、`qd>=7000`。\n- `cqd`/`cqp`：对配置靶子的平均胜率（0..100），对应原 `bench batch-rate`。带权靶子按 `sum(胜率 * factor) / sum(factor)` 加权，只计有效 matchup；带权模式下选手组与靶子组包含完全相同的玩家（不要求顺序）时该组直接记 50% 并参与加权。未启用带权时保持原有重名跳过行为。\n- `pair`：选手与队友组成完整队伍后按 CQP 规则计算。默认使用 `settings.toml` 中 `id = 2` 的靶子，队友取 `teammate` 预设（刺评/辅评/无刺评/分身评/配件评，`head = 4`）。带权模式下先求靶子加权平均，再乘队友 `factor`，按降序取前 `head` 项求和——它是头部和而非单项胜率；同分时按队友输入的原始顺序排列。\n- `base`：单个原始名字的 128 字节 roll、HP 区间、七围「值 / 原始三元组」与 16 个技能槽；GUI 独立页与 CLI 共用同一渲染入口，输出逐字节一致。不支持 `+diy`/`+ol`/武器后缀。\n- `DS4`：工作目录中的评分、增量配对与实战筛选；CLI 侧使用独立的 `tswn_ds4` 命令。\n- `filter`（仅 `openbox-cli`）：逐行读取名字，按技能熟练度、属性阈值组合筛选后写出。\n\nGUI 左侧为设置区，右侧实时日志与结果可在纯文本、卡片、表格三种视图间切换并逐页记忆；提供上下文帮助、进度条与运行中停止。构建口径统一为 `--release` 且启用 `no_debug,mimalloc_alloc`。\n\n注意：程序内嵌一套默认预设（`crates/tswn_openbox_backend/assets/settings.toml`），靶子与队友组名带 `20251102` / `20251109` 日期后缀；仓库工作目录的 `setting/settings.toml` 是另一套不带日期名的带权预设。启动时若工作目录没有 `settings.toml`，会把内嵌默认写一份进去；已有配置则只补齐缺失的资源文件，不覆盖已有内容。",
+    "outdated": false,
+    "context_notes": []
+  },
+  "base_revision": "d5a35b55d5d37ccfb686020e023bdea9ac9dc104ddbebc3ef204da08eddd307c",
+  "revision": "3bd4a62edef013b9c3a49d8bceff92d68ada501227c4a0a14fb07602b5a6d034"
+}

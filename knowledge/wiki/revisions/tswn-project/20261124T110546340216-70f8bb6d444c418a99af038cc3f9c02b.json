@@ -1,0 +1,53 @@
+{
+  "revision_id": "70f8bb6d444c418a99af038cc3f9c02b",
+  "term_id": "tswn-project",
+  "timestamp": "2026-11-24T11:05:46.340216+08:00",
+  "author": {
+    "user_id": "208",
+    "teamname": "shenjack"
+  },
+  "summary": "修复了一些GPT言GPT语",
+  "before": {
+    "id": "tswn-project",
+    "term": "TSWN",
+    "aliases": [
+      "tswn",
+      "tswn-core"
+    ],
+    "definition": "名字竞技场的 Rust 重写及配套工具仓库；起源文档写作 tsw namerena，核心 crate 名为 tswn_core。",
+    "category": "tool",
+    "status": "source_supported",
+    "source_ids": [
+      "tswn-project",
+      "tswn-origins",
+      "tswn-project-map"
+    ],
+    "checked_at": "2026-11-16",
+    "origin": "tswn-curation",
+    "detailed_description": "TSWN（tswn、tswn-core）是名字竞技场的 Rust 重写及配套工具仓库，GitHub 地址为 shenjackyuanjie/tswn-core。起源文档（docs/archive/project-origins.md）中项目写作 \"tsw namerena\"，核心 crate 名为 tswn_core。\n\n版本信息（tswn-core 提交 d12b462aa532f95be793c00dfed37b8fea0672bb，2026-11-16 审阅）：包清单中 core 为 0.7.0、Openbox 与共享后端为 0.5.2、WASM wrapper 为 0.5.12；发布记录中的旧版本表另按当时记录理解。\n\n组成（按项目地图与 README）：\n- tswn_core：名字构建、解析、Runtime、技能与状态、评分批处理；\n- tswn_py（Python/PyO3 绑定）、tswn_capi（C ABI/FFI）、tswn_wasm（浏览器 WASM 包装与静态对战页）；\n- tswn_openbox 开箱器（GUI/CLI）与 tswn_openbox_backend 共享后端；\n- 其他模块关键词：tswn_ds4（模型评分/配对/实战筛选）、tswn_lane_ranker（两两胜率排名）、tswn_ladder（天梯/ELO）、tswn_name_ranker（独立单号排名）、tswn_pwp（胜率数据集）、tswn_test（共享行为测试）。\n\n适用范围：以上证据只对提交 d12b462 负责，不等同于官方原站或其他重写的行为。知识仓库层面，官方基础说明仍保留自己的原文与适用范围；tswn 对某些\"未知机制\"的实现解释不代表官方原文已包含这些细节。\n\n依据为仓库文档与包清单（提交 d12b462），未构建或运行测试。",
+    "outdated": false
+  },
+  "after": {
+    "id": "tswn-project",
+    "term": "TSWN",
+    "aliases": [
+      "tswn",
+      "tswn-core"
+    ],
+    "definition": "名字竞技场的 Rust 重写及配套工具仓库；起源文档写作 tsw namerena，核心 crate 名为 tswn_core。",
+    "category": "tool",
+    "status": "source_supported",
+    "source_ids": [
+      "tswn-project",
+      "tswn-project-map",
+      "tswn-origins"
+    ],
+    "checked_at": "2026-11-16",
+    "origin": "tswn-curation",
+    "detailed_description": "TSWN（tswn、tswn-core）是名字竞技场的 Rust 重写及配套工具仓库，GitHub 地址为 shenjackyuanjie/tswn-core。起源文档（docs/archive/project-origins.md）中项目写作 \"tsw namerena\"，核心 crate 名为 tswn_core。\n\n版本信息（tswn-core 提交 d12b462aa532f95be793c00dfed37b8fea0672bb，2026-11-16 审阅）：包清单中 core 为 0.7.0、Openbox 与共享后端为 0.5.2、WASM wrapper 为 0.5.12；发布记录中的旧版本表另按当时记录理解。\n\n组成（按项目地图与 README）：\n- tswn_core：名字构建、解析、Runtime、技能与状态、评分批处理；\n- tswn_py（Python/PyO3 绑定）、tswn_capi（C ABI/FFI）、tswn_wasm（浏览器 WASM 包装与静态对战页）；\n- tswn_openbox 开箱器（GUI/CLI）与 tswn_openbox_backend 共享后端；\n- 其他模块关键词：tswn_ds4（模型评分/配对/实战筛选）、tswn_lane_ranker（两两胜率排名）、tswn_name_ranker（独立单号排名）、tswn_pwp（胜率评估(WIP)）、tswn_test（共享行为测试）。",
+    "outdated": false,
+    "context_notes": []
+  },
+  "base_revision": "8a6e9f9658bd34d7d0eac0ca3341bca661479a380c004665445b7cfaac71eea2",
+  "revision": "550fd87d475d40b2ed331ba3fe31f2adce73830ca3458b81569b5031a6cff1c4"
+}
